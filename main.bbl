@@ -1,0 +1,977 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{latestSUPERK}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=87ca4e44d6c1beeda93993a24d605806}{%
+           family={Abe},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{98b84219bd20ba283086d9d7219006ed}
+      \strng{fullhash}{98b84219bd20ba283086d9d7219006ed}
+      \strng{fullhashraw}{98b84219bd20ba283086d9d7219006ed}
+      \strng{bibnamehash}{98b84219bd20ba283086d9d7219006ed}
+      \strng{authorbibnamehash}{98b84219bd20ba283086d9d7219006ed}
+      \strng{authornamehash}{98b84219bd20ba283086d9d7219006ed}
+      \strng{authorfullhash}{98b84219bd20ba283086d9d7219006ed}
+      \strng{authorfullhashraw}{98b84219bd20ba283086d9d7219006ed}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{hep-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{number}{5}
+      \field{title}{{Solar Neutrino Measurements in Super-Kamiokande-IV}}
+      \field{volume}{94}
+      \field{year}{2016}
+      \field{pages}{052010}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.94.052010
+      \endverb
+      \verb{eprint}
+      \verb 1606.07538
+      \endverb
+    \endentry
+    \entry{LEGEND:introSetup}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=000d895fb5214b3bfc9411adf9f4be12}{%
+           family={Abgrall},
+           familyi={A\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=011bc18c5687326fc25e1085518b6e5e}{%
+           family={Civitarese},
+           familyi={C\bibinitperiod},
+           given={Osvaldo},
+           giveni={O\bibinitperiod}}}%
+        {{hash=86d73e9122bb4c52f24692af36c81f2d}{%
+           family={Stekl},
+           familyi={S\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=b0a1cb1c5021aba3446828720a36e8fe}{%
+           family={Suhonen},
+           familyi={S\bibinitperiod},
+           given={Jouni},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{fullhash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{fullhashraw}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{bibnamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorbibnamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authornamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorfullhash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorfullhashraw}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{editorbibnamehash}{75746cdf0c8925e63ee1e21827b1314e}
+      \strng{editornamehash}{75746cdf0c8925e63ee1e21827b1314e}
+      \strng{editorfullhash}{75746cdf0c8925e63ee1e21827b1314e}
+      \strng{editorfullhashraw}{75746cdf0c8925e63ee1e21827b1314e}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.ins-det}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{AIP Conf. Proc.}
+      \field{number}{1}
+      \field{title}{{The Large Enriched Germanium Experiment for Neutrinoless Double Beta Decay (LEGEND)}}
+      \field{volume}{1894}
+      \field{year}{2017}
+      \field{pages}{020027}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1063/1.5007652
+      \endverb
+      \verb{eprint}
+      \verb 1709.01980
+      \endverb
+    \endentry
+    \entry{LEGEND:GeDet}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=d6a744ce16d33ce8015fca2dfdb9c9d4}{%
+           family={Acharya},
+           familyi={A\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{fullhash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{fullhashraw}{876466061ce6ef16354f02a00329ea9c}
+      \strng{bibnamehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authorbibnamehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authornamehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authorfullhash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authorfullhashraw}{876466061ce6ef16354f02a00329ea9c}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.ins-det}
+      \field{eprinttype}{arXiv}
+      \field{month}{5}
+      \field{title}{{Energy Calibration and Performance of HPGe Detectors in the LEGEND-200 Experiment}}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2605.22479
+      \endverb
+    \endentry
+    \entry{L200-sep25}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=d6a744ce16d33ce8015fca2dfdb9c9d4}{%
+           family={Acharya},
+           familyi={A\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{fullhash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{fullhashraw}{876466061ce6ef16354f02a00329ea9c}
+      \strng{bibnamehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authorbibnamehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authornamehash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authorfullhash}{876466061ce6ef16354f02a00329ea9c}
+      \strng{authorfullhashraw}{876466061ce6ef16354f02a00329ea9c}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{hep-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{number}{2}
+      \field{title}{{First Results on the Search for Lepton Number Violating Neutrinoless Double-{\ensuremath{\beta}} Decay with the LEGEND-200 Experiment}}
+      \field{volume}{136}
+      \field{year}{2026}
+      \field{pages}{022701}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/25tk-nctn
+      \endverb
+      \verb{eprint}
+      \verb 2505.10440
+      \endverb
+    \endentry
+    \entry{SNO2002-results}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=3c3ce1eee43161872b95d81342269a0b}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Q.\bibnamedelimi R.},
+           giveni={Q\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{98a93cc89578302f6cad85e6e30483e7}
+      \strng{fullhash}{98a93cc89578302f6cad85e6e30483e7}
+      \strng{fullhashraw}{98a93cc89578302f6cad85e6e30483e7}
+      \strng{bibnamehash}{98a93cc89578302f6cad85e6e30483e7}
+      \strng{authorbibnamehash}{98a93cc89578302f6cad85e6e30483e7}
+      \strng{authornamehash}{98a93cc89578302f6cad85e6e30483e7}
+      \strng{authorfullhash}{98a93cc89578302f6cad85e6e30483e7}
+      \strng{authorfullhashraw}{98a93cc89578302f6cad85e6e30483e7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{1}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{6}
+      \field{title}{Direct Evidence for Neutrino Flavor Transformation from Neutral-Current Interactions in the Sudbury Neutrino Observatory}
+      \field{volume}{89}
+      \field{year}{2002}
+      \field{pages}{011301}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.89.011301
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.89.011301
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.89.011301
+      \endverb
+    \endentry
+    \entry{Brugnera}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0f34252f2b4fd35637a6c8252b8debf3}{%
+           family={Brugnera},
+           familyi={B\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{fullhash}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{fullhashraw}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{bibnamehash}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{authorbibnamehash}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{authornamehash}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{authorfullhash}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{authorfullhashraw}{0f34252f2b4fd35637a6c8252b8debf3}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Lecture Slides, University of Padua}
+      \field{title}{Experimental Subnuclear Physics}
+      \field{year}{2025}
+    \endentry
+    \entry{LEGENDsetup-details}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=dd1aef32f9037773f301151c1f14a0cd}{%
+           family={Burlac},
+           familyi={B\bibinitperiod},
+           given={Nina},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd1aef32f9037773f301151c1f14a0cd}
+      \strng{fullhash}{dd1aef32f9037773f301151c1f14a0cd}
+      \strng{fullhashraw}{dd1aef32f9037773f301151c1f14a0cd}
+      \strng{bibnamehash}{dd1aef32f9037773f301151c1f14a0cd}
+      \strng{authorbibnamehash}{dd1aef32f9037773f301151c1f14a0cd}
+      \strng{authornamehash}{dd1aef32f9037773f301151c1f14a0cd}
+      \strng{authorfullhash}{dd1aef32f9037773f301151c1f14a0cd}
+      \strng{authorfullhashraw}{dd1aef32f9037773f301151c1f14a0cd}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0168-9002}
+      \field{journaltitle}{Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}
+      \field{title}{Early results of the LEGEND-200 experiment}
+      \field{volume}{1080}
+      \field{year}{2025}
+      \field{pages}{170779}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.nima.2025.170779
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0168900225005807
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0168900225005807
+      \endverb
+    \endentry
+    \entry{HomestakeResults}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=11d8292542538acc4f6b0bf227d53ab9}{%
+           family={Cleveland},
+           familyi={C\bibinitperiod},
+           given={Bruce\bibnamedelima T.},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=e0842548c8422d83060cbe64db57717b}{%
+           family={Daily},
+           familyi={D\bibinitperiod},
+           given={Timothy},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cd72e8b1ea4e3f4ba4276953a5a80928}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Raymond},
+           giveni={R\bibinitperiod}}}%
+        {{hash=29c788249a20f7edef497601b380d44b}{%
+           family={Distel},
+           familyi={D\bibinitperiod},
+           given={James\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=59175eed88de62eafadbf59d260bcff0}{%
+           family={Lande},
+           familyi={L\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+        {{hash=333f6a3d6ffa6bbb0841e2113c4fe8a3}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={C.\bibnamedelimi K.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=1916c0a56b156379545416592a37ddc0}{%
+           family={Wildenhain},
+           familyi={W\bibinitperiod},
+           given={Paul\bibnamedelima S.},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=383478d8d9d0bcdf968cc3d95fb50eae}{%
+           family={Ullman},
+           familyi={U\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8599535aa7f2bc1115f289c936d1e2f8}
+      \strng{fullhash}{745d11107ac544fa0676fccc2c0e530d}
+      \strng{fullhashraw}{745d11107ac544fa0676fccc2c0e530d}
+      \strng{bibnamehash}{8599535aa7f2bc1115f289c936d1e2f8}
+      \strng{authorbibnamehash}{8599535aa7f2bc1115f289c936d1e2f8}
+      \strng{authornamehash}{8599535aa7f2bc1115f289c936d1e2f8}
+      \strng{authorfullhash}{745d11107ac544fa0676fccc2c0e530d}
+      \strng{authorfullhashraw}{745d11107ac544fa0676fccc2c0e530d}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Astrophysical Journal}
+      \field{number}{1}
+      \field{title}{Measurement of the Solar Electron Neutrino Flux with the Homestake Chlorine Detector}
+      \field{volume}{496}
+      \field{year}{1998}
+      \field{pages}{505\bibrangedash 526}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1086/305343
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1086/305343
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1086/305343
+      \endverb
+    \endentry
+    \entry{cowan1956nudetection}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=a1bf1a2a8cfc241713cb1aa29b9841f1}{%
+           family={Cowan},
+           familyi={C\bibinitperiod},
+           given={C.\bibnamedelimi L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=984168a058ce1423d5da955683e03313}{%
+           family={Reines},
+           familyi={R\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=7e8c4855f975456a4a7c5817c44f0693}{%
+           family={Harrison},
+           familyi={H\bibinitperiod},
+           given={F.\bibnamedelimi B.},
+           giveni={F\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=8ea6979b5644ecf50c452fcf0c1f829c}{%
+           family={Kruse},
+           familyi={K\bibinitperiod},
+           given={H.\bibnamedelimi W.},
+           giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=b3f42e01c0fffa233f3be9660c96ffb0}{%
+           family={McGuire},
+           familyi={M\bibinitperiod},
+           given={A.\bibnamedelimi D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{c970f44adc0a067ae86021fb9075e29d}
+      \strng{fullhash}{43ff716f0d6043308353a7d054e5bec5}
+      \strng{fullhashraw}{43ff716f0d6043308353a7d054e5bec5}
+      \strng{bibnamehash}{c970f44adc0a067ae86021fb9075e29d}
+      \strng{authorbibnamehash}{c970f44adc0a067ae86021fb9075e29d}
+      \strng{authornamehash}{c970f44adc0a067ae86021fb9075e29d}
+      \strng{authorfullhash}{43ff716f0d6043308353a7d054e5bec5}
+      \strng{authorfullhashraw}{43ff716f0d6043308353a7d054e5bec5}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00368075, 10959203}
+      \field{journaltitle}{Science}
+      \field{number}{3212}
+      \field{title}{Detection of the Free Neutrino: A Confirmation}
+      \field{urlday}{20}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{124}
+      \field{year}{1956}
+      \field{urldateera}{ce}
+      \field{pages}{103\bibrangedash 104}
+      \range{pages}{2}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/1751492
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/1751492
+      \endverb
+    \endentry
+    \entry{fermilab-mass-ordering}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=183dac55fa3378e0a0fe239c65032e68}{%
+           family={{Fermi National Accelerator Laboratory}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{183dac55fa3378e0a0fe239c65032e68}
+      \strng{fullhash}{183dac55fa3378e0a0fe239c65032e68}
+      \strng{fullhashraw}{183dac55fa3378e0a0fe239c65032e68}
+      \strng{bibnamehash}{183dac55fa3378e0a0fe239c65032e68}
+      \strng{authorbibnamehash}{183dac55fa3378e0a0fe239c65032e68}
+      \strng{authornamehash}{183dac55fa3378e0a0fe239c65032e68}
+      \strng{authorfullhash}{183dac55fa3378e0a0fe239c65032e68}
+      \strng{authorfullhashraw}{183dac55fa3378e0a0fe239c65032e68}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://neutrinos.fnal.gov/mysteries/mass-ordering/mass-hierarchy-jgu-mainz-web/}}
+      \field{note}{Accessed: 2026-07-23}
+      \field{title}{Neutrino Mass Ordering}
+    \endentry
+    \entry{GERDA-muonVeto}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=f4fb87860437d3b6e0ef25e2474f98b5}{%
+           family={Freund},
+           familyi={F\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \strng{fullhash}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \strng{fullhashraw}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \strng{bibnamehash}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \strng{authorbibnamehash}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \strng{authornamehash}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \strng{authorfullhash}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \strng{authorfullhashraw}{0c78bf6bb6b268cc1be6bf0c2228b907}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.ins-det}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Eur. Phys. J. C}
+      \field{number}{5}
+      \field{title}{{The Performance of the Muon Veto of the GERDA Experiment}}
+      \field{volume}{76}
+      \field{year}{2016}
+      \field{pages}{298}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1140/epjc/s10052-016-4140-7
+      \endverb
+      \verb{eprint}
+      \verb 1601.05935
+      \endverb
+    \endentry
+    \entry{firstDoubleBeta}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=80dd908c4f71cb9bdc18f26814be19d4}{%
+           family={Goeppert-Mayer},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{80dd908c4f71cb9bdc18f26814be19d4}
+      \strng{fullhash}{80dd908c4f71cb9bdc18f26814be19d4}
+      \strng{fullhashraw}{80dd908c4f71cb9bdc18f26814be19d4}
+      \strng{bibnamehash}{80dd908c4f71cb9bdc18f26814be19d4}
+      \strng{authorbibnamehash}{80dd908c4f71cb9bdc18f26814be19d4}
+      \strng{authornamehash}{80dd908c4f71cb9bdc18f26814be19d4}
+      \strng{authorfullhash}{80dd908c4f71cb9bdc18f26814be19d4}
+      \strng{authorfullhashraw}{80dd908c4f71cb9bdc18f26814be19d4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{6}
+      \field{journaltitle}{Phys. Rev.}
+      \field{month}{9}
+      \field{title}{Double Beta-Disintegration}
+      \field{volume}{48}
+      \field{year}{1935}
+      \field{pages}{512\bibrangedash 516}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1103/PhysRev.48.512
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRev.48.512
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRev.48.512
+      \endverb
+    \endentry
+    \entry{neutrinosPDG}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=fb500f866bde3e9e49163fd2832f5b9b}{%
+           family={Gonzalez-Garcia},
+           familyi={G\bibinithyphendelim G\bibinitperiod},
+           given={M.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=f62fc87ff87276bfa30487ce7720831e}{%
+           family={Wendell},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e8984c76b7714a6db8dbc3f038002642}
+      \strng{fullhash}{e8984c76b7714a6db8dbc3f038002642}
+      \strng{fullhashraw}{e8984c76b7714a6db8dbc3f038002642}
+      \strng{bibnamehash}{e8984c76b7714a6db8dbc3f038002642}
+      \strng{authorbibnamehash}{e8984c76b7714a6db8dbc3f038002642}
+      \strng{authornamehash}{e8984c76b7714a6db8dbc3f038002642}
+      \strng{authorfullhash}{e8984c76b7714a6db8dbc3f038002642}
+      \strng{authorfullhashraw}{e8984c76b7714a6db8dbc3f038002642}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{note}{Review updated March 2026. Part of the Review of Particle Physics.}
+      \field{title}{{Neutrino Masses, Mixing, and Oscillations}}
+      \field{year}{2026}
+    \endentry
+    \entry{LEGEND:setup}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=24be34c0487e6af437c6d5a1dab6d462}{%
+           family={{LEGEND Collaboration}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {LEGEND Experiment}%
+      }
+      \strng{namehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{fullhash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{fullhashraw}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{bibnamehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authorbibnamehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authornamehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authorfullhash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authorfullhashraw}{24be34c0487e6af437c6d5a1dab6d462}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{LEGEND-200}
+      \field{urlday}{30}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://legend-exp.org/science/legend-pathway/legend-200
+      \endverb
+      \verb{url}
+      \verb https://legend-exp.org/science/legend-pathway/legend-200
+      \endverb
+    \endentry
+    \entry{Maki1962}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=8c48df8ccf1c55afc0b66f6ef9030b0a}{%
+           family={Maki},
+           familyi={M\bibinitperiod},
+           given={Ziro},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=66f21f60cbd58bb35e9f41406e196269}{%
+           family={Nakagawa},
+           familyi={N\bibinitperiod},
+           given={Masami},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6c1fa6e2f474430d3897a6e1aec09d0e}{%
+           family={Sakata},
+           familyi={S\bibinitperiod},
+           given={Shoichi},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \strng{fullhash}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \strng{fullhashraw}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \strng{bibnamehash}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \strng{authorbibnamehash}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \strng{authornamehash}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \strng{authorfullhash}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \strng{authorfullhashraw}{97150147d1cddbdc8774ac57a5cbbdaa}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Prog. Theor. Phys.}
+      \field{title}{{Remarks on the unified model of elementary particles}}
+      \field{volume}{28}
+      \field{year}{1962}
+      \field{pages}{870\bibrangedash 880}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1143/PTP.28.870
+      \endverb
+    \endentry
+    \entry{SSMReference}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2b575d1b0a52017486c52a2cd0f5bcfd}{%
+           family={Pena-Garay},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=919e071ae3d6fbc078d065404208ead6}{%
+           family={Serenelli},
+           familyi={S\bibinitperiod},
+           given={Aldo},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \strng{fullhash}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \strng{fullhashraw}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \strng{bibnamehash}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \strng{authorbibnamehash}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \strng{authornamehash}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \strng{authorfullhash}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \strng{authorfullhashraw}{fcd37efde90ea3257525a1bd8d4bbb67}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph}
+      \field{eprinttype}{arXiv}
+      \field{month}{11}
+      \field{title}{{Solar neutrinos and the solar composition problem}}
+      \field{year}{2008}
+      \verb{eprint}
+      \verb 0811.2424
+      \endverb
+    \endentry
+    \entry{Pontecorvo1957}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=216e1073c2e5bdc13465c81d7a74251b}{%
+           family={Pontecorvo},
+           familyi={P\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{fullhash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{fullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{bibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authorbibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authornamehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authorfullhash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authorfullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sov. Phys. JETP}
+      \field{title}{{Mesonium and Antimesonium}}
+      \field{volume}{6}
+      \field{year}{1958}
+      \field{pages}{429\bibrangedash 431}
+      \range{pages}{3}
+    \endentry
+    \entry{Pontecorvo1967}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=216e1073c2e5bdc13465c81d7a74251b}{%
+           family={Pontecorvo},
+           familyi={P\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{fullhash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{fullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{bibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authorbibnamehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authornamehash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authorfullhash}{216e1073c2e5bdc13465c81d7a74251b}
+      \strng{authorfullhashraw}{216e1073c2e5bdc13465c81d7a74251b}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sov. Phys. JETP}
+      \field{title}{{Neutrino Experiments and the Problem of Conservation of Leptonic Charge}}
+      \field{volume}{26}
+      \field{year}{1968}
+      \field{pages}{984\bibrangedash 988}
+      \range{pages}{5}
+    \endentry
+    \entry{Ge76-Qvalue}{article}{}{}
+      \name{author}{11}{}{%
+        {{hash=055dee530beb26cf1bd68bb9e5aab178}{%
+           family={Rahaman},
+           familyi={R\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=74324f2c7dd95ffb55eb83415a164b7b}{%
+           family={Elomaa},
+           familyi={E\bibinitperiod},
+           given={V.-V.},
+           giveni={V\bibinithyphendelim V\bibinitperiod}}}%
+        {{hash=199443bf48e968872b4ce5e4fa3892c0}{%
+           family={Eronen},
+           familyi={E\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cc74b023fc75abe200f6813b5e2788b2}{%
+           family={Hakala},
+           familyi={H\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6bf7fc2a6c5c98ec7984b3fbb357bab3}{%
+           family={Jokinen},
+           familyi={J\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4031d7803b58fc4c971846ef413fd73d}{%
+           family={Julin},
+           familyi={J\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=554534f9534009f274793e2c01bf0cba}{%
+           family={Kankainen},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=155ad99bbd3bca46b3ff312dd6b0e4fb}{%
+           family={Saastamoinen},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c00f3ecea6ee1d022ab8e2dd050928f0}{%
+           family={Suhonen},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=39cfec22393bdab34071ef33460cb3a1}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6c5bef0c5ce010eef83ec706597f0d89}{%
+           family={Äystö},
+           familyi={Ä\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{737c09dddb1a67a024976fbf96c8f8f4}
+      \strng{fullhash}{34f38dd9554eeb6f02c19ac8c96f614b}
+      \strng{fullhashraw}{34f38dd9554eeb6f02c19ac8c96f614b}
+      \strng{bibnamehash}{737c09dddb1a67a024976fbf96c8f8f4}
+      \strng{authorbibnamehash}{737c09dddb1a67a024976fbf96c8f8f4}
+      \strng{authornamehash}{737c09dddb1a67a024976fbf96c8f8f4}
+      \strng{authorfullhash}{34f38dd9554eeb6f02c19ac8c96f614b}
+      \strng{authorfullhashraw}{34f38dd9554eeb6f02c19ac8c96f614b}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0370-2693}
+      \field{journaltitle}{Physics Letters B}
+      \field{number}{2}
+      \field{title}{Q values of the 76Ge and 100Mo double-beta decays}
+      \field{volume}{662}
+      \field{year}{2008}
+      \field{pages}{111\bibrangedash 116}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.physletb.2008.02.047
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0370269308002554
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0370269308002554
+      \endverb
+      \keyw{Penning trap,Double-beta decay,-value,Phase-space integral,Neutrino mass}
+    \endentry
+    \entry{LEPnumberOFnu}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=2d6ba57ac94d5e8a53e06668a8009499}{%
+           family={Schael},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b78a953fba2d828a2686b8107b81c3eb}
+      \strng{fullhash}{b78a953fba2d828a2686b8107b81c3eb}
+      \strng{fullhashraw}{b78a953fba2d828a2686b8107b81c3eb}
+      \strng{bibnamehash}{b78a953fba2d828a2686b8107b81c3eb}
+      \strng{authorbibnamehash}{b78a953fba2d828a2686b8107b81c3eb}
+      \strng{authornamehash}{b78a953fba2d828a2686b8107b81c3eb}
+      \strng{authorfullhash}{b78a953fba2d828a2686b8107b81c3eb}
+      \strng{authorfullhashraw}{b78a953fba2d828a2686b8107b81c3eb}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rept.}
+      \field{title}{{Precision electroweak measurements on the $Z$ resonance}}
+      \field{volume}{427}
+      \field{year}{2006}
+      \field{pages}{257\bibrangedash 454}
+      \range{pages}{198}
+      \verb{doi}
+      \verb 10.1016/j.physrep.2005.12.006
+      \endverb
+      \verb{eprint}
+      \verb hep-ex/0509008
+      \endverb
+    \endentry
+    \entry{SunNuFluxes}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=919e071ae3d6fbc078d065404208ead6}{%
+           family={Serenelli},
+           familyi={S\bibinitperiod},
+           given={Aldo},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{919e071ae3d6fbc078d065404208ead6}
+      \strng{fullhash}{919e071ae3d6fbc078d065404208ead6}
+      \strng{fullhashraw}{919e071ae3d6fbc078d065404208ead6}
+      \strng{bibnamehash}{919e071ae3d6fbc078d065404208ead6}
+      \strng{authorbibnamehash}{919e071ae3d6fbc078d065404208ead6}
+      \strng{authornamehash}{919e071ae3d6fbc078d065404208ead6}
+      \strng{authorfullhash}{919e071ae3d6fbc078d065404208ead6}
+      \strng{authorfullhashraw}{919e071ae3d6fbc078d065404208ead6}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The European Physical Journal A}
+      \field{number}{4}
+      \field{title}{Alive and well: A short review about standard solar models}
+      \field{volume}{52}
+      \field{year}{2016}
+      \field{pages}{78}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1140/epja/i2016-16078-1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1140/epja/i2016-16078-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1140/epja/i2016-16078-1
+      \endverb
+    \endentry
+    \entry{Thomson}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=57f5b607cec3b22885f854f4c4baf257}{%
+           family={Thomson},
+           familyi={T\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{57f5b607cec3b22885f854f4c4baf257}
+      \strng{fullhash}{57f5b607cec3b22885f854f4c4baf257}
+      \strng{fullhashraw}{57f5b607cec3b22885f854f4c4baf257}
+      \strng{bibnamehash}{57f5b607cec3b22885f854f4c4baf257}
+      \strng{authorbibnamehash}{57f5b607cec3b22885f854f4c4baf257}
+      \strng{authornamehash}{57f5b607cec3b22885f854f4c4baf257}
+      \strng{authorfullhash}{57f5b607cec3b22885f854f4c4baf257}
+      \strng{authorfullhashraw}{57f5b607cec3b22885f854f4c4baf257}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Modern Particle Physics}
+      \field{year}{2013}
+    \endentry
+    \entry{AME2020-masses}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=00b734eb3fb588e4c6c94e4271080d0b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2709de321681136e66379a20870d189d}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={W.J.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=5f8909decb782d0cba597acef3a5bc86}{%
+           family={Kondev},
+           familyi={K\bibinitperiod},
+           given={F.G.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=5921e5c1d9165278b9b77679b68584c2}{%
+           family={Audi},
+           familyi={A\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=6c1dcc484b517767e78f5d8c78ba1352}{%
+           family={Naimi},
+           familyi={N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{4}{%
+        {Chinese Physical Society}%
+        {the Institute of High Energy Physics of the Chinese Academy of Sciences}%
+        {the Institute of Modern Physics of the Chinese Academy of Sciences}%
+        {IOP Publishing Ltd}%
+      }
+      \strng{namehash}{e05375cd51d39eb30204ed89af5135f3}
+      \strng{fullhash}{19bbae586931212ed61bbad0710701c6}
+      \strng{fullhashraw}{19bbae586931212ed61bbad0710701c6}
+      \strng{bibnamehash}{e05375cd51d39eb30204ed89af5135f3}
+      \strng{authorbibnamehash}{e05375cd51d39eb30204ed89af5135f3}
+      \strng{authornamehash}{e05375cd51d39eb30204ed89af5135f3}
+      \strng{authorfullhash}{19bbae586931212ed61bbad0710701c6}
+      \strng{authorfullhashraw}{19bbae586931212ed61bbad0710701c6}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chinese Physics C}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{The AME 2020 atomic mass evaluation (II). Tables, graphs and references*}
+      \field{volume}{45}
+      \field{year}{2021}
+      \field{pages}{030003}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1674-1137/abddaf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1088/1674-1137/abddaf
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1088/1674-1137/abddaf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

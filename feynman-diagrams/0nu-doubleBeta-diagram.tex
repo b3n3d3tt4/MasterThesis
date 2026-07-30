@@ -1,0 +1,60 @@
+\begin{center}
+\begin{tikzpicture}[
+    thick,
+    % Stile per le linee dei fermioni (linea con freccia a metà)
+    fermion/.style={draw=black, postaction={decorate},
+        decoration={markings, mark=at position 0.55 with {\arrow{latex}}}},
+    % Stile per i bosoni W (linea ondulata)
+    boson/.style={draw=black, decorate,
+        decoration={snake, amplitude=1mm, segment length=3.5mm}},
+    % Stile per la massa di Majorana (la X al centro)
+    cross/.style={cross out, draw=black, thick, minimum size=6pt, inner sep=0pt},
+    % Stile per i vertici dei nucleoni (i cerchi grigi)
+    blob/.style={circle, draw=black, fill=gray!30, minimum size=6mm, inner sep=0pt}
+]
+
+% ---------------- NUCLEONE SUPERIORE ----------------
+% Frecce esterne n e p
+\draw[fermion] (-4, 2) node[left] {n} -- (-2.5, 2);
+\draw[fermion] (2.5, 2) -- (4, 2) node[right] {p};
+
+% Le 3 linee dei quark all'interno
+\draw[fermion] (-2.5, 2.15) -- (2.5, 2.15);
+\draw[fermion] (-2.5, 2.0) -- (2.5, 2.0);
+\draw[fermion] (-2.5, 1.85) -- (2.5, 1.85);
+
+
+% ---------------- NUCLEONE INFERIORE ----------------
+% Frecce esterne n e p
+\draw[fermion] (-4, -2) node[left] {n} -- (-2.5, -2);
+\draw[fermion] (2.5, -2) -- (4, -2) node[right] {p};
+
+% Le 3 linee dei quark all'interno
+\draw[fermion] (-2.5, -1.85) -- (2.5, -1.85);
+\draw[fermion] (-2.5, -2.0) -- (2.5, -2.0);
+\draw[fermion] (-2.5, -2.15) -- (2.5, -2.15);
+
+
+% --- DISEGNO I BLOB ---
+% (Disegnati per ultimi così coprono perfettamente le estremità delle linee)
+\node[blob] at (-2.5, 2) {};
+\node[blob] at (2.5, 2) {};
+\node[blob] at (-2.5, -2) {};
+\node[blob] at (2.5, -2) {};
+
+
+% ---------------- SCAMBIO INTERNO (W, neutrini ed elettroni) ----------------
+% Bosoni W (partono dalla linea del quark più vicina al centro)
+\draw[boson] (-0.5, 1.85) -- (0.5, 0.7);
+\draw[boson] (-0.5, -1.85) -- (0.5, -0.7);
+
+% Linea del neutrino di Majorana (dritta, senza freccia, con la X)
+\draw (0.5, 0.7) -- (0.5, -0.7);
+\node[cross, label=right:{$\nu_M$}] at (0.5, 0) {};
+
+% Elettroni uscenti
+\draw[fermion] (0.5, 0.7) -- (2.5, 1.2) node[right] {e$^-$};
+\draw[fermion] (0.5, -0.7) -- (2.5, -1.2) node[right] {e$^-$};
+
+\end{tikzpicture}
+\end{center}

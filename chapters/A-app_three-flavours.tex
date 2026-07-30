@@ -1,0 +1,131 @@
+\chapter{Three-flavour neutrinos oscillation}
+\label{app:ThreeFlavoursOscillation}
+This appendix provides the mathematical derivation of neutrinos surviving probability and oscillation probability within a three-flavour oscillation framework. It is elaborated from \cite{Brugnera}.
+
+Consider an electron neutrino produced at $t=0$. It can be written as 
+\begin{equation*}
+    | \psi(0) \rangle = | \nu_e \rangle = U_{e1}^* | \nu_1 \rangle + U_{e2}^* | \nu_2 \rangle + U_{e3}^* | \nu_3 \rangle
+\end{equation*}
+Such state evolves in time, and space as well, according to the time dependence of mass eigenstates, thus after travelling for a time t and space $\mathbf{x}$
+we can write
+\begin{equation}
+    \label{eq:psi-time-evolution}
+    | \psi(\mathbf{x}, t) \rangle = U_{e1}^* | \nu_1 \rangle e^{-i\phi_1} + U_{e2}^* | \nu_2 \rangle e^{-i\phi_2} + U_{e3}^* | \nu_3 \rangle e^{-i\phi_3}.
+\end{equation}
+In  Eq. \ref{eq:psi-time-evolution}, $\phi_1$, $\phi_2$ and $\phi_3$ are the quantum mechanical phases accumulated by each mass eigenstate.
+For a generic state $i$, with $i = 1, 2, 3$, the Lorentz-invariant phase is given by $\phi_i = p^\mu_i x_\mu = E_i t - \mathbf{p}_i \cdot \mathbf{x}$, where $p^\mu_i = (E_i, \mathbf{p}_i)$
+is the four-momentum of the $i$-th mass eigenstate and $x_\mu = (t, \mathbf{x})$ is the macroscopic spacetime coordinate of the state.\\
+It is crucial to note that while the spacetime coordinate is common to the entire superposition, 
+the energy $E_i$ and the three-momentum $\mathbf{p}_i$ of each component fundamentally depend on its specific mass $m_i$ through the relativistic 
+relation $E_i^2 = |\mathbf{p}_i|^2 + m_i^2$.
+
+Finally we can express $| \nu_1 \rangle$, $| \nu_2 \rangle$ and $| \nu_3 \rangle$ in terms of $| \nu_e \rangle$, $| \nu_\mu \rangle$ and 
+$| \nu_\tau \rangle$ and we get
+\begin{equation*}
+    \begin{aligned}
+        | \psi(\mathbf{x}, t) \rangle = \;& U_{e1}^* (U_{e1} | \nu_e \rangle + U_{\mu 1} | \nu_\mu \rangle + U_{\tau 1} | \nu_\tau \rangle) e^{-i\phi_1} \\
+        &+ U_{e2}^* (U_{e2} | \nu_e \rangle + U_{\mu 2} | \nu_\mu \rangle + U_{\tau 2} | \nu_\tau \rangle) e^{-i\phi_2} \\
+        &+ U_{e3}^* (U_{e3} | \nu_e \rangle + U_{\mu 3} | \nu_\mu \rangle + U_{\tau 3} | \nu_\tau \rangle) e^{-i\phi_3}.
+    \end{aligned}
+\end{equation*}
+Now we group together all the terms refering to the same flavour eigenstate, obtaining
+\begin{equation}
+    \label{eq:evolved-state}
+    \begin{aligned}
+        | \psi(\mathbf{x}, t) \rangle &= \underbrace{(U_{e1}^* U_{e1} e^{-i\phi_1} + U_{e2}^* U_{e2} e^{-i\phi_2} + U_{e3}^* U_{e3} e^{-i\phi_3})}_{c_e} | \nu_e \rangle \\
+        &+ \underbrace{(U_{e1}^* U_{\mu 1} e^{-i\phi_1} + U_{e2}^* U_{\mu 2} e^{-i\phi_2} + U_{e3}^* U_{\mu 3} e^{-i\phi_3})}_{c_\mu} | \nu_\mu \rangle \\
+        &+ \underbrace{(U_{e1}^* U_{\tau 1} e^{-i\phi_1} + U_{e2}^* U_{\tau 2} e^{-i\phi_2} + U_{e3}^* U_{\tau 3} e^{-i\phi_3})}_{c_\tau} | \nu_\tau \rangle
+    \end{aligned}
+\end{equation}
+Consequently if we want to compute the oscillation probability of the starting electron neutrino, $| \psi(0) \rangle$, into muon neutrino or tau neutrino,
+after a time t and a space $\mathbf{x}$, we just need to project the state at ($\mathbf{x}, t$) onto the specific flavour eigenstate. 
+As an example we can analyse the oscillation probability $P(\nu_{e} \rightarrow \nu_\mu)$ that yields
+\begin{equation}
+    \label{eq:oscillation-prob}
+    \begin{aligned}
+        P(\nu_{e} \rightarrow \nu_\mu) &= | \langle \nu_\mu | \psi(\mathbf{x}, t) \rangle|^2 = c_\mu^* c_\mu = |c_\mu|^2 = \\
+                    &= \left|(U_{e1}^* U_{\mu 1} e^{-i\phi_1} + U_{e2}^* U_{\mu 2} e^{-i\phi_2} + U_{e3}^* U_{\mu 3} e^{-i\phi_3})\right|^2.
+    \end{aligned}
+\end{equation}
+Now, exploiting the complex numbers identity $|z_1 +z_2 +z_3|^2 = |z_1|^2 + |z_2|^2 + |z_3|^2 + 2~\Re{z_1z_2^*b + z_1z_3^* + z_2z_3^*}$, 
+Eq. \ref{eq:oscillation-prob} can be rewritten as shown in Eq. \ref{eq:oscillation-prob-revisited} below
+\begin{equation}
+    \label{eq:oscillation-prob-revisited}
+    \begin{aligned}
+        P(\nu_e \to \nu_\mu) &= |U_{e1}^* U_{\mu 1}|^2 + |U_{e2}^* U_{\mu 2}|^2 + |U_{e3}^* U_{\mu 3}|^2 + 2~\Re \left\{ U_{e1}^* U_{\mu 1} U_{e2} U_{\mu 2}^* e^{-i(\Phi_1 - \Phi_2)} \right\} \\
+        &\quad + 2~\Re \left\{ U_{e1}^* U_{\mu 1} U_{e3} U_{\mu 3}^* e^{-i(\Phi_1 - \Phi_3)} \right\} + 2~\Re \left\{ U_{e2}^* U_{\mu 2} U_{e3} U_{\mu 3}^* e^{-i(\Phi_2 - \Phi_3)} \right\}.
+    \end{aligned}
+\end{equation}
+Then we can use complex number properties together with the unitarity of the PMNS matrix. 
+Specifically, the orthogonality condition between the electron and muon flavours dictates that:
+\begin{equation}
+    \label{eq:unitarity-condition}
+    U_{e1}^* U_{\mu 1} + U_{e2}^* U_{\mu 2} + U_{e3}^* U_{\mu 3} = 0
+\end{equation}
+
+By taking the modulus squared of Eq. \ref{eq:unitarity-condition}, we obtain the expansion shown below:
+\begin{equation}
+    \label{eq:unitarity-squared}
+    \begin{aligned}
+        &|U_{e1}^* U_{\mu 1}|^2 + |U_{e2}^* U_{\mu 2}|^2 + |U_{e3}^* U_{\mu 3}|^2 \\
+        &+ 2~\Re \left\{ U_{e1}^* U_{\mu 1} U_{e2} U_{\mu 2}^* + U_{e1}^* U_{\mu 1} U_{e3} U_{\mu 3}^* + U_{e2}^* U_{\mu 2} U_{e3} U_{\mu 3}^* \right\} = 0
+    \end{aligned}
+\end{equation}
+
+So we can substitute the first three terms of Eq. \ref{eq:oscillation-prob-revisited} with what obtained in Eq. \ref{eq:unitarity-squared}.
+Finally, isolating the sum of the squared moduli yields Eq. \ref{eq:oscillation-prob-final}.
+\begin{equation}
+    \label{eq:oscillation-prob-final}
+    \begin{aligned}
+        P(\nu_e \to \nu_\mu) = &2~\Re \left\{ U_{e1}^* U_{\mu 1} U_{e2} U_{\mu 2}^* \left[ e^{-i(\phi_1 - \phi_2)} - 1 \right] \right\} \\
+        \quad + &2~\Re \left\{ U_{e1}^* U_{\mu 1} U_{e3} U_{\mu 3}^* \left[ e^{-i(\phi_1 - \phi_3)} - 1 \right] \right\} \\
+        \quad + &2~\Re \left\{ U_{e2}^* U_{\mu 2} U_{e3} U_{\mu 3}^* \left[ e^{-i(\phi_2 - \phi_3)} - 1 \right] \right\}
+    \end{aligned}
+\end{equation}
+Similarly, the electron neutrino survival probability, i.e. $P(\nu_e \to \nu_e)$, is obtained; in this case, however, 
+each element of the PMNS matrix is paired with its corresponding complex conjugate (see Eq. \ref{eq:evolved-state}).
+Therefore we can write
+\begin{equation*}
+    \begin{aligned}
+    P(\nu_e \to \nu_e) = 1 &+ 2 |U_{e1}^2|U_{e2}^2 ~\Re{e^{i(\phi_2-\phi_1)}-1}\\
+                                        &+ 2 |U_{e1}^2|U_{e3}^2 ~\Re{e^{i(\phi_3-\phi_1)}-1}\\
+                                        &+ 2 |U_{e2}^2|U_{e3}^2 ~\Re{e^{i(\phi_3-\phi_2)}-1}\\
+    \end{aligned}
+\end{equation*}
+Furthermore we can highlight the mass dependence of oscillation probabilities considering the trigonometric identity of Eq. \ref{eq:sinDeltaij}
+\begin{equation}
+    \label{eq:sinDeltaij}
+    \Re {e^{i(\phi_j-\phi_i)}-1} = \cos(\phi_j-\phi_i) - 1 = -2 \sin^2\left(\frac{\phi_j-\phi_i}{2}\right) = -2 \sin^2(\Delta \phi_{ji})
+\end{equation}
+The argument of the sine function crucially depends on the phase difference between the mass eigenstates $j$ and $i$. 
+Recalling the definition of the Lorentz-invariant phase introduced earlier, and considering a one-dimensional propagation along the baseline 
+$L$ (so that $\mathbf{p}_i \cdot \mathbf{x} = p_i L$), this difference is explicitly written as:
+\begin{equation}
+    \label{eq:phase-diff-general}
+    \Delta\phi_{ji} \equiv \frac{\phi_j - \phi_i}{2} = \frac{(E_j - E_i)t - (p_j - p_i)L}{2}
+\end{equation}
+
+To express this phase difference in terms of measurable quantities (the baseline $L$ and the neutrino energy $E_\nu$), the standard plane-wave treatment requires some kinematic assumptions. First, one could assume that the different mass eigenstates are produced with the same momentum: $p_i = p_j = p$. Under this assumption, the second term in Eq. \ref{eq:phase-diff-general} vanishes.
+
+Second, exploiting the relativistic relation $E_i^2 = |\mathbf{p}_i|^2 + m_i^2$ previously mentioned, and since neutrinos are ultra-relativistic 
+($m_i \ll p$), we can perform a Taylor expansion:
+\begin{equation}
+    \label{eq:energy-taylor}
+    E_i = \sqrt{p^2 + m_i^2} = p\sqrt{1 + \frac{m_i^2}{p^2}} \approx p \left( 1 + \frac{m_i^2}{2p^2} \right) = p + \frac{m_i^2}{2p}
+\end{equation}
+
+Consequently, the energy difference between two mass eigenstates becomes:
+\begin{equation}
+    \label{eq:energy-diff}
+    E_j - E_i \approx \left( p + \frac{m_j^2}{2p} \right) - \left( p + \frac{m_i^2}{2p} \right) = \frac{m_j^2 - m_i^2}{2p}
+\end{equation}
+
+Furthermore, in the ultra-relativistic limit, the neutrino velocity is $\beta \approx 1$ (in natural units $c=1$), 
+which implies that the time of flight $t$ is well approximated by the macroscopic distance travelled $L$ ($t \approx L$) 
+and the neutrino three-momentum $p$ module is approximated by its energy $E_\nu$. 
+Substituting this into Eq. \ref{eq:phase-diff-general}, we get:
+\begin{equation}
+    \label{eq:phase-diff-approx1}
+    \Delta\phi_{ji} \equiv \frac{\phi_j - \phi_i}{2} \approx \frac{1}{2}\frac{m_j^2 - m_i^2}{2p}L = \frac{(m_j^2 - m_i^2)L}{4E_\nu}.
+\end{equation}
+The latter result highlights how oscillation and survival probabilities intrinsically depend on the differences of the squared masses of the neutrinos stationary states.

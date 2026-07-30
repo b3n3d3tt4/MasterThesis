@@ -1,0 +1,68 @@
+\begin{tikzpicture}[
+        % Definizione degli stili per i nodi e le frecce
+        box/.style = {draw=black, fill=gray!20, rounded corners, inner sep=6pt, font=\normalsize, align=center},
+        mainbox/.style = {box, thick}, % Rimosso il bordo rosso, ereditato lo sfondo grigio
+        arrow/.style = {->, thick, >=stealth},
+        lbl/.style = {font=\scriptsize, fill=white, inner sep=2pt}
+    ]
+
+    % Comando personalizzato per evidenziare i neutrini (Riquadro nero, sfondo bianco, grassetto, niente rosso)
+    \newcommand{\hnu}{\fcolorbox{black}{white}{$\boldsymbol{\nu}_e$}}
+
+    % --- LIVELLO 1 ---
+    \node[mainbox] (pp) {$p + p \to {}^{2}\text{H} + e^+ + \hnu$};
+    \node[box, right=2cm of pp] (pep) {$p + e^- + p \to {}^{2}\text{H} + \hnu$};
+
+    % --- LIVELLO 2 ---
+    % He3 posizionato al centro in basso rispetto ai due nodi sopra
+    \node[mainbox, below=1.2cm of pp, xshift=2.8cm] (he3) {${}^{2}\text{H} + p \to {}^{3}\text{He} + \gamma$};
+
+    % Reazione Hep (freccia laterale)
+    \node[box, right=1.5cm of he3] (hep) {${}^{3}\text{He} + p \to \alpha + e^+ + \hnu$};
+
+    % --- LIVELLO 3 ---
+    \node[mainbox, below left=1.8cm and 1cm of he3] (ppi) {${}^{3}\text{He} + {}^{3}\text{He} \to \alpha + 2p$};
+    \node[box, below right=1.8cm and 0.5cm of he3] (be7) {${}^{3}\text{He} + {}^{4}\text{He} \to {}^{7}\text{Be} + \gamma$};
+
+    % --- LIVELLO 4 ---
+    \node[box, below=1.8cm of be7, xshift=-2.2cm] (ppii1) {${}^{7}\text{Be} + e^- \to {}^{7}\text{Li} + \gamma + \hnu$};
+    \node[box, below=1.8cm of be7, xshift=2.2cm] (ppiii1) {${}^{7}\text{Be} + p \to {}^{8}\text{B} + \gamma$};
+
+    % --- LIVELLO 5 ---
+    \node[box, below=1cm of ppii1] (ppii2) {${}^{7}\text{Li} + p \to \alpha + \alpha$};
+    \node[box, below=1cm of ppiii1] (ppiii2) {${}^{8}\text{B} \to 2\alpha + e^+ + \hnu$};
+
+    % --- ETICHETTE DEI RAMI (ppI, ppII, ppIII) ---
+    \node[below=0.3cm of ppi, font=\Large\bfseries] {pp I};
+    \node[below=0.3cm of ppii2, font=\Large\bfseries] {pp II};
+    \node[below=0.3cm of ppiii2, font=\Large\bfseries] {pp III};
+
+    % ==========================================
+    % --- FRECCE CON PERCORSI ORTOGONALI E PERCENTUALI ---
+    % ==========================================
+    
+    % Frecce Livello 1 -> Livello 2
+    \coordinate (merge1) at (he3.north);
+    \draw[arrow] (pp.south) -- ++(0,-0.5) -| (merge1) node[pos=0.25, above, lbl] {99.77\%};
+    \draw[arrow] (pep.south) -- ++(0,-0.5) -| (merge1) node[pos=0.25, above, lbl] {0.23\%};
+
+    % Freccia laterale per la reazione hep
+    \draw[arrow] (he3.east) -- (hep.west) node[midway, above, font=\scriptsize] {$\sim 10^{-5}$\%};
+
+    % Frecce Livello 2 -> Livello 3
+    \draw[arrow] (he3.south) -- ++(0,-0.5) -| (ppi.north) 
+        node[pos=0.25, above, lbl] {85\%}; % Rimosso MAIN BRANCH
+    \draw[arrow] (he3.south) -- ++(0,-0.5) -| (be7.north) 
+        node[pos=0.25, above, lbl] {15\%};
+
+    % Frecce Livello 3 -> Livello 4
+    \draw[arrow] (be7.south) -- ++(0,-0.5) -| (ppii1.north) 
+        node[pos=0.25, above, lbl] {99.9\%};
+    \draw[arrow] (be7.south) -- ++(0,-0.5) -| (ppiii1.north) 
+        node[pos=0.25, above, lbl] {0.1\%};
+
+    % Frecce verticali dirette (Livello 4 -> Livello 5)
+    \draw[arrow] (ppii1.south) -- (ppii2.north) node[midway, right, font=\scriptsize] {(100\%)};
+    \draw[arrow] (ppiii1.south) -- (ppiii2.north) node[midway, right, font=\scriptsize] {(100\%)};
+
+\end{tikzpicture}

@@ -1,0 +1,99 @@
+\chapter{Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}
+\label{app:MSW_derivation}
+This appendix provides the full mathematical derivation of the effective potential experienced by electron neutrinos propagating through ordinary matter, starting from the \ac{SM} fermionic currents. It is based on \cite{neutrinosPDG}.
+
+Consider the evolution of a $\nu_e$ in a medium with electrons protons and neutrons densities $n_e$, $n_p$ and $n_n$ respectively. The effective Hamiltonian describing relevant neutrino interactions at a point $x$ is given in Eq. \ref{eq:effHamiltonian-matter}.
+\begin{equation}
+    \label{eq:effHamiltonian-matter}
+    H_W = \frac{G_F}{\sqrt{2}} \left[ J^{(+)\alpha}(x) J^{(-)}_\alpha(x) + \frac{1}{4} J^{(N)\alpha}(x) J^{(N)}_\alpha(x) \right],
+\end{equation}
+
+The fermionic current terms in which $g_A^{(n, p)}$ are the axial couplings for neutrons and protons are the following
+\begin{equation}
+    \label{eq:fermionic-currents}
+    \begin{aligned}
+        J^{(+)}_\alpha(x) &= \overline{\nu}_e(x) \gamma_\alpha (1 - \gamma_5) e(x), \\
+        J^{(-)}_\alpha(x) &= \overline{e}(x) \gamma_\alpha (1 - \gamma_5) \nu_e(x), \\
+        J^{(N)}_\alpha(x) &= \overline{\nu}_e(x) \gamma_\alpha (1 - \gamma_5) \nu_e(x) \\
+        &\quad - \overline{e}(x) \left[ \gamma_\alpha(1 - \gamma_5) - 4\sin^2\theta_W \gamma_\alpha \right] e(x) \\
+        &\quad + \overline{p}(x) \left[ \gamma_\alpha(1 - g_A^{(p)}\gamma_5) - 4\sin^2\theta_W \gamma_\alpha \right] p(x) \\
+        &\quad - \overline{n}(x) \gamma_\alpha (1 - g_A^{(n)}\gamma_5) n(x).
+    \end{aligned}
+\end{equation}
+Firstly, we focus on the \ac{CC} interactions part. The effective \ac{CC} Hamiltonian arising from the interactions with the electronsa of the medium is
+\begin{equation}
+    \label{eq:H_C_e_1}
+    \begin{aligned}
+        H_C^{(e)} &= \frac{G_F}{\sqrt{2}} \int d^3p_e f(E_e, T) \times \boldsymbol{\Big\langle} e(s, p_e) \mid \overline{e}(x)\gamma^\alpha(1 - \gamma_5)\nu_e(x) \overline{\nu}_e(x)\gamma_\alpha(1 - \gamma_5)e(x) \mid e(s, p_e)\boldsymbol{\Big\rangle} \\
+        &= \frac{G_F}{\sqrt{2}} \overline{\nu}_e(x)\gamma_\alpha(1 - \gamma_5)\nu_e(x) \int d^3p_e f(E_e, T) \boldsymbol{\Big\langle} e(s, p_e) \mid \overline{e}(x)\gamma_\alpha(1 - \gamma_5)e(x) \mid e(s, p_e)\boldsymbol{\Big\rangle}.
+    \end{aligned}
+\end{equation}
+where $s$ is the spin of the electron, $p_e$ its momentum and $f(E_e, T)$ is the energy distribution function of the electrons in the medium. It is assumed to be homogeneous, isotropic and normalised thus $\int d^3p_e f(E_e, T) = 1$. Moreover, $\boldsymbol{\Big\langle}... \boldsymbol{\Big\rangle}$ means an averaging over electron spinors and a sum over all the electrons in the medium and coherence dictates that $s$ and $p_e$ remain the same in the initial and final state electrons.
+
+The axial current in the non-relativistic limit reduces to the spin and thus averages to zero in a non-orientated medium. The spatial components of the vector current cancel because of the isotropy assumption of the medium, therefore the only survivng component is the time-dependent ($\gamma^{0}$) one that is written in Eq. \ref{eq:non_trivial_average}
+\begin{equation}
+    \label{eq:non_trivial_average}
+    \int d^3p_e f(E_e, T) \left\langle \langle e(s, p_e) \mid \overline{e}(x)\gamma_0 e(x) \mid e(s, p_e)\rangle \right\rangle = n_e(x).
+\end{equation}
+
+Taking the latter formula and substituing it into Eq. \ref{eq:H_C_e_1} we get the effective Hamiltonian
+\begin{equation}
+    \label{eq:H_C_e_final}
+    H_C^{(e)} = \sqrt{2} G_F n_e \overline{\nu}_{eL}(x) \gamma_0 \nu_{eL}(x).
+\end{equation}
+that can be interpreted as a contribution to the $\nu_e$\footnote{If we would have considered antineutrino states we would have got $V_C = -\sqrt{2} G_F n_e$.} potential energy
+\begin{equation}
+    \label{eq:V_C_potential}
+    V_C = \sqrt{2} G_F n_e.
+\end{equation}
+
+Such \ac{CC} contribution is zero if $\ell = \mu, \tau$ because there are no muon or tau lepton in common media.
+On the contrary the \ac{NC} contribution that arises for every neutrino flavour is found to be, with a similar logic,
+\begin{equation}
+    \label{eq:V_NC_full}
+    V_{NC} = \frac{\sqrt{2}}{2} G_F \left[ -n_e (1 - 4 \sin^2 \theta_w) + n_p (1 - 4 \sin^2 \theta_w) - n_n \right],
+\end{equation}
+
+Considering that in neutral matter $n_e = n_p$, their contribution cancel each other and the only surviving term is the $n_n$ one.
+As a consequence the \ac{NC} potential is
+\begin{equation}
+    \label{eq:V_NC_neutron}
+    V_{NC} = -\frac{1}{\sqrt{2}} G_F n_n.
+\end{equation}
+
+Because the \ac{NC} potential is flavour-diagonal (i.e., it is identical for all neutrino flavours), it only contributes to an overall unobservable phase in the neutrino propagation and can be safely eliminated from the evolution equation. Therefore, for the three active \ac{SM} neutrinos propagating in ordinary matter, the total effective matter potential $V$ simplifies to a diagonal matrix containing only the electron contribution:
+\begin{equation}
+    \label{eq:matter_potential_matrix}
+    V = \text{diag}(\sqrt{2}G_F n_e(x), 0, 0) \equiv \text{diag}(V_e, 0, 0).
+\end{equation}
+
+After including these matter effects, the Schrödinger-like evolution equation for ultrarelativistic neutrinos propagating through matter is written in the mass basis as:
+\begin{equation}
+    \label{eq:evolution_equation}
+    i\frac{d\vec{\nu}}{dx} = H\vec{\nu} = \left( H_m + U^{\dagger} V U \right) \vec{\nu},
+\end{equation}
+where $\vec{\nu} \equiv (\nu_1, \nu_2, \dots, \nu_n)^T$ is the state vector, $H_m = \frac{1}{2E} \text{diag}(m_1^2, m_2^2, \dots, m_n^2)$ is the standard kinetic Hamiltonian, and $U$ is the unitary vacuum mixing matrix.
+
+To understand the implications of this potential for solar neutrinos, it is convenient to reduce the system to a two-flavour admixture: the $\nu_e$ and an arbitrary superposition of $\nu_\mu$ and $\nu_\tau$, commonly denoted as $\nu_X$. The Hamiltonian can be diagonalised for a fixed value of $x$ to find the instantaneous mass eigenstates in matter, $\nu_1^m$ and $\nu_2^m$, which are related to the interaction basis by an instantaneous mixing angle in matter, $\theta_m$. This effective mixing angle in matter is given by the relation:
+\begin{equation}
+    \label{eq:theta_matter}
+    \tan 2\theta_m = \frac{\Delta m^2 \sin 2\theta}{\Delta m^2 \cos 2\theta - A},
+\end{equation}
+where $\theta$ is the vacuum mixing angle, $\Delta m^2$ is the mass-squared difference, and $A \equiv 2E(V_e - V_X)$ is the parameter governing the strength of the matter effect. 
+
+A remarkable feature of this expression is that the symmetry about $\theta = 45^\circ$, which exists in vacuum oscillations, is broken by the matter potential. Most importantly, the tangent of the mixing angle changes sign if the neutrino crosses a matter density region that satisfies the resonance condition:
+\begin{equation}
+    \label{eq:resonance_condition}
+    A_R = \Delta m^2 \cos 2\theta.
+\end{equation}
+
+In the Sun, the electron density $n_e(R)$ is a monotonically decreasing function of the distance from the center. A solar neutrino is produced in the dense core, where the matter potential $A_0$ is generally much higher than the resonant value ($A_0 \gg A_R$). At this production point, the effective mixing angle asymptotically approaches $\theta_{m,0} \to \pi/2$. This implies that the $\nu_e$ produced in the core is almost purely composed of the heavier instantaneous mass eigenstate $\nu_2^m$.
+
+If the matter potential varies slowly enough along the neutrino trajectory, the last term in the full evolution equation can be neglected, and the system undergoes an \textit{adiabatic transition}. Under this approximation, the instantaneous mass eigenstates do not mix with each other during propagation. The neutrino stays on the $\nu_2^m$ track. As the neutrino reaches the surface of the Sun, the density drops to zero, and the matter eigenstate $\nu_2^m$ smoothly evolves into the vacuum eigenstate $\nu_2$.
+
+Because the oscillation parameters happen to be such that the transition is adiabatic in all ranges of solar neutrino energies, the neutrino exists the Sun practically as a pure $\nu_2$ state. Thus, the survival probability of detecting a $\nu_e$ at the exposed surface of the Earth is simply given by the projection of $\nu_2$ onto the electron flavour:
+\begin{equation}
+    \label{eq:adiabatic_survival_prob}
+    P_{ee} = \sin^2 \theta.
+\end{equation}
+This striking result differs entirely from standard vacuum oscillation, effectively resulting in the phenomenon known as level crossing and elegantly providing the solution to the solar neutrino problem.

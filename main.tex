@@ -1,0 +1,147 @@
+\documentclass[a4paper,11pt]{book}
+
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage[pdftex]{graphicx} %per poter inserire le figure
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\renewcommand{\Re}{\mathfrak{Re}}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{indentfirst}
+% \usepackage{subfigure}
+\usepackage[small]{caption}
+\usepackage{eucal}
+\usepackage{eso-pic}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{afterpage}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{float}
+\usepackage{tikz}
+% \usetikzlibrary{decorations.markings, decorations.pathmorphing} % Servono per frecce e linee ondulate
+\usepackage{subcaption}
+\usepackage{comment}
+\usetikzlibrary{decorations.pathmorphing, decorations.markings, shapes.misc, positioning}
+% \usepackage{cite}
+\usepackage{multirow}
+\usepackage{acro}
+\input{acronimi}
+
+% --- ORDINE CORRETTO DEI PACCHETTI DI LINGUA E TESTO ---
+\usepackage[utf8]{inputenc}   % 1. Codifica dei caratteri (accenti ecc.)
+\usepackage[english]{babel}   % 2. Impostazioni della lingua
+\usepackage{csquotes}         % 3. Gestione virgolette (DEVE stare dopo i due precedenti)
+
+\usepackage{setspace}
+% \usepackage{sectsty}
+% \allsectionsfont{\sffamily}
+% \usepackage{libertinus}
+% \usepackage{XCharter}
+\usepackage{fourier}
+% \usepackage{newpxtext, newpxmath}
+
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{bibliografia.bib} % Inserisci qui il nome del tuo file .bib
+
+% --- IMPOSTAZIONI FANCYHDR MODIFICATE ---
+\pagestyle{fancy} 
+\fancyhf{} % Svuota le intestazioni/piè di pagina normali
+\renewcommand{\headrulewidth}{0pt} % Rimuove la linea orizzontale in alto
+\fancyfoot[LE,RO]{\thepage} % Numeri: a sinistra sulle Pari (LE), a destra sulle Dispari (RO)
+
+% --- RIDEFINIZIONE DELLO STILE PLAIN (per l'inizio dei capitoli) ---
+\fancypagestyle{plain}{
+    \fancyhf{} % Svuota anche lo stile plain
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[LE,RO]{\thepage} % Applica la stessa regola per i numeri
+}
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\vspace{5mm}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=.3]{figures/logoUNIPD_bkgremoved.png}
+\end{figure}
+\vspace{5mm}
+\begin{center}
+{{\huge{\textsc{\bf UNIVERSIT\`A DEGLI STUDI DI PADOVA}}}\\}
+\vspace{5mm}
+{\Large{\bf Dipartimento di Fisica e Astronomia ``Galileo Galilei''}} \\
+\vspace{5mm}
+{\Large{\textsc{\bf Master's Degree in Physics}}}\\
+\vspace{10mm}
+{\Large{\textsc{\bf Final dissertation}}}\\
+\vspace{20mm}
+\begin{spacing}{3}
+{\huge \textbf{TITOLO}}\\
+\end{spacing}
+\vspace{8mm}
+\end{center}
+
+\vspace{20mm}
+\begin{spacing}{2}
+\begin{tabular}{ l  c  c c c  cc c c c c  l }
+{\Large{Thesis Supervisor}} &&&&&&&&&&& {\Large{Candidate}}\\
+{\Large{\bf Prof. Alberto Garfagnini}} &&&&&&&&&&& {\Large{\bf Benedetta Rasera}}\\
+{\Large{Thesis Co-Supervisor}} &&&&&&&&& \\ %&& {\Large{Student ID}} \\
+{\Large{\bf Dr. Andrea Serafini}} \\ %&&&&&&&&&&& {\Large{\textbf{2141189}}}\\
+
+\end{tabular}
+\end{spacing}
+\vspace{15 mm}
+
+\begin{center}
+{\Large{Academic Year 2025/2026}}
+\end{center}
+\end{titlepage}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+% Ho rimosso \pagenumbering{arabic} qui, ci pensa \mainmatter più avanti
+
+\begin{comment}
+    \clearpage
+\thispagestyle{empty} % Rimuove il numero di pagina e le intestazioni
+\vspace*{0.33\textheight} % Sposta il testo in giù di un terzo dell'altezza della pagina
+\begin{flushright}
+    {\large\textit{``Everything comes to him who knows how to wait.''}} \\[2ex]
+--- Wolfgang Pauli \\
+Telegram to C. Cowan and F. Reines \\
+upon the experimental discovery of the neutrino (1956)
+\end{flushright}
+\clearpage    
+\end{comment}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+\printacronyms[name=List of Acronyms]
+\addcontentsline{toc}{chapter}{List of Acronyms}
+
+% --- INIZIO DEL CORPO DEL TESTO ---
+\mainmatter
+
+\input{chapters/01_neutrino_physics.tex}
+\input{chapters/02_legend_experiment.tex}
+\input{chapters/03_legend_data.tex}
+\input{chapters/04_psd.tex}
+\input{chapters/05_implementation.tex}
+\input{chapters/06_conclusions.tex}
+
+\appendix
+\include{chapters/A-app_three-flavours.tex}
+\include{chapters/B-app_neutrinosINmatter.tex}
+
+\printbibliography[heading=bibintoc]
+
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\end{document}
