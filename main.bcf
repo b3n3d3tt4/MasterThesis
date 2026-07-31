@@ -2400,15 +2400,16 @@
     <bcf:citekey order="24" intorder="1">LEGEND:introSetup</bcf:citekey>
     <bcf:citekey order="25" intorder="1">LEGEND:setup</bcf:citekey>
     <bcf:citekey order="26" intorder="1">LEGEND:setup</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">LEGENDsetup-details</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">LEGEND:setup</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">LEGENDsetup-details</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">LEGEND:setup</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">GERDA-muonVeto</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">L200-sep25</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">articoloSaleh</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">LEGENDsetup-details</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">LEGEND:setup</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">LEGENDsetup-details</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">LEGEND:setup</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">GERDA-muonVeto</bcf:citekey>
     <bcf:citekey order="33" intorder="1">L200-sep25</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">Brugnera</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">neutrinosPDG</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">L200-sep25</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">Brugnera</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">neutrinosPDG</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

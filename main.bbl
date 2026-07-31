@@ -808,6 +808,41 @@
       \endverb
       \keyw{Penning trap,Double-beta decay,-value,Phase-space integral,Neutrino mass}
     \endentry
+    \entry{articoloSaleh}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5fc6c53d6d8b5e74f141c5fafe954b0a}{%
+           family={Saleh},
+           familyi={S\bibinitperiod},
+           given={Giovanna},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \strng{fullhash}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \strng{fullhashraw}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \strng{bibnamehash}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \strng{authorbibnamehash}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \strng{authornamehash}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \strng{authorfullhash}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \strng{authorfullhashraw}{5fc6c53d6d8b5e74f141c5fafe954b0a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{hep-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{PoS}
+      \field{title}{{First results from LEGEND-200: searching for $0\nu\beta\beta$ decay in $^{76}$Ge}}
+      \field{volume}{EPS-HEP2025}
+      \field{year}{2026}
+      \field{pages}{159}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.22323/1.485.0159
+      \endverb
+      \verb{eprint}
+      \verb 2603.12884
+      \endverb
+    \endentry
     \entry{LEPnumberOFnu}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}

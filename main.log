@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  31 JUL 2026 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  31 JUL 2026 13:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -741,11 +741,12 @@ Loading module `upgrade' ...
 \c@g@acro@pp@int=\count361
 \c@g@acro@SSM@int=\count362
 \c@g@acro@ES@int=\count363
+\c@g@acro@ICPC@int=\count364
 ) (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
  (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count364
+\lrq@indent=\count365
  (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
@@ -754,49 +755,49 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count365
-\c@listtotal=\count366
-\c@listcount=\count367
-\c@liststart=\count368
-\c@liststop=\count369
-\c@citecount=\count370
-\c@citetotal=\count371
-\c@multicitecount=\count372
-\c@multicitetotal=\count373
-\c@instcount=\count374
-\c@maxnames=\count375
-\c@minnames=\count376
-\c@maxitems=\count377
-\c@minitems=\count378
-\c@citecounter=\count379
-\c@maxcitecounter=\count380
-\c@savedcitecounter=\count381
-\c@uniquelist=\count382
-\c@uniquename=\count383
-\c@refsection=\count384
-\c@refsegment=\count385
-\c@maxextratitle=\count386
-\c@maxextratitleyear=\count387
-\c@maxextraname=\count388
-\c@maxextradate=\count389
-\c@maxextraalpha=\count390
-\c@abbrvpenalty=\count391
-\c@highnamepenalty=\count392
-\c@lownamepenalty=\count393
-\c@maxparens=\count394
-\c@parenlevel=\count395
-\blx@tempcnta=\count396
-\blx@tempcntb=\count397
-\blx@tempcntc=\count398
-\c@blx@maxsection=\count399
-\blx@maxsegment@0=\count400
-\blx@notetype=\count401
-\blx@parenlevel@text=\count402
-\blx@parenlevel@foot=\count403
-\blx@sectionciteorder@0=\count404
-\blx@sectionciteorderinternal@0=\count405
-\blx@entrysetcounter=\count406
-\blx@biblioinstance=\count407
+\c@tabx@nest=\count366
+\c@listtotal=\count367
+\c@listcount=\count368
+\c@liststart=\count369
+\c@liststop=\count370
+\c@citecount=\count371
+\c@citetotal=\count372
+\c@multicitecount=\count373
+\c@multicitetotal=\count374
+\c@instcount=\count375
+\c@maxnames=\count376
+\c@minnames=\count377
+\c@maxitems=\count378
+\c@minitems=\count379
+\c@citecounter=\count380
+\c@maxcitecounter=\count381
+\c@savedcitecounter=\count382
+\c@uniquelist=\count383
+\c@uniquename=\count384
+\c@refsection=\count385
+\c@refsegment=\count386
+\c@maxextratitle=\count387
+\c@maxextratitleyear=\count388
+\c@maxextraname=\count389
+\c@maxextradate=\count390
+\c@maxextraalpha=\count391
+\c@abbrvpenalty=\count392
+\c@highnamepenalty=\count393
+\c@lownamepenalty=\count394
+\c@maxparens=\count395
+\c@parenlevel=\count396
+\blx@tempcnta=\count397
+\blx@tempcntb=\count398
+\blx@tempcntc=\count399
+\c@blx@maxsection=\count400
+\blx@maxsegment@0=\count401
+\blx@notetype=\count402
+\blx@parenlevel@text=\count403
+\blx@parenlevel@foot=\count404
+\blx@sectionciteorder@0=\count405
+\blx@sectionciteorderinternal@0=\count406
+\blx@entrysetcounter=\count407
+\blx@biblioinstance=\count408
 \labelnumberwidth=\skip61
 \labelalphawidth=\skip62
 \biblabelsep=\skip63
@@ -808,9 +809,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read4
 \blx@bcfout=\write5
 \blx@langwohyphens=\language80
-\c@mincomprange=\count408
-\c@maxcomprange=\count409
-\c@mincompwidth=\count410
+\c@mincomprange=\count409
+\c@maxcomprange=\count410
+\c@mincompwidth=\count411
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def
@@ -820,74 +821,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count411
-\c@savedafterword=\count412
-\c@annotator=\count413
-\c@savedannotator=\count414
-\c@author=\count415
-\c@savedauthor=\count416
-\c@bookauthor=\count417
-\c@savedbookauthor=\count418
-\c@commentator=\count419
-\c@savedcommentator=\count420
-\c@editor=\count421
-\c@savededitor=\count422
-\c@editora=\count423
-\c@savededitora=\count424
-\c@editorb=\count425
-\c@savededitorb=\count426
-\c@editorc=\count427
-\c@savededitorc=\count428
-\c@foreword=\count429
-\c@savedforeword=\count430
-\c@holder=\count431
-\c@savedholder=\count432
-\c@introduction=\count433
-\c@savedintroduction=\count434
-\c@namea=\count435
-\c@savednamea=\count436
-\c@nameb=\count437
-\c@savednameb=\count438
-\c@namec=\count439
-\c@savednamec=\count440
-\c@translator=\count441
-\c@savedtranslator=\count442
-\c@shortauthor=\count443
-\c@savedshortauthor=\count444
-\c@shorteditor=\count445
-\c@savedshorteditor=\count446
-\c@labelname=\count447
-\c@savedlabelname=\count448
-\c@institution=\count449
-\c@savedinstitution=\count450
-\c@lista=\count451
-\c@savedlista=\count452
-\c@listb=\count453
-\c@savedlistb=\count454
-\c@listc=\count455
-\c@savedlistc=\count456
-\c@listd=\count457
-\c@savedlistd=\count458
-\c@liste=\count459
-\c@savedliste=\count460
-\c@listf=\count461
-\c@savedlistf=\count462
-\c@location=\count463
-\c@savedlocation=\count464
-\c@organization=\count465
-\c@savedorganization=\count466
-\c@origlocation=\count467
-\c@savedoriglocation=\count468
-\c@origpublisher=\count469
-\c@savedorigpublisher=\count470
-\c@publisher=\count471
-\c@savedpublisher=\count472
-\c@language=\count473
-\c@savedlanguage=\count474
-\c@origlanguage=\count475
-\c@savedoriglanguage=\count476
-\c@pageref=\count477
-\c@savedpageref=\count478
+\c@afterword=\count412
+\c@savedafterword=\count413
+\c@annotator=\count414
+\c@savedannotator=\count415
+\c@author=\count416
+\c@savedauthor=\count417
+\c@bookauthor=\count418
+\c@savedbookauthor=\count419
+\c@commentator=\count420
+\c@savedcommentator=\count421
+\c@editor=\count422
+\c@savededitor=\count423
+\c@editora=\count424
+\c@savededitora=\count425
+\c@editorb=\count426
+\c@savededitorb=\count427
+\c@editorc=\count428
+\c@savededitorc=\count429
+\c@foreword=\count430
+\c@savedforeword=\count431
+\c@holder=\count432
+\c@savedholder=\count433
+\c@introduction=\count434
+\c@savedintroduction=\count435
+\c@namea=\count436
+\c@savednamea=\count437
+\c@nameb=\count438
+\c@savednameb=\count439
+\c@namec=\count440
+\c@savednamec=\count441
+\c@translator=\count442
+\c@savedtranslator=\count443
+\c@shortauthor=\count444
+\c@savedshortauthor=\count445
+\c@shorteditor=\count446
+\c@savedshorteditor=\count447
+\c@labelname=\count448
+\c@savedlabelname=\count449
+\c@institution=\count450
+\c@savedinstitution=\count451
+\c@lista=\count452
+\c@savedlista=\count453
+\c@listb=\count454
+\c@savedlistb=\count455
+\c@listc=\count456
+\c@savedlistc=\count457
+\c@listd=\count458
+\c@savedlistd=\count459
+\c@liste=\count460
+\c@savedliste=\count461
+\c@listf=\count462
+\c@savedlistf=\count463
+\c@location=\count464
+\c@savedlocation=\count465
+\c@organization=\count466
+\c@savedorganization=\count467
+\c@origlocation=\count468
+\c@savedoriglocation=\count469
+\c@origpublisher=\count470
+\c@savedorigpublisher=\count471
+\c@publisher=\count472
+\c@savedpublisher=\count473
+\c@language=\count474
+\c@savedlanguage=\count475
+\c@origlanguage=\count476
+\c@savedoriglanguage=\count477
+\c@pageref=\count478
+\c@savedpageref=\count479
 \shorthandwidth=\skip69
 \shortjournalwidth=\skip70
 \shortserieswidth=\skip71
@@ -911,19 +912,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count479
-\c@textcitetotal=\count480
-\c@textcitemaxnames=\count481
-\c@biburlbigbreakpenalty=\count482
-\c@biburlbreakpenalty=\count483
-\c@biburlnumpenalty=\count484
-\c@biburlucpenalty=\count485
-\c@biburllcpenalty=\count486
+\c@textcitecount=\count480
+\c@textcitetotal=\count481
+\c@textcitemaxnames=\count482
+\c@biburlbigbreakpenalty=\count483
+\c@biburlbreakpenalty=\count484
+\c@biburlnumpenalty=\count485
+\c@biburlucpenalty=\count486
+\c@biburllcpenalty=\count487
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count487
+\c@smartand=\count488
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -933,8 +934,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count488
-\c@bbx:relatedtotal=\count489
+\c@bbx:relatedcount=\count489
+\c@bbx:relatedtotal=\count490
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -999,13 +1000,13 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count490
+\c@section@level=\count491
 ) (C:\Program Files\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen310
-\Hy@linkcounter=\count491
-\Hy@pagecounter=\count492
+\Hy@linkcounter=\count492
+\Hy@pagecounter=\count493
  (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -1013,7 +1014,7 @@ Now handling font encoding PD1 ...
 ) (C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count493
+\Hy@SavedSpaceFactor=\count494
  (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1027,7 +1028,7 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count494
+\c@Hy@tempcnt=\count495
 LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen311
  (C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
@@ -1035,7 +1036,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count495
+\Fld@menulength=\count496
 \Field@Width=\dimen312
 \Fld@charsize=\dimen313
 Package hyperref Info: Hyper figures OFF on input line 6042.
@@ -1049,9 +1050,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count496
-\c@Item=\count497
-\c@Hfootnote=\count498
+\Hy@abspage=\count497
+\c@Item=\count498
+\c@Hfootnote=\count499
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -1060,8 +1061,8 @@ File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count499
-\c@bookmark@seq@number=\count500
+\Fld@listcount=\count500
+\c@bookmark@seq@number=\count501
  (C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
@@ -1151,16 +1152,16 @@ LaTeX Font Info:    ... okay on input line 70.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count501
+\scratchcounter=\count502
 \scratchdimen=\dimen314
 \scratchbox=\box75
-\nofMPsegments=\count502
-\nofMParguments=\count503
+\nofMPsegments=\count503
+\nofMParguments=\count504
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count504
+\MPscratchCnt=\count505
 \MPscratchDim=\dimen315
-\MPnumerator=\count505
-\makeMPintoPDFobject=\count506
+\MPnumerator=\count506
+\makeMPintoPDFobject=\count507
 \everyMPtoPDFconversion=\toks54
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1174,7 +1175,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 70.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 70.
-\c@lstlisting=\count507
+\c@lstlisting=\count508
  (C:\Program Files\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
@@ -1347,27 +1348,6 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 543.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 543.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nu' on input line 543.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 543.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 543.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 543.
-
-
-
 [10] (feynman-diagrams/2nu-doublebeta-feynman.tex
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 26.
@@ -1383,28 +1363,7 @@ Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 566.
 (pdftex.def)             Requested size: 290.22107pt x 217.663pt.
 
 
-[11 <./figures/mass_parabola_A76.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 575.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nu' on input line 575.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 575.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 575.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 575.
-
-(feynman-diagrams/0nu-doubleBeta-diagram.tex)
+[11 <./figures/mass_parabola_A76.pdf>] (feynman-diagrams/0nu-doubleBeta-diagram.tex)
 
 [12]) (chapters/02_legend_experiment.tex
 
@@ -1541,23 +1500,23 @@ LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B99092D9F25A95F02866F374404C4746;6233.
+(rerunfilecheck)             Checksum: 74CE9261F0149629AA3F8585295A775D;6263.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41019 strings out of 473682
- 841530 string characters out of 5729112
- 1616744 words of memory out of 5000000
- 63182 multiletter control sequences out of 15000+600000
- 779836 words of font info for 272 fonts, out of 8000000 for 9000
+ 41119 strings out of 473682
+ 845634 string characters out of 5729112
+ 1619040 words of memory out of 5000000
+ 63281 multiletter control sequences out of 15000+600000
+ 780137 words of font info for 273 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,1261b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (45 pages, 1509378 bytes).
+Output written on main.pdf (45 pages, 1510780 bytes).
 PDF statistics:
- 881 PDF objects out of 1000 (max. 8388607)
- 201 named destinations out of 1000 (max. 500000)
+ 885 PDF objects out of 1000 (max. 8388607)
+ 202 named destinations out of 1000 (max. 500000)
  342 words of extra memory for PDF output out of 10000 (max. 10000000)
 
