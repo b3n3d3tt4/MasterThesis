@@ -556,6 +556,44 @@
       \field{title}{{Neutrino Masses, Mixing, and Oscillations}}
       \field{year}{2026}
     \endentry
+    \entry{GeDetectors}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=4531d1092d63818ea1f778f00376f52b}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Zhong},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{4531d1092d63818ea1f778f00376f52b}
+      \strng{fullhash}{4531d1092d63818ea1f778f00376f52b}
+      \strng{fullhashraw}{4531d1092d63818ea1f778f00376f52b}
+      \strng{bibnamehash}{4531d1092d63818ea1f778f00376f52b}
+      \strng{authorbibnamehash}{4531d1092d63818ea1f778f00376f52b}
+      \strng{authornamehash}{4531d1092d63818ea1f778f00376f52b}
+      \strng{authorfullhash}{4531d1092d63818ea1f778f00376f52b}
+      \strng{authorfullhashraw}{4531d1092d63818ea1f778f00376f52b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0168-9002}
+      \field{journaltitle}{Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}
+      \field{number}{1}
+      \field{title}{Review of the Shockley-Ramo theorem and its application in semiconductor gamma-ray detectors}
+      \field{volume}{463}
+      \field{year}{2001}
+      \field{pages}{250\bibrangedash 267}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0168-9002(01)00223-6
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0168900201002236
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0168900201002236
+      \endverb
+    \endentry
     \entry{LEGEND:setup}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=24be34c0487e6af437c6d5a1dab6d462}{%
@@ -808,6 +846,38 @@
       \endverb
       \keyw{Penning trap,Double-beta decay,-value,Phase-space integral,Neutrino mass}
     \endentry
+    \entry{Ramo}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1f5b743eea589f8ec9d2d96ccb9ebe76}{%
+           family={Ramo},
+           familyi={R\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \strng{fullhash}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \strng{fullhashraw}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \strng{bibnamehash}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \strng{authorbibnamehash}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \strng{authornamehash}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \strng{authorfullhash}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \strng{authorfullhashraw}{1f5b743eea589f8ec9d2d96ccb9ebe76}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the I.R.E.}
+      \field{month}{9}
+      \field{number}{9}
+      \field{title}{Currents Induced by Electron Motion}
+      \field{volume}{27}
+      \field{year}{1939}
+      \field{pages}{584\bibrangedash 585}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1109/JRPROC.1939.228757
+      \endverb
+    \endentry
     \entry{articoloSaleh}{article}{}{}
       \name{author}{1}{}{%
         {{hash=5fc6c53d6d8b5e74f141c5fafe954b0a}{%
@@ -914,6 +984,40 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1140/epja/i2016-16078-1
+      \endverb
+    \endentry
+    \entry{Shockley}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=20c8d6120103fd2598ad7a80a119e05a}{%
+           family={Shockley},
+           familyi={S\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Physics}%
+      }
+      \strng{namehash}{20c8d6120103fd2598ad7a80a119e05a}
+      \strng{fullhash}{20c8d6120103fd2598ad7a80a119e05a}
+      \strng{fullhashraw}{20c8d6120103fd2598ad7a80a119e05a}
+      \strng{bibnamehash}{20c8d6120103fd2598ad7a80a119e05a}
+      \strng{authorbibnamehash}{20c8d6120103fd2598ad7a80a119e05a}
+      \strng{authornamehash}{20c8d6120103fd2598ad7a80a119e05a}
+      \strng{authorfullhash}{20c8d6120103fd2598ad7a80a119e05a}
+      \strng{authorfullhashraw}{20c8d6120103fd2598ad7a80a119e05a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Applied Physics}
+      \field{number}{10}
+      \field{title}{Currents to Conductors Induced by a Moving Point Charge}
+      \field{volume}{9}
+      \field{year}{1938}
+      \field{pages}{635\bibrangedash 636}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1063/1.1710367
       \endverb
     \endentry
     \entry{Thomson}{book}{}{}
