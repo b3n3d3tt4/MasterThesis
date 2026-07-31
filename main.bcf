@@ -2409,10 +2409,14 @@
     <bcf:citekey order="33" intorder="1">Shockley</bcf:citekey>
     <bcf:citekey order="34" intorder="1">Ramo</bcf:citekey>
     <bcf:citekey order="35" intorder="1">GeDetectors</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">L200-sep25</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">L200-sep25</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">Brugnera</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">neutrinosPDG</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">Th228chain</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">Th228chain</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">LNHB</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">LNHB</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">L200-sep25</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">L200-sep25</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">Brugnera</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">neutrinosPDG</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

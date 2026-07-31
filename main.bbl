@@ -594,6 +594,28 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0168900201002236
       \endverb
     \endentry
+    \entry{LNHB}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=be5c9551a282e4bf66af8de915326c4e}{%
+           family={{Laboratoire National Henri Becquerel (LNHB)}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{be5c9551a282e4bf66af8de915326c4e}
+      \strng{fullhash}{be5c9551a282e4bf66af8de915326c4e}
+      \strng{fullhashraw}{be5c9551a282e4bf66af8de915326c4e}
+      \strng{bibnamehash}{be5c9551a282e4bf66af8de915326c4e}
+      \strng{authorbibnamehash}{be5c9551a282e4bf66af8de915326c4e}
+      \strng{authornamehash}{be5c9551a282e4bf66af8de915326c4e}
+      \strng{authorfullhash}{be5c9551a282e4bf66af8de915326c4e}
+      \strng{authorfullhashraw}{be5c9551a282e4bf66af8de915326c4e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://www.lnhb.fr/nuclear-data/}}
+      \field{note}{Accessed: 2026-07-31}
+      \field{title}{Recommended Data - Table of Radionuclides}
+    \endentry
     \entry{LEGEND:setup}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=24be34c0487e6af437c6d5a1dab6d462}{%
@@ -1046,6 +1068,37 @@
       \field{title}{Modern Particle Physics}
       \field{year}{2013}
     \endentry
+    \entry{Th228chain}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}{%
+           family={Tosaka},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Wikimedia Commons}%
+      }
+      \strng{namehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{fullhash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{fullhashraw}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{bibnamehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{authorbibnamehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{authornamehash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{authorfullhash}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \strng{authorfullhashraw}{a0b013c8c1fd50f5bd4c8f8a4b3a1a3a}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2026-07-31}
+      \field{title}{Decay chain 4n, Thorium series}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb https://commons.wikimedia.org/wiki/File:Decay_chain(4n,Thorium_series).PNG
+      \endverb
+      \verb{url}
+      \verb https://commons.wikimedia.org/wiki/File:Decay_chain(4n,Thorium_series).PNG
+      \endverb
+    \endentry
     \entry{AME2020-masses}{article}{}{}
       \name{author}{5}{}{%
         {{hash=00b734eb3fb588e4c6c94e4271080d0b}{%
@@ -1111,7 +1164,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{disegnop-detectors}
 \endrefsection
 \endinput
 

@@ -403,6 +403,9 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
@@ -738,16 +741,44 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8c.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-orns.tfm
-INPUT .\figures\LEGENDGeDetectors.png
-INPUT .\figures\LEGENDGeDetectors.png
-INPUT .\figures\LEGENDGeDetectors.png
-INPUT .\figures\LEGENDGeDetectors.png
-INPUT .\figures\LEGENDGeDetectors.png
-INPUT .\figures\LEGENDGeDetectors.png
-INPUT .\figures\LEGENDGeDetectors.png
+INPUT .\figures\4Detectors.png
+INPUT .\figures\4Detectors.png
+INPUT .\figures\4Detectors.png
+INPUT .\figures\4Detectors.png
+INPUT .\figures\4Detectors.png
+INPUT .\figures\4Detectors.png
+INPUT .\figures\4Detectors.png
 INPUT .\chapters\03_legend_data.tex
 INPUT .\chapters\03_legend_data.tex
 INPUT chapters\03_legend_data.tex
+INPUT .\figures\4DetectorsP+.png
+INPUT .\figures\4DetectorsP+.png
+INPUT .\figures\4DetectorsP+.png
+INPUT .\figures\4DetectorsP+.png
+INPUT .\figures\4DetectorsP+.png
+INPUT .\figures\4DetectorsP+.png
+INPUT .\figures\4DetectorsP+.png
+INPUT .\figures\decayChainTh228.png
+INPUT .\figures\decayChainTh228.png
+INPUT .\figures\decayChainTh228.png
+INPUT .\figures\decayChainTh228.png
+INPUT .\figures\decayChainTh228.png
+INPUT .\figures\decayChainTh228.png
+INPUT .\figures\decayChainTh228.png
+INPUT .\figures\prova.jpg
+INPUT .\figures\prova.jpg
+INPUT .\figures\prova.jpg
+INPUT .\figures\prova.jpg
+INPUT .\figures\prova.jpg
+INPUT .\figures\prova.jpg
+INPUT .\figures\prova.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\chapters\04_psd.tex
 INPUT .\chapters\04_psd.tex
 INPUT chapters\04_psd.tex
