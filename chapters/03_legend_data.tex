@@ -1,5 +1,22 @@
 \chapter{LEGEND data}
-che dati raccogliamo
-\section{Data taking}
-\section{Data structure}
+\section{Signal formation and readout in Germanium detectors}
+\ac{hpge} are semiconductor detectors, characterised by the typical crystalline structure of said materials in which electrons tend to occupy the valence band but can be promoted into the conduction band, generating \ac{eh} pairs in the lattice. The transition of electrons to the conduction band is triggered by incoming ionizing radiation, whether it be photons or charged particles. 
+
+Consider, for instance, an incident $\gamma$-ray interacts with the semiconductor and generates a large number of electron-hole pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
+
+The time-dependent output signal of a charge sensing device can be predicted if the induced charge \textit{Q} on the readout electrode can be calculated as a function of instantaneous position of the moving charge \text{q} within the device. The Shockley-Ramo theorem (\cite{Shockley}, \cite{Ramo}), originally developed for vacuum tubes, can be applied also in the case of stationary space charges of the abovementioned \ac{hpge}. 
+
+From this theorem we know that the charge \textit{Q} and current \textit{i} on a selected electrode induced by a moving point charge \textit{q} are given by
+\begin{equation}
+    \label{eq:carica-corrente-SR}
+    \begin{gathered}
+        Q = - q \, \varphi_0 (\mathbf{x}) \\~\\
+        i = \frac{\text{d}Q}{\text{d}t} = -q \, \frac{\text{d}\varphi_0 (\mathbf{x})}{\text{d}t} = -q \left( \nabla \varphi_0(\mathbf{x}) \cdot \frac{\text{d}\mathbf{x}}{\text{d}t} \right) = q \, \mathbf{v} \cdot \mathbf{E}_0(\mathbf{x})
+    \end{gathered}
+\end{equation}
+
+where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The terms $\varphi_0(\mathbf{x})$ and $\mathbf{E}_0(\mathbf{x})$ are, respectively, the \textit{weighting potential} and the \textit{weighting field} evaluated at the instantaneous position $\mathbf{x}$ of the charge. They are defined as the potential and the electric field that would exist in the device if the selected electrode were set to a unit potential, with all other electrodes grounded (set to zero potential) and all space charges removed. \cite{GeDetectors}
+
+\section{Events topology}
+\section{Data structure fo the LEGEND-200 phase}
 \section{Data cleaning}

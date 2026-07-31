@@ -5,7 +5,7 @@ The Large Enriched Germanium Experiment for Neutrinoless double beta Decay (LEGE
 
 The experiment is designed to operate in two distinct phases. In its first stage, LEGEND-200, it is currently operating with roughly 200 kg of enriched germanium detectors. Its objective is to achieve a background index of $2 \times 10^{-4}$ cts/(keV$\cdot$kg$\cdot$yr) to reach a discovery sensitivity greater than $10^{27}$ yr with 1 t$\cdot$yr of exposure. The subsequent phase, LEGEND-1000, will scale the target mass up to 1000 kg, aiming for an unprecedented background goal of $1 \times 10^{-5}$ cts/(keV$\cdot$kg$\cdot$yr) to reach a sensitivity greater than $10^{28}$ yr with an exposure of 10 t$\cdot$yr.
 
-To achieve such ambitious goals, LEGEND builds upon the successful technologies and background mitigation strategies developed by its predecessors, the GERDA and \textsc{Majorana Demonstrator} experiments. By utilizing High-Purity Germanium (HPGe) detectors enriched in ${}^{76}$Ge, the experiment benefits from the ``source-equals-detector'' approach. This maximizes the detection efficiency and exploits the outstanding energy resolution of semiconductor detectors to clearly separate the mono-energetic $0\nu\beta\beta$ signal from the $2\nu\beta\beta$ irreducible continuous background.
+To achieve such ambitious goals, LEGEND builds upon the successful technologies and background mitigation strategies developed by its predecessors, the GERDA and \textsc{Majorana Demonstrator} experiments. By utilizing High-Purity Germanium (\ac{hpge}) detectors enriched in ${}^{76}$Ge, the experiment benefits from the ``source-equals-detector'' approach. This maximizes the detection efficiency and exploits the outstanding energy resolution of semiconductor detectors to clearly separate the mono-energetic $0\nu\beta\beta$ signal from the $2\nu\beta\beta$ irreducible continuous background.
 
 Reaching the required ultra-low background regime demands a multi-layered active and passive shielding strategy. This is accomplished by operating the bare germanium array directly in an instrumented Liquid Argon (LAr) cryostat, surrounded by a large water Cherenkov veto, and by employing sophisticated signal processing techniques to reject localized background events. The following sections detail the experimental apparatus and the event selection methods crucial to the experiment's success. \cite{LEGEND:GeDet}
 
@@ -15,7 +15,7 @@ The experimental setup of the LEGEND program builds upon the decommissioned GERD
 
 The whole structure of the setup is shown in Figure~\ref{fig:L200setup} and consists of:
 \begin{itemize}
-    \item 200 kg of hyper-pure Germanium detectors (HPGe);
+    \item 200 kg of \ac{hpge};
     \item a liquid Argon (LAr) cryostat;
     \item a water tank for Cherenkov light detection.
 \end{itemize}
@@ -34,39 +34,27 @@ The whole structure of the setup is shown in Figure~\ref{fig:L200setup} and cons
         \includegraphics[width=\linewidth]{figures/LEGENDLAr.png}
     \end{minipage}
     
-    \caption{On the left, the whole experimental setup for the LEGEND-200 phase: the picture shows the HPGe detectors (1), the LAr instrumentation (2), the LAr cryostat (3) and the water tank provided with the Cherenkov detectors (4). On the right, a close-up of the LAr instrumentation where the detector strings are visible. Taken from \cite{LEGEND:setup}.}
+    \caption{On the left, the whole experimental setup for the LEGEND-200 phase: the picture shows the \ac{hpge} detectors (1), the LAr instrumentation (2), the LAr cryostat (3) and the water tank provided with the Cherenkov detectors (4). On the right, a close-up of the LAr instrumentation where the detector strings are visible. Rendering by P. Krause, taken from \cite{LEGEND:setup}.}
     \label{fig:L200setup}
 \end{figure}
 
 \subsection{Germanium detectors}
-The High Purity Germanium (HPGe) detectors are semiconductor diodes sensitive to ionizing radiation and $\gamma$-rays. They provide excellent energy resolution and high detection efficiency, acting as both the source and detector for double-beta decay. 
+The \ac{hpge} detectors are semiconductor diodes sensitive to ionizing radiation and $\gamma$-rays. They provide excellent energy resolution and high detection efficiency, acting as both the source and detector for double-beta decay. 
 
-LEGEND-200 utilizes 142.5~kg of p-type high-purity germanium detectors arranged in vertical strings (101 detectors). Four detector types are deployed: 86.7~kg of \ac{ICPC} detectors newly designed and produced for LEGEND (41 detectors), 22.1~kg of p-type Point-Contact (PPC) detectors from \textsc{MAJORANA DEMOSNTRATOR} (26 detectors), 19.0~kg of Broad Energy Germanium (BEGe) detectors from GERDA (28 detectors), and 14.7~kg of semicoaxial (Coax) detectors also from GERDA (6 detectors). Typical individual detector masses are $1$~kg for PPC, $2.5$~kg for Coax, $0.7$~kg for BEGe, and $2-4$~kg for ICPC. Said detectors are enriched in $^{76}$Ge up to 86--92\%, both depending on the detector type.  The \ac{ICPC} detectors, comprising the largest fraction of the array, feature the most advanced design in terms of sensitivity to $0\nu\beta\beta$ decay, combining effective \ac{PSD} performance, high energy resolution and large individual masses to effectively reduce the background level. \cite{articoloSaleh}
+LEGEND-200 utilizes 142.5~kg of p-type high-purity germanium detectors arranged in vertical strings (101 detectors). Four detector types are deployed: 86.7~kg of \ac{ICPC} detectors newly designed and produced for LEGEND (41 detectors), 22.1~kg of p-type Point-Contact (PPC) detectors from \textsc{MAJORANA DEMOSNTRATOR} (26 detectors), 19.0~kg of Broad Energy Germanium (BEGe) detectors from GERDA (28 detectors), and 14.7~kg of semicoaxial (Coax) detectors also from GERDA (6 detectors). Typical individual detector masses are $1$~kg for PPC, $2.5$~kg for Coax, $0.7$~kg for BEGe, and $2-4$~kg for ICPC. Said detectors are enriched in $^{76}$Ge up to 86--92\%, both depending on the detector type. The geometry of all of the detectors is shown in Fig. \ref{fig:detectors-type}. The \ac{ICPC} detectors, comprising the largest fraction of the array, feature the most advanced design in terms of sensitivity to $0\nu\beta\beta$ decay, combining effective \ac{PSD} performance, high energy resolution and large individual masses to effectively reduce the background level. \cite{articoloSaleh}
 
-The HPGe detectors operate with a reverse bias voltage, which depletes almost the entire volume of free charge carriers. A high voltage (up to 5~kV) is applied to the $n^+$ electrode, which features a relatively thick ($\sim 0.7$~mm) Li-diffused dead layer, while the signal is readout from the thin ($\sim 0.3$~$\mu$m) $p^+$ electrode, created via boron implantation.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/LEGENDGeDetectors.png}
+    \caption{Rendering of the different Germanium detectors employed in LEGEND. From the left to the right: Coax, BEGe, PPC and ICPC. Taken from } %\cite{disegnop-detectors}
+    \label{fig:detectors-types}
+\end{figure}
 
-These detectors are mounted on supports made of active PolyEthylene Naphthalate (PEN), a scintillating plastic material known for its ability to improve background rejection. To maintain high radiopurity near the detector array, low-mass Majorana components and underground electroformed copper are used to reduce the effects of~${}^{238}$U and~${}^{232}$Th decay chains and cosmogenic activation of~${}^{60}$Co in copper. Each HPGe string is enclosed in a TPB-coated nylon cylinder, called Nylon Mini Shroud (NMS), to minimize the LAr volume around the detectors, preventing the capture of radioactive ions like~${}^{42}$K by electric fields on the detector surfaces. \cite{LEGENDsetup-details}
+The \ac{hpge} detectors operate with a reverse bias voltage, which depletes almost the entire volume of free charge carriers. A high voltage (up to 5~kV) is applied to the $n^+$ electrode, which features a relatively thick ($\sim 0.7$~mm) Li-diffused dead layer, while the signal is readout from the thin ($\sim 0.3$~$\mu$m) $p^+$ electrode, created via boron implantation.
+
+These detectors are mounted on supports made of active PolyEthylene Naphthalate (PEN), a scintillating plastic material known for its ability to improve background rejection. To maintain high radiopurity near the detector array, low-mass Majorana components and underground electroformed copper are used to reduce the effects of~${}^{238}$U and~${}^{232}$Th decay chains and cosmogenic activation of~${}^{60}$Co in copper. Each \ac{hpge} string is enclosed in a TPB-coated nylon cylinder, called Nylon Mini Shroud (NMS), to minimize the LAr volume around the detectors, preventing the capture of radioactive ions like~${}^{42}$K by electric fields on the detector surfaces. \cite{LEGENDsetup-details}
 
 The detectors and liquid argon instrumentation are assembled in the clean room above the cryostat in a glove box which is flushed with nitrogen to avoid, or at least reduce, Radon deposition on the detectors and protects the insulating groove between the detector $p^+$ and $n^+$ electrodes by an inert atmosphere. \cite{LEGEND:setup}
-
-\paragraph{Signal formation and readout in Germanium detectors}
-~\\
-HPGe are semiconductor detectors, characterised by the typical crystalline structure of said materials in which electrons tend to occupy the valence band but can be promoted into the conduction band, generating \ac{eh} pairs in the lattice. The transition of electrons to the conduction band is triggered by incoming ionizing radiation, whether it be photons or charged particles. 
-
-Consider, for instance, an incident $\gamma$-ray interacts with the semiconductor and generates a large number of electron-hole pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
-
-The time-dependent output signal of a charge sensing device can be predicted if the induced charge \textit{Q} on the readout electrode can be calculated as a function of instantaneous position of the moving charge \text{q} within the device. The Shockley-Ramo theorem (\cite{Shockley}, \cite{Ramo}), originally developed for vacuum tubes, can be applied also in the case of stationary space charges of the abovementioned HPGe. 
-
-From this theorem we know that the charge \textit{Q} and current \textit{i} on a selected electrode induced by a moving point charge \textit{q} are given by
-\begin{equation}
-    \label{eq:carica-corrente-SR}
-    \begin{gathered}
-        Q = - q \, \varphi_0 (\mathbf{x}) \\~\\
-        i = \frac{\text{d}Q}{\text{d}t} = -q \, \frac{\text{d}\varphi_0 (\mathbf{x})}{\text{d}t} = -q \left( \nabla \varphi_0(\mathbf{x}) \cdot \frac{\text{d}\mathbf{x}}{\text{d}t} \right) = q \, \mathbf{v} \cdot \mathbf{E}_0(\mathbf{x})
-    \end{gathered}
-\end{equation}
-
-where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The terms $\varphi_0(\mathbf{x})$ and $\mathbf{E}_0(\mathbf{x})$ are, respectively, the \textit{weighting potential} and the \textit{weighting field} evaluated at the instantaneous position $\mathbf{x}$ of the charge. They are defined as the potential and the electric field that would exist in the device if the selected electrode were set to a unit potential, with all other electrodes grounded (set to zero potential) and all space charges removed. \cite{GeDetectors}
 
 \subsection{Liquid Argon (LAr) cryostat}
 A 4~m-diameter vacuum-insulated stainless steel cryostat with 64~m$^3$ of purified Liquid Argon (LAr) is present. The ultra-pure LAr acts as a cooling medium for the germanium detectors and as a shield for external radiation. At the bottom of the cryostat, the LEGEND LAr Monitoring Apparatus (LLAMA) is placed, allowing to monitor the purification levels of the LAr continuously.
@@ -81,5 +69,5 @@ The cryogenic infrastructure of the cryostat includes the liquid argon and nitro
 A 10~m-diameter and 8~m-height tank with 590~m$^3$ of ultra-pure water shields from neutron and gamma backgrounds. It works also as a muon veto for residual cosmic muons through the detection of Cherenkov light with 66 PMTs (8” size) of type 9354KB/9350KB by ETL. In order
 to protect the PMTs from the surrounding water, each PMT is housed in a stainless-steel encapsulation which is further developed from the design of the Borexino capsules. The PMTs are arranged in seven rings in the water tank. One ring of six PMTs is pointing inside the separate volume under the cryostat,  two rings of eight PMTs and 12 PMTs  respectively are placed on the bottom of the water tank looking upwards and four rings of 10 PMTs are placed on the wall, pointing horizontally towards the cryostat. \cite{GERDA-muonVeto} 
 
-\section{Background suppression}
-Background is the main issue in the LEGEND experiment and avery sibngle part of it has been built considering that background has to be limited as much as possible.
+\section{Background suppression strategies (hardware level)}
+Background is the main issue in the LEGEND experiment and every single part of it has been built considering that background has to be limited as much as possible.
