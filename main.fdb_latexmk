@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1785439105.20414 "main.bcf" "main.bbl" "main" 1785441061.91735 0
+["biber main"] 1785439105.20414 "main.bcf" "main.bbl" "main" 1785441759.90686 0
   "bibliografia.bib" 1785439005 9745 9a238d4f867178ba0ef3ad02b803bf2b ""
-  "main.bcf" 1785441061 111041 5657789b4c87da3e633ac589fec4ec76 "pdflatex"
+  "main.bcf" 1785441759 111041 5657789b4c87da3e633ac589fec4ec76 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1785441055.48013 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1785441061.91891 0
+["pdflatex"] 1785441754.74958 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1785441759.90806 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ectt1095.tfm" 993062342 1352 fa21dcb5ddc7d1dc47d14cd897fdeb0f ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -254,14 +254,14 @@
   "acronimi.tex" 1785247994 1255 ce851c4f25ef400244ea2257a7cd2a60 ""
   "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" 1785239203 4525 4f4798888eaa5bf523c27b58dc172507 ""
   "chapters/01_neutrino_physics.tex" 1785344117 50745 b518be3f86ca674be42317ed07fd6d89 ""
-  "chapters/02_legend_experiment.tex" 1785441051 9099 069156eb0cc837bd712f33ac316d8747 ""
+  "chapters/02_legend_experiment.tex" 1785441753 9263 464fd36a0c44a9e39d2af5ca484baa81 ""
   "chapters/03_legend_data.tex" 1784985555 117 ea79f9bcdd3ff165c22ccf605204d0f3 ""
   "chapters/04_psd.tex" 1785225245 296 82346e82bd54e19506223c86d4a38315 ""
   "chapters/05_implementation.tex" 1785225226 333 19a8c6dfb9ad327c16afbf338ef193b1 ""
   "chapters/06_conclusions.tex" 1784985597 21 fe4b20616295c9a322e6cc7648a79dcb ""
-  "chapters/A-app_three-flavours.aux" 1785441060 5444 963161fdb339db924ea4ed435ec2e8b5 "pdflatex"
+  "chapters/A-app_three-flavours.aux" 1785441758 5444 963161fdb339db924ea4ed435ec2e8b5 "pdflatex"
   "chapters/A-app_three-flavours.tex" 1785232063 9349 91f53baad4ebe365d7b28eb315012167 ""
-  "chapters/B-app_neutrinosINmatter.aux" 1785441060 5782 8e9bb6ff0bd77464724449827363e159 "pdflatex"
+  "chapters/B-app_neutrinosINmatter.aux" 1785441759 5782 8e9bb6ff0bd77464724449827363e159 "pdflatex"
   "chapters/B-app_neutrinosINmatter.tex" 1785229835 8765 a9c158fa8a8911c13fc24b655ae80493 ""
   "feynman-diagrams/0nu-doubleBeta-diagram.tex" 1785241635 2219 07839a6b9006d6c98186f1d62b97c559 ""
   "feynman-diagrams/2nu-doublebeta-feynman.tex" 1785241847 2275 4d72521d2da0063dc8ae5931a3fb2a11 ""
@@ -274,11 +274,11 @@
   "figures/mass-hierarchy.jpg" 1784809361 53411 b6a2b060dd41137af288dcdc8d4eec74 ""
   "figures/mass_parabola_A76.pdf" 1785240627 24750 e9b494a979e993abdfae85fc3ffe3295 ""
   "figures/neutrino-fluxes.png" 1785154109 173666 d121d39fb051dcf0dd3c4e3e9caad320 ""
-  "main.aux" 1785441061 19790 4ad400382da9975aa2313340e4207bb6 "pdflatex"
+  "main.aux" 1785441759 19790 4ad400382da9975aa2313340e4207bb6 "pdflatex"
   "main.bbl" 1785439108 39589 8b3158b4aecec2162d32894ea1c9179f "biber main"
-  "main.run.xml" 1785441061 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
+  "main.run.xml" 1785441759 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
   "main.tex" 1785239203 4525 4f4798888eaa5bf523c27b58dc172507 ""
-  "main.toc" 1785441061 3039 6ab5d9d9b022b87290b2614afa327421 "pdflatex"
+  "main.toc" 1785441759 3039 6ab5d9d9b022b87290b2614afa327421 "pdflatex"
   (generated)
   "chapters/A-app_three-flavours.aux"
   "chapters/B-app_neutrinosINmatter.aux"
