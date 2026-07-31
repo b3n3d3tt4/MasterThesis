@@ -1,131 +1,159 @@
 \documentclass[a4paper,11pt]{book}
 
+% --- IMPOSTAZIONI DI PAGINA E GRAFICA ---
 \usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
-\usepackage[pdftex]{graphicx} %per poter inserire le figure
-\usepackage{amssymb,amsmath,amsthm,amsfonts}
-\renewcommand{\Re}{\mathfrak{Re}}
-\usepackage{xspace}
-\usepackage{tabularx}
-\usepackage{indentfirst}
-% \usepackage{subfigure}
-\usepackage[small]{caption}
-\usepackage{eucal}
-\usepackage{eso-pic}
-\usepackage{url}
-\usepackage{booktabs}
-\usepackage{afterpage}
-\usepackage{parskip}
-\usepackage{listings}
-\usepackage{bm}
-\usepackage{fancyhdr}
-\usepackage{textcomp}
+\usepackage{graphicx} % Rimosso [pdftex], è obsoleto e spesso causa conflitti
 \usepackage{float}
-\usepackage{tikz}
-% \usetikzlibrary{decorations.markings, decorations.pathmorphing} % Servono per frecce e linee ondulate
+\usepackage{eso-pic}
+\usepackage{afterpage}
+\usepackage{caption}
 \usepackage{subcaption}
-\usepackage{comment}
-\usetikzlibrary{decorations.pathmorphing, decorations.markings, shapes.misc, positioning}
-% \usepackage{cite}
-\usepackage{multirow}
-\usepackage{acro}
-\input{acronimi}
 
-% --- ORDINE CORRETTO DEI PACCHETTI DI LINGUA E TESTO ---
-\usepackage[utf8]{inputenc}   % 1. Codifica dei caratteri (accenti ecc.)
-\usepackage[english]{babel}   % 2. Impostazioni della lingua
-\usepackage{csquotes}         % 3. Gestione virgolette (DEVE stare dopo i due precedenti)
+% --- MATEMATICA E SIMBOLI ---
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{eucal}
+\usepackage{bm}
+\usepackage{textcomp}
+\renewcommand{\Re}{\mathfrak{Re}}
 
+% --- LINGUA E TESTO ---
+\usepackage[utf8]{inputenc}   % 1. Codifica caratteri
+\usepackage[english]{babel}   % 2. Lingua
+\usepackage{csquotes}         % 3. Gestione virgolette (dopo babel)
+\usepackage{indentfirst}
+\usepackage{parskip}
 \usepackage{setspace}
-% \usepackage{sectsty}
-% \allsectionsfont{\sffamily}
-% \usepackage{libertinus}
-% \usepackage{XCharter}
-\usepackage{fourier}
-% \usepackage{newpxtext, newpxmath}
+\usepackage{xspace}
+\usepackage{fourier} % Font scelto
+
+% --- TABELLE E VARIE ---
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{comment}
+
+% --- TIKZ ---
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing, decorations.markings, shapes.misc, positioning}
+
+% --- ACRONIMI E BIBLIOGRAFIA ---
+\usepackage{acro}
+\input{acronimi} % Assicurati che il file acronimi.tex esista
 
 \usepackage[backend=biber, style=numeric]{biblatex}
-\addbibresource{bibliografia.bib} % Inserisci qui il nome del tuo file .bib
+\addbibresource{bibliografia.bib}
 
-% --- IMPOSTAZIONI FANCYHDR MODIFICATE ---
+% --- INTESTAZIONI E PIÈ DI PAGINA ---
+\usepackage{fancyhdr}
 \pagestyle{fancy} 
-\fancyhf{} % Svuota le intestazioni/piè di pagina normali
-\renewcommand{\headrulewidth}{0pt} % Rimuove la linea orizzontale in alto
-\fancyfoot[LE,RO]{\thepage} % Numeri: a sinistra sulle Pari (LE), a destra sulle Dispari (RO)
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyfoot[LE,RO]{\thepage} 
 
-% --- RIDEFINIZIONE DELLO STILE PLAIN (per l'inizio dei capitoli) ---
 \fancypagestyle{plain}{
-    \fancyhf{} % Svuota anche lo stile plain
+    \fancyhf{} 
     \renewcommand{\headrulewidth}{0pt}
-    \fancyfoot[LE,RO]{\thepage} % Applica la stessa regola per i numeri
+    \fancyfoot[LE,RO]{\thepage} 
 }
+
+% --- LINK E RIFERIMENTI (DEVE STARE ALLA FINE DEL PREAMBOLO) ---
+\usepackage{xcolor} % Necessario per i colori dei link
+\usepackage[colorlinks=true, 
+            linkcolor=black, 
+            citecolor=darkgray, 
+            urlcolor=darkgray]{hyperref}
+
+% ==========================================
+% INIZIO DOCUMENTO
+% ==========================================
 \begin{document}
 \frontmatter
+
+% --- FRONTESPIZIO ---
 \begin{titlepage}
 \vspace{5mm}
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=.3]{figures/logoUNIPD_bkgremoved.png}
+% \includegraphics[scale=.3]{figures/logoUNIPD_bkgremoved.png} % Decommenta e verifica il percorso
 \end{figure}
 \vspace{5mm}
+
 \begin{center}
-{{\huge{\textsc{\bf UNIVERSIT\`A DEGLI STUDI DI PADOVA}}}\\}
+{\huge{\textsc{\textbf{UNIVERSIT\`A DEGLI STUDI DI PADOVA}}}}\\
 \vspace{5mm}
-{\Large{\bf Dipartimento di Fisica e Astronomia ``Galileo Galilei''}} \\
+{\Large{\textbf{Dipartimento di Fisica e Astronomia ``Galileo Galilei''}}} \\
 \vspace{5mm}
-{\Large{\textsc{\bf Master's Degree in Physics}}}\\
+{\Large{\textsc{\textbf{Master's Degree in Physics}}}}\\
 \vspace{10mm}
-{\Large{\textsc{\bf Final dissertation}}}\\
+{\Large{\textsc{\textbf{Final dissertation}}}}\\
 \vspace{20mm}
 \begin{spacing}{3}
-{\huge \textbf{TITOLO}}\\
+{\huge \textbf{TITOLO DELLA TESI}}\\
 \end{spacing}
 \vspace{8mm}
 \end{center}
 
 \vspace{20mm}
-\begin{spacing}{2}
-\begin{tabular}{ l  c  c c c  cc c c c c  l }
-{\Large{Thesis Supervisor}} &&&&&&&&&&& {\Large{Candidate}}\\
-{\Large{\bf Prof. Alberto Garfagnini}} &&&&&&&&&&& {\Large{\bf Benedetta Rasera}}\\
-{\Large{Thesis Co-Supervisor}} &&&&&&&&& \\ %&& {\Large{Student ID}} \\
-{\Large{\bf Dr. Andrea Serafini}} \\ %&&&&&&&&&&& {\Large{\textbf{2141189}}}\\
 
-\end{tabular}
+% Struttura pulita per Relatore/Candidato
+\begin{spacing}{1.5}
+\begin{minipage}[t]{0.45\textwidth}
+    \begin{flushleft}
+        {\Large Thesis Supervisor}\\[1ex]
+        {\Large \textbf{Prof. Alberto Garfagnini}}\\[3ex]
+        {\Large Thesis Co-Supervisor}\\[1ex]
+        {\Large \textbf{Dr. Andrea Serafini}}
+    \end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    \begin{flushright}
+        {\Large Candidate}\\[1ex]
+        {\Large \textbf{Benedetta Rasera}}
+    \end{flushright}
+\end{minipage}
 \end{spacing}
-\vspace{15 mm}
 
+\vspace{\fill}
 \begin{center}
 {\Large{Academic Year 2025/2026}}
 \end{center}
 \end{titlepage}
+
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-% Ho rimosso \pagenumbering{arabic} qui, ci pensa \mainmatter più avanti
-
+% --- CITAZIONE (Opzionale, decommenta se vuoi usarla) ---
 \begin{comment}
-    \clearpage
-\thispagestyle{empty} % Rimuove il numero di pagina e le intestazioni
-\vspace*{0.33\textheight} % Sposta il testo in giù di un terzo dell'altezza della pagina
+\thispagestyle{empty}
+\vspace*{0.33\textheight}
 \begin{flushright}
     {\large\textit{``Everything comes to him who knows how to wait.''}} \\[2ex]
---- Wolfgang Pauli \\
-Telegram to C. Cowan and F. Reines \\
-upon the experimental discovery of the neutrino (1956)
+    --- Wolfgang Pauli \\
+    Telegram to C. Cowan and F. Reines \\
+    upon the experimental discovery of the neutrino (1956)
 \end{flushright}
-\clearpage    
+\clearpage{\pagestyle{empty}\cleardoublepage}
 \end{comment}
 
+% --- ABSTRACT ---
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
+% Scrivi qui l'abstract...
 
-\newpage
+\clearpage
+
+% --- INDICE ---
 \tableofcontents
-\newpage
+\clearpage
 
+% --- ACRONIMI ---
 \printacronyms[name=List of Acronyms]
 \addcontentsline{toc}{chapter}{List of Acronyms}
 
-% --- INIZIO DEL CORPO DEL TESTO ---
+% ==========================================
+% CORPO DELLA TESI
+% ==========================================
 \mainmatter
 
 \input{chapters/01_neutrino_physics.tex}
@@ -135,13 +163,17 @@ upon the experimental discovery of the neutrino (1956)
 \input{chapters/05_implementation.tex}
 \input{chapters/06_conclusions.tex}
 
+% ==========================================
+% APPENDICI E BIBLIOGRAFIA
+% ==========================================
 \appendix
-\include{chapters/A-app_three-flavours.tex}
-\include{chapters/B-app_neutrinosINmatter.tex}
+\include{chapters/A-app_three-flavours}
+\include{chapters/B-app_neutrinosINmatter}
 
 \printbibliography[heading=bibintoc]
 
 \chapter*{Acknowledgments}
 \addcontentsline{toc}{chapter}{Acknowledgments}
+% Scrivi qui i ringraziamenti...
 
 \end{document}
