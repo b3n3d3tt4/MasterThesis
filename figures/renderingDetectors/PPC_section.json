@@ -1,0 +1,251 @@
+{
+    "name": "MJD PPC",
+    "units": {
+        "length": "mm",
+        "angle": "deg",
+        "potential": "V",
+        "temperature": "K"
+    },
+    "grid": {
+        "coordinates": "cylindrical",
+        "axes": {
+            "r": {
+                "to": 40.0,
+                "boundaries": "inf"
+            },
+            "phi": {
+                "from": 0,
+                "to": 0,
+                "boundaries": "periodic"
+            },
+            "z": {
+                "from": -10,
+                "to": 60.0,
+                "boundaries": {
+                    "left": "inf",
+                    "right": "inf"
+                }
+            }
+        }
+    },
+    "medium": "vacuum",
+    "detectors": [
+        {
+            "semiconductor": {
+                "material": "HPGe",
+                "bulk_type": "p",
+                "temperature": 77.0,
+                "geometry": {
+                    "difference": [
+                        {
+                            "tube": {
+                                "r": 35.9,
+                                "h": 50.0,
+                                "phi": {
+                                    "from": "0.0°",
+                                    "to": "360.0°"
+                                },
+                                "phi": {
+                                    "from": "-29.0°",
+                                    "to": "200.0°"
+                                },
+                                "origin": [
+                                    0.0,
+                                    0.0,
+                                    25.0
+                                ]
+                            }
+                        },
+                        {
+                            "union": [
+                                {
+                                    "cone": {
+                                        "r": {
+                                            "bottom": {
+                                                "from": 27.9,
+                                                "to": 36.0
+                                            },
+                                            "top": {
+                                                "from": 36.0,
+                                                "to": 36.0
+                                            }
+                                        },
+                                        "h": 8.02,
+                                        "origin": [
+                                            0.0,
+                                            0.0,
+                                            3.99
+                                        ]
+                                    }
+                                },
+                                {
+                                    "torus": {
+                                        "r_torus": 33.9,
+                                        "r_tube": {
+                                            "from": 2.0,
+                                            "to": 4.0
+                                        },
+                                        "theta": {
+                                            "from": "0.0°",
+                                            "to": "90.0°"
+                                        },
+                                        "origin": [
+                                            0.0,
+                                            0.0,
+                                            48.0
+                                        ]
+                                    }
+                                },
+                                {
+                                    "torus": {
+                                        "r_torus": 0.0,
+                                        "r_tube": 1.0,
+                                        "theta": {
+                                            "from": "0.0°",
+                                            "to": "360.0°"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "impurity_density": {
+                    "name": "linear",
+                    "r": {
+                        "init": 0,
+                        "gradient": 0
+                    },
+                    "phi": {
+                        "init": 0.0,
+                        "gradient": 0.0
+                    },
+                    "z": {
+                        "init": -1.0e7,
+                        "gradient": 100000.0
+                    }
+                }
+            },
+            "contacts": [
+                {
+                    "name": "p contact",
+                    "material": "HPGe",
+                    "potential": 0.0,
+                    "geometry": {
+                        "torus": {
+                            "r_torus": 0.0,
+                            "r_tube": {
+                                "from": 1.0,
+                                "to": 1.2
+                            },
+                            "phi": {
+                                "from": "-29°",
+                                "to": "200°"
+                            },
+                            "theta": {
+                                "from": "0.0°",
+                                "to": "90.0°"
+                            }
+                        }
+                    },
+                    "id": 1
+                },
+                {
+                    "name": "n contact",
+                    "material": "HPGe",
+                    "potential": 4000.0,
+                    "geometry": {
+                        "union": [
+                            {
+                                "cone": {
+                                    "r": {
+                                        "bottom": {
+                                            "from": 35.9,
+                                            "to": 35.9
+                                        },
+                                        "top": {
+                                            "from": 35.9,
+                                            "to": 35.9
+                                        }
+                                    },
+                                    "phi": {
+                                        "from": "-29°",
+                                        "to": "200°"
+                                    },
+                                    "h": 40.0,
+                                    "origin": [
+                                        0.0,
+                                        0.0,
+                                        28.0
+                                    ]
+                                }
+                            },
+                            {
+                                "torus": {
+                                    "r_torus": 33.9,
+                                    "r_tube": {
+                                        "from": 2.0,
+                                        "to": 2.0
+                                    },
+                                    "theta": {
+                                        "from": "0.0°",
+                                        "to": "90.0°"
+                                    },
+                                    "phi": {
+                                        "from": "-29°",
+                                        "to": "200°"
+                                    },
+                                    "origin": [
+                                        0.0,
+                                        0.0,
+                                        48.0
+                                    ]
+                                }
+                            },
+                            {
+                                "tube": {
+                                    "r": 33.9,
+                                    "phi": {
+                                        "from": "-29°",
+                                        "to": "200°"
+                                    },
+                                    "h": 0.0,
+                                    "origin": [
+                                        0.0,
+                                        0.0,
+                                        50.0
+                                    ]
+                                }
+                            },
+                            {
+                                "cone": {
+                                    "r": {
+                                        "bottom": {
+                                            "from": 27.9,
+                                            "to": 27.9
+                                        },
+                                        "top": {
+                                            "from": 35.9,
+                                            "to": 35.9
+                                        }
+                                    },
+                                    "phi": {
+                                        "from": "-29°",
+                                        "to": "200°"
+                                    },
+                                    "h": 8.0,
+                                    "origin": [
+                                        0.0,
+                                        0.0,
+                                        4.0
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "id": 2
+                }
+            ]
+        }
+    ]
+}

@@ -22,8 +22,11 @@ QUI COSE ANCORA NON MEGLIO IDENTIFICATE DA SCRIVERE SUI DETECTOR
 Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \textit{p+} part of the detector, as shown in Fig. \ref{fig:detectors-pINred}.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{figures/4DetectorsP+.png}
-    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in red. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering by D. Hervas.}
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/PPC_section_frontale.png}\hfill
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
+    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in red. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
     \label{fig:detectors-pINred}
 \end{figure}
 
@@ -40,8 +43,8 @@ It is evident that we can distinguish several peaks, listed below in Table \ref{
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/decayChainTh228.png}
-    \caption{Decay chain of the ${}^{228}$Th calibration source. Taken from \cite{Th228chain}}
+    \includegraphics[width=0.3\textwidth]{figures/catena_decadimento_Th228.png}
+    \caption{Decay chain of the ${}^{228}$Th calibration source. Custom plot with data taken from \cite{Th228chain}.}
     \label{fig:decayTh228}
 \end{figure}
 
@@ -55,14 +58,14 @@ It is evident that we can distinguish several peaks, listed below in Table \ref{
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{ccc}
+    \begin{tabular}{ccccc}
         \toprule
-        \textbf{Isotope} & \textbf{Peak} & \textbf{Energy [keV]} \\
+        \textbf{Isotope} && \textbf{Peak} && \textbf{Energy [keV]} \\
         \midrule
-        $^{208}$Tl & FEP & 2614.552 \\
-        $^{208}$Tl & SEP & 2103.552 \\
-        $^{208}$Tl & DEP & 1592.552 \\
-        $^{212}$Bi & FEP & 1620.500 \\
+        $^{208}$Tl && FEP && 2614.552 \\
+        $^{208}$Tl && SEP && 2103.552 \\
+        $^{208}$Tl && DEP && 1592.552 \\
+        $^{212}$Bi && FEP && 1620.500 \\
         \bottomrule
     \end{tabular}
     \caption{Prominent $\gamma$-ray peaks from the $^{228}$Th decay chain used for energy calibration. Data are taken from \cite{LNHB}.}
@@ -73,7 +76,7 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/DEP-SEP-FEP.jpg} 
-    \caption{Different outcomes after a gamma interaction. A detailed description is given in the text.}
+    \caption{Different outcomes after a gamma interaction in the detector volume, delimited in black.\\A detailed description of the phenomena illustrated is given in the text.}
     \label{fig:dep-sep}
 \end{figure}
 
