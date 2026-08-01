@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  1 AUG 2026 17:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  1 AUG 2026 17:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1207,13 +1207,18 @@ Package hyperref Info: Link coloring ON on input line 70.
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
+<figures/logoUNIPD_bkgremoved.png, id=158, 496.85625pt x 505.89pt>
+File: figures/logoUNIPD_bkgremoved.png Graphic file (type png)
+<use figures/logoUNIPD_bkgremoved.png>
+Package pdftex.def Info: figures/logoUNIPD_bkgremoved.png  used on input line 78.
+(pdftex.def)             Requested size: 149.05801pt x 151.76816pt.
 
 
 [1
 
 
 
-{C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+{C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc} <./figures/logoUNIPD_bkgremoved.png>]
 
 [2
 
@@ -1292,7 +1297,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 [1
 
 ]
-<figures/neutrino-fluxes.png, id=254, 637.1805pt x 454.69875pt>
+<figures/neutrino-fluxes.png, id=257, 637.1805pt x 454.69875pt>
 File: figures/neutrino-fluxes.png Graphic file (type png)
 <use figures/neutrino-fluxes.png>
 Package pdftex.def Info: figures/neutrino-fluxes.png  used on input line 87.
@@ -1328,7 +1333,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 
 [7]
-<figures/mass-hierarchy.jpg, id=381, 1204.5pt x 678.535pt>
+<figures/mass-hierarchy.jpg, id=383, 1204.5pt x 678.535pt>
 File: figures/mass-hierarchy.jpg Graphic file (type jpg)
 <use figures/mass-hierarchy.jpg>
 Package pdftex.def Info: figures/mass-hierarchy.jpg  used on input line 418.
@@ -1363,7 +1368,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 26.
 )
-<figures/mass_parabola_A76.pdf, id=435, 578.16pt x 433.62pt>
+<figures/mass_parabola_A76.pdf, id=437, 578.16pt x 433.62pt>
 File: figures/mass_parabola_A76.pdf Graphic file (type pdf)
 <use figures/mass_parabola_A76.pdf>
 Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 566.
@@ -1389,12 +1394,12 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 1
 (C:\Program Files\MiKTeX\tex/latex/fourier\ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<figures/LEGENDwholeSetup_con-numeri.png, id=536, 338.76563pt x 304.88907pt>
+<figures/LEGENDwholeSetup_con-numeri.png, id=538, 338.76563pt x 304.88907pt>
 File: figures/LEGENDwholeSetup_con-numeri.png Graphic file (type png)
 <use figures/LEGENDwholeSetup_con-numeri.png>
 Package pdftex.def Info: figures/LEGENDwholeSetup_con-numeri.png  used on input line 28.
 (pdftex.def)             Requested size: 232.17242pt x 208.96405pt.
-<figures/LEGENDLAr.png, id=537, 292.84406pt x 581.17125pt>
+<figures/LEGENDLAr.png, id=539, 292.84406pt x 581.17125pt>
 File: figures/LEGENDLAr.png Graphic file (type png)
 <use figures/LEGENDLAr.png>
 Package pdftex.def Info: figures/LEGENDLAr.png  used on input line 34.
@@ -1405,7 +1410,7 @@ Underfull \vbox (badness 1286) has occurred while \output is active []
 
 
 [15]
-<figures/4Detectors.png, id=549, 2759.05782pt x 562.35094pt>
+<figures/4Detectors.png, id=551, 2759.05782pt x 562.35094pt>
 File: figures/4Detectors.png Graphic file (type png)
 <use figures/4Detectors.png>
 Package pdftex.def Info: figures/4Detectors.png  used on input line 49.
@@ -1429,22 +1434,22 @@ Overfull \hbox (11.78958pt too wide) in paragraph at lines 107--109
 
 ]
 Chapter 3.
-<figures/renderingDetectors/PPC_section_frontale.png, id=600, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/PPC_section_frontale.png, id=602, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/PPC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/PPC_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/PPC_section_frontale.png  used on input line 25.
 (pdftex.def)             Requested size: 120.92421pt x 120.92232pt.
-<figures/renderingDetectors/BeGe_section_frontale.png, id=601, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/BeGe_section_frontale.png, id=603, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/BeGe_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/BeGe_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/BeGe_section_frontale.png  used on input line 26.
 (pdftex.def)             Requested size: 120.92421pt x 120.92232pt.
-<figures/renderingDetectors/Coax_section_frontale.png, id=602, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/Coax_section_frontale.png, id=604, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/Coax_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/Coax_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/Coax_section_frontale.png  used on input line 27.
 (pdftex.def)             Requested size: 120.92421pt x 120.92232pt.
-<figures/renderingDetectors/IC_section_frontale.png, id=603, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/IC_section_frontale.png, id=605, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/IC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/IC_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  used on input line 28.
@@ -1452,12 +1457,12 @@ Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  use
 
 
 [21]
-<figures/catena_decadimento_Th228.png, id=616, 507.5763pt x 1149.093pt>
+<figures/catena_decadimento_Th228.png, id=618, 507.5763pt x 1149.093pt>
 File: figures/catena_decadimento_Th228.png Graphic file (type png)
 <use figures/catena_decadimento_Th228.png>
 Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 46.
 (pdftex.def)             Requested size: 145.11053pt x 328.51187pt.
-<figures/prova.jpg, id=619, 171.43117pt x 124.03549pt>
+<figures/prova.jpg, id=621, 171.43117pt x 124.03549pt>
 File: figures/prova.jpg Graphic file (type jpg)
 <use figures/prova.jpg>
 Package pdftex.def Info: figures/prova.jpg  used on input line 53.
@@ -1468,7 +1473,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [22 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png> <./figures/catena_decadimento_Th228.png>]
-<figures/DEP-SEP-FEP.jpg, id=631, 3097.5725pt x 1324.95pt>
+<figures/DEP-SEP-FEP.jpg, id=633, 3097.5725pt x 1324.95pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
 Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 78.
@@ -1577,17 +1582,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41902 strings out of 473682
- 875974 string characters out of 5729112
+ 41909 strings out of 473682
+ 876246 string characters out of 5729112
  1634097 words of memory out of 5000000
- 64044 multiletter control sequences out of 15000+600000
+ 64051 multiletter control sequences out of 15000+600000
  782248 words of font info for 280 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,1262b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (49 pages, 2459603 bytes).
+Output written on main.pdf (49 pages, 2616204 bytes).
 PDF statistics:
- 978 PDF objects out of 1000 (max. 8388607)
+ 980 PDF objects out of 1000 (max. 8388607)
  222 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 387 words of extra memory for PDF output out of 10000 (max. 10000000)
 

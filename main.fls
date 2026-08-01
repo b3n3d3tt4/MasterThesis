@@ -429,6 +429,13 @@ OUTPUT main.pdf
 INPUT .\main.out
 INPUT .\main.out
 OUTPUT main.out
+INPUT .\figures\logoUNIPD_bkgremoved.png
+INPUT .\figures\logoUNIPD_bkgremoved.png
+INPUT .\figures\logoUNIPD_bkgremoved.png
+INPUT .\figures\logoUNIPD_bkgremoved.png
+INPUT .\figures\logoUNIPD_bkgremoved.png
+INPUT .\figures\logoUNIPD_bkgremoved.png
+INPUT .\figures\logoUNIPD_bkgremoved.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futrc8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbc8t.tfm
