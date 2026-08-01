@@ -20,13 +20,13 @@ where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The t
 QUI COSE ANCORA NON MEGLIO IDENTIFICATE DA SCRIVERE SUI DETECTOR
 
 Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \textit{p+} part of the detector, as shown in Fig. \ref{fig:detectors-pINred}.
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/PPC_section_frontale.png}\hfill
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
-    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in red. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
+    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
     \label{fig:detectors-pINred}
 \end{figure}
 
@@ -37,9 +37,10 @@ QUI FORSE COME è IOL WEIGHTING FIELD NELL'ICPC?
 QUI QUESTIONE CHE DIVERSI TIPI DI EVENTI GENERANO LE CARICHE IN MODI DIVERSI E QUINDI LA CARICA è RACCOLTA IN MODI DIVERSI E LE WF SONO DIVERSE
 
 For the analysis that will follow in this thesis, we used calibration data of the LEGEND-200 experiment, thus it is useful to analyse the calibration source that was used to acquire said data in order to highlight particular features of them that will be more than crucial in the work here presented. 
-Calibration data were acquired using a source of  the Thorium-228. The decay chain of such isotope is shown in Fig. \ref{fig:decayTh228} 
-while the energy spectrum of $\gamma$-rays emitted as a consequennce of the decays are visible in Fig. %\ref{fig:TlBi-spectrum}. 
-It is evident that we can distinguish several peaks, listed below in Table \ref{tab:emission-peaks}.
+
+Calibration data were acquired using a source of Thorium-228. The decay chain of such isotope is shown in Fig. \ref{fig:decayTh228} 
+while the energy spectrum of $\gamma$-rays emitted as a consequennce of the decays are visible in Fig. \ref{fig:TlBi-spectrum}. 
+It is evident that we can distinguish several peaks:the ones we are focusing on are listed below in Table \ref{tab:emission-peaks}.
 
 \begin{figure}[H]
     \centering
@@ -71,7 +72,7 @@ It is evident that we can distinguish several peaks, listed below in Table \ref{
     \caption{Prominent $\gamma$-ray peaks from the $^{228}$Th decay chain used for energy calibration. Data are taken from \cite{LNHB}.}
     \label{tab:emission-peaks}
 \end{table}
-The \ac{DEP} and \ac{SEP} of Tallium-228 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons escape the active detector volume without further interaction. Consequently, the energy deposition is highly localized, yielding a simple and temporally narrow pulse waveform.
+The \ac{DEP} and \ac{SEP} of Tallium-228 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons of the positron escape the active detector volume without further interaction. Consequently, the energy deposition is highly localized, yielding a simple and temporally narrow pulse waveform.
 Conversely, a \ac{SEP} event arises when only one of the two annihilation photons escapes, while the second photon re-interacts and deposits its energy elsewhere within the detector volume. This spatial separation introduces a temporal spread, resulting in a more complex waveform structure. Furthermore, events contributing to the \ac{FEP} typically involve multiple Compton scattering interactions prior to complete absorption, yielding an even more intricate pulse shape.
 \begin{figure}[H]
     \centering
@@ -80,8 +81,9 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
     \label{fig:dep-sep}
 \end{figure}
 
+We are now interest in considering the two peaks corresponding to the \ac{FEP} of ${}^{212}$Bi and the \ac{DEP} of ${}^{208}$Tl. They are very close to each other in energy, as stated in Tab \ref{table:emission-peaks}, but are produced in different mechanism consequently producing different signals in \ac{hpge}.
 
-However the raw signals can alse be distinguished via the shape of the waveform since they are associated to different event topologies. In particular we are insterested in the \ac{DEP} of the Thorium, which is a \ac{SSE} and the Biusmuth signal that is a \ac{MSE}
+MSE E SSE  
 
 \section{Data structure fo the LEGEND-200 phase}
 \section{Data cleaning}
