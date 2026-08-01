@@ -1,19 +1,19 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main.blg'
-[117] biber-MSWIN64:340> INFO - === 
-[158] Biber.pm:420> INFO - Reading 'main.bcf'
-[308] Biber.pm:994> INFO - Found 30 citekeys in bib section 0
-[323] Biber.pm:4463> INFO - Processing section 0
-[336] Biber.pm:4654> INFO - Looking for bibtex file 'bibliografia.bib' for section 0
-[399] bibtex.pm:1713> INFO - LaTeX decoding ...
-[461] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliografia.bib'
-[650] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[650] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[652] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[652] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[686] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[704] bbl.pm:779> INFO - Output to main.bbl
-[704] Biber.pm:131> WARN - legacy month field 'Jun' in entry 'SNO2002-results' is not an integer - this will probably not sort properly.
-[705] Biber.pm:131> WARN - legacy month field 'Sep' in entry 'firstDoubleBeta' is not an integer - this will probably not sort properly.
-[705] Biber.pm:131> WARN - legacy month field 'mar' in entry 'AME2020-masses' is not an integer - this will probably not sort properly.
-[705] Biber.pm:133> INFO - WARNINGS: 3
+[134] biber-MSWIN64:340> INFO - === 
+[176] Biber.pm:420> INFO - Reading 'main.bcf'
+[302] Biber.pm:994> INFO - Found 30 citekeys in bib section 0
+[318] Biber.pm:4463> INFO - Processing section 0
+[333] Biber.pm:4654> INFO - Looking for bibtex file 'bibliografia.bib' for section 0
+[449] bibtex.pm:1713> INFO - LaTeX decoding ...
+[507] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliografia.bib'
+[699] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[699] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[699] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[699] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[736] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[753] bbl.pm:779> INFO - Output to main.bbl
+[753] Biber.pm:131> WARN - legacy month field 'Jun' in entry 'SNO2002-results' is not an integer - this will probably not sort properly.
+[754] Biber.pm:131> WARN - legacy month field 'Sep' in entry 'firstDoubleBeta' is not an integer - this will probably not sort properly.
+[754] Biber.pm:131> WARN - legacy month field 'mar' in entry 'AME2020-masses' is not an integer - this will probably not sort properly.
+[754] Biber.pm:133> INFO - WARNINGS: 3

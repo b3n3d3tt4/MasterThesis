@@ -269,20 +269,20 @@
     \endentry
     \entry{Brugnera}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=0f34252f2b4fd35637a6c8252b8debf3}{%
+        {{hash=9a4e3af6d1d6eac0cfe414a3a699895c}{%
            family={Brugnera},
            familyi={B\bibinitperiod},
-           given={Riccardo},
+           given={R.},
            giveni={R\bibinitperiod}}}%
       }
-      \strng{namehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{fullhash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{fullhashraw}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{bibnamehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authorbibnamehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authornamehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authorfullhash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authorfullhashraw}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{namehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{fullhash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{fullhashraw}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{bibnamehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authorbibnamehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authornamehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authorfullhash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authorfullhashraw}{9a4e3af6d1d6eac0cfe414a3a699895c}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
