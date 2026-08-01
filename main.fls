@@ -406,6 +406,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
@@ -722,13 +724,13 @@ INPUT C:\Program Files\MiKTeX\tex\latex\fourier\ts1futs.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\ts1futs.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\ts1futs.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8c.tfm
-INPUT .\figures\LEGENDwholeSetup_con.numeri.png
-INPUT .\figures\LEGENDwholeSetup_con.numeri.png
-INPUT .\figures\LEGENDwholeSetup_con.numeri.png
-INPUT .\figures\LEGENDwholeSetup_con.numeri.png
-INPUT .\figures\LEGENDwholeSetup_con.numeri.png
-INPUT .\figures\LEGENDwholeSetup_con.numeri.png
-INPUT .\figures\LEGENDwholeSetup_con.numeri.png
+INPUT .\figures\LEGENDwholeSetup_con-numeri.png
+INPUT .\figures\LEGENDwholeSetup_con-numeri.png
+INPUT .\figures\LEGENDwholeSetup_con-numeri.png
+INPUT .\figures\LEGENDwholeSetup_con-numeri.png
+INPUT .\figures\LEGENDwholeSetup_con-numeri.png
+INPUT .\figures\LEGENDwholeSetup_con-numeri.png
+INPUT .\figures\LEGENDwholeSetup_con-numeri.png
 INPUT .\figures\LEGENDLAr.png
 INPUT .\figures\LEGENDLAr.png
 INPUT .\figures\LEGENDLAr.png

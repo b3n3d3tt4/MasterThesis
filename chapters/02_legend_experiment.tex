@@ -25,13 +25,13 @@ The whole structure of the setup is shown in Figure~\ref{fig:L200setup} and cons
     % Immagine a sinistra
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{figures/LEGENDwholeSetup_con.numeri.png}
+        \includegraphics[width=\linewidth]{figures/LEGENDwholeSetup_con-numeri.png}
     \end{minipage}\hfill
     % Immagine a destra
-    \begin{minipage}{0.28\textwidth}
+    \begin{minipage}{0.48\textwidth}
         \centering
         % SOSTITUISCI IL NOME DEL FILE QUI SOTTO
-        \includegraphics[width=\linewidth]{figures/LEGENDLAr.png}
+        \includegraphics[width=0.5\linewidth]{figures/LEGENDLAr.png}
     \end{minipage}
     
     \caption{On the left, the whole experimental setup for the LEGEND-200 phase: the picture shows the \ac{hpge} detectors (1), the LAr instrumentation (2), the LAr cryostat (3) and the water tank provided with the Cherenkov detectors (4). On the right, a close-up of the LAr instrumentation where the detector strings are visible. Rendering by P. Krause, taken from \cite{LEGEND:setup}.}
@@ -39,6 +39,7 @@ The whole structure of the setup is shown in Figure~\ref{fig:L200setup} and cons
 \end{figure}
 
 \subsection{Germanium detectors}
+\label{subsec:GeDetectors}
 The \ac{hpge} detectors are semiconductor diodes sensitive to ionizing radiation and $\gamma$-rays. They provide excellent energy resolution and high detection efficiency, acting as both the source and detector for double-beta decay. 
 
 LEGEND-200 utilizes 142.5~kg of p-type high-purity germanium detectors arranged in vertical strings. Four detector types are deployed: 86.7~kg of \ac{ICPC} detectors newly designed and produced for LEGEND (41 detectors), 22.1~kg of p-type Point-Contact (PPC) detectors from \textsc{MAJORANA DEMOSNTRATOR} (26 detectors), 19.0~kg of Broad Energy Germanium (BEGe) detectors from GERDA (28 detectors), and 14.7~kg of semicoaxial (Coax) detectors also from GERDA (6 detectors). Typical individual detector masses are $1$~kg for PPC, $2.5$~kg for Coax, $0.7$~kg for BEGe, and $2-4$~kg for ICPC. Said detectors are enriched in $^{76}$Ge up to 86--92\%, both depending on the detector type. The geometry of all of the detectors is shown in Fig. \ref{fig:detectors-types}. The \ac{ICPC} detectors, comprising the largest fraction of the array, feature the most advanced design in terms of sensitivity to $0\nu\beta\beta$ decay, combining effective \ac{PSD} performance, high energy resolution and large individual masses to effectively reduce the background level. \cite{articoloSaleh}
@@ -50,7 +51,7 @@ LEGEND-200 utilizes 142.5~kg of p-type high-purity germanium detectors arranged 
     \label{fig:detectors-types}
 \end{figure}
 
-The \ac{hpge} detectors operate with a reverse bias voltage, which depletes almost the entire volume of free charge carriers. A high voltage (up to 5~kV) is applied to the $n^+$ electrode, which features a relatively thick ($\sim 0.7$~mm) Li-diffused dead layer, while the signal is readout from the thin ($\sim 0.3$~$\mu$m) $p^+$ electrode, created via boron implantation.
+The \ac{hpge} detectors operate with a reverse bias voltage, which depletes almost the entire volume of free charge carriers. A \ac{HV} (up to 5~kV) is applied to the $n^+$ electrode, which features a relatively thick ($\sim 0.7$~mm) Li-diffused dead layer, while the signal is readout from the thin ($\sim 0.3$~$\mu$m) $p^+$ electrode, created via boron implantation.
 
 These detectors are mounted on supports made of active PolyEthylene Naphthalate (PEN), a scintillating plastic material known for its ability to improve background rejection. To maintain high radiopurity near the detector array, low-mass Majorana components and underground electroformed copper are used to reduce the effects of~${}^{238}$U and~${}^{232}$Th decay chains and cosmogenic activation of~${}^{60}$Co in copper. Each \ac{hpge} string is enclosed in a TPB-coated nylon cylinder, called Nylon Mini Shroud (NMS), to minimize the LAr volume around the detectors, preventing the capture of radioactive ions like~${}^{42}$K by electric fields on the detector surfaces. \cite{LEGENDsetup-details}
 
@@ -66,8 +67,47 @@ The LAr instrumentation is located within the WLSR and consists of two concentri
 The cryogenic infrastructure of the cryostat includes the liquid argon and nitrogen storage tanks, a valve box which houses manual and remotely controlled valves for LN$_2$/LAr and a radon trap, and piping inside the cryostat. The latter includes two copper spirals as heat exchangers for the cooling of LAr with LN$_2$, a LAr filling line, a drainage pipe, temperature sensors at different positions, and several devices for the fill level measurement. The available aperture for the detectors in the neck is reduced because of these pipes and sensors such that this opening becomes the limiting cross section. For LEGEND-200, the installation has been replaced to enlarge the area for detectors and LAr instrumentation. \cite{LEGEND:setup}
 
 \subsection{Water tank}
-A 10~m-diameter and 8~m-height tank with 590~m$^3$ of ultra-pure water shields from neutron and gamma backgrounds. It works also as a muon veto for residual cosmic muons through the detection of Cherenkov light with 66 PMTs (8” size) of type 9354KB/9350KB by ETL. In order
-to protect the PMTs from the surrounding water, each PMT is housed in a stainless-steel encapsulation which is further developed from the design of the Borexino capsules. The PMTs are arranged in seven rings in the water tank. One ring of six PMTs is pointing inside the separate volume under the cryostat,  two rings of eight PMTs and 12 PMTs  respectively are placed on the bottom of the water tank looking upwards and four rings of 10 PMTs are placed on the wall, pointing horizontally towards the cryostat. \cite{GERDA-muonVeto} 
+A 10~m-diameter and 8~m-height tank with 590~m$^3$ of ultra-pure water shields from neutron and gamma backgrounds. It works also as a muon veto for residual cosmic muons through the detection of Cherenkov light with 63 \ac{PMT} (8” size) of type 9354KB/9350KB by ETL. In order
+to protect the \ac{PMT} from the surrounding water, each PMT is housed in a stainless-steel encapsulation which is further developed from the design of the Borexino capsules. The \ac{PMT} are arranged in seven rings in the water tank. One ring of six \ac{PMT} is pointing inside the separate volume under the cryostat,  two rings of eight \ac{PMT} and 12 \ac{PMT}  respectively are placed on the bottom of the water tank looking upwards and four rings of 10 \ac{PMT} are placed on the wall, pointing horizontally towards the cryostat. \cite{GERDA-muonVeto} 
 
-\section{Background suppression strategies (hardware level)}
-Background is the main issue in the LEGEND experiment and every single part of it has been built considering that background has to be limited as much as possible.
+\section{Background contaminations}
+Background is one of the main issues in the LEGEND program. According to \cite{L200-sep25} the background contribution for the LEGEND experiment are the same of its predecessor GERDA, therefore further consideration about it are based on \cite{GERDAphase2}.
+
+The spectrum is dominated by the $\beta$ decay of ${}^{39}$Ar in the LAr up to 565 keV, while the $2\nu\beta\beta$ decay of ${}^{76}$Ge becomes the prominent component between 600 keV and 1500 keV. Additionally, two $\gamma$ lines at 1461 keV and 1525 keV originate from ${}^{40}$K and ${}^{42}$K, respectively, with other spectral lines attributed to ${}^{58}$Kr, ${}^{208}$Tl, ${}^{212}$Bi, and ${}^{228}$Ac. At higher energies, the $\alpha$ decay of ${}^{210}$Po leaves a distinct signature at 5.3 MeV, and the peaks emerging above this energy are driven by $\alpha$ decays within the ${}^{226}$Ra decay chain. 
+
+As mnentioned above, background signals are a complicated part to deal with in the LEGEND experiment and therefore every single part of it has been built considering that background sources have to be limited as much as possible. This is the reason why structural components of the setup have been screened for their radio-purity before deployment. In order to achieve this goal two methods depending on the screened isotope:
+\begin{itemize}
+    \item $\gamma$ ray spectroscopy (Ge-$\gamma$) with High Purity Germanium 
+    \item mass spectroscopy with Inductively Coupled Plasma Mass Spectrometers (ICP-MS)
+\end{itemize}
+
+All of the materials close to the detectors have been screened to prevent radioactive contamination given by ${}^{238}$U and ${}^{232}$Th decay chains and ${}^{40}$K and ${}^{60}$Co isotopes.
+
+Summing up, the main contribuitions to background are:
+\begin{itemize}
+    \item \textbf{${}^{238}$U and ${}^{232}$Th decay chains}:\\
+            The radioactive isotopes to be considered are ${}^{234\text{m}}$Pa\footnote{The m stands for metastable}, ${}^{214}$Pb and ${}^{214}$Bi from the ${}^{238}$U chain and ${}^{228}$Ac, ${}^{212}$Bi and ${}^{208}$Tl from ${}^{232}$Th. Their products are $\gamma$ rays or $\beta$ particles with an energy higher than 520 keV\footnote{Higher energies are not taken into cosnideration because are outside of the energy window of interest}. If any $\alpha$ particle is produced, it is considered as decribed in the following points
+    \item \textbf{${}^{60}$Co}:\\
+            A significant part of the \ac{hpge} infrastructure is made up of copper (see Sec \ref{subsec:GeDetectors}) that can be produced in safe enviroments avoiding contaminations, but can be nevertheless be activated by cosmic rays that may produce the long-lived isotope ${}^{60}$Co ($\tau_{1/2}^{{}^{60}\text{Co}} = 5.2711(8)$ yr). Furthermore, also \ac{HV} copper cables can have a small component of such isotope.
+
+    \item \textbf{${}^{40}$K:}\\
+            This specific isotope is presetn in all of the screened materials, seeing that the Q-value of its decay is well below the enrgy region of interest and therefore does not contribute with background around $Q_{\beta\beta}$.
+
+    \item \textbf{${}^{42}$K:}\\
+            In liquid argon (LAr), one of the primary cosmogenically produced isotopes is ${}^{42}\text{Ar}$ ($\tau_{1/2} = 32.9(11)\text{ yr}$), which decays into ${}^{42}\text{K}$. The spatial distribution of this potassium isotope inside the LAr tank is expected to be inhomogeneous due to the drift of ionized decay products—induced by the electric field generated by high-voltage cables and detectors—as well as fluid convection. ${}^{42}\text{K}$ subsequently undergoes $\beta$ decay to ${}^{42}\text{Ca}$ with a half-life of $\tau_{1/2} = 12.355(7)\text{ h}$ and a Q-value of $3525.22(18)\text{ keV}$, which lies well above $Q_{\beta\beta}$. 
+            For a $\beta$ particle to be directly detected, the decay must occur within a few centimeters of the detector surfaces; otherwise, the electrons are fully absorbed by the surrounding LAr. Because the detectors are in direct contact with the liquid argon, this $\beta$ component represents one of the most significant background contributions. A higher concentration of ${}^{42}\text{K}$ events is typically observed near the front-end electronics. Away from the electronics, the proximity of the decay to the detector outer contacts ($n^+$ and $p^+$) dictates the $\beta$ acceptance rate: the closer the decay happens to the surface, the higher the probability that $\beta$ particles enter the germanium volume. 
+            Furthermore, a fraction of background events near $Q_{\beta\beta}$ originating from ${}^{42}\text{K}$ can be attributed to high-energy $\gamma$ rays with sub-percent branching ratios or to simultaneous multiple $\gamma$ depositions. This $\gamma$-induced component becomes particularly relevant when large quantities of ${}^{42}\text{K}$ are located further away from the detector surfaces, where direct $\beta$ particles are completely shielded and absorbed by the LAr.
+
+    \item \textbf{$\alpha$ emitters:}\\
+            The lithium-diffused $n^+$ detector surfaces act as a barrier for $\alpha$ particles that as a consequence can only penetrate the detctor throught the $p^+$ surface. However, having to traverse the $0.5~\mu$m thick $p^+$ dead layer, said particles loose energy and their contribution to the background is relatively negligible.
+
+\item \textbf{Detector bulk impurities:}\\
+            Cosmogenically produced long-lived isotopes can act as intrinsic impurities within the Germanium crystals. In particular, ${}^{68}$Ge and ${}^{60}$Co can be produced if the detectors are exposed to cosmic radiation above ground during fabrication and characterization operations. However, based on background simulations from the GERDA project, the contribution of these bulk impurities around the $Q_{\beta\beta}$ value is expected to be less than $10^{-4}$ cts/(\text{keV}$\cdot$\text{kg}$\cdot$\text{yr}). Consequently, the background induced by these two isotopes is considered negligible.
+
+    \item \textbf{Cosmic muons:}\\
+            Prompt background events induced by cosmic muons are efficiently vetoed by identifying the Cherenkov light produced as they pass through the water tank, which is read out by the \ac{PMT} system. Furthermore, the expected background indices (BIs) due to direct muon and neutron fluxes at the LNGS underground laboratory are estimated to be extremely low, on the order of $3 \times 10^{-5}$ cts/(\text{keV}$\cdot$\text{kg}$\cdot$\text{yr}) and $10^{-5}$ cts/(\text{keV}$\cdot$\text{kg}$\cdot$\text{yr}), respectively. Cosmic muons can also induce delayed decays of ${}^{77}$Ge and ${}^{77\text{m}}$Ge, yielding a BI of about $10^{-5}$ cts/(\text{keV}$\cdot$\text{kg}$\cdot$\text{yr}) even prior to applying active suppression techniques. Given these exceptionally low values, all these muon-induced sources are deemed negligible.
+            
+    \item \textbf{Other sources:}\\
+            Additional potential background contributions include contaminations in the water tank and the LAr cryostat, which are expected to yield a BI of less than $10^{-4}$ cts/(\text{keV}$\cdot$\text{kg}$\cdot$\text{yr}). Interactions of ${}^{76}$Ge and ${}^{206}$Pb with neutrons and ${}^{56}$Co are not taken into consideration, as no evidence for them was found. Finally, particles emitted by the cosmogenically produced ${}^{39}$Ar and the anthropogenic ${}^{85}$Kr, both dissolved in LAr, possess energies that are dominantly lower than the analysis window. Therefore, all these potential contaminations can be safely neglected in the region of interest.
+
+\end{itemize}

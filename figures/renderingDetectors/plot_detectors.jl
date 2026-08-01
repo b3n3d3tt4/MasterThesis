@@ -19,22 +19,25 @@ for file in files
     
     # Genera il grafico con le impostazioni estetiche avanzate
     p = plot(sim.detector, 
-        size = (1000, 1000),  # Aumentata leggermente la risoluzione per la tesi
+        size = (1000, 1000),  # Risoluzione elevata per la tesi
         
-        # RIMUOVE GLI ASSI E LA GRIGLIA
-        framestyle = :axes,   
+        # MOSTRA SOLO GLI ASSI CENTRALI SENZA RIQUADRO
+        framestyle = :origin, 
         grid = false,
-        showaxis = false,
-        ticks = false,
+        
+        # Rimuove etichette, numeri e tacche dagli assi
+        xticks = false,
+        yticks = false,
+        xlabel = "",
+        ylabel = "",
         
         # RUOTA LA TELECAMERA
         # Il primo numero (20) è l'azimuth: ruota l'oggetto a destra/sinistra.
         # Il secondo numero (25) è l'elevazione: alza la telecamera per guardare dall'alto verso il basso.
-        # Se lo spaccato non è ancora perfettamente frontale, prova a cambiare 160 in 140, 180 o 200.
         camera = (20, 25),    
         
-        title = "",           
-        legend = false        
+        title = "",          
+        legend = false       
     )
     
     nome_immagine = replace(file, ".json" => "_frontale.png")

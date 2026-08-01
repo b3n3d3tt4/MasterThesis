@@ -187,6 +187,43 @@
       \verb 2505.10440
       \endverb
     \endentry
+    \entry{GERDAphase2}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=dbdf1747536f6921c0bd5f24c13e6c50}{%
+           family={Agostini},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{fullhash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{fullhashraw}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{bibnamehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authorbibnamehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authornamehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authorfullhash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authorfullhashraw}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{nucl-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{JHEP}
+      \field{title}{{Modeling of GERDA Phase II data}}
+      \field{volume}{03}
+      \field{year}{2020}
+      \field{pages}{139}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/JHEP03(2020)139
+      \endverb
+      \verb{eprint}
+      \verb 1909.02522
+      \endverb
+    \endentry
     \entry{SNO2002-results}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
