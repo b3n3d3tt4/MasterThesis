@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  1 AUG 2026 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  4 AUG 2026 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1457,7 +1457,7 @@ Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  use
 
 
 [21]
-<figures/catena_decadimento_Th228.png, id=622, 507.5763pt x 1149.093pt>
+<figures/catena_decadimento_Th228.png, id=623, 507.5763pt x 1149.093pt>
 File: figures/catena_decadimento_Th228.png Graphic file (type png)
 <use figures/catena_decadimento_Th228.png>
 Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 47.
@@ -1468,12 +1468,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [22 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png>]
-<figures/prova.jpg, id=632, 171.43117pt x 124.03549pt>
+<figures/prova.jpg, id=634, 171.43117pt x 124.03549pt>
 File: figures/prova.jpg Graphic file (type jpg)
 <use figures/prova.jpg>
 Package pdftex.def Info: figures/prova.jpg  used on input line 54.
 (pdftex.def)             Requested size: 241.84843pt x 174.99226pt.
-<figures/DEP-SEP-FEP.jpg, id=636, 3097.5725pt x 1324.95pt>
+<figures/DEP-SEP-FEP.jpg, id=638, 3097.5725pt x 1324.95pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
 Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 79.
@@ -1590,17 +1590,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42099 strings out of 473682
- 883902 string characters out of 5729112
- 1638470 words of memory out of 5000000
- 64240 multiletter control sequences out of 15000+600000
+ 42103 strings out of 473682
+ 884077 string characters out of 5729112
+ 1638538 words of memory out of 5000000
+ 64243 multiletter control sequences out of 15000+600000
  782850 words of font info for 282 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,1261b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (49 pages, 2616321 bytes).
+Output written on main.pdf (49 pages, 2618109 bytes).
 PDF statistics:
- 985 PDF objects out of 1000 (max. 8388607)
- 223 named destinations out of 1000 (max. 500000)
+ 989 PDF objects out of 1000 (max. 8388607)
+ 224 named destinations out of 1000 (max. 500000)
  387 words of extra memory for PDF output out of 10000 (max. 10000000)
 
