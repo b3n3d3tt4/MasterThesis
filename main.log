@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  10 AUG 2026 16:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  10 AUG 2026 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1600,13 +1600,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  42087 strings out of 473682
  883690 string characters out of 5729112
- 1638179 words of memory out of 5000000
+ 1638178 words of memory out of 5000000
  64236 multiletter control sequences out of 15000+600000
  782850 words of font info for 282 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,1261b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (49 pages, 2632897 bytes).
+Output written on main.pdf (49 pages, 2632896 bytes).
 PDF statistics:
  1025 PDF objects out of 1200 (max. 8388607)
  218 named destinations out of 1000 (max. 500000)

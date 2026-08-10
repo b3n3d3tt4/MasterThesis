@@ -11,7 +11,8 @@ def distribution_2nu(x):
     dist = np.where(x <= 1.0, (x**2) * ((1.0 - x)**5), 0)
     max_val = np.max(dist)
     if max_val > 0:
-        dist = dist / max_val * 2.85  # Riscalato all'altezza corretta rispetto al blu
+        dist = dist / max_val * 2.3
+    
     return dist
 
 energy_2nu = np.linspace(0, 0.93, 10000)
