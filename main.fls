@@ -358,6 +358,12 @@ INPUT C:\Program Files\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT .\main.aux
 INPUT .\main.aux
 INPUT main.aux
+INPUT .\chapters\A-app_three-flavours.aux
+INPUT .\chapters\A-app_three-flavours.aux
+INPUT chapters\A-app_three-flavours.aux
+INPUT .\chapters\B-app_neutrinosINmatter.aux
+INPUT .\chapters\B-app_neutrinosINmatter.aux
+INPUT chapters\B-app_neutrinosINmatter.aux
 OUTPUT main.aux
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
@@ -417,8 +423,14 @@ INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics\color.sty
-OUTPUT main.out
+INPUT .\main.out
+INPUT .\main.out
+INPUT main.out
+INPUT main.out
 OUTPUT main.pdf
+INPUT .\main.out
+INPUT .\main.out
+OUTPUT main.out
 INPUT .\figures\logoUNIPD_bkgremoved.png
 INPUT .\figures\logoUNIPD_bkgremoved.png
 INPUT .\figures\logoUNIPD_bkgremoved.png
@@ -459,11 +471,10 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
-OUTPUT main.toc
+INPUT .\main.toc
+INPUT .\main.toc
+INPUT main.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
-INPUT .\chapters\01_neutrino_physics.tex
-INPUT .\chapters\01_neutrino_physics.tex
-INPUT chapters\01_neutrino_physics.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutmi.fd
@@ -505,6 +516,21 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmi.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
+OUTPUT main.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futbi8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm
+INPUT .\chapters\01_neutrino_physics.tex
+INPUT .\chapters\01_neutrino_physics.tex
+INPUT chapters\01_neutrino_physics.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
@@ -550,15 +576,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
@@ -567,6 +586,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\figures\neutrino-fluxes.png
 INPUT .\figures\neutrino-fluxes.png
@@ -581,6 +602,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
@@ -588,9 +611,9 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
@@ -605,10 +628,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
@@ -662,6 +681,7 @@ INPUT .\feynman-diagrams\diracANDmajorana-massTerms.tex
 INPUT .\feynman-diagrams\diracANDmajorana-massTerms.tex
 INPUT feynman-diagrams\diracANDmajorana-massTerms.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
@@ -702,6 +722,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
 INPUT .\feynman-diagrams\0nu-doubleBeta-diagram.tex
 INPUT .\feynman-diagrams\0nu-doubleBeta-diagram.tex
 INPUT feynman-diagrams\0nu-doubleBeta-diagram.tex
+INPUT .\figures\0nu_vs_2nu.pdf
+INPUT .\figures\0nu_vs_2nu.pdf
+INPUT .\figures\0nu_vs_2nu.pdf
+INPUT .\figures\0nu_vs_2nu.pdf
+INPUT .\figures\0nu_vs_2nu.pdf
+INPUT .\figures\0nu_vs_2nu.pdf
 INPUT .\chapters\02_legend_experiment.tex
 INPUT .\chapters\02_legend_experiment.tex
 INPUT chapters\02_legend_experiment.tex
@@ -724,6 +750,11 @@ INPUT .\figures\LEGENDLAr.png
 INPUT .\figures\LEGENDLAr.png
 INPUT .\figures\LEGENDLAr.png
 INPUT .\figures\LEGENDLAr.png
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futrc8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8c.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-orns.tfm
 INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
@@ -804,6 +835,7 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
 INPUT .\chapters\B-app_neutrinosINmatter.tex
 INPUT .\chapters\B-app_neutrinosINmatter.tex
 OUTPUT chapters\B-app_neutrinosINmatter.aux
@@ -828,4 +860,31 @@ INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT chapters\B-app_neutrinosINmatter.aux
 INPUT .\main.out
 INPUT .\main.out
+INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT C:\Users\Utente\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
+INPUT C:\Users\Utente\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-bb.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-bb.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-mcl.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-mcl.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-mex.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-mex.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-ml.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-ml.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-mlit.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-mlit.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-ms.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\fourier\fourier-ms.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putb8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putb8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putbi8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putbi8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putr8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putr8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putri8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\adobe\utopia\putri8a.pfb
