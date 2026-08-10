@@ -6,39 +6,14 @@
 \contentsline {section}{\numberline {1.1}Neutrinos in the Standard Model of Particle Physics}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Flavour oscillations}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Experimental evidence: the solar neutrinos problem}{2}{subsection.1.2.1}%
-\contentsline {paragraph}{The Homestake mine experiment}{3}{section*.6}%
+\contentsline {paragraph}{The Homestake mine experiment}{2}{section*.6}%
 \contentsline {paragraph}{Gallium-based experiments}{3}{section*.7}%
 \contentsline {paragraph}{The Kamiokande experiment}{3}{section*.8}%
-\contentsline {paragraph}{Solution to the solar neutrino problem: the SNO experiment}{4}{section*.10}%
-\contentsline {subsection}{\numberline {1.2.2}Vacuum oscillations}{5}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Massive neutrinos in matter}{7}{subsection.1.2.3}%
+\contentsline {paragraph}{Solution to the solar neutrino problem: the SNO experiment}{3}{section*.9}%
+\contentsline {subsection}{\numberline {1.2.2}Vacuum oscillations}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Massive neutrinos in matter}{6}{subsection.1.2.3}%
 \contentsline {section}{\numberline {1.3}Neutrino massses}{7}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}\ac {NMO}}{7}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}The Seesaw mechanism}{9}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.2}The Seesaw mechanism}{8}{subsection.1.3.2}%
 \contentsline {section}{\numberline {1.4}Beta decay and double beta decay}{10}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Two-neutrino double beta decay ($2\nu \beta \beta $)}{11}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Neutrinoless double beta decay ($0\nu \beta \beta $)}{12}{subsection.1.4.2}%
-\contentsline {chapter}{\numberline {2}The LEGEND experiment}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Experimental setup}{15}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Germanium detectors}{16}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Liquid Argon (\ac {lar}) cryostat}{17}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Water tank}{17}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Background contaminations}{17}{section.2.2}%
-\contentsline {chapter}{\numberline {3}LEGEND data}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Signal formation and readout in Germanium detectors}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Events topology}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Data structure fo the LEGEND-200 phase}{24}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Data cleaning}{24}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Traditional \ac {PSD}}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Amplitude vs Energy}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Rising and falling times}{25}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Deep Learning \ac {PSD}}{27}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Model implementation}{27}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Model training}{27}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Model testing}{27}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Results}{27}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusions}{29}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{31}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{35}{appendix.B}%
-\contentsline {chapter}{Bibliography}{39}{appendix*.24}%
-\contentsline {chapter}{Acknowledgments}{41}{appendix*.25}%
+\contentsline {subsection}{\numberline {1.4.1}Two-neutrino double beta decay ($2\nu \beta \beta $)}{10}{subsection.1.4.1}%

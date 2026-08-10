@@ -52,26 +52,10 @@ families to three ($N_\nu = 2.9840 \pm 0.0082$ \cite{LEPnumberOFnu}), perfectly 
 \label{subsec:oscillation-experiments}
 \footnotetext{All of what is reported in this paragraph is elaborated from \cite{neutrinosPDG}, unless otherwise specified.}
 Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy, namely \ac{pp} chains and \ac{CNO} cylces.
-\begin{enumerate}
-    \item \textbf{\ac{pp} chains}\\
-            These processes include several neutrino-producing reactions, resulting in the overall fusion of four protons into a ${}^{4}$He nucleus:
-            \begin{equation}
-                \label{eq:pp_overall}
-                4p \to {}^4\text{He} + 2e^+ + 2\nu_e
-            \end{equation}
-            The total energy released in this reaction is given by the mass difference:
-            \begin{equation}
-                \label{eq:pp_qvalue}
-                Q = 4m_p - m_{{}^4\text{He}} - 2m_e \approx 26 \text{ MeV}
-            \end{equation}
-            Most of this energy is radiated away by photons, while only a small fraction is carried away by the neutrinos, 
-            with an average energy of $\langle E_{2\nu_e} \rangle = 0.59 \text{ MeV}$.
 
-    \item \textbf{\ac{CNO} cycles}\\
-            In \ac{CNO} cycles, neutrinos are mainly produced via the decays of ${}^{13}\text{N}$, ${}^{15}\text{O}$ and ${}^{17}\text{F}$. Additionally, electron capture on ${}^{13}\text{N}$, ${}^{15}\text{O}$, and ${}^{17}\text{F}$ produces monoenergetic line spectra of neutrinos, 
-            generally referred to as \textit{ecCNO} neutrinos. Compared to the $pp$ chain, CNO neutrinos carry away a higher fraction of the reaction energy, with average neutrino energies typically ranging between $0.7\text{ MeV}$ and $1.2\text{ MeV}$.
-            However, the flux of CNO-cycle neutrinos is roughly two orders of magnitude lower than the \ac{pp} chains one, accounting for less than $1\%$ of the solar energy production. Therefore it can be neglected in the flux calculation.
-\end{enumerate}
+In \ac{pp} chains several neutrino-producing reactions are involved, resulting in the overall fusion of four protons into a ${}^{4}$He nucleus ($4p \to {}^4\text{He} + 2e^+ + 2\nu_e$). The total energy released in this reaction is given by the mass difference $Q = 4m_p - m_{{}^4\text{He}} - 2m_e \approx 26 \text{ MeV}$: most of this energy is radiated away by photons, while only a small fraction is carried away by the neutrinos, with an average energy of $\langle E_{2\nu_e} \rangle = 0.59 \text{ MeV}$.
+
+On the other hand, in \ac{CNO} cycles, neutrinos are mainly produced via the decays of ${}^{13}\text{N}$, ${}^{15}\text{O}$ and ${}^{17}\text{F}$. Additionally, electron capture on ${}^{13}\text{N}$, ${}^{15}\text{O}$, and ${}^{17}\text{F}$ produces monoenergetic line spectra of neutrinos, generally referred to as \textit{ecCNO} neutrinos. Compared to the $pp$ chain, CNO neutrinos carry away a higher fraction of the reaction energy, with average neutrino energies typically ranging between $0.7\text{ MeV}$ and $1.2\text{ MeV}$. However, the flux of CNO-cycle neutrinos is roughly two orders of magnitude lower than the \ac{pp} chains one, accounting for less than $1\%$ of the solar energy production. Therefore it can be neglected in the flux calculation.
 
 Based on the \ac{SSM}, the total expected neutrino flux can be evaluated by considering the total solar luminosity 
 ($L_{\odot} \approx 3.828 \times 10^{26} \text{ W}$) and dividing it by the net energy released per complete \ac{pp} fusion chain 
@@ -91,33 +75,20 @@ Figure \ref{fig:neutrino-fluxes} details the fluxes of neutrinos based on the re
 
 \paragraph{The Homestake mine experiment}
 The experimental value of the solar neutrino flux $\Phi_{\ac{pp}} (\nu_e)$ has been studied since the last century.
-In the late 1960s, Raymond Davis and others permormed the first solar neutrino experiment in the Homestake gold mine in South Dakota, 
-using liquid tetrachloroethylene (C$_2$Cl$_4$) as the target and explouiting the \ac{CC} weak interaction of Eq. \ref{eq:CCcloro-argon}.
-\begin{equation}
-    \label{eq:CCcloro-argon}
-    \nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}
-\end{equation}
-The detector was placed underground inside the mine in order to reduce the background of ${}^{37}\text{Ar}$ produced by cosmic-ray-induced (p, n) reactions.
+In the late 1960s, the first solar neutrino experiment was performed underground in the Homestake gold mine in South Dakota in order to prevent contaminations of cosmic-ray induced reactions. 
+There liquid tetrachloroethylene (C$_2$Cl$_4$) was employed as the target and the \ac{CC} weak interaction $\nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}$ was exploited.
 Since this process has an energy threshold of $814$ keV, the fluxes of the ${}^{7}$Be and ${}^{8}$B neutrinos are the most relevant.
-The produced ${}^{37}\text{Ar}$, with a half-life of $34.8\text{ days}$, was chemically extracted and introduced into a low-background proportional 
-chamber every few months. Auger electrons from ${}^{37}\text{Ar}$ electron capture were counted to determine the neutrino-${}^{37}\text{Cl}$ reaction rate.
-From the beginning the experiment results yield a neutrino flux of less than one third of what expected, givin birth to the so-called \textit{solar neutrino problem}. 
+Auger electrons from the produced ${}^{37}\text{Ar}$ electron capture were counted to determine the neutrino-chlorine reaction rate.
+From the beginning the experimental results yield a neutrino flux of less than one third of what expected, givin birth to the so-called \textit{solar neutrino problem}. 
 The final result from the Homestake experiment was $2.56 \pm 0.16 \pm 0.16 \text{ SNU}$~
 \footnote{SNU (solar neutrino unit) is a unit of event rate defined as $1 \text{ SNU} = 10^{-36}\text{ captures per second per target atom}$.} \cite{HomestakeResults} 
 and can be directly compared with the theoretical \ac{SSM} prediction of $8.46^{+0.87}_{-0.88} \text{ SNU}$~\cite{SSMReference}.
 
 \paragraph{Gallium-based experiments}
-Lower-energy components of the solar neutrino spectrum (Figure \ref{fig:neutrino-fluxes}) can be investigated via \ac{CC} interactions exploiting the following ${}^{71}\text{Ga}$ process:
-\begin{equation}
-    \label{eq:CCgallio}
-    \nu_e + {}^{71}\text{Ga} \longrightarrow e^- + {}^{71}\text{Ge}
-\end{equation} 
+Lower-energy components of the solar neutrino spectrum (Figure \ref{fig:neutrino-fluxes}) can be investigated via \ac{CC} interactions exploiting the ${}^{71}\text{Ga}$ process $\nu_e + {}^{71}\text{Ga} \longrightarrow e^- + {}^{71}\text{Ge}$.
 Featuring a low energy threshold of $233\text{ keV}$, this reaction is primarily sensitive to \ac{pp} neutrinos, with secondary contributions from ${}^{7}\text{Be}$ sources. 
-The produced ${}^{71}\text{Ge}$ nuclei decay via electron capture with a half-life of $11.4\text{ days}$ and are chemically extracted to measure the capture rate, 
-following an approach analogous to Homestake.
-
-In order to probe this lower-energy regime, two radiochemical experiments were launched at the turn of the 1990s: the SAGE collaboration at the Baksan Neutrino Observatory 
-and the GALLEX (later followed by Gallium Neutrino Observatory (GNO)) experiment at the Laboratori Nazionali del Gran Sasso (LNGS). 
+The produced ${}^{71}\text{Ge}$ nuclei decay via electron capture and allow to measure the capture rate, following an approach analogous to Homestake.
+In order to probe this lower-energy regime, two radiochemical experiments were launched at the turn of the 1990s: the SAGE collaboration at the Baksan Neutrino Observatory and the GALLEX (later followed by Gallium Neutrino Observatory (GNO)) experiment at the Laboratori Nazionali del Gran Sasso (LNGS). 
 SAGE reported a measured flux of $65.4^{+3.1+2.6}_{-3.0-2.8} \text{ SNU}$, while GALLEX/GNO obtained $69.3 \pm 4.1 \pm 3.6 \text{ SNU}$. 
 Both measurements heavily contrast with the \ac{SSM} theoretical prediction of $127.9^{+8.1}_{-8.2} \text{ SNU}$ for the same energy range, reinforcing the solar 
 neutrino deficit puzzle.
@@ -126,27 +97,25 @@ neutrino deficit puzzle.
 Real-time measurements of the solar neutrino flux were pioneered by the Kamiokande experiment and its successor, Super-Kamiokande, located in the Kamioka mine in Japan. 
 These water Cherenkov detectors utilized $3000\text{ t}$ of water during the Kamiokande phase in the 1980s, scaling up to $50\text{ kt}$ of ultrapure water for Super-Kamiokande starting in 1996. 
 The detectors are sensitive to both \ac{CC} and \ac{NC} interactions, 
-which manifest as elastic scattering processes in the form of Eq. \ref{eq:CC-NCwater}, also displayed in Figure \ref{fig:feynman-CCandNCint}.
+which manifest as elastic scattering processes in the form of Eq. \ref{eq:CC-NCwater}.
+% , also displayed in Figure \ref{fig:feynman-CCandNCint}.
 \begin{equation}
     \label{eq:CC-NCwater}
     \nu_\ell + e^- \longrightarrow \nu_\ell + e^-
 \end{equation}
-\begin{figure}[H]
-    \centering
-    \resizebox{0.7\textwidth}{!}{
-        \input{feynman-diagrams/CCandNCintOFnu.tex}
-    }
-    \caption{Feynman diagrams of neutrino-electron scatterings. On the left, the \ac{CC} interaction mediated by a $W^+$ boson; on the right, the \ac{NC} 
-    interaction mediated by the $Z^0$ boson. The subscript $\ell$ denotes a generic lepton flavour ($\ell = e, \mu, \tau$).}
-    \label{fig:feynman-CCandNCint}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \resizebox{0.7\textwidth}{!}{
+%         \input{feynman-diagrams/CCandNCintOFnu.tex}
+%     }
+%     \caption{Feynman diagrams of neutrino-electron scatterings. On the left, the \ac{CC} interaction mediated by a $W^+$ boson; on the right, the \ac{NC} 
+%     interaction mediated by the $Z^0$ boson. The subscript $\ell$ denotes a generic lepton flavour ($\ell = e, \mu, \tau$).}
+%     \label{fig:feynman-CCandNCint}
+% \end{figure}
 
-However, the cross-section for $\nu_e$—the only flavour capable of interacting via the charged current—is approximately six times larger than that for $\nu_\mu$ or $\nu_\tau$. 
+However, the cross-section for $\nu_e$ —the only flavour capable of interacting via the charged current— is approximately six times larger than that for $\nu_\mu$ or $\nu_\tau$. 
 Consequently, the elastic scattering signal in standard water is an indistinguishable mixture of \ac{CC} and \ac{NC} events heavily skewed towards $\nu_e$, meaning the detector cannot cleanly measure the total flavor-independent neutrino flux.
-Due to energy thresholds of $6.5\text{ MeV}$ in Kamiokande and $3.5\text{ MeV}$ in Super-Kamiokande, these experiments are primarily sensitive to ${}^8\text{B}$ 
-solar neutrinos. The latest results from the Super-Kamiokande collaboration report a measured solar neutrino flux of 
-$(2.345 \pm 0.014 \pm 0.036) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$~\cite{latestSUPERK}, exhibiting a strong disagreement with the recent theoretical 
-\ac{SSM} prediction for this energy range, which stands at $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$.
+Due to energy thresholds of $6.5\text{ MeV}$ in Kamiokande and $3.5\text{ MeV}$ in Super-Kamiokande, these experiments are primarily sensitive to ${}^8\text{B}$ solar neutrinos. The latest results from the Super-Kamiokande collaboration report a measured solar neutrino flux of $(2.345 \pm 0.014 \pm 0.036) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$~\cite{latestSUPERK}, exhibiting a strong disagreement with the recent theoretical \ac{SSM} prediction for this energy range, which stands at $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$.
 
 \paragraph{Solution to the solar neutrino problem: the SNO experiment}
 The ultimate confirmation of neutrino flavour oscillation arrived with the Sudbury Neutrino Observatory (SNO) experiment that took place in the Creighton Mine near the city of Sudbury (Ontario, Canada) spanning the late 1990s and early 2000s. It exploited $1000\text{ t}$ of heavy water ($\text{D}_2\text{O}$) contained in a spherical acrylic vessel surrounded by a normal water ($\text{H}_2\text{O}$) shield. Unlike Kamiokande, the use of deuterium ($d$) allowed SNO to observe ${}^8\text{B}$ neutrinos not only using the \ac{ES} channel (see Eq. \ref{eq:CC-NCwater}), but also to disentangle the pure \ac{CC} and \ac{NC} interactions detailed in Eq. \ref{eq:deuteron-interactions} and shown in Figure \ref{fig:feynman-deuteron}. 
@@ -178,7 +147,7 @@ The experimental results on solar neutrino fluxes of the ${}^{8}\text{B}$ range 
 \end{equation} 
 The total active neutrino flux measured by the \ac{NC} channel, $\Phi_\text{SNO}^\text{NC}(\nu_\ell)$, is remarkably consistent with both the historical \ac{SSM} predictions of that era and the recent updated prediction mentioned above, i.e. $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$. The striking discrepancy between $\Phi_\text{SNO}^\text{NC}(\nu_\ell)$ and the purely electronic $\Phi_\text{SNO}^\text{CC}(\nu_e)$ proved definitively that neutrinos produced in the core of the Sun as purely electron-type are recorded on Earth as a mix of different flavours. 
 
-Finally, this framework also perfectly explains why radiochemical experiments (like Homestake, GALLEX, and SAGE) and water Cherenkov detectors (like Kamiokande and SNO) recorded different deficit ratios: the probability of a neutrino changing flavour is heavily energy-dependent \footnote{See Appendix \ref{app:ThreeFlavoursOscillation}}. Since these experiments featured different energy thresholds, they probed different ranges of the solar neutrino energy spectrum, naturally observing different survival probabilities.
+Finally, this framework also perfectly explains why radiochemical experiments (like Homestake, GALLEX, and SAGE) and water Cherenkov detectors (like Kamiokande and SNO) recorded different deficit ratios: the probability of a neutrino changing flavour is heavily energy-dependent \footnote{See Appendix \ref{app:ThreeFlavoursOscillation}.}. Since these experiments featured different energy thresholds, they probed different ranges of the solar neutrino energy spectrum, naturally observing different survival probabilities.
 
 % ----------------------------------------------------------
 % ------------------- VACUUM OCILLATIONS -------------------
@@ -592,7 +561,13 @@ This hypothetical, lepton-number-violating process can be distinguished from the
 \begin{equation*}
     E_e = \frac{1}{2} Q = \frac{1}{2} [M(Z, A) - M(Z+2, A)] 
 \end{equation*}
-where $M(Z, A)$ and $M(Z+2, A)$ represent the masses of the parent and daughter nuclei, respectively. Conversely, for standard $2\nu\beta\beta$ decay, the combined electron energy spectrum is continuous, with very few events occurring near the endpoint $\frac{1}{2}Q$.
+where $M(Z, A)$ and $M(Z+2, A)$ represent the masses of the parent and daughter nuclei, respectively. Conversely, for standard $2\nu\beta\beta$ decay, the combined electron energy spectrum is continuous, with very few events occurring near the endpoint $\frac{1}{2}Q$. thi can be visualised in Fig. \ref{fig:Qvalue-2nu0nu}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{name}
+    \caption{}
+    \label{fig:Qvalue-2nu0nu}
+\enf{figure}
 
 If neutrinos are indeed Majorana particles, the standard mechanism for $0\nu\beta\beta$ decay is mediated by the exchange of a light Majorana neutrino. The decay rate, usually expressed in terms of the half-life $T_{1/2}^{0\nu}$, is given by:
 \begin{equation}
@@ -611,4 +586,7 @@ nuclear matrix elements, different backgrounds, and further enable investigation
 
 Current experiments investigating this process rely on a variety of detection techniques, most notably liquid scintillators and solid-state semiconductors. For instance, KamLAND-Zen uses a Xenon-loaded liquid scintillator to search for the decay, whereas SNO+ employs a Tellurium-loaded one. In contrast, experiments like LEGEND utilize Germanium semiconductor detectors to probe $0\nu\beta\beta$ processes in ${}^{76}$Ge.
 
-The experimental verification of such an elusive process would constitute a paradigm-shifting milestone in particle physics, laying the cornerstone for physics beyond the \ac{SM} and proving definitively that neutrinos possess an intrinsic nature entirely distinct from all other elementary particles.
+The experimental ve
+
+
+rification of such an elusive process would constitute a paradigm-shifting milestone in particle physics, laying the cornerstone for physics beyond the \ac{SM} and proving definitively that neutrinos possess an intrinsic nature entirely distinct from all other elementary particles.
