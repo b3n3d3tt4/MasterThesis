@@ -33,12 +33,11 @@
 \contentsline {section}{\numberline {4.1}Amplitude vs Energy}{25}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Rising and falling times}{25}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Deep Learning \ac {PSD}}{27}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Model implementation}{27}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Model training}{27}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Model testing}{27}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Results}{27}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusions}{29}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{31}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{35}{appendix.B}%
-\contentsline {chapter}{Bibliography}{39}{appendix*.24}%
-\contentsline {chapter}{Acknowledgments}{41}{appendix*.25}%
+\contentsline {section}{\numberline {5.1}Data cleaning}{28}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Model implementation}{30}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Results}{30}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusions}{31}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{33}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{37}{appendix.B}%
+\contentsline {chapter}{Bibliography}{41}{appendix*.25}%
+\contentsline {chapter}{Acknowledgments}{43}{appendix*.26}%

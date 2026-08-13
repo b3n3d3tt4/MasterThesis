@@ -410,6 +410,7 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
@@ -820,6 +821,42 @@ INPUT chapters\04_psd.tex
 INPUT .\chapters\05_implementation.tex
 INPUT .\chapters\05_implementation.tex
 INPUT chapters\05_implementation.tex
+INPUT .\plots\raw_wf.pdf
+INPUT .\plots\raw_wf.pdf
+INPUT .\plots\raw_wf.pdf
+INPUT .\plots\raw_wf.pdf
+INPUT .\plots\raw_wf.pdf
+INPUT .\plots\raw_wf.pdf
+INPUT .\plots\baseline_subtracted_wf.pdf
+INPUT .\plots\baseline_subtracted_wf.pdf
+INPUT .\plots\baseline_subtracted_wf.pdf
+INPUT .\plots\baseline_subtracted_wf.pdf
+INPUT .\plots\baseline_subtracted_wf.pdf
+INPUT .\plots\baseline_subtracted_wf.pdf
+INPUT .\plots\normalised_wf.pdf
+INPUT .\plots\normalised_wf.pdf
+INPUT .\plots\normalised_wf.pdf
+INPUT .\plots\normalised_wf.pdf
+INPUT .\plots\normalised_wf.pdf
+INPUT .\plots\normalised_wf.pdf
+INPUT .\plots\aligned_wf.pdf
+INPUT .\plots\aligned_wf.pdf
+INPUT .\plots\aligned_wf.pdf
+INPUT .\plots\aligned_wf.pdf
+INPUT .\plots\aligned_wf.pdf
+INPUT .\plots\aligned_wf.pdf
+INPUT .\plots\trimmed_wf.pdf
+INPUT .\plots\trimmed_wf.pdf
+INPUT .\plots\trimmed_wf.pdf
+INPUT .\plots\trimmed_wf.pdf
+INPUT .\plots\trimmed_wf.pdf
+INPUT .\plots\trimmed_wf.pdf
+INPUT .\plots\current_wf.pdf
+INPUT .\plots\current_wf.pdf
+INPUT .\plots\current_wf.pdf
+INPUT .\plots\current_wf.pdf
+INPUT .\plots\current_wf.pdf
+INPUT .\plots\current_wf.pdf
 INPUT .\chapters\06_conclusions.tex
 INPUT .\chapters\06_conclusions.tex
 INPUT chapters\06_conclusions.tex
