@@ -31,6 +31,7 @@ Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \texti
 \end{figure}
 
 QUI FORSE COME è IOL WEIGHTING FIELD NELL'ICPC?
+ICPC (Inverted Coaxial Point Contact): È la geometria specifica del tuo diodo. Ha un contatto di lettura piccolissimo ("point contact"). Questo design fa sì che il campo elettrico all'interno sia particolare: la carica si muove lentamente all'inizio e accelera bruscamente vicino al contatto. È fondamentale per te perché questo effetto amplifica le differenze nella forma d'onda tra eventi SSE e MSE.
 
 \section{Events topology}
 
@@ -44,34 +45,45 @@ It is evident that we can distinguish several peaks: the ones we are focusing on
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.3\textwidth]{figures/catena_decadimento_Th228.png}
-    \caption{Decay chain of the ${}^{228}$Th calibration source. Custom plot with data taken from \cite{Th228chain}.}
-    \label{fig:decayTh228}
+    
+    % Colonna di sinistra: Prima Figura (Catena di decadimento)
+    \begin{minipage}[t]{0.3\textwidth}
+        \vspace{0pt} % Forza l'allineamento al margine superiore
+        \centering
+        \includegraphics[width=\linewidth]{figures/catena_decadimento_Th228.png}
+        \caption{Decay chain of the ${}^{228}$Th calibration source. Custom plot with data taken from \cite{Th228chain}.}
+        \label{fig:decayTh228}
+    \end{minipage}
+    \hfill % Spazio flessibile tra le due minipage
+    % Colonna di destra: Seconda Figura e Tabella
+    \begin{minipage}[t]{0.65\textwidth}
+        \vspace{0pt} % Forza l'allineamento al margine superiore
+        \centering
+        
+        % Seconda figura in alto
+        \includegraphics[width=\linewidth]{plots/energy_spectrum-example.pdf}
+        \caption{Example of the energy spectrum recorded in the calibration. The data for this example plot are from run r000 of period p03}
+        \label{fig:TlBi-spectrum}
+        
+        \vspace{1.0em} % Spazio verticale tra la figura e la tabella
+        
+        % Tabella in basso
+        \begin{tabular}{ccccc}
+            \toprule
+            \textbf{Isotope} && \textbf{Peak} && \textbf{Energy [keV]} \\
+            \midrule
+            $^{208}$Tl && FEP && 2614.552 \\
+            $^{208}$Tl && SEP && 2103.552 \\
+            $^{208}$Tl && DEP && 1592.552 \\
+            $^{212}$Bi && FEP && 1620.500 \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{Prominent $\gamma$-ray peaks from the $^{228}$Th decay chain used for energy calibration. Data are taken from \cite{LNHB}.}
+        \label{tab:emission-peaks}
+    \end{minipage}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/prova.jpg}
-    \caption{TO BE CHANGED Energy spectrum of the visible peaks recorded in the calibration. The data for this example plot are run?? of period ??}
-    \label{fig:TlBi-spectrum}
-\end{figure}
 
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{ccccc}
-        \toprule
-        \textbf{Isotope} && \textbf{Peak} && \textbf{Energy [keV]} \\
-        \midrule
-        $^{208}$Tl && FEP && 2614.552 \\
-        $^{208}$Tl && SEP && 2103.552 \\
-        $^{208}$Tl && DEP && 1592.552 \\
-        $^{212}$Bi && FEP && 1620.500 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Prominent $\gamma$-ray peaks from the $^{228}$Th decay chain used for energy calibration. Data are taken from \cite{LNHB}.}
-    \label{tab:emission-peaks}
-\end{table}
 The \ac{DEP} and \ac{SEP} of Tallium-228 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons of the positron escape the active detector volume without further interaction. Consequently, the energy deposition is highly localized, yielding a simple and temporally narrow pulse waveform.
 Conversely, a \ac{SEP} event arises when only one of the two annihilation photons escapes, while the second photon re-interacts and deposits its energy elsewhere within the detector volume. This spatial separation introduces a temporal spread, resulting in a more complex waveform structure. Furthermore, events contributing to the \ac{FEP} typically involve multiple Compton scattering interactions prior to complete absorption, yielding an even more intricate pulse shape.
 \begin{figure}[H]
@@ -89,4 +101,3 @@ MSE E SSE
 \section{Data cleaning}
 
 
-ICPC (Inverted Coaxial Point Contact): È la geometria specifica del tuo diodo. Ha un contatto di lettura piccolissimo ("point contact"). Questo design fa sì che il campo elettrico all'interno sia particolare: la carica si muove lentamente all'inizio e accelera bruscamente vicino al contatto. È fondamentale per te perché questo effetto amplifica le differenze nella forma d'onda tra eventi SSE e MSE.
