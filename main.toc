@@ -1,7 +1,7 @@
 \acswitchoff 
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Abstract}{iii}{chapter*.2}%
-\contentsline {chapter}{List of Acronyms}{vii}{chapter*.4}%
+\contentsline {chapter}{Abstract}{v}{chapter*.2}%
+\contentsline {chapter}{List of Acronyms}{ix}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}Neutrino physics}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Neutrinos in the Standard Model of Particle Physics}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Flavour oscillations}{2}{section.1.2}%
@@ -27,17 +27,17 @@
 \contentsline {chapter}{\numberline {3}LEGEND data}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Signal formation and readout in Germanium detectors}{21}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Events topology}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Data structure fo the LEGEND-200 phase}{24}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Data cleaning}{24}{section.3.4}%
+\contentsline {section}{\numberline {3.3}Data structure of the LEGEND-200 phase}{24}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Traditional \ac {PSD}}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Amplitude vs Energy}{25}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Rising and falling times}{25}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Deep Learning \ac {PSD}}{27}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Data cleaning}{28}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Model implementation}{29}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Results}{29}{section.5.3}%
+\contentsline {section}{\numberline {5.2}Model implementation}{30}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Results}{30}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Conclusions}{31}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{33}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{37}{appendix.B}%
 \contentsline {chapter}{Bibliography}{41}{appendix*.23}%
 \contentsline {chapter}{Acknowledgments}{43}{appendix*.24}%
+\contentsline {chapter}{Ringraziamenti}{45}{appendix*.25}%

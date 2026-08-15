@@ -364,6 +364,9 @@ INPUT chapters\A-app_three-flavours.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT chapters\B-app_neutrinosINmatter.aux
+INPUT .\chapters\08_ringraziamenti.aux
+INPUT .\chapters\08_ringraziamenti.aux
+INPUT chapters\08_ringraziamenti.aux
 OUTPUT main.aux
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
@@ -466,13 +469,18 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
 INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
@@ -533,7 +541,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm
 INPUT .\chapters\01_neutrino_physics.tex
 INPUT .\chapters\01_neutrino_physics.tex
 INPUT chapters\01_neutrino_physics.tex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
@@ -703,7 +710,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
 INPUT .\figures\mass_parabola_A76.pdf
 INPUT .\figures\mass_parabola_A76.pdf
 INPUT .\figures\mass_parabola_A76.pdf
@@ -822,6 +828,7 @@ INPUT .\chapters\05_implementation.tex
 INPUT .\chapters\05_implementation.tex
 INPUT chapters\05_implementation.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
@@ -858,6 +865,8 @@ INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\chapters\06_conclusions.tex
 INPUT .\chapters\06_conclusions.tex
 INPUT chapters\06_conclusions.tex
@@ -888,6 +897,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
+INPUT .\chapters\08_ringraziamenti.tex
+INPUT .\chapters\08_ringraziamenti.tex
+OUTPUT chapters\08_ringraziamenti.aux
+INPUT .\chapters\08_ringraziamenti.tex
+INPUT .\chapters\08_ringraziamenti.tex
+INPUT chapters\08_ringraziamenti.tex
 INPUT main.aux
 INPUT .\chapters\A-app_three-flavours.aux
 INPUT .\chapters\A-app_three-flavours.aux
@@ -895,6 +910,9 @@ INPUT chapters\A-app_three-flavours.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT chapters\B-app_neutrinosINmatter.aux
+INPUT .\chapters\08_ringraziamenti.aux
+INPUT .\chapters\08_ringraziamenti.aux
+INPUT chapters\08_ringraziamenti.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml

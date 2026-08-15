@@ -12,11 +12,12 @@ To prevent these learned distributions from collapsing or behaving arbitrarily, 
 In the context of semiconductor signal processing and waveform analysis, this probabilistic approach is critically enhanced by adopting a $\beta$-VAE architecture. A $\beta$-VAE introduces an adjustable hyperparameter, $\beta > 1$, which artificially amplifies the weight of the KL divergence term in the loss function. This intensified regularization places a tighter constraint on the latent channel capacity, forcing the network to learn only the most statistically independent and fundamental generative factors of the data. For Germanium detector signals, this property is vital: it actively promotes disentanglement, preventing the network from confounding distinct physical phenomena -such as total energy deposition, rise time kinetics, and electronic noise- into a single tangled variable. Consequently, the $\beta$-VAE enables a rigorous, interpretable mapping where individual latent nodes correspond to isolated physical observables, thereby providing a significantly more reliable foundation for downstream classification tasks such as \ac{PSD}.
 
 The full code of data processing, data cleaning and \ac{VAE} implementation is available here: \url{https://github.com/b3n3d3tt4/VariationalAutoEncoderForL200classification}. 
+
 \section{Data cleaning}
 \label{sec:data-cleaning}
 The data used for this work come from the \textit{prl25 version}, the one used for the LEGEND-200 article \cite{L200-sep25}, considering all of the runs from period \textit{p03} to period \textit{p09}. Specifically only data of the \textit{V08682A} ICPC detector have been used.
 
-Raw charge waveforms are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, normalised current waveforms in the energy range of interest, i.e. the energy window between the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. 
+Raw charge waveforms\footnote{For \textit{raw} we mean wavewforms already processed as detailed in Sec. \ref{sec:data-structureL200}, but still not selected in terms of energy, \ac{PSD} parameters or other features.} are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, normalised current waveforms in the energy range of interest, i.e. the energy window between the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. 
 
 QUI DEVO SPIEGARE COSA FANNO I FILE \\
 -FILEREADING.PY \\
@@ -82,10 +83,27 @@ Once all of these steps are completed, what we obtain are normalised current wav
     \label{fig:gruppo_figure}
 \end{figure}
 
+\newpage
 \section{Model implementation}
 \label{sec:model-implementation}
 
+QUI DEVO DIRE\\
 
+-COME CREO I TENSORS --> TENSORCREATION.PY\\
 
+-COME IMPLEMENTO IL VAE\\
+    - encoder\\
+    - decoder\\
+    - latent space specifications\\
+    - costruzione della loss\\
+    - training\\ 
+    - test\\
+
+- COME IMPLEMENTO LA CLASSIFICATION\\
+    - layers etc\\ 
+    - loss\\
+    - training \\
+    - test \\
 
 \section{Results}
+QUI DEVO SPERARE CHE IL ML FUNZIONI MEGLIO DELL'AvsE

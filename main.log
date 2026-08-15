@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  15 AUG 2026 12:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  15 AUG 2026 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1087,7 +1087,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux))
+ (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux) (chapters/08_ringraziamenti.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
@@ -1227,13 +1227,20 @@ Package pdftex.def Info: figures/logoUNIPD_bkgremoved.png  used on input line 78
 [2
 
 
-] Excluding 'comment' comment.
+]
 
-[3
+[3]
+
+[4
+
 
 ]
 
-[4
+[5
+
+]
+
+[6
 
 
 ] (main.toc
@@ -1263,20 +1270,20 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 6.
 
 
-[5])
+[7])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
 
 
-[6]
+[8]
 
-[7
+[9
 
 
 ]
 
-[8
+[10
 
 ] (chapters/01_neutrino_physics.tex
 Chapter 1.
@@ -1301,7 +1308,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 [1
 
 ]
-<figures/neutrino-fluxes.png, id=252, 637.1805pt x 454.69875pt>
+<figures/neutrino-fluxes.png, id=260, 637.1805pt x 454.69875pt>
 File: figures/neutrino-fluxes.png Graphic file (type png)
 <use figures/neutrino-fluxes.png>
 Package pdftex.def Info: figures/neutrino-fluxes.png  used on input line 71.
@@ -1340,7 +1347,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 
 [7]
-<figures/mass-hierarchy.jpg, id=371, 1204.5pt x 678.535pt>
+<figures/mass-hierarchy.jpg, id=379, 1204.5pt x 678.535pt>
 File: figures/mass-hierarchy.jpg Graphic file (type jpg)
 <use figures/mass-hierarchy.jpg>
 Package pdftex.def Info: figures/mass-hierarchy.jpg  used on input line 387.
@@ -1375,7 +1382,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8> not available
 )
 
 [10]
-<figures/mass_parabola_A76.pdf, id=426, 578.16pt x 433.62pt>
+<figures/mass_parabola_A76.pdf, id=435, 578.16pt x 433.62pt>
 File: figures/mass_parabola_A76.pdf Graphic file (type pdf)
 <use figures/mass_parabola_A76.pdf>
 Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 535.
@@ -1386,7 +1393,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [11 <./figures/mass_parabola_A76.pdf>] (feynman-diagrams/0nu-doubleBeta-diagram.tex)
-<figures/0nu_vs_2nu.pdf, id=503, 578.16pt x 433.62pt>
+<figures/0nu_vs_2nu.pdf, id=511, 578.16pt x 433.62pt>
 File: figures/0nu_vs_2nu.pdf Graphic file (type pdf)
 <use figures/0nu_vs_2nu.pdf>
 Package pdftex.def Info: figures/0nu_vs_2nu.pdf  used on input line 568.
@@ -1408,23 +1415,23 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 1
 (C:\Program Files\MiKTeX\tex/latex/fourier\ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<figures/LEGENDwholeSetup_con-numeri.png, id=570, 338.76563pt x 304.88907pt>
+<figures/LEGENDwholeSetup_con-numeri.png, id=578, 338.76563pt x 304.88907pt>
 File: figures/LEGENDwholeSetup_con-numeri.png Graphic file (type png)
 <use figures/LEGENDwholeSetup_con-numeri.png>
 Package pdftex.def Info: figures/LEGENDwholeSetup_con-numeri.png  used on input line 28.
-(pdftex.def)             Requested size: 232.17242pt x 208.96405pt.
-<figures/LEGENDLAr.png, id=571, 292.84406pt x 581.17125pt>
+(pdftex.def)             Requested size: 266.03474pt x 239.4408pt.
+<figures/LEGENDLAr.png, id=579, 225.09094pt x 581.17125pt>
 File: figures/LEGENDLAr.png Graphic file (type png)
 <use figures/LEGENDLAr.png>
 Package pdftex.def Info: figures/LEGENDLAr.png  used on input line 34.
-(pdftex.def)             Requested size: 116.08621pt x 230.38042pt.
+(pdftex.def)             Requested size: 96.73788pt x 249.77461pt.
 
 Underfull \vbox (badness 1286) has occurred while \output is active []
 
 
 
 [15]
-<figures/4Detectors.png, id=583, 2759.05782pt x 562.35094pt>
+<figures/4Detectors.png, id=592, 2759.05782pt x 562.35094pt>
 File: figures/4Detectors.png Graphic file (type png)
 <use figures/4Detectors.png>
 Package pdftex.def Info: figures/4Detectors.png  used on input line 56.
@@ -1448,22 +1455,22 @@ Overfull \hbox (11.78958pt too wide) in paragraph at lines 107--109
 
 ]
 Chapter 3.
-<figures/renderingDetectors/PPC_section_frontale.png, id=636, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/PPC_section_frontale.png, id=644, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/PPC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/PPC_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/PPC_section_frontale.png  used on input line 25.
 (pdftex.def)             Requested size: 120.92421pt x 120.92232pt.
-<figures/renderingDetectors/BeGe_section_frontale.png, id=637, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/BeGe_section_frontale.png, id=645, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/BeGe_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/BeGe_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/BeGe_section_frontale.png  used on input line 26.
 (pdftex.def)             Requested size: 120.92421pt x 120.92232pt.
-<figures/renderingDetectors/Coax_section_frontale.png, id=638, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/Coax_section_frontale.png, id=646, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/Coax_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/Coax_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/Coax_section_frontale.png  used on input line 27.
 (pdftex.def)             Requested size: 120.92421pt x 120.92232pt.
-<figures/renderingDetectors/IC_section_frontale.png, id=639, 1001.7425pt x 1001.7425pt>
+<figures/renderingDetectors/IC_section_frontale.png, id=647, 1001.7425pt x 1001.7425pt>
 File: figures/renderingDetectors/IC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/IC_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  used on input line 28.
@@ -1471,12 +1478,12 @@ Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  use
 
 
 [21]
-<figures/catena_decadimento_Th228.png, id=654, 441.3288pt x 1018.0434pt>
+<figures/catena_decadimento_Th228.png, id=663, 441.3288pt x 1018.0434pt>
 File: figures/catena_decadimento_Th228.png Graphic file (type png)
 <use figures/catena_decadimento_Th228.png>
 Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 53.
 (pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
-<plots/energy_spectrum-example.pdf, id=657, 650.43pt x 433.62pt>
+<plots/energy_spectrum-example.pdf, id=666, 650.43pt x 433.62pt>
 File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-example.pdf>
 Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 64.
@@ -1487,7 +1494,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [22 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png>]
-<figures/DEP-SEP-FEP.jpg, id=667, 3097.5725pt x 1324.95pt>
+<figures/DEP-SEP-FEP.jpg, id=676, 3097.5725pt x 1324.95pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
 Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 91.
@@ -1514,52 +1521,72 @@ Chapter 5.
 
 
 [27]
-<plots/raw_wf.pdf, id=744, 650.43pt x 433.62pt>
+<plots/raw_wf.pdf, id=764, 650.43pt x 433.62pt>
 File: plots/raw_wf.pdf Graphic file (type pdf)
 <use plots/raw_wf.pdf>
-Package pdftex.def Info: plots/raw_wf.pdf  used on input line 33.
+Package pdftex.def Info: plots/raw_wf.pdf  used on input line 34.
 (pdftex.def)             Requested size: 217.66211pt x 145.10646pt.
-<plots/baseline_subtracted_wf.pdf, id=745, 650.43pt x 433.62pt>
+<plots/baseline_subtracted_wf.pdf, id=765, 650.43pt x 433.62pt>
 File: plots/baseline_subtracted_wf.pdf Graphic file (type pdf)
 <use plots/baseline_subtracted_wf.pdf>
-Package pdftex.def Info: plots/baseline_subtracted_wf.pdf  used on input line 41.
+Package pdftex.def Info: plots/baseline_subtracted_wf.pdf  used on input line 42.
 (pdftex.def)             Requested size: 217.66211pt x 145.10646pt.
-<plots/normalised_wf.pdf, id=746, 650.43pt x 433.62pt>
+<plots/normalised_wf.pdf, id=766, 650.43pt x 433.62pt>
 File: plots/normalised_wf.pdf Graphic file (type pdf)
 <use plots/normalised_wf.pdf>
-Package pdftex.def Info: plots/normalised_wf.pdf  used on input line 51.
+Package pdftex.def Info: plots/normalised_wf.pdf  used on input line 52.
 (pdftex.def)             Requested size: 217.66211pt x 145.10646pt.
-<plots/aligned_wf.pdf, id=747, 650.43pt x 433.62pt>
+<plots/aligned_wf.pdf, id=767, 650.43pt x 433.62pt>
 File: plots/aligned_wf.pdf Graphic file (type pdf)
 <use plots/aligned_wf.pdf>
-Package pdftex.def Info: plots/aligned_wf.pdf  used on input line 59.
+Package pdftex.def Info: plots/aligned_wf.pdf  used on input line 60.
 (pdftex.def)             Requested size: 217.66211pt x 145.10646pt.
-<plots/trimmed_wf.pdf, id=748, 650.43pt x 433.62pt>
+<plots/trimmed_wf.pdf, id=768, 650.43pt x 433.62pt>
 File: plots/trimmed_wf.pdf Graphic file (type pdf)
 <use plots/trimmed_wf.pdf>
-Package pdftex.def Info: plots/trimmed_wf.pdf  used on input line 67.
+Package pdftex.def Info: plots/trimmed_wf.pdf  used on input line 68.
 (pdftex.def)             Requested size: 217.66211pt x 145.10646pt.
-<plots/current_wf.pdf, id=749, 650.43pt x 433.62pt>
+<plots/current_wf.pdf, id=769, 650.43pt x 433.62pt>
 File: plots/current_wf.pdf Graphic file (type pdf)
 <use plots/current_wf.pdf>
-Package pdftex.def Info: plots/current_wf.pdf  used on input line 75.
+Package pdftex.def Info: plots/current_wf.pdf  used on input line 76.
 (pdftex.def)             Requested size: 217.66211pt x 145.10646pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[28]) (chapters/06_conclusions.tex
+[28]
 
 [29 <./plots/raw_wf.pdf> <./plots/baseline_subtracted_wf.pdf> <./plots/normalised_wf.pdf> <./plots/aligned_wf.pdf> <./plots/trimmed_wf.pdf> <./plots/current_wf.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
-[30
+ []
 
-]
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
+
+ []
+
+) (chapters/06_conclusions.tex
+
+[30]
 Chapter 6.
 )
 
-[31]
+[31
+
+]
 \openout2 = `chapters/A-app_three-flavours.aux'.
 
  (chapters/A-app_three-flavours.tex
@@ -1625,7 +1652,17 @@ Overfull \hbox (8.66293pt too wide) in paragraph at lines 173--173
 
 [43
 
-] (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux))
+]
+\openout2 = `chapters/08_ringraziamenti.aux'.
+
+ (chapters/08_ringraziamenti.tex
+
+[44
+
+
+] Excluding 'comment' comment.)
+
+[45] (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux) (chapters/08_ringraziamenti.aux))
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -1635,23 +1672,23 @@ L3 programming layer <2024-11-02>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 784ACDBE89243F77A160A16633EC3CCE;6485.
+(rerunfilecheck)             Checksum: 067979F7707A7D526222147F963D4E7E;6479.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42351 strings out of 473682
- 893440 string characters out of 5729112
- 1643184 words of memory out of 5000000
- 64500 multiletter control sequences out of 15000+600000
- 783454 words of font info for 284 fonts, out of 8000000 for 9000
+ 42386 strings out of 473682
+ 894767 string characters out of 5729112
+ 1647444 words of memory out of 5000000
+ 64521 multiletter control sequences out of 15000+600000
+ 791692 words of font info for 288 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,1261b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (51 pages, 2797462 bytes).
+Output written on main.pdf (55 pages, 2803613 bytes).
 PDF statistics:
- 1428 PDF objects out of 1440 (max. 8388607)
- 218 named destinations out of 1000 (max. 500000)
+ 1458 PDF objects out of 1728 (max. 8388607)
+ 223 named destinations out of 1000 (max. 500000)
  414 words of extra memory for PDF output out of 10000 (max. 10000000)
 
