@@ -821,6 +821,7 @@ INPUT chapters\04_psd.tex
 INPUT .\chapters\05_implementation.tex
 INPUT .\chapters\05_implementation.tex
 INPUT chapters\05_implementation.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
@@ -887,7 +888,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT main.aux
 INPUT .\chapters\A-app_three-flavours.aux
 INPUT .\chapters\A-app_three-flavours.aux

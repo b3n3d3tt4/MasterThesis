@@ -10,9 +10,20 @@ Although standard Autoencoders (AEs) provide a robust framework for dimensionali
 To prevent these learned distributions from collapsing or behaving arbitrarily, the VAE objective function is regularized by the Kullback-Leibler (KL) divergence. The KL divergence is a statistical metric that quantifies the difference between the network encoded posterior distribution and a chosen prior reference distribution, typically a standard multivariate Gaussian $\mathcal{N}(0, I)$. By heavily penalizing deviations from this prior, the KL term acts as a powerful regularizer, forcing the latent space to be continuous, smooth, and well-structured, thereby ensuring that physically similar waveforms are mapped in close proximity.
 
 In the context of semiconductor signal processing and waveform analysis, this probabilistic approach is critically enhanced by adopting a $\beta$-VAE architecture. A $\beta$-VAE introduces an adjustable hyperparameter, $\beta > 1$, which artificially amplifies the weight of the KL divergence term in the loss function. This intensified regularization places a tighter constraint on the latent channel capacity, forcing the network to learn only the most statistically independent and fundamental generative factors of the data. For Germanium detector signals, this property is vital: it actively promotes disentanglement, preventing the network from confounding distinct physical phenomena -such as total energy deposition, rise time kinetics, and electronic noise- into a single tangled variable. Consequently, the $\beta$-VAE enables a rigorous, interpretable mapping where individual latent nodes correspond to isolated physical observables, thereby providing a significantly more reliable foundation for downstream classification tasks such as \ac{PSD}.
+
+The full code of data processing, data cleaning and \ac{VAE} implementation is available here: \url{https://github.com/b3n3d3tt4/VariationalAutoEncoderForL200classification}. 
 \section{Data cleaning}
 \label{sec:data-cleaning}
-The data used for this work come from the \textbf{\textit{prl25 version}}, the one used for the LEGEND-200 article \cite{L200-sep25}, period p0?, runs from r000 to r??? and specifically only ICPC data have been used
+The data used for this work come from the \textit{prl25 version}, the one used for the LEGEND-200 article \cite{L200-sep25}, considering all of the runs from period \textit{p03} to period \textit{p09}. Specifically only data of the \textit{V08682A} ICPC detector have been used.
+
+Raw charge waveforms are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, normalised current waveforms in the energy range of interest, i.e. the energy window between the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. 
+
+QUI DEVO SPIEGARE COSA FANNO I FILE \\
+-FILEREADING.PY \\
+-WFCLEANING.PY
+
+Once all of these steps are completed, what we obtain are normalised current waveforms suitable as input of the \ac{VAE} that is to be implemented as will be decripted in Sec. \ref{sec:model-implementation} 
+
 \begin{figure}[H]
     \centering
     
@@ -67,7 +78,7 @@ The data used for this work come from the \textbf{\textit{prl25 version}}, the o
     \end{subfigure}
     
     % --- Didascalia principale ---
-    \caption{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit{r000} of period \textit{p03}: the blue one is a typical \ac{MSE} waveform with a non-trivial structure while the orange one is a typical \ac{SSE} waveform. Raw waveforms depicted in Fig.\ref{fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref{fig:b-baseline}); then waveforms are then normalised to their maximum in order to have all of them between 0 and 1 (\ref{fig:c-normalised}); after they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref{fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref{fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms (\ref{fig:f-current}) with which impementing the Variational Autoencoder class.}
+    \caption{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit{r000} of period \textit{p03}: the orange one is a typical \ac{MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac{SSE} waveform. Raw waveforms depicted in Fig.\ref{fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref{fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref{fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref{fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref{fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref{fig:f-current} where the two usual patterns of current in \ac{MSE} and \ac{SSE} are evident.}
     \label{fig:gruppo_figure}
 \end{figure}
 
