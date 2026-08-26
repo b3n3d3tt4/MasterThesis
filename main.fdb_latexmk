@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1786704183.62639 "main.bcf" "main.bbl" "main" 1787653191.27502 0
+["biber main"] 1786704183.62639 "main.bcf" "main.bbl" "main" 1787746943.72567 0
   "bibliografia.bib" 1785853872 12752 f82a8db8f4137be0cf1789877f1ce660 ""
-  "main.bcf" 1787653190 111690 cf6a74afc7ac0294997c285e78971e01 "pdflatex"
+  "main.bcf" 1787746943 111690 cf6a74afc7ac0294997c285e78971e01 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1787653176.56444 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1787653191.27708 0
+["pdflatex"] 1787746934.88654 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1787746943.7266 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ectt1095.tfm" 993062342 1352 fa21dcb5ddc7d1dc47d14cd897fdeb0f ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -276,15 +276,15 @@
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1784556752 11977017 a9001c616d3fc60fcaf2320f9a66436e ""
   "acronimi.tex" 1786618719 2167 480b326296ac014b2b7a38ddf54029a9 ""
   "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" 1786793930 4958 863450f5b4f1382d93e558b77aa77cb0 ""
-  "chapters/01_neutrino_physics.tex" 1786794038 50385 3eb6fb8cab8dfbec80e99f49553d12c9 ""
+  "chapters/01_neutrino_physics.tex" 1787746933 50387 e862182fc7545e9911b80bdade5d94bf ""
   "chapters/02_legend_experiment.tex" 1786799242 17776 bea1b7010b5e5953381444fa79b8498e ""
-  "chapters/03_legend_data.tex" 1787653172 8745 035f32c44ce3aab8637e1998772cde19 ""
+  "chapters/03_legend_data.tex" 1787746878 8784 5074caef6525ca6bda91010baebdac5e ""
   "chapters/04_psd.tex" 1786790895 375 3c7b5a4efd66fffddd01d44cbd586930 ""
-  "chapters/05_implementation.tex" 1786793546 8875 b1dc943509b769accfaef4c57d9e10e5 ""
+  "chapters/05_implementation.tex" 1787746789 8833 431c9e2cfc2b1bfcf3938f00d02440ed ""
   "chapters/06_conclusions.tex" 1784985597 21 fe4b20616295c9a322e6cc7648a79dcb ""
-  "chapters/A-app_three-flavours.aux" 1787653189 6426 ac91a1f6f50a8b07332157113f50b3f9 "pdflatex"
+  "chapters/A-app_three-flavours.aux" 1787746941 6426 ac91a1f6f50a8b07332157113f50b3f9 "pdflatex"
   "chapters/A-app_three-flavours.tex" 1785597649 9348 38884232143f3bf1837cc8e7a491fcc3 ""
-  "chapters/B-app_neutrinosINmatter.aux" 1787653189 7247 56c1afe866962e4d963d725402bc3947 "pdflatex"
+  "chapters/B-app_neutrinosINmatter.aux" 1787746942 7247 56c1afe866962e4d963d725402bc3947 "pdflatex"
   "chapters/B-app_neutrinosINmatter.tex" 1785497622 8765 a9c158fa8a8911c13fc24b655ae80493 ""
   "feynman-diagrams/0nu-doubleBeta-diagram.tex" 1785241635 2219 07839a6b9006d6c98186f1d62b97c559 ""
   "feynman-diagrams/2nu-doublebeta-feynman.tex" 1785241847 2275 4d72521d2da0063dc8ae5931a3fb2a11 ""
@@ -304,12 +304,12 @@
   "figures/renderingDetectors/Coax_section_frontale.png" 1785569713 98260 795a75dc6e568b9df21b4731666da75a ""
   "figures/renderingDetectors/IC_section_frontale.png" 1785569715 105121 1c383a582c2781cd74b41bdddcaf3094 ""
   "figures/renderingDetectors/PPC_section_frontale.png" 1785569717 78270 34918570b68362a751a6bf00bff9436f ""
-  "main.aux" 1787653190 35008 5759d6d2c362c27b553a0c7e56645c19 "pdflatex"
+  "main.aux" 1787746943 35089 b8ccb9248ae50b3896b7d2cc75f6d16a "pdflatex"
   "main.bbl" 1786704194 52030 b26ac7de30884ad7ae7b1c1685aaf427 "biber main"
-  "main.out" 1787653190 6362 f663a73d61b8eddf7590f39387fb7cb0 "pdflatex"
-  "main.run.xml" 1787653190 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
+  "main.out" 1787746943 6362 f663a73d61b8eddf7590f39387fb7cb0 "pdflatex"
+  "main.run.xml" 1787746943 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
   "main.tex" 1786793930 4958 863450f5b4f1382d93e558b77aa77cb0 ""
-  "main.toc" 1787653190 3439 b95df3ee8113ea13eb06e1d7d3a0dfa7 "pdflatex"
+  "main.toc" 1787746943 3439 b95df3ee8113ea13eb06e1d7d3a0dfa7 "pdflatex"
   "plots/aligned_wf.pdf" 1786788633 32719 7ce2829c9b15b5fae5dd154bcdfa6ce5 ""
   "plots/baseline_subtracted_wf.pdf" 1786788632 34931 64ca5c1531a2af8b7e25e8a6f8305fb2 ""
   "plots/current_wf.pdf" 1786788633 21512 b61060d9c832ba9163660a53bd6f2250 ""
