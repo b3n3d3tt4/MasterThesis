@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1788267276.62503 "main.bcf" "main.bbl" "main" 1788267577.18426 0
+["biber main"] 1788267276.62503 "main.bcf" "main.bbl" "main" 1788267717.94233 0
   "bibliografia.bib" 1785853872 12752 f82a8db8f4137be0cf1789877f1ce660 ""
-  "main.bcf" 1788267576 111690 cf6a74afc7ac0294997c285e78971e01 "pdflatex"
+  "main.bcf" 1788267717 111690 cf6a74afc7ac0294997c285e78971e01 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1788267566.04071 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1788267577.18522 0
+["pdflatex"] 1788267707.4728 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1788267717.94331 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ectt1095.tfm" 993062342 1352 fa21dcb5ddc7d1dc47d14cd897fdeb0f ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -282,12 +282,12 @@
   "chapters/04_psd.tex" 1786790895 375 3c7b5a4efd66fffddd01d44cbd586930 ""
   "chapters/05_implementation.tex" 1788263591 9043 94932d143ef67c06d6d720be6948d6a8 ""
   "chapters/06_conclusions.tex" 1784985597 21 fe4b20616295c9a322e6cc7648a79dcb ""
-  "chapters/A-app_three-flavours.aux" 1788267572 6426 ac91a1f6f50a8b07332157113f50b3f9 "pdflatex"
+  "chapters/A-app_three-flavours.aux" 1788267713 6426 ac91a1f6f50a8b07332157113f50b3f9 "pdflatex"
   "chapters/A-app_three-flavours.tex" 1785597649 9348 38884232143f3bf1837cc8e7a491fcc3 ""
-  "chapters/B-app_neutrinosINmatter.aux" 1788267572 7247 56c1afe866962e4d963d725402bc3947 "pdflatex"
+  "chapters/B-app_neutrinosINmatter.aux" 1788267713 7247 56c1afe866962e4d963d725402bc3947 "pdflatex"
   "chapters/B-app_neutrinosINmatter.tex" 1785497622 8765 a9c158fa8a8911c13fc24b655ae80493 ""
-  "chapters/C-raw_waveforms.aux" 1788267575 6065 f9f68c81da7c1307cd52f59ee3098793 "pdflatex"
-  "chapters/C-raw_waveforms.tex" 1788267565 4442 17345f6ad80bd99c7755d5563f959412 ""
+  "chapters/C-raw_waveforms.aux" 1788267716 6065 f9f68c81da7c1307cd52f59ee3098793 "pdflatex"
+  "chapters/C-raw_waveforms.tex" 1788267706 4441 01f4d2928906e11ebb50d985c39f6115 ""
   "feynman-diagrams/0nu-doubleBeta-diagram.tex" 1785241635 2219 07839a6b9006d6c98186f1d62b97c559 ""
   "feynman-diagrams/2nu-doublebeta-feynman.tex" 1785241847 2275 4d72521d2da0063dc8ae5931a3fb2a11 ""
   "feynman-diagrams/CCandNC-deuteron-SNO.tex" 1785163281 2233 21e71177f8a15b505ebbc02939b0ed0a ""
@@ -306,12 +306,12 @@
   "figures/renderingDetectors/Coax_section_frontale.png" 1785569713 98260 795a75dc6e568b9df21b4731666da75a ""
   "figures/renderingDetectors/IC_section_frontale.png" 1785569715 105121 1c383a582c2781cd74b41bdddcaf3094 ""
   "figures/renderingDetectors/PPC_section_frontale.png" 1785569717 78270 34918570b68362a751a6bf00bff9436f ""
-  "main.aux" 1788267576 35127 a51c7216631e09086ceaafe8b1b1a0d1 "pdflatex"
+  "main.aux" 1788267717 35127 a51c7216631e09086ceaafe8b1b1a0d1 "pdflatex"
   "main.bbl" 1788267359 52030 b26ac7de30884ad7ae7b1c1685aaf427 "biber main"
-  "main.out" 1788267576 7362 063a2691ab5ba3d643f1b6048641e683 "pdflatex"
-  "main.run.xml" 1788267576 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
+  "main.out" 1788267717 7362 063a2691ab5ba3d643f1b6048641e683 "pdflatex"
+  "main.run.xml" 1788267717 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
   "main.tex" 1788263155 4994 9105293cf27ab61079f46efde6d15b7d ""
-  "main.toc" 1788267576 4049 4def92e4e3dd88d7c9bd8c7881199093 "pdflatex"
+  "main.toc" 1788267717 4049 4def92e4e3dd88d7c9bd8c7881199093 "pdflatex"
   "plots/aligned_wf.pdf" 1786788633 32719 7ce2829c9b15b5fae5dd154bcdfa6ce5 ""
   "plots/baseline_subtracted_wf.pdf" 1786788632 34931 64ca5c1531a2af8b7e25e8a6f8305fb2 ""
   "plots/current_wf.pdf" 1786788633 21512 b61060d9c832ba9163660a53bd6f2250 ""
