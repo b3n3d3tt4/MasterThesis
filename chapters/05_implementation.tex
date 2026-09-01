@@ -23,7 +23,7 @@ QUI DEVO SPIEGARE COSA FANNO I FILE \\
 -FILEREADING.PY \\
 -WFCLEANING.PY
 
-Once all of these steps are completed, what we obtain is a suitable input of the \ac{VAE} that is to be implemented as will be decripted in Sec. \ref{sec:model-implementation} 
+Once all of these steps are completed, what we obtain is a suitable input of the \ac{VAE} that is to be implemented as will be decripted in Sec. \ref{sec:model-implementation}. An example of the process is shown in Fig. \ref{fig:data-cleaning} for run \textit{r000} of period \textit{p03}; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
 
 \begin{figure}[H]
     \centering
@@ -80,7 +80,7 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     
     % --- Didascalia principale ---
     \caption{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit{r000} of period \textit{p03}: the orange one is a typical \ac{MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac{SSE} waveform. Raw waveforms depicted in Fig.\ref{fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref{fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref{fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref{fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref{fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref{fig:f-current} where the two usual patterns of current in \ac{MSE} and \ac{SSE} are evident.}
-    \label{fig:gruppo_figure}
+    \label{fig:data-cleaning}
 \end{figure}
 
 \newpage
