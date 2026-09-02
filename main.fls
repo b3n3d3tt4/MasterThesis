@@ -527,7 +527,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
@@ -535,12 +534,10 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
-OUTPUT main.toc
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futbi8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
+OUTPUT main.toc
 INPUT .\chapters\01_neutrino_physics.tex
 INPUT .\chapters\01_neutrino_physics.tex
 INPUT chapters\01_neutrino_physics.tex
@@ -600,6 +597,7 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\figures\neutrino-fluxes.png
 INPUT .\figures\neutrino-fluxes.png
 INPUT .\figures\neutrino-fluxes.png
@@ -613,6 +611,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
@@ -799,6 +799,8 @@ INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\figures\catena_decadimento_Th228.png
 INPUT .\figures\catena_decadimento_Th228.png
 INPUT .\figures\catena_decadimento_Th228.png
@@ -812,6 +814,8 @@ INPUT .\plots\energy_spectrum-example.pdf
 INPUT .\plots\energy_spectrum-example.pdf
 INPUT .\plots\energy_spectrum-example.pdf
 INPUT .\plots\energy_spectrum-example.pdf
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
@@ -819,11 +823,15 @@ INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
+INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
+INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
+INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
+INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
+INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\chapters\04_VAEimplementation.tex
 INPUT .\chapters\04_VAEimplementation.tex
 INPUT chapters\04_VAEimplementation.tex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
@@ -860,8 +868,6 @@ INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\chapters\05_monaco_data.tex
 INPUT .\chapters\05_monaco_data.tex
 INPUT chapters\05_monaco_data.tex
@@ -893,8 +899,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmiib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
 INPUT .\chapters\C-raw_waveforms.tex
 INPUT .\chapters\C-raw_waveforms.tex
 OUTPUT chapters\C-raw_waveforms.aux
@@ -902,7 +906,6 @@ INPUT .\chapters\C-raw_waveforms.tex
 INPUT .\chapters\C-raw_waveforms.tex
 INPUT chapters\C-raw_waveforms.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
 INPUT .\plots\raw_wf_examples\p03_r000.png
 INPUT .\plots\raw_wf_examples\p03_r000.png
 INPUT .\plots\raw_wf_examples\p03_r000.png
@@ -987,9 +990,6 @@ INPUT .\plots\raw_wf_examples\p06_r002.png
 INPUT .\plots\raw_wf_examples\p06_r002.png
 INPUT .\plots\raw_wf_examples\p06_r002.png
 INPUT .\plots\raw_wf_examples\p06_r002.png
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futbi8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futbi8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm

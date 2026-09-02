@@ -1,9 +1,25 @@
 \chapter{LEGEND data}
 \section{Data collection}
 \subsection{Signal formation and readout in Germanium detectors}
-\ac{hpge} are semiconductor detectors, characterised by the typical crystalline structure of said materials in which electrons tend to occupy the valence band but can be promoted into the conduction band, generating \ac{eh} pairs in the lattice. The transition of electrons to the conduction band is triggered by incoming ionizing radiation, whether it be photons or charged particles. 
+\ac{hpge} are semiconductor detectors, characterised by the typical crystalline structure of said materials in which electrons tend to occupy the valence band but can be promoted into the conduction one, generating \ac{eh} pairs in the lattice. The transition of electrons to the conduction band is triggered by incoming ionizing radiation, whether it be photons or charged particles, and generates a signal proportional to the amount of energy deposited by the radiation. 
 
-Consider, for instance, an incident $\gamma$-ray interacts with the semiconductor and generates a large number of electron-hole pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
+\paragraph{The p-n junction}
+QUI COS'è UNA GIUNZIONE PN COME è COLLEGATA A QUELLO CHE HO DETTO PRIMA E COME SI COLLEGA AI DETECTOR DI LEGEND
+
+\paragraph{Germanium diodes in LEGEND-200}
+Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \textit{p+} part of the detector, as shown in Fig. \ref{fig:detectors-pINred}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/PPC_section_frontale.png}\hfill
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
+    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
+    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
+    \label{fig:detectors-pINred}
+\end{figure}
+
+\paragraph{The Ramo-Schokley theorem}
+Consider, for instance, an incident $\gamma$-ray that interacts with the semiconductor and generates a large number of electron-hole pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
 
 The time-dependent output signal of a charge sensing device can be predicted if the induced charge \textit{Q} on the readout electrode can be calculated as a function of instantaneous position of the moving charge \text{q} within the device. The Shockley-Ramo theorem (\cite{Shockley}, \cite{Ramo}), originally developed for vacuum tubes, can be applied also in the case of stationary space charges of the abovementioned \ac{hpge}. 
 
@@ -18,22 +34,45 @@ From this theorem we know that the charge \textit{Q} and current \textit{i} on a
 
 where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The terms $\varphi_0(\mathbf{x})$ and $\mathbf{E}_0(\mathbf{x})$ are, respectively, the \textit{weighting potential} and the \textit{weighting field} evaluated at the instantaneous position $\mathbf{x}$ of the charge. They are defined as the potential and the electric field that would exist in the device if the selected electrode were set to a unit potential, with all other electrodes grounded (set to zero potential) and all space charges removed. \cite{GeDetectors}
 
-QUI COSE ANCORA NON MEGLIO IDENTIFICATE DA SCRIVERE SUI DETECTOR
-
-Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \textit{p+} part of the detector, as shown in Fig. \ref{fig:detectors-pINred}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/PPC_section_frontale.png}\hfill
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
-    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
-    \label{fig:detectors-pINred}
-\end{figure}
-
 QUI FORSE COME è IOL WEIGHTING FIELD NELL'ICPC?
 ICPC (Inverted Coaxial Point Contact): È la geometria specifica del tuo diodo. Ha un contatto di lettura piccolissimo ("point contact"). Questo design fa sì che il campo elettrico all'interno sia particolare: la carica si muove lentamente all'inizio e accelera bruscamente vicino al contatto. È fondamentale per te perché questo effetto amplifica le differenze nella forma d'onda tra eventi SSE e MSE.
 
+\paragraph{Electronics}
+QUI COME IL SEGNALE VIENE LETTO \\
+The Data Acquisition (DAQ) system for LEGEND-200 consists of FlashCam digitizers and an Object-orientated Real-time Control and Acquisition (ORCA) DAQ software.
+  
+
+\section{Data structure of the LEGEND-200 phase}
+\label{sec:data-structureL200}
+LEGEND data are qcquired in three possibile modalities:
+\begin{itemize}
+    \item \textbf{Physics data (phy)}: these are the data on which the physics case study is based. Signal waveforms of all the detectors in the apparatus (\ac{hpge}, \ac{lar}, and muon veto) are recorded and stored when an event is triggered by a germanium detector.
+    \item \textbf{Calibration data (cal)}: ${}^{228}$Th sources are lowered into the \ac{lar} cryostat next to the \ac{hpge} detectors to provide energy calibration data from the known $\gamma$ peaks of the Thorium decay chain (visibile in Fig. \ref{fig:decayTh228}). In this case the \ac{lar} intrumentation is turned off and each detector triggers individually.
+    \item \textbf{Special calibrations or tests}: such data include different procedures to characterise the \ac{lar} intrumentation or to check the electronics for the acquisition.
+\end{itemize}
+
+Data are firstly organised in \textbf{\textit{runs}}, i.e. a 7-day data taking that starts with a calibration period. A run is splitted into different files each of them characterised by the specific timestamp of the starting point. Runs are grouped in \textbf{\textit{periods}}, that are a collection of several runs sharinf the same stable hardware instrumentation. Periods are then organised into \textbf{\textit{partitions}}. 
+
+The raw data files output by the Data Acquisition (DAQ) system in the ORCA format undergo a structured processing pipeline in \texttt{python} using the \texttt{pygama} library \cite{pygama}, generating distinct data tiers that correspond to the specific level of processing achieved. Said tiers are
+\begin{itemize}
+    \item \textit{raw}: this is a simple conversion of the ORCA DAQ file to the LEGEND-custom \texttt{hdf5}-based data format called \texttt{lh5}. 
+    During this stage, the overall data volume is effectively mitigated by partitioning the waveforms: a fully sampled waveform is preserved strictly around the leading edge, while a pre-summed waveform is retained for the complete trace. 
+    Additionally, for physics runs (\texttt{phy} files), a subsequent blinding procedure is applied. Any event featuring an energy deposition of $(2039 \pm 25)$~keV---as preliminarily estimated by the DAQ software and stored in the \texttt{daqenergy} field---is systematically excluded. This specific energy window encompasses the Region of Interest (ROI) around the $Q_{\beta\beta}$-value of the $^{76}\mathrm{Ge}$ neutrinoless double beta decay ($0\nu\beta\beta$). Hiding these data is a fundamental requirement for a blind analysis, preventing any unintended human bias while tuning the analysis cuts. To preserve synchronization and ensure that table lengths remain identical across all channels, the entire multi-channel event is discarded rather than just the single triggering channel;
+    \item \textit{tcm}: in ordert to reconstruct a complex event shared by multiple detectors it is crucial to know how to group together channels in which the event occur within a specific time window. This information is stored in the Time Coincidence Map files of the \textit{tcm tier};
+    \item \textit{dsp}: the low level signal processing routines run to extract observables such as the energy, the drift time and \ac{PSD} variables. Some of the parameters for the filters run are firts optimised on calibration (cal) data and then passed to physics (phy) data to improve energy resolution;
+    \item \textit{hit}: similarly to \textit{dsp}, paramters for the \textit{hit} tier are firts computed on calibration data. These calibrations are then applied to the parameters extracted at the dsp stage to define the energy in keV and the PSD classification of events;
+    \item \textit{evt}: channel in this tier are brought together exploiting the \textit{tcm} tier in order to get a final event;
+    \item \textit{skm}: this tier is just a skimming of the event files to remove uninteresting events.
+\end{itemize} 
+Some partition tiers, namely \textit{psp} the partition \textit{dsp}, \textit{pht} the partition \textit{hit} and \textit{pep} the partition \textit{evt}, contains the same data of the general tiers but optimised over the whole partition of data.
+The analysis that will follow is based on raw waveforms from the \textit{raw} tier of \textit{prl25}\footnote{\textit{prl25} refers to the Physics Review Letter of September 2025 \cite{L200-sep25}.} partition and on their energy from \textit{pht} tier of the same partition. All of the runs from period \textit{p03} to period \textit{p09} have been used. Specifically only data of the \textit{V08682A} ICPC detector have been considered: this is done because the algorithm we want to implement as the goal of the thesis is better to be firstly tested with one specific detector and then eventually on all the others as a future developement that goes beyond the scope od this work. 
+
+
+
+
+
+\section{Pulse shape discrimination (\ac{PSD})}
+\label{sec:trditionalPSD}
 \subsection{Events topology}
 
 QUI QUESTIONE CHE DIVERSI TIPI DI EVENTI GENERANO LE CARICHE IN MODI DIVERSI E QUINDI LA CARICA è RACCOLTA IN MODI DIVERSI E LE WF SONO DIVERSE
@@ -96,12 +135,12 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
 
 We are now interest in considering the two peaks corresponding to the \ac{FEP} of ${}^{212}$Bi and the \ac{DEP} of ${}^{208}$Tl. They are very close to each other in energy, as stated in Tab \ref{tab:emission-peaks}, but are produced in different mechanism consequently producing different signals in \ac{hpge}.
 
-MSE E SSE  
-
-\section{Data structure of the LEGEND-200 phase}
-\label{sec:data-structureL200}
-QUI DEVO SPIEGARE CHE TIPO DI PROCESSI VEGNONO FATTI AI DATI PRIMA CHE ARRIVINO A ME --> CERCARE SU CONFLUENCE
+MSE E SSE
 
 
-\section{Traditional \ac{PSD}}
-\label{sec:trditionalPSD}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
+    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
+    \label{fig:dAoE_prl25}
+\end{figure}
