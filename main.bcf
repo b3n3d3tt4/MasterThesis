@@ -2416,9 +2416,8 @@
     <bcf:citekey order="40" intorder="1">LNHB</bcf:citekey>
     <bcf:citekey order="41" intorder="1">LNHB</bcf:citekey>
     <bcf:citekey order="42" intorder="1">L200-sep25</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">L200-sep25</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">Brugnera</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">neutrinosPDG</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">Brugnera</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">neutrinosPDG</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

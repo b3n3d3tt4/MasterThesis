@@ -819,12 +819,9 @@ INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\chapters\04_psd.tex
-INPUT .\chapters\04_psd.tex
-INPUT chapters\04_psd.tex
-INPUT .\chapters\05_implementation.tex
-INPUT .\chapters\05_implementation.tex
-INPUT chapters\05_implementation.tex
+INPUT .\chapters\04_VAEimplementation.tex
+INPUT .\chapters\04_VAEimplementation.tex
+INPUT chapters\04_VAEimplementation.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\plots\raw_wf.pdf
@@ -865,6 +862,9 @@ INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
+INPUT .\chapters\05_monaco_data.tex
+INPUT .\chapters\05_monaco_data.tex
+INPUT chapters\05_monaco_data.tex
 INPUT .\chapters\06_conclusions.tex
 INPUT .\chapters\06_conclusions.tex
 INPUT chapters\06_conclusions.tex

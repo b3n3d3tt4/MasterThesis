@@ -187,6 +187,43 @@
       \verb 2505.10440
       \endverb
     \endentry
+    \entry{GERDAphase2}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=dbdf1747536f6921c0bd5f24c13e6c50}{%
+           family={Agostini},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{fullhash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{fullhashraw}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{bibnamehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authorbibnamehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authornamehash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authorfullhash}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \strng{authorfullhashraw}{f95e80ed4a6ead7f0260dd14c64facc3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{nucl-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{JHEP}
+      \field{title}{{Modeling of GERDA Phase II data}}
+      \field{volume}{03}
+      \field{year}{2020}
+      \field{pages}{139}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/JHEP03(2020)139
+      \endverb
+      \verb{eprint}
+      \verb 1909.02522
+      \endverb
+    \endentry
     \entry{SNO2002-results}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -230,22 +267,93 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.89.011301
       \endverb
     \endentry
+    \entry{L200:calibration}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=b86361316c9e710e41ac82eaa05cf164}{%
+           family={Baudis},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=b3c8d5c967bc10d98d37afb7ab0c8fdb}{%
+           family={Benato},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=badeb14bca31800c7ef7fc0c22d4f27d}{%
+           family={Bond},
+           familyi={B\bibinitperiod},
+           given={E.\bibnamedelimi M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=fe91a4c0f12eddf23617ca5a4f7e46f4}{%
+           family={Chiu},
+           familyi={C\bibinitperiod},
+           given={P.\bibnamedelimi -J.},
+           giveni={P\bibinitperiod\bibinitdelim \bibinithyphendelim \bibinitperiod}}}%
+        {{hash=af1aa81f5e3881005dbd0a054d62a40c}{%
+           family={Elliott},
+           familyi={E\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=4e70411312c9f4a36d1c11a6c13021e6}{%
+           family={Massarczyk},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4d732bd0b537a14f284d742b068aa826}{%
+           family={Meijer},
+           familyi={M\bibinitperiod},
+           given={S.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6acf8553489af83bea852947998648af}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{08e105cca7021ac721b4dfff4c8277c7}
+      \strng{fullhash}{141f73d840e89dc0ac5bd8da33c507f4}
+      \strng{fullhashraw}{141f73d840e89dc0ac5bd8da33c507f4}
+      \strng{bibnamehash}{08e105cca7021ac721b4dfff4c8277c7}
+      \strng{authorbibnamehash}{08e105cca7021ac721b4dfff4c8277c7}
+      \strng{authornamehash}{08e105cca7021ac721b4dfff4c8277c7}
+      \strng{authorfullhash}{141f73d840e89dc0ac5bd8da33c507f4}
+      \strng{authorfullhashraw}{141f73d840e89dc0ac5bd8da33c507f4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.ins-det}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{JINST}
+      \field{number}{02}
+      \field{title}{{Calibration sources for the LEGEND-200 experiment}}
+      \field{volume}{18}
+      \field{year}{2023}
+      \field{pages}{P02001}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/1748-0221/18/02/P02001
+      \endverb
+      \verb{eprint}
+      \verb 2211.05026
+      \endverb
+    \endentry
     \entry{Brugnera}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=0f34252f2b4fd35637a6c8252b8debf3}{%
+        {{hash=9a4e3af6d1d6eac0cfe414a3a699895c}{%
            family={Brugnera},
            familyi={B\bibinitperiod},
-           given={Riccardo},
+           given={R.},
            giveni={R\bibinitperiod}}}%
       }
-      \strng{namehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{fullhash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{fullhashraw}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{bibnamehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authorbibnamehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authornamehash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authorfullhash}{0f34252f2b4fd35637a6c8252b8debf3}
-      \strng{authorfullhashraw}{0f34252f2b4fd35637a6c8252b8debf3}
+      \strng{namehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{fullhash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{fullhashraw}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{bibnamehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authorbibnamehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authornamehash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authorfullhash}{9a4e3af6d1d6eac0cfe414a3a699895c}
+      \strng{authorfullhashraw}{9a4e3af6d1d6eac0cfe414a3a699895c}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
