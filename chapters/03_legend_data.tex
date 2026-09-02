@@ -64,8 +64,9 @@ The raw data files output by the Data Acquisition (DAQ) system in the ORCA forma
     \item \textit{evt}: channel in this tier are brought together exploiting the \textit{tcm} tier in order to get a final event;
     \item \textit{skm}: this tier is just a skimming of the event files to remove uninteresting events.
 \end{itemize} 
-Some partition tiers, namely \textit{psp} the partition \textit{dsp}, \textit{pht} the partition \textit{hit} and \textit{pep} the partition \textit{evt}, contains the same data of the general tiers but optimised over the whole partition of data.
-The analysis that will follow is based on raw waveforms from the \textit{raw} tier of \textit{prl25}\footnote{\textit{prl25} refers to the Physics Review Letter of September 2025 \cite{L200-sep25}.} partition and on their energy from \textit{pht} tier of the same partition. All of the runs from period \textit{p03} to period \textit{p09} have been used. Specifically only data of the \textit{V08682A} ICPC detector have been considered: this is done because the algorithm we want to implement as the goal of the thesis is better to be firstly tested with one specific detector and then eventually on all the others as a future developement that goes beyond the scope od this work. 
+Specific partition tiers, such as \textit{psp} (partition \textit{dsp}), \textit{pht} (partition \textit{hit}), and \textit{pep} (partition \textit{evt}), share the identical data structure of the standard tiers, yet their processing parameters are optimized over the entire data partition.
+
+The analysis presented in this work is based on raw waveforms from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilized. Notably, the dataset has been restricted exclusively to the V08682A ICPC detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterized detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
 
 
 
@@ -74,6 +75,7 @@ The analysis that will follow is based on raw waveforms from the \textit{raw} ti
 \section{Pulse shape discrimination (\ac{PSD})}
 \label{sec:trditionalPSD}
 \subsection{Events topology}
+\label{subsec:topology}
 
 QUI QUESTIONE CHE DIVERSI TIPI DI EVENTI GENERANO LE CARICHE IN MODI DIVERSI E QUINDI LA CARICA è RACCOLTA IN MODI DIVERSI E LE WF SONO DIVERSE
 
@@ -140,7 +142,7 @@ MSE E SSE
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.25\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
-    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
+    \includegraphics[width=0.6\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
+    \caption{Windowed energy spectrum before (blue) and after (red) the A/E cut. 90\% of the \ac{SSE} survives while almost all the \ac{MSE} are cut.}
     \label{fig:dAoE_prl25}
 \end{figure}
