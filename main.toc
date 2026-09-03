@@ -31,8 +31,8 @@
 \contentsline {subsubsection}{Germanium diodes in LEGEND-200}{21}{section*.20}%
 \contentsline {subsubsection}{The Ramo-Schokley theorem}{21}{section*.22}%
 \contentsline {subsubsection}{Readout electronics}{22}{section*.23}%
-\contentsline {section}{\numberline {3.2}Data structure of the LEGEND-200 phase}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pulse shape discrimination (\ac {PSD})}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.2}Data structure of the LEGEND-200 phase}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pulse shape discrimination (PSD)}{24}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Events topology}{24}{subsection.3.3.1}%
 \contentsline {chapter}{\numberline {4}Deep Learning \ac {PSD}}{27}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Data cleaning}{28}{section.4.1}%
@@ -40,8 +40,8 @@
 \contentsline {section}{\numberline {4.3}Results}{30}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Monaco data}{31}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Conclusions}{33}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{35}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{39}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Waveforms examples of the \textit {prl25} calibration data release}{43}{appendix.C}%
-\contentsline {chapter}{Bibliography}{47}{appendix*.28}%
-\contentsline {chapter}{Acknowledgments}{49}{appendix*.29}%
+\contentsline {chapter}{Acknowledgments}{35}{chapter*.29}%
+\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{37}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{41}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Waveforms examples of the \textit {prl25} calibration data release}{45}{appendix.C}%
+\contentsline {chapter}{Bibliography}{49}{appendix*.30}%

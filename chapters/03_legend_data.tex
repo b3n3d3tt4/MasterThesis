@@ -38,10 +38,18 @@ QUI FORSE COME è IOL WEIGHTING FIELD NELL'ICPC?
 ICPC (Inverted Coaxial Point Contact): È la geometria specifica del tuo diodo. Ha un contatto di lettura piccolissimo ("point contact"). Questo design fa sì che il campo elettrico all'interno sia particolare: la carica si muove lentamente all'inizio e accelera bruscamente vicino al contatto. È fondamentale per te perché questo effetto amplifica le differenze nella forma d'onda tra eventi SSE e MSE.
 
 \subsubsection{Readout electronics}
-The Data Acquisition (DAQ) system for LEGEND-200 consists of FlashCam digitisers and an Object-orientated Real-time Control and Acquisition (ORCA) DAQ software. The Data Acquisition (DAQ) system employs a Flash Analog-to-Digital Converter (FADC) based on the FlashCam readout system, which digitises the detector signals with 16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval. The whole DAQ operation is managed by \ac{ORCA}. \cite{LEGEND:GeDet}
+The Data Acquisition (DAQ) system for LEGEND-200 consists of FlashCam digitisers and an Object-orientated Real-time Control and Acquisition (ORCA) DAQ software. The Data Acquisition (DAQ) system employs a Flash Analog-to-Digital Converter (FADC) based on the FlashCam readout system, which digitises the detector signals with 16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval. The whole DAQ operation is managed by \ac{ORCA}. 
 
 In order to optimise data transfer and data processing, raw digitised traces are divided into two traces during the conversion from the \ac{ORCA} software to the \ac{LGDO}\footnote{\ac{LGDO} is a custom Python-based data format built by the LEGEND collaboration.} format.
-For applications that do not require maximum timing resolution, such as energy reconstruction, the traces are down-sampled by summing 8 consecutive samples. This process results in a final compressed waveform of 1024 samples with a time bin width of 128 ns. Conversely, analyses like \ac{PSD} strictly require high timing resolution to resolve the signal leading edge. Therefore, a second trace is generated at the full sampling frequency, but it is restricted to a narrow window of 1400 samples (corresponding to approximately 22 $\mu$s) centered around the signal rise.
+For applications that do not require maximum timing resolution, such as energy reconstruction, the traces are down-sampled by summing 8 consecutive samples. This process results in a final compressed waveform of 1024 samples with a time bin width of 128 ns. Conversely, analyses like \ac{PSD} strictly require high timing resolution to resolve the signal leading edge. Therefore, a second trace is generated at the full sampling frequency, but it is restricted to a narrow window of 1400 samples (corresponding to approximately 22 $\mu$s) centered around the signal rise. \cite{LEGEND:GeDet}
+
+An example of such procedure is shown in Fig. \ref{fig:wf-windowing}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{plots/wf_vs_windowed_wf-2.pdf}
+    \caption{Example of a raw waveform from the DAQ. The windowing region is highlighted.}
+    \label{fig:wf-windowing}
+\end{figure}
 
   
 
@@ -69,13 +77,13 @@ The raw data files output by the Data Acquisition (DAQ) system in the ORCA forma
 \end{itemize} 
 Specific partition tiers, such as \textit{psp} (partition \textit{dsp}), \textit{pht} (partition \textit{hit}), and \textit{pep} (partition \textit{evt}), share the identical data structure of the standard tiers, yet their processing parameters are optimised over the entire data partition.
 
-The analysis presented in this work is based on raw waveforms from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Notably, the dataset has been restricted exclusively to the V08682A ICPC detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
+The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Notably, the dataset has been restricted exclusively to the V08682A ICPC detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
 
 
 
 
 
-\section{Pulse shape discrimination (\ac{PSD})}
+\section{Pulse shape discrimination (PSD)}
 \label{sec:trditionalPSD}
 \subsection{Events topology}
 \label{subsec:topology}
@@ -84,14 +92,10 @@ QUI QUESTIONE CHE DIVERSI TIPI DI EVENTI GENERANO LE CARICHE IN MODI DIVERSI E Q
 
 For the analysis that will follow in this thesis, we used calibration data of the LEGEND-200 experiment, thus it is useful to analyse the calibration source that was used to acquire said data in order to highlight particular features of them that will be more than crucial in the work here presented. 
 
-Calibration data were acquired using a source of Thorium-228 \cite{L200:calibration}. The decay chain of such isotope is shown in Fig. \ref{fig:decayTh228} 
-while the energy spectrum of $\gamma$-rays emitted as a consequennce of the decays are visible in Fig. \ref{fig:TlBi-spectrum}. 
-It is evident that we can distinguish several peaks: the ones we are focusing on are listed in Table \ref{tab:emission-peaks}.
+Energy calibration is performed using Thorium-228 sources with low neutron emission. The sources are inserted in the LAr cryostat through four calibration systems, each moving four ${}^{228}$Th sources of about 5 kBq activity per source, situated at different heights for homogeneous event distribution (\cite{L200:calibration}, \cite{LEGEND:GeDet}). The decay chain of such isotope is shown in Fig. \ref{fig:decayTh228} while the energy spectrum of $\gamma$-rays emitted as a consequennce of the decays are visible in Fig. \ref{fig:TlBi-spectrum}. It is evident that we can distinguish several peaks: the ones we are focusing on are listed in Table \ref{tab:emission-peaks}.
 
 \begin{figure}[H]
     \centering
-    
-    % Colonna di sinistra: Prima Figura (Catena di decadimento)
     \begin{minipage}[t]{0.3\textwidth}
         \vspace{0pt} % Forza l'allineamento al margine superiore
         \centering
@@ -99,20 +103,17 @@ It is evident that we can distinguish several peaks: the ones we are focusing on
         \caption{Decay chain of the ${}^{228}$Th source. Custom plot with data taken from \cite{Th228chain}.}
         \label{fig:decayTh228}
     \end{minipage}
-    \hfill % Spazio flessibile tra le due minipage
-    % Colonna di destra: Seconda Figura e Tabella
+    \hfill 
     \begin{minipage}[t]{0.65\textwidth}
         \vspace{0pt} % Forza l'allineamento al margine superiore
         \centering
-        
-        % Seconda figura in alto
+
         \includegraphics[width=\linewidth]{plots/energy_spectrum-example.pdf}
         \caption{Example of the energy spectrum recorded in the calibration. Peaks listed in Tab \ref{tab:emission-peaks} are highlighted. The data for this example plot are from run \textit{r000} of period \textit{p03}.}
         \label{fig:TlBi-spectrum}
         
-        \vspace{1.0em} % Spazio verticale tra la figura e la tabella
-        
-        % Tabella in basso
+        \vspace{1.0em}
+
         \begin{tabular}{ccccc}
             \toprule
             \textbf{Isotope} && \textbf{Peak} && \textbf{Energy [keV]} \\
