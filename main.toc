@@ -1,7 +1,7 @@
 \acswitchoff 
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Abstract}{v}{chapter*.2}%
-\contentsline {chapter}{List of Acronyms}{ix}{chapter*.4}%
+\contentsline {chapter}{List of Acronyms}{x}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}Neutrino physics}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Neutrinos in the Standard Model of Particle Physics}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Flavour oscillations}{2}{section.1.2}%
@@ -27,13 +27,13 @@
 \contentsline {chapter}{\numberline {3}LEGEND data}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data collection}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Signal formation and readout in Germanium detectors}{21}{subsection.3.1.1}%
-\contentsline {paragraph}{The p-n junction}{21}{section*.19}%
-\contentsline {paragraph}{Germanium diodes in LEGEND-200}{21}{section*.20}%
-\contentsline {paragraph}{The Ramo-Schokley theorem}{21}{section*.22}%
-\contentsline {paragraph}{Electronics}{22}{section*.23}%
+\contentsline {subsubsection}{The p-n junction}{21}{section*.19}%
+\contentsline {subsubsection}{Germanium diodes in LEGEND-200}{21}{section*.20}%
+\contentsline {subsubsection}{The Ramo-Schokley theorem}{21}{section*.22}%
+\contentsline {subsubsection}{Readout electronics}{22}{section*.23}%
 \contentsline {section}{\numberline {3.2}Data structure of the LEGEND-200 phase}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pulse shape discrimination (\ac {PSD})}{23}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Events topology}{23}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.3}Pulse shape discrimination (\ac {PSD})}{24}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Events topology}{24}{subsection.3.3.1}%
 \contentsline {chapter}{\numberline {4}Deep Learning \ac {PSD}}{27}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Data cleaning}{28}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Model implementation}{30}{section.4.2}%
