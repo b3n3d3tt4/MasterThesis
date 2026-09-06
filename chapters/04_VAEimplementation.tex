@@ -15,11 +15,19 @@ The full code of data processing, data cleaning and \ac{VAE} implementation is a
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
-Raw charge waveforms\footnote{For \textit{raw} we mean wavewforms already processed as detailed in Sec. \ref{sec:data-structureL200}, but still not selected in terms of energy, \ac{PSD} parameters or other features.} are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest, i.e. the energy window between the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. 
+Raw charge waveforms\footnote{For \textit{raw} we mean wavewforms already processed with LEGEND dedicated software as detailed in Sec. \ref{sec:data-structureL200}, but still not selected in terms of energy, \ac{PSD} parameters or other features.} are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest, i.e. the energy window between the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. 
 
 QUI DEVO SPIEGARE COSA FANNO I FILE \\
 -FILEREADING.PY \\
--WFCLEANING.PY
+-WFCLEANING.PY \\
+-SSE MSE SELECTION
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/energy_spectrum-cut_window.pdf}
+    \caption{Example of the energy spectrum recorded in the calibration from \textit{p03/r000}. The energy region of the cut is highlighted.}
+    \label{fig:cut_region}
+\end{figure}
 
 Once all of these steps are completed, what we obtain is a suitable input of the \ac{VAE} that is to be implemented as will be decripted in Sec. \ref{sec:model-implementation}. An example of the process is shown in Fig. \ref{fig:data-cleaning} for run \textit{r000} of period \textit{p03}; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
 
@@ -27,7 +35,7 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     \centering
     
     % --- Prima figura (a) ---
-    \begin{subfigure}[H]{0.45\textwidth}
+    \begin{subfigure}[H]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/raw_wf.pdf}
         \caption{Raw charge waveforms.}
@@ -35,7 +43,7 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     \end{subfigure}
     \hfill % Crea uno spazio orizzontale tra le due figure affiancate
     % --- Seconda figura (b) ---
-    \begin{subfigure}[H]{0.45\textwidth}
+    \begin{subfigure}[H]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/baseline_subtracted_wf.pdf}
         \caption{Charge waveforms after baseline subtraction.}
@@ -45,7 +53,7 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     \vspace{0.5cm} % Spazio verticale tra la prima e la seconda riga
     
     % --- Terza figura (c) ---
-    \begin{subfigure}[H]{0.45\textwidth}
+    \begin{subfigure}[H]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/normalised_wf.pdf}
         \caption{Charge waveforms after normalisation.}
@@ -53,7 +61,7 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     \end{subfigure}
     \hfill
     % --- Quarta figura (d) ---
-    \begin{subfigure}[H]{0.45\textwidth}
+    \begin{subfigure}[H]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/aligned_wf.pdf}
         \caption{Charge waveforms after time alignement.}
@@ -61,7 +69,7 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     \end{subfigure}
 
         % --- Quinta figura (e) ---
-    \begin{subfigure}[H]{0.45\textwidth}
+    \begin{subfigure}[H]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/trimmed_wf.pdf}
         \caption{Charge waveforms after trimming.}
@@ -69,7 +77,7 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     \end{subfigure}
     \hfill
     % --- Sestaa figura (f) ---
-    \begin{subfigure}[H]{0.45\textwidth}
+    \begin{subfigure}[H]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/current_wf.pdf}
         \caption{Current waveforms obtained with time derivative.}
@@ -79,6 +87,20 @@ Once all of these steps are completed, what we obtain is a suitable input of the
     % --- Didascalia principale ---
     \caption{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit{r000} of period \textit{p03}: the orange one is a typical \ac{MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac{SSE} waveform. Raw waveforms depicted in Fig.\ref{fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref{fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref{fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref{fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref{fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref{fig:f-current} where the two usual patterns of current in \ac{MSE} and \ac{SSE} are evident.}
     \label{fig:data-cleaning}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/mse_sse_selection.pdf}
+    \caption{Events selection for \ac{SSE} and \ac{MSE}. A detailed description of the procedure is given in the text.}
+    \label{fig:cut_region}
+\end{figure} 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/AoE_sse_vs_sse.pdf}
+    \caption{Distribution of the Amplitude/Energy quantity. Comparison between SSE and MSE distributions.}
+    \label{fig:AoE-sse_vs_mse}
 \end{figure}
 
 \newpage
@@ -96,6 +118,10 @@ QUI DEVO DIRE\\
     - costruzione della loss\\
     - training\\ 
     - test\\
+    - tutti i test del codice che faccio\\
+        * test su beta
+        * test su dimensioni dello spazio lentamente
+        * eventuale PCA e/o TRAVERSAL
 
 - COME IMPLEMENTO LA CLASSIFICATION\\
     - layers etc\\ 

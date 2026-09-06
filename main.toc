@@ -36,12 +36,12 @@
 \contentsline {subsection}{\numberline {3.3.1}Events topology}{24}{subsection.3.3.1}%
 \contentsline {chapter}{\numberline {4}Deep Learning \ac {PSD}}{27}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Data cleaning}{28}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Model implementation}{30}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Results}{30}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Monaco data}{31}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusions}{33}{chapter.6}%
-\contentsline {chapter}{Acknowledgments}{35}{chapter*.29}%
-\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{37}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{41}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Waveforms examples of the \textit {prl25} calibration data release}{45}{appendix.C}%
-\contentsline {chapter}{Bibliography}{49}{appendix*.30}%
+\contentsline {section}{\numberline {4.2}Model implementation}{31}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Results}{31}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Monaco data}{33}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusions}{35}{chapter.6}%
+\contentsline {chapter}{Acknowledgments}{37}{chapter*.32}%
+\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{39}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{43}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Waveforms examples of the \textit {prl25} calibration data release}{47}{appendix.C}%
+\contentsline {chapter}{Bibliography}{51}{appendix*.33}%

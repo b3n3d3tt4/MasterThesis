@@ -349,8 +349,8 @@
 \newlabel{subsec:topology}{{3.3.1}{24}{Events topology}{subsection.3.3.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Decay chain of the ${}^{228}$Th source. Custom plot with data taken from \blx@tocontentsinit {0}\cite {Th228chain}.}}{25}{figure.caption.25}\protected@file@percent }
 \newlabel{fig:decayTh228}{{3.3}{25}{Decay chain of the ${}^{228}$Th source. Custom plot with data taken from \cite {Th228chain}}{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Example of the energy spectrum recorded in the calibration. Peaks listed in Tab \ref {tab:emission-peaks} are highlighted. The data for this example plot are from run \textit  {r000} of period \textit  {p03}.}}{25}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:TlBi-spectrum}{{3.4}{25}{Example of the energy spectrum recorded in the calibration. Peaks listed in Tab \ref {tab:emission-peaks} are highlighted. The data for this example plot are from run \textit {r000} of period \textit {p03}}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Example of the energy spectrum recorded in the calibration from \textit  {p03/r000}. Peaks listed in Tab \ref {tab:emission-peaks} are highlighted. The data for this example plot are from run \textit  {r000} of period \textit  {p03}.}}{25}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:TlBi-spectrum}{{3.4}{25}{Example of the energy spectrum recorded in the calibration from \textit {p03/r000}. Peaks listed in Tab \ref {tab:emission-peaks} are highlighted. The data for this example plot are from run \textit {r000} of period \textit {p03}}{figure.caption.25}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Prominent $\gamma $-ray peaks from the $^{228}$Th decay chain used for energy calibration. Data are taken from \blx@tocontentsinit {0}\cite {LNHB}.}}{25}{figure.caption.25}\protected@file@percent }
 \newlabel{tab:emission-peaks}{{3.1}{25}{Prominent $\gamma $-ray peaks from the $^{228}$Th decay chain used for energy calibration. Data are taken from \cite {LNHB}}{figure.caption.25}{}}
 \ACRO{recordpage}{DEP}{35}{1}{25}
@@ -380,33 +380,39 @@
 \ACRO{recordpage}{VAE}{38}{1}{28}
 \ACRO{recordpage}{DEP}{38}{1}{28}
 \ACRO{recordpage}{FEP}{38}{1}{28}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of the energy spectrum recorded in the calibration from \textit  {p03/r000}. The energy region of the cut is highlighted.}}{28}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:cut_region}{{4.1}{28}{Example of the energy spectrum recorded in the calibration from \textit {p03/r000}. The energy region of the cut is highlighted}{figure.caption.28}{}}
 \ACRO{recordpage}{VAE}{38}{1}{28}
 \ACRO{recordpage}{PSD}{38}{1}{28}
-\newlabel{fig:a-raw-wf}{{4.1a}{29}{Raw charge waveforms}{figure.caption.28}{}}
-\newlabel{sub@fig:a-raw-wf}{{a}{29}{Raw charge waveforms}{figure.caption.28}{}}
-\newlabel{fig:b-baseline}{{4.1b}{29}{Charge waveforms after baseline subtraction}{figure.caption.28}{}}
-\newlabel{sub@fig:b-baseline}{{b}{29}{Charge waveforms after baseline subtraction}{figure.caption.28}{}}
-\newlabel{fig:c-normalised}{{4.1c}{29}{Charge waveforms after normalisation}{figure.caption.28}{}}
-\newlabel{sub@fig:c-normalised}{{c}{29}{Charge waveforms after normalisation}{figure.caption.28}{}}
-\newlabel{fig:d-aligned}{{4.1d}{29}{Charge waveforms after time alignement}{figure.caption.28}{}}
-\newlabel{sub@fig:d-aligned}{{d}{29}{Charge waveforms after time alignement}{figure.caption.28}{}}
-\newlabel{fig:e-trimmed}{{4.1e}{29}{Charge waveforms after trimming}{figure.caption.28}{}}
-\newlabel{sub@fig:e-trimmed}{{e}{29}{Charge waveforms after trimming}{figure.caption.28}{}}
-\newlabel{fig:f-current}{{4.1f}{29}{Current waveforms obtained with time derivative}{figure.caption.28}{}}
-\newlabel{sub@fig:f-current}{{f}{29}{Current waveforms obtained with time derivative}{figure.caption.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Illustration of the workflow of the data processing for two types of waveforms taken from run \textit  {r000} of period \textit  {p03}: the orange one is a typical \ac {MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac {SSE} waveform. Raw waveforms depicted in Fig.\ref {fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref {fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref {fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref {fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref {fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref {fig:f-current} where the two usual patterns of current in \ac {MSE} and \ac {SSE} are evident.}}{29}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:data-cleaning}{{4.1}{29}{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit {r000} of period \textit {p03}: the orange one is a typical \ac {MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac {SSE} waveform. Raw waveforms depicted in Fig.\ref {fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref {fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref {fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref {fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref {fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref {fig:f-current} where the two usual patterns of current in \ac {MSE} and \ac {SSE} are evident}{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Model implementation}{30}{section.4.2}\protected@file@percent }
-\newlabel{sec:model-implementation}{{4.2}{30}{Model implementation}{section.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Results}{30}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Monaco data}{31}{chapter.5}\protected@file@percent }
+\newlabel{fig:a-raw-wf}{{4.2a}{29}{Raw charge waveforms}{figure.caption.29}{}}
+\newlabel{sub@fig:a-raw-wf}{{a}{29}{Raw charge waveforms}{figure.caption.29}{}}
+\newlabel{fig:b-baseline}{{4.2b}{29}{Charge waveforms after baseline subtraction}{figure.caption.29}{}}
+\newlabel{sub@fig:b-baseline}{{b}{29}{Charge waveforms after baseline subtraction}{figure.caption.29}{}}
+\newlabel{fig:c-normalised}{{4.2c}{29}{Charge waveforms after normalisation}{figure.caption.29}{}}
+\newlabel{sub@fig:c-normalised}{{c}{29}{Charge waveforms after normalisation}{figure.caption.29}{}}
+\newlabel{fig:d-aligned}{{4.2d}{29}{Charge waveforms after time alignement}{figure.caption.29}{}}
+\newlabel{sub@fig:d-aligned}{{d}{29}{Charge waveforms after time alignement}{figure.caption.29}{}}
+\newlabel{fig:e-trimmed}{{4.2e}{29}{Charge waveforms after trimming}{figure.caption.29}{}}
+\newlabel{sub@fig:e-trimmed}{{e}{29}{Charge waveforms after trimming}{figure.caption.29}{}}
+\newlabel{fig:f-current}{{4.2f}{29}{Current waveforms obtained with time derivative}{figure.caption.29}{}}
+\newlabel{sub@fig:f-current}{{f}{29}{Current waveforms obtained with time derivative}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the workflow of the data processing for two types of waveforms taken from run \textit  {r000} of period \textit  {p03}: the orange one is a typical \ac {MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac {SSE} waveform. Raw waveforms depicted in Fig.\ref {fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref {fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref {fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref {fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref {fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref {fig:f-current} where the two usual patterns of current in \ac {MSE} and \ac {SSE} are evident.}}{29}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:data-cleaning}{{4.2}{29}{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit {r000} of period \textit {p03}: the orange one is a typical \ac {MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac {SSE} waveform. Raw waveforms depicted in Fig.\ref {fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref {fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref {fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref {fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point \ref {fig:e-trimmed}. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref {fig:f-current} where the two usual patterns of current in \ac {MSE} and \ac {SSE} are evident}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Distribution of the Amplitude/Energy quantity. Comparison between SSE and MSE distributions.}}{30}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:AoE-sse_vs_mse}{{4.4}{30}{Distribution of the Amplitude/Energy quantity. Comparison between SSE and MSE distributions}{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Events selection for \ac {SSE} and \ac {MSE}. A detailed description of the procedure is given in the text.}}{30}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:cut_region}{{4.3}{30}{Events selection for \ac {SSE} and \ac {MSE}. A detailed description of the procedure is given in the text}{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Model implementation}{31}{section.4.2}\protected@file@percent }
+\newlabel{sec:model-implementation}{{4.2}{31}{Model implementation}{section.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Results}{31}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Monaco data}{33}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:monacp}{{5}{31}{Monaco data}{chapter.5}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions}{33}{chapter.6}\protected@file@percent }
+\newlabel{chapter:monacp}{{5}{33}{Monaco data}{chapter.5}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions}{35}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Acknowledgments}{35}{chapter*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Acknowledgments}{37}{chapter*.32}\protected@file@percent }
 \@input{chapters/A-app_three-flavours.aux}
 \abx@aux@cite{0}{Brugnera}
 \abx@aux@segm{0}{0}{Brugnera}
@@ -414,7 +420,7 @@
 \abx@aux@cite{0}{neutrinosPDG}
 \abx@aux@segm{0}{0}{neutrinosPDG}
 \@input{chapters/C-raw_waveforms.aux}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{49}{appendix*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{51}{appendix*.33}\protected@file@percent }
 \ACRO{total-barriers}{1}
 \ACRO{usage}{SM=={17}}
 \ACRO{usage}{SSB=={2}}
@@ -475,9 +481,9 @@
 \ACRO{pages}{DEP=={35@1@25|36@1@26|38@1@28}}
 \ACRO{pages}{FEP=={35@1@25|36@1@26|38@1@28}}
 \ACRO{pages}{VAE=={38@1@28}}
-\ACRO{pages}{CC=={11@1@1|12@1@2|13@1@3|17@1@7|20@1@10|51@1@41|52@1@42}}
-\ACRO{pages}{NC=={11@1@1|13@1@3|14@1@4|16@1@6|17@1@7|20@1@10|52@1@42}}
-\ACRO{pages}{SM=={11@1@1|15@1@5|16@1@6|18@1@8|19@1@9|20@1@10|21@1@11|23@1@13|51@1@41|52@1@42}}
+\ACRO{pages}{CC=={11@1@1|12@1@2|13@1@3|17@1@7|20@1@10|53@1@43|54@1@44}}
+\ACRO{pages}{NC=={11@1@1|13@1@3|14@1@4|16@1@6|17@1@7|20@1@10|54@1@44}}
+\ACRO{pages}{SM=={11@1@1|15@1@5|16@1@6|18@1@8|19@1@9|20@1@10|21@1@11|23@1@13|53@1@43|54@1@44}}
 \abx@aux@read@bbl@mdfivesum{BA30E6C1B61E5D1D4E70F56A7AE51B2A}
 \abx@aux@defaultrefcontext{0}{latestSUPERK}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{LEGEND:introSetup}{nty/global//global/global/global}
@@ -511,4 +517,4 @@
 \abx@aux@defaultrefcontext{0}{Thomson}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{Th228chain}{nty/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{AME2020-masses}{nty/global//global/global/global}
-\gdef \@abspage@last{60}
+\gdef \@abspage@last{62}
