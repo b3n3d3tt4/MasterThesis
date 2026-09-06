@@ -21,7 +21,7 @@ energy_0nu = np.linspace(0.93, 1.06, 200)
 pdf_2nu = distribution_2nu(energy_2nu)
 pdf_0nu = gaussian(energy_0nu, sigma=0.02, mu=1.0)
 
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(9, 6))
 
 # Aggiunti i colori per rispettare lo schema della tesi
 plt.plot(energy_0nu, pdf_0nu, label=r"$0\nu\beta\beta$", color='blue')

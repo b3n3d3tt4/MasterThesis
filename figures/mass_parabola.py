@@ -118,7 +118,7 @@ def plot_mass_parabola(A, mass_excess, out_path, highlight_ee_isotope=None):
     highlight_ee_isotope : Z of an even-even nucleus whose double-beta
                            decay should be emphasised in the legend/title
     """
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(9, 6))
 
     Zs = np.array(sorted(mass_excess.keys()))
     Ms = np.array([mass_excess[z] for z in Zs])

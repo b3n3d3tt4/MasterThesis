@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  6 SEP 2026 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  6 SEP 2026 20:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1387,22 +1387,22 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8> not available
 )
 
 [10]
-<figures/mass_parabola_A76.pdf, id=552, 578.16pt x 433.62pt>
+<figures/mass_parabola_A76.pdf, id=552, 650.43pt x 433.62pt>
 File: figures/mass_parabola_A76.pdf Graphic file (type pdf)
 <use figures/mass_parabola_A76.pdf>
 Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 535.
-(pdftex.def)             Requested size: 290.22107pt x 217.663pt.
+(pdftex.def)             Requested size: 386.95897pt x 257.97733pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1028) has occurred while \output is active []
 
 
 
 [11 <./figures/mass_parabola_A76.pdf>] (feynman-diagrams/0nu-doubleBeta-diagram.tex)
-<figures/0nu_vs_2nu.pdf, id=629, 578.16pt x 433.62pt>
+<figures/0nu_vs_2nu.pdf, id=629, 650.43pt x 433.62pt>
 File: figures/0nu_vs_2nu.pdf Graphic file (type pdf)
 <use figures/0nu_vs_2nu.pdf>
 Package pdftex.def Info: figures/0nu_vs_2nu.pdf  used on input line 568.
-(pdftex.def)             Requested size: 290.22107pt x 217.663pt.
+(pdftex.def)             Requested size: 386.95897pt x 257.97733pt.
 
 
 [12 <./figures/0nu_vs_2nu.pdf>]) (chapters/02_legend_experiment.tex
@@ -2334,7 +2334,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,1261b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (62 pages, 4320780 bytes).
+Output written on main.pdf (62 pages, 4320762 bytes).
 PDF statistics:
  2137 PDF objects out of 2487 (max. 8388607)
  273 named destinations out of 1000 (max. 500000)
