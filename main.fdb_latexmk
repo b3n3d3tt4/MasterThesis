@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1788719347.33573 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1788719633.49446 -1
   "bibliografia.bib" 1788380765 13049 c9b72df7c321ed1f3f33160ccfb88ce8 ""
-  "main.bcf" 1788719346 111822 33bd5cf1ed2765e685010fdd3d243867 "pdflatex"
+  "main.bcf" 1788719632 111822 33bd5cf1ed2765e685010fdd3d243867 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1788719335.65364 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1788719347.33706 0
+["pdflatex"] 1788719621.24573 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1788719633.49539 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ectt1095.tfm" 993062342 1352 fa21dcb5ddc7d1dc47d14cd897fdeb0f ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -279,14 +279,14 @@
   "chapters/01_neutrino_physics.tex" 1788718393 50387 7fdc31e183bc1b6b6e72a195c44339b6 ""
   "chapters/02_legend_experiment.tex" 1788692669 17776 bea1b7010b5e5953381444fa79b8498e ""
   "chapters/03_legend_data.tex" 1788716525 16467 dd1bc041791c0c73ee076d31c0fe82a2 ""
-  "chapters/04_VAEimplementation.tex" 1788719339 9805 e90f10d8dc494b8ca387be7c4bf128ff ""
+  "chapters/04_VAEimplementation.tex" 1788719620 9776 3014b85f38af364186471755c2445626 ""
   "chapters/05_monaco_data.tex" 1788356248 45 475169b77488106e9e1dbb81832037c7 ""
   "chapters/06_conclusions.tex" 1784985597 21 fe4b20616295c9a322e6cc7648a79dcb ""
-  "chapters/A-app_three-flavours.aux" 1788719342 6490 62b30c118acc83e8ae67d44c9223b8f6 "pdflatex"
+  "chapters/A-app_three-flavours.aux" 1788719628 6490 62b30c118acc83e8ae67d44c9223b8f6 "pdflatex"
   "chapters/A-app_three-flavours.tex" 1785597649 9348 38884232143f3bf1837cc8e7a491fcc3 ""
-  "chapters/B-app_neutrinosINmatter.aux" 1788719342 7311 5acb21065afe6cf7b30e5aff14594ad1 "pdflatex"
+  "chapters/B-app_neutrinosINmatter.aux" 1788719628 7311 5acb21065afe6cf7b30e5aff14594ad1 "pdflatex"
   "chapters/B-app_neutrinosINmatter.tex" 1788371959 8765 a9c158fa8a8911c13fc24b655ae80493 ""
-  "chapters/C-raw_waveforms.aux" 1788719345 5391 a98aa3f73121e698514390fa7cf15e56 "pdflatex"
+  "chapters/C-raw_waveforms.aux" 1788719631 5391 a98aa3f73121e698514390fa7cf15e56 "pdflatex"
   "chapters/C-raw_waveforms.tex" 1788384182 4435 87981e448a09e29d0d942a795e7f8bb9 ""
   "feynman-diagrams/0nu-doubleBeta-diagram.tex" 1785241635 2219 07839a6b9006d6c98186f1d62b97c559 ""
   "feynman-diagrams/2nu-doublebeta-feynman.tex" 1785241847 2275 4d72521d2da0063dc8ae5931a3fb2a11 ""
@@ -306,12 +306,12 @@
   "figures/renderingDetectors/Coax_section_frontale.png" 1788376920 106029 91ed296014e5a9cb022cf7b3428bd7c8 ""
   "figures/renderingDetectors/IC_section_frontale.png" 1788376945 112750 cab4dd3867946969e67af25fa3773b43 ""
   "figures/renderingDetectors/PPC_section_frontale.png" 1788376987 82114 75a7afe4cfaeeac57c1d95aec313bee2 ""
-  "main.aux" 1788719346 38636 2b13f8590cdcef4fd53aaf0163fdf692 "pdflatex"
+  "main.aux" 1788719632 38578 03200e4da75e8a0ccc66e9161aeee80d "pdflatex"
   "main.bbl" 1788427087 53253 ca7a57c306cedcb69ce28f753712cc0f "biber main"
-  "main.out" 1788719346 6724 51c8bffda7fe164f88225fbee5d4c74e "pdflatex"
-  "main.run.xml" 1788719346 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
+  "main.out" 1788719632 6724 51c8bffda7fe164f88225fbee5d4c74e "pdflatex"
+  "main.run.xml" 1788719632 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
   "main.tex" 1788431277 5005 0c8e887a16f23b6a00c0b5a1a286df68 ""
-  "main.toc" 1788719346 3865 72aab7219db3652f82c9eec11f31abfc "pdflatex"
+  "main.toc" 1788719632 3865 72aab7219db3652f82c9eec11f31abfc "pdflatex"
   "plots/AoE_sse_vs_sse.pdf" 1788710668 18930 80f6a1600718b2ad5780f4775493329d ""
   "plots/aligned_wf.pdf" 1788716027 33340 d5b3fc124d70e98c24b699e370082466 ""
   "plots/baseline_subtracted_wf.pdf" 1788716026 35518 13a11151959ab86e9e5d3284d4f5fba8 ""
@@ -368,7 +368,7 @@
   "plots/raw_wf_examples/p09_r004.png" 1788262566 40846 277666b14647cfcaf850043d58ae94d9 ""
   "plots/raw_wf_examples/p09_r005.png" 1788262566 40580 287b74c21eb13df9feb758946694cf5f ""
   "plots/raw_wf_examples/p09_r006.png" 1788262566 40300 3fd231886151ab1a1c6ff7877209dcdf ""
-  "plots/sse_mse_selection.pdf" 1788719271 23235 2a58edf18bc19b1f4d72a9451f7c4006 ""
+  "plots/sse_mse_selection.pdf" 1788719587 23192 c2217aecc0a7329a4ac5d15300794f89 ""
   "plots/trimmed_wf.pdf" 1788716028 22677 09732dda8418a3f549f34e7c78a043ab ""
   "plots/wf_vs_windowed_wf-2.pdf" 1788430991 24569 19078484dc3644a9ace77da8a2899172 ""
   (generated)
