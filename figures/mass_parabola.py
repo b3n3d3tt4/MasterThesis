@@ -139,12 +139,12 @@ def plot_mass_parabola(A, mass_excess, out_path, highlight_ee_isotope=None):
     if len(Zs_oo) >= 3:
         coeff_oo = np.polyfit(Zs_oo, Ms_oo, 2)
         ax.plot(z_plot, np.polyval(coeff_oo, z_plot),
-                color="#0085cd", lw=1.5, zorder=1)
+                color="#006aa4", lw=1.5, zorder=1)
 
     # --- actual isobars (integer Z) --------------------------------
     for Z, M in zip(Zs, Ms):
         even_even = (Z % 2 == 0)
-        color = "#004284" if even_even else "#0085cd"
+        color = "#004284" if even_even else "#006aa4"
         ax.scatter(Z, M, s=60, color=color, zorder=3,
                    edgecolor="black", linewidth=0.6)
         label = rf"$^{{{A}}}${symbol(Z)}"
@@ -181,7 +181,7 @@ def plot_mass_parabola(A, mass_excess, out_path, highlight_ee_isotope=None):
 
     handles = [
         plt.Line2D([0], [0], color="#004284", lw=1.5 , label="even-even"),
-        plt.Line2D([0], [0], color="#0085cd", lw=1.5, label="odd-odd"),
+        plt.Line2D([0], [0], color="#006aa4", lw=1.5, label="odd-odd"),
         plt.Line2D([0], [0], color="#ffbf00", lw=2, label=r"single $\beta$ decay"),
         plt.Line2D([0], [0], color="#ff0000", lw=2.2, ls="--", label=r"double $\beta$ decay"),
     ]
