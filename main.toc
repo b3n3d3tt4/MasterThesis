@@ -34,6 +34,7 @@
 \contentsline {section}{\numberline {3.2}Data structure of the LEGEND-200 phase}{23}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Pulse shape discrimination (PSD)}{24}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Events topology}{24}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Amplitude/Energy cut}{26}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Deep Learning \ac {PSD}}{27}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Data cleaning}{28}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Model implementation}{31}{section.4.2}%

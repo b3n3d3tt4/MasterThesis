@@ -24,14 +24,14 @@ pdf_0nu = gaussian(energy_0nu, sigma=0.02, mu=1.0)
 plt.figure(figsize=(9, 6))
 
 # Aggiunti i colori per rispettare lo schema della tesi
-plt.plot(energy_0nu, pdf_0nu, label=r"$0\nu\beta\beta$", color='blue')
-plt.plot(energy_2nu, pdf_2nu, label=r"$2\nu\beta\beta$", color='red')
+plt.plot(energy_0nu, pdf_0nu, label=r"$0\nu\beta\beta$", color='#fe2f33', lw=1.5)
+plt.plot(energy_2nu, pdf_2nu, label=r"$2\nu\beta\beta$", color='#004284', lw=1.5)
 
 plt.xlabel(r"E$_e$/Q$_{\beta\beta}$")
 plt.ylabel("a.u.")
 plt.title("Energy distribution comparison between double beta decay modes")
-plt.legend(labelspacing=1, fontsize=12)
-plt.grid(alpha=0.25)
+plt.legend(labelspacing=1, fontsize=12, frameon=False)
+plt.grid(alpha=0.3, ls='--')
 plt.tight_layout()
 
 # Evita errori se la cartella figures non esiste

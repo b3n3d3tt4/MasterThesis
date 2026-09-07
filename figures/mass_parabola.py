@@ -135,16 +135,16 @@ def plot_mass_parabola(A, mass_excess, out_path, highlight_ee_isotope=None):
     if len(Zs_ee) >= 3:
         coeff_ee = np.polyfit(Zs_ee, Ms_ee, 2)
         ax.plot(z_plot, np.polyval(coeff_ee, z_plot),
-                color="#1f5fa8", lw=1.8, zorder=1)
+                color="#004284", lw=1.5, zorder=1)
     if len(Zs_oo) >= 3:
         coeff_oo = np.polyfit(Zs_oo, Ms_oo, 2)
         ax.plot(z_plot, np.polyval(coeff_oo, z_plot),
-                color="#ff9100", lw=1.8, zorder=1)
+                color="#0085cd", lw=1.5, zorder=1)
 
     # --- actual isobars (integer Z) --------------------------------
     for Z, M in zip(Zs, Ms):
         even_even = (Z % 2 == 0)
-        color = "#1f5fa8" if even_even else "#ff9100"
+        color = "#004284" if even_even else "#0085cd"
         ax.scatter(Z, M, s=60, color=color, zorder=3,
                    edgecolor="black", linewidth=0.6)
         label = rf"$^{{{A}}}${symbol(Z)}"
@@ -165,9 +165,9 @@ def plot_mass_parabola(A, mass_excess, out_path, highlight_ee_isotope=None):
         ax.add_patch(arrow)
 
     for z1, z2 in beta_minus:
-        draw_arrow(z1, z2, color="#0b6d14", rad=-0.25)
+        draw_arrow(z1, z2, color="#ffbf00", lw=2, rad=-0.25)
     for z1, z2 in beta_plus_ec:
-        draw_arrow(z1, z2, color="#0b6d14", rad=0.25)
+        draw_arrow(z1, z2, color="#ffbf00", lw=2, rad=0.25)
     for z1, z2 in double_beta:
         draw_arrow(z1, z2, color="#ff0000", lw=2.5, style="--")#, rad=-0.35)
 
@@ -177,12 +177,12 @@ def plot_mass_parabola(A, mass_excess, out_path, highlight_ee_isotope=None):
     title = rf"Isobaric mass parabolas for $A = {A}$"
     ax.set_title(title, fontsize=13)
     ax.set_xticks(Zs)
-    ax.grid(alpha=0.25)
+    ax.grid(alpha=0.3, ls='--')
 
     handles = [
-        plt.Line2D([0], [0], color="#1f5fa8", lw=1.8, label="even-even"),
-        plt.Line2D([0], [0], color="#ff9100", lw=1.8, label="odd-odd"),
-        plt.Line2D([0], [0], color="#0b6d14", lw=1.6, label=r"single $\beta$ decay"),
+        plt.Line2D([0], [0], color="#004284", lw=1.5 , label="even-even"),
+        plt.Line2D([0], [0], color="#0085cd", lw=1.5, label="odd-odd"),
+        plt.Line2D([0], [0], color="#ffbf00", lw=2, label=r"single $\beta$ decay"),
         plt.Line2D([0], [0], color="#ff0000", lw=2.2, ls="--", label=r"double $\beta$ decay"),
     ]
     ax.legend(handles=handles, loc="upper center", ncol=2, frameon=False, fontsize=9)
