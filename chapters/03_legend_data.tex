@@ -3,12 +3,28 @@ As already introduced in Sec. \ref{sec:expsetup}, experimental data in the LEGEN
 
 \section{Data collection}
 \subsection{Signal formation and readout in Germanium detectors}
-\ac{hpge} detectors are semiconductor detectors, characterised by the typical crystalline diamond lattice where each Germanium atom is bounded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}. The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insultators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is break, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
+\begin{wrapfigure}{r}{0.6\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
+  \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
+  \label{fig:band_gaps}
+\end{wrapfigure}
+
+\ac{hpge} detectors are semiconductor detectors, therefore it is crucial to analyse some specific features of semiconductor materials. Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bounded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}. The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insultators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is break, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
 
 An artificial introduction of impurities in the semiconductor lattice can selectively change its behaviour in terms of conductivity.
-Pentavalent elements called \textit{donors}, like Phosphor, inserted in a tetravalent semiconductor like Germanium produce an excess of conduction electrons with respect to the holes; this is called \textit{n-doping}. On the other hand, \textit{p-doping} consists on placing in the lattice trivalent atoms called \textit{acceptors}, like Boron, leading to an excess of holes. The overall crystal of the semiconductor remains electrically neutral, because donors and acceptors are nevertheless neutral atoms, but the available number of charge carriers, either holes or electrons, changes leading to a modification in the conduction properties of the semiconductor. Doped semiconductors are called ectrinsic semiconductors.
+Pentavalent elements called \textit{donors}, like Phosphor, inserted in a tetravalent semiconductor like Germanium produce an excess of conduction electrons with respect to the holes; this is called \textit{n-doping}. On the other hand, \textit{p-doping} consists on placing in the lattice trivalent atoms called \textit{acceptors}, like Boron, leading to an excess of holes. The overall crystal of the semiconductor remains electrically neutral, because donors and acceptors are nevertheless neutral atoms, but the available number of charge carriers, either holes or electrons, changes leading to a modification in the conduction properties of the semiconductor. Pure semiconductors are called intrinsic semiconductors (Fig. \ref{fig:intrisc-vs-extrinsic} on the left) while doped semiconductors are called extrinsic semiconductors (the two cases of Fig. \ref{fig:intrisc-vs-extrinsic} in the center and on the right). 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.333\textwidth]{figures/pureGermanium_square.jpg}\hfill
+    \includegraphics[width=0.333\textwidth]{figures/nDopedGermanium_square}\hfill
+    \includegraphics[width=0.333\textwidth]{figures/pDopedGermanium_square.jpg}
+    \caption{Germanium lattice configurations: on the left the pure Germanium crystal, in the center and on the right n-doped and p-doped Germanium respectively. Original drawing.}
+    \label{fig:intrisc-vs-extrinsic}
+\end{figure}
 
-% \subsubsection{The p-n junction}
+When bringing p-doped and n-doped semiconductor materials in contact, a so-called \textit{pn junction} is formed
+
 QUI COS'è UNA GIUNZIONE PN COME è COLLEGATA A QUELLO CHE HO DETTO PRIMA E COME SI COLLEGA AI DETECTOR DI LEGEND DA FARE CON LIBRO SUI DETECTORS
 
 \subsubsection{Germanium diodes in LEGEND-200}
@@ -19,7 +35,7 @@ Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \texti
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
-    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and ICPC detectors respectively. Rendering scripts are by D. Hervas.}
+    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and IC detectors respectively. Rendering scripts are by D. Hervas.}
     \label{fig:detectors-pINred}
 \end{figure}
 
@@ -39,8 +55,8 @@ From this theorem we know that the charge \textit{Q} and current \textit{i} on a
 
 where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The terms $\varphi_0(\mathbf{x})$ and $\mathbf{E}_0(\mathbf{x})$ are, respectively, the \textit{weighting potential} and the \textit{weighting field} evaluated at the instantaneous position $\mathbf{x}$ of the charge. They are defined as the potential and the electric field that would exist in the device if the selected electrode were set to a unit potential, with all other electrodes grounded (set to zero potential) and all space charges removed. \cite{GeDetectors}
 
-QUI FORSE COME è IOL WEIGHTING FIELD NELL'ICPC?
-ICPC (Inverted Coaxial Point Contact): È la geometria specifica del tuo diodo. Ha un contatto di lettura piccolissimo ("point contact"). Questo design fa sì che il campo elettrico all'interno sia particolare: la carica si muove lentamente all'inizio e accelera bruscamente vicino al contatto. È fondamentale per te perché questo effetto amplifica le differenze nella forma d'onda tra eventi SSE e MSE.
+QUI FORSE COME è IOL WEIGHTING FIELD NELL'IC?
+IC (Inverted Coaxial Point Contact): È la geometria specifica del tuo diodo. Ha un contatto di lettura piccolissimo ("point contact"). Questo design fa sì che il campo elettrico all'interno sia particolare: la carica si muove lentamente all'inizio e accelera bruscamente vicino al contatto. È fondamentale per te perché questo effetto amplifica le differenze nella forma d'onda tra eventi SSE e MSE.
 
 \subsubsection{Readout electronics}
 The Data Acquisition (DAQ) system for LEGEND-200 consists of FlashCam digitisers and an Object-orientated Real-time Control and Acquisition (ORCA) DAQ software. The Data Acquisition (DAQ) system employs a Flash Analog-to-Digital Converter (FADC) based on the FlashCam readout system, which digitises the detector signals with 16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval. The whole DAQ operation is managed by \ac{ORCA}. 
@@ -82,7 +98,7 @@ The raw data files output by the Data Acquisition (DAQ) system in the ORCA forma
 \end{itemize} 
 Specific partition tiers, such as \textit{psp} (partition \textit{dsp}), \textit{pht} (partition \textit{hit}), and \textit{pep} (partition \textit{evt}), share the identical data structure of the standard tiers, yet their processing parameters are optimised over the entire data partition.
 
-The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Notably, the dataset has been restricted exclusively to the V08682A ICPC detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
+The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Notably, the dataset has been restricted exclusively to the V08682A IC detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
 
 
 

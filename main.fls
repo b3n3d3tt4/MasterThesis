@@ -31,6 +31,8 @@ INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\wrapfig\wrapfig.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\wrapfig\wrapfig.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\eso-pic\eso-pic.sty
@@ -773,6 +775,33 @@ INPUT .\figures\4Detectors.png
 INPUT .\chapters\03_legend_data.tex
 INPUT .\chapters\03_legend_data.tex
 INPUT chapters\03_legend_data.tex
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\pureGermanium_square.jpg
+INPUT .\figures\pureGermanium_square.jpg
+INPUT .\figures\pureGermanium_square.jpg
+INPUT .\figures\pureGermanium_square.jpg
+INPUT .\figures\pureGermanium_square.jpg
+INPUT .\figures\pureGermanium_square.jpg
+INPUT .\figures\pureGermanium_square.jpg
+INPUT .\figures\nDopedGermanium_square.jpg
+INPUT .\figures\nDopedGermanium_square.jpg
+INPUT .\figures\nDopedGermanium_square.jpg
+INPUT .\figures\nDopedGermanium_square.jpg
+INPUT .\figures\nDopedGermanium_square.jpg
+INPUT .\figures\nDopedGermanium_square.jpg
+INPUT .\figures\pDopedGermanium_square.jpg
+INPUT .\figures\pDopedGermanium_square.jpg
+INPUT .\figures\pDopedGermanium_square.jpg
+INPUT .\figures\pDopedGermanium_square.jpg
+INPUT .\figures\pDopedGermanium_square.jpg
+INPUT .\figures\pDopedGermanium_square.jpg
+INPUT .\figures\pDopedGermanium_square.jpg
 INPUT .\figures\renderingDetectors\PPC_section_frontale.png
 INPUT .\figures\renderingDetectors\PPC_section_frontale.png
 INPUT .\figures\renderingDetectors\PPC_section_frontale.png

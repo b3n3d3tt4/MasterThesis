@@ -27,21 +27,21 @@
 \contentsline {chapter}{\numberline {3}LEGEND data}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data collection}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Signal formation and readout in Germanium detectors}{21}{subsection.3.1.1}%
-\contentsline {subsubsection}{Germanium diodes in LEGEND-200}{22}{section*.19}%
-\contentsline {subsubsection}{The Ramo-Schokley theorem}{22}{section*.21}%
-\contentsline {subsubsection}{Readout electronics}{22}{section*.22}%
-\contentsline {section}{\numberline {3.2}Data structure of the LEGEND-200 phase}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pulse shape discrimination (PSD)}{24}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Events topology}{24}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Amplitude/Energy cut}{26}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Deep Learning \ac {PSD}}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Data cleaning}{28}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Model implementation}{31}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Results}{31}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Monaco data}{33}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusions}{35}{chapter.6}%
-\contentsline {chapter}{Acknowledgments}{37}{chapter*.31}%
-\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{39}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{43}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Waveforms examples of the \textit {prl25} calibration data release}{47}{appendix.C}%
-\contentsline {chapter}{Bibliography}{51}{appendix*.32}%
+\contentsline {subsubsection}{Germanium diodes in LEGEND-200}{22}{section*.21}%
+\contentsline {subsubsection}{The Ramo-Schokley theorem}{22}{section*.23}%
+\contentsline {subsubsection}{Readout electronics}{23}{section*.24}%
+\contentsline {section}{\numberline {3.2}Data structure of the LEGEND-200 phase}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pulse shape discrimination (PSD)}{25}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Events topology}{25}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Amplitude/Energy cut}{27}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Deep Learning \ac {PSD}}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Data cleaning}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Model implementation}{33}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Results}{33}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Monaco data}{35}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusions}{37}{chapter.6}%
+\contentsline {chapter}{Acknowledgments}{39}{chapter*.33}%
+\contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{41}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{45}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Waveforms examples of the \textit {prl25} calibration data release}{49}{appendix.C}%
+\contentsline {chapter}{Bibliography}{53}{appendix*.34}%
