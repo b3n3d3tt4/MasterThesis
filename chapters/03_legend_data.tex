@@ -1,7 +1,12 @@
 \chapter{LEGEND data}
+As already introduced in Sec. \ref{sec:expsetup}, experimental data in the LEGEND experimental program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of chapter \ref{chapter:DL_PSD}.
+
 \section{Data collection}
 \subsection{Signal formation and readout in Germanium detectors}
-\ac{hpge} are semiconductor detectors, characterised by the typical crystalline structure of said materials in which electrons tend to occupy the valence band but can be promoted into the conduction one, generating \ac{eh} pairs in the lattice. The transition of electrons to the conduction band is triggered by incoming ionizing radiation, whether it be photons or charged particles, and generates a signal proportional to the amount of energy deposited by the radiation. 
+\ac{hpge} detectors are semiconductor detectors, characterised by the typical crystalline diamond lattice where each Germanium atom is bounded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}. The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insultators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is break, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
+
+An artificial introduction of impurities in the semiconductor lattice can selectively change its behaviour in terms of conductivity.
+Pentavalent elements called \textit{donors}, like Phosphor, inserted in a tetravalent semiconductor like Germanium produce an excess of conduction electrons with respect to the holes; this is called \textit{n-doping}. On the other hand, \textit{p-doping} consists on placing in the lattice trivalent atoms called \textit{acceptors}, like Boron, leading to an excess of holes. The overall crystal of the semiconductor remains electrically neutral, because donors and acceptors are nevertheless neutral atoms, but the available number of charge carriers, either holes or electrons, changes leading to a modification in the conduction properties of the semiconductor. Doped semiconductors are called ectrinsic semiconductors.
 
 % \subsubsection{The p-n junction}
 QUI COS'è UNA GIUNZIONE PN COME è COLLEGATA A QUELLO CHE HO DETTO PRIMA E COME SI COLLEGA AI DETECTOR DI LEGEND DA FARE CON LIBRO SUI DETECTORS
@@ -19,7 +24,7 @@ Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \texti
 \end{figure}
 
 \subsubsection{The Ramo-Schokley theorem}
-Consider, for instance, an incident $\gamma$-ray that interacts with the semiconductor and generates a large number of electron-hole pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
+Consider, for instance, an incident $\gamma$-ray that interacts with the semiconductor and generates a large number of \ac{eh} pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
 
 The time-dependent output signal of a charge sensing device can be predicted if the induced charge \textit{Q} on the readout electrode can be calculated as a function of instantaneous position of the moving charge \text{q} within the device. The Shockley-Ramo theorem (\cite{Shockley}, \cite{Ramo}), originally developed for vacuum tubes, can be applied also in the case of stationary space charges of the abovementioned \ac{hpge}. 
 
@@ -90,6 +95,8 @@ The analysis presented in this work is based on raw windowed waveforms, i.e. the
 
 QUI QUESTIONE CHE DIVERSI TIPI DI EVENTI GENERANO LE CARICHE IN MODI DIVERSI E QUINDI LA CARICA è RACCOLTA IN MODI DIVERSI E LE WF SONO DIVERSE
 
+MSE e SSE 
+
 For the analysis that will follow in this thesis, we used calibration data of the LEGEND-200 experiment, thus it is useful to analyse the calibration source that was used to acquire said data in order to highlight particular features of them that will be more than crucial in the work here presented. 
 
 Energy calibration is performed using Thorium-228 sources with low neutron emission. The sources are inserted in the LAr cryostat through four calibration systems, each moving four ${}^{228}$Th sources of about 5 kBq activity per source, situated at different heights for homogeneous event distribution (\cite{L200:calibration}, \cite{LEGEND:GeDet}). The decay chain of such isotope is shown in Fig. \ref{fig:decayTh228} while the energy spectrum of $\gamma$-rays emitted as a consequennce of the decays are visible in Fig. \ref{fig:TlBi-spectrum}. It is evident that we can distinguish several peaks: the ones we are focusing on are listed in Table \ref{tab:emission-peaks}.
@@ -141,12 +148,10 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
 
 We are now interest in considering the two peaks corresponding to the \ac{FEP} of ${}^{212}$Bi and the \ac{DEP} of ${}^{208}$Tl. They are very close to each other in energy, as stated in Tab \ref{tab:emission-peaks}, but are produced in different mechanism consequently producing different signals in \ac{hpge} detectors. This is significant in the context of our research since what we really want to investigate and discriminate is the shape of the waveform of specific signals; therefore any energy dependence in such shape is to be eliminated. In this perspective, selecting events with comparable energies isolates the waveform from energy-induced variations, allowing us to rely solely on the time evolution of its shape.
 
-MSE E SSE
-
 \section{Amplitude/Energy cut}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
-    \caption{Windowed energy spectrum before (blue) and after (red) the A/E cut. 90\% of the \ac{SSE} survives while almost all the \ac{MSE} are cut.}
+    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut. 90\% of the \ac{SSE} survives while almost all the \ac{MSE} are cut.}
     \label{fig:dAoE_prl25}
 \end{figure}
