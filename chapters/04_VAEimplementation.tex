@@ -17,10 +17,12 @@ The full code of data processing, data cleaning and \ac{VAE} implementation is a
 \label{sec:data-cleaning}
 Raw charge waveforms\footnote{For \textit{raw} we mean wavewforms already processed with LEGEND dedicated software as detailed in Sec. \ref{sec:data-structureL200}, but still not selected in terms of energy, \ac{PSD} parameters or other features.} are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest, i.e. the energy window between the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. 
 
+\begin{comment}
 QUI DEVO SPIEGARE COSA FANNO I FILE \\
 -FILEREADING.PY \\
 -WFCLEANING.PY \\
 -SSE MSE SELECTION
+\end{comment}
 
 \begin{figure}[H]
     \centering
@@ -106,12 +108,13 @@ Once all of these steps are completed, what we obtain is a suitable input of the
 \newpage
 \section{Model implementation}
 \label{sec:model-implementation}
+\begin{comment}
+QUI DEVO DIRE
 
-QUI DEVO DIRE\\
+-COME CREO I TENSORS --> TENSORCREATION.PY
 
--COME CREO I TENSORS --> TENSORCREATION.PY\\
+-COME IMPLEMENTO IL VAE
 
--COME IMPLEMENTO IL VAE\\
     - encoder\\
     - decoder\\
     - latent space specifications\\
@@ -122,12 +125,13 @@ QUI DEVO DIRE\\
         * test su beta
         * test su dimensioni dello spazio lentamente
         * eventuale PCA e/o TRAVERSAL
-
 - COME IMPLEMENTO LA CLASSIFICATION\\
     - layers etc\\ 
     - loss\\
     - training \\
     - test \\
+\end{comment}
+
 
 \section{Results}
 QUI DEVO SPERARE CHE IL ML FUNZIONI MEGLIO DELL'AvsE
