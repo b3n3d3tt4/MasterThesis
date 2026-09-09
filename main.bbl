@@ -702,6 +702,48 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0168900201002236
       \endverb
     \endentry
+    \entry{libro-detectors}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=cdb61438aeb4f18b81555a6e90e78f5d}{%
+           family={Kolanoski},
+           familyi={K\bibinitperiod},
+           given={Hermann},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f5ee2b81fdcc2af5637e063906fe3918}{%
+           family={Wermes},
+           familyi={W\bibinitperiod},
+           given={Norbert},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{fullhash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{fullhashraw}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{bibnamehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authorbibnamehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authornamehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authorfullhash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authorfullhashraw}{cb554d11ecf13d996cbec39a894c99df}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780198858362}
+      \field{month}{06}
+      \field{title}{Particle Detectors: Fundamentals and Applications}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1093/oso/9780198858362.001.0001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/oso/9780198858362.001.0001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/oso/9780198858362.001.0001
+      \endverb
+    \endentry
     \entry{LNHB}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=be5c9551a282e4bf66af8de915326c4e}{%
