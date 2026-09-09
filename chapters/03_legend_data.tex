@@ -1,16 +1,17 @@
 \chapter{LEGEND data}
 As already introduced in Sec. \ref{sec:expsetup}, experimental data in the LEGEND experimental program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of chapter \ref{chapter:DL_PSD}.
 
-\section{Data collection}
-\subsection{Signal formation and readout in Germanium detectors}
-\begin{wrapfigure}{r}{0.6\textwidth}
+\section{Detector physics and signal formation}
+\subsection{Germanium detectors basics}
+\ac{hpge} detectors are semiconductor detectors, therefore it is crucial to analyse some specific features of semiconductor materials.
+ Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bounded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}. 
+ \begin{wrapfigure}{r}{0.6\textwidth}
   \centering
   \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
   \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
   \label{fig:band_gaps}
 \end{wrapfigure}
-
-\ac{hpge} detectors are semiconductor detectors, therefore it is crucial to analyse some specific features of semiconductor materials. Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bounded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}. The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insultators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is break, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
+The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insultators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is break, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
 
 An artificial introduction of impurities in the semiconductor lattice can selectively change its behaviour in terms of conductivity.
 Pentavalent elements called \textit{donors}, like Phosphor, inserted in a tetravalent semiconductor like Germanium produce an excess of conduction electrons with respect to the holes; this is called \textit{n-doping}. On the other hand, \textit{p-doping} consists on placing in the lattice trivalent atoms called \textit{acceptors}, like Boron, leading to an excess of holes. The overall crystal of the semiconductor remains electrically neutral, because donors and acceptors are nevertheless neutral atoms, but the available number of charge carriers, either holes or electrons, changes leading to a modification in the conduction properties of the semiconductor. Pure semiconductors are called intrinsic semiconductors (Fig. \ref{fig:intrisc-vs-extrinsic} on the left) while doped semiconductors are called extrinsic semiconductors (the two cases of Fig. \ref{fig:intrisc-vs-extrinsic} in the center and on the right). 
@@ -27,7 +28,7 @@ When bringing p-doped and n-doped semiconductor materials in contact, a so-calle
 
 QUI COS'è UNA GIUNZIONE PN COME è COLLEGATA A QUELLO CHE HO DETTO PRIMA E COME SI COLLEGA AI DETECTOR DI LEGEND DA FARE CON LIBRO SUI DETECTORS
 
-\subsubsection{Germanium diodes in LEGEND-200}
+\subsection{Germanium diodes in LEGEND-200}
 Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \textit{p+} part of the detector, as shown in Fig. \ref{fig:detectors-pINred}.
 \begin{figure}[H]
     \centering
@@ -39,6 +40,7 @@ Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \texti
     \label{fig:detectors-pINred}
 \end{figure}
 
+\subsection{Signal formation in Germanium detectors}
 \subsubsection{The Ramo-Schokley theorem}
 Consider, for instance, an incident $\gamma$-ray that interacts with the semiconductor and generates a large number of \ac{eh} pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
 
@@ -58,56 +60,8 @@ where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The t
 QUI FORSE COME è IOL WEIGHTING FIELD NELL'IC?
 IC (Inverted Coaxial Point Contact): È la geometria specifica del tuo diodo. Ha un contatto di lettura piccolissimo ("point contact"). Questo design fa sì che il campo elettrico all'interno sia particolare: la carica si muove lentamente all'inizio e accelera bruscamente vicino al contatto. È fondamentale per te perché questo effetto amplifica le differenze nella forma d'onda tra eventi SSE e MSE.
 
-\subsubsection{Readout electronics}
-The Data Acquisition (DAQ) system for LEGEND-200 consists of FlashCam digitisers and an Object-orientated Real-time Control and Acquisition (ORCA) DAQ software. The Data Acquisition (DAQ) system employs a Flash Analog-to-Digital Converter (FADC) based on the FlashCam readout system, which digitises the detector signals with 16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval. The whole DAQ operation is managed by \ac{ORCA}. 
-
-In order to optimise data transfer and data processing, raw digitised traces are divided into two traces during the conversion from the \ac{ORCA} software to the \ac{LGDO}\footnote{\ac{LGDO} is a custom Python-based data format built by the LEGEND collaboration.} format.
-For applications that do not require maximum timing resolution, such as energy reconstruction, the traces are down-sampled by summing 8 consecutive samples. This process results in a final compressed waveform of 1024 samples with a time bin width of 128 ns. Conversely, analyses like \ac{PSD} strictly require high timing resolution to resolve the signal leading edge. Therefore, a second trace is generated at the full sampling frequency, but it is restricted to a narrow window of 1400 samples (corresponding to approximately 22 $\mu$s) centered around the signal rise. \cite{LEGEND:GeDet}
-
-An example of such procedure is shown in Fig. \ref{fig:wf-windowing}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{plots/wf_vs_windowed_wf-2.pdf}
-    \caption{Example of a raw waveform from the DAQ. The windowing region is highlighted.}
-    \label{fig:wf-windowing}
-\end{figure}
-
-  
-
-\section{Data structure of the LEGEND-200 phase}
-\label{sec:data-structureL200}
-LEGEND data are acquired in three possibile modalities:
-\begin{itemize}
-    \item \textbf{Physics data (\texttt{phy})}: these are the data on which the physics case study is based. Signal waveforms of all the detectors in the apparatus (\ac{hpge}, \ac{lar}, and muon veto) are recorded and stored when an event is triggered by a germanium detector.
-    \item \textbf{Calibration data (\texttt{cal})}: ${}^{228}$Th sources are lowered into the \ac{lar} cryostat next to the \ac{hpge} detectors to provide energy calibration data from the known $\gamma$ peaks of the Thorium decay chain (visibile in Fig. \ref{fig:decayTh228}). In this case the \ac{lar} intrumentation is turned off and each detector triggers individually.
-    \item \textbf{Special calibrations or tests}: such data include different procedures to characterise the \ac{lar} intrumentation or to check the electronics for the acquisition.
-\end{itemize}
-
-Data are firstly organised in \textbf{\textit{runs}}, i.e. a 7-day data taking that starts with a calibration period. A run is splitted into different files each of them characterised by the specific timestamp of the starting point. Runs are grouped in \textbf{\textit{periods}}, that are a collection of several runs sharinf the same stable hardware instrumentation. Periods are then organised into \textbf{\textit{partitions}}. 
-
-The raw data files output by the Data Acquisition (DAQ) system in the ORCA format undergo a structured processing pipeline in \texttt{python} using the \texttt{pygama} library \cite{pygama}, generating distinct data tiers that correspond to the specific level of processing achieved. Said tiers are
-\begin{itemize}
-    \item \textit{raw}: this is a simple conversion of the ORCA DAQ file to the LEGEND-custom \texttt{hdf5}-based data format called \texttt{lh5}. 
-    During this stage, the overall data volume is effectively mitigated by partitioning the waveforms: a fully sampled waveform is preserved strictly around the leading edge, while a pre-summed waveform is retained for the complete trace. 
-    Additionally, for physics runs (\texttt{phy} files), a subsequent blinding procedure is applied. Any event featuring an energy deposition of $(2039 \pm 25)$~keV---as preliminarily estimated by the DAQ software and stored in the \texttt{daqenergy} field---is systematically excluded. This specific energy window encompasses the Region of Interest (ROI) around the $Q_{\beta\beta}$-value of the $^{76}\mathrm{Ge}$ neutrinoless double beta decay ($0\nu\beta\beta$). Hiding these data is a fundamental requirement for a blind analysis, preventing any unintended human bias while tuning the analysis cuts. To preserve synchronization and ensure that table lengths remain identical across all channels, the entire multi-channel event is discarded rather than just the single triggering channel;
-    \item \textit{tcm}: in ordert to reconstruct a complex event shared by multiple detectors it is crucial to know how to group together channels in which the event occur within a specific time window. This information is stored in the Time Coincidence Map files of the \textit{tcm tier};
-    \item \textit{dsp}: the low level signal processing routines run to extract observables such as the energy, the drift time and \ac{PSD} variables. Some of the parameters for the filters run are firts optimised on calibration (cal) data and then passed to physics (phy) data to improve energy resolution;
-    \item \textit{hit}: similarly to \textit{dsp}, paramters for the \textit{hit} tier are firts computed on calibration data. These calibrations are then applied to the parameters extracted at the dsp stage to define the energy in keV and the PSD classification of events;
-    \item \textit{evt}: channel in this tier are brought together exploiting the \textit{tcm} tier in order to get a final event;
-    \item \textit{skm}: this tier is just a skimming of the event files to remove uninteresting events.
-\end{itemize} 
-Specific partition tiers, such as \textit{psp} (partition \textit{dsp}), \textit{pht} (partition \textit{hit}), and \textit{pep} (partition \textit{evt}), share the identical data structure of the standard tiers, yet their processing parameters are optimised over the entire data partition.
-
-The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Notably, the dataset has been restricted exclusively to the V08682A IC detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
-
-
-
-
-
-\section{Pulse shape discrimination (PSD)}
-\label{sec:trditionalPSD}
-\subsection{Events topology}
-\label{subsec:topology}
+\subsubsection{Events topology}
+\label{subsubsec:topology}
 
 QUI QUESTIONE CHE DIVERSI TIPI DI EVENTI GENERANO LE CARICHE IN MODI DIVERSI E QUINDI LA CARICA è RACCOLTA IN MODI DIVERSI E LE WF SONO DIVERSE
 
@@ -152,7 +106,6 @@ Energy calibration is performed using Thorium-228 sources with low neutron emiss
     \end{minipage}
 \end{figure}
 
-
 The \ac{DEP} and the \ac{SEP} of Tallium-228 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons of the positron escape the active detector volume without further interaction. Consequently, the energy deposition is highly localised, yielding a simple and temporally narrow pulse waveform.
 Conversely, a \ac{SEP} event arises when only one of the two annihilation photons escapes, while the second photon re-interacts and deposits its energy elsewhere within the detector volume. This spatial separation introduces a temporal spread, resulting in a more complex waveform structure. Furthermore, events contributing to the \ac{FEP} typically involve multiple Compton scattering interactions prior to complete absorption, yielding an even more intricate pulse shape.
 \begin{figure}[H]
@@ -163,6 +116,57 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
 \end{figure}
 
 We are now interest in considering the two peaks corresponding to the \ac{FEP} of ${}^{212}$Bi and the \ac{DEP} of ${}^{208}$Tl. They are very close to each other in energy, as stated in Tab \ref{tab:emission-peaks}, but are produced in different mechanism consequently producing different signals in \ac{hpge} detectors. This is significant in the context of our research since what we really want to investigate and discriminate is the shape of the waveform of specific signals; therefore any energy dependence in such shape is to be eliminated. In this perspective, selecting events with comparable energies isolates the waveform from energy-induced variations, allowing us to rely solely on the time evolution of its shape.
+
+\section{Data acquisition and processing}
+\subsection{Readout electronics}
+The Data Acquisition (DAQ) system for LEGEND-200 consists of FlashCam digitisers and an Object-orientated Real-time Control and Acquisition (ORCA) DAQ software. The Data Acquisition (DAQ) system employs a Flash Analog-to-Digital Converter (FADC) based on the FlashCam readout system, which digitises the detector signals with 16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval. The whole DAQ operation is managed by \ac{ORCA}. 
+
+In order to optimise data transfer and data processing, raw digitised traces are divided into two traces during the conversion from the \ac{ORCA} software to the \ac{LGDO}\footnote{\ac{LGDO} is a custom Python-based data format built by the LEGEND collaboration.} format.
+For applications that do not require maximum timing resolution, such as energy reconstruction, the traces are down-sampled by summing 8 consecutive samples. This process results in a final compressed waveform of 1024 samples with a time bin width of 128 ns. Conversely, analyses like \ac{PSD} strictly require high timing resolution to resolve the signal leading edge. Therefore, a second trace is generated at the full sampling frequency, but it is restricted to a narrow window of 1400 samples (corresponding to approximately 22 $\mu$s) centered around the signal rise. \cite{LEGEND:GeDet}
+
+An example of such procedure is shown in Fig. \ref{fig:wf-windowing}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/wf_vs_windowed_wf-2.pdf}
+    \caption{Example of a raw waveform from the DAQ. The windowing region is highlighted.}
+    \label{fig:wf-windowing}
+\end{figure}
+
+  
+
+\subsection{Data structure of the LEGEND-200 phase}
+\label{sec:data-structureL200}
+LEGEND data are acquired in three possibile modalities:
+\begin{itemize}
+    \item \textbf{Physics data (\texttt{phy})}: these are the data on which the physics case study is based. Signal waveforms of all the detectors in the apparatus (\ac{hpge}, \ac{lar}, and muon veto) are recorded and stored when an event is triggered by a germanium detector.
+    \item \textbf{Calibration data (\texttt{cal})}: ${}^{228}$Th sources are lowered into the \ac{lar} cryostat next to the \ac{hpge} detectors to provide energy calibration data from the known $\gamma$ peaks of the Thorium decay chain (visibile in Fig. \ref{fig:decayTh228}). In this case the \ac{lar} intrumentation is turned off and each detector triggers individually.
+    \item \textbf{Special calibrations or tests}: such data include different procedures to characterise the \ac{lar} intrumentation or to check the electronics for the acquisition.
+\end{itemize}
+
+Data are firstly organised in \textbf{\textit{runs}}, i.e. a 7-day data taking that starts with a calibration period. A run is splitted into different files each of them characterised by the specific timestamp of the starting point. Runs are grouped in \textbf{\textit{periods}}, that are a collection of several runs sharing the same stable hardware instrumentation. Periods are then organised into \textbf{\textit{partitions}}. 
+
+The raw data files output by the Data Acquisition (DAQ) system in the ORCA format undergo a structured processing pipeline in \texttt{python} using the \texttt{pygama} library \cite{pygama}, generating distinct data tiers that correspond to the specific level of processing achieved. Said tiers are
+\begin{itemize}
+    \item \textit{raw}: this is a simple conversion of the ORCA DAQ file to the LEGEND-custom \texttt{hdf5}-based data format called \texttt{lh5}. 
+    During this stage, the overall data volume is effectively mitigated by partitioning the waveforms: a fully sampled waveform is preserved strictly around the leading edge, while a pre-summed waveform is retained for the complete trace. 
+    Additionally, for physics runs (\texttt{phy} files), a subsequent blinding procedure is applied. Any event featuring an energy deposition of $(2039 \pm 25)$~keV---as preliminarily estimated by the DAQ software and stored in the \texttt{daqenergy} field---is systematically excluded. This specific energy window encompasses the Region of Interest (ROI) around the $Q_{\beta\beta}$-value of the $^{76}\mathrm{Ge}$ neutrinoless double beta decay ($0\nu\beta\beta$). Hiding these data is a fundamental requirement for a blind analysis, preventing any unintended human bias while tuning the analysis cuts. To preserve synchronization and ensure that table lengths remain identical across all channels, the entire multi-channel event is discarded rather than just the single triggering channel;
+    \item \textit{tcm}: in order to reconstruct a complex event shared by multiple detectors it is crucial to know how to group together channels in which the event occur within a specific time window. This information is stored in the Time Coincidence Map files of the \textit{tcm tier};
+    \item \textit{dsp}: the low level signal processing routines run to extract observables such as the energy, the drift time and \ac{PSD} variables. Some of the parameters for the filters run are firts optimised on calibration (cal) data and then passed to physics (phy) data to improve energy resolution;
+    \item \textit{hit}: similarly to \textit{dsp}, paramters for the \textit{hit} tier are firts computed on calibration data. These calibrations are then applied to the parameters extracted at the dsp stage to define the energy in keV and the PSD classification of events;
+    \item \textit{evt}: channel in this tier are brought together exploiting the \textit{tcm} tier in order to get a final event;
+    \item \textit{skm}: this tier is just a skimming of the event files to remove uninteresting events.
+\end{itemize} 
+Specific partition tiers, such as \textit{psp} (partition \textit{dsp}), \textit{pht} (partition \textit{hit}), and \textit{pep} (partition \textit{evt}), share the identical data structure of the standard tiers, yet their processing parameters are optimised over the entire data partition.
+
+The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Notably, the dataset has been restricted exclusively to the V08682A IC detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
+
+
+
+
+
+\section{Pulse shape discrimination (PSD)}
+\label{sec:trditionalPSD}
+
 
 \section{Amplitude/Energy cut}
 \begin{figure}[H]

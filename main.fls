@@ -440,13 +440,13 @@ OUTPUT main.pdf
 INPUT .\main.out
 INPUT .\main.out
 OUTPUT main.out
-INPUT .\figures\logoUNIPD_bkgremoved.png
-INPUT .\figures\logoUNIPD_bkgremoved.png
-INPUT .\figures\logoUNIPD_bkgremoved.png
-INPUT .\figures\logoUNIPD_bkgremoved.png
-INPUT .\figures\logoUNIPD_bkgremoved.png
-INPUT .\figures\logoUNIPD_bkgremoved.png
-INPUT .\figures\logoUNIPD_bkgremoved.png
+INPUT .\figures\logo_new.png
+INPUT .\figures\logo_new.png
+INPUT .\figures\logo_new.png
+INPUT .\figures\logo_new.png
+INPUT .\figures\logo_new.png
+INPUT .\figures\logo_new.png
+INPUT .\figures\logo_new.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futrc8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbc8t.tfm
@@ -830,6 +830,26 @@ INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\plots\wf_vs_windowed_wf-2.pdf
 INPUT .\plots\wf_vs_windowed_wf-2.pdf
 INPUT .\plots\wf_vs_windowed_wf-2.pdf
@@ -838,28 +858,6 @@ INPUT .\plots\wf_vs_windowed_wf-2.pdf
 INPUT .\plots\wf_vs_windowed_wf-2.pdf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
@@ -869,6 +867,8 @@ INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\chapters\04_VAEimplementation.tex
 INPUT .\chapters\04_VAEimplementation.tex
 INPUT chapters\04_VAEimplementation.tex
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
