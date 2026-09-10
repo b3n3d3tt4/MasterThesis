@@ -830,6 +830,13 @@ INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
+INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
+INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
+INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
+INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
+INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
+INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
 INPUT .\figures\catena_decadimento_Th228.png
 INPUT .\figures\catena_decadimento_Th228.png
 INPUT .\figures\catena_decadimento_Th228.png
@@ -850,12 +857,12 @@ INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\plots\wf_vs_windowed_wf-2.pdf
-INPUT .\plots\wf_vs_windowed_wf-2.pdf
-INPUT .\plots\wf_vs_windowed_wf-2.pdf
-INPUT .\plots\wf_vs_windowed_wf-2.pdf
-INPUT .\plots\wf_vs_windowed_wf-2.pdf
-INPUT .\plots\wf_vs_windowed_wf-2.pdf
+INPUT .\plots\wf_vs_windowed_wf.pdf
+INPUT .\plots\wf_vs_windowed_wf.pdf
+INPUT .\plots\wf_vs_windowed_wf.pdf
+INPUT .\plots\wf_vs_windowed_wf.pdf
+INPUT .\plots\wf_vs_windowed_wf.pdf
+INPUT .\plots\wf_vs_windowed_wf.pdf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf

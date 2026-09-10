@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  9 SEP 2026 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  10 SEP 2026 03:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1321,7 +1321,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 
 ]
-<figures/neutrino-fluxes.png, id=331, 637.1805pt x 454.69875pt>
+<figures/neutrino-fluxes.png, id=330, 637.1805pt x 454.69875pt>
 File: figures/neutrino-fluxes.png Graphic file (type png)
 <use figures/neutrino-fluxes.png>
 Package pdftex.def Info: figures/neutrino-fluxes.png  used on input line 71.
@@ -1360,7 +1360,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 
 [7]
-<figures/mass-hierarchy.jpg, id=493, 1204.5pt x 678.535pt>
+<figures/mass-hierarchy.jpg, id=492, 1204.5pt x 678.535pt>
 File: figures/mass-hierarchy.jpg Graphic file (type jpg)
 <use figures/mass-hierarchy.jpg>
 Package pdftex.def Info: figures/mass-hierarchy.jpg  used on input line 387.
@@ -1395,7 +1395,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8> not available
 )
 
 [10]
-<figures/mass_parabola_A76.pdf, id=572, 650.43pt x 433.62pt>
+<figures/mass_parabola_A76.pdf, id=571, 650.43pt x 433.62pt>
 File: figures/mass_parabola_A76.pdf Graphic file (type pdf)
 <use figures/mass_parabola_A76.pdf>
 Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 535.
@@ -1406,7 +1406,7 @@ Underfull \vbox (badness 1028) has occurred while \output is active []
 
 
 [11 <./figures/mass_parabola_A76.pdf>] (feynman-diagrams/0nu-doubleBeta-diagram.tex)
-<figures/0nu_vs_2nu.pdf, id=649, 650.43pt x 433.62pt>
+<figures/0nu_vs_2nu.pdf, id=648, 650.43pt x 433.62pt>
 File: figures/0nu_vs_2nu.pdf Graphic file (type pdf)
 <use figures/0nu_vs_2nu.pdf>
 Package pdftex.def Info: figures/0nu_vs_2nu.pdf  used on input line 568.
@@ -1425,12 +1425,12 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 1
 (C:\Program Files\MiKTeX\tex/latex/fourier\ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<figures/LEGENDwholeSetup_con-numeri.png, id=724, 338.76563pt x 304.88907pt>
+<figures/LEGENDwholeSetup_con-numeri.png, id=723, 338.76563pt x 304.88907pt>
 File: figures/LEGENDwholeSetup_con-numeri.png Graphic file (type png)
 <use figures/LEGENDwholeSetup_con-numeri.png>
 Package pdftex.def Info: figures/LEGENDwholeSetup_con-numeri.png  used on input line 28.
 (pdftex.def)             Requested size: 266.03474pt x 239.4408pt.
-<figures/LEGENDLAr.png, id=725, 225.09094pt x 581.17125pt>
+<figures/LEGENDLAr.png, id=724, 225.09094pt x 581.17125pt>
 File: figures/LEGENDLAr.png Graphic file (type png)
 <use figures/LEGENDLAr.png>
 Package pdftex.def Info: figures/LEGENDLAr.png  used on input line 34.
@@ -1441,7 +1441,7 @@ Underfull \vbox (badness 1286) has occurred while \output is active []
 
 
 [15]
-<figures/4Detectors.png, id=751, 2759.05782pt x 562.35094pt>
+<figures/4Detectors.png, id=750, 2759.05782pt x 562.35094pt>
 File: figures/4Detectors.png Graphic file (type png)
 <use figures/4Detectors.png>
 Package pdftex.def Info: figures/4Detectors.png  used on input line 56.
@@ -1465,53 +1465,53 @@ Overfull \hbox (11.78958pt too wide) in paragraph at lines 107--109
 
 ]
 Chapter 3.
-<figures/insulators-semiconductors-conductors.jpg, id=836, 2323.17938pt x 1278.27562pt>
+<figures/insulators-semiconductors-conductors.jpg, id=834, 2323.17938pt x 1278.27562pt>
 File: figures/insulators-semiconductors-conductors.jpg Graphic file (type jpg)
 <use figures/insulators-semiconductors-conductors.jpg>
-Package pdftex.def Info: figures/insulators-semiconductors-conductors.jpg  used on input line 10.
+Package pdftex.def Info: figures/insulators-semiconductors-conductors.jpg  used on input line 11.
 (pdftex.def)             Requested size: 290.22107pt x 159.68654pt.
 
-Underfull \hbox (badness 1629) in paragraph at lines 13--15
+Underfull \hbox (badness 1629) in paragraph at lines 14--16
 \T1/futs/m/n/10.95 com-pletely filled. There-fore con-duc-
  []
 
-<figures/pureGermanium_square.jpg, id=841, 1806.75pt x 1806.75pt>
+<figures/pureGermanium_square.jpg, id=839, 1806.75pt x 1806.75pt>
 File: figures/pureGermanium_square.jpg Graphic file (type jpg)
 <use figures/pureGermanium_square.jpg>
-Package pdftex.def Info: figures/pureGermanium_square.jpg  used on input line 20.
+Package pdftex.def Info: figures/pureGermanium_square.jpg  used on input line 21.
 (pdftex.def)             Requested size: 161.06744pt x 161.05663pt.
-<figures/nDopedGermanium_square.jpg, id=842, 1806.75pt x 1806.75pt>
+<figures/nDopedGermanium_square.jpg, id=840, 1806.75pt x 1806.75pt>
 File: figures/nDopedGermanium_square.jpg Graphic file (type jpg)
 <use figures/nDopedGermanium_square.jpg>
-Package pdftex.def Info: figures/nDopedGermanium_square.jpg  used on input line 21.
+Package pdftex.def Info: figures/nDopedGermanium_square.jpg  used on input line 22.
 (pdftex.def)             Requested size: 161.06744pt x 161.05663pt.
-<figures/pDopedGermanium_square.jpg, id=843, 1806.75pt x 1806.75pt>
+<figures/pDopedGermanium_square.jpg, id=841, 1806.75pt x 1806.75pt>
 File: figures/pDopedGermanium_square.jpg Graphic file (type jpg)
 <use figures/pDopedGermanium_square.jpg>
-Package pdftex.def Info: figures/pDopedGermanium_square.jpg  used on input line 22.
+Package pdftex.def Info: figures/pDopedGermanium_square.jpg  used on input line 23.
 (pdftex.def)             Requested size: 161.06744pt x 161.05663pt.
 
 
 [21 <./figures/insulators-semiconductors-conductors.jpg>]
-<figures/renderingDetectors/PPC_section_frontale.png, id=852, 545.78906pt x 545.78906pt>
+<figures/renderingDetectors/PPC_section_frontale.png, id=850, 545.78906pt x 545.78906pt>
 File: figures/renderingDetectors/PPC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/PPC_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/PPC_section_frontale.png  used on input line 34.
+Package pdftex.def Info: figures/renderingDetectors/PPC_section_frontale.png  used on input line 35.
 (pdftex.def)             Requested size: 120.92421pt x 120.92342pt.
-<figures/renderingDetectors/BeGe_section_frontale.png, id=853, 545.78906pt x 546.54187pt>
+<figures/renderingDetectors/BeGe_section_frontale.png, id=851, 545.78906pt x 546.54187pt>
 File: figures/renderingDetectors/BeGe_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/BeGe_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/BeGe_section_frontale.png  used on input line 35.
+Package pdftex.def Info: figures/renderingDetectors/BeGe_section_frontale.png  used on input line 36.
 (pdftex.def)             Requested size: 120.92421pt x 121.09021pt.
-<figures/renderingDetectors/Coax_section_frontale.png, id=854, 545.78906pt x 546.54187pt>
+<figures/renderingDetectors/Coax_section_frontale.png, id=852, 545.78906pt x 546.54187pt>
 File: figures/renderingDetectors/Coax_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/Coax_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/Coax_section_frontale.png  used on input line 36.
+Package pdftex.def Info: figures/renderingDetectors/Coax_section_frontale.png  used on input line 37.
 (pdftex.def)             Requested size: 120.92421pt x 121.09021pt.
-<figures/renderingDetectors/IC_section_frontale.png, id=855, 545.78906pt x 545.78906pt>
+<figures/renderingDetectors/IC_section_frontale.png, id=853, 545.78906pt x 545.78906pt>
 File: figures/renderingDetectors/IC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/IC_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  used on input line 37.
+Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  used on input line 38.
 (pdftex.def)             Requested size: 120.92421pt x 120.92342pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1519,96 +1519,105 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [22 <./figures/pureGermanium_square.jpg> <./figures/nDopedGermanium_square.jpg> <./figures/pDopedGermanium_square.jpg>]
+<figures/ramo-shockley/geometry_V08682A_edited.jpg, id=861, 393.72093pt x 417.05812pt>
+File: figures/ramo-shockley/geometry_V08682A_edited.jpg Graphic file (type jpg)
+<use figures/ramo-shockley/geometry_V08682A_edited.jpg>
+Package pdftex.def Info: figures/ramo-shockley/geometry_V08682A_edited.jpg  used on input line 45.
+(pdftex.def)             Requested size: 193.47948pt x 204.94572pt.
 
-[23 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png>]
-<figures/catena_decadimento_Th228.png, id=889, 441.3288pt x 1018.0434pt>
+Underfull \hbox (badness 1189) in paragraph at lines 49--51
+\T1/futs/m/n/10.95 de-tec-tor ge-ome-tries of Fig. [][]3.3[][], the work pre-
+ []
+
+
+
+[23 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png> <./figures/ramo-shockley/geometry_V08682A_edited.jpg>]
+Underfull \hbox (badness 1082) in paragraph at lines 55--55
+[]\T1/futs/b/n/12 Signal for-ma-tion in Ger-ma-nium de-
+ []
+
+
+
+[24]
+<figures/catena_decadimento_Th228.png, id=902, 441.3288pt x 1018.0434pt>
 File: figures/catena_decadimento_Th228.png Graphic file (type png)
 <use figures/catena_decadimento_Th228.png>
-Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 78.
+Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 93.
 (pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
-<plots/energy_spectrum-example.pdf, id=892, 650.43pt x 433.62pt>
+<plots/energy_spectrum-example.pdf, id=905, 650.43pt x 433.62pt>
 File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-example.pdf>
-Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 87.
+Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 102.
 (pdftex.def)             Requested size: 314.40001pt x 209.6041pt.
-<figures/DEP-SEP-FEP.jpg, id=903, 3093.5575pt x 1154.3125pt>
+<figures/DEP-SEP-FEP.jpg, id=919, 3093.5575pt x 1154.3125pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
-Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 112.
+Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 127.
 (pdftex.def)             Requested size: 386.95897pt x 144.37677pt.
 
-Underfull \vbox (badness 2189) has occurred while \output is active []
 
-
-
-[24 <./figures/catena_decadimento_Th228.png> <./plots/energy_spectrum-example.pdf>]
-Overfull \hbox (7.87979pt too wide) in paragraph at lines 121--122
+[25 <./figures/catena_decadimento_Th228.png> <./plots/energy_spectrum-example.pdf>]
+Overfull \hbox (7.87979pt too wide) in paragraph at lines 136--137
 []\T1/futs/m/n/10.95 The Data Ac-qui-si-tion (DAQ) sys-tem for LEGEND-200 con-sists of Flash-Cam digi-tis-ers and an Object-orientated
  []
 
-<plots/wf_vs_windowed_wf-2.pdf, id=981, 650.43pt x 433.62pt>
-File: plots/wf_vs_windowed_wf-2.pdf Graphic file (type pdf)
-<use plots/wf_vs_windowed_wf-2.pdf>
-Package pdftex.def Info: plots/wf_vs_windowed_wf-2.pdf  used on input line 129.
-(pdftex.def)             Requested size: 338.58632pt x 225.7285pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<plots/wf_vs_windowed_wf.pdf, id=993, 650.43pt x 433.62pt>
+File: plots/wf_vs_windowed_wf.pdf Graphic file (type pdf)
+<use plots/wf_vs_windowed_wf.pdf>
+Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 140.
+(pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
 
 
-
-[25 <./figures/DEP-SEP-FEP.jpg>]
+[26 <./figures/DEP-SEP-FEP.jpg> <./plots/wf_vs_windowed_wf.pdf>]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 140.
-
-
-[26 <./plots/wf_vs_windowed_wf-2.pdf>]
-<plots/energy_specrum-prl25-AoE_cut.pdf, id=1048, 650.43pt x 433.62pt>
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 153.
+<plots/energy_specrum-prl25-AoE_cut.pdf, id=1061, 650.43pt x 433.62pt>
 File: plots/energy_specrum-prl25-AoE_cut.pdf Graphic file (type pdf)
 <use plots/energy_specrum-prl25-AoE_cut.pdf>
-Package pdftex.def Info: plots/energy_specrum-prl25-AoE_cut.pdf  used on input line 173.
+Package pdftex.def Info: plots/energy_specrum-prl25-AoE_cut.pdf  used on input line 186.
 (pdftex.def)             Requested size: 338.58632pt x 225.7285pt.
 ) (chapters/04_VAEimplementation.tex
 
-[27 <./plots/energy_specrum-prl25-AoE_cut.pdf>]
+[27]
 
-[28
-
-]
+[28 <./plots/energy_specrum-prl25-AoE_cut.pdf>]
 Chapter 4.
 
 
-[29] Excluding 'comment' comment.
-<plots/energy_spectrum-cut_window.pdf, id=1152, 938.08867pt x 395.51765pt>
+[29
+
+] Excluding 'comment' comment.
+<plots/energy_spectrum-cut_window.pdf, id=1167, 938.08867pt x 395.51765pt>
 File: plots/energy_spectrum-cut_window.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-cut_window.pdf>
 Package pdftex.def Info: plots/energy_spectrum-cut_window.pdf  used on input line 30.
 (pdftex.def)             Requested size: 483.69687pt x 203.9383pt.
-<plots/raw_wf.pdf, id=1157, 650.43pt x 433.62pt>
+<plots/raw_wf.pdf, id=1172, 650.43pt x 433.62pt>
 File: plots/raw_wf.pdf Graphic file (type pdf)
 <use plots/raw_wf.pdf>
 Package pdftex.def Info: plots/raw_wf.pdf  used on input line 43.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-<plots/baseline_subtracted_wf.pdf, id=1158, 650.43pt x 433.62pt>
+<plots/baseline_subtracted_wf.pdf, id=1173, 650.43pt x 433.62pt>
 File: plots/baseline_subtracted_wf.pdf Graphic file (type pdf)
 <use plots/baseline_subtracted_wf.pdf>
 Package pdftex.def Info: plots/baseline_subtracted_wf.pdf  used on input line 51.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
-<plots/normalised_wf.pdf, id=1159, 650.43pt x 433.62pt>
+<plots/normalised_wf.pdf, id=1174, 650.43pt x 433.62pt>
 File: plots/normalised_wf.pdf Graphic file (type pdf)
 <use plots/normalised_wf.pdf>
 Package pdftex.def Info: plots/normalised_wf.pdf  used on input line 61.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-<plots/aligned_wf.pdf, id=1160, 650.43pt x 433.62pt>
+<plots/aligned_wf.pdf, id=1175, 650.43pt x 433.62pt>
 File: plots/aligned_wf.pdf Graphic file (type pdf)
 <use plots/aligned_wf.pdf>
 Package pdftex.def Info: plots/aligned_wf.pdf  used on input line 69.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-<plots/trimmed_wf.pdf, id=1161, 650.43pt x 433.62pt>
+<plots/trimmed_wf.pdf, id=1176, 650.43pt x 433.62pt>
 File: plots/trimmed_wf.pdf Graphic file (type pdf)
 <use plots/trimmed_wf.pdf>
 Package pdftex.def Info: plots/trimmed_wf.pdf  used on input line 77.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-<plots/current_wf.pdf, id=1162, 650.43pt x 433.62pt>
+<plots/current_wf.pdf, id=1177, 650.43pt x 433.62pt>
 File: plots/current_wf.pdf Graphic file (type pdf)
 <use plots/current_wf.pdf>
 Package pdftex.def Info: plots/current_wf.pdf  used on input line 85.
@@ -1619,7 +1628,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [30 <./plots/energy_spectrum-cut_window.pdf>]
-<plots/sse_mse_selection.pdf, id=1249, 650.43pt x 433.62pt>
+<plots/sse_mse_selection.pdf, id=1264, 650.43pt x 433.62pt>
 File: plots/sse_mse_selection.pdf Graphic file (type pdf)
 <use plots/sse_mse_selection.pdf>
 Package pdftex.def Info: plots/sse_mse_selection.pdf  used on input line 97.
@@ -1630,7 +1639,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [31 <./plots/raw_wf.pdf> <./plots/baseline_subtracted_wf.pdf> <./plots/normalised_wf.pdf> <./plots/aligned_wf.pdf> <./plots/trimmed_wf.pdf> <./plots/current_wf.pdf>]
-<plots/AoE_sse_vs_sse.pdf, id=1595, 650.43pt x 433.62pt>
+<plots/AoE_sse_vs_sse.pdf, id=1610, 650.43pt x 433.62pt>
 File: plots/AoE_sse_vs_sse.pdf Graphic file (type pdf)
 <use plots/AoE_sse_vs_sse.pdf>
 Package pdftex.def Info: plots/AoE_sse_vs_sse.pdf  used on input line 104.
@@ -2020,72 +2029,72 @@ Overfull \hbox (4.04788pt too wide) in paragraph at lines 98--176
 
 ]
 Appendix C.
-<plots/raw_wf_examples/p03_r000.png, id=1826, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p03_r000.png, id=1841, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p03_r000.png Graphic file (type png)
 <use plots/raw_wf_examples/p03_r000.png>
 Package pdftex.def Info: plots/raw_wf_examples/p03_r000.png  used on input line 6.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p03_r001.png, id=1827, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p03_r001.png, id=1842, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p03_r001.png Graphic file (type png)
 <use plots/raw_wf_examples/p03_r001.png>
 Package pdftex.def Info: plots/raw_wf_examples/p03_r001.png  used on input line 7.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p03_r002.png, id=1828, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p03_r002.png, id=1843, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p03_r002.png Graphic file (type png)
 <use plots/raw_wf_examples/p03_r002.png>
 Package pdftex.def Info: plots/raw_wf_examples/p03_r002.png  used on input line 8.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p03_r003.png, id=1829, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p03_r003.png, id=1844, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p03_r003.png Graphic file (type png)
 <use plots/raw_wf_examples/p03_r003.png>
 Package pdftex.def Info: plots/raw_wf_examples/p03_r003.png  used on input line 11.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p03_r004.png, id=1830, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p03_r004.png, id=1845, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p03_r004.png Graphic file (type png)
 <use plots/raw_wf_examples/p03_r004.png>
 Package pdftex.def Info: plots/raw_wf_examples/p03_r004.png  used on input line 12.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p03_r005.png, id=1831, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p03_r005.png, id=1846, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p03_r005.png Graphic file (type png)
 <use plots/raw_wf_examples/p03_r005.png>
 Package pdftex.def Info: plots/raw_wf_examples/p03_r005.png  used on input line 13.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p04_r000.png, id=1832, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p04_r000.png, id=1847, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p04_r000.png Graphic file (type png)
 <use plots/raw_wf_examples/p04_r000.png>
 Package pdftex.def Info: plots/raw_wf_examples/p04_r000.png  used on input line 18.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p04_r001.png, id=1833, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p04_r001.png, id=1848, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p04_r001.png Graphic file (type png)
 <use plots/raw_wf_examples/p04_r001.png>
 Package pdftex.def Info: plots/raw_wf_examples/p04_r001.png  used on input line 19.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p04_r002.png, id=1834, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p04_r002.png, id=1849, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p04_r002.png Graphic file (type png)
 <use plots/raw_wf_examples/p04_r002.png>
 Package pdftex.def Info: plots/raw_wf_examples/p04_r002.png  used on input line 20.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p04_r003.png, id=1835, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p04_r003.png, id=1850, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p04_r003.png Graphic file (type png)
 <use plots/raw_wf_examples/p04_r003.png>
 Package pdftex.def Info: plots/raw_wf_examples/p04_r003.png  used on input line 25.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p04_r004.png, id=1836, 455.301pt x 339.669pt>
+<plots/raw_wf_examples/p04_r004.png, id=1851, 455.301pt x 339.669pt>
 File: plots/raw_wf_examples/p04_r004.png Graphic file (type png)
 <use plots/raw_wf_examples/p04_r004.png>
 Package pdftex.def Info: plots/raw_wf_examples/p04_r004.png  used on input line 27.
 (pdftex.def)             Requested size: 120.92421pt x 90.2088pt.
-<plots/raw_wf_examples/p06_r000.png, id=1837, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p06_r000.png, id=1852, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p06_r000.png Graphic file (type png)
 <use plots/raw_wf_examples/p06_r000.png>
 Package pdftex.def Info: plots/raw_wf_examples/p06_r000.png  used on input line 33.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p06_r001.png, id=1838, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p06_r001.png, id=1853, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p06_r001.png Graphic file (type png)
 <use plots/raw_wf_examples/p06_r001.png>
 Package pdftex.def Info: plots/raw_wf_examples/p06_r001.png  used on input line 34.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p06_r002.png, id=1839, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p06_r002.png, id=1854, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p06_r002.png Graphic file (type png)
 <use plots/raw_wf_examples/p06_r002.png>
 Package pdftex.def Info: plots/raw_wf_examples/p06_r002.png  used on input line 35.
@@ -2093,112 +2102,112 @@ Package pdftex.def Info: plots/raw_wf_examples/p06_r002.png  used on input line 
 
 
 [49 <./plots/raw_wf_examples/p03_r000.png> <./plots/raw_wf_examples/p03_r001.png> <./plots/raw_wf_examples/p03_r002.png> <./plots/raw_wf_examples/p03_r003.png> <./plots/raw_wf_examples/p03_r004.png> <./plots/raw_wf_examples/p03_r005.png> <./plots/raw_wf_examples/p04_r000.png> <./plots/raw_wf_examples/p04_r001.png> <./plots/raw_wf_examples/p04_r002.png> <./plots/raw_wf_examples/p04_r003.png> <./plots/raw_wf_examples/p04_r004.png>]
-<plots/raw_wf_examples/p06_r003.png, id=1855, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p06_r003.png, id=1870, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p06_r003.png Graphic file (type png)
 <use plots/raw_wf_examples/p06_r003.png>
 Package pdftex.def Info: plots/raw_wf_examples/p06_r003.png  used on input line 39.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p06_r004.png, id=1856, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p06_r004.png, id=1871, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p06_r004.png Graphic file (type png)
 <use plots/raw_wf_examples/p06_r004.png>
 Package pdftex.def Info: plots/raw_wf_examples/p06_r004.png  used on input line 40.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p06_r005.png, id=1857, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p06_r005.png, id=1872, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p06_r005.png Graphic file (type png)
 <use plots/raw_wf_examples/p06_r005.png>
 Package pdftex.def Info: plots/raw_wf_examples/p06_r005.png  used on input line 41.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p07_r002.png, id=1858, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p07_r002.png, id=1873, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p07_r002.png Graphic file (type png)
 <use plots/raw_wf_examples/p07_r002.png>
 Package pdftex.def Info: plots/raw_wf_examples/p07_r002.png  used on input line 46.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p07_r003.png, id=1859, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p07_r003.png, id=1874, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p07_r003.png Graphic file (type png)
 <use plots/raw_wf_examples/p07_r003.png>
 Package pdftex.def Info: plots/raw_wf_examples/p07_r003.png  used on input line 47.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p07_r004.png, id=1860, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p07_r004.png, id=1875, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p07_r004.png Graphic file (type png)
 <use plots/raw_wf_examples/p07_r004.png>
 Package pdftex.def Info: plots/raw_wf_examples/p07_r004.png  used on input line 48.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p07_r005.png, id=1861, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p07_r005.png, id=1876, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p07_r005.png Graphic file (type png)
 <use plots/raw_wf_examples/p07_r005.png>
 Package pdftex.def Info: plots/raw_wf_examples/p07_r005.png  used on input line 49.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p07_r006.png, id=1862, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p07_r006.png, id=1877, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p07_r006.png Graphic file (type png)
 <use plots/raw_wf_examples/p07_r006.png>
 Package pdftex.def Info: plots/raw_wf_examples/p07_r006.png  used on input line 52.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p07_r007.png, id=1863, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p07_r007.png, id=1878, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p07_r007.png Graphic file (type png)
 <use plots/raw_wf_examples/p07_r007.png>
 Package pdftex.def Info: plots/raw_wf_examples/p07_r007.png  used on input line 53.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p07_r008.png, id=1864, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p07_r008.png, id=1879, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p07_r008.png Graphic file (type png)
 <use plots/raw_wf_examples/p07_r008.png>
 Package pdftex.def Info: plots/raw_wf_examples/p07_r008.png  used on input line 54.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r000.png, id=1865, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r000.png, id=1880, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r000.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r000.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r000.png  used on input line 59.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r001.png, id=1866, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r001.png, id=1881, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r001.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r001.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r001.png  used on input line 60.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r002.png, id=1867, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r002.png, id=1882, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r002.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r002.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r002.png  used on input line 61.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r003.png, id=1868, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r003.png, id=1883, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r003.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r003.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r003.png  used on input line 62.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r004.png, id=1869, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r004.png, id=1884, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r004.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r004.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r004.png  used on input line 65.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r005.png, id=1870, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r005.png, id=1885, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r005.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r005.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r005.png  used on input line 66.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r006.png, id=1871, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r006.png, id=1886, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r006.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r006.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r006.png  used on input line 67.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r007.png, id=1872, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r007.png, id=1887, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r007.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r007.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r007.png  used on input line 68.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r008.png, id=1873, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r008.png, id=1888, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r008.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r008.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r008.png  used on input line 71.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r009.png, id=1874, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r009.png, id=1889, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r009.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r009.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r009.png  used on input line 72.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r010.png, id=1875, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r010.png, id=1890, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r010.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r010.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r010.png  used on input line 73.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r011.png, id=1876, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r011.png, id=1891, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r011.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r011.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r011.png  used on input line 74.
@@ -2206,57 +2215,57 @@ Package pdftex.def Info: plots/raw_wf_examples/p08_r011.png  used on input line 
 
 
 [50 <./plots/raw_wf_examples/p06_r000.png> <./plots/raw_wf_examples/p06_r001.png> <./plots/raw_wf_examples/p06_r002.png> <./plots/raw_wf_examples/p06_r003.png> <./plots/raw_wf_examples/p06_r004.png> <./plots/raw_wf_examples/p06_r005.png> <./plots/raw_wf_examples/p07_r002.png> <./plots/raw_wf_examples/p07_r003.png> <./plots/raw_wf_examples/p07_r004.png> <./plots/raw_wf_examples/p07_r005.png> <./plots/raw_wf_examples/p07_r006.png> <./plots/raw_wf_examples/p07_r007.png> <./plots/raw_wf_examples/p07_r008.png> <./plots/raw_wf_examples/p08_r000.png> <./plots/raw_wf_examples/p08_r001.png> <./plots/raw_wf_examples/p08_r002.png> <./plots/raw_wf_examples/p08_r003.png> <./plots/raw_wf_examples/p08_r004.png> <./plots/raw_wf_examples/p08_r005.png> <./plots/raw_wf_examples/p08_r006.png> <./plots/raw_wf_examples/p08_r007.png>]
-<plots/raw_wf_examples/p08_r012.png, id=1902, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r012.png, id=1917, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r012.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r012.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r012.png  used on input line 77.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r013.png, id=1903, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r013.png, id=1918, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r013.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r013.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r013.png  used on input line 78.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r014.png, id=1904, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r014.png, id=1919, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r014.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r014.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r014.png  used on input line 79.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p08_r015.png, id=1905, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p08_r015.png, id=1920, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p08_r015.png Graphic file (type png)
 <use plots/raw_wf_examples/p08_r015.png>
 Package pdftex.def Info: plots/raw_wf_examples/p08_r015.png  used on input line 80.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p09_r000.png, id=1906, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p09_r000.png, id=1921, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p09_r000.png Graphic file (type png)
 <use plots/raw_wf_examples/p09_r000.png>
 Package pdftex.def Info: plots/raw_wf_examples/p09_r000.png  used on input line 85.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p09_r001.png, id=1907, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p09_r001.png, id=1922, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p09_r001.png Graphic file (type png)
 <use plots/raw_wf_examples/p09_r001.png>
 Package pdftex.def Info: plots/raw_wf_examples/p09_r001.png  used on input line 86.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p09_r002.png, id=1908, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p09_r002.png, id=1923, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p09_r002.png Graphic file (type png)
 <use plots/raw_wf_examples/p09_r002.png>
 Package pdftex.def Info: plots/raw_wf_examples/p09_r002.png  used on input line 87.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p09_r003.png, id=1909, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p09_r003.png, id=1924, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p09_r003.png Graphic file (type png)
 <use plots/raw_wf_examples/p09_r003.png>
 Package pdftex.def Info: plots/raw_wf_examples/p09_r003.png  used on input line 88.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p09_r004.png, id=1910, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p09_r004.png, id=1925, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p09_r004.png Graphic file (type png)
 <use plots/raw_wf_examples/p09_r004.png>
 Package pdftex.def Info: plots/raw_wf_examples/p09_r004.png  used on input line 91.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p09_r005.png, id=1911, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p09_r005.png, id=1926, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p09_r005.png Graphic file (type png)
 <use plots/raw_wf_examples/p09_r005.png>
 Package pdftex.def Info: plots/raw_wf_examples/p09_r005.png  used on input line 92.
 (pdftex.def)             Requested size: 120.92421pt x 90.21169pt.
-<plots/raw_wf_examples/p09_r006.png, id=1912, 632.3625pt x 471.7625pt>
+<plots/raw_wf_examples/p09_r006.png, id=1927, 632.3625pt x 471.7625pt>
 File: plots/raw_wf_examples/p09_r006.png Graphic file (type png)
 <use plots/raw_wf_examples/p09_r006.png>
 Package pdftex.def Info: plots/raw_wf_examples/p09_r006.png  used on input line 93.
@@ -2320,6 +2329,8 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
 
 Overfull \hbox (8.66293pt too wide) in paragraph at lines 179--179
 []\T1/futs/m/n/10.95 Tosaka. \T1/futs/m/it/10.95 De-cay chain 4n, Tho-rium se-ries\T1/futs/m/n/10.95 . Ac-cessed: 2026-07-31. Wiki-me-dia Com-mons, 2008. \T1/futs/m/sc/10.95 url\T1/futs/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https :
@@ -2339,23 +2350,23 @@ L3 programming layer <2024-11-02>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5B91ACF278FAF756D443D2D5FB43F431;7595.
+(rerunfilecheck)             Checksum: EEA7DAB5BFE4CB4E268ACD0708F4DD6A;7563.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43312 strings out of 473682
- 928212 string characters out of 5729112
- 1654717 words of memory out of 5000000
- 65385 multiletter control sequences out of 15000+600000
+ 43328 strings out of 473682
+ 928849 string characters out of 5729112
+ 1655162 words of memory out of 5000000
+ 65398 multiletter control sequences out of 15000+600000
  796404 words of font info for 290 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,93p,1261b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,93p,1681b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (64 pages, 5552842 bytes).
+Output written on main.pdf (64 pages, 5588013 bytes).
 PDF statistics:
- 2180 PDF objects out of 2487 (max. 8388607)
- 280 named destinations out of 1000 (max. 500000)
- 726 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2204 PDF objects out of 2487 (max. 8388607)
+ 283 named destinations out of 1000 (max. 500000)
+ 731 words of extra memory for PDF output out of 10000 (max. 10000000)
 

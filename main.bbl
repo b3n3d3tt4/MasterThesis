@@ -116,6 +116,77 @@
       \verb 1709.01980
       \endverb
     \endentry
+    \entry{SSD-jl}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=2fc83b7957cd223af34f85cc300cd1cd}{%
+           family={Abt},
+           familyi={A\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=84080fa22497b06ede9b8ccdc4fadafb}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6f66e1504f4b1966cd0f90b32237a45a}{%
+           family={Hagemann},
+           familyi={H\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fc2fce1fd8ee124f56a655441a4ebf8a}{%
+           family={Hauertmann},
+           familyi={H\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e819a849e0c795926e78334eae984031}{%
+           family={Schulz},
+           familyi={S\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+        {{hash=29884843bb34886e95d20dc76e1b4f80}{%
+           family={Schuster},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ee9ba1ea6d19041faa78341d96f9efca}{%
+           family={Zsigmond},
+           familyi={Z\bibinitperiod},
+           given={A.\bibnamedelimi J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{IOP} Publishing}%
+      }
+      \strng{namehash}{852e61b7894baf65c60f336d4bb18738}
+      \strng{fullhash}{5624efcb91ff749ec34b845c086bd6d4}
+      \strng{fullhashraw}{5624efcb91ff749ec34b845c086bd6d4}
+      \strng{bibnamehash}{852e61b7894baf65c60f336d4bb18738}
+      \strng{authorbibnamehash}{852e61b7894baf65c60f336d4bb18738}
+      \strng{authornamehash}{852e61b7894baf65c60f336d4bb18738}
+      \strng{authorfullhash}{5624efcb91ff749ec34b845c086bd6d4}
+      \strng{authorfullhashraw}{5624efcb91ff749ec34b845c086bd6d4}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Instrumentation}
+      \field{month}{8}
+      \field{number}{08}
+      \field{title}{Simulation of semiconductor detectors in 3D with SolidStateDetectors.jl}
+      \field{volume}{16}
+      \field{year}{2021}
+      \field{pages}{P08007}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/1748-0221/16/08/p08007
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1088/1748-0221/16/08/p08007
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1088/1748-0221/16/08/p08007
+      \endverb
+    \endentry
     \entry{LEGEND:GeDet}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}

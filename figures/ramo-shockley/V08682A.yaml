@@ -1,0 +1,98 @@
+name: V08682A
+type: icpc
+production:
+  manufacturer: Mirion
+  order: 8
+  crystal: "682"
+  slice: A
+  enrichment:
+    val: 0.9
+    unc: 0.01
+  passivation: true
+  reprocessing: false
+  mass_in_g: 3340
+  impcc:
+    array:
+      value_in_1e9e/cm3:
+        - 13
+        - 10
+        - 9
+      dist_from_contact_in_mm:
+        - -3.3
+        - 36.7
+        - 96.7
+    function_pars:
+      z0_in_1e10e/cm3: 0
+      gradient_in_1e10e/cm4: 0
+      quadratic_in_1e10e/cm5: 0
+  delivered: "2021-07-05"
+geometry:
+  height_in_mm: 95.7
+  radius_in_mm: 45
+  borehole:
+    radius_in_mm: 4
+    depth_in_mm: 61.0
+  groove:
+    depth_in_mm: 2
+    radius_in_mm:
+      outer: 15
+      inner: 12
+  pp_contact:
+    radius_in_mm: 12
+    depth_in_mm: 0
+  taper:
+    top:
+      angle_in_deg: 45
+      height_in_mm: 1
+    bottom:
+      angle_in_deg: 45
+      height_in_mm: 1
+    borehole:
+      angle_in_deg: 5
+      height_in_mm: 50
+characterization:
+  manufacturer:
+    depletion_voltage_in_V: 3500
+    recommended_voltage_in_V: 4500
+    fwhm_co57fep_in_keV: 0.793
+    fwhm_co60fep_in_keV: 2.13
+    dl_thickness_in_mm: 1.1
+  l200_site:
+    location: hades
+    daq: flashcam
+    depletion_voltage_in_V: 3000
+    recommended_voltage_in_V: 3500
+    fwhm_in_keV:
+      co60fep: 1.77
+      qbb: 2.22
+      tl208fep: 2.49
+    survival_fraction:
+      tl208dep: 0.9
+      qbb: 0.314
+      tl208sep: 0.052
+      tl208fep: 0.071
+    fccd_in_mm:
+      am241:
+        value: 1.14
+        uncertainty:
+          uncorr:
+            pos: 0.013105736927865
+            neg: 0.0129744107206877
+          corr:
+            pos: 0.0331790925712389
+            neg: 0.0340517153195822
+      ba133:
+        value: 0.99
+        uncertainty:
+          uncorr:
+            pos: 0.013713546024473
+            neg: 0.020104509837471
+          corr:
+            pos: 0.0483686312078577
+            neg: 0.0557390860769115
+  combined_0vbb_analysis:
+    fccd_in_mm:
+      value: 1.093
+      uncertainty:
+        pos: 0.052
+        neg: 0.08

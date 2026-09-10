@@ -702,6 +702,48 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0168900201002236
       \endverb
     \endentry
+    \entry{libro-detectors}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=cdb61438aeb4f18b81555a6e90e78f5d}{%
+           family={Kolanoski},
+           familyi={K\bibinitperiod},
+           given={Hermann},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f5ee2b81fdcc2af5637e063906fe3918}{%
+           family={Wermes},
+           familyi={W\bibinitperiod},
+           given={Norbert},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{fullhash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{fullhashraw}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{bibnamehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authorbibnamehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authornamehash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authorfullhash}{cb554d11ecf13d996cbec39a894c99df}
+      \strng{authorfullhashraw}{cb554d11ecf13d996cbec39a894c99df}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780198858362}
+      \field{month}{06}
+      \field{title}{Particle Detectors: Fundamentals and Applications}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1093/oso/9780198858362.001.0001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/oso/9780198858362.001.0001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/oso/9780198858362.001.0001
+      \endverb
+    \endentry
     \entry{LNHB}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=be5c9551a282e4bf66af8de915326c4e}{%
@@ -741,6 +783,7 @@
       \strng{authornamehash}{24be34c0487e6af437c6d5a1dab6d462}
       \strng{authorfullhash}{24be34c0487e6af437c6d5a1dab6d462}
       \strng{authorfullhashraw}{24be34c0487e6af437c6d5a1dab6d462}
+      \field{extraname}{1}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
@@ -756,6 +799,33 @@
       \verb{url}
       \verb https://legend-exp.org/science/legend-pathway/legend-200
       \endverb
+    \endentry
+    \entry{pygama}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=24be34c0487e6af437c6d5a1dab6d462}{%
+           family={{LEGEND Collaboration}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{fullhash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{fullhashraw}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{bibnamehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authorbibnamehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authornamehash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authorfullhash}{24be34c0487e6af437c6d5a1dab6d462}
+      \strng{authorfullhashraw}{24be34c0487e6af437c6d5a1dab6d462}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/legend-exp/pygama}}
+      \field{journaltitle}{GitHub repository}
+      \field{title}{pygama: Python package for data processing and analysis}
+      \field{year}{2026}
     \endentry
     \entry{Maki1962}{article}{}{}
       \name{author}{3}{}{%
