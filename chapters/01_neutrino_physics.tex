@@ -53,6 +53,12 @@ families to three ($N_\nu = 2.9840 \pm 0.0082$ \cite{LEPnumberOFnu}), perfectly 
 \footnotetext{All of what is reported in this paragraph is elaborated from \cite{neutrinosPDG}, unless otherwise specified.}
 Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy, namely \ac{pp} chains and \ac{CNO} cycles.
 
+\begin{wrapfigure}{r}{0.6\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/neutrino-fluxes.png}
+    \caption{Energy spectra of solar neutrino fluxes of different reaction processes. Figure taken from \cite{SunNuFluxes}.}
+    \label{fig:neutrino-fluxes}
+\end{wrapfigure}
 In \ac{pp} chains several neutrino-producing reactions are involved, resulting in the overall fusion of four protons into a ${}^{4}$He nucleus ($4p \to {}^4\text{He} + 2e^+ + 2\nu_e$). The total energy released in this reaction is given by the mass difference $Q = 4m_p - m_{{}^4\text{He}} - 2m_e \approx 26 \text{ MeV}$: most of this energy is radiated away by photons, while only a small fraction is carried away by the neutrinos, with an average energy of $\langle E_{2\nu_e} \rangle = 0.59 \text{ MeV}$.
 
 On the other hand, in \ac{CNO} cycles, neutrinos are mainly produced via the decays of ${}^{13}\text{N}$, ${}^{15}\text{O}$ and ${}^{17}\text{F}$. Additionally, electron capture on ${}^{13}\text{N}$, ${}^{15}\text{O}$, and ${}^{17}\text{F}$ produces monoenergetic line spectra of neutrinos, generally referred to as \textit{ecCNO} neutrinos. Compared to the $pp$ chain, \ac{CNO} neutrinos carry away a higher fraction of the reaction energy, with average neutrino energies typically ranging between $0.7\text{ MeV}$ and $1.2\text{ MeV}$. However, the flux of \ac{CNO}-cycle neutrinos is roughly two orders of magnitude lower than the \ac{pp} chains one, accounting for less than $1\%$ of the solar energy production. Therefore it can be neglected in the flux calculation.
@@ -62,16 +68,8 @@ Based on the \ac{SSM}, the total expected neutrino flux can be evaluated by cons
 ($Q \approx 26.73 \text{ MeV}$), while accounting for the spherical propagation of particles across the Earth-Sun distance ($1 \text{ AU}$). 
 All these thermonuclear reactions in the Sun exclusively generate electron neutrinos ($\nu_e$) and assuming the absence of neutrino oscillations, 
 state-of-the-art calculations predict a theoretical \ac{pp} solar neutrino flux arriving at Earth of approximately 
-$\Phi_{\ac{pp}} (\nu_e) \approx 6 \times 10^{10} \text{ cm}^{-2}\text{s}^{-1}$.
+$\Phi_{\ac{pp}} (\nu_e) \approx 6 \times 10^{10} \text{ cm}^{-2}\text{s}^{-1}$. Figure \ref{fig:neutrino-fluxes} details the fluxes of neutrinos based on the reaction in which they are produced.
 
-Figure \ref{fig:neutrino-fluxes} details the fluxes of neutrinos based on the reaction in which they are produced.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/neutrino-fluxes.png}
-    \caption{Energy spectra of solar neutrino fluxes of different reaction processes. Taken from \cite{SunNuFluxes}.}
-    \label{fig:neutrino-fluxes}
-\end{figure}
 
 \paragraph{The Homestake mine experiment}
 The experimental value of the solar neutrino flux $\Phi_{\ac{pp}} (\nu_e)$ has been studied since the last century.
@@ -532,7 +530,7 @@ This energy landscape is elegantly visualized using mass parabolas, as shown in 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/mass_parabola_A76.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/mass_parabola_A76.pdf}
     \caption{Mass parabola for $A=76$ isobars. The even-even and odd-odd mass parabolas are shown in blue and yellow, respectively. The double-beta transition of ${}^{76}\text{Ge}$ is highlighted in red, while the green lines represent ordinary single-$\beta$ decays. Custom plot with data taken from \cite{AME2020-masses} and \cite{Ge76-Qvalue}.}
     \label{fig:doublebeta-parabola}
 \end{figure}
@@ -565,7 +563,7 @@ where $M(Z, A)$ and $M(Z+2, A)$ represent the masses of the parent and daughter 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/0nu_vs_2nu.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/0nu_vs_2nu.pdf}
     \caption{Schematic representation of the energy distribution for the products in $2\nu\beta\beta$ and $0\nu\beta\beta$ decay modes. The $0\nu\beta\beta$ decay produces a mono-energetic peak at the $Q$-value, while the $2\nu\beta\beta$ decay results in a continuous spectrum.}
     \label{fig:Qvalue-2nu0nu}
 \end{figure}

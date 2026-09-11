@@ -43,15 +43,14 @@ Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \texti
 \begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/ramo-shockley/geometry_V08682A_edited.jpg}
+    \captionsetup{font=small}
     \caption{Geometry of the detector V08682A. Personally elaborated from LEGEND detector specifications using Julia-based SolidStateDetector software \cite{SSD-jl}.}
     \label{fig:V08682A}
 \end{wrapfigure}
-While the LEGEND-200 experiment employs all the detector geometries of Fig. \ref{fig:detectors-pINred}, the work presented in this thesis focuses exclusively on a single Inverted Coaxial (IC) detector, labelled V08682A, shown in Fig. \ref{fig:V08682A}. 
-Restricting the scope allows for a robust initial validation of the proposed algorithm. Consequently, all subsequent physics principles, data analysis, and algorithm implementations discussed herein are tailored specifically to this detector. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors is left as a future prospect outside the boundaries of this work.
+While the LEGEND-200 experiment employs all the detector geometries of Fig. \ref{fig:detectors-pINred}, the work presented in this thesis focuses exclusively on a single Inverted Coaxial (IC) detector, labelled V08682A. Its rendering is shown in Fig. \ref{fig:V08682A}. Said detector was manufactured by MIRION which ensures an ${}^{76}$Ge enrichment fraction of (90 $\pm$ 1) \%, its mass is $m = 3340~\text{g}$, it is $95.7~\text{mm}$ high. The complexive radius is $r = 45~\text{mm}$ while the radius of the \textit{p+} contact is $r_{\mathit{p+}} = 12~\text{mm}$. It operates at a bias voltage of V$ = 3500~\text{V}$, recommended by the LEGEND-200 site characterization to ensure full depletion with an adequate safety margin above the depletion voltage of~$3000~\text{V}$.
+Restricting the scope of the work solely to this detector allows for a robust initial validation of the proposed algorithm. Consequently, all the following physics principles, data analyses and algorithm implementations discussed herein are tailored specifically to IC V08682A. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors of the array is left as a future prospect outside the boundaries of this work.
 
-DESCRIZIONE PIù DETTAGLIATA DI QUESTO DETECTOR
 
-\newpage
 \subsection{Signal formation in Germanium detectors}
 \subsubsection{The Ramo-Schokley theorem}
 Consider, for instance, an incident $\gamma$-ray that interacts with the semiconductor and generates a large number of \ac{eh} pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
@@ -147,7 +146,7 @@ An example of said method is shown in Fig. \ref{fig:wf-windowing}.
 
 
 \subsection{Data structure of the LEGEND-200 phase}
-\label{sec:data-structureL200}
+\label{subsec:data-structureL200}
 LEGEND data are acquired in three possibile modalities:
 \begin{itemize}
     \item \textbf{Physics data (\texttt{phy})}: these are the data on which the physics case study is based. Signal waveforms of all the detectors in the apparatus (\ac{hpge}, \ac{lar}, and muon veto) are recorded and stored when an event is triggered by a germanium detector.
@@ -159,18 +158,18 @@ Data are firstly organised in \textbf{\textit{runs}}, i.e. a 7-day data taking t
 
 The raw data files output by the Data Acquisition (DAQ) system in the ORCA format undergo a structured processing pipeline in \texttt{python} using the \texttt{pygama} library \cite{pygama}, generating distinct data tiers that correspond to the specific level of processing achieved. Said tiers are
 \begin{itemize}
-    \item \textit{raw}: this is a simple conversion of the ORCA DAQ file to the LEGEND-custom \texttt{hdf5}-based data format called \texttt{lh5}. 
+    \item \texttt{raw}: this is a simple conversion of the ORCA DAQ file to the LEGEND-custom \texttt{hdf5}-based data format called \texttt{lh5}. 
     During this stage, the overall data volume is effectively mitigated by partitioning the waveforms: a fully sampled waveform is preserved strictly around the leading edge, while a pre-summed waveform is retained for the complete trace. 
     Additionally, for physics runs (\texttt{phy} files), a subsequent blinding procedure is applied. Any event featuring an energy deposition of $(2039 \pm 25)$~keV---as preliminarily estimated by the DAQ software and stored in the \texttt{daqenergy} field---is systematically excluded. This specific energy window encompasses the Region of Interest (ROI) around the $Q_{\beta\beta}$-value of the $^{76}\mathrm{Ge}$ neutrinoless double beta decay ($0\nu\beta\beta$). Hiding these data is a fundamental requirement for a blind analysis, preventing any unintended human bias while tuning the analysis cuts. To preserve synchronization and ensure that table lengths remain identical across all channels, the entire multi-channel event is discarded rather than just the single triggering channel;
-    \item \textit{tcm}: in order to reconstruct a complex event shared by multiple detectors it is crucial to know how to group together channels in which the event occur within a specific time window. This information is stored in the Time Coincidence Map files of the \textit{tcm tier};
-    \item \textit{dsp}: the low level signal processing routines run to extract observables such as the energy, the drift time and \ac{PSD} variables. Some of the parameters for the filters run are firts optimised on calibration (cal) data and then passed to physics (phy) data to improve energy resolution;
-    \item \textit{hit}: similarly to \textit{dsp}, paramters for the \textit{hit} tier are firts computed on calibration data. These calibrations are then applied to the parameters extracted at the dsp stage to define the energy in keV and the PSD classification of events;
-    \item \textit{evt}: channel in this tier are brought together exploiting the \textit{tcm} tier in order to get a final event;
-    \item \textit{skm}: this tier is just a skimming of the event files to remove uninteresting events.
+    \item \texttt{tcm}: in order to reconstruct a complex event shared by multiple detectors it is crucial to know how to group together channels in which the event occur within a specific time window. This information is stored in the Time Coincidence Map files of the \texttt{tcm} tier;
+    \item \texttt{dsp}: the low level signal processing routines run to extract observables such as the energy, the drift time and \ac{PSD} variables. Some of the parameters for the filters run are firts optimised on calibration (\texttt{cal}) data and then passed to physics (\texttt{phy}) data to improve energy resolution;
+    \item \texttt{hit}: similarly to \texttt{dsp}, paramters for the \texttt{hit} tier are firts computed on calibration data. These calibrations are then applied to the parameters extracted at the \texttt{dsp} stage to define the energy in keV and the PSD classification of events;
+    \item \texttt{evt}: channel in this tier are brought together exploiting the \texttt{tcm} tier in order to get a final event;
+    \item \texttt{skm}: this tier is just a skimming of the event files to remove uninteresting events.
 \end{itemize} 
-Specific partition tiers, such as \textit{psp} (partition \textit{dsp}), \textit{pht} (partition \textit{hit}), and \textit{pep} (partition \textit{evt}), share the identical data structure of the standard tiers, yet their processing parameters are optimised over the entire data partition.
+Specific partition tiers, such as \texttt{psp} (partition \texttt{dsp}), \texttt{pht} (partition \texttt{hit}), and \texttt{pep} (partition \texttt{evt}), share the identical data structure of the standard tiers, yet their processing parameters are optimised over the entire data partition.
 
-The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \textit{raw} tier and energy values from the \textit{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised.
+The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \texttt{raw} tier and energy values from the \texttt{pht} tier, both belonging to the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Henceforth, the term dataset will be used to refer to all the runs from these periods.
 
 
 

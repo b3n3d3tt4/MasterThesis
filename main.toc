@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {1.2}Flavour oscillations}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Experimental evidence: the solar neutrinos problem}{2}{subsection.1.2.1}%
 \contentsline {paragraph}{The Homestake mine experiment}{2}{section*.6}%
-\contentsline {paragraph}{Gallium-based experiments}{3}{section*.7}%
+\contentsline {paragraph}{Gallium-based experiments}{2}{section*.7}%
 \contentsline {paragraph}{The Kamiokande experiment}{3}{section*.8}%
 \contentsline {paragraph}{Solution to the solar neutrino problem: the SNO experiment}{3}{section*.9}%
 \contentsline {subsection}{\numberline {1.2.2}Vacuum oscillations}{4}{subsection.1.2.2}%
@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {1.3.2}The Seesaw mechanism}{8}{subsection.1.3.2}%
 \contentsline {section}{\numberline {1.4}Beta decay and double beta decay}{10}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Two-neutrino double beta decay ($2\nu \beta \beta $)}{10}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Neutrinoless double beta decay ($0\nu \beta \beta $)}{12}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.2}Neutrinoless double beta decay ($0\nu \beta \beta $)}{11}{subsection.1.4.2}%
 \contentsline {chapter}{\numberline {2}The LEGEND experiment}{15}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Experimental setup}{15}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Germanium detectors}{16}{subsection.2.1.1}%
@@ -28,8 +28,8 @@
 \contentsline {section}{\numberline {3.1}Detector physics and signal formation}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Germanium detectors basics}{21}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Germanium diodes in LEGEND-200}{22}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Signal formation in Germanium detectors}{24}{subsection.3.1.3}%
-\contentsline {subsubsection}{The Ramo-Schokley theorem}{24}{section*.23}%
+\contentsline {subsection}{\numberline {3.1.3}Signal formation in Germanium detectors}{23}{subsection.3.1.3}%
+\contentsline {subsubsection}{The Ramo-Schokley theorem}{23}{section*.23}%
 \contentsline {subsubsection}{IC weighting field}{24}{section*.24}%
 \contentsline {subsubsection}{Events topology}{24}{section*.25}%
 \contentsline {section}{\numberline {3.2}Data acquisition and processing}{26}{section.3.2}%

@@ -16,14 +16,15 @@ The full code of data processing, data cleaning and \ac{VAE} implementation is a
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
-Raw charge waveforms\footnote{For \textit{raw} we mean waveforms already processed with LEGEND dedicated software as detailed in Sec. \ref{sec:data-structureL200}, but still not selected in terms of energy, \ac{PSD} parameters or other features.} are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest, i.e. the energy window between the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. 
+Raw charge waveforms\footnote{For \textit{raw} we mean waveforms already processed with LEGEND dedicated software as detailed in Sec. \ref{sec:data-structureL200}, but still not selected in terms of energy, \ac{PSD} parameters or other features, as introduced at the end of Sec. \ref{subsec:data-structureL200}.} are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest.
 
-\begin{comment}
-QUI DEVO SPIEGARE COSA FANNO I FILE \\
--FILEREADING.PY \\
--WFCLEANING.PY \\
--SSE MSE SELECTION
-\end{comment}
+The first data processing step that has been applied to raw waveforms is an energy-based cut around the region of interest, specifically encircling the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. Hence, only data between 1550 keV and 1650 keV from the whole considered dataset have been saved, discarding all the other. This is for sure a choice based on the work puposes, but also a computational needing in order to neglect data that would be unused from the very beginning. Recalling Fig. \ref{fig:TlBi-spectrum} the energy cut is depicted in Fig. \ref{fig:cut_region} for run \textit{r000} of period \textit{p03}. Moreover data have been filtered with boolean masks provided together with raw data; said filters are needed to discard useless events. Particularly the filters that have been considered are:
+\begin{itemize}
+    \item discharge: 
+    \item pile-up: 
+    \item pile-up:
+    \item 
+\end{itemize} 
 
 \begin{figure}[H]
     \centering
@@ -32,6 +33,7 @@ QUI DEVO SPIEGARE COSA FANNO I FILE \\
     \label{fig:cut_region}
 \end{figure}
 
+As soon as the energy cut and the event cut are performed, waveforms need to pass through a series of processes in order to obtain suitable inputs for the \ac{VAE} algorithm. 
 Once all of these steps are completed, what we obtain is a suitable input of the \ac{VAE} that is to be implemented as will be decripted in Sec. \ref{sec:model-implementation}. An example of the process is shown in Fig. \ref{fig:data-cleaning} for run \textit{r000} of period \textit{p03}; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
 
 \begin{figure}[H]

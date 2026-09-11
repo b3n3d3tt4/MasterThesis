@@ -600,15 +600,15 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT .\figures\neutrino-fluxes.png
+INPUT .\figures\neutrino-fluxes.png
+INPUT .\figures\neutrino-fluxes.png
+INPUT .\figures\neutrino-fluxes.png
+INPUT .\figures\neutrino-fluxes.png
+INPUT .\figures\neutrino-fluxes.png
+INPUT .\figures\neutrino-fluxes.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
-INPUT .\figures\neutrino-fluxes.png
-INPUT .\figures\neutrino-fluxes.png
-INPUT .\figures\neutrino-fluxes.png
-INPUT .\figures\neutrino-fluxes.png
-INPUT .\figures\neutrino-fluxes.png
-INPUT .\figures\neutrino-fluxes.png
-INPUT .\figures\neutrino-fluxes.png
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
@@ -628,24 +628,20 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
 INPUT .\feynman-diagrams\CCandNC-deuteron-SNO.tex
 INPUT .\feynman-diagrams\CCandNC-deuteron-SNO.tex
 INPUT feynman-diagrams\CCandNC-deuteron-SNO.tex
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmii.tfm
@@ -675,16 +671,20 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmi.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
+INPUT .\figures\mass-hierarchy.jpg
+INPUT .\figures\mass-hierarchy.jpg
+INPUT .\figures\mass-hierarchy.jpg
+INPUT .\figures\mass-hierarchy.jpg
+INPUT .\figures\mass-hierarchy.jpg
+INPUT .\figures\mass-hierarchy.jpg
+INPUT .\figures\mass-hierarchy.jpg
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
-INPUT .\figures\mass-hierarchy.jpg
-INPUT .\figures\mass-hierarchy.jpg
-INPUT .\figures\mass-hierarchy.jpg
-INPUT .\figures\mass-hierarchy.jpg
-INPUT .\figures\mass-hierarchy.jpg
-INPUT .\figures\mass-hierarchy.jpg
-INPUT .\figures\mass-hierarchy.jpg
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
@@ -712,12 +712,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
-INPUT .\figures\mass_parabola_A76.pdf
-INPUT .\figures\mass_parabola_A76.pdf
-INPUT .\figures\mass_parabola_A76.pdf
-INPUT .\figures\mass_parabola_A76.pdf
-INPUT .\figures\mass_parabola_A76.pdf
-INPUT .\figures\mass_parabola_A76.pdf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
@@ -729,6 +723,12 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
+INPUT .\figures\mass_parabola_A76.pdf
+INPUT .\figures\mass_parabola_A76.pdf
+INPUT .\figures\mass_parabola_A76.pdf
+INPUT .\figures\mass_parabola_A76.pdf
+INPUT .\figures\mass_parabola_A76.pdf
+INPUT .\figures\mass_parabola_A76.pdf
 INPUT .\feynman-diagrams\0nu-doubleBeta-diagram.tex
 INPUT .\feynman-diagrams\0nu-doubleBeta-diagram.tex
 INPUT feynman-diagrams\0nu-doubleBeta-diagram.tex
@@ -837,6 +837,10 @@ INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
 INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
 INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
 INPUT .\figures\ramo-shockley\geometry_V08682A_edited.jpg
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\figures\catena_decadimento_Th228.png
 INPUT .\figures\catena_decadimento_Th228.png
 INPUT .\figures\catena_decadimento_Th228.png
@@ -864,7 +868,8 @@ INPUT .\plots\wf_vs_windowed_wf.pdf
 INPUT .\plots\wf_vs_windowed_wf.pdf
 INPUT .\plots\wf_vs_windowed_wf.pdf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
@@ -874,8 +879,6 @@ INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\chapters\04_VAEimplementation.tex
 INPUT .\chapters\04_VAEimplementation.tex
 INPUT chapters\04_VAEimplementation.tex
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
@@ -918,6 +921,9 @@ INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT .\plots\sse_mse_selection.pdf
 INPUT .\plots\sse_mse_selection.pdf
 INPUT .\plots\sse_mse_selection.pdf
