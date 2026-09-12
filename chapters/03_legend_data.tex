@@ -1,54 +1,70 @@
 \chapter{LEGEND data}
-As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEND experimental program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of chapter \ref{chapter:DL_PSD}.
+As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEND experimental program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of the thesis in chapter \ref{chapter:PSD}.
 
 \section{Detector physics and signal formation}
 \subsection{Germanium detectors basics}
 \label{subsec:Ge-detector-basics}
 \ac{hpge} detectors are semiconductor detectors, therefore it is crucial to analyse some specific features of semiconductor materials.
  Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bounded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}. 
- \begin{wrapfigure}{r}{0.6\textwidth}
-  \centering
-  \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
-  \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
-  \label{fig:band_gaps}
-\end{wrapfigure}
+%  \begin{wrapfigure}{r}{0.6\textwidth}
+%   \centering
+%   \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
+%   \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
+%   \label{fig:band_gaps}
+% \end{wrapfigure}
 The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insultators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is break, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
 
 An artificial introduction of impurities in the semiconductor lattice can selectively change its behaviour in terms of conductivity.
-Pentavalent elements called \textit{donors}, like Phosphor, inserted in a tetravalent semiconductor like Germanium produce an excess of conduction electrons with respect to the holes; this is called \textit{n-doping}. On the other hand, \textit{p-doping} consists on placing in the lattice trivalent atoms called \textit{acceptors}, like Boron, leading to an excess of holes. The overall crystal of the semiconductor remains electrically neutral, because donors and acceptors are nevertheless neutral atoms, but the available number of charge carriers, either holes or electrons, changes leading to a modification in the conduction properties of the semiconductor. Pure semiconductors are called intrinsic semiconductors (Fig. \ref{fig:intrisc-vs-extrinsic} on the left) while doped semiconductors are called extrinsic semiconductors (the two cases of Fig. \ref{fig:intrisc-vs-extrinsic} in the center and on the right). \cite{libro-detectors}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.333\textwidth]{figures/pureGermanium_square.jpg}\hfill
-    \includegraphics[width=0.333\textwidth]{figures/nDopedGermanium_square}\hfill
-    \includegraphics[width=0.333\textwidth]{figures/pDopedGermanium_square.jpg}
-    \caption{Germanium lattice configurations: on the left the pure Germanium crystal, in the center and on the right n-doped and p-doped Germanium respectively. Original drawing.}
-    \label{fig:intrisc-vs-extrinsic}
-\end{figure}
-\subsection{Germanium diodes in LEGEND-200}
+Pentavalent elements called \textit{donors}, like Phosphor, inserted in a tetravalent semiconductor like Germanium produce an excess of conduction electrons with respect to the holes; this is called \textit{n-doping}. On the other hand, \textit{p-doping} consists on placing in the lattice trivalent atoms called \textit{acceptors}, like Boron, leading to an excess of holes. The overall crystal of the semiconductor remains electrically neutral, because donors and acceptors are nevertheless neutral atoms, but the available number of charge carriers, either holes or electrons, changes leading to a modification in the conduction properties of the semiconductor. Pure semiconductors are called intrinsic semiconductors, while doped semiconductors are called extrinsic semiconductors. \cite{libro-detectors}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.333\textwidth]{figures/pureGermanium_square.jpg}\hfill
+%     \includegraphics[width=0.333\textwidth]{figures/nDopedGermanium_square}\hfill
+%     \includegraphics[width=0.333\textwidth]{figures/pDopedGermanium_square.jpg}
+%     \caption{Germanium lattice configurations: on the left the pure Germanium crystal, in the center and on the right n-doped and p-doped Germanium respectively. Original drawing.}
+%     \label{fig:intrisc-vs-extrinsic}
+% \end{figure}
+
+% \subsection{Germanium diodes in LEGEND-200}
 When a p-type and an n-type semiconductor are joined within a single continuous crystal lattice, they form a fundamental interface known as a \textit{p-n junction}. Due to the steep concentration gradient at this boundary, majority charge carriers begin to diffuse across the junction: free electrons migrate from the n-side to the p-side, while holes diffuse in the opposite direction. As these mobile carriers cross the interface and recombine, they leave behind fixed, uncompensated ionized dopant atoms.
+This process creates a localized volume of mobile charge carriers, appropriately named the \textit{depletion region} (or space-charge region). The immobile ions within this region establish a built-in electric field that eventually opposes further carrier diffusion. Siad electric field intensifies When a bias voltage is applied to the ends of the p-n junction and reaches its maximum when the applied voltage is precisely the so-called depletion voltage.
+The p-n junction serves as the essential building block of modern semiconductor technology in its simplest two-terminal configuration within an electrical circuit; LEGEND Germanium detectors are exactly this type of semiconductor diode. Specifically, LEGEND diodes are built from a p-doped core where the p-n junction is formed with a highly doped n-type electrode, i.e. the \textit{n+} surface. The opposite part of the detector volume, on the contrary, is the so called \textit{p+}-doped contact. When a bias voltage is applied, a depletion region starts forming from the \textit{n+} part and reaches the \textit{p+} part when the voltage operation corresponds to the depletion voltage. 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{figures/diodi_legend.jpg}
+%     \caption{Original drawing of the depletion voltage application for LEGEND diodes.}
+%     \label{fig:diodes-legend}
+% \end{figure}
+% Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \textit{p+} part of the detector, as shown in Fig. \ref{fig:detectors-pINred}.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/PPC_section_frontale.png}\hfill
+%     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
+%     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
+%     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
+%     \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and IC detectors respectively. Rendering scripts are by D. Hervas.}
+%     \label{fig:detectors-pINred}
+% \end{figure}
+% In the final configuration shown in Fig. \ref{fig:diodes-legend}, 
 
-This process creates a localized volume of mobile charge carriers, appropriately named the \textit{depletion region} (or space-charge region). The immobile ions within this region establish a built-in electric field that eventually opposes further carrier diffusion, bringing the system into thermal equilibrium. The p-n junction serves as the essential building block of modern semiconductor technology; in its simplest two-terminal configuration within an electrical circuit, it operates as a \textit{diode}, a device that inherently allows current to flow in only one direction.
-
-Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \textit{p+} part of the detector, as shown in Fig. \ref{fig:detectors-pINred}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/PPC_section_frontale.png}\hfill
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
-    \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
-    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and IC detectors respectively. Rendering scripts are by D. Hervas.}
-    \label{fig:detectors-pINred}
-\end{figure}
+When the entire detector volume becomes active and sensitive to ionizing radiation. if an incoming particle or gamma ray deposits energy within this volume, electron-hole pairs are generated in proportion to the deposited energy (in germanium, creating a single \ac{eh} pair requires 2.76 eV). Driven by the electric field, holes drift toward the \textit{p+} contact and electrons toward the \textit{n+} contact, inducing a measurable signal.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/ramo-shockley/geometry_V08682A_edited.jpg}
+    \begin{tikzpicture}
+        % 1. Inserisce il PDF originale vettoriale
+        \node[anchor=south west, inner sep=0] (plot) at (0,0) {\includegraphics[width=\linewidth]{figures/ramo-shockley/geometry_V08682A-def.jpg}};
+        
+        % 2. Sovrappone il logo in alto a destra
+        % (Regola width=1.5cm e gli shift per adattarli alla dimensione del wrapfigure)
+        \node[anchor=north east, inner sep=0, xshift=-5pt, yshift=0pt] at (plot.north east) {\includegraphics[width=2cm]{figures/ramo-shockley/logo_SSD.jpg}};
+    \end{tikzpicture}
     \captionsetup{font=small}
     \caption{Geometry of the detector V08682A. Personally elaborated from LEGEND detector specifications using Julia-based SolidStateDetector software \cite{SSD-jl}.}
     \label{fig:V08682A}
 \end{wrapfigure}
-While the LEGEND-200 experiment employs all the detector geometries of Fig. \ref{fig:detectors-pINred}, the work presented in this thesis focuses exclusively on a single Inverted Coaxial (IC) detector, labelled V08682A. Its rendering is shown in Fig. \ref{fig:V08682A}. Said detector was manufactured by MIRION which ensures an ${}^{76}$Ge enrichment fraction of (90 $\pm$ 1) \%, its mass is $m = 3340~\text{g}$, it is $95.7~\text{mm}$ high. The complexive radius is $r = 45~\text{mm}$ while the radius of the \textit{p+} contact is $r_{\mathit{p+}} = 12~\text{mm}$. It operates at a bias voltage of V$ = 3500~\text{V}$, recommended by the LEGEND-200 site characterization to ensure full depletion with an adequate safety margin above the depletion voltage of~$3000~\text{V}$.
-Restricting the scope of the work solely to this detector allows for a robust initial validation of the proposed algorithm. Consequently, all the following physics principles, data analyses and algorithm implementations discussed herein are tailored specifically to IC V08682A. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. Its generalization to the remaining detectors of the array is left as a future prospect outside the boundaries of this work.
+While the LEGEND-200 experiment employs all the detector geometries of Fig. \ref{fig:detectors-pINred}, the work presented in this thesis focuses exclusively on a single Inverted Coaxial (IC) detector, labelled V08682A. Its rendering is shown in Fig. \ref{fig:V08682A}. Said detector was manufactured by MIRION which ensures an ${}^{76}$Ge enrichment fraction of (90 $\pm$ 1)\%, its mass is $m = 3340~\text{g}$, it is $95.7~\text{mm}$ high. The complexive radius is $r = 45~\text{mm}$ while the radius of the \textit{p+} contact, highlighted in blue in the picture, is $r_{\mathit{p+}} = 12~\text{mm}$. It operates at a bias voltage of V$ = 3500~\text{V}$, recommended by the LEGEND-200 site characterization with an adequate safety margin above the depletion voltage of~$3000~\text{V}$ to ensure the operation of the detector in full depletion condition which translates into maximal active volume.
+Restricting the scope of the work solely to this detector allows for a robust initial validation of the proposed algorithm. Consequently, all the following physics principles, data analyses and algorithm implementations discussed herein are tailored specifically to IC V08682A. The rationale behind this choice is methodological: the algorithm developed as the primary goal of this thesis requires robust initial validation on a specific, well-characterised detector. The generalization of all the steps to the remaining detectors is left as a future prospect outside the boundaries of this work.
 
 
 \subsection{Signal formation in Germanium detectors}
@@ -175,14 +191,3 @@ The analysis presented in this work is based on raw windowed waveforms, i.e. the
 
 
 
-\section{Pulse shape discrimination (PSD)}
-\label{sec:trditionalPSD}
-
-
-\subsection{Amplitude/Energy cut}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
-    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut. 90\% of the \ac{SSE} survives while almost all the \ac{MSE} are cut.}
-    \label{fig:dAoE_prl25}
-\end{figure}

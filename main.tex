@@ -9,6 +9,26 @@
 \usepackage{afterpage}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{titlesec, blindtext, color}
+\usepackage{lmodern}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+
+%----------------------------------------------------------------
+% LAYOUT CAPITOLI PERSONALIZZATO
+\newcommand{\chapterNumberSize}{\fontsize{62pt}{65pt}\selectfont}
+\newcommand{\chapterTitleSize}{\fontsize{36pt}{42pt}\selectfont}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\bfseries}
+  {\chapterNumberSize\thechapter\hsp
+    \textcolor{gray75}{\rule[-8pt]{3.5pt}{55pt}}\hsp
+  }
+  {0pt}
+  {\chapterTitleSize}
+\titlespacing*{\chapter}{0pt}{20pt}{40pt}
+% ----------------------------------------------------------------
+
 
 % --- MATEMATICA E SIMBOLI ---
 \usepackage{amssymb,amsmath,amsthm,amsfonts}
@@ -161,7 +181,7 @@
 \input{chapters/01_neutrino_physics.tex}
 \input{chapters/02_legend_experiment.tex}
 \input{chapters/03_legend_data.tex}
-\input{chapters/04_VAEimplementation.tex}
+\input{chapters/04_PSD.tex}
 \input{chapters/05_monaco_data.tex}
 \input{chapters/06_conclusions.tex}
 
