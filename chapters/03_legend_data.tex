@@ -49,7 +49,7 @@ The p-n junction serves as the essential building block of modern semiconductor 
 % \end{figure}
 % In the final configuration shown in Fig. \ref{fig:diodes-legend}, 
 
-When the entire detector volume becomes active and sensitive to ionizing radiation. if an incoming particle or gamma ray deposits energy within this volume, electron-hole pairs are generated in proportion to the deposited energy (in germanium, creating a single \ac{eh} pair requires 2.96 eV). Driven by the electric field, holes drift toward the \textit{p+} contact and electrons toward the \textit{n+} contact, inducing a measurable signal.
+When the entire detector volume becomes active and sensitive to ionizing radiation, if an incoming particle or gamma ray deposits energy within this volume, electron-hole pairs are generated in proportion to the deposited energy (in germanium, creating a single \ac{eh} pair requires 2.96 eV). Driven by the electric field, holes drift toward the \textit{p+} contact and electrons toward the \textit{n+} contact, inducing a measurable signal.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
     \centering
@@ -92,7 +92,6 @@ where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The t
 % As already sentenced above in Sec. \ref{subsec:Ge-detector-basics}, the work focuses on V08682A IC detector, therefore what follows is the analysis of the weighting field in this specific detector geometry. 
 IC detectors in LEGEND, feature a well on the opposite side of the p-contact to increase the electric field in the upper part of the detectors and make it possible to drift the charge. MIRION IC detectors, as the one considered in this work, exhibits a straight/tapered well, visible in Fig. \ref{fig:V08682A}. \cite{lnote_21003}
 
-The structure of an IC detector creates a region surrounding the \textit{p+} electrode with a very high weighting field, as is visible in Fig. \ref{fig:weighting}. This means that, when an \ac{eh} pair is produced, the pulse shape if the signal is almost entirely determined by the holes drifting towards the \textit{p+} contact, rather than the electron-induced one which can be considered negligible. In principle, the shape of the current signal varies depending on where the physical process happen with respect to the readout electrode; however, seeing that far away from the \textit{p+} electrode  the field is very low, which means that the current signal that is proportional to the field (see Eq. \ref{eq:carica-corrente-SR}) is negligible, we can assume that wherever the physical process happens, the real signal only starts when the hole is sufficiently near to the point contact. Nonetheless, if the event happens very close to the \textit{p+} electrode, holes rapidly drift to it. On top of that electrons are generated within the high-weighting-field region and induce a sizeable current while drifting away from it, before entering the region where $\text{E}_\text{w}$ is negligible. \cite{dissertationComellato}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{figures/ramo-shockley/V08682A_weighting_potential.pdf}\hfill
@@ -101,13 +100,23 @@ The structure of an IC detector creates a region surrounding the \textit{p+} ele
     \label{fig:weighting}
 \end{figure}
 
-\subsubsection{Events topology}
-\label{subsubsec:topology}
-What can make a difference between one signal and another regarding the shape of it, is how many energy depositions happen related to the same initial physical process; therefore how charges are generated in time with respect to the first energy deposition. This dependence is exploited to discriminate between different event topologies which correspond to different physical events.
+The structure of an IC detector creates a region surrounding the \textit{p+} electrode with a very high weighting field, as is visible in Fig. \ref{fig:weighting}. This means that, when an \ac{eh} pair is produced, the pulse shape if the signal is almost entirely determined by the holes drifting towards the \textit{p+} contact, rather than the electron-induced one which can be considered negligible. In principle, the shape of the current signal varies depending on where the physical process happen with respect to the readout electrode; however, seeing that far away from the \textit{p+} electrode  the field is very low, which means that the current signal that is proportional to the field (see Eq. \ref{eq:carica-corrente-SR}) is negligible, we can assume that wherever the physical process happens, the real signal only starts when the hole is sufficiently near to the point contact. Nonetheless, if the event happens very close to the \textit{p+} electrode, holes rapidly drift to it. On top of that electrons are generated within the high-weighting-field region and induce a sizeable current while drifting away from it, before entering the region where $\text{E}_\text{w}$ is negligible. \cite{dissertationComellato}
 
-If one wants to analyse the evolution in time of signals, they need to recall that when a physical event produces only one energy deposition and charges to be collected are produced all at once, the signal registered by the detector has a specific prompt shape, while multiple energy depositions linked to the very same physical process contribute to a more complex signal shape that develops in time. Specifically when a physical event produces an energy deposition all at once in the very same part of the detector, a so-called \ac{SSE} happens, meaning that all the charges that contribute to the signal are originated in the same place. On the other side, a physical process that produces different energy depositions because of multiple radiation interactions inside of the detector, such as multiple Compton scattering, leads to a \ac{MSE} signal. 
+\subsection{Events topology}
+\label{subsec:topology}
+The shape of the recorded signals depends on how many energy depositions are associated with the very same initial physical process and on how they are distributed in space and in time within the detector volume. This dependence makes it possible to discriminate between different event topologies, which in turn correspond to different underlying physical processes.
 
-On top of that, physical events that happen near the surface of the detector 
+When a physical event produces only one energy deposition, charge carriers are generated all at once in a single localised point in the detector and they drift along the same trajectory. The resulting signal registered by the detector has a simple, prompt shape. Such an event is referred to as a \ac{SSE}.
+Conversely when the same initial particle interacts several times at different positions inside the detector ---as in multiple Compton scattering---, the charge carriers are created at different locations in space and at different moment in time. All of these individual contributions superimpose with one another and produce a current signal with a more complex and temporally extended structure. Said events are referred to as \ac{MSE}.
+
+This distinction is precisely what makes pulse shape analysis a powerful background rejection method. In a neutrinoless double beta decay (0$\nu\beta\beta$), the two resulting electrons, that share the full Q$_{\beta\beta}$, have a range of the order of 1 mm in Germanium and would be rapidly absorbed originating a \ac{SSE}-like signal. 
+On the other hand, background processes with similar energies arise mainly from $\gamma$ interactions undergoing several Compton scattering before being totally absorbed and thus exhibits a \ac{MSE} topology. Hence, identifying \ac{SSE} behaviour with respect to \ac{MSE} means selecting signal-like events and rejecting \ac{MSE} which constitutes an important part of the LEGEND background.
+
+On top of that, physical events that happen near the surface of the detector,
+
+EVENTI DI SUPERFICIE DA SCRIVERE 
+
+Classifying events on the basis of the shape of their signal is the basis of \ac{PSD}, a powerful tool for signal-background discrimination that is the main focus of this thesis and will be detailed and developed in depth in Chapter \ref{chapter:PSD}.
 
 \newpage
 \section{Data acquisition and processing}
