@@ -373,9 +373,6 @@ INPUT chapters\A-app_three-flavours.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT chapters\B-app_neutrinosINmatter.aux
-INPUT .\chapters\C-raw_waveforms.aux
-INPUT .\chapters\C-raw_waveforms.aux
-INPUT chapters\C-raw_waveforms.aux
 OUTPUT main.aux
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
@@ -394,6 +391,8 @@ INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
@@ -554,8 +553,8 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
 OUTPUT main.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futbi8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm
@@ -820,26 +819,18 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
-INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_field.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_field.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_field.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_field.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_field.pdf
+INPUT .\figures\ramo-shockley\V08682A_weighting_field.pdf
 INPUT .\plots\wf_vs_windowed_wf.pdf
 INPUT .\plots\wf_vs_windowed_wf.pdf
 INPUT .\plots\wf_vs_windowed_wf.pdf
@@ -851,12 +842,32 @@ INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmtt10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
+INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\chapters\04_PSD.tex
 INPUT .\chapters\04_PSD.tex
 INPUT chapters\04_PSD.tex
-INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
 INPUT .\plots\energy_specrum-prl25-AoE_cut.pdf
@@ -920,9 +931,9 @@ INPUT .\plots\AoE_sse_vs_sse.pdf
 INPUT .\plots\AoE_sse_vs_sse.pdf
 INPUT .\plots\AoE_sse_vs_sse.pdf
 INPUT .\plots\AoE_sse_vs_sse.pdf
-INPUT .\chapters\05_monaco_data.tex
-INPUT .\chapters\05_monaco_data.tex
-INPUT chapters\05_monaco_data.tex
+INPUT .\chapters\05_denoising.tex
+INPUT .\chapters\05_denoising.tex
+INPUT chapters\05_denoising.tex
 INPUT .\chapters\06_conclusions.tex
 INPUT .\chapters\06_conclusions.tex
 INPUT chapters\06_conclusions.tex
@@ -932,12 +943,16 @@ OUTPUT chapters\A-app_three-flavours.aux
 INPUT .\chapters\A-app_three-flavours.tex
 INPUT .\chapters\A-app_three-flavours.tex
 INPUT chapters\A-app_three-flavours.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8t.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
 INPUT .\chapters\B-app_neutrinosINmatter.tex
 INPUT .\chapters\B-app_neutrinosINmatter.tex
@@ -951,298 +966,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmiib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
-INPUT .\chapters\C-raw_waveforms.tex
-INPUT .\chapters\C-raw_waveforms.tex
-OUTPUT chapters\C-raw_waveforms.aux
-INPUT .\chapters\C-raw_waveforms.tex
-INPUT .\chapters\C-raw_waveforms.tex
-INPUT chapters\C-raw_waveforms.tex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
-INPUT .\plots\raw_wf_examples\p03_r000.png
-INPUT .\plots\raw_wf_examples\p03_r000.png
-INPUT .\plots\raw_wf_examples\p03_r000.png
-INPUT .\plots\raw_wf_examples\p03_r000.png
-INPUT .\plots\raw_wf_examples\p03_r000.png
-INPUT .\plots\raw_wf_examples\p03_r000.png
-INPUT .\plots\raw_wf_examples\p03_r001.png
-INPUT .\plots\raw_wf_examples\p03_r001.png
-INPUT .\plots\raw_wf_examples\p03_r001.png
-INPUT .\plots\raw_wf_examples\p03_r001.png
-INPUT .\plots\raw_wf_examples\p03_r001.png
-INPUT .\plots\raw_wf_examples\p03_r001.png
-INPUT .\plots\raw_wf_examples\p03_r002.png
-INPUT .\plots\raw_wf_examples\p03_r002.png
-INPUT .\plots\raw_wf_examples\p03_r002.png
-INPUT .\plots\raw_wf_examples\p03_r002.png
-INPUT .\plots\raw_wf_examples\p03_r002.png
-INPUT .\plots\raw_wf_examples\p03_r002.png
-INPUT .\plots\raw_wf_examples\p03_r003.png
-INPUT .\plots\raw_wf_examples\p03_r003.png
-INPUT .\plots\raw_wf_examples\p03_r003.png
-INPUT .\plots\raw_wf_examples\p03_r003.png
-INPUT .\plots\raw_wf_examples\p03_r003.png
-INPUT .\plots\raw_wf_examples\p03_r003.png
-INPUT .\plots\raw_wf_examples\p03_r004.png
-INPUT .\plots\raw_wf_examples\p03_r004.png
-INPUT .\plots\raw_wf_examples\p03_r004.png
-INPUT .\plots\raw_wf_examples\p03_r004.png
-INPUT .\plots\raw_wf_examples\p03_r004.png
-INPUT .\plots\raw_wf_examples\p03_r004.png
-INPUT .\plots\raw_wf_examples\p03_r005.png
-INPUT .\plots\raw_wf_examples\p03_r005.png
-INPUT .\plots\raw_wf_examples\p03_r005.png
-INPUT .\plots\raw_wf_examples\p03_r005.png
-INPUT .\plots\raw_wf_examples\p03_r005.png
-INPUT .\plots\raw_wf_examples\p03_r005.png
-INPUT .\plots\raw_wf_examples\p04_r000.png
-INPUT .\plots\raw_wf_examples\p04_r000.png
-INPUT .\plots\raw_wf_examples\p04_r000.png
-INPUT .\plots\raw_wf_examples\p04_r000.png
-INPUT .\plots\raw_wf_examples\p04_r000.png
-INPUT .\plots\raw_wf_examples\p04_r000.png
-INPUT .\plots\raw_wf_examples\p04_r001.png
-INPUT .\plots\raw_wf_examples\p04_r001.png
-INPUT .\plots\raw_wf_examples\p04_r001.png
-INPUT .\plots\raw_wf_examples\p04_r001.png
-INPUT .\plots\raw_wf_examples\p04_r001.png
-INPUT .\plots\raw_wf_examples\p04_r001.png
-INPUT .\plots\raw_wf_examples\p04_r002.png
-INPUT .\plots\raw_wf_examples\p04_r002.png
-INPUT .\plots\raw_wf_examples\p04_r002.png
-INPUT .\plots\raw_wf_examples\p04_r002.png
-INPUT .\plots\raw_wf_examples\p04_r002.png
-INPUT .\plots\raw_wf_examples\p04_r002.png
-INPUT .\plots\raw_wf_examples\p04_r003.png
-INPUT .\plots\raw_wf_examples\p04_r003.png
-INPUT .\plots\raw_wf_examples\p04_r003.png
-INPUT .\plots\raw_wf_examples\p04_r003.png
-INPUT .\plots\raw_wf_examples\p04_r003.png
-INPUT .\plots\raw_wf_examples\p04_r003.png
-INPUT .\plots\raw_wf_examples\p04_r004.png
-INPUT .\plots\raw_wf_examples\p04_r004.png
-INPUT .\plots\raw_wf_examples\p04_r004.png
-INPUT .\plots\raw_wf_examples\p04_r004.png
-INPUT .\plots\raw_wf_examples\p04_r004.png
-INPUT .\plots\raw_wf_examples\p04_r004.png
-INPUT .\plots\raw_wf_examples\p06_r000.png
-INPUT .\plots\raw_wf_examples\p06_r000.png
-INPUT .\plots\raw_wf_examples\p06_r000.png
-INPUT .\plots\raw_wf_examples\p06_r000.png
-INPUT .\plots\raw_wf_examples\p06_r000.png
-INPUT .\plots\raw_wf_examples\p06_r000.png
-INPUT .\plots\raw_wf_examples\p06_r001.png
-INPUT .\plots\raw_wf_examples\p06_r001.png
-INPUT .\plots\raw_wf_examples\p06_r001.png
-INPUT .\plots\raw_wf_examples\p06_r001.png
-INPUT .\plots\raw_wf_examples\p06_r001.png
-INPUT .\plots\raw_wf_examples\p06_r001.png
-INPUT .\plots\raw_wf_examples\p06_r002.png
-INPUT .\plots\raw_wf_examples\p06_r002.png
-INPUT .\plots\raw_wf_examples\p06_r002.png
-INPUT .\plots\raw_wf_examples\p06_r002.png
-INPUT .\plots\raw_wf_examples\p06_r002.png
-INPUT .\plots\raw_wf_examples\p06_r002.png
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futbi8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm
-INPUT .\plots\raw_wf_examples\p06_r003.png
-INPUT .\plots\raw_wf_examples\p06_r003.png
-INPUT .\plots\raw_wf_examples\p06_r003.png
-INPUT .\plots\raw_wf_examples\p06_r003.png
-INPUT .\plots\raw_wf_examples\p06_r003.png
-INPUT .\plots\raw_wf_examples\p06_r003.png
-INPUT .\plots\raw_wf_examples\p06_r004.png
-INPUT .\plots\raw_wf_examples\p06_r004.png
-INPUT .\plots\raw_wf_examples\p06_r004.png
-INPUT .\plots\raw_wf_examples\p06_r004.png
-INPUT .\plots\raw_wf_examples\p06_r004.png
-INPUT .\plots\raw_wf_examples\p06_r004.png
-INPUT .\plots\raw_wf_examples\p06_r005.png
-INPUT .\plots\raw_wf_examples\p06_r005.png
-INPUT .\plots\raw_wf_examples\p06_r005.png
-INPUT .\plots\raw_wf_examples\p06_r005.png
-INPUT .\plots\raw_wf_examples\p06_r005.png
-INPUT .\plots\raw_wf_examples\p06_r005.png
-INPUT .\plots\raw_wf_examples\p07_r002.png
-INPUT .\plots\raw_wf_examples\p07_r002.png
-INPUT .\plots\raw_wf_examples\p07_r002.png
-INPUT .\plots\raw_wf_examples\p07_r002.png
-INPUT .\plots\raw_wf_examples\p07_r002.png
-INPUT .\plots\raw_wf_examples\p07_r002.png
-INPUT .\plots\raw_wf_examples\p07_r003.png
-INPUT .\plots\raw_wf_examples\p07_r003.png
-INPUT .\plots\raw_wf_examples\p07_r003.png
-INPUT .\plots\raw_wf_examples\p07_r003.png
-INPUT .\plots\raw_wf_examples\p07_r003.png
-INPUT .\plots\raw_wf_examples\p07_r003.png
-INPUT .\plots\raw_wf_examples\p07_r004.png
-INPUT .\plots\raw_wf_examples\p07_r004.png
-INPUT .\plots\raw_wf_examples\p07_r004.png
-INPUT .\plots\raw_wf_examples\p07_r004.png
-INPUT .\plots\raw_wf_examples\p07_r004.png
-INPUT .\plots\raw_wf_examples\p07_r004.png
-INPUT .\plots\raw_wf_examples\p07_r005.png
-INPUT .\plots\raw_wf_examples\p07_r005.png
-INPUT .\plots\raw_wf_examples\p07_r005.png
-INPUT .\plots\raw_wf_examples\p07_r005.png
-INPUT .\plots\raw_wf_examples\p07_r005.png
-INPUT .\plots\raw_wf_examples\p07_r005.png
-INPUT .\plots\raw_wf_examples\p07_r006.png
-INPUT .\plots\raw_wf_examples\p07_r006.png
-INPUT .\plots\raw_wf_examples\p07_r006.png
-INPUT .\plots\raw_wf_examples\p07_r006.png
-INPUT .\plots\raw_wf_examples\p07_r006.png
-INPUT .\plots\raw_wf_examples\p07_r006.png
-INPUT .\plots\raw_wf_examples\p07_r007.png
-INPUT .\plots\raw_wf_examples\p07_r007.png
-INPUT .\plots\raw_wf_examples\p07_r007.png
-INPUT .\plots\raw_wf_examples\p07_r007.png
-INPUT .\plots\raw_wf_examples\p07_r007.png
-INPUT .\plots\raw_wf_examples\p07_r007.png
-INPUT .\plots\raw_wf_examples\p07_r008.png
-INPUT .\plots\raw_wf_examples\p07_r008.png
-INPUT .\plots\raw_wf_examples\p07_r008.png
-INPUT .\plots\raw_wf_examples\p07_r008.png
-INPUT .\plots\raw_wf_examples\p07_r008.png
-INPUT .\plots\raw_wf_examples\p07_r008.png
-INPUT .\plots\raw_wf_examples\p08_r000.png
-INPUT .\plots\raw_wf_examples\p08_r000.png
-INPUT .\plots\raw_wf_examples\p08_r000.png
-INPUT .\plots\raw_wf_examples\p08_r000.png
-INPUT .\plots\raw_wf_examples\p08_r000.png
-INPUT .\plots\raw_wf_examples\p08_r000.png
-INPUT .\plots\raw_wf_examples\p08_r001.png
-INPUT .\plots\raw_wf_examples\p08_r001.png
-INPUT .\plots\raw_wf_examples\p08_r001.png
-INPUT .\plots\raw_wf_examples\p08_r001.png
-INPUT .\plots\raw_wf_examples\p08_r001.png
-INPUT .\plots\raw_wf_examples\p08_r001.png
-INPUT .\plots\raw_wf_examples\p08_r002.png
-INPUT .\plots\raw_wf_examples\p08_r002.png
-INPUT .\plots\raw_wf_examples\p08_r002.png
-INPUT .\plots\raw_wf_examples\p08_r002.png
-INPUT .\plots\raw_wf_examples\p08_r002.png
-INPUT .\plots\raw_wf_examples\p08_r002.png
-INPUT .\plots\raw_wf_examples\p08_r003.png
-INPUT .\plots\raw_wf_examples\p08_r003.png
-INPUT .\plots\raw_wf_examples\p08_r003.png
-INPUT .\plots\raw_wf_examples\p08_r003.png
-INPUT .\plots\raw_wf_examples\p08_r003.png
-INPUT .\plots\raw_wf_examples\p08_r003.png
-INPUT .\plots\raw_wf_examples\p08_r004.png
-INPUT .\plots\raw_wf_examples\p08_r004.png
-INPUT .\plots\raw_wf_examples\p08_r004.png
-INPUT .\plots\raw_wf_examples\p08_r004.png
-INPUT .\plots\raw_wf_examples\p08_r004.png
-INPUT .\plots\raw_wf_examples\p08_r004.png
-INPUT .\plots\raw_wf_examples\p08_r005.png
-INPUT .\plots\raw_wf_examples\p08_r005.png
-INPUT .\plots\raw_wf_examples\p08_r005.png
-INPUT .\plots\raw_wf_examples\p08_r005.png
-INPUT .\plots\raw_wf_examples\p08_r005.png
-INPUT .\plots\raw_wf_examples\p08_r005.png
-INPUT .\plots\raw_wf_examples\p08_r006.png
-INPUT .\plots\raw_wf_examples\p08_r006.png
-INPUT .\plots\raw_wf_examples\p08_r006.png
-INPUT .\plots\raw_wf_examples\p08_r006.png
-INPUT .\plots\raw_wf_examples\p08_r006.png
-INPUT .\plots\raw_wf_examples\p08_r006.png
-INPUT .\plots\raw_wf_examples\p08_r007.png
-INPUT .\plots\raw_wf_examples\p08_r007.png
-INPUT .\plots\raw_wf_examples\p08_r007.png
-INPUT .\plots\raw_wf_examples\p08_r007.png
-INPUT .\plots\raw_wf_examples\p08_r007.png
-INPUT .\plots\raw_wf_examples\p08_r007.png
-INPUT .\plots\raw_wf_examples\p08_r008.png
-INPUT .\plots\raw_wf_examples\p08_r008.png
-INPUT .\plots\raw_wf_examples\p08_r008.png
-INPUT .\plots\raw_wf_examples\p08_r008.png
-INPUT .\plots\raw_wf_examples\p08_r008.png
-INPUT .\plots\raw_wf_examples\p08_r008.png
-INPUT .\plots\raw_wf_examples\p08_r009.png
-INPUT .\plots\raw_wf_examples\p08_r009.png
-INPUT .\plots\raw_wf_examples\p08_r009.png
-INPUT .\plots\raw_wf_examples\p08_r009.png
-INPUT .\plots\raw_wf_examples\p08_r009.png
-INPUT .\plots\raw_wf_examples\p08_r009.png
-INPUT .\plots\raw_wf_examples\p08_r010.png
-INPUT .\plots\raw_wf_examples\p08_r010.png
-INPUT .\plots\raw_wf_examples\p08_r010.png
-INPUT .\plots\raw_wf_examples\p08_r010.png
-INPUT .\plots\raw_wf_examples\p08_r010.png
-INPUT .\plots\raw_wf_examples\p08_r010.png
-INPUT .\plots\raw_wf_examples\p08_r011.png
-INPUT .\plots\raw_wf_examples\p08_r011.png
-INPUT .\plots\raw_wf_examples\p08_r011.png
-INPUT .\plots\raw_wf_examples\p08_r011.png
-INPUT .\plots\raw_wf_examples\p08_r011.png
-INPUT .\plots\raw_wf_examples\p08_r011.png
-INPUT .\plots\raw_wf_examples\p08_r012.png
-INPUT .\plots\raw_wf_examples\p08_r012.png
-INPUT .\plots\raw_wf_examples\p08_r012.png
-INPUT .\plots\raw_wf_examples\p08_r012.png
-INPUT .\plots\raw_wf_examples\p08_r012.png
-INPUT .\plots\raw_wf_examples\p08_r012.png
-INPUT .\plots\raw_wf_examples\p08_r013.png
-INPUT .\plots\raw_wf_examples\p08_r013.png
-INPUT .\plots\raw_wf_examples\p08_r013.png
-INPUT .\plots\raw_wf_examples\p08_r013.png
-INPUT .\plots\raw_wf_examples\p08_r013.png
-INPUT .\plots\raw_wf_examples\p08_r013.png
-INPUT .\plots\raw_wf_examples\p08_r014.png
-INPUT .\plots\raw_wf_examples\p08_r014.png
-INPUT .\plots\raw_wf_examples\p08_r014.png
-INPUT .\plots\raw_wf_examples\p08_r014.png
-INPUT .\plots\raw_wf_examples\p08_r014.png
-INPUT .\plots\raw_wf_examples\p08_r014.png
-INPUT .\plots\raw_wf_examples\p08_r015.png
-INPUT .\plots\raw_wf_examples\p08_r015.png
-INPUT .\plots\raw_wf_examples\p08_r015.png
-INPUT .\plots\raw_wf_examples\p08_r015.png
-INPUT .\plots\raw_wf_examples\p08_r015.png
-INPUT .\plots\raw_wf_examples\p08_r015.png
-INPUT .\plots\raw_wf_examples\p09_r000.png
-INPUT .\plots\raw_wf_examples\p09_r000.png
-INPUT .\plots\raw_wf_examples\p09_r000.png
-INPUT .\plots\raw_wf_examples\p09_r000.png
-INPUT .\plots\raw_wf_examples\p09_r000.png
-INPUT .\plots\raw_wf_examples\p09_r000.png
-INPUT .\plots\raw_wf_examples\p09_r001.png
-INPUT .\plots\raw_wf_examples\p09_r001.png
-INPUT .\plots\raw_wf_examples\p09_r001.png
-INPUT .\plots\raw_wf_examples\p09_r001.png
-INPUT .\plots\raw_wf_examples\p09_r001.png
-INPUT .\plots\raw_wf_examples\p09_r001.png
-INPUT .\plots\raw_wf_examples\p09_r002.png
-INPUT .\plots\raw_wf_examples\p09_r002.png
-INPUT .\plots\raw_wf_examples\p09_r002.png
-INPUT .\plots\raw_wf_examples\p09_r002.png
-INPUT .\plots\raw_wf_examples\p09_r002.png
-INPUT .\plots\raw_wf_examples\p09_r002.png
-INPUT .\plots\raw_wf_examples\p09_r003.png
-INPUT .\plots\raw_wf_examples\p09_r003.png
-INPUT .\plots\raw_wf_examples\p09_r003.png
-INPUT .\plots\raw_wf_examples\p09_r003.png
-INPUT .\plots\raw_wf_examples\p09_r003.png
-INPUT .\plots\raw_wf_examples\p09_r003.png
-INPUT .\plots\raw_wf_examples\p09_r004.png
-INPUT .\plots\raw_wf_examples\p09_r004.png
-INPUT .\plots\raw_wf_examples\p09_r004.png
-INPUT .\plots\raw_wf_examples\p09_r004.png
-INPUT .\plots\raw_wf_examples\p09_r004.png
-INPUT .\plots\raw_wf_examples\p09_r004.png
-INPUT .\plots\raw_wf_examples\p09_r005.png
-INPUT .\plots\raw_wf_examples\p09_r005.png
-INPUT .\plots\raw_wf_examples\p09_r005.png
-INPUT .\plots\raw_wf_examples\p09_r005.png
-INPUT .\plots\raw_wf_examples\p09_r005.png
-INPUT .\plots\raw_wf_examples\p09_r005.png
-INPUT .\plots\raw_wf_examples\p09_r006.png
-INPUT .\plots\raw_wf_examples\p09_r006.png
-INPUT .\plots\raw_wf_examples\p09_r006.png
-INPUT .\plots\raw_wf_examples\p09_r006.png
-INPUT .\plots\raw_wf_examples\p09_r006.png
-INPUT .\plots\raw_wf_examples\p09_r006.png
 INPUT main.aux
 INPUT .\chapters\A-app_three-flavours.aux
 INPUT .\chapters\A-app_three-flavours.aux
@@ -1250,9 +973,6 @@ INPUT chapters\A-app_three-flavours.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT .\chapters\B-app_neutrinosINmatter.aux
 INPUT chapters\B-app_neutrinosINmatter.aux
-INPUT .\chapters\C-raw_waveforms.aux
-INPUT .\chapters\C-raw_waveforms.aux
-INPUT chapters\C-raw_waveforms.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml

@@ -27,13 +27,14 @@
 \contentsline {chapter}{\numberline {3}LEGEND data}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Detector physics and signal formation}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Germanium detectors basics}{21}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Signal formation in Germanium detectors}{22}{subsection.3.1.2}%
-\contentsline {subsubsection}{The Ramo-Schokley theorem}{22}{subsubsection*.20}%
+\contentsline {subsection}{\numberline {3.1.2}Signal formation in Germanium detectors}{23}{subsection.3.1.2}%
+\contentsline {subsubsection}{The Shockley-Ramo theorem}{23}{subsubsection*.20}%
 \contentsline {subsubsection}{IC weighting field}{23}{subsubsection*.21}%
-\contentsline {subsubsection}{Events topology}{23}{subsubsection*.22}%
+\contentsline {subsubsection}{Events topology}{24}{subsubsection*.23}%
 \contentsline {section}{\numberline {3.2}Data acquisition and processing}{25}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Readout electronics}{25}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Data structure of the LEGEND-200 phase}{26}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Data structure of the LEGEND-200 phase}{25}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Calibration data}{26}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Pulse shape discrimination}{29}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Traditional \ac {PSD}}{29}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Amplitude/Energy cut}{29}{subsection.4.1.1}%
@@ -41,10 +42,9 @@
 \contentsline {subsection}{\numberline {4.2.1}Data cleaning}{30}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Model implementation}{33}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Results}{33}{subsection.4.2.3}%
-\contentsline {chapter}{\numberline {5}Monaco data}{35}{chapter.5}%
+\contentsline {chapter}{\numberline {5}Data denoising}{35}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Conclusions}{37}{chapter.6}%
-\contentsline {chapter}{Acknowledgments}{39}{chapter*.31}%
+\contentsline {chapter}{Acknowledgments}{39}{chapter*.32}%
 \contentsline {chapter}{\numberline {A}Three-flavour neutrino oscillation}{41}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Mathematical derivation of the Mikheyev-Smirnov-Wolfenstein effect}{45}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Waveforms examples of the \textit {prl25} calibration data release}{49}{appendix.C}%
-\contentsline {chapter}{Bibliography}{53}{appendix*.32}%
+\contentsline {chapter}{\numberline {B}Mathematical derivation of the\\Mikheyev-Smirnov-Wolfenstein\\effect}{45}{appendix.B}%
+\contentsline {chapter}{Bibliography}{49}{appendix*.33}%
