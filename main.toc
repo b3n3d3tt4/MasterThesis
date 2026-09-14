@@ -35,7 +35,7 @@
 \contentsline {subsection}{\numberline {3.2.1}Readout electronics}{25}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Data structure of the LEGEND-200 phase}{25}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Calibration data}{26}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Pulse shape discrimination}{29}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Pulse Shape Discrimination}{29}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Traditional \ac {PSD}}{29}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Amplitude/Energy cut}{29}{subsection.4.1.1}%
 \contentsline {section}{\numberline {4.2}Deep learning \ac {PSD}}{29}{section.4.2}%

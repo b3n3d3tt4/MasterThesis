@@ -57,6 +57,38 @@
       \verb 1606.07538
       \endverb
     \endentry
+    \entry{L1000-design}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=000d895fb5214b3bfc9411adf9f4be12}{%
+           family={Abgrall},
+           familyi={A\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{fullhash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{fullhashraw}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{bibnamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorbibnamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authornamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorfullhash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorfullhashraw}{ad8388d84a36295a3709be988b0bfdb5}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.ins-det}
+      \field{eprinttype}{arXiv}
+      \field{month}{7}
+      \field{title}{{The Large Enriched Germanium Experiment for Neutrinoless $\beta\beta$ Decay}: {LEGEND-1000 Preconceptual Design Report}}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2107.11462
+      \endverb
+    \endentry
     \entry{LEGEND:introSetup}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -96,6 +128,7 @@
       \strng{editornamehash}{75746cdf0c8925e63ee1e21827b1314e}
       \strng{editorfullhash}{75746cdf0c8925e63ee1e21827b1314e}
       \strng{editorfullhashraw}{75746cdf0c8925e63ee1e21827b1314e}
+      \field{extraname}{2}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}

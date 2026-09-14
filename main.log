@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  13 SEP 2026 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  14 SEP 2026 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -831,11 +831,13 @@ Loading module `upgrade' ...
 \c@g@acro@LGDO@int=\count396
 \c@g@acro@DAQ@int=\count397
 \c@g@acro@FADC@int=\count398
+\c@g@acro@ROI@int=\count399
+\c@g@acro@DCR@int=\count400
 ) (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
  (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count399
+\lrq@indent=\count401
  (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
@@ -844,49 +846,49 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count400
-\c@listtotal=\count401
-\c@listcount=\count402
-\c@liststart=\count403
-\c@liststop=\count404
-\c@citecount=\count405
-\c@citetotal=\count406
-\c@multicitecount=\count407
-\c@multicitetotal=\count408
-\c@instcount=\count409
-\c@maxnames=\count410
-\c@minnames=\count411
-\c@maxitems=\count412
-\c@minitems=\count413
-\c@citecounter=\count414
-\c@maxcitecounter=\count415
-\c@savedcitecounter=\count416
-\c@uniquelist=\count417
-\c@uniquename=\count418
-\c@refsection=\count419
-\c@refsegment=\count420
-\c@maxextratitle=\count421
-\c@maxextratitleyear=\count422
-\c@maxextraname=\count423
-\c@maxextradate=\count424
-\c@maxextraalpha=\count425
-\c@abbrvpenalty=\count426
-\c@highnamepenalty=\count427
-\c@lownamepenalty=\count428
-\c@maxparens=\count429
-\c@parenlevel=\count430
-\blx@tempcnta=\count431
-\blx@tempcntb=\count432
-\blx@tempcntc=\count433
-\c@blx@maxsection=\count434
-\blx@maxsegment@0=\count435
-\blx@notetype=\count436
-\blx@parenlevel@text=\count437
-\blx@parenlevel@foot=\count438
-\blx@sectionciteorder@0=\count439
-\blx@sectionciteorderinternal@0=\count440
-\blx@entrysetcounter=\count441
-\blx@biblioinstance=\count442
+\c@tabx@nest=\count402
+\c@listtotal=\count403
+\c@listcount=\count404
+\c@liststart=\count405
+\c@liststop=\count406
+\c@citecount=\count407
+\c@citetotal=\count408
+\c@multicitecount=\count409
+\c@multicitetotal=\count410
+\c@instcount=\count411
+\c@maxnames=\count412
+\c@minnames=\count413
+\c@maxitems=\count414
+\c@minitems=\count415
+\c@citecounter=\count416
+\c@maxcitecounter=\count417
+\c@savedcitecounter=\count418
+\c@uniquelist=\count419
+\c@uniquename=\count420
+\c@refsection=\count421
+\c@refsegment=\count422
+\c@maxextratitle=\count423
+\c@maxextratitleyear=\count424
+\c@maxextraname=\count425
+\c@maxextradate=\count426
+\c@maxextraalpha=\count427
+\c@abbrvpenalty=\count428
+\c@highnamepenalty=\count429
+\c@lownamepenalty=\count430
+\c@maxparens=\count431
+\c@parenlevel=\count432
+\blx@tempcnta=\count433
+\blx@tempcntb=\count434
+\blx@tempcntc=\count435
+\c@blx@maxsection=\count436
+\blx@maxsegment@0=\count437
+\blx@notetype=\count438
+\blx@parenlevel@text=\count439
+\blx@parenlevel@foot=\count440
+\blx@sectionciteorder@0=\count441
+\blx@sectionciteorderinternal@0=\count442
+\blx@entrysetcounter=\count443
+\blx@biblioinstance=\count444
 \labelnumberwidth=\skip63
 \labelalphawidth=\skip64
 \biblabelsep=\skip65
@@ -898,9 +900,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read4
 \blx@bcfout=\write5
 \blx@langwohyphens=\language80
-\c@mincomprange=\count443
-\c@maxcomprange=\count444
-\c@mincompwidth=\count445
+\c@mincomprange=\count445
+\c@maxcomprange=\count446
+\c@mincompwidth=\count447
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def
@@ -910,74 +912,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count446
-\c@savedafterword=\count447
-\c@annotator=\count448
-\c@savedannotator=\count449
-\c@author=\count450
-\c@savedauthor=\count451
-\c@bookauthor=\count452
-\c@savedbookauthor=\count453
-\c@commentator=\count454
-\c@savedcommentator=\count455
-\c@editor=\count456
-\c@savededitor=\count457
-\c@editora=\count458
-\c@savededitora=\count459
-\c@editorb=\count460
-\c@savededitorb=\count461
-\c@editorc=\count462
-\c@savededitorc=\count463
-\c@foreword=\count464
-\c@savedforeword=\count465
-\c@holder=\count466
-\c@savedholder=\count467
-\c@introduction=\count468
-\c@savedintroduction=\count469
-\c@namea=\count470
-\c@savednamea=\count471
-\c@nameb=\count472
-\c@savednameb=\count473
-\c@namec=\count474
-\c@savednamec=\count475
-\c@translator=\count476
-\c@savedtranslator=\count477
-\c@shortauthor=\count478
-\c@savedshortauthor=\count479
-\c@shorteditor=\count480
-\c@savedshorteditor=\count481
-\c@labelname=\count482
-\c@savedlabelname=\count483
-\c@institution=\count484
-\c@savedinstitution=\count485
-\c@lista=\count486
-\c@savedlista=\count487
-\c@listb=\count488
-\c@savedlistb=\count489
-\c@listc=\count490
-\c@savedlistc=\count491
-\c@listd=\count492
-\c@savedlistd=\count493
-\c@liste=\count494
-\c@savedliste=\count495
-\c@listf=\count496
-\c@savedlistf=\count497
-\c@location=\count498
-\c@savedlocation=\count499
-\c@organization=\count500
-\c@savedorganization=\count501
-\c@origlocation=\count502
-\c@savedoriglocation=\count503
-\c@origpublisher=\count504
-\c@savedorigpublisher=\count505
-\c@publisher=\count506
-\c@savedpublisher=\count507
-\c@language=\count508
-\c@savedlanguage=\count509
-\c@origlanguage=\count510
-\c@savedoriglanguage=\count511
-\c@pageref=\count512
-\c@savedpageref=\count513
+\c@afterword=\count448
+\c@savedafterword=\count449
+\c@annotator=\count450
+\c@savedannotator=\count451
+\c@author=\count452
+\c@savedauthor=\count453
+\c@bookauthor=\count454
+\c@savedbookauthor=\count455
+\c@commentator=\count456
+\c@savedcommentator=\count457
+\c@editor=\count458
+\c@savededitor=\count459
+\c@editora=\count460
+\c@savededitora=\count461
+\c@editorb=\count462
+\c@savededitorb=\count463
+\c@editorc=\count464
+\c@savededitorc=\count465
+\c@foreword=\count466
+\c@savedforeword=\count467
+\c@holder=\count468
+\c@savedholder=\count469
+\c@introduction=\count470
+\c@savedintroduction=\count471
+\c@namea=\count472
+\c@savednamea=\count473
+\c@nameb=\count474
+\c@savednameb=\count475
+\c@namec=\count476
+\c@savednamec=\count477
+\c@translator=\count478
+\c@savedtranslator=\count479
+\c@shortauthor=\count480
+\c@savedshortauthor=\count481
+\c@shorteditor=\count482
+\c@savedshorteditor=\count483
+\c@labelname=\count484
+\c@savedlabelname=\count485
+\c@institution=\count486
+\c@savedinstitution=\count487
+\c@lista=\count488
+\c@savedlista=\count489
+\c@listb=\count490
+\c@savedlistb=\count491
+\c@listc=\count492
+\c@savedlistc=\count493
+\c@listd=\count494
+\c@savedlistd=\count495
+\c@liste=\count496
+\c@savedliste=\count497
+\c@listf=\count498
+\c@savedlistf=\count499
+\c@location=\count500
+\c@savedlocation=\count501
+\c@organization=\count502
+\c@savedorganization=\count503
+\c@origlocation=\count504
+\c@savedoriglocation=\count505
+\c@origpublisher=\count506
+\c@savedorigpublisher=\count507
+\c@publisher=\count508
+\c@savedpublisher=\count509
+\c@language=\count510
+\c@savedlanguage=\count511
+\c@origlanguage=\count512
+\c@savedoriglanguage=\count513
+\c@pageref=\count514
+\c@savedpageref=\count515
 \shorthandwidth=\skip71
 \shortjournalwidth=\skip72
 \shortserieswidth=\skip73
@@ -1001,19 +1003,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count514
-\c@textcitetotal=\count515
-\c@textcitemaxnames=\count516
-\c@biburlbigbreakpenalty=\count517
-\c@biburlbreakpenalty=\count518
-\c@biburlnumpenalty=\count519
-\c@biburlucpenalty=\count520
-\c@biburllcpenalty=\count521
+\c@textcitecount=\count516
+\c@textcitetotal=\count517
+\c@textcitemaxnames=\count518
+\c@biburlbigbreakpenalty=\count519
+\c@biburlbreakpenalty=\count520
+\c@biburlnumpenalty=\count521
+\c@biburlucpenalty=\count522
+\c@biburllcpenalty=\count523
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count522
+\c@smartand=\count524
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1023,8 +1025,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count523
-\c@bbx:relatedtotal=\count524
+\c@bbx:relatedcount=\count525
+\c@bbx:relatedtotal=\count526
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1089,13 +1091,13 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count525
+\c@section@level=\count527
 ) (C:\Program Files\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen317
-\Hy@linkcounter=\count526
-\Hy@pagecounter=\count527
+\Hy@linkcounter=\count528
+\Hy@pagecounter=\count529
  (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -1103,7 +1105,7 @@ Now handling font encoding PD1 ...
 ) (C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count528
+\Hy@SavedSpaceFactor=\count530
  (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1117,7 +1119,7 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count529
+\c@Hy@tempcnt=\count531
 LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen318
  (C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
@@ -1125,7 +1127,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count530
+\Fld@menulength=\count532
 \Field@Width=\dimen319
 \Fld@charsize=\dimen320
 Package hyperref Info: Hyper figures OFF on input line 6042.
@@ -1139,9 +1141,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count531
-\c@Item=\count532
-\c@Hfootnote=\count533
+\Hy@abspage=\count533
+\c@Item=\count534
+\c@Hfootnote=\count535
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -1150,8 +1152,8 @@ File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count534
-\c@bookmark@seq@number=\count535
+\Fld@listcount=\count536
+\c@bookmark@seq@number=\count537
  (C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
@@ -1245,16 +1247,16 @@ LaTeX Font Info:    ... okay on input line 92.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count536
+\scratchcounter=\count538
 \scratchdimen=\dimen321
 \scratchbox=\box77
-\nofMPsegments=\count537
-\nofMParguments=\count538
+\nofMPsegments=\count539
+\nofMParguments=\count540
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count539
+\MPscratchCnt=\count541
 \MPscratchDim=\dimen322
-\MPnumerator=\count540
-\makeMPintoPDFobject=\count541
+\MPnumerator=\count542
+\makeMPintoPDFobject=\count543
 \everyMPtoPDFconversion=\toks56
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1268,7 +1270,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 92.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 92.
-\c@lstlisting=\count542
+\c@lstlisting=\count544
  (C:\Program Files\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
@@ -1401,7 +1403,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 
 ]
-<figures/neutrino-fluxes.png, id=330, 637.1805pt x 454.69875pt>
+<figures/neutrino-fluxes.png, id=332, 637.1805pt x 454.69875pt>
 File: figures/neutrino-fluxes.png Graphic file (type png)
 <use figures/neutrino-fluxes.png>
 Package pdftex.def Info: figures/neutrino-fluxes.png  used on input line 58.
@@ -1435,7 +1437,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 
 [6]
-<figures/mass-hierarchy.jpg, id=495, 1204.5pt x 678.535pt>
+<figures/mass-hierarchy.jpg, id=497, 1204.5pt x 678.535pt>
 File: figures/mass-hierarchy.jpg Graphic file (type jpg)
 <use figures/mass-hierarchy.jpg>
 Package pdftex.def Info: figures/mass-hierarchy.jpg  used on input line 385.
@@ -1473,7 +1475,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 26.
 )
-<figures/mass_parabola_A76.pdf, id=571, 650.43pt x 433.62pt>
+<figures/mass_parabola_A76.pdf, id=573, 650.43pt x 433.62pt>
 File: figures/mass_parabola_A76.pdf Graphic file (type pdf)
 <use figures/mass_parabola_A76.pdf>
 Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 529.
@@ -1483,14 +1485,14 @@ Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 529.
 [10] (feynman-diagrams/0nu-doubleBeta-diagram.tex)
 
 [11 <./figures/mass_parabola_A76.pdf>]
-<figures/0nu_vs_2nu.pdf, id=660, 650.43pt x 433.62pt>
+<figures/0nu_vs_2nu.pdf, id=662, 650.43pt x 433.62pt>
 File: figures/0nu_vs_2nu.pdf Graphic file (type pdf)
 <use figures/0nu_vs_2nu.pdf>
 Package pdftex.def Info: figures/0nu_vs_2nu.pdf  used on input line 565.
-(pdftex.def)             Requested size: 290.22107pt x 193.4863pt.
+(pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
+) (chapters/02_legend_experiment.tex
 
-
-[12 <./figures/0nu_vs_2nu.pdf>]) (chapters/02_legend_experiment.tex
+[12 <./figures/0nu_vs_2nu.pdf>]
 
 [13]
 
@@ -1502,12 +1504,12 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 1
 (C:\Program Files\MiKTeX\tex/latex/fourier\ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<figures/LEGENDwholeSetup_con-numeri.png, id=733, 338.76563pt x 304.88907pt>
+<figures/LEGENDwholeSetup_con-numeri.png, id=735, 338.76563pt x 304.88907pt>
 File: figures/LEGENDwholeSetup_con-numeri.png Graphic file (type png)
 <use figures/LEGENDwholeSetup_con-numeri.png>
 Package pdftex.def Info: figures/LEGENDwholeSetup_con-numeri.png  used on input line 28.
 (pdftex.def)             Requested size: 266.03474pt x 239.4408pt.
-<figures/LEGENDLAr.png, id=734, 225.09094pt x 581.17125pt>
+<figures/LEGENDLAr.png, id=736, 225.09094pt x 581.17125pt>
 File: figures/LEGENDLAr.png Graphic file (type png)
 <use figures/LEGENDLAr.png>
 Package pdftex.def Info: figures/LEGENDLAr.png  used on input line 34.
@@ -1518,7 +1520,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [15]
-<figures/4Detectors.png, id=760, 2759.05782pt x 562.35094pt>
+<figures/4Detectors.png, id=762, 2759.05782pt x 562.35094pt>
 File: figures/4Detectors.png Graphic file (type png)
 <use figures/4Detectors.png>
 Package pdftex.def Info: figures/4Detectors.png  used on input line 56.
@@ -1545,102 +1547,97 @@ Chapter 3.
 
 
 [21]
-<figures/ramo-shockley/geometry_V08682A-def.jpg, id=853, 520.94624pt x 551.05875pt>
+<figures/ramo-shockley/geometry_V08682A-def.jpg, id=854, 520.94624pt x 551.05875pt>
 File: figures/ramo-shockley/geometry_V08682A-def.jpg Graphic file (type jpg)
 <use figures/ramo-shockley/geometry_V08682A-def.jpg>
 Package pdftex.def Info: figures/ramo-shockley/geometry_V08682A-def.jpg  used on input line 58.
 (pdftex.def)             Requested size: 241.84843pt x 255.82765pt.
-<figures/ramo-shockley/logo_SSD.jpg, id=854, 598.235pt x 353.32pt>
+<figures/ramo-shockley/logo_SSD.jpg, id=855, 598.235pt x 353.32pt>
 File: figures/ramo-shockley/logo_SSD.jpg Graphic file (type jpg)
 <use figures/ramo-shockley/logo_SSD.jpg>
 Package pdftex.def Info: figures/ramo-shockley/logo_SSD.jpg  used on input line 62.
 (pdftex.def)             Requested size: 56.9055pt x 33.60349pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [22 <./figures/ramo-shockley/geometry_V08682A-def.jpg> <./figures/ramo-shockley/logo_SSD.jpg>]
-<figures/ramo-shockley/V08682A_weighting_potential.pdf, id=874, 569.36462pt x 524.10141pt>
+<figures/ramo-shockley/V08682A_weighting_potential.pdf, id=875, 569.36462pt x 524.10141pt>
 File: figures/ramo-shockley/V08682A_weighting_potential.pdf Graphic file (type pdf)
 <use figures/ramo-shockley/V08682A_weighting_potential.pdf>
-Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_potential.pdf  used on input line 97.
+Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_potential.pdf  used on input line 99.
 (pdftex.def)             Requested size: 232.17242pt x 213.71538pt.
-<figures/ramo-shockley/V08682A_weighting_field.pdf, id=875, 567.15607pt x 511.3082pt>
+<figures/ramo-shockley/V08682A_weighting_field.pdf, id=876, 567.15607pt x 511.3082pt>
 File: figures/ramo-shockley/V08682A_weighting_field.pdf Graphic file (type pdf)
 <use figures/ramo-shockley/V08682A_weighting_field.pdf>
-Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used on input line 98.
+Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used on input line 100.
 (pdftex.def)             Requested size: 232.17242pt x 209.31003pt.
 
 
 [23 <./figures/ramo-shockley/V08682A_weighting_potential.pdf> <./figures/ramo-shockley/V08682A_weighting_field.pdf>]
 
 [24]
-<plots/wf_vs_windowed_wf.pdf, id=996, 650.43pt x 433.62pt>
+<plots/wf_vs_windowed_wf.pdf, id=1005, 650.43pt x 433.62pt>
 File: plots/wf_vs_windowed_wf.pdf Graphic file (type pdf)
 <use plots/wf_vs_windowed_wf.pdf>
-Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 128.
+Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 126.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 141.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 139.
  (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 141.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 139.
 LaTeX Font Info:    Freeze math alphabet allocation in version normal.
-(Font)              Allocated math groups: 14 (local: 2) on input line 152.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 152.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 152.
+(Font)              Allocated math groups: 14 (local: 2) on input line 150.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 150.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 150.
 
 
 [25{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./plots/wf_vs_windowed_wf.pdf>]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 163.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 163.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 161.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 161.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 162.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 162.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 164.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 164.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 166.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 166.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 168.
-<figures/catena_decadimento_Th228.png, id=1084, 441.3288pt x 1018.0434pt>
-File: figures/catena_decadimento_Th228.png Graphic file (type png)
-<use figures/catena_decadimento_Th228.png>
-Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 176.
-(pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 177.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 177.
-<plots/energy_spectrum-example.pdf, id=1087, 650.43pt x 433.62pt>
-File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
-<use plots/energy_spectrum-example.pdf>
-Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 185.
-(pdftex.def)             Requested size: 314.40001pt x 209.6041pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 195.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 196.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 197.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 198.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 200.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 201.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 201.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 201.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 201.
 
 
 [26]
-<figures/DEP-SEP-FEP.jpg, id=1100, 3093.5575pt x 1154.3125pt>
+<figures/catena_decadimento_Th228.png, id=1102, 441.3288pt x 1018.0434pt>
+File: figures/catena_decadimento_Th228.png Graphic file (type png)
+<use figures/catena_decadimento_Th228.png>
+Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 174.
+(pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 175.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 175.
+<plots/energy_spectrum-example.pdf, id=1105, 650.43pt x 433.62pt>
+File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
+<use plots/energy_spectrum-example.pdf>
+Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 183.
+(pdftex.def)             Requested size: 314.40001pt x 209.6041pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 193.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 194.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 195.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 196.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 198.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
+<figures/DEP-SEP-FEP.jpg, id=1110, 3093.5575pt x 1154.3125pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
-Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 209.
+Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 207.
 (pdftex.def)             Requested size: 386.95897pt x 144.37677pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 214.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 214.
-) (chapters/04_PSD.tex
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 212.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 212.
 
-[27 <./figures/catena_decadimento_Th228.png> <./plots/energy_spectrum-example.pdf> <./figures/DEP-SEP-FEP.jpg>]
 
-[28
+[27 <./figures/catena_decadimento_Th228.png> <./plots/energy_spectrum-example.pdf> <./figures/DEP-SEP-FEP.jpg>]) (chapters/04_PSD.tex
 
-]
+[28]
 Chapter 4.
-<plots/energy_specrum-prl25-AoE_cut.pdf, id=1175, 650.43pt x 433.62pt>
+<plots/energy_specrum-prl25-AoE_cut.pdf, id=1185, 650.43pt x 433.62pt>
 File: plots/energy_specrum-prl25-AoE_cut.pdf Graphic file (type pdf)
 <use plots/energy_specrum-prl25-AoE_cut.pdf>
 Package pdftex.def Info: plots/energy_specrum-prl25-AoE_cut.pdf  used on input line 11.
@@ -1651,7 +1648,9 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 24.
 
 
-[29 <./plots/energy_specrum-prl25-AoE_cut.pdf>]
+[29
+
+ <./plots/energy_specrum-prl25-AoE_cut.pdf>]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 26.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
@@ -1666,7 +1665,7 @@ LaTeX Warning: Reference `sec:data-structureL200' on page 30 undefined on input 
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
-<plots/energy_spectrum-cut_window.pdf, id=1271, 938.08867pt x 395.51765pt>
+<plots/energy_spectrum-cut_window.pdf, id=1281, 938.08867pt x 395.51765pt>
 File: plots/energy_spectrum-cut_window.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-cut_window.pdf>
 Package pdftex.def Info: plots/energy_spectrum-cut_window.pdf  used on input line 46.
@@ -1683,37 +1682,37 @@ LaTeX Warning: Reference `sec:model-implementation' on page 31 undefined on inpu
 
 LaTeX Warning: Reference `app:waveforms' on page 31 undefined on input line 52.
 
-<plots/raw_wf.pdf, id=1281, 650.43pt x 433.62pt>
+<plots/raw_wf.pdf, id=1291, 650.43pt x 433.62pt>
 File: plots/raw_wf.pdf Graphic file (type pdf)
 <use plots/raw_wf.pdf>
 Package pdftex.def Info: plots/raw_wf.pdf  used on input line 60.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 63.
-<plots/baseline_subtracted_wf.pdf, id=1282, 650.43pt x 433.62pt>
+<plots/baseline_subtracted_wf.pdf, id=1292, 650.43pt x 433.62pt>
 File: plots/baseline_subtracted_wf.pdf Graphic file (type pdf)
 <use plots/baseline_subtracted_wf.pdf>
 Package pdftex.def Info: plots/baseline_subtracted_wf.pdf  used on input line 68.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 71.
-<plots/normalised_wf.pdf, id=1283, 650.43pt x 433.62pt>
+<plots/normalised_wf.pdf, id=1293, 650.43pt x 433.62pt>
 File: plots/normalised_wf.pdf Graphic file (type pdf)
 <use plots/normalised_wf.pdf>
 Package pdftex.def Info: plots/normalised_wf.pdf  used on input line 78.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 81.
-<plots/aligned_wf.pdf, id=1284, 650.43pt x 433.62pt>
+<plots/aligned_wf.pdf, id=1294, 650.43pt x 433.62pt>
 File: plots/aligned_wf.pdf Graphic file (type pdf)
 <use plots/aligned_wf.pdf>
 Package pdftex.def Info: plots/aligned_wf.pdf  used on input line 86.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 89.
-<plots/trimmed_wf.pdf, id=1285, 650.43pt x 433.62pt>
+<plots/trimmed_wf.pdf, id=1295, 650.43pt x 433.62pt>
 File: plots/trimmed_wf.pdf Graphic file (type pdf)
 <use plots/trimmed_wf.pdf>
 Package pdftex.def Info: plots/trimmed_wf.pdf  used on input line 94.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 97.
-<plots/current_wf.pdf, id=1286, 650.43pt x 433.62pt>
+<plots/current_wf.pdf, id=1296, 650.43pt x 433.62pt>
 File: plots/current_wf.pdf Graphic file (type pdf)
 <use plots/current_wf.pdf>
 Package pdftex.def Info: plots/current_wf.pdf  used on input line 102.
@@ -1725,7 +1724,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [31 <./plots/energy_spectrum-cut_window.pdf>]
-<plots/sse_mse_selection.pdf, id=1372, 650.43pt x 433.62pt>
+<plots/sse_mse_selection.pdf, id=1382, 650.43pt x 433.62pt>
 File: plots/sse_mse_selection.pdf Graphic file (type pdf)
 <use plots/sse_mse_selection.pdf>
 Package pdftex.def Info: plots/sse_mse_selection.pdf  used on input line 114.
@@ -1736,7 +1735,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [32 <./plots/raw_wf.pdf> <./plots/baseline_subtracted_wf.pdf> <./plots/normalised_wf.pdf> <./plots/aligned_wf.pdf> <./plots/trimmed_wf.pdf> <./plots/current_wf.pdf>]
-<plots/AoE_sse_vs_sse.pdf, id=1718, 650.43pt x 433.62pt>
+<plots/AoE_sse_vs_sse.pdf, id=1728, 650.43pt x 433.62pt>
 File: plots/AoE_sse_vs_sse.pdf Graphic file (type pdf)
 <use plots/AoE_sse_vs_sse.pdf>
 Package pdftex.def Info: plots/AoE_sse_vs_sse.pdf  used on input line 121.
@@ -2230,6 +2229,8 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 204.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 204.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 204.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 204.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 204.
 
 
 [49]
@@ -2278,23 +2279,23 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 11DBB4F7EC3401B2787091278D9A454B;7360.
+(rerunfilecheck)             Checksum: 04361865DFC1E7A8B3F0310145771E47;7360.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43550 strings out of 473682
- 923079 string characters out of 5729112
- 1671619 words of memory out of 5000000
- 65601 multiletter control sequences out of 15000+600000
- 835399 words of font info for 308 fonts, out of 8000000 for 9000
+ 43749 strings out of 473682
+ 930857 string characters out of 5729112
+ 1675555 words of memory out of 5000000
+ 65796 multiletter control sequences out of 15000+600000
+ 836001 words of font info for 310 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,93p,1405b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,93p,2022b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (60 pages, 5426207 bytes).
+Output written on main.pdf (60 pages, 5430845 bytes).
 PDF statistics:
- 2137 PDF objects out of 2487 (max. 8388607)
- 282 named destinations out of 1000 (max. 500000)
+ 2149 PDF objects out of 2487 (max. 8388607)
+ 286 named destinations out of 1000 (max. 500000)
  479 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -425,6 +425,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
@@ -843,21 +845,21 @@ INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmtt10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
