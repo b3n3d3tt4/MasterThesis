@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  14 SEP 2026 11:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  15 SEP 2026 09:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1637,7 +1637,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 
 [28]
 Chapter 4.
-<plots/energy_specrum-prl25-AoE_cut.pdf, id=1185, 650.43pt x 433.62pt>
+<plots/energy_specrum-prl25-AoE_cut.pdf, id=1196, 650.43pt x 433.62pt>
 File: plots/energy_specrum-prl25-AoE_cut.pdf Graphic file (type pdf)
 <use plots/energy_specrum-prl25-AoE_cut.pdf>
 Package pdftex.def Info: plots/energy_specrum-prl25-AoE_cut.pdf  used on input line 11.
@@ -1665,7 +1665,7 @@ LaTeX Warning: Reference `sec:data-structureL200' on page 30 undefined on input 
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
-<plots/energy_spectrum-cut_window.pdf, id=1281, 938.08867pt x 395.51765pt>
+<plots/energy_spectrum-cut_window.pdf, id=1292, 938.08867pt x 395.51765pt>
 File: plots/energy_spectrum-cut_window.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-cut_window.pdf>
 Package pdftex.def Info: plots/energy_spectrum-cut_window.pdf  used on input line 46.
@@ -1682,37 +1682,37 @@ LaTeX Warning: Reference `sec:model-implementation' on page 31 undefined on inpu
 
 LaTeX Warning: Reference `app:waveforms' on page 31 undefined on input line 52.
 
-<plots/raw_wf.pdf, id=1291, 650.43pt x 433.62pt>
+<plots/raw_wf.pdf, id=1302, 650.43pt x 433.62pt>
 File: plots/raw_wf.pdf Graphic file (type pdf)
 <use plots/raw_wf.pdf>
 Package pdftex.def Info: plots/raw_wf.pdf  used on input line 60.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 63.
-<plots/baseline_subtracted_wf.pdf, id=1292, 650.43pt x 433.62pt>
+<plots/baseline_subtracted_wf.pdf, id=1303, 650.43pt x 433.62pt>
 File: plots/baseline_subtracted_wf.pdf Graphic file (type pdf)
 <use plots/baseline_subtracted_wf.pdf>
 Package pdftex.def Info: plots/baseline_subtracted_wf.pdf  used on input line 68.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 71.
-<plots/normalised_wf.pdf, id=1293, 650.43pt x 433.62pt>
+<plots/normalised_wf.pdf, id=1304, 650.43pt x 433.62pt>
 File: plots/normalised_wf.pdf Graphic file (type pdf)
 <use plots/normalised_wf.pdf>
 Package pdftex.def Info: plots/normalised_wf.pdf  used on input line 78.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 81.
-<plots/aligned_wf.pdf, id=1294, 650.43pt x 433.62pt>
+<plots/aligned_wf.pdf, id=1305, 650.43pt x 433.62pt>
 File: plots/aligned_wf.pdf Graphic file (type pdf)
 <use plots/aligned_wf.pdf>
 Package pdftex.def Info: plots/aligned_wf.pdf  used on input line 86.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 89.
-<plots/trimmed_wf.pdf, id=1295, 650.43pt x 433.62pt>
+<plots/trimmed_wf.pdf, id=1306, 650.43pt x 433.62pt>
 File: plots/trimmed_wf.pdf Graphic file (type pdf)
 <use plots/trimmed_wf.pdf>
 Package pdftex.def Info: plots/trimmed_wf.pdf  used on input line 94.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 97.
-<plots/current_wf.pdf, id=1296, 650.43pt x 433.62pt>
+<plots/current_wf.pdf, id=1307, 650.43pt x 433.62pt>
 File: plots/current_wf.pdf Graphic file (type pdf)
 <use plots/current_wf.pdf>
 Package pdftex.def Info: plots/current_wf.pdf  used on input line 102.
@@ -1724,7 +1724,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [31 <./plots/energy_spectrum-cut_window.pdf>]
-<plots/sse_mse_selection.pdf, id=1382, 650.43pt x 433.62pt>
+<plots/sse_mse_selection.pdf, id=1393, 650.43pt x 433.62pt>
 File: plots/sse_mse_selection.pdf Graphic file (type pdf)
 <use plots/sse_mse_selection.pdf>
 Package pdftex.def Info: plots/sse_mse_selection.pdf  used on input line 114.
@@ -1735,7 +1735,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [32 <./plots/raw_wf.pdf> <./plots/baseline_subtracted_wf.pdf> <./plots/normalised_wf.pdf> <./plots/aligned_wf.pdf> <./plots/trimmed_wf.pdf> <./plots/current_wf.pdf>]
-<plots/AoE_sse_vs_sse.pdf, id=1728, 650.43pt x 433.62pt>
+<plots/AoE_sse_vs_sse.pdf, id=1739, 650.43pt x 433.62pt>
 File: plots/AoE_sse_vs_sse.pdf Graphic file (type pdf)
 <use plots/AoE_sse_vs_sse.pdf>
 Package pdftex.def Info: plots/AoE_sse_vs_sse.pdf  used on input line 121.
@@ -2286,16 +2286,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  43749 strings out of 473682
- 930857 string characters out of 5729112
- 1675555 words of memory out of 5000000
+ 930891 string characters out of 5729112
+ 1675761 words of memory out of 5000000
  65796 multiletter control sequences out of 15000+600000
  836001 words of font info for 310 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,2022b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (60 pages, 5430845 bytes).
+Output written on main.pdf (60 pages, 5433555 bytes).
 PDF statistics:
- 2149 PDF objects out of 2487 (max. 8388607)
+ 2160 PDF objects out of 2487 (max. 8388607)
  286 named destinations out of 1000 (max. 500000)
  479 words of extra memory for PDF output out of 10000 (max. 10000000)
 
