@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  15 SEP 2026 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  15 SEP 2026 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1550,25 +1550,28 @@ Chapter 3.
 <figures/ramo-shockley/geometry_V08682A-def.jpg, id=854, 520.94624pt x 551.05875pt>
 File: figures/ramo-shockley/geometry_V08682A-def.jpg Graphic file (type jpg)
 <use figures/ramo-shockley/geometry_V08682A-def.jpg>
-Package pdftex.def Info: figures/ramo-shockley/geometry_V08682A-def.jpg  used on input line 58.
+Package pdftex.def Info: figures/ramo-shockley/geometry_V08682A-def.jpg  used on input line 62.
 (pdftex.def)             Requested size: 241.84843pt x 255.82765pt.
 <figures/ramo-shockley/logo_SSD.jpg, id=855, 598.235pt x 353.32pt>
 File: figures/ramo-shockley/logo_SSD.jpg Graphic file (type jpg)
 <use figures/ramo-shockley/logo_SSD.jpg>
-Package pdftex.def Info: figures/ramo-shockley/logo_SSD.jpg  used on input line 62.
+Package pdftex.def Info: figures/ramo-shockley/logo_SSD.jpg  used on input line 66.
 (pdftex.def)             Requested size: 56.9055pt x 33.60349pt.
+
+Underfull \vbox (badness 3449) has occurred while \output is active []
+
 
 
 [22 <./figures/ramo-shockley/geometry_V08682A-def.jpg> <./figures/ramo-shockley/logo_SSD.jpg>]
 <figures/ramo-shockley/V08682A_weighting_potential.pdf, id=875, 569.36462pt x 524.10141pt>
 File: figures/ramo-shockley/V08682A_weighting_potential.pdf Graphic file (type pdf)
 <use figures/ramo-shockley/V08682A_weighting_potential.pdf>
-Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_potential.pdf  used on input line 99.
+Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_potential.pdf  used on input line 103.
 (pdftex.def)             Requested size: 232.17242pt x 213.71538pt.
 <figures/ramo-shockley/V08682A_weighting_field.pdf, id=876, 567.15607pt x 511.3082pt>
 File: figures/ramo-shockley/V08682A_weighting_field.pdf Graphic file (type pdf)
 <use figures/ramo-shockley/V08682A_weighting_field.pdf>
-Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used on input line 100.
+Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used on input line 104.
 (pdftex.def)             Requested size: 232.17242pt x 209.31003pt.
 
 
@@ -1578,59 +1581,59 @@ Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used
 <plots/wf_vs_windowed_wf.pdf, id=1005, 650.43pt x 433.62pt>
 File: plots/wf_vs_windowed_wf.pdf Graphic file (type pdf)
 <use plots/wf_vs_windowed_wf.pdf>
-Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 126.
+Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 130.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 139.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 143.
  (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 139.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 143.
 LaTeX Font Info:    Freeze math alphabet allocation in version normal.
-(Font)              Allocated math groups: 14 (local: 2) on input line 150.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 150.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 150.
+(Font)              Allocated math groups: 14 (local: 2) on input line 154.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 154.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 154.
 
 
 [25{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./plots/wf_vs_windowed_wf.pdf>]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 161.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 161.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 164.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 164.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 165.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 165.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 166.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 166.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 170.
 
 
 [26]
 <figures/catena_decadimento_Th228.png, id=1102, 441.3288pt x 1018.0434pt>
 File: figures/catena_decadimento_Th228.png Graphic file (type png)
 <use figures/catena_decadimento_Th228.png>
-Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 174.
+Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 178.
 (pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 175.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 175.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
 <plots/energy_spectrum-example.pdf, id=1105, 650.43pt x 433.62pt>
 File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-example.pdf>
-Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 183.
+Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 187.
 (pdftex.def)             Requested size: 314.40001pt x 209.6041pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 193.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 194.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 195.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 196.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 197.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 198.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 200.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 202.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 203.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 203.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 203.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 203.
 <figures/DEP-SEP-FEP.jpg, id=1110, 3093.5575pt x 1154.3125pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
-Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 207.
+Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 211.
 (pdftex.def)             Requested size: 386.95897pt x 144.37677pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 212.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 212.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 216.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 216.
 
 
 [27 <./figures/catena_decadimento_Th228.png> <./plots/energy_spectrum-example.pdf> <./figures/DEP-SEP-FEP.jpg>]) (chapters/04_PSD.tex
@@ -2293,7 +2296,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,2022b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (60 pages, 5433555 bytes).
+Output written on main.pdf (60 pages, 5433539 bytes).
 PDF statistics:
  2160 PDF objects out of 2487 (max. 8388607)
  286 named destinations out of 1000 (max. 500000)

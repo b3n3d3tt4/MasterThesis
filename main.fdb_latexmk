@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1789376321.5327 "main.bcf" "main.bbl" "main" 1789458208.89032 0
+["biber main"] 1789473784.08021 "main.bcf" "main.bbl" "main" 1789481487.67583 0
   "bibliografia.bib" 1789314423 14802 75de68e86bbff9520838d367d7c17ff8 ""
-  "main.bcf" 1789458208 112297 c7a45f2685ed264d589c2957fd801e77 "pdflatex"
+  "main.bcf" 1789481486 112297 c7a45f2685ed264d589c2957fd801e77 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1789458194.83739 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1789458208.89127 0
+["pdflatex"] 1789481471.61436 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1789481487.67736 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1233951852 1040 b84415f97d114011685943ade933dc71 ""
@@ -283,13 +283,13 @@
   "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" 1789295624 5893 771b83c3ce437ce4c25cacf2eac6e925 ""
   "chapters/01_neutrino_physics.tex" 1789371267 50473 e8670be1e3da50364b68e9fbe808638e ""
   "chapters/02_legend_experiment.tex" 1789373917 17999 2d38e8812bb697888e5bea1ec20eb04e ""
-  "chapters/03_legend_data.tex" 1789458193 32700 8edd6f952ae16eda4213bcfc073036a0 ""
+  "chapters/03_legend_data.tex" 1789481440 33030 0b35fe15d9fe4a3016e55daef3b9a6db ""
   "chapters/04_PSD.tex" 1789376763 11284 e2b73e8dc95985e2aa393c15cd483665 ""
   "chapters/05_denoising.tex" 1789371119 46 124df36e8f552fd55b114b4e36c3d9de ""
   "chapters/06_conclusions.tex" 1784985597 21 fe4b20616295c9a322e6cc7648a79dcb ""
-  "chapters/A-app_three-flavours.aux" 1789458205 6992 b0e4fc57b3d45a219382ba95223bd7b8 "pdflatex"
+  "chapters/A-app_three-flavours.aux" 1789481482 6992 b0e4fc57b3d45a219382ba95223bd7b8 "pdflatex"
   "chapters/A-app_three-flavours.tex" 1785597649 9348 38884232143f3bf1837cc8e7a491fcc3 ""
-  "chapters/B-app_neutrinosINmatter.aux" 1789458206 7843 d27df22ca7a65334011d64c1c3fbcdcd "pdflatex"
+  "chapters/B-app_neutrinosINmatter.aux" 1789481482 7843 d27df22ca7a65334011d64c1c3fbcdcd "pdflatex"
   "chapters/B-app_neutrinosINmatter.tex" 1789294162 8767 e8d02f91309887e4830545e17d8ec3a9 ""
   "feynman-diagrams/0nu-doubleBeta-diagram.tex" 1785241635 2219 07839a6b9006d6c98186f1d62b97c559 ""
   "feynman-diagrams/2nu-doublebeta-feynman.tex" 1785241847 2275 4d72521d2da0063dc8ae5931a3fb2a11 ""
@@ -309,12 +309,12 @@
   "figures/ramo-shockley/V08682A_weighting_potential.pdf" 1789297656 1771726 e3342a20f98e311f6b5824639bfcbc26 ""
   "figures/ramo-shockley/geometry_V08682A-def.jpg" 1789122366 41760 304dce01f4ad0ffdbe650fa49d800936 ""
   "figures/ramo-shockley/logo_SSD.jpg" 1789208308 41986 52169298cbd1198b839d9c387513a25c ""
-  "main.aux" 1789458208 41599 ffbdb98541d1c8b9f90a783faaf28667 "pdflatex"
-  "main.bbl" 1789376324 62659 10f3957dbfb5668c2a22d380f865c439 "biber main"
-  "main.out" 1789458208 7360 04361865dfc1e7a8b3f0310145771e47 "pdflatex"
-  "main.run.xml" 1789458208 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
+  "main.aux" 1789481486 41599 ffbdb98541d1c8b9f90a783faaf28667 "pdflatex"
+  "main.bbl" 1789473860 62659 10f3957dbfb5668c2a22d380f865c439 "biber main"
+  "main.out" 1789481486 7360 04361865dfc1e7a8b3f0310145771e47 "pdflatex"
+  "main.run.xml" 1789481486 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
   "main.tex" 1789295624 5893 771b83c3ce437ce4c25cacf2eac6e925 ""
-  "main.toc" 1789458208 4174 cf9c1c89eccd2aa5d4542b60351eed17 "pdflatex"
+  "main.toc" 1789481486 4174 cf9c1c89eccd2aa5d4542b60351eed17 "pdflatex"
   "plots/AoE_sse_vs_sse.pdf" 1788820367 19350 131c58fdaf97899dd8731491547e182f ""
   "plots/aligned_wf.pdf" 1788820938 33201 775d83e4cd4a49133bd463fb931c2351 ""
   "plots/baseline_subtracted_wf.pdf" 1788820939 35379 080cc4acb491060b26d5668732b70d0e ""

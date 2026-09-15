@@ -28,12 +28,17 @@ Pentavalent elements called \textit{donors}, like Phosphorus, inserted in a tetr
 
 % \subsection{Germanium diodes in LEGEND-200}
 When a p-type and an n-type semiconductor are joined within a single continuous crystal lattice, they form a fundamental interface known as a \textit{p-n junction}. Due to the steep concentration gradient at this boundary, majority charge carriers begin to diffuse across the junction: free electrons migrate from the n-side to the p-side, while holes diffuse in the opposite direction. As these mobile carriers cross the interface and recombine, they leave behind fixed, uncompensated ionized dopant atoms.
-This process creates a localized volume depleted of mobile charge carriers, appropriately named the \textit{depletion region} (or space-charge region). The immobile ions within this region establish a built-in electric field that eventually opposes further carrier diffusion. This built-in electric field is further intensified when a bias voltage is applied across the p-n junction. At the same time, the depletion region extends deeper into the crystal, reaching its maximum extension when the applied voltage equals the
-so-called depletion voltage.
+This process creates a localized volume depleted of mobile charge carriers, appropriately named the \textit{depletion region} (or space-charge region). The immobile ions within this region establish a built-in electric field that eventually opposes further carrier diffusion. This built-in electric field is further intensified when a bias voltage is applied across the p-n junction. At the same time, the depletion region extends deeper into the crystal, reaching its maximum extension when the applied voltage equals the so-called depletion voltage.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{figures/diodi_introduzione.jpg}
+%     \caption{Original drawing of junction creation (a), charge recombination (b), depletion region formation (c), bias voltage application (d) and full depletion (d).}
+%     \label{fig:diodi-intro}
+% \end{figure}
 The p-n junction serves as the essential building block of modern semiconductor technology in its simplest two-terminal configuration within an electrical circuit; LEGEND Germanium detectors are exactly this type of semiconductor diode. Specifically, LEGEND diodes are built from a p-doped core where the p-n junction is formed with a highly doped n-type electrode, i.e. the \textit{n+} surface. The opposite part of the detector volume, on the contrary, is the so called \textit{p+}-doped contact. When a bias voltage is applied, a depletion region starts forming from the \textit{n+} part and reaches the \textit{p+} part when the voltage operation corresponds to the depletion voltage. 
 % \begin{figure}[H]
 %     \centering
-%     \includegraphics[width=0.9\textwidth]{figures/diodi_legend.jpg}
+%     \includegraphics[width=0.8\textwidth]{figures/diodi_legend.jpg}
 %     \caption{Original drawing of the depletion voltage application for LEGEND diodes.}
 %     \label{fig:diodes-legend}
 % \end{figure}
@@ -48,7 +53,6 @@ The p-n junction serves as the essential building block of modern semiconductor 
 %     \label{fig:detectors-pINred}
 % \end{figure}
 % In the final configuration shown in Fig. \ref{fig:diodes-legend}, 
-
 When the entire detector volume becomes active and sensitive to ionizing radiation, if an incoming particle or gamma ray deposits energy within this volume, electron-hole pairs are generated in proportion to the deposited energy (in germanium, creating a single \ac{eh} pair requires 2.96 eV). Driven by the electric field, holes drift toward the \textit{p+} contact and electrons toward the \textit{n+} contact, inducing a measurable signal.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -92,7 +96,7 @@ where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The t
 
 \subsubsection{IC weighting field}
 % As already sentenced above in Sec. \ref{subsec:Ge-detector-basics}, the work focuses on V08682A IC detector, therefore what follows is the analysis of the weighting field in this specific detector geometry. 
-IC detectors in LEGEND, feature a well on the opposite side of the p-contact to increase the electric field in the upper part of the detectors and make it possible to drift the charge. MIRION IC detectors, as the one considered in this work, exhibits a straight/tapered well, visible in Fig. \ref{fig:V08682A}. \cite{lnote_21003}
+IC detectors in LEGEND feature a well on the opposite side of the p-contact to increase the electric field in the upper part of the detectors and make it possible to drift the charge. MIRION IC detectors, as the one considered in this work, exhibits a straight/tapered well, visible in Fig. \ref{fig:V08682A}. \cite{lnote_21003}
 
 \begin{figure}[H]
     \centering
