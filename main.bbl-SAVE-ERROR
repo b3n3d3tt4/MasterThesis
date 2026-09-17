@@ -57,6 +57,38 @@
       \verb 1606.07538
       \endverb
     \endentry
+    \entry{L1000-design}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=000d895fb5214b3bfc9411adf9f4be12}{%
+           family={Abgrall},
+           familyi={A\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{fullhash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{fullhashraw}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{bibnamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorbibnamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authornamehash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorfullhash}{ad8388d84a36295a3709be988b0bfdb5}
+      \strng{authorfullhashraw}{ad8388d84a36295a3709be988b0bfdb5}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.ins-det}
+      \field{eprinttype}{arXiv}
+      \field{month}{7}
+      \field{title}{{The Large Enriched Germanium Experiment for Neutrinoless $\beta\beta$ Decay}: {LEGEND-1000 Preconceptual Design Report}}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2107.11462
+      \endverb
+    \endentry
     \entry{LEGEND:introSetup}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -96,6 +128,7 @@
       \strng{editornamehash}{75746cdf0c8925e63ee1e21827b1314e}
       \strng{editorfullhash}{75746cdf0c8925e63ee1e21827b1314e}
       \strng{editorfullhashraw}{75746cdf0c8925e63ee1e21827b1314e}
+      \field{extraname}{2}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
@@ -470,6 +503,56 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0168900225005807
       \endverb
     \endentry
+    \entry{lnote_21003}{misc}{}{}
+      \name{author}{5}{}{%
+        {{hash=658f71ea9a846b19520e2ccee0fd52ae}{%
+           family={Busch},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=583a19c2603998af68c7cf32b36e2e07}{%
+           family={Kermaidic},
+           familyi={K\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4d34a5e78a05adb8a68629021dbf3a33}{%
+           family={Radford},
+           familyi={R\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0a1c74379676ca0c993c87f666cfbc50}{%
+           family={Schwingenheuer},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=cdafca5e89a55f7238945777a3bc6181}{%
+           family={Wilkerson},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{7625cbb666331ca9aefb770e15d77ee7}
+      \strng{fullhash}{cb6dd031917a6cb446895117cc92320c}
+      \strng{fullhashraw}{cb6dd031917a6cb446895117cc92320c}
+      \strng{bibnamehash}{7625cbb666331ca9aefb770e15d77ee7}
+      \strng{authorbibnamehash}{7625cbb666331ca9aefb770e15d77ee7}
+      \strng{authornamehash}{7625cbb666331ca9aefb770e15d77ee7}
+      \strng{authorfullhash}{cb6dd031917a6cb446895117cc92320c}
+      \strng{authorfullhashraw}{cb6dd031917a6cb446895117cc92320c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{LEGEND Collaboration Internal Note}
+      \field{title}{LEGEND-200 enriched 76Ge detectors design Potentials and fields calculations}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://legend-exp.atlassian.net/wiki/spaces/LEGEND/pages/904462385/L-Note+21-003
+      \endverb
+      \verb{url}
+      \verb https://legend-exp.atlassian.net/wiki/spaces/LEGEND/pages/904462385/L-Note+21-003
+      \endverb
+    \endentry
     \entry{HomestakeResults}{article}{}{}
       \name{author}{8}{}{%
         {{hash=11d8292542538acc4f6b0bf227d53ab9}{%
@@ -541,6 +624,45 @@
       \verb{url}
       \verb https://doi.org/10.1086/305343
       \endverb
+    \endentry
+    \entry{dissertationComellato}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1c7436bd7b965e29e03cb7024cd2fee}{%
+           family={Comellato},
+           familyi={C\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Technische Universität München}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \strng{fullhash}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \strng{fullhashraw}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \strng{bibnamehash}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \strng{authorbibnamehash}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \strng{authornamehash}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \strng{authorfullhash}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \strng{authorfullhashraw}{b1c7436bd7b965e29e03cb7024cd2fee}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Inverted Coaxial Detectors for Legend}
+      \field{type}{phdthesis}
+      \field{year}{2022}
+      \field{pages}{188}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://mediatum.ub.tum.de/1662747
+      \endverb
+      \verb{url}
+      \verb https://mediatum.ub.tum.de/1662747
+      \endverb
+      \keyw{germanium double beta decay characterization modeling}
     \endentry
     \entry{cowan1956nudetection}{article}{}{}
       \name{author}{5}{}{%
