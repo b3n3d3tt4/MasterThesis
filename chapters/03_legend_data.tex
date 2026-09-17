@@ -27,18 +27,31 @@ Pentavalent elements called \textit{donors}, like Phosphorus, inserted in a tetr
 % \end{figure}
 
 % \subsection{Germanium diodes in LEGEND-200}
+% \begin{wrapfigure}{r}{0.3\textwidth}
+%     \vspace{-1.2em}
+%     \centering
+%     \includegraphics[width=\linewidth]{figures/diodi_introduzione1.jpg}
+%     % \caption{Original drawing of junction creation (a), charge recombination (b) and depletion region formation (c)} %, bias voltage application (d) and full depletion (d).}
+%     % \label{fig:diodi-intro}
+% \end{wrapfigure}
 When a p-type and an n-type semiconductor are joined within a single continuous crystal lattice, they form a fundamental interface known as a \textit{p-n junction}. Due to the steep concentration gradient at this boundary, majority charge carriers begin to diffuse across the junction: free electrons migrate from the n-side to the p-side, while holes diffuse in the opposite direction. As these mobile carriers cross the interface and recombine, they leave behind fixed, uncompensated ionized dopant atoms.
 This process creates a localized volume depleted of mobile charge carriers, appropriately named the \textit{depletion region} (or space-charge region). The immobile ions within this region establish a built-in electric field that eventually opposes further carrier diffusion. This built-in electric field is further intensified when a bias voltage is applied across the p-n junction. At the same time, the depletion region extends deeper into the crystal, reaching its maximum extension when the applied voltage equals the so-called depletion voltage.
+% \\
 % \begin{figure}[H]
 %     \centering
-%     \includegraphics[width=0.9\textwidth]{figures/diodi_introduzione.jpg}
-%     \caption{Original drawing of junction creation (a), charge recombination (b), depletion region formation (c), bias voltage application (d) and full depletion (d).}
+%     \includegraphics[width=\linewidth]{figures/diodi_introduzione2.jpg}
+%     \caption{Original drawing of junction creation (a), charge recombination (b) and depletion region formation (c), bias voltage application (d) and full depletion (d).}
 %     \label{fig:diodi-intro}
 % \end{figure}
+
 The p-n junction serves as the essential building block of modern semiconductor technology in its simplest two-terminal configuration within an electrical circuit; LEGEND Germanium detectors are exactly this type of semiconductor diode. Specifically, LEGEND diodes are built from a p-doped core where the p-n junction is formed with a highly doped n-type electrode, i.e. the \textit{n+} surface. The opposite part of the detector volume, on the contrary, is the so called \textit{p+}-doped contact. When a bias voltage is applied, a depletion region starts forming from the \textit{n+} part and reaches the \textit{p+} part when the voltage operation corresponds to the depletion voltage. 
 % \begin{figure}[H]
 %     \centering
-%     \includegraphics[width=0.8\textwidth]{figures/diodi_legend.jpg}
+%     \includegraphics[width=0.8\textwidth]{figures/diodi_legend1.jpg}
+% \end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{figures/diodi_legend2.jpg}
 %     \caption{Original drawing of the depletion voltage application for LEGEND diodes.}
 %     \label{fig:diodes-legend}
 % \end{figure}
@@ -74,11 +87,11 @@ Restricting the scope of the work solely to this detector is a methodological ch
 % that will be worth only if the first trial returns significantly good results. 
 Hence, all of the following physics principles, data analyses and algorithm implementations discussed herein are tailored specifically to the IC V08682A detector.
 
-
+\newpage
 
 \subsection{Signal formation in Germanium detectors}
 \subsubsection{The Shockley-Ramo theorem}
-Consider, for instance, an incident $\gamma$-ray that interacts with the semiconductor and generates a large number of \ac{eh} pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device cause a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
+Consider, for instance, an incident $\gamma$-ray that interacts with the semiconductor and generates a large number of \ac{eh} pairs proportional to the deposited energy \footnote{Similarly, in the search for $0\nu\beta\beta$ decay, the kinetic energy of the emitted electrons acts as the ionizing source, generating a signal proportional to the decay energy.}. The movement of these electrons and holes, for a total moving charge \textit{q}, due to the electric field within the device, causes a variation of the induced charge \textit{Q} on an electrode. The change of \textit{Q} is converted to a voltage pulse using a charge sensing amplifier and the amplitude of the output voltage signal ideally is proportional to the deposited energy.
 
 The time-dependent output signal of a charge sensing device can be predicted if the induced charge \textit{Q} on the readout electrode can be calculated as a function of instantaneous position of the moving charge \text{q} within the device. The Shockley-Ramo theorem (\cite{Shockley}, \cite{Ramo}), originally developed for vacuum tubes, can be applied also in the case of stationary space charges of the abovementioned \ac{hpge}. 
 
