@@ -800,9 +800,34 @@ INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
-INPUT .\chapters\03_legend_data.tex
-INPUT .\chapters\03_legend_data.tex
-INPUT chapters\03_legend_data.tex
+INPUT .\figures\renderingDetectors\PPC_section_frontale.png
+INPUT .\figures\renderingDetectors\PPC_section_frontale.png
+INPUT .\figures\renderingDetectors\PPC_section_frontale.png
+INPUT .\figures\renderingDetectors\PPC_section_frontale.png
+INPUT .\figures\renderingDetectors\PPC_section_frontale.png
+INPUT .\figures\renderingDetectors\PPC_section_frontale.png
+INPUT .\figures\renderingDetectors\PPC_section_frontale.png
+INPUT .\figures\renderingDetectors\BeGe_section_frontale.png
+INPUT .\figures\renderingDetectors\BeGe_section_frontale.png
+INPUT .\figures\renderingDetectors\BeGe_section_frontale.png
+INPUT .\figures\renderingDetectors\BeGe_section_frontale.png
+INPUT .\figures\renderingDetectors\BeGe_section_frontale.png
+INPUT .\figures\renderingDetectors\BeGe_section_frontale.png
+INPUT .\figures\renderingDetectors\BeGe_section_frontale.png
+INPUT .\figures\renderingDetectors\Coax_section_frontale.png
+INPUT .\figures\renderingDetectors\Coax_section_frontale.png
+INPUT .\figures\renderingDetectors\Coax_section_frontale.png
+INPUT .\figures\renderingDetectors\Coax_section_frontale.png
+INPUT .\figures\renderingDetectors\Coax_section_frontale.png
+INPUT .\figures\renderingDetectors\Coax_section_frontale.png
+INPUT .\figures\renderingDetectors\Coax_section_frontale.png
+INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\renderingDetectors\IC_section_frontale.png
+INPUT .\figures\renderingDetectors\IC_section_frontale.png
 INPUT .\figures\ramo-shockley\geometry_V08682A-def.jpg
 INPUT .\figures\ramo-shockley\geometry_V08682A-def.jpg
 INPUT .\figures\ramo-shockley\geometry_V08682A-def.jpg
@@ -817,10 +842,10 @@ INPUT .\figures\ramo-shockley\logo_SSD.jpg
 INPUT .\figures\ramo-shockley\logo_SSD.jpg
 INPUT .\figures\ramo-shockley\logo_SSD.jpg
 INPUT .\figures\ramo-shockley\logo_SSD.jpg
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
 INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
 INPUT .\figures\ramo-shockley\V08682A_weighting_potential.pdf
@@ -845,21 +870,21 @@ INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmtt10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\figures\catena_decadimento_Th228.png
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
+INPUT .\plots\energy_spectrum-example.pdf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\figures\catena_decadimento_Th228.png
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
-INPUT .\plots\energy_spectrum-example.pdf
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
 INPUT .\figures\DEP-SEP-FEP.jpg
@@ -885,9 +910,6 @@ INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
 INPUT .\plots\raw_wf.pdf
@@ -924,18 +946,19 @@ INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
 INPUT .\plots\current_wf.pdf
-INPUT .\plots\sse_mse_selection.pdf
-INPUT .\plots\sse_mse_selection.pdf
-INPUT .\plots\sse_mse_selection.pdf
-INPUT .\plots\sse_mse_selection.pdf
-INPUT .\plots\sse_mse_selection.pdf
-INPUT .\plots\sse_mse_selection.pdf
-INPUT .\plots\AoE_sse_vs_sse.pdf
-INPUT .\plots\AoE_sse_vs_sse.pdf
-INPUT .\plots\AoE_sse_vs_sse.pdf
-INPUT .\plots\AoE_sse_vs_sse.pdf
-INPUT .\plots\AoE_sse_vs_sse.pdf
-INPUT .\plots\AoE_sse_vs_sse.pdf
+INPUT .\plots\sse_mse_selection_3sigma.pdf
+INPUT .\plots\sse_mse_selection_3sigma.pdf
+INPUT .\plots\sse_mse_selection_3sigma.pdf
+INPUT .\plots\sse_mse_selection_3sigma.pdf
+INPUT .\plots\sse_mse_selection_3sigma.pdf
+INPUT .\plots\sse_mse_selection_3sigma.pdf
+INPUT .\figures\schemaVAE.jpg
+INPUT .\figures\schemaVAE.jpg
+INPUT .\figures\schemaVAE.jpg
+INPUT .\figures\schemaVAE.jpg
+INPUT .\figures\schemaVAE.jpg
+INPUT .\figures\schemaVAE.jpg
+INPUT .\figures\schemaVAE.jpg
 INPUT .\chapters\06_denoising.tex
 INPUT .\chapters\06_denoising.tex
 INPUT chapters\06_denoising.tex
