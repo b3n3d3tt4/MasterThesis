@@ -153,6 +153,8 @@ INPUT C:\Program Files\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\comment\comment.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\comment\comment.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tools\multicol.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tools\multicol.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
@@ -560,6 +562,31 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futbi8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futbi8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-boldita.tfm
+INPUT .\main.lof
+INPUT .\main.lof
+INPUT main.lof
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
+OUTPUT main.lof
+INPUT .\main.lot
+INPUT .\main.lot
+INPUT main.lot
+OUTPUT main.lot
 INPUT .\chapters\01_neutrino_physics.tex
 INPUT .\chapters\01_neutrino_physics.tex
 INPUT chapters\01_neutrino_physics.tex
@@ -611,20 +638,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-bb.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futsy.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ms.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mcl.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8t.tfm
 INPUT .\figures\neutrino-fluxes.png
 INPUT .\figures\neutrino-fluxes.png
 INPUT .\figures\neutrino-fluxes.png
@@ -640,8 +653,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-ita.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm
@@ -649,7 +660,6 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmii.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-mlit.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-ml.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futri8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt.tfm

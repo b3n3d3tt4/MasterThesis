@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  18 SEP 2026 22:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  21 SEP 2026 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,12 +555,81 @@ File: listings.cfg 2024/09/23 1.10c listings configuration
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
  (C:\Program Files\MiKTeX\tex/latex/comment\comment.sty
 \CommentStream=\write3
- Excluding comment 'comment') (C:\Program Files\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+ Excluding comment 'comment') (C:\Program Files\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count333
+\mult@box=\box64
+\multicol@leftmargin=\dimen260
+\c@unbalance=\count334
+\c@collectmore=\count335
+\doublecol@number=\count336
+\multicoltolerance=\count337
+\multicolpretolerance=\count338
+\full@width=\dimen261
+\page@free=\dimen262
+\premulticols=\dimen263
+\postmulticols=\dimen264
+\multicolsep=\skip63
+\multicolbaselineskip=\skip64
+\partial@page=\box65
+\last@line=\box66
+\mc@boxedresult=\box67
+\maxbalancingoverflow=\dimen265
+\mult@rightbox=\box68
+\mult@grightbox=\box69
+\mult@firstbox=\box70
+\mult@gfirstbox=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\c@minrows=\count339
+\c@columnbadness=\count340
+\c@finalcolumnbadness=\count341
+\last@try=\dimen266
+\multicolovershoot=\dimen267
+\multicolundershoot=\dimen268
+\mult@nat@firstbox=\box108
+\colbreak@box=\box109
+\mc@col@check@num=\count342
+) (C:\Program Files\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks42
-\pgfutil@tempdima=\dimen260
-\pgfutil@tempdimb=\dimen261
+\pgfutil@tempdima=\dimen269
+\pgfutil@tempdimb=\dimen270
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
-\pgfutil@abb=\box64
+\pgfutil@abb=\box110
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
@@ -573,26 +642,26 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks45
 ))
-\pgf@x=\dimen262
-\pgf@y=\dimen263
-\pgf@xa=\dimen264
-\pgf@ya=\dimen265
-\pgf@xb=\dimen266
-\pgf@yb=\dimen267
-\pgf@xc=\dimen268
-\pgf@yc=\dimen269
-\pgf@xd=\dimen270
-\pgf@yd=\dimen271
+\pgf@x=\dimen271
+\pgf@y=\dimen272
+\pgf@xa=\dimen273
+\pgf@ya=\dimen274
+\pgf@xb=\dimen275
+\pgf@yb=\dimen276
+\pgf@xc=\dimen277
+\pgf@yc=\dimen278
+\pgf@xd=\dimen279
+\pgf@yd=\dimen280
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count333
-\c@pgf@countb=\count334
-\c@pgf@countc=\count335
-\c@pgf@countd=\count336
+\c@pgf@counta=\count343
+\c@pgf@countb=\count344
+\c@pgf@countc=\count345
+\c@pgf@countd=\count346
 \t@pgf@toka=\toks46
 \t@pgf@tokb=\toks47
 \t@pgf@tokc=\toks48
-\pgf@sys@id@count=\count337
+\pgf@sys@id@count=\count347
  (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -603,59 +672,59 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count338
-\pgfsyssoftpath@bigbuffer@items=\count339
+\pgfsyssoftpath@smallbuffer@items=\count348
+\pgfsyssoftpath@bigbuffer@items=\count349
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
-\pgfmath@dimen=\dimen272
-\pgfmath@count=\count340
-\pgfmath@box=\box65
+\pgfmath@dimen=\dimen281
+\pgfmath@count=\count350
+\pgfmath@box=\box111
 \pgfmath@toks=\toks49
 \pgfmath@stack@operand=\toks50
 \pgfmath@stack@operation=\toks51
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count341
+\c@pgfmathroundto@lastzeros=\count351
 )) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen273
-\pgf@picmaxx=\dimen274
-\pgf@picminy=\dimen275
-\pgf@picmaxy=\dimen276
-\pgf@pathminx=\dimen277
-\pgf@pathmaxx=\dimen278
-\pgf@pathminy=\dimen279
-\pgf@pathmaxy=\dimen280
-\pgf@xx=\dimen281
-\pgf@xy=\dimen282
-\pgf@yx=\dimen283
-\pgf@yy=\dimen284
-\pgf@zx=\dimen285
-\pgf@zy=\dimen286
+\pgf@picminx=\dimen282
+\pgf@picmaxx=\dimen283
+\pgf@picminy=\dimen284
+\pgf@picmaxy=\dimen285
+\pgf@pathminx=\dimen286
+\pgf@pathmaxx=\dimen287
+\pgf@pathminy=\dimen288
+\pgf@pathmaxy=\dimen289
+\pgf@xx=\dimen290
+\pgf@xy=\dimen291
+\pgf@yx=\dimen292
+\pgf@yy=\dimen293
+\pgf@zx=\dimen294
+\pgf@zy=\dimen295
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen287
-\pgf@path@lasty=\dimen288
+\pgf@path@lastx=\dimen296
+\pgf@path@lasty=\dimen297
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen289
-\pgf@shorten@start@additional=\dimen290
+\pgf@shorten@end@additional=\dimen298
+\pgf@shorten@start@additional=\dimen299
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box66
-\pgf@hbox=\box67
-\pgf@layerbox@main=\box68
-\pgf@picture@serial@count=\count342
+\pgfpic=\box112
+\pgf@hbox=\box113
+\pgf@layerbox@main=\box114
+\pgf@picture@serial@count=\count352
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen291
+\pgflinewidth=\dimen300
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen292
-\pgf@pt@y=\dimen293
-\pgf@pt@temp=\dimen294
+\pgf@pt@x=\dimen301
+\pgf@pt@y=\dimen302
+\pgf@pt@temp=\dimen303
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
@@ -664,17 +733,17 @@ File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen295
+\pgfarrowsep=\dimen304
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen296
-\pgf@sys@shading@range@num=\count343
-\pgf@shadingcount=\count344
+\pgf@max=\dimen305
+\pgf@sys@shading@range@num=\count353
+\pgf@shadingcount=\count354
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box69
+\pgfexternal@startupbox=\box115
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
@@ -685,64 +754,64 @@ File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box70
+\pgfnodeparttextbox=\box116
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Program Files\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen297
-\pgf@nodesepend=\dimen298
+\pgf@nodesepstart=\dimen306
+\pgf@nodesepend=\dimen307
 ) (C:\Program Files\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Program Files\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen299
-\pgffor@skip=\dimen300
+\pgffor@iter=\dimen308
+\pgffor@skip=\dimen309
 \pgffor@stack=\toks52
 \pgffor@toks=\toks53
 )) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count345
-\pgfplotmarksize=\dimen301
+\pgf@plot@mark@count=\count355
+\pgfplotmarksize=\dimen310
 )
-\tikz@lastx=\dimen302
-\tikz@lasty=\dimen303
-\tikz@lastxsaved=\dimen304
-\tikz@lastysaved=\dimen305
-\tikz@lastmovetox=\dimen306
-\tikz@lastmovetoy=\dimen307
-\tikzleveldistance=\dimen308
-\tikzsiblingdistance=\dimen309
-\tikz@figbox=\box71
-\tikz@figbox@bg=\box72
-\tikz@tempbox=\box73
-\tikz@tempbox@bg=\box74
-\tikztreelevel=\count346
-\tikznumberofchildren=\count347
-\tikznumberofcurrentchild=\count348
-\tikz@fig@count=\count349
+\tikz@lastx=\dimen311
+\tikz@lasty=\dimen312
+\tikz@lastxsaved=\dimen313
+\tikz@lastysaved=\dimen314
+\tikz@lastmovetox=\dimen315
+\tikz@lastmovetoy=\dimen316
+\tikzleveldistance=\dimen317
+\tikzsiblingdistance=\dimen318
+\tikz@figbox=\box117
+\tikz@figbox@bg=\box118
+\tikz@tempbox=\box119
+\tikz@tempbox@bg=\box120
+\tikztreelevel=\count356
+\tikznumberofchildren=\count357
+\tikznumberofcurrentchild=\count358
+\tikz@fig@count=\count359
  (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count350
-\pgfmatrixcurrentcolumn=\count351
-\pgf@matrix@numberofcolumns=\count352
+\pgfmatrixcurrentrow=\count360
+\pgfmatrixcurrentcolumn=\count361
+\pgf@matrix@numberofcolumns=\count362
 )
-\tikz@expandcount=\count353
+\tikz@expandcount=\count363
  (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen310
-\pgfdecoratedremainingdistance=\dimen311
-\pgfdecoratedinputsegmentcompleteddistance=\dimen312
-\pgfdecoratedinputsegmentremainingdistance=\dimen313
-\pgf@decorate@distancetomove=\dimen314
-\pgf@decorate@repeatstate=\count354
-\pgfdecorationsegmentamplitude=\dimen315
-\pgfdecorationsegmentlength=\dimen316
+\pgfdecoratedcompleteddistance=\dimen319
+\pgfdecoratedremainingdistance=\dimen320
+\pgfdecoratedinputsegmentcompleteddistance=\dimen321
+\pgfdecoratedinputsegmentremainingdistance=\dimen322
+\pgf@decorate@distancetomove=\dimen323
+\pgf@decorate@repeatstate=\count364
+\pgfdecorationsegmentamplitude=\dimen324
+\pgfdecorationsegmentlength=\dimen325
 )
-\tikz@lib@dec@box=\box75
+\tikz@lib@dec@box=\box121
 ) (C:\Program Files\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.markings.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.markings.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.misc.code.tex
 File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Program Files\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.tex
@@ -753,16 +822,16 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Package: expl3 2024-11-02 L3 programming layer (loader) 
  (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count355
-\l__pdf_internal_box=\box76
+\l__color_backend_stack_int=\count365
+\l__pdf_internal_box=\box122
 ))
 Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 )
 Package: acro 2022/04/01 v3.8 typeset acronyms and other abbreviations (CN)
-\l__acro_tmpa_int=\count356
-\l__acro_tmpb_int=\count357
-\l__acro_tmpc_int=\count358
-\l__acro_tmpd_int=\count359
+\l__acro_tmpa_int=\count366
+\l__acro_tmpb_int=\count367
+\l__acro_tmpc_int=\count368
+\l__acro_tmpd_int=\count369
 Loading module `base' ...
 Loading module `interface' ...
 Loading module `aux' ...
@@ -771,16 +840,16 @@ Loading module `acronyms' ...
 Loading module `formatting' ...
 Loading module `ppfixes' ...
 Loading module `tools' ...
-\l__acro_minimal_usage_int=\count360
-\l__acro_nest_int=\count361
-\g_acro_barrier_int=\count362
-\g_acro_barrier_total_int=\count363
+\l__acro_minimal_usage_int=\count370
+\l__acro_nest_int=\count371
+\g_acro_barrier_int=\count372
+\g_acro_barrier_total_int=\count373
 Loading module `commands' ...
-\l_acro_nest_level_int=\count364
+\l_acro_nest_level_int=\count374
 Loading module `templates' ...
 Loading module `list' ...
 Loading module `pages' ...
-\l__acro_pages_seq_threshold_int=\count365
+\l__acro_pages_seq_threshold_int=\count375
 Loading module `locale' ...
  (C:\Program Files\MiKTeX\tex/latex/translations\translations.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
@@ -798,46 +867,46 @@ Loading module `patch' ...
 Loading module `definitions' ...
 Loading module `upgrade' ...
 ) (acronimi.tex
-\c@g@acro@SM@int=\count366
-\c@g@acro@SSB@int=\count367
-\c@g@acro@PDG@int=\count368
-\c@g@acro@NMO@int=\count369
-\c@g@acro@PSD@int=\count370
-\c@g@acro@MSE@int=\count371
-\c@g@acro@SSE@int=\count372
-\c@g@acro@MSW@int=\count373
-\c@g@acro@CC@int=\count374
-\c@g@acro@NC@int=\count375
-\c@g@acro@CP@int=\count376
-\c@g@acro@LH@int=\count377
-\c@g@acro@RH@int=\count378
-\c@g@acro@CNO@int=\count379
-\c@g@acro@pp@int=\count380
-\c@g@acro@SSM@int=\count381
-\c@g@acro@ES@int=\count382
-\c@g@acro@IC@int=\count383
-\c@g@acro@eh@int=\count384
-\c@g@acro@hpge@int=\count385
-\c@g@acro@DEP@int=\count386
-\c@g@acro@SEP@int=\count387
-\c@g@acro@FEP@int=\count388
-\c@g@acro@HV@int=\count389
-\c@g@acro@PMT@int=\count390
-\c@g@acro@lar@int=\count391
-\c@g@acro@SiPMs@int=\count392
-\c@g@acro@VAE@int=\count393
-\c@g@acro@AE@int=\count394
-\c@g@acro@ORCA@int=\count395
-\c@g@acro@LGDO@int=\count396
-\c@g@acro@DAQ@int=\count397
-\c@g@acro@FADC@int=\count398
-\c@g@acro@ROI@int=\count399
-\c@g@acro@DCR@int=\count400
+\c@g@acro@SM@int=\count376
+\c@g@acro@SSB@int=\count377
+\c@g@acro@PDG@int=\count378
+\c@g@acro@NMO@int=\count379
+\c@g@acro@PSD@int=\count380
+\c@g@acro@MSE@int=\count381
+\c@g@acro@SSE@int=\count382
+\c@g@acro@MSW@int=\count383
+\c@g@acro@CC@int=\count384
+\c@g@acro@NC@int=\count385
+\c@g@acro@CP@int=\count386
+\c@g@acro@LH@int=\count387
+\c@g@acro@RH@int=\count388
+\c@g@acro@CNO@int=\count389
+\c@g@acro@pp@int=\count390
+\c@g@acro@SSM@int=\count391
+\c@g@acro@ES@int=\count392
+\c@g@acro@IC@int=\count393
+\c@g@acro@eh@int=\count394
+\c@g@acro@hpge@int=\count395
+\c@g@acro@DEP@int=\count396
+\c@g@acro@SEP@int=\count397
+\c@g@acro@FEP@int=\count398
+\c@g@acro@HV@int=\count399
+\c@g@acro@PMT@int=\count400
+\c@g@acro@lar@int=\count401
+\c@g@acro@SiPMs@int=\count402
+\c@g@acro@VAE@int=\count403
+\c@g@acro@AE@int=\count404
+\c@g@acro@ORCA@int=\count405
+\c@g@acro@LGDO@int=\count406
+\c@g@acro@DAQ@int=\count407
+\c@g@acro@FADC@int=\count408
+\c@g@acro@ROI@int=\count409
+\c@g@acro@DCR@int=\count410
 ) (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
  (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count401
+\lrq@indent=\count411
  (C:\Program Files\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
@@ -846,63 +915,63 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count402
-\c@listtotal=\count403
-\c@listcount=\count404
-\c@liststart=\count405
-\c@liststop=\count406
-\c@citecount=\count407
-\c@citetotal=\count408
-\c@multicitecount=\count409
-\c@multicitetotal=\count410
-\c@instcount=\count411
-\c@maxnames=\count412
-\c@minnames=\count413
-\c@maxitems=\count414
-\c@minitems=\count415
-\c@citecounter=\count416
-\c@maxcitecounter=\count417
-\c@savedcitecounter=\count418
-\c@uniquelist=\count419
-\c@uniquename=\count420
-\c@refsection=\count421
-\c@refsegment=\count422
-\c@maxextratitle=\count423
-\c@maxextratitleyear=\count424
-\c@maxextraname=\count425
-\c@maxextradate=\count426
-\c@maxextraalpha=\count427
-\c@abbrvpenalty=\count428
-\c@highnamepenalty=\count429
-\c@lownamepenalty=\count430
-\c@maxparens=\count431
-\c@parenlevel=\count432
-\blx@tempcnta=\count433
-\blx@tempcntb=\count434
-\blx@tempcntc=\count435
-\c@blx@maxsection=\count436
-\blx@maxsegment@0=\count437
-\blx@notetype=\count438
-\blx@parenlevel@text=\count439
-\blx@parenlevel@foot=\count440
-\blx@sectionciteorder@0=\count441
-\blx@sectionciteorderinternal@0=\count442
-\blx@entrysetcounter=\count443
-\blx@biblioinstance=\count444
-\labelnumberwidth=\skip63
-\labelalphawidth=\skip64
-\biblabelsep=\skip65
-\bibitemsep=\skip66
-\bibnamesep=\skip67
-\bibinitsep=\skip68
-\bibparsep=\skip69
-\bibhang=\skip70
+\c@tabx@nest=\count412
+\c@listtotal=\count413
+\c@listcount=\count414
+\c@liststart=\count415
+\c@liststop=\count416
+\c@citecount=\count417
+\c@citetotal=\count418
+\c@multicitecount=\count419
+\c@multicitetotal=\count420
+\c@instcount=\count421
+\c@maxnames=\count422
+\c@minnames=\count423
+\c@maxitems=\count424
+\c@minitems=\count425
+\c@citecounter=\count426
+\c@maxcitecounter=\count427
+\c@savedcitecounter=\count428
+\c@uniquelist=\count429
+\c@uniquename=\count430
+\c@refsection=\count431
+\c@refsegment=\count432
+\c@maxextratitle=\count433
+\c@maxextratitleyear=\count434
+\c@maxextraname=\count435
+\c@maxextradate=\count436
+\c@maxextraalpha=\count437
+\c@abbrvpenalty=\count438
+\c@highnamepenalty=\count439
+\c@lownamepenalty=\count440
+\c@maxparens=\count441
+\c@parenlevel=\count442
+\blx@tempcnta=\count443
+\blx@tempcntb=\count444
+\blx@tempcntc=\count445
+\c@blx@maxsection=\count446
+\blx@maxsegment@0=\count447
+\blx@notetype=\count448
+\blx@parenlevel@text=\count449
+\blx@parenlevel@foot=\count450
+\blx@sectionciteorder@0=\count451
+\blx@sectionciteorderinternal@0=\count452
+\blx@entrysetcounter=\count453
+\blx@biblioinstance=\count454
+\labelnumberwidth=\skip65
+\labelalphawidth=\skip66
+\biblabelsep=\skip67
+\bibitemsep=\skip68
+\bibnamesep=\skip69
+\bibinitsep=\skip70
+\bibparsep=\skip71
+\bibhang=\skip72
 \blx@bcfin=\read4
 \blx@bcfout=\write5
 \blx@langwohyphens=\language80
-\c@mincomprange=\count445
-\c@maxcomprange=\count446
-\c@mincompwidth=\count447
+\c@mincomprange=\count455
+\c@maxcomprange=\count456
+\c@mincompwidth=\count457
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def
@@ -912,88 +981,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count448
-\c@savedafterword=\count449
-\c@annotator=\count450
-\c@savedannotator=\count451
-\c@author=\count452
-\c@savedauthor=\count453
-\c@bookauthor=\count454
-\c@savedbookauthor=\count455
-\c@commentator=\count456
-\c@savedcommentator=\count457
-\c@editor=\count458
-\c@savededitor=\count459
-\c@editora=\count460
-\c@savededitora=\count461
-\c@editorb=\count462
-\c@savededitorb=\count463
-\c@editorc=\count464
-\c@savededitorc=\count465
-\c@foreword=\count466
-\c@savedforeword=\count467
-\c@holder=\count468
-\c@savedholder=\count469
-\c@introduction=\count470
-\c@savedintroduction=\count471
-\c@namea=\count472
-\c@savednamea=\count473
-\c@nameb=\count474
-\c@savednameb=\count475
-\c@namec=\count476
-\c@savednamec=\count477
-\c@translator=\count478
-\c@savedtranslator=\count479
-\c@shortauthor=\count480
-\c@savedshortauthor=\count481
-\c@shorteditor=\count482
-\c@savedshorteditor=\count483
-\c@labelname=\count484
-\c@savedlabelname=\count485
-\c@institution=\count486
-\c@savedinstitution=\count487
-\c@lista=\count488
-\c@savedlista=\count489
-\c@listb=\count490
-\c@savedlistb=\count491
-\c@listc=\count492
-\c@savedlistc=\count493
-\c@listd=\count494
-\c@savedlistd=\count495
-\c@liste=\count496
-\c@savedliste=\count497
-\c@listf=\count498
-\c@savedlistf=\count499
-\c@location=\count500
-\c@savedlocation=\count501
-\c@organization=\count502
-\c@savedorganization=\count503
-\c@origlocation=\count504
-\c@savedoriglocation=\count505
-\c@origpublisher=\count506
-\c@savedorigpublisher=\count507
-\c@publisher=\count508
-\c@savedpublisher=\count509
-\c@language=\count510
-\c@savedlanguage=\count511
-\c@origlanguage=\count512
-\c@savedoriglanguage=\count513
-\c@pageref=\count514
-\c@savedpageref=\count515
-\shorthandwidth=\skip71
-\shortjournalwidth=\skip72
-\shortserieswidth=\skip73
-\shorttitlewidth=\skip74
-\shortauthorwidth=\skip75
-\shorteditorwidth=\skip76
-\locallabelnumberwidth=\skip77
-\locallabelalphawidth=\skip78
-\localshorthandwidth=\skip79
-\localshortjournalwidth=\skip80
-\localshortserieswidth=\skip81
-\localshorttitlewidth=\skip82
-\localshortauthorwidth=\skip83
-\localshorteditorwidth=\skip84
+\c@afterword=\count458
+\c@savedafterword=\count459
+\c@annotator=\count460
+\c@savedannotator=\count461
+\c@author=\count462
+\c@savedauthor=\count463
+\c@bookauthor=\count464
+\c@savedbookauthor=\count465
+\c@commentator=\count466
+\c@savedcommentator=\count467
+\c@editor=\count468
+\c@savededitor=\count469
+\c@editora=\count470
+\c@savededitora=\count471
+\c@editorb=\count472
+\c@savededitorb=\count473
+\c@editorc=\count474
+\c@savededitorc=\count475
+\c@foreword=\count476
+\c@savedforeword=\count477
+\c@holder=\count478
+\c@savedholder=\count479
+\c@introduction=\count480
+\c@savedintroduction=\count481
+\c@namea=\count482
+\c@savednamea=\count483
+\c@nameb=\count484
+\c@savednameb=\count485
+\c@namec=\count486
+\c@savednamec=\count487
+\c@translator=\count488
+\c@savedtranslator=\count489
+\c@shortauthor=\count490
+\c@savedshortauthor=\count491
+\c@shorteditor=\count492
+\c@savedshorteditor=\count493
+\c@labelname=\count494
+\c@savedlabelname=\count495
+\c@institution=\count496
+\c@savedinstitution=\count497
+\c@lista=\count498
+\c@savedlista=\count499
+\c@listb=\count500
+\c@savedlistb=\count501
+\c@listc=\count502
+\c@savedlistc=\count503
+\c@listd=\count504
+\c@savedlistd=\count505
+\c@liste=\count506
+\c@savedliste=\count507
+\c@listf=\count508
+\c@savedlistf=\count509
+\c@location=\count510
+\c@savedlocation=\count511
+\c@organization=\count512
+\c@savedorganization=\count513
+\c@origlocation=\count514
+\c@savedoriglocation=\count515
+\c@origpublisher=\count516
+\c@savedorigpublisher=\count517
+\c@publisher=\count518
+\c@savedpublisher=\count519
+\c@language=\count520
+\c@savedlanguage=\count521
+\c@origlanguage=\count522
+\c@savedoriglanguage=\count523
+\c@pageref=\count524
+\c@savedpageref=\count525
+\shorthandwidth=\skip73
+\shortjournalwidth=\skip74
+\shortserieswidth=\skip75
+\shorttitlewidth=\skip76
+\shortauthorwidth=\skip77
+\shorteditorwidth=\skip78
+\locallabelnumberwidth=\skip79
+\locallabelalphawidth=\skip80
+\localshorthandwidth=\skip81
+\localshortjournalwidth=\skip82
+\localshortserieswidth=\skip83
+\localshorttitlewidth=\skip84
+\localshortauthorwidth=\skip85
+\localshorteditorwidth=\skip86
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-compat.def
@@ -1003,19 +1072,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count516
-\c@textcitetotal=\count517
-\c@textcitemaxnames=\count518
-\c@biburlbigbreakpenalty=\count519
-\c@biburlbreakpenalty=\count520
-\c@biburlnumpenalty=\count521
-\c@biburlucpenalty=\count522
-\c@biburllcpenalty=\count523
+\c@textcitecount=\count526
+\c@textcitetotal=\count527
+\c@textcitemaxnames=\count528
+\c@biburlbigbreakpenalty=\count529
+\c@biburlbreakpenalty=\count530
+\c@biburlnumpenalty=\count531
+\c@biburlucpenalty=\count532
+\c@biburllcpenalty=\count533
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count524
+\c@smartand=\count534
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1025,8 +1094,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count525
-\c@bbx:relatedtotal=\count526
+\c@bbx:relatedcount=\count535
+\c@bbx:relatedtotal=\count536
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1061,20 +1130,20 @@ Package: xparse 2024-08-16 L3 Experimental document command parser
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 )) (C:\Program Files\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-\f@nch@headwidth=\skip85
-\f@nch@offset@elh=\skip86
-\f@nch@offset@erh=\skip87
-\f@nch@offset@olh=\skip88
-\f@nch@offset@orh=\skip89
-\f@nch@offset@elf=\skip90
-\f@nch@offset@erf=\skip91
-\f@nch@offset@olf=\skip92
-\f@nch@offset@orf=\skip93
-\f@nch@height=\skip94
-\f@nch@footalignment=\skip95
-\f@nch@widthL=\skip96
-\f@nch@widthC=\skip97
-\f@nch@widthR=\skip98
+\f@nch@headwidth=\skip87
+\f@nch@offset@elh=\skip88
+\f@nch@offset@erh=\skip89
+\f@nch@offset@olh=\skip90
+\f@nch@offset@orh=\skip91
+\f@nch@offset@elf=\skip92
+\f@nch@offset@erf=\skip93
+\f@nch@offset@olf=\skip94
+\f@nch@offset@orf=\skip95
+\f@nch@height=\skip96
+\f@nch@footalignment=\skip97
+\f@nch@widthL=\skip98
+\f@nch@widthC=\skip99
+\f@nch@widthR=\skip100
 \@temptokenb=\toks54
 ) (C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
@@ -1091,13 +1160,13 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count527
+\c@section@level=\count537
 ) (C:\Program Files\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen317
-\Hy@linkcounter=\count528
-\Hy@pagecounter=\count529
+\@linkdim=\dimen326
+\Hy@linkcounter=\count538
+\Hy@pagecounter=\count539
  (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -1105,7 +1174,7 @@ Now handling font encoding PD1 ...
 ) (C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count530
+\Hy@SavedSpaceFactor=\count540
  (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1119,17 +1188,17 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count531
+\c@Hy@tempcnt=\count541
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen318
+\XeTeXLinkMargin=\dimen327
  (C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count532
-\Field@Width=\dimen319
-\Fld@charsize=\dimen320
+\Fld@menulength=\count542
+\Field@Width=\dimen328
+\Fld@charsize=\dimen329
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1141,9 +1210,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count533
-\c@Item=\count534
-\c@Hfootnote=\count535
+\Hy@abspage=\count543
+\c@Item=\count544
+\c@Hfootnote=\count545
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -1152,8 +1221,8 @@ File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count536
-\c@bookmark@seq@number=\count537
+\Fld@listcount=\count546
+\c@bookmark@seq@number=\count547
  (C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
@@ -1161,7 +1230,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip99
+\Hy@SectionHShift=\skip101
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1170,42 +1239,42 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 92.
-LaTeX Font Info:    Trying to load font information for FML+futm on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 93.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 93.
  (C:\Program Files\MiKTeX\tex/latex/fourier\fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 92.
-LaTeX Font Info:    Trying to load font information for FMS+futm on input line 92.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 93.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 93.
  (C:\Program Files\MiKTeX\tex/latex/fourier\fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 92.
-LaTeX Font Info:    Trying to load font information for FMX+futm on input line 92.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 93.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 93.
  (C:\Program Files\MiKTeX\tex/latex/fourier\fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1243,16 +1312,16 @@ LaTeX Font Info:    ... okay on input line 92.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count538
-\scratchdimen=\dimen321
-\scratchbox=\box77
-\nofMPsegments=\count539
-\nofMParguments=\count540
+\scratchcounter=\count548
+\scratchdimen=\dimen330
+\scratchbox=\box123
+\nofMPsegments=\count549
+\nofMParguments=\count550
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count541
-\MPscratchDim=\dimen322
-\MPnumerator=\count542
-\makeMPintoPDFobject=\count543
+\MPscratchCnt=\count551
+\MPscratchDim=\dimen331
+\MPnumerator=\count552
+\makeMPintoPDFobject=\count553
 \everyMPtoPDFconversion=\toks56
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1264,13 +1333,13 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 92.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 92.
-\c@lstlisting=\count544
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 93.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 93.
+\c@lstlisting=\count554
  (C:\Program Files\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 92.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 93.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\english.lbx
@@ -1284,17 +1353,17 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 92.
-Package biblatex Info: Reference segment=0 on input line 92.
-Package hyperref Info: Link coloring ON on input line 92.
+Package biblatex Info: Reference section=0 on input line 93.
+Package biblatex Info: Reference segment=0 on input line 93.
+Package hyperref Info: Link coloring ON on input line 93.
  (main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-<figures/logo_new.png, id=154, 211.14885pt x 68.4156pt>
+<figures/logo_new.png, id=162, 211.14885pt x 68.4156pt>
 File: figures/logo_new.png Graphic file (type png)
 <use figures/logo_new.png>
-Package pdftex.def Info: figures/logo_new.png  used on input line 100.
+Package pdftex.def Info: figures/logo_new.png  used on input line 101.
 (pdftex.def)             Requested size: 274.49345pt x 88.94025pt.
 
 
@@ -1324,42 +1393,42 @@ Package pdftex.def Info: figures/logo_new.png  used on input line 100.
 
 
 ] (main.toc
-LaTeX Font Info:    Trying to load font information for FML+futmi on input line 6.
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line 8.
  (C:\Program Files\MiKTeX\tex/latex/fourier\fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 6.
+(Font)              scaled to size 10.07397pt on input line 8.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 6.
+(Font)              scaled to size 7.63599pt on input line 8.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 6.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+(Font)              scaled to size 5.51999pt on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8.
  (C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8.
  (C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 6.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 8.
  (C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 6.
+(Font)              scaled to size 10.07397pt on input line 8.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 6.
+(Font)              scaled to size 7.63599pt on input line 8.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 6.
+(Font)              scaled to size 5.51999pt on input line 8.
 
 
 [7])
@@ -1375,7 +1444,29 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 ]
 
-[10] (chapters/01_neutrino_physics.tex
+[10
+
+] (main.lof
+
+[11])
+\tf@lof=\write8
+\openout8 = `main.lof'.
+
+
+
+[12] (main.lot)
+\tf@lot=\write9
+\openout9 = `main.lot'.
+
+
+
+[13
+
+]
+
+[14
+
+] (chapters/01_neutrino_physics.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 51.
@@ -1397,9 +1488,8 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 [1
 
-
 ]
-<figures/neutrino-fluxes.png, id=306, 637.1805pt x 454.69875pt>
+<figures/neutrino-fluxes.png, id=469, 637.1805pt x 454.69875pt>
 File: figures/neutrino-fluxes.png Graphic file (type png)
 <use figures/neutrino-fluxes.png>
 Package pdftex.def Info: figures/neutrino-fluxes.png  used on input line 58.
@@ -1433,7 +1523,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 
 [6]
-<figures/mass-hierarchy.jpg, id=471, 1204.5pt x 678.535pt>
+<figures/mass-hierarchy.jpg, id=630, 1204.5pt x 678.535pt>
 File: figures/mass-hierarchy.jpg Graphic file (type jpg)
 <use figures/mass-hierarchy.jpg>
 Package pdftex.def Info: figures/mass-hierarchy.jpg  used on input line 385.
@@ -1471,7 +1561,7 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 26.
 )
-<figures/mass_parabola_A76.pdf, id=547, 650.43pt x 433.62pt>
+<figures/mass_parabola_A76.pdf, id=702, 650.43pt x 433.62pt>
 File: figures/mass_parabola_A76.pdf Graphic file (type pdf)
 <use figures/mass_parabola_A76.pdf>
 Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 529.
@@ -1481,7 +1571,7 @@ Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 529.
 [10] (feynman-diagrams/0nu-doubleBeta-diagram.tex)
 
 [11 <./figures/mass_parabola_A76.pdf>]
-<figures/0nu_vs_2nu.pdf, id=636, 650.43pt x 433.62pt>
+<figures/0nu_vs_2nu.pdf, id=787, 650.43pt x 433.62pt>
 File: figures/0nu_vs_2nu.pdf Graphic file (type pdf)
 <use figures/0nu_vs_2nu.pdf>
 Package pdftex.def Info: figures/0nu_vs_2nu.pdf  used on input line 565.
@@ -1500,12 +1590,12 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 1
 (C:\Program Files\MiKTeX\tex/latex/fourier\ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<figures/LEGENDwholeSetup_con-numeri.png, id=709, 338.76563pt x 304.88907pt>
+<figures/LEGENDwholeSetup_con-numeri.png, id=859, 338.76563pt x 304.88907pt>
 File: figures/LEGENDwholeSetup_con-numeri.png Graphic file (type png)
 <use figures/LEGENDwholeSetup_con-numeri.png>
 Package pdftex.def Info: figures/LEGENDwholeSetup_con-numeri.png  used on input line 28.
 (pdftex.def)             Requested size: 266.03474pt x 239.4408pt.
-<figures/LEGENDLAr.png, id=710, 225.09094pt x 581.17125pt>
+<figures/LEGENDLAr.png, id=860, 225.09094pt x 581.17125pt>
 File: figures/LEGENDLAr.png Graphic file (type png)
 <use figures/LEGENDLAr.png>
 Package pdftex.def Info: figures/LEGENDLAr.png  used on input line 34.
@@ -1516,7 +1606,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [15]
-<figures/4Detectors.png, id=735, 2759.05782pt x 562.35094pt>
+<figures/4Detectors.png, id=883, 2759.05782pt x 562.35094pt>
 File: figures/4Detectors.png Graphic file (type png)
 <use figures/4Detectors.png>
 Package pdftex.def Info: figures/4Detectors.png  used on input line 56.
@@ -1535,32 +1625,32 @@ Overfull \hbox (11.78958pt too wide) in paragraph at lines 108--110
 [18]
 
 [19]
-<figures/renderingDetectors/PPC_section_frontale.png, id=820, 545.78906pt x 545.78906pt>
+<figures/renderingDetectors/PPC_section_frontale.png, id=967, 545.78906pt x 545.78906pt>
 File: figures/renderingDetectors/PPC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/PPC_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/PPC_section_frontale.png  used on input line 183.
 (pdftex.def)             Requested size: 120.92421pt x 120.92342pt.
-<figures/renderingDetectors/BeGe_section_frontale.png, id=821, 545.78906pt x 546.54187pt>
+<figures/renderingDetectors/BeGe_section_frontale.png, id=968, 545.78906pt x 546.54187pt>
 File: figures/renderingDetectors/BeGe_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/BeGe_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/BeGe_section_frontale.png  used on input line 184.
 (pdftex.def)             Requested size: 120.92421pt x 121.09021pt.
-<figures/renderingDetectors/Coax_section_frontale.png, id=822, 545.78906pt x 546.54187pt>
+<figures/renderingDetectors/Coax_section_frontale.png, id=969, 545.78906pt x 546.54187pt>
 File: figures/renderingDetectors/Coax_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/Coax_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/Coax_section_frontale.png  used on input line 185.
 (pdftex.def)             Requested size: 120.92421pt x 121.09021pt.
-<figures/renderingDetectors/IC_section_frontale.png, id=823, 545.78906pt x 545.78906pt>
+<figures/renderingDetectors/IC_section_frontale.png, id=970, 545.78906pt x 545.78906pt>
 File: figures/renderingDetectors/IC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/IC_section_frontale.png>
 Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  used on input line 186.
 (pdftex.def)             Requested size: 120.92421pt x 120.92342pt.
-<figures/ramo-shockley/geometry_V08682A-def.jpg, id=825, 520.94624pt x 551.05875pt>
+<figures/ramo-shockley/geometry_V08682A-def.jpg, id=972, 520.94624pt x 551.05875pt>
 File: figures/ramo-shockley/geometry_V08682A-def.jpg Graphic file (type jpg)
 <use figures/ramo-shockley/geometry_V08682A-def.jpg>
 Package pdftex.def Info: figures/ramo-shockley/geometry_V08682A-def.jpg  used on input line 197.
 (pdftex.def)             Requested size: 241.84843pt x 255.82765pt.
-<figures/ramo-shockley/logo_SSD.jpg, id=826, 598.235pt x 353.32pt>
+<figures/ramo-shockley/logo_SSD.jpg, id=973, 598.235pt x 353.32pt>
 File: figures/ramo-shockley/logo_SSD.jpg Graphic file (type jpg)
 <use figures/ramo-shockley/logo_SSD.jpg>
 Package pdftex.def Info: figures/ramo-shockley/logo_SSD.jpg  used on input line 201.
@@ -1570,12 +1660,12 @@ Package pdftex.def Info: figures/ramo-shockley/logo_SSD.jpg  used on input line 
 [20 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png>]
 
 [21 <./figures/ramo-shockley/geometry_V08682A-def.jpg> <./figures/ramo-shockley/logo_SSD.jpg>]
-<figures/ramo-shockley/V08682A_weighting_potential.pdf, id=862, 569.36462pt x 524.10141pt>
+<figures/ramo-shockley/V08682A_weighting_potential.pdf, id=1005, 569.36462pt x 524.10141pt>
 File: figures/ramo-shockley/V08682A_weighting_potential.pdf Graphic file (type pdf)
 <use figures/ramo-shockley/V08682A_weighting_potential.pdf>
 Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_potential.pdf  used on input line 236.
 (pdftex.def)             Requested size: 232.17242pt x 213.71538pt.
-<figures/ramo-shockley/V08682A_weighting_field.pdf, id=863, 567.15607pt x 511.3082pt>
+<figures/ramo-shockley/V08682A_weighting_field.pdf, id=1006, 567.15607pt x 511.3082pt>
 File: figures/ramo-shockley/V08682A_weighting_field.pdf Graphic file (type pdf)
 <use figures/ramo-shockley/V08682A_weighting_field.pdf>
 Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used on input line 237.
@@ -1583,7 +1673,7 @@ Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used
 
 
 [22 <./figures/ramo-shockley/V08682A_weighting_potential.pdf> <./figures/ramo-shockley/V08682A_weighting_field.pdf>]
-<plots/wf_vs_windowed_wf.pdf, id=982, 650.43pt x 433.62pt>
+<plots/wf_vs_windowed_wf.pdf, id=1124, 650.43pt x 433.62pt>
 File: plots/wf_vs_windowed_wf.pdf Graphic file (type pdf)
 <use plots/wf_vs_windowed_wf.pdf>
 Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 263.
@@ -1611,14 +1701,14 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 301.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 301.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 303.
-<figures/catena_decadimento_Th228.png, id=1079, 441.3288pt x 1018.0434pt>
+<figures/catena_decadimento_Th228.png, id=1220, 441.3288pt x 1018.0434pt>
 File: figures/catena_decadimento_Th228.png Graphic file (type png)
 <use figures/catena_decadimento_Th228.png>
 Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 311.
 (pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 312.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 312.
-<plots/energy_spectrum-example.pdf, id=1082, 650.43pt x 433.62pt>
+<plots/energy_spectrum-example.pdf, id=1223, 650.43pt x 433.62pt>
 File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-example.pdf>
 Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 320.
@@ -1638,7 +1728,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [25]
-<figures/DEP-SEP-FEP.jpg, id=1095, 3093.5575pt x 1154.3125pt>
+<figures/DEP-SEP-FEP.jpg, id=1235, 3093.5575pt x 1154.3125pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
 Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 344.
@@ -1655,7 +1745,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 
 ]
 Chapter 3.
-<plots/energy_specrum-prl25-AoE_cut.pdf, id=1185, 650.43pt x 433.62pt>
+<plots/energy_specrum-prl25-AoE_cut.pdf, id=1322, 650.43pt x 433.62pt>
 File: plots/energy_specrum-prl25-AoE_cut.pdf Graphic file (type pdf)
 <use plots/energy_specrum-prl25-AoE_cut.pdf>
 Package pdftex.def Info: plots/energy_specrum-prl25-AoE_cut.pdf  used on input line 11.
@@ -1672,7 +1762,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 6.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 8.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 8.
-<plots/energy_spectrum-cut_window.pdf, id=1279, 938.08867pt x 395.51765pt>
+<plots/energy_spectrum-cut_window.pdf, id=1416, 938.08867pt x 395.51765pt>
 File: plots/energy_spectrum-cut_window.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-cut_window.pdf>
 Package pdftex.def Info: plots/energy_spectrum-cut_window.pdf  used on input line 12.
@@ -1684,40 +1774,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [31 <./plots/energy_spectrum-cut_window.pdf>]
-
-LaTeX Warning: Reference `subsec:model-implementation' on page 32 undefined on input line 41.
-
-<plots/raw_wf.pdf, id=1349, 650.43pt x 433.62pt>
+<plots/raw_wf.pdf, id=1485, 650.43pt x 433.62pt>
 File: plots/raw_wf.pdf Graphic file (type pdf)
 <use plots/raw_wf.pdf>
 Package pdftex.def Info: plots/raw_wf.pdf  used on input line 49.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 52.
-<plots/baseline_subtracted_wf.pdf, id=1350, 650.43pt x 433.62pt>
+<plots/baseline_subtracted_wf.pdf, id=1486, 650.43pt x 433.62pt>
 File: plots/baseline_subtracted_wf.pdf Graphic file (type pdf)
 <use plots/baseline_subtracted_wf.pdf>
 Package pdftex.def Info: plots/baseline_subtracted_wf.pdf  used on input line 57.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 60.
-<plots/normalised_wf.pdf, id=1351, 650.43pt x 433.62pt>
+<plots/normalised_wf.pdf, id=1487, 650.43pt x 433.62pt>
 File: plots/normalised_wf.pdf Graphic file (type pdf)
 <use plots/normalised_wf.pdf>
 Package pdftex.def Info: plots/normalised_wf.pdf  used on input line 67.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 70.
-<plots/aligned_wf.pdf, id=1352, 650.43pt x 433.62pt>
+<plots/aligned_wf.pdf, id=1488, 650.43pt x 433.62pt>
 File: plots/aligned_wf.pdf Graphic file (type pdf)
 <use plots/aligned_wf.pdf>
 Package pdftex.def Info: plots/aligned_wf.pdf  used on input line 75.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 78.
-<plots/trimmed_wf.pdf, id=1353, 650.43pt x 433.62pt>
+<plots/trimmed_wf.pdf, id=1489, 650.43pt x 433.62pt>
 File: plots/trimmed_wf.pdf Graphic file (type pdf)
 <use plots/trimmed_wf.pdf>
 Package pdftex.def Info: plots/trimmed_wf.pdf  used on input line 83.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 86.
-<plots/current_wf.pdf, id=1354, 650.43pt x 433.62pt>
+<plots/current_wf.pdf, id=1490, 650.43pt x 433.62pt>
 File: plots/current_wf.pdf Graphic file (type pdf)
 <use plots/current_wf.pdf>
 Package pdftex.def Info: plots/current_wf.pdf  used on input line 91.
@@ -1747,7 +1834,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
-<plots/sse_mse_selection_3sigma.pdf, id=1726, 650.43pt x 433.62pt>
+<plots/sse_mse_selection_3sigma.pdf, id=1860, 650.43pt x 433.62pt>
 File: plots/sse_mse_selection_3sigma.pdf Graphic file (type pdf)
 <use plots/sse_mse_selection_3sigma.pdf>
 Package pdftex.def Info: plots/sse_mse_selection_3sigma.pdf  used on input line 110.
@@ -1795,7 +1882,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 
 
 [34 <./plots/sse_mse_selection_3sigma.pdf>] Excluding 'comment' comment.
-<figures/schemaVAE.jpg, id=1823, 3365.82469pt x 802.49812pt>
+<figures/schemaVAE.jpg, id=1954, 3365.82469pt x 802.49812pt>
 File: figures/schemaVAE.jpg Graphic file (type jpg)
 <use figures/schemaVAE.jpg>
 Package pdftex.def Info: figures/schemaVAE.jpg  used on input line 209.
@@ -2037,12 +2124,9 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 ]
 Appendix B.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 1.
+Overfull \hbox (107.53316pt too wide) in paragraph at lines 1--1
+|[]\T1/futs/b/n/30 Mathematical deriva-tion of the Mikheyev-
+ []
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
@@ -2239,12 +2323,12 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 92.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 92.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 92.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
 
 
 [48]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
@@ -2252,7 +2336,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 98.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 98.
 )
-Overfull \hbox (4.04788pt too wide) in paragraph at lines 98--201
+Overfull \hbox (4.04788pt too wide) in paragraph at lines 98--215
 \T1/futs/m/n/10.95 This strik-ing re-sult dif-fers en-tirely from stan-dard vac-uum os-cil-la-tion, ef-fec-tively re-sult-ing in the phe-nomenon
  []
 
@@ -2265,69 +2349,69 @@ Overfull \hbox (4.04788pt too wide) in paragraph at lines 98--201
 
 
 ]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 
 
 [51]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 
-Overfull \hbox (9.20511pt too wide) in paragraph at lines 205--205
+Overfull \hbox (9.20511pt too wide) in paragraph at lines 219--219
 []\T1/futs/m/n/10.95 Tosaka. \T1/futs/m/it/10.95 De-cay chain 4n, Tho-rium se-ries\T1/futs/m/n/10.95 . Ac-cessed: 2026-07-31. Wiki-me-dia Com-mons, 2008. \T1/futs/m/sc/10.95 url\T1/futs/m/n/10.95 : [][]$\T1/lmtt/m/n/10.95 https :
  []
 
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 
 
 [52] (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux))
@@ -2335,28 +2419,24 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 54F35B9A03DA80D7016AA803E5781681;6333.
+(rerunfilecheck)             Checksum: 736E8D429268E7AE9C0B56E4CDF88CE5;6596.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43780 strings out of 473682
- 932614 string characters out of 5729112
- 1675955 words of memory out of 5000000
- 65823 multiletter control sequences out of 15000+600000
- 835573 words of font info for 308 fonts, out of 8000000 for 9000
+ 43938 strings out of 473682
+ 935235 string characters out of 5729112
+ 1687053 words of memory out of 5000000
+ 65966 multiletter control sequences out of 15000+600000
+ 835577 words of font info for 308 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,93p,2028b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,93p,2028b,3043s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (62 pages, 5999019 bytes).
+Output written on main.pdf (66 pages, 6028804 bytes).
 PDF statistics:
- 2142 PDF objects out of 2487 (max. 8388607)
- 292 named destinations out of 1000 (max. 500000)
- 459 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2273 PDF objects out of 2487 (max. 8388607)
+ 298 named destinations out of 1000 (max. 500000)
+ 475 words of extra memory for PDF output out of 10000 (max. 10000000)
 
