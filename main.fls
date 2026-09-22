@@ -429,6 +429,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Program Files\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
@@ -920,42 +922,42 @@ INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
 INPUT .\plots\energy_spectrum-cut_window.pdf
-INPUT .\plots\raw_wf.pdf
-INPUT .\plots\raw_wf.pdf
-INPUT .\plots\raw_wf.pdf
-INPUT .\plots\raw_wf.pdf
-INPUT .\plots\raw_wf.pdf
-INPUT .\plots\raw_wf.pdf
-INPUT .\plots\baseline_subtracted_wf.pdf
-INPUT .\plots\baseline_subtracted_wf.pdf
-INPUT .\plots\baseline_subtracted_wf.pdf
-INPUT .\plots\baseline_subtracted_wf.pdf
-INPUT .\plots\baseline_subtracted_wf.pdf
-INPUT .\plots\baseline_subtracted_wf.pdf
-INPUT .\plots\normalised_wf.pdf
-INPUT .\plots\normalised_wf.pdf
-INPUT .\plots\normalised_wf.pdf
-INPUT .\plots\normalised_wf.pdf
-INPUT .\plots\normalised_wf.pdf
-INPUT .\plots\normalised_wf.pdf
-INPUT .\plots\aligned_wf.pdf
-INPUT .\plots\aligned_wf.pdf
-INPUT .\plots\aligned_wf.pdf
-INPUT .\plots\aligned_wf.pdf
-INPUT .\plots\aligned_wf.pdf
-INPUT .\plots\aligned_wf.pdf
-INPUT .\plots\trimmed_wf.pdf
-INPUT .\plots\trimmed_wf.pdf
-INPUT .\plots\trimmed_wf.pdf
-INPUT .\plots\trimmed_wf.pdf
-INPUT .\plots\trimmed_wf.pdf
-INPUT .\plots\trimmed_wf.pdf
-INPUT .\plots\current_wf.pdf
-INPUT .\plots\current_wf.pdf
-INPUT .\plots\current_wf.pdf
-INPUT .\plots\current_wf.pdf
-INPUT .\plots\current_wf.pdf
-INPUT .\plots\current_wf.pdf
+INPUT .\plots\wfCleaning\raw_wf.pdf
+INPUT .\plots\wfCleaning\raw_wf.pdf
+INPUT .\plots\wfCleaning\raw_wf.pdf
+INPUT .\plots\wfCleaning\raw_wf.pdf
+INPUT .\plots\wfCleaning\raw_wf.pdf
+INPUT .\plots\wfCleaning\raw_wf.pdf
+INPUT .\plots\wfCleaning\baseline_subtracted_wf.pdf
+INPUT .\plots\wfCleaning\baseline_subtracted_wf.pdf
+INPUT .\plots\wfCleaning\baseline_subtracted_wf.pdf
+INPUT .\plots\wfCleaning\baseline_subtracted_wf.pdf
+INPUT .\plots\wfCleaning\baseline_subtracted_wf.pdf
+INPUT .\plots\wfCleaning\baseline_subtracted_wf.pdf
+INPUT .\plots\wfCleaning\normalised_wf.pdf
+INPUT .\plots\wfCleaning\normalised_wf.pdf
+INPUT .\plots\wfCleaning\normalised_wf.pdf
+INPUT .\plots\wfCleaning\normalised_wf.pdf
+INPUT .\plots\wfCleaning\normalised_wf.pdf
+INPUT .\plots\wfCleaning\normalised_wf.pdf
+INPUT .\plots\wfCleaning\current_wf.pdf
+INPUT .\plots\wfCleaning\current_wf.pdf
+INPUT .\plots\wfCleaning\current_wf.pdf
+INPUT .\plots\wfCleaning\current_wf.pdf
+INPUT .\plots\wfCleaning\current_wf.pdf
+INPUT .\plots\wfCleaning\current_wf.pdf
+INPUT .\plots\wfCleaning\current_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_aligned_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_aligned_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_aligned_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_aligned_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_aligned_filtered_wf.pdf
+INPUT .\plots\wfCleaning\current_aligned_filtered_wf.pdf
 INPUT .\plots\sse_mse_selection_3sigma.pdf
 INPUT .\plots\sse_mse_selection_3sigma.pdf
 INPUT .\plots\sse_mse_selection_3sigma.pdf

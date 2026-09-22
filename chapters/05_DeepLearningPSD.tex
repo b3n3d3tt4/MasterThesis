@@ -1,9 +1,11 @@
-\chapter{Deep learning \ac{PSD}}
-\label{chapter:DL-PSD}
+\chapter{Machine Learning \ac{PSD}}
+\label{chapter:ML-PSD}
+4
+Two algorithms will be investigated: first a \ac{VAE} and secondly a \ac{SOM}
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
-Raw charge waveforms\footnote{For \textit{raw} we mean waveforms already processed with LEGEND dedicated software, but still not selected in terms of energy, \ac{PSD} parameters or other features, as introduced at the end of Sec. \ref{subsubsec:data-structureL200}.} are not suitable for the \ac{VAE} implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest.
+Raw charge waveforms\footnote{For \textit{raw} we mean waveforms already processed with LEGEND dedicated software, but still not selected in terms of energy, \ac{PSD} parameters or other features, as introduced at the end of Sec. \ref{subsubsec:data-structureL200}.} are not suitable for any machine learningg algorithm implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest.
 
 The first data processing step that has been applied to raw waveforms is an energy-based cut around the region of interest, specifically encircling the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. Hence, only data between 1550 keV and 1650 keV from the whole considered dataset have been saved, discarding all the other. This is for sure a choice based on the work purposes, but also a computational needing in order to neglect data that would be unused from the very beginning. Recalling Fig. \ref{fig:TlBi-spectrum} the energy cut is depicted in Fig. \ref{fig:cut_region} for run \textit{r000} of period \textit{p03}. Moreover data have been filtered with boolean masks provided together with raw data; said filters are needed to discard useless events. Particularly the filters that have been considered are listed in Tab. \ref{tab:quality_cuts}.
 
@@ -36,9 +38,9 @@ The first data processing step that has been applied to raw waveforms is an ener
     \label{tab:quality_cuts}
 \end{table}
 
-As soon as the energy cut and the event cut are performed, waveforms need to pass through a series of processes in order to obtain suitable inputs for the \ac{VAE} algorithm. 
-Firstly the mean value of the baseline is computed from the first 200 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, waveforms are aligned in time with respect to the 50\% of their maximum: specifically 400 points before the 50\% and 800 after that are saved and the reference point at 50\% of the maximum is put as the 400th point; eventual points above the 800 ones after the alignement are discarded while vacant points at the beginning of the waveform (baseline) are set to zero. Lastly waveforms are trimmed in a 200 points window around the 50\% of the maximum to reduce dimensionality. 
-Once all of these steps are completed, what we obtain is a suitable input for the \ac{VAE} model that is to be implemented as will be described in Sec. \ref{sec:model-implementation}. An example of the process is shown in Fig. \ref{fig:data-cleaning} for run \textit{r000} of period \textit{p03}. %; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
+As soon as the energy cut and the event cut are performed, waveforms need to pass through a series of processes in order to obtain suitable inputs algorithms to be implemented. 
+Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms are obtained from charge ones via time derivation using $dt = 16 ns$ that arises from the sampling rate of 62.5 MHz. Current waveforms are then filtered using a butterworth filter designed to remove high frequency parts of the signal mainly affecting the baseline part. Lastly, waveforms are aligned with respect to the first peak of the current signal and trimmed around the alignement point with 100 samples before it and 100 after it. 
+Once all of these steps are completed, what we obtain is a suitable input for the \ac{VAE} model that is to be implemented as will be described in Sec. \ref{sec:model-implementation}. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue). %; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
 
 \begin{figure}[H]
     \centering
@@ -46,7 +48,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Prima figura (a) ---
     \begin{subfigure}[H]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/raw_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/raw_wf.pdf}
         \caption{Raw charge waveforms.}
         \label{fig:a-raw-wf}
     \end{subfigure}
@@ -54,7 +56,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Seconda figura (b) ---
     \begin{subfigure}[H]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/baseline_subtracted_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/baseline_subtracted_wf.pdf}
         \caption{Charge waveforms after baseline subtraction.}
         \label{fig:b-baseline}
     \end{subfigure}
@@ -64,7 +66,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Terza figura (c) ---
     \begin{subfigure}[H]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/normalised_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/normalised_wf.pdf}
         \caption{Charge waveforms after normalisation.}
         \label{fig:c-normalised}
     \end{subfigure}
@@ -72,33 +74,35 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Quarta figura (d) ---
     \begin{subfigure}[H]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/aligned_wf.pdf}
-        \caption{Charge waveforms after time alignement.}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/current_wf.pdf}
+        \caption{Current waveforms btained with time derivative.}
         \label{fig:d-aligned}
     \end{subfigure}
 
         % --- Quinta figura (e) ---
     \begin{subfigure}[H]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/trimmed_wf.pdf}
-        \caption{Charge waveforms after trimming.}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/current_filtered_wf.pdf}
+        \caption{Current waveforms after butterworth filtering.}
         \label{fig:e-trimmed}
     \end{subfigure}
     \hfill
     % --- Sestaa figura (f) ---
     \begin{subfigure}[H]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/current_wf.pdf}
-        \caption{Current waveforms obtained with time derivative.}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/current_aligned_filtered_wf.pdf}
+        \caption{Current waveforms after peak alignement.}
         \label{fig:f-current}
     \end{subfigure}
     
     % --- Didascalia principale ---
-    \caption{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit{r000} of period \textit{p03}: the orange one is a typical \ac{MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac{SSE} waveform. Raw waveforms depicted in Fig.\ref{fig:a-raw-wf} follows this procedure: the baseline, computed as the average value of the first 200 points (200 ns) is subtracted from the whole signal (\ref{fig:b-baseline}); then waveforms are then normalised to their maximum in order to have their amplitude between 0 and 1 (\ref{fig:c-normalised}); after that, they are aligned in time with the 50\% of the maximum as reference point to be aligned (\ref{fig:d-aligned}) and then trimmed in a 200 ns window around the center of the waveform, i.e. the alignement point. Finally the time derivative is computed in order to get the current waveforms exhibit in \ref{fig:f-current} where the two usual patterns of current in \ac{MSE} and \ac{SSE} are evident.}
+    \caption{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit{r000} of period \textit{p03}: the red one is a typical \ac{MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac{SSE} waveform. A detailed description of the process is given in the text.}
     \label{fig:data-cleaning}
 \end{figure}
 
-
+\newpage
+\section{Variational Autoencoder}
+\label{sec:VAE}
 \ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a gasussian fit is performed onto the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi via the function of Eq. \ref{eq:fitted-gaussian}
 \begin{equation}
     \label{eq:fitted-gaussian}
@@ -178,8 +182,8 @@ $\sigma$ & peak counts & background counts & purity \\
 %     \label{fig:AoE-sse_vs_mse}
 % \end{figure}
 
-\section{Model implementation}
-\label{sec:model-implementation}
+\subsection{Variational Autoencoder architecture}
+\label{sec:model-architeture}
 \begin{comment}
 QUI DEVO DIRE
 
@@ -212,5 +216,16 @@ QUI DEVO DIRE
 \end{figure}
 
 
-\subsection{Results}
+\subsection{Variational Autoencoder results}
 QUI DEVO SPERARE CHE IL ML FUNZIONI MEGLIO DELL'AvsE
+
+
+
+
+
+
+\newpage
+\section{Self-organising map}
+A \ac{SOM} is an unsupervised machine learning tecnique used to produce low-dimensionality representation of a higher-dimensionality dataset preserving topological structures of data that distinguish different types of said data. Specifically, a \ac{SOM} is a type of artificial neural network trained using competitive learning rather than error-correction learning. The goal in these auto-organised learning maps is to train different parts of the \ac{SOM} to reply to different input patterns: this specific design has been formulated in the 1980s by Teuvo Kohonen on the basis of how the human brain manages different information in different parts of the cerebral cortex.
+
+Starting from weights vectors initialised to casual or very small numbers, the algorithm exploits competitive learning: when a new training sample is received by the network, the a distance metric is computed from all the weights vectors. The most alike weights vector, named \ac{BMU} and all the neurons near to ir in the \ac{SOM} net are brought closer with one another and weights are updated.
