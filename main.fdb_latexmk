@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1790173861.81255 "main.bcf" "main.bbl" "main" 1790177270.49217 0
+["biber main"] 1790173861.81255 "main.bcf" "main.bbl" "main" 1790178900.73834 0
   "bibliografia.bib" 1790171534 15361 8172a19152d9026ae12c42fafd143d4c ""
-  "main.bcf" 1790177269 112382 7a96a44e4b2144fcfeb2ab0b4211ad69 "pdflatex"
+  "main.bcf" 1790178899 112382 7a96a44e4b2144fcfeb2ab0b4211ad69 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1790177257.00089 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1790177270.49352 0
+["pdflatex"] 1790178885.35369 "c:/Users/Utente/Desktop/uni/MAGISTRALE/___TESI_magistrale/latex/main.tex" "main.pdf" "main" 1790178900.74004 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1233951852 1040 b84415f97d114011685943ade933dc71 ""
@@ -283,10 +283,10 @@
   "chapters/01_neutrino_physics.tex" 1790158942 50478 1527a0f939d896a1684367e25730b6db ""
   "chapters/02_legend_experiment.tex" 1790158902 51536 240ee9e15de8ddc70b3530e3fc5e7470 ""
   "chapters/04_traditionalPSD.tex" 1789669155 475 ec9820b148c242c59e68b67e74030717 ""
-  "chapters/05_DeepLearningPSD.tex" 1790177255 21978 ff1226eb350a8a6c2167048a7f5a078e ""
+  "chapters/05_DeepLearningPSD.tex" 1790178883 22174 4b40c3f36e0e975e5947b72310b662c0 ""
   "chapters/06_denoising.tex" 1789371119 46 124df36e8f552fd55b114b4e36c3d9de ""
   "chapters/07_conclusions.tex" 1789669204 21 fe4b20616295c9a322e6cc7648a79dcb ""
-  "chapters/A-app_three-flavours.aux" 1790177267 7053 01efcb355fc66d381c51640bcfeaf349 "pdflatex"
+  "chapters/A-app_three-flavours.aux" 1790178897 7053 01efcb355fc66d381c51640bcfeaf349 "pdflatex"
   "chapters/A-app_three-flavours.tex" 1785597649 9348 38884232143f3bf1837cc8e7a491fcc3 ""
   "feynman-diagrams/0nu-doubleBeta-diagram.tex" 1785241635 2219 07839a6b9006d6c98186f1d62b97c559 ""
   "feynman-diagrams/2nu-doublebeta-feynman.tex" 1785241847 2275 4d72521d2da0063dc8ae5931a3fb2a11 ""
@@ -312,14 +312,14 @@
   "figures/renderingDetectors/IC_section_frontale.png" 1788376945 112750 cab4dd3867946969e67af25fa3773b43 ""
   "figures/renderingDetectors/PPC_section_frontale.png" 1788376987 82114 75a7afe4cfaeeac57c1d95aec313bee2 ""
   "figures/schemaVAE.jpg" 1789763114 280655 48b1b5f654d8f8a66e121dbd43525409 ""
-  "main.aux" 1790177269 47188 ae8cb97946497c8890d3edcd9be26bde "pdflatex"
+  "main.aux" 1790178899 47188 ae8cb97946497c8890d3edcd9be26bde "pdflatex"
   "main.bbl" 1790173865 65128 2b7dacfff81805c5abc5728b99a1c50c "biber main"
-  "main.lof" 1790177269 7522 69db70557da8eadf67f3e6b5372e33ba "pdflatex"
-  "main.lot" 1790177269 1131 db6c5cc4bfa2126c2b4efb269dee405b "pdflatex"
-  "main.out" 1790177269 7586 3fe97fbd959320fe1fa3c41371c8558a "pdflatex"
-  "main.run.xml" 1790177269 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
+  "main.lof" 1790178899 7522 69db70557da8eadf67f3e6b5372e33ba "pdflatex"
+  "main.lot" 1790178899 1131 db6c5cc4bfa2126c2b4efb269dee405b "pdflatex"
+  "main.out" 1790178899 7586 3fe97fbd959320fe1fa3c41371c8558a "pdflatex"
+  "main.run.xml" 1790178899 2307 5677c5ba60ee1c4f844da08d55e85d30 "pdflatex"
   "main.tex" 1790158915 6313 1bf6364e122e459566d06b3913fd62af ""
-  "main.toc" 1790177269 4621 e76f7bff0eef84a662b9de9df1ffaca7 "pdflatex"
+  "main.toc" 1790178899 4621 e76f7bff0eef84a662b9de9df1ffaca7 "pdflatex"
   "plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf" 1790175717 18545 77888fb1552ee5be6a16a9c22fd4b9fa ""
   "plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf" 1790175718 18010 c6cc71a2189a883ac5456533312f6b37 ""
   "plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf" 1790177161 22525 48ff32238f4127d1ba8460623afa8335 ""
