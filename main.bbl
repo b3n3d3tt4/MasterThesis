@@ -895,6 +895,35 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0168900201002236
       \endverb
     \endentry
+    \entry{originalVAEarticle}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b6fbd171848aad4edf3925543f1f1522}{%
+           family={Kingma},
+           familyi={K\bibinitperiod},
+           given={Diederik\bibnamedelima P},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=53d2880ad8047b61cdae2c6b2803e763}{%
+           family={Welling},
+           familyi={W\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \strng{fullhash}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \strng{fullhashraw}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \strng{bibnamehash}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \strng{authorbibnamehash}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \strng{authornamehash}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \strng{authorfullhash}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \strng{authorfullhashraw}{aabdd5db7a1ed298b1dfb6824d032c66}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1312.6114}
+      \field{title}{Auto-encoding variational bayes}
+      \field{year}{2013}
+    \endentry
     \entry{libro-detectors}{book}{}{}
       \name{author}{2}{}{%
         {{hash=cdb61438aeb4f18b81555a6e90e78f5d}{%
@@ -1149,6 +1178,29 @@
       \field{year}{1968}
       \field{pages}{984\bibrangedash 988}
       \range{pages}{5}
+    \endentry
+    \entry{torchSequential}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c390ae15dc416827a5426c11a2962971}{%
+           family={{PyTorch Contributors}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c390ae15dc416827a5426c11a2962971}
+      \strng{fullhash}{c390ae15dc416827a5426c11a2962971}
+      \strng{fullhashraw}{c390ae15dc416827a5426c11a2962971}
+      \strng{bibnamehash}{c390ae15dc416827a5426c11a2962971}
+      \strng{authorbibnamehash}{c390ae15dc416827a5426c11a2962971}
+      \strng{authornamehash}{c390ae15dc416827a5426c11a2962971}
+      \strng{authorfullhash}{c390ae15dc416827a5426c11a2962971}
+      \strng{authorfullhashraw}{c390ae15dc416827a5426c11a2962971}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.pytorch.org/docs/2.14/generated/torch.nn.Sequential.html}}
+      \field{note}{Accessed: 2026-09-23}
+      \field{title}{{torch.nn.Sequential} --- PyTorch 2.14 documentation}
+      \field{year}{2024}
     \endentry
     \entry{Ge76-Qvalue}{article}{}{}
       \name{author}{11}{}{%

@@ -2426,8 +2426,9 @@
     <bcf:citekey order="58" intorder="1">Th228chain</bcf:citekey>
     <bcf:citekey order="59" intorder="1">LNHB</bcf:citekey>
     <bcf:citekey order="60" intorder="1">LNHB</bcf:citekey>
-    <bcf:citekey order="61" intorder="1">Brugnera</bcf:citekey>
-    <bcf:citekey order="62" intorder="1">neutrinosPDG</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">originalVAEarticle</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">torchSequential</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">Brugnera</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

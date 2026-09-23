@@ -1,7 +1,6 @@
 \chapter{Machine Learning \ac{PSD}}
 \label{chapter:ML-PSD}
-4
-Two algorithms will be investigated: first a \ac{VAE} and secondly a \ac{SOM}
+Two algorithms will be investigated: first a \ac{VAE} and secondly a \ac{SOM}. \ac{VAE}
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
@@ -40,7 +39,7 @@ The first data processing step that has been applied to raw waveforms is an ener
 
 As soon as the energy cut and the event cut are performed, waveforms need to pass through a series of processes in order to obtain suitable inputs algorithms to be implemented. 
 Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms are obtained from charge ones via time derivation using $dt = 16 ns$ that arises from the sampling rate of 62.5 MHz. Current waveforms are then filtered using a butterworth filter designed to remove high frequency parts of the signal mainly affecting the baseline part. Lastly, waveforms are aligned with respect to the first peak of the current signal and trimmed around the alignement point with 100 samples before it and 100 after it. 
-Once all of these steps are completed, what we obtain is a suitable input for the \ac{VAE} model that is to be implemented as will be described in Sec. \ref{sec:model-implementation}. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue). %; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
+Once all of these steps are completed, what we obtain is a suitable input for the \ac{VAE} model that is to be implemented as will be described in Sec. \ref{sec:VAE}. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue). %; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
 
 \begin{figure}[H]
     \centering
@@ -91,18 +90,18 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     \begin{subfigure}[H]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/wfCleaning/current_aligned_filtered_wf.pdf}
-        \caption{Current waveforms after peak alignement.}
+        \caption{Current waveforms after peak alignement and trimming.}
         \label{fig:f-current}
     \end{subfigure}
     
     % --- Didascalia principale ---
-    \caption{Illustration of the workflow of the data processing for two types of waveforms taken from run \textit{r000} of period \textit{p03}: the red one is a typical \ac{MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac{SSE} waveform. A detailed description of the process is given in the text.}
+    \caption{Illustration of the workflow of the data processing for two types of waveforms from the dataset: the red one is a typical \ac{MSE} waveform with a non-trivial structure while the blue one is a ordinary \ac{SSE} waveform. A detailed description of the process is given in the text.}
     \label{fig:data-cleaning}
 \end{figure}
 
-\newpage
-\section{Variational Autoencoder}
-\label{sec:VAE}
+\section{Data selection}
+\label{sec:data-selection}
+
 \ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a gasussian fit is performed onto the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi via the function of Eq. \ref{eq:fitted-gaussian}
 \begin{equation}
     \label{eq:fitted-gaussian}
@@ -181,7 +180,10 @@ $\sigma$ & peak counts & background counts & purity \\
 %     \caption{Distributions of the Amplitude/Energy quantity for SSE and MSE.}
 %     \label{fig:AoE-sse_vs_mse}
 % \end{figure}
-
+\newpage
+\section{Variational Autoencoder}
+\label{sec:VAE}
+A \ac{VAE} is an artificial neural network architecture itroduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into a distribution within the latent space, differently from the standard autoencoders where input points are mapped into a single point in the latent space. From said distributions, the decoder part reconsruct the time series. 
 \subsection{Variational Autoencoder architecture}
 \label{sec:model-architeture}
 \begin{comment}
@@ -207,17 +209,106 @@ QUI DEVO DIRE
     - training \\
     - test \\
 \end{comment}
-
+The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, a 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
+\begin{enumerate}
+    \item \textbf{input waveforms}\\
+    The input of the encoder are charge and current waveforms already processed as described in Sec. \ref{sec:data-cleaning}. Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
+    \item \textbf{encoder}\\
+    The encoder is defined within a sequential conatiner (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
+    \begin{itemize}
+        \item a 1D convolutional layer (\texttt{nn.Conv1d}) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channles} $\times 200$) inputs into (16 $\times~100$) objects;
+        \item a Leaky ReLU activation, that is a similar to a Rectified Linear Unit function as detailed in Eq. \ref{leakyReLU} where $\alpha = 0.1$
+        \begin{equation}
+            \label{leakyReLU}
+            f(x) = 
+            \begin{cases} 
+                x & \text{if } x > 0 \\
+                \alpha \cdot x & \text{if } x \le 0 
+            \end{cases}
+        \end{equation}
+        \item another 1D convolutional layer (\texttt{nn.Conv1d}) with kernel size = 5, stride = 2 and padding = 2, , mapping (16 $\times 100$) objects from the previous layer into ($32~\times~50$) outputs;
+        \item another Leaky ReLU activation function identical to the previous one.
+    \end{itemize} 
+    \item \textbf{latent space}:\\
+    The latent space is constructed from the output of the encoder after the following procedure:
+    \begin{itemize}
+        \item firstly, the encoder output is flattened to a sequence with $32~\times~50$ points;
+        \item secondly, the flattened data are passed through a linear layer (\texttt{nn.Linear}) which further reduce the dimensionality to 64 points;
+        \item thirdly, a Leaky ReLU activation with $\alpha=0.1$ is applied;
+        \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
+    \end{itemize}
+    \item \textbf{reparametrisation and decoder input}:\\
+    The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. A trick called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution (mean 0 and variance 1).
+    \begin{equation}
+        \label{eq:reparametrisation-trick}
+        z = \mu + \varepsilon \cdot \sigma
+    \end{equation}
+    The appropriate input for the decoder network is computed from the $z$ values (one for each dimension in the latent space), by applying a linear layer returning 64 points followed by the usual Leaky ReLU activation and then another linear layer returning 1600 points activated again with the Leaky ReLU. The obtained object has dimensionality ($50~\times~32$) just as the output of the encoder and is a suitable input for the decoder.
+    \item \textbf{decoder}:\\
+    The decoder perfectly mirrors the encoder: 
+    \begin{itemize}
+        \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear regression) in order to obtain a ($32~\times~100$) object ;
+        \item a 1D convolutional layer with kernel size = 5, stride = 1 and padding = 2 is exploited to extract patterns and smooth out the upsampling output returning a ($16~\times~100$) object;
+        \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
+        \item the final 1D convolutional layer returns a original-waveform like output (\texttt{channels} $\times~200$)
+    \end{itemize}  
+    \item \textbf{output waveforms}: the output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current, charge or both waveforms reconstructed using information extracted from the latent space. 
+\end{enumerate}  
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/schemaVAE.jpg}
-    \caption{Schematic representation of the $\beta$-VAE architecture. The encoder network maps the input waveform to a latent space characterized by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the hyperparameter $\beta$.}
+    \caption{Schematic representation of the VAE architecture. The encoder network maps the input waveform to a latent space characterized by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the hyperparameter.}
     \label{fig:vae-architecture}
 \end{figure}
 
 
-\subsection{Variational Autoencoder results}
-QUI DEVO SPERARE CHE IL ML FUNZIONI MEGLIO DELL'AvsE
+
+\subsection{Variational Autoencoder training and testing}
+The loss function that have been used is the characteristic loss implemented in \ac{VAE} models, 
+
+\begin{equation}
+    \mathcal{L} = \mathcal{L}_{\text{rec}} + \beta \sum_{j=1}^{d} \max\left( D_{\text{KL},j},\, \lambda \right)
+\end{equation}
+
+\begin{equation}
+    \mathcal{L}_{\text{rec}} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \sum_{c=1}^{C} \sum_{t=1}^{T} \left[ \frac{\left( x_{i,c,t} - \hat{x}_{i,c,t} \right)^2}{\sigma_c^2} + \log \sigma_c^2 \right]
+\end{equation}
+$$$$
+
+\begin{equation}
+    D_{\text{KL},j} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \left( \mu_{ij}^2 + \sigma_{ij}^2 - 1 - \log \sigma_{ij}^2 \right)
+\end{equation}
+
+\begin{equation}
+    \beta(n) = \beta \cdot \min\left(1, \frac{n+1}{N_{\text{w}}}\right)
+\end{equation}
+
+
+The results of a training and testing session for current-only waveforms with $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100 are reported in Fig. \ref{fig:beta1_sigma3_validationPerEpoch}, Fig. \ref{fig:beta1_sigma3_losses} and Fig. \ref{fig:beta1_sigma3_test}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAEresults/beta1_sigma3/validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf}
+    \caption{Visualisation of the reconstruction ability of the \ac{VAE} in the validation set across different epochs. $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100}
+    \label{fig:beta1_sigma3_validationPerEpoch}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf}
+    \caption{Visualisation of the epoch evolution of the losses: total loss (left), reconstruction loss (center) and KL loss (right). $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100}
+    \label{fig:beta1_sigma3_losses}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.49\textwidth]{plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf}\hfill
+    \includegraphics[width=0.49\textwidth]{plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf}
+    \caption{Reconstruction in the test set: \ac{SSE}-like waveform on the left and \ac{MSE}-like waveform on the right. $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100}
+    \label{fig:beta1_sigma3_test}
+\end{figure}
+
+
+\subsection{Variational Autoencoder as a feature extractor}
+
+\subsection{Variational Autoencoder as a denoising algorithm}
 
 
 

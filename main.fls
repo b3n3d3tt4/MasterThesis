@@ -372,9 +372,6 @@ INPUT main.aux
 INPUT .\chapters\A-app_three-flavours.aux
 INPUT .\chapters\A-app_three-flavours.aux
 INPUT chapters\A-app_three-flavours.aux
-INPUT .\chapters\B-app_neutrinosINmatter.aux
-INPUT .\chapters\B-app_neutrinosINmatter.aux
-INPUT chapters\B-app_neutrinosINmatter.aux
 OUTPUT main.aux
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\fourier\fmlfutm.fd
@@ -812,6 +809,13 @@ INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
 INPUT .\figures\4Detectors.png
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
+INPUT .\figures\insulators-semiconductors-conductors.jpg
 INPUT .\figures\renderingDetectors\PPC_section_frontale.png
 INPUT .\figures\renderingDetectors\PPC_section_frontale.png
 INPUT .\figures\renderingDetectors\PPC_section_frontale.png
@@ -971,6 +975,30 @@ INPUT .\figures\schemaVAE.jpg
 INPUT .\figures\schemaVAE.jpg
 INPUT .\figures\schemaVAE.jpg
 INPUT .\figures\schemaVAE.jpg
+INPUT .\plots\VAEresults\beta1_sigma3\validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\train_valid_losses_beta1_sigma3_100epochs.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\train_valid_losses_beta1_sigma3_100epochs.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\train_valid_losses_beta1_sigma3_100epochs.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\train_valid_losses_beta1_sigma3_100epochs.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\train_valid_losses_beta1_sigma3_100epochs.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\train_valid_losses_beta1_sigma3_100epochs.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_sselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_sselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_sselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_sselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_sselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_sselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_mselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_mselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_mselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_mselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_mselike.pdf
+INPUT .\plots\VAEresults\beta1_sigma3\test_beta1_sigma3_100epochs_mselike.pdf
 INPUT .\chapters\06_denoising.tex
 INPUT .\chapters\06_denoising.tex
 INPUT chapters\06_denoising.tex
@@ -994,25 +1022,10 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futb8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futb8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\fourier-alt-bold.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\public\fourier\futmi.vf
-INPUT .\chapters\B-app_neutrinosINmatter.tex
-INPUT .\chapters\B-app_neutrinosINmatter.tex
-OUTPUT chapters\B-app_neutrinosINmatter.aux
-INPUT .\chapters\B-app_neutrinosINmatter.tex
-INPUT .\chapters\B-app_neutrinosINmatter.tex
-INPUT chapters\B-app_neutrinosINmatter.tex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmiib.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmiib.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmiib.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\fourier\futmib.tfm
 INPUT main.aux
 INPUT .\chapters\A-app_three-flavours.aux
 INPUT .\chapters\A-app_three-flavours.aux
 INPUT chapters\A-app_three-flavours.aux
-INPUT .\chapters\B-app_neutrinosINmatter.aux
-INPUT .\chapters\B-app_neutrinosINmatter.aux
-INPUT chapters\B-app_neutrinosINmatter.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml

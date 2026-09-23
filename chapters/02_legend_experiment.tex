@@ -123,17 +123,19 @@ All of the materials close to the detectors have been screened to prevent radioa
 
 \section{LEGEND data}
 \subsection{Detector physics and signal formation}
-As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEND program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of the thesis in Chapter \ref{chapter:PSD}.
+As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEND program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of the thesis in Chapter \ref{chapter:ML-PSD}.
+
 \paragraph{Germanium detectors basics}
 \label{par:Ge-detector-basics}
+ \begin{wrapfigure}{r}{0.52\textwidth}
+    
+  \centering
+  \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
+  \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
+  \label{fig:band_gaps}
+\end{wrapfigure}
 \ac{hpge} detectors are semiconductor detectors, therefore it is crucial to analyse some specific features of semiconductor materials.
- Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bonded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}. 
-%  \begin{wrapfigure}{r}{0.6\textwidth}
-%   \centering
-%   \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
-%   \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
-%   \label{fig:band_gaps}
-% \end{wrapfigure}
+Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bonded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}.
 The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insulators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is broken, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
 The relatively small band gap of germanium ($E_G \simeq 0.67$~eV at room temperature, compared to $1.12$~eV in silicon) has a direct consequence on the operating conditions of the detector. At $T = 300$~K the thermal energy is sufficient to promote a non-negligible number of electrons across the gap, yielding an intrinsic carrier concentration of the order of $10^{13}$~cm$^{-3}$. Once a bias voltage is applied, these thermally generated carriers are collected by the electrodes and give rise to a leakage current whose statistical fluctuations would completely overwhelm the charge released by a single ionising event. For this reason, HPGe detectors must be operated at cryogenic temperatures, where thermal generation is exponentially suppressed and the leakage current becomes negligible. In LEGEND this requirement is fulfilled by operating the bare detectors directly immersed in liquid argon at $\sim 87$~K, which therefore acts simultaneously as a cooling medium and as a shielding against external radiation (see Sec.~\ref{subsec:LAR}).
 
@@ -296,7 +298,7 @@ Specific partition tiers, such as \texttt{psp} (partition \texttt{dsp}), \texttt
 
 \subsection{Calibration data}
 The analysis presented in this work is based on raw windowed waveforms, i.e. the ones for \ac{PSD}, from the \texttt{raw} tier and energy values from the \texttt{pht} tier, both belonging to the calibration part of the \textit{prl25}\footnote{The \textit{prl25} partition corresponds to the dataset featured in the September 2025 \textit{Physical Review Letters} publication \cite{L200-sep25}.} partition. All operational runs from period \textit{p03} through \textit{p09} were utilised. Henceforth, the term dataset will be used to refer to all the runs from these periods.
-It is useful to analyse some aspects of said calibration dataset that will be more than crucial for the purpose of this work\footnote{Details about the number of events, their selection, cleaning and filtering will be discussed further in Chapter \ref{chapter:PSD}}.
+It is useful to analyse some aspects of said calibration dataset that will be more than crucial for the purpose of this work\footnote{Details about the number of events, their selection, cleaning and filtering will be discussed further in Chapter \ref{chapter:ML-PSD}}.
 
 Energy calibration is performed using Thorium-228 sources with low neutron emission. The sources are inserted in the LAr cryostat through four calibration systems, each moving four ${}^{228}$Th sources of about 5 kBq activity per source, situated at different heights for homogeneous event distribution (\cite{L200:calibration}, \cite{LEGEND:GeDet}). The decay chain of such isotope is shown in Fig. \ref{fig:decayTh228} while the energy spectrum of $\gamma$-rays emitted as a consequence of the decays are visible in Fig. \ref{fig:TlBi-spectrum}. It is evident that we can distinguish several peaks: the ones we are focusing on are listed in Table \ref{tab:emission-peaks}.
 

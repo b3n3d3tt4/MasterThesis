@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  22 SEP 2026 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.7.20)  23 SEP 2026 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1238,7 +1238,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux))
+ (main.aux (chapters/A-app_three-flavours.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
@@ -1362,7 +1362,7 @@ Package hyperref Info: Link coloring ON on input line 93.
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-<figures/logo_new.png, id=170, 211.14885pt x 68.4156pt>
+<figures/logo_new.png, id=178, 211.14885pt x 68.4156pt>
 File: figures/logo_new.png Graphic file (type png)
 <use figures/logo_new.png>
 Package pdftex.def Info: figures/logo_new.png  used on input line 101.
@@ -1449,6 +1449,9 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 [10
 
 ] (main.lof
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+
 
 [11])
 \tf@lof=\write8
@@ -1491,7 +1494,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 [1
 
 ]
-<figures/neutrino-fluxes.png, id=467, 637.1805pt x 454.69875pt>
+<figures/neutrino-fluxes.png, id=492, 637.1805pt x 454.69875pt>
 File: figures/neutrino-fluxes.png Graphic file (type png)
 <use figures/neutrino-fluxes.png>
 Package pdftex.def Info: figures/neutrino-fluxes.png  used on input line 58.
@@ -1511,24 +1514,24 @@ Overfull \hbox (1.64253pt too wide) in paragraph at lines 95--100
 
 [5]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 343.
+(Font)              scaled to size 13.24796pt on input line 344.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 343.
+(Font)              scaled to size 9.19998pt on input line 344.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 343.
+(Font)              scaled to size 7.35999pt on input line 344.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 343.
+(Font)              scaled to size 13.24796pt on input line 344.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 343.
+(Font)              scaled to size 9.19998pt on input line 344.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 343.
+(Font)              scaled to size 7.35999pt on input line 344.
 
 
 [6]
-<figures/mass-hierarchy.jpg, id=628, 1204.5pt x 678.535pt>
+<figures/mass-hierarchy.jpg, id=649, 1204.5pt x 678.535pt>
 File: figures/mass-hierarchy.jpg Graphic file (type jpg)
 <use figures/mass-hierarchy.jpg>
-Package pdftex.def Info: figures/mass-hierarchy.jpg  used on input line 385.
+Package pdftex.def Info: figures/mass-hierarchy.jpg  used on input line 386.
 (pdftex.def)             Requested size: 338.58632pt x 190.73396pt.
 
 Underfull \vbox (badness 2735) has occurred while \output is active []
@@ -1539,22 +1542,22 @@ Underfull \vbox (badness 2735) has occurred while \output is active []
 
 [8 <./figures/mass-hierarchy.jpg>] (feynman-diagrams/diracANDmajorana-massTerms.tex)
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 448.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 449.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8.3> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 448.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 449.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 448.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 449.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 459.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 460.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7.6> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 459.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 460.
 
 
 [9]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 510.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 511.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 510.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 511.
  (feynman-diagrams/2nu-doublebeta-feynman.tex
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 26.
@@ -1563,20 +1566,20 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <8> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 26.
 )
-<figures/mass_parabola_A76.pdf, id=700, 650.43pt x 433.62pt>
+<figures/mass_parabola_A76.pdf, id=721, 650.43pt x 433.62pt>
 File: figures/mass_parabola_A76.pdf Graphic file (type pdf)
 <use figures/mass_parabola_A76.pdf>
-Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 529.
+Package pdftex.def Info: figures/mass_parabola_A76.pdf  used on input line 530.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
 
 
 [10] (feynman-diagrams/0nu-doubleBeta-diagram.tex)
 
 [11 <./figures/mass_parabola_A76.pdf>]
-<figures/0nu_vs_2nu.pdf, id=785, 650.43pt x 433.62pt>
+<figures/0nu_vs_2nu.pdf, id=806, 650.43pt x 433.62pt>
 File: figures/0nu_vs_2nu.pdf Graphic file (type pdf)
 <use figures/0nu_vs_2nu.pdf>
-Package pdftex.def Info: figures/0nu_vs_2nu.pdf  used on input line 565.
+Package pdftex.def Info: figures/0nu_vs_2nu.pdf  used on input line 566.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
 ) (chapters/02_legend_experiment.tex
 
@@ -1592,12 +1595,12 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 1
 (C:\Program Files\MiKTeX\tex/latex/fourier\ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-<figures/LEGENDwholeSetup_con-numeri.png, id=857, 338.76563pt x 304.88907pt>
+<figures/LEGENDwholeSetup_con-numeri.png, id=878, 338.76563pt x 304.88907pt>
 File: figures/LEGENDwholeSetup_con-numeri.png Graphic file (type png)
 <use figures/LEGENDwholeSetup_con-numeri.png>
 Package pdftex.def Info: figures/LEGENDwholeSetup_con-numeri.png  used on input line 28.
 (pdftex.def)             Requested size: 266.03474pt x 239.4408pt.
-<figures/LEGENDLAr.png, id=858, 225.09094pt x 581.17125pt>
+<figures/LEGENDLAr.png, id=879, 225.09094pt x 581.17125pt>
 File: figures/LEGENDLAr.png Graphic file (type png)
 <use figures/LEGENDLAr.png>
 Package pdftex.def Info: figures/LEGENDLAr.png  used on input line 34.
@@ -1608,7 +1611,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [15]
-<figures/4Detectors.png, id=881, 2759.05782pt x 562.35094pt>
+<figures/4Detectors.png, id=902, 2759.05782pt x 562.35094pt>
 File: figures/4Detectors.png Graphic file (type png)
 <use figures/4Detectors.png>
 Package pdftex.def Info: figures/4Detectors.png  used on input line 56.
@@ -1625,118 +1628,127 @@ Overfull \hbox (11.78958pt too wide) in paragraph at lines 108--110
 
 
 [18]
+<figures/insulators-semiconductors-conductors.jpg, id=975, 2323.17938pt x 1278.27562pt>
+File: figures/insulators-semiconductors-conductors.jpg Graphic file (type jpg)
+<use figures/insulators-semiconductors-conductors.jpg>
+Package pdftex.def Info: figures/insulators-semiconductors-conductors.jpg  used on input line 133.
+(pdftex.def)             Requested size: 251.52443pt x 138.38719pt.
 
-[19]
-<figures/renderingDetectors/PPC_section_frontale.png, id=965, 545.78906pt x 545.78906pt>
+
+[19 <./figures/insulators-semiconductors-conductors.jpg>]
+<figures/renderingDetectors/PPC_section_frontale.png, id=987, 545.78906pt x 545.78906pt>
 File: figures/renderingDetectors/PPC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/PPC_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/PPC_section_frontale.png  used on input line 183.
+Package pdftex.def Info: figures/renderingDetectors/PPC_section_frontale.png  used on input line 185.
 (pdftex.def)             Requested size: 120.92421pt x 120.92342pt.
-<figures/renderingDetectors/BeGe_section_frontale.png, id=966, 545.78906pt x 546.54187pt>
+<figures/renderingDetectors/BeGe_section_frontale.png, id=988, 545.78906pt x 546.54187pt>
 File: figures/renderingDetectors/BeGe_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/BeGe_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/BeGe_section_frontale.png  used on input line 184.
+Package pdftex.def Info: figures/renderingDetectors/BeGe_section_frontale.png  used on input line 186.
 (pdftex.def)             Requested size: 120.92421pt x 121.09021pt.
-<figures/renderingDetectors/Coax_section_frontale.png, id=967, 545.78906pt x 546.54187pt>
+<figures/renderingDetectors/Coax_section_frontale.png, id=989, 545.78906pt x 546.54187pt>
 File: figures/renderingDetectors/Coax_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/Coax_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/Coax_section_frontale.png  used on input line 185.
+Package pdftex.def Info: figures/renderingDetectors/Coax_section_frontale.png  used on input line 187.
 (pdftex.def)             Requested size: 120.92421pt x 121.09021pt.
-<figures/renderingDetectors/IC_section_frontale.png, id=968, 545.78906pt x 545.78906pt>
+<figures/renderingDetectors/IC_section_frontale.png, id=990, 545.78906pt x 545.78906pt>
 File: figures/renderingDetectors/IC_section_frontale.png Graphic file (type png)
 <use figures/renderingDetectors/IC_section_frontale.png>
-Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  used on input line 186.
+Package pdftex.def Info: figures/renderingDetectors/IC_section_frontale.png  used on input line 188.
 (pdftex.def)             Requested size: 120.92421pt x 120.92342pt.
-<figures/ramo-shockley/geometry_V08682A-def.jpg, id=970, 520.94624pt x 551.05875pt>
-File: figures/ramo-shockley/geometry_V08682A-def.jpg Graphic file (type jpg)
-<use figures/ramo-shockley/geometry_V08682A-def.jpg>
-Package pdftex.def Info: figures/ramo-shockley/geometry_V08682A-def.jpg  used on input line 197.
-(pdftex.def)             Requested size: 241.84843pt x 255.82765pt.
-<figures/ramo-shockley/logo_SSD.jpg, id=971, 598.235pt x 353.32pt>
-File: figures/ramo-shockley/logo_SSD.jpg Graphic file (type jpg)
-<use figures/ramo-shockley/logo_SSD.jpg>
-Package pdftex.def Info: figures/ramo-shockley/logo_SSD.jpg  used on input line 201.
-(pdftex.def)             Requested size: 56.9055pt x 33.60349pt.
-
-
-[20 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png>]
-
-[21 <./figures/ramo-shockley/geometry_V08682A-def.jpg> <./figures/ramo-shockley/logo_SSD.jpg>]
-<figures/ramo-shockley/V08682A_weighting_potential.pdf, id=1003, 569.36462pt x 524.10141pt>
-File: figures/ramo-shockley/V08682A_weighting_potential.pdf Graphic file (type pdf)
-<use figures/ramo-shockley/V08682A_weighting_potential.pdf>
-Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_potential.pdf  used on input line 236.
-(pdftex.def)             Requested size: 232.17242pt x 213.71538pt.
-<figures/ramo-shockley/V08682A_weighting_field.pdf, id=1004, 567.15607pt x 511.3082pt>
-File: figures/ramo-shockley/V08682A_weighting_field.pdf Graphic file (type pdf)
-<use figures/ramo-shockley/V08682A_weighting_field.pdf>
-Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used on input line 237.
-(pdftex.def)             Requested size: 232.17242pt x 209.31003pt.
-
-
-[22 <./figures/ramo-shockley/V08682A_weighting_potential.pdf> <./figures/ramo-shockley/V08682A_weighting_field.pdf>]
-<plots/wf_vs_windowed_wf.pdf, id=1122, 650.43pt x 433.62pt>
-File: plots/wf_vs_windowed_wf.pdf Graphic file (type pdf)
-<use plots/wf_vs_windowed_wf.pdf>
-Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 263.
-(pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
-
-
-[23 <./plots/wf_vs_windowed_wf.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 276.
- (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 276.
-LaTeX Font Info:    Freeze math alphabet allocation in version normal.
-(Font)              Allocated math groups: 14 (local: 2) on input line 287.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 287.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 287.
-
-
-[24{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 298.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 298.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 299.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 299.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 301.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 301.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 303.
-<figures/catena_decadimento_Th228.png, id=1218, 441.3288pt x 1018.0434pt>
-File: figures/catena_decadimento_Th228.png Graphic file (type png)
-<use figures/catena_decadimento_Th228.png>
-Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 311.
-(pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 312.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 312.
-<plots/energy_spectrum-example.pdf, id=1221, 650.43pt x 433.62pt>
-File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
-<use plots/energy_spectrum-example.pdf>
-Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 320.
-(pdftex.def)             Requested size: 314.40001pt x 209.6041pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 330.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 331.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 332.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 333.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 335.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 336.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 336.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 336.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 336.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+[20]
+<figures/ramo-shockley/geometry_V08682A-def.jpg, id=997, 520.94624pt x 551.05875pt>
+File: figures/ramo-shockley/geometry_V08682A-def.jpg Graphic file (type jpg)
+<use figures/ramo-shockley/geometry_V08682A-def.jpg>
+Package pdftex.def Info: figures/ramo-shockley/geometry_V08682A-def.jpg  used on input line 199.
+(pdftex.def)             Requested size: 241.84843pt x 255.82765pt.
+<figures/ramo-shockley/logo_SSD.jpg, id=998, 598.235pt x 353.32pt>
+File: figures/ramo-shockley/logo_SSD.jpg Graphic file (type jpg)
+<use figures/ramo-shockley/logo_SSD.jpg>
+Package pdftex.def Info: figures/ramo-shockley/logo_SSD.jpg  used on input line 203.
+(pdftex.def)             Requested size: 56.9055pt x 33.60349pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[21 <./figures/renderingDetectors/PPC_section_frontale.png> <./figures/renderingDetectors/BeGe_section_frontale.png> <./figures/renderingDetectors/Coax_section_frontale.png> <./figures/renderingDetectors/IC_section_frontale.png> <./figures/ramo-shockley/geometry_V08682A-def.jpg> <./figures/ramo-shockley/logo_SSD.jpg>]
+<figures/ramo-shockley/V08682A_weighting_potential.pdf, id=1019, 569.36462pt x 524.10141pt>
+File: figures/ramo-shockley/V08682A_weighting_potential.pdf Graphic file (type pdf)
+<use figures/ramo-shockley/V08682A_weighting_potential.pdf>
+Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_potential.pdf  used on input line 238.
+(pdftex.def)             Requested size: 232.17242pt x 213.71538pt.
+<figures/ramo-shockley/V08682A_weighting_field.pdf, id=1020, 567.15607pt x 511.3082pt>
+File: figures/ramo-shockley/V08682A_weighting_field.pdf Graphic file (type pdf)
+<use figures/ramo-shockley/V08682A_weighting_field.pdf>
+Package pdftex.def Info: figures/ramo-shockley/V08682A_weighting_field.pdf  used on input line 239.
+(pdftex.def)             Requested size: 232.17242pt x 209.31003pt.
+
+
+[22 <./figures/ramo-shockley/V08682A_weighting_potential.pdf> <./figures/ramo-shockley/V08682A_weighting_field.pdf>]
+
+[23]
+<plots/wf_vs_windowed_wf.pdf, id=1151, 650.43pt x 433.62pt>
+File: plots/wf_vs_windowed_wf.pdf Graphic file (type pdf)
+<use plots/wf_vs_windowed_wf.pdf>
+Package pdftex.def Info: plots/wf_vs_windowed_wf.pdf  used on input line 265.
+(pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 278.
+ (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 278.
+LaTeX Font Info:    Freeze math alphabet allocation in version normal.
+(Font)              Allocated math groups: 14 (local: 2) on input line 289.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 289.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 289.
+
+
+[24{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./plots/wf_vs_windowed_wf.pdf>]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 300.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 300.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 301.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 301.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 303.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 303.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 305.
+<figures/catena_decadimento_Th228.png, id=1240, 441.3288pt x 1018.0434pt>
+File: figures/catena_decadimento_Th228.png Graphic file (type png)
+<use figures/catena_decadimento_Th228.png>
+Package pdftex.def Info: figures/catena_decadimento_Th228.png  used on input line 313.
+(pdftex.def)             Requested size: 145.11053pt x 334.7437pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 314.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 314.
+<plots/energy_spectrum-example.pdf, id=1243, 650.43pt x 433.62pt>
+File: plots/energy_spectrum-example.pdf Graphic file (type pdf)
+<use plots/energy_spectrum-example.pdf>
+Package pdftex.def Info: plots/energy_spectrum-example.pdf  used on input line 322.
+(pdftex.def)             Requested size: 314.40001pt x 209.6041pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 332.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 333.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 334.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 335.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 337.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 338.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 338.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 338.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 338.
+
+
 [25]
-<figures/DEP-SEP-FEP.jpg, id=1233, 3093.5575pt x 1154.3125pt>
+<figures/DEP-SEP-FEP.jpg, id=1255, 3093.5575pt x 1154.3125pt>
 File: figures/DEP-SEP-FEP.jpg Graphic file (type jpg)
 <use figures/DEP-SEP-FEP.jpg>
-Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 344.
+Package pdftex.def Info: figures/DEP-SEP-FEP.jpg  used on input line 346.
 (pdftex.def)             Requested size: 386.95897pt x 144.37677pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 349.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 349.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 351.
 ) (chapters/04_traditionalPSD.tex
 
 [26 <./figures/catena_decadimento_Th228.png> <./plots/energy_spectrum-example.pdf> <./figures/DEP-SEP-FEP.jpg>]
@@ -1747,7 +1759,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 
 ]
 Chapter 3.
-<plots/energy_specrum-prl25-AoE_cut.pdf, id=1320, 650.43pt x 433.62pt>
+<plots/energy_specrum-prl25-AoE_cut.pdf, id=1342, 650.43pt x 433.62pt>
 File: plots/energy_specrum-prl25-AoE_cut.pdf Graphic file (type pdf)
 <use plots/energy_specrum-prl25-AoE_cut.pdf>
 Package pdftex.def Info: plots/energy_specrum-prl25-AoE_cut.pdf  used on input line 11.
@@ -1760,170 +1772,308 @@ Package pdftex.def Info: plots/energy_specrum-prl25-AoE_cut.pdf  used on input l
 
 ]
 Chapter 4.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 8.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 8.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 10.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 10.
-<plots/energy_spectrum-cut_window.pdf, id=1415, 938.08867pt x 395.51765pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 7.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 7.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
+<plots/energy_spectrum-cut_window.pdf, id=1438, 938.08867pt x 395.51765pt>
 File: plots/energy_spectrum-cut_window.pdf Graphic file (type pdf)
 <use plots/energy_spectrum-cut_window.pdf>
-Package pdftex.def Info: plots/energy_spectrum-cut_window.pdf  used on input line 14.
+Package pdftex.def Info: plots/energy_spectrum-cut_window.pdf  used on input line 13.
 (pdftex.def)             Requested size: 483.69687pt x 203.9383pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 35.
 
 Underfull \vbox (badness 4792) has occurred while \output is active []
 
 
 
 [31 <./plots/energy_spectrum-cut_window.pdf>]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 42.
-
-
-LaTeX Warning: Reference `sec:model-implementation' on page 32 undefined on input line 43.
-
-<plots/wfCleaning/raw_wf.pdf, id=1484, 650.43pt x 433.62pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 41.
+<plots/wfCleaning/raw_wf.pdf, id=1508, 650.43pt x 433.62pt>
 File: plots/wfCleaning/raw_wf.pdf Graphic file (type pdf)
 <use plots/wfCleaning/raw_wf.pdf>
-Package pdftex.def Info: plots/wfCleaning/raw_wf.pdf  used on input line 51.
+Package pdftex.def Info: plots/wfCleaning/raw_wf.pdf  used on input line 50.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 54.
-<plots/wfCleaning/baseline_subtracted_wf.pdf, id=1485, 650.43pt x 433.62pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 53.
+<plots/wfCleaning/baseline_subtracted_wf.pdf, id=1509, 650.43pt x 433.62pt>
 File: plots/wfCleaning/baseline_subtracted_wf.pdf Graphic file (type pdf)
 <use plots/wfCleaning/baseline_subtracted_wf.pdf>
-Package pdftex.def Info: plots/wfCleaning/baseline_subtracted_wf.pdf  used on input line 59.
+Package pdftex.def Info: plots/wfCleaning/baseline_subtracted_wf.pdf  used on input line 58.
 (pdftex.def)             Requested size: 241.84843pt x 161.23087pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 62.
-<plots/wfCleaning/normalised_wf.pdf, id=1486, 650.43pt x 433.62pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 61.
+<plots/wfCleaning/normalised_wf.pdf, id=1510, 650.43pt x 433.62pt>
 File: plots/wfCleaning/normalised_wf.pdf Graphic file (type pdf)
 <use plots/wfCleaning/normalised_wf.pdf>
-Package pdftex.def Info: plots/wfCleaning/normalised_wf.pdf  used on input line 69.
+Package pdftex.def Info: plots/wfCleaning/normalised_wf.pdf  used on input line 68.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 72.
-<plots/wfCleaning/current_wf.pdf, id=1487, 650.43pt x 433.62pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 71.
+<plots/wfCleaning/current_wf.pdf, id=1511, 650.43pt x 433.62pt>
 File: plots/wfCleaning/current_wf.pdf Graphic file (type pdf)
 <use plots/wfCleaning/current_wf.pdf>
-Package pdftex.def Info: plots/wfCleaning/current_wf.pdf  used on input line 77.
+Package pdftex.def Info: plots/wfCleaning/current_wf.pdf  used on input line 76.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 80.
-<plots/wfCleaning/current_filtered_wf.pdf, id=1488, 650.43pt x 433.62pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 79.
+<plots/wfCleaning/current_filtered_wf.pdf, id=1512, 650.43pt x 433.62pt>
 File: plots/wfCleaning/current_filtered_wf.pdf Graphic file (type pdf)
 <use plots/wfCleaning/current_filtered_wf.pdf>
-Package pdftex.def Info: plots/wfCleaning/current_filtered_wf.pdf  used on input line 85.
+Package pdftex.def Info: plots/wfCleaning/current_filtered_wf.pdf  used on input line 84.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 88.
-<plots/wfCleaning/current_aligned_filtered_wf.pdf, id=1489, 650.43pt x 433.62pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 87.
+<plots/wfCleaning/current_aligned_filtered_wf.pdf, id=1513, 650.43pt x 433.62pt>
 File: plots/wfCleaning/current_aligned_filtered_wf.pdf Graphic file (type pdf)
 <use plots/wfCleaning/current_aligned_filtered_wf.pdf>
-Package pdftex.def Info: plots/wfCleaning/current_aligned_filtered_wf.pdf  used on input line 93.
+Package pdftex.def Info: plots/wfCleaning/current_aligned_filtered_wf.pdf  used on input line 92.
 (pdftex.def)             Requested size: 232.17242pt x 154.77977pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 96.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [32]
-
-[33 <./plots/wfCleaning/raw_wf.pdf> <./plots/wfCleaning/baseline_subtracted_wf.pdf> <./plots/wfCleaning/normalised_wf.pdf> <./plots/wfCleaning/current_wf.pdf> <./plots/wfCleaning/current_filtered_wf.pdf> <./plots/wfCleaning/current_aligned_filtered_wf.pdf>]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 105.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 105.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 106.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 106.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 106.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 106.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 109.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 109.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 110.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 110.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-<plots/sse_mse_selection_3sigma.pdf, id=1770, 650.43pt x 433.62pt>
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 110.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 110.
+<plots/sse_mse_selection_3sigma.pdf, id=1528, 650.43pt x 433.62pt>
 File: plots/sse_mse_selection_3sigma.pdf Graphic file (type pdf)
 <use plots/sse_mse_selection_3sigma.pdf>
-Package pdftex.def Info: plots/sse_mse_selection_3sigma.pdf  used on input line 114.
+Package pdftex.def Info: plots/sse_mse_selection_3sigma.pdf  used on input line 113.
 (pdftex.def)             Requested size: 386.95897pt x 257.97733pt.
 
-Overfull \hbox (14.89186pt too wide) in paragraph at lines 110--117
+Overfull \hbox (14.89186pt too wide) in paragraph at lines 109--116
 \T1/futs/m/n/10.95 where $\FML/futmi/m/it/10.95 A$ \T1/futs/m/n/10.95 is the to-tal num-ber of events un-der the peak, i.e. the peak area ob-tained by in-te-grat-ing the background-
  []
 
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+
+
+[33 <./plots/wfCleaning/raw_wf.pdf> <./plots/wfCleaning/baseline_subtracted_wf.pdf> <./plots/wfCleaning/normalised_wf.pdf> <./plots/wfCleaning/current_wf.pdf> <./plots/wfCleaning/current_filtered_wf.pdf> <./plots/wfCleaning/current_aligned_filtered_wf.pdf>]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 122.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 122.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 124.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 124.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 124.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 124.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 124.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 124.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 125.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 125.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 125.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 125.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 125.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 125.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 127.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 129.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 132.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 132.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 132.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 132.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 132.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 132.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 141.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 150.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 153.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 159.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 168.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 171.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 128.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 149.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 152.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 167.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 170.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-[34 <./plots/sse_mse_selection_3sigma.pdf>] Excluding 'comment' comment.
-<figures/schemaVAE.jpg, id=1864, 3365.82469pt x 802.49812pt>
-File: figures/schemaVAE.jpg Graphic file (type jpg)
-<use figures/schemaVAE.jpg>
-Package pdftex.def Info: figures/schemaVAE.jpg  used on input line 213.
-(pdftex.def)             Requested size: 483.69687pt x 115.32452pt.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 214.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 214.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 214.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 214.
 
+[34 <./plots/sse_mse_selection_3sigma.pdf>]
 
-[35 <./figures/schemaVAE.jpg>]) (chapters/06_denoising.tex
+[35] Excluding 'comment' comment.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 215.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 220.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 221.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 221.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 221.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 221.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 226.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 226.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 226.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 226.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 227.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 227.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 228.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 228.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 229.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 229.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 235.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 237.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 238.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 238.
+
+Overfull \hbox (9.21631pt too wide) in paragraph at lines 238--239
+[]\T1/futs/m/n/10.95 lastly, pa-ram-e-ters of the la-tent space are ob-tained sep-a-rately with an-other lin-ear layer (\T1/lmtt/m/n/10.95 nn.Linear\T1/futs/m/n/10.95 )
+ []
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 241.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 241.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 241.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 241.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 241.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 242.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 242.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 242.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 242.
+
 
 [36]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 245.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 245.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 246.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 246.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 250.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 250.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 251.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 252.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 253.
+<figures/schemaVAE.jpg, id=1915, 3365.82469pt x 802.49812pt>
+File: figures/schemaVAE.jpg Graphic file (type jpg)
+<use figures/schemaVAE.jpg>
+Package pdftex.def Info: figures/schemaVAE.jpg  used on input line 259.
+(pdftex.def)             Requested size: 483.69687pt x 115.32452pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 269.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 269.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 269.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 269.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 270.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 270.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 271.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 271.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 273.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 273.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 273.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 273.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 274.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 275.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 275.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 276.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 278.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 278.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 278.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 278.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 279.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 280.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 280.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 283.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 284.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 284.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 287.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 287.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 287.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 287.
+<plots/VAEresults/beta1_sigma3/validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf, id=1920, 1806.75pt x 722.7pt>
+File: plots/VAEresults/beta1_sigma3/validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf Graphic file (type pdf)
+<use plots/VAEresults/beta1_sigma3/validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf>
+Package pdftex.def Info: plots/VAEresults/beta1_sigma3/validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf  used on input line 290.
+(pdftex.def)             Requested size: 483.69687pt x 193.47748pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 291.
+
+
+[37 <./figures/schemaVAE.jpg>]
+<plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf, id=1932, 1300.86pt x 361.35pt>
+File: plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf Graphic file (type pdf)
+<use plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf>
+Package pdftex.def Info: plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf  used on input line 296.
+(pdftex.def)             Requested size: 483.69687pt x 134.35905pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 297.
+<plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf, id=1933, 650.43pt x 433.62pt>
+File: plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf Graphic file (type pdf)
+<use plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf>
+Package pdftex.def Info: plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf  used on input line 302.
+(pdftex.def)             Requested size: 237.01411pt x 158.00862pt.
+<plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf, id=1934, 650.43pt x 433.62pt>
+File: plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf Graphic file (type pdf)
+<use plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf>
+Package pdftex.def Info: plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf  used on input line 303.
+(pdftex.def)             Requested size: 237.01411pt x 158.00862pt.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+
+
+[38 <./plots/VAEresults/beta1_sigma3/validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf> <./plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf> <./plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf> <./plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf>]
+
+[39]) (chapters/06_denoising.tex
+
+[40]
 Chapter 5.
 ) (chapters/07_conclusions.tex
 
-[37
+[41
 
 ]
 
-[38
+[42
 
 ]
 Chapter 6.
 )
 
-[39]
+[43]
 
-[40
+[44
 
 ]
 
-[41]
+[45]
 \openout2 = `chapters/A-app_three-flavours.aux'.
 
  (chapters/A-app_three-flavours.tex
 
-[42
+[46
 
 
 ]
@@ -2024,7 +2174,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 58.
 
 
-[43]
+[47]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 61.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 61.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 61.
@@ -2112,238 +2262,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 130.
 )
 
-[44]
-
-[45]
-\openout2 = `chapters/B-app_neutrinosINmatter.aux'.
-
- (chapters/B-app_neutrinosINmatter.tex
-
-[46
-
-
-
-
-]
-Appendix B.
-
-Overfull \hbox (107.53316pt too wide) in paragraph at lines 1--1
-|[]\T1/futs/b/n/30 Mathematical deriva-tion of the Mikheyev-
- []
-
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 6.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 6.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 6.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 6.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 11.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 12.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 12.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 12.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 12.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 15.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 15.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 15.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 16.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 16.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 17.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 17.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 18.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 18.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 19.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 19.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 20.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 21.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 22.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 22.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 24.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 24.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 24.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 24.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 29.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 30.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 30.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 33.
-
-Overfull \hbox (3.6973pt too wide) in paragraph at lines 33--34
-[]\T1/futs/m/n/10.95 The ax-ial cur-rent in the non-relativistic limit re-duces to the spin and thus av-er-ages to zero in a non-orientated
- []
-
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 34.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 34.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 34.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 34.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 37.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 37.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 43.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 43.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 45.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 45.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 45.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 45.
-
-
-[47]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 50.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 52.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 52.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 52.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 52.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 55.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 55.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 57.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 57.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 62.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 62.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 64.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 65.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 65.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 65.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 65.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 67.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 67.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 68.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 68.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 71.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 71.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 71.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 71.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 74.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 74.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 75.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 75.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 75.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 75.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 78.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 78.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 78.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 78.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 81.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 81.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 82.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 82.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 82.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 84.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 88.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 88.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 90.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 90.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 90.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 90.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 90.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 90.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 92.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 92.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 92.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
-
-
 [48]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 98.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 98.
-)
-Overfull \hbox (4.04788pt too wide) in paragraph at lines 98--215
-\T1/futs/m/n/10.95 This strik-ing re-sult dif-fers en-tirely from stan-dard vac-uum os-cil-la-tion, ef-fec-tively re-sult-ing in the phe-nomenon
- []
-
-
 
 [49]
 
@@ -2387,6 +2306,11 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 [51]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+
+Overfull \hbox (21.06248pt too wide) in paragraph at lines 219--219
+[]\T1/futs/m/n/10.95 Diederik P Kingma and Max Welling. ^^P  Auto-encoding vari-a-tional bayes^^Q. In: \T1/futs/m/it/10.95 arXiv preprint arXiv:1312.6114
+ []
+
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
@@ -2394,6 +2318,12 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
+
+Overfull \hbox (1.68935pt too wide) in paragraph at lines 219--219
+[]\T1/futs/m/n/10.95 PyTorch Con-trib-u-tors. \T1/futs/m/it/10.95 torch.nn.Sequential --- Py-Torch 2.14 doc-u-men-ta-tion\T1/futs/m/n/10.95 . [][]$\T1/lmtt/m/n/10.95 https : / / docs . pytorch .
+ []
+
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
@@ -2417,33 +2347,29 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 219.
 
 
-[52] (main.aux (chapters/A-app_three-flavours.aux) (chapters/B-app_neutrinosINmatter.aux))
+[52] (main.aux (chapters/A-app_three-flavours.aux))
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6B02477B966D35F795CE5A5891928DBA;7153.
+(rerunfilecheck)             Checksum: 3FE97FBD959320FE1FA3C41371C8558A;7586.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44138 strings out of 473682
- 943556 string characters out of 5729112
- 1689363 words of memory out of 5000000
- 66162 multiletter control sequences out of 15000+600000
- 836179 words of font info for 310 fonts, out of 8000000 for 9000
+ 44147 strings out of 473682
+ 945146 string characters out of 5729112
+ 1686128 words of memory out of 5000000
+ 66175 multiletter control sequences out of 15000+600000
+ 830209 words of font info for 304 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,93p,2028b,3043s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,2028b,3043s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mcl.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (66 pages, 6023672 bytes).
+Output written on main.pdf (66 pages, 6464620 bytes).
 PDF statistics:
- 2189 PDF objects out of 2487 (max. 8388607)
- 302 named destinations out of 1000 (max. 500000)
- 491 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2420 PDF objects out of 2487 (max. 8388607)
+ 307 named destinations out of 1000 (max. 500000)
+ 532 words of extra memory for PDF output out of 10000 (max. 10000000)
 
