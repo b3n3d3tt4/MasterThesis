@@ -352,3 +352,16 @@ From now on, we are interested in considering the two peaks corresponding to the
 
 Nonetheless it is important to stress that this \ac{SSE} and \ac{MSE} labelling is statistical rather than exact event by event. As it is clear in Fig. \ref{fig:TlBi-spectrum} the two peaks we are considering lie over a continuous background . Therefore when considering the \ac{DEP} peak, a fraction of events with a \ac{MSE} topology arising from multiple Compton scattering are considered as well; viceversa the \ac{FEP} peak may contain a fraction of \ac{SSE}. However since these peaks significantly exceed the level of the background they are statistically dominated by the \ac{SSE} topology and \ac{MSE} respectively. Therefore, whenever we refer to \ac{SSE} and \ac{MSE} what we mean is that statistically they actually are so. 
 % Said considerations are clearly a limitation both for traditional classifiers and machine learning ones relying on pulse shapes.
+
+
+\section{Traditional \ac{PSD}}
+\label{sec:traditionalPSD}
+
+
+\subsection{Amplitude/Energy cut}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
+    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut. 90\% of the \ac{SSE} survives while almost all the \ac{MSE} are cut away.}
+    \label{fig:dAoE_prl25}
+\end{figure}

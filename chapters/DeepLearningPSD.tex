@@ -190,8 +190,8 @@ $\sigma$ & peak counts & background counts & purity \\
 \section{Variational Autoencoder}
 \label{sec:VAE}
 A \ac{VAE} is an artificial neural network architecture itroduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into a distribution within the latent space, differently from the standard autoencoders where input points are mapped into a single point in the latent space. From said distributions, the decoder part reconsruct the time series. 
-\subsection{Variational Autoencoder architecture}
-\label{sec:model-architeture}
+\subsection{Architecture}
+\label{sec:vae-architeture}
 \begin{comment}
 QUI DEVO DIRE
 
@@ -269,7 +269,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
 
 
 
-\subsection{Variational Autoencoder training and testing}
+\subsection{Training and testing}
 The loss function that have been used is the characteristic loss implemented in \ac{VAE} models, 
 
 \begin{equation}
@@ -312,15 +312,19 @@ The results of a training and testing session for current-only waveforms with $\
 \end{figure}
 
 
-\subsection{Variational Autoencoder as a feature extractor}
+\subsection{\ac{VAE} as a feature extractor}
 using beta1 and sigma3 
---- SSE SF with classifier = 59.95% ---
---- MSE SF with classifier = 20.07% ---
 
---- SSE SF with A/E = 59.10% ---
---- MSE SF with A/E =  19.16% ---
+--- SSE SF with classifier = 59.95\% ---
+
+--- MSE SF with classifier = 20.07\% ---
+
+--- SSE SF with A/E = 59.10\% ---
+
+--- MSE SF with A/E =  19.16\% ---
+
 insomma uno schifo
-\subsection{Variational Autoencoder as a denoising algorithm}
+\subsection{\ac{VAE} as a denoising algorithm}
 
 
 

@@ -59,11 +59,12 @@
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathmorphing, decorations.markings, shapes.misc, positioning}
 
-% --- ACRONIMI E BIBLIOGRAFIA ---
+% --- ACRONIMI ---
 \usepackage{acro}
 \acsetup{make-links = true}
 \input{acronimi} % Assicurati che il file acronimi.tex esista
 
+% --- BIBLIOGRAFIA ---
 \usepackage[backend=biber, style=numeric]{biblatex}
 \addbibresource{bibliografia.bib}
 
@@ -103,13 +104,13 @@
 \vspace{20mm}
 
 \begin{center}
-{\huge{\textsc{\textbf{UNIVERSIT\`A DEGLI STUDI DI PADOVA}}}}\\
+{\Huge{\textsc{\textbf{UNIVERSIT\`A DEGLI STUDI DI PADOVA}}}}\\
 \vspace{5mm}
-{\Large{\textbf{Dipartimento di Fisica e Astronomia ``Galileo Galilei''}}} \\
+{\huge{\textbf{Dipartimento di Fisica e Astronomia ``Galileo Galilei''}}} \\
 \vspace{5mm}
-{\Large{\textsc{\textbf{Master's Degree in Physics}}}}\\
+{\huge{\textsc{\textbf{Master's Degree in Physics}}}}\\
 \vspace{10mm}
-{\Large{\textsc{\textbf{Final dissertation}}}}\\
+{\huge{\textsc{\textbf{Final dissertation}}}}\\
 \vspace{10mm}
 \vspace{10mm}
 {\Huge \textbf{Signal/background discrimination\\[0.3cm] 
@@ -172,23 +173,6 @@ using Deep Learning algorithms on GPUs}}\\
 \tableofcontents
 \clearpage
 
-% --- ACRONIMI ---
-\chapter*{List of Acronyms} % Creiamo il titolo fuori dalle colonne
-\addcontentsline{toc}{chapter}{List of Acronyms}
-
-\begin{multicols}{2}
-  % heading=none impedisce ad acro di creare un suo titolo interno
-  \printacronyms[heading=none] 
-\end{multicols}
-
-% --- FIGURE ---
-\listoffigures
-\addcontentsline{toc}{chapter}{List of Figures}
-
-% --- TABELLE ---
-\listoftables
-\addcontentsline{toc}{chapter}{List of Tables}
-
 % ==========================================
 % CORPO DELLA TESI
 % ==========================================
@@ -196,8 +180,6 @@ using Deep Learning algorithms on GPUs}}\\
 
 \input{chapters/Neutrino_physics.tex}
 \input{chapters/Legend_experiment.tex}
-% \input{chapters/Legend_data.tex}
-\input{chapters/TraditionalPSD.tex}
 \input{chapters/DeepLearningPSD.tex}
 \input{chapters/Conclusions.tex}
 
@@ -215,6 +197,24 @@ using Deep Learning algorithms on GPUs}}\\
 % \include{chapters/C-raw_waveforms}
 
 \renewcommand{\chapterTitleSize}{\fontsize{36pt}{40pt}\selectfont}
+% --- ACRONIMI ---
+\chapter*{List of Acronyms} % Creiamo il titolo fuori dalle colonne
+\addcontentsline{toc}{chapter}{List of Acronyms}
+
+\begin{multicols}{2}
+  % heading=none impedisce ad acro di creare un suo titolo interno
+  \printacronyms[heading=none] 
+\end{multicols}
+
+% --- FIGURE ---
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+% --- TABELLE ---
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+% --- BIBLIOGRAFIA ---
 \printbibliography[heading=bibintoc]
 
 % \include{chapters/08_ringraziamenti}
