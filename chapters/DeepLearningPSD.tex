@@ -272,46 +272,45 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
 
 
 \subsection{Training and testing}
-The loss function that have been used is the characteristic loss implemented in \ac{VAE} models, 
-
+The loss function that have been used is an \ac{ELBO}, i.e. the characteristic loss implemented in \ac{VAE} models, with some adjustments created for our specific work. The general formula is written in Eq. \ref{eq:ELBO} where it is visible that two terms enters in the loss computation: a reconstruction term and a regularisation one.
 \begin{equation}
-    \mathcal{L} = \mathcal{L}_{\text{rec}} + \beta \sum_{j=1}^{d} \max\left( D_{\text{KL},j},\, \lambda \right)
+    \label{eq:ELBO}
+    L = L_{\text{rec}} + L_{\text{reg}}
 \end{equation}
 
+In the context of a \ac{VAE}, using a standard Mean Squared Error for the reconstruction loss would force the model to reproduce both the physically significant features of the waveform and the background stochastic noise, such as the random fluctuations preceding and following the main peaks. To overcome this limitation, the reconstruction term in the \ac{ELBO} function is modeled as the Negative Log-Likelihood (\ac{NLL}) of a Gaussian distribution. Instead of assuming a fixed noise level, the \ac{VAE} dynamically learns a channel-specific variance, denoted as $\sigma_c^2$. This allows the model to weight the reconstruction error with respect to the expected noise level of each specific channel $c$.
+Mathematically speaking, the squared error is divided by the learned variance $\sigma_c^2$, and a logarithmic penalty term ($\log \sigma_c^2$) is added. This second term is crucial to prevent a trivial solution: if the loss only consisted of the first term ($( x_{i,c,t} - \hat{x}_{i,c,t} )^2 / \sigma_c^2$), the optimization algorithm would simply predict an infinitely large noise value to drive the error to zero. The addition of the logarithmic penalty forces the model to find an optimal balance, preventing the overestimation of the underlying noise.
+In this specific work, the two channels of the input tensor represent the charge and the current of the same physical signal. Since current is the time derivative of charge, these two quantities inherently possess fundamentally different scales and noise profiles. By learning a separate $\sigma_c^2$ for each channel, the \ac{NLL} acts as an automatic normalization mechanism, preventing the channel with the larger numerical magnitude or higher intrinsic variance from dominating the loss gradient. 
+Finally, the individual losses of the channels must be summed, as expressed in Eq. \ref{eq:rec-loss}. From a probabilistic poin of view, this is equivalent to assuming independence of the noise between the charge and current measurements. Moreover, this sum is necessary to aggregate the array of channel-specific errors into a single scalar value, which is required by the framework to correctly perform the backpropagation algorithm.
 \begin{equation}
-    \mathcal{L}_{\text{rec}} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \sum_{c=1}^{C} \sum_{t=1}^{T} \left[ \frac{\left( x_{i,c,t} - \hat{x}_{i,c,t} \right)^2}{\sigma_c^2} + \log \sigma_c^2 \right]
+    \label{eq:rec-loss}
+    L_{\text{rec}} = \frac{1}{B} \sum_{i=1}^{B} \sum_{c=1}^{C} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,c,t} - \hat{x}_{i,c,t} \right)^2}{\sigma_c^2} + \log \sigma_c^2 \right) \right]
 \end{equation}
-$$$$
 
+The second part of the loss expressed in Eq. \ref{eq:ELBO} concerns the organisation of the 8-dimension latent space and is based on \ac{KL} divergence. Firstly we define a \textit{prior} distribution, i.e. a standard Gaussian distribution $p(z) = \mathcal{N}(z; \mathbf{0}, \mathbf{I})$ with a zero mean vector and an identity covariance matrix. Secondly, seeing that the encoder network maps the original input waveform $x$ into a set of 8 Gaussian distributions, we can define the so-called \textit{posterior} distribution $q(z|x) = \mathcal{N}(z; \boldsymbol{\mu}_\phi(x), \text{diag}(\boldsymbol{\sigma}_\phi^2(x)))$, parameterized by the learned mean and variance vectors.
+The \ac{KL} divergence is then computed to measure the statistical distance between the approximate \textit{posterior} and the \textit{prior}. This penalizes the model if the latent representations deviate significantly from a standard normal distribution. For a single latent dimension $j$, computed over a batch of size $B$, the analytical closed-form of the \ac{KL} divergence is given in Eq. \ref{eq:KL-loss}:
 \begin{equation}
+    \label{eq:KL-loss}
     D_{\text{KL},j} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \left( \mu_{ij}^2 + \sigma_{ij}^2 - 1 - \log \sigma_{ij}^2 \right)
 \end{equation}
-
+In standard \ac{VAE} training, forcing strong regularization can lead to \textit{posterior collapse}: this occurs when the optimization algorithm drives the \ac{KL} divergence to zero by collapsing the posterior distribution to identically match the prior, effectively ignoring the input data and preventing the encoder from learning meaningful representations. 
+To prevent this issue, a ``free bits'' (or \ac{KL} thresholding) strategy is implemented. Instead of forcing the divergence of every dimension to reach absolute zero, a minimum threshold $\lambda_{fb}$ is established. The total regularization loss $L_{\text{reg}}$ is computed by clamping the \ac{KL} divergence of each dimension to this lower bound before summing them, as defined in Eq. \ref{eq:KL-total}
 \begin{equation}
+    \label{eq:KL-total}
+    L_{\text{reg}} = \sum_{j=1}^{8} \max \left( \lambda_{fb}, \, D_{\text{KL},j} \right)
+\end{equation}
+By applying this maximum operator, the network is not forced to perfectly match the \textit{prior} distribution. If the divergence $D_{\text{KL},j}$ of a specific dimension drops below the chosen threshold $\lambda_{fb}$, the loss for that dimension remains constant at $\lambda_{fb}$. This means the encoder is allowed to retain a small amount of useful information (the \texttt{free bits}) to describe the waveform without being further penalized by the optimization process, effectively preventing the posterior collapse.
+
+An additional tunable parameter $\beta$ balances the two contributions in the loss function: when $\beta < 1$ the reconstruction error weights more than the \ac{KL} thus the algorithm favours a truthful reconstruction, on the other hand if $\beta > 1$ the \ac{KL} becomes more important than the reconstruction. During the first part of the training a number $N_w$ of \textit{warm-up epochs} use a variable value of $\beta$ that is then settle to 1 as defined in Eq. \ref{eq:beta} where $n$ is the epoch number. This procedure is defined in order to let the algorithm learn appropriate weights for the reconstruction before trying to minimise the \ac{KL} divergence.
+\begin{equation}
+    \label{eq:beta}
     \beta(n) = \beta \cdot \min\left(1, \frac{n+1}{N_{\text{w}}}\right)
 \end{equation}
 
+The training and testing of the algorithm is done splitting the dataset in order to have the 90\% of the total available data for the training and validation sets and the 10\% of them for the test set.
+Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm.
 
-The results of a training and testing session for current-only waveforms with $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100 are reported in Fig. \ref{fig:beta1_sigma3_validationPerEpoch}, Fig. \ref{fig:beta1_sigma3_losses} and Fig. \ref{fig:beta1_sigma3_test}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/VAEresults/beta1_sigma3/validation_perEpoch_beta1_sigma3_epochs100_10plots.pdf}
-    \caption{Visualisation of the reconstruction ability of the \ac{VAE} in the validation set across different epochs. $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100}
-    \label{fig:beta1_sigma3_validationPerEpoch}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/VAEresults/beta1_sigma3/train_valid_losses_beta1_sigma3_100epochs.pdf}
-    \caption{Visualisation of the epoch evolution of the losses: total loss (left), reconstruction loss (center) and KL loss (right). $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100}
-    \label{fig:beta1_sigma3_losses}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.49\textwidth]{plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_sselike.pdf}\hfill
-    \includegraphics[width=0.49\textwidth]{plots/VAEresults/beta1_sigma3/test_beta1_sigma3_100epochs_mselike.pdf}
-    \caption{Reconstruction in the test set: \ac{SSE}-like waveform on the left and \ac{MSE}-like waveform on the right. $\beta$ = 1, N$_{\sigma}$ = 3, N$_{\text{epochs}}$ = 100}
-    \label{fig:beta1_sigma3_test}
-\end{figure}
+
 
 
 \subsection{\ac{VAE} as a feature extractor}
