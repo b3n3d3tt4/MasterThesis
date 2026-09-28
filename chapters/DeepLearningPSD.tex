@@ -218,50 +218,51 @@ QUI DEVO DIRE
     - test \\
 \end{comment}
 The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, a 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
-\begin{enumerate}
+\begin{itemize}
     \item \textbf{input waveforms}\\
     The input of the encoder are charge and current waveforms already processed as described in Sec. \ref{sec:data-cleaning}. Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
     \item \textbf{encoder}\\
     The encoder is defined within a sequential conatiner (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
-    \begin{itemize}
-        \item a 1D convolutional layer (\texttt{nn.Conv1d}) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channles} $\times 200$) inputs into (16 $\times~100$) objects;
-        \item a Leaky ReLU activation, that is a similar to a Rectified Linear Unit function as detailed in Eq. \ref{leakyReLU} where $\alpha = 0.1$
+    \begin{enumerate}
+        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channles} $\times 200$) inputs into (16 $\times~100$) objects;
+        \item a Leaky ReLU activation, that is a similar to a Rectified Linear Unit function as detailed in Eq. \ref{eq:leakyReLU} where $\alpha = 0.1$
         \begin{equation}
-            \label{leakyReLU}
+            \label{eq:leakyReLU}
             f(x) = 
             \begin{cases} 
                 x & \text{if } x > 0 \\
                 \alpha \cdot x & \text{if } x \le 0 
             \end{cases}
         \end{equation}
-        \item another 1D convolutional layer (\texttt{nn.Conv1d}) with kernel size = 5, stride = 2 and padding = 2, , mapping (16 $\times 100$) objects from the previous layer into ($32~\times~50$) outputs;
+        \item another 1D convolutional layer with kernel size = 5, stride = 2 and padding = 2, , mapping (16 $\times 100$) objects from the previous layer into ($32~\times~50$) outputs;
         \item another Leaky ReLU activation function identical to the previous one.
-    \end{itemize} 
-    \item \textbf{latent space}:\\
+    \end{enumerate} 
+    \item \textbf{latent space}\\
     The latent space is constructed from the output of the encoder after the following procedure:
-    \begin{itemize}
+    \begin{enumerate}
         \item firstly, the encoder output is flattened to a sequence with $32~\times~50$ points;
-        \item secondly, the flattened data are passed through a linear layer (\texttt{nn.Linear}) which further reduce the dimensionality to 64 points;
+        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channles} $\times 200$) inputs into (16 $\times~100$) objects;
+        \item secondly, the flattened data are passed through a linear layer (\texttt{Linear} in PyTorch) which further reduce the dimensionality to 64 points;
         \item thirdly, a Leaky ReLU activation with $\alpha=0.1$ is applied;
         \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
-    \end{itemize}
-    \item \textbf{reparametrisation and decoder input}:\\
+    \end{enumerate}
+    \item \textbf{reparametrisation and decoder input}\\
     The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. A trick called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution (mean 0 and variance 1).
     \begin{equation}
         \label{eq:reparametrisation-trick}
         z = \mu + \varepsilon \cdot \sigma
     \end{equation}
     The appropriate input for the decoder network is computed from the $z$ values (one for each dimension in the latent space), by applying a linear layer returning 64 points followed by the usual Leaky ReLU activation and then another linear layer returning 1600 points activated again with the Leaky ReLU. The obtained object has dimensionality ($50~\times~32$) just as the output of the encoder and is a suitable input for the decoder.
-    \item \textbf{decoder}:\\
+    \item \textbf{decoder}\\
     The decoder perfectly mirrors the encoder: 
-    \begin{itemize}
+    \begin{enumerate}
         \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear regression) in order to obtain a ($32~\times~100$) object ;
         \item a 1D convolutional layer with kernel size = 5, stride = 1 and padding = 2 is exploited to extract patterns and smooth out the upsampling output returning a ($16~\times~100$) object;
         \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
         \item the final 1D convolutional layer returns a original-waveform like output (\texttt{channels} $\times~200$)
-    \end{itemize}  
+    \end{enumerate}  
     \item \textbf{output waveforms}: the output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current, charge or both waveforms reconstructed using information extracted from the latent space. 
-\end{enumerate}  
+\end{itemize}  
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/schemaVAE.jpg}
@@ -272,13 +273,14 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
 
 
 \subsection{Training and testing}
+\label{subsec:VAE-training}
 The loss function that have been used is an \ac{ELBO}, i.e. the characteristic loss implemented in \ac{VAE} models, with some adjustments created for our specific work. The general formula is written in Eq. \ref{eq:ELBO} where it is visible that two terms enters in the loss computation: a reconstruction term and a regularisation one.
 \begin{equation}
     \label{eq:ELBO}
-    L = L_{\text{rec}} + L_{\text{reg}}
+    L = L_{\text{rec}} + \beta \cdot L_{\text{reg}}
 \end{equation}
 
-In the context of a \ac{VAE}, using a standard Mean Squared Error for the reconstruction loss would force the model to reproduce both the physically significant features of the waveform and the background stochastic noise, such as the random fluctuations preceding and following the main peaks. To overcome this limitation, the reconstruction term in the \ac{ELBO} function is modeled as the Negative Log-Likelihood (\ac{NLL}) of a Gaussian distribution. Instead of assuming a fixed noise level, the \ac{VAE} dynamically learns a channel-specific variance, denoted as $\sigma_c^2$. This allows the model to weight the reconstruction error with respect to the expected noise level of each specific channel $c$.
+In the context of a \ac{VAE}, using a standard Mean Squared Error for the reconstruction loss would force the model to reproduce both the physically significant features of the waveform and the background stochastic noise, such as the random fluctuations preceding and following the main peaks. To overcome this limitation, the reconstruction term in the \ac{ELBO} function is modeled as the (\ac{NLL}) of a Gaussian distribution. Instead of assuming a fixed noise level, the \ac{VAE} dynamically learns a channel-specific variance, denoted as $\sigma_c^2$. This allows the model to weight the reconstruction error with respect to the expected noise level of each specific channel $c$.
 Mathematically speaking, the squared error is divided by the learned variance $\sigma_c^2$, and a logarithmic penalty term ($\log \sigma_c^2$) is added. This second term is crucial to prevent a trivial solution: if the loss only consisted of the first term ($( x_{i,c,t} - \hat{x}_{i,c,t} )^2 / \sigma_c^2$), the optimization algorithm would simply predict an infinitely large noise value to drive the error to zero. The addition of the logarithmic penalty forces the model to find an optimal balance, preventing the overestimation of the underlying noise.
 In this specific work, the two channels of the input tensor represent the charge and the current of the same physical signal. Since current is the time derivative of charge, these two quantities inherently possess fundamentally different scales and noise profiles. By learning a separate $\sigma_c^2$ for each channel, the \ac{NLL} acts as an automatic normalization mechanism, preventing the channel with the larger numerical magnitude or higher intrinsic variance from dominating the loss gradient. 
 Finally, the individual losses of the channels must be summed, as expressed in Eq. \ref{eq:rec-loss}. From a probabilistic poin of view, this is equivalent to assuming independence of the noise between the charge and current measurements. Moreover, this sum is necessary to aggregate the array of channel-specific errors into a single scalar value, which is required by the framework to correctly perform the backpropagation algorithm.
@@ -294,10 +296,10 @@ The \ac{KL} divergence is then computed to measure the statistical distance betw
     D_{\text{KL},j} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \left( \mu_{ij}^2 + \sigma_{ij}^2 - 1 - \log \sigma_{ij}^2 \right)
 \end{equation}
 In standard \ac{VAE} training, forcing strong regularization can lead to \textit{posterior collapse}: this occurs when the optimization algorithm drives the \ac{KL} divergence to zero by collapsing the posterior distribution to identically match the prior, effectively ignoring the input data and preventing the encoder from learning meaningful representations. 
-To prevent this issue, a ``free bits'' (or \ac{KL} thresholding) strategy is implemented. Instead of forcing the divergence of every dimension to reach absolute zero, a minimum threshold $\lambda_{fb}$ is established. The total regularization loss $L_{\text{reg}}$ is computed by clamping the \ac{KL} divergence of each dimension to this lower bound before summing them, as defined in Eq. \ref{eq:KL-total}
+To prevent this issue, a ``free bits'' (or \ac{KL} thresholding) strategy is implemented. Instead of forcing the divergence of every dimension to reach absolute zero, a minimum threshold $\lambda_{fb}$ is established. The total regularization loss $L_{\text{reg}}$ is computed by clamping the \ac{KL} divergence of each dimension to this lower bound before summing them, as defined in Eq. \ref{eq:KL-total} where $k$ is the number of dimensions in the latent space.
 \begin{equation}
     \label{eq:KL-total}
-    L_{\text{reg}} = \sum_{j=1}^{8} \max \left( \lambda_{fb}, \, D_{\text{KL},j} \right)
+    L_{\text{reg}} = \sum_{j=1}^{k} \max \left( \lambda_{fb}, \, D_{\text{KL},j} \right)
 \end{equation}
 By applying this maximum operator, the network is not forced to perfectly match the \textit{prior} distribution. If the divergence $D_{\text{KL},j}$ of a specific dimension drops below the chosen threshold $\lambda_{fb}$, the loss for that dimension remains constant at $\lambda_{fb}$. This means the encoder is allowed to retain a small amount of useful information (the \texttt{free bits}) to describe the waveform without being further penalized by the optimization process, effectively preventing the posterior collapse.
 
@@ -308,7 +310,7 @@ An additional tunable parameter $\beta$ balances the two contributions in the lo
 \end{equation}
 
 The training and testing of the algorithm is done splitting the dataset in order to have the 90\% of the total available data for the training and validation sets and the 10\% of them for the test set.
-Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm.
+Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm. The number of dimensions in the latent space is $k = 8$.
 
 
 
@@ -332,6 +334,64 @@ insomma uno schifo
 \newpage
 \section{Deep Temporal Clustering}
 \label{sec:DTC}
+Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called \ac{DTC}, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means alorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned in order to resemble a typical waveform of such cluster. 
+\subsection{Architecure} 
+The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}.
+
+\subsubsection{Temporal Autoencoder class}
+The \ac{TAE} is an Autoencoder for which the latent space is given by a compacted time series which ideally represents the input and from which the latter can be reconstructed with the decoder.
+The workflow of the \ac{TAE} follows this scheme:
+\begin{itemize}
+    \item \textbf{input waveforms}\\
+    Input waveforms are current signals processed as explained above in Sec. \ref{sec:data-cleaning} with dimension ($1~\times~200$). The only difference with respect to the \ac{VAE} input is that in this case no \ac{SSE}/\ac{MSE} cut has been performed and the whole energy spectrum between $1550$ keV and $1650$ keV has been considered. 
+    \item \textbf{temporal encoder}\\
+    The temporal encoder is constructed as a sequential module \cite{torchSequential}
+    \begin{enumerate}
+        \item a 1D convolutional (\texttt{Conv1d}) layer with kernel size = 10, stride = 1 and padding = kernel size -1 = 10 - 1 = 9, mapping the ($1~\times~200$) input into a tensor with dimensions ($50~\times~200$);
+        \item a LeakyReLU activation function, already detailed in Eq. \ref{eq:leakyReLU}, with $\alpha = 0.1$;
+        \item a 1D max pooling layer (\texttt{MaxPool1d}) with kernel size = 10 returnin a ($50~\times~20$) object and thus significantly reducing the time dimensions;
+        \item a bidirectional \ac{LSTM} (\texttt{LSTM}) receiving the 50 input features that uses 50 hidden units to return another ($506\times~20$) object. Since the standard PyTorch library does not natively implement the summation of the forward and backward outputs, a dedicated custom class was designed to perform this operation manually;
+        \item a LeakyReLU activation function with $\alpha = 0.1$;
+        \item another bidirectional \ac{LSTM} with only one hidden unit to compact features in a single tensor of dimensions ($1~\times~20$);
+        \item a LeakyReLU activation function with $\alpha = 0.1$.
+    \end{enumerate}
+    \item \textbf{latent space}\\
+    Differently respect to the \ac{VAE} case, the latent space is a compact time series with dimensions ($1~\times~20$), i.e. the output of the last layer of the encoder module. This representation maintains the sequential nature of input data but extract significant features that are indeed the output of both the decoder module and the clustering layer that will be discussed further in this Section.
+    \item \textbf{temporal decoder}\\
+    The decoder part tries to reconstruct the original waveform, starting from the latent-space small time series:
+    \begin{enumerate}
+        \item the ($1~\times~20$) latent representation is upsampled in linear mode, with a scaling factor that returns a ($1~\times200$) object;
+        \item a 1D convolutional layer with 50 kernels of kernel size = 10, stride = 1 and padding = kernel size -1 = 10 -1 = 9 expands the object up to a ($50~\times~200$) () dimensionality object;
+        \item a LeakyReLU activation is performed on the output of the previous layer with $\alpha=0.1$;
+        \item a 1D convolutional layer with kernel size = 10, stride = 1 and padding = kernel size -1 = 10 -1 = 9 maps the 50 features to the original number of channels, that is exaclty 1.
+    \end{enumerate}
+    \item \textbf{output waveforms}\\
+    Just as in the \ac{VAE} implementation, output waveforms are the latent-based reconstruction of input ones.
+\end{itemize}
+
+Although the original loss function used in \cite{DTC} was a Mean Square Error loss, this function is not suitable for our signals, as already discussed in \ref{subsec:VAE-training} thus loss function that parametrises and corrects all of the just-mentioned steps of the \ac{TAE} part of \ac{DTC} is a \ac{NLL} as the one outlined in Eq. \ref{eq:rec-loss} without the channel average. Therefore the \ac{TAE} loss function results in Eq. \ref{eq:tae-loss}, where $\sigma_c$ is a trainable parameter of the model here as well as in the \ac{VAE} implementation. Specifically, this parameter is tuned in the initial part of the training, called \textit{pretrain}, where only the \ac{TAE} is used, and then fixed for the second part of the training where also the \ac{TSC} part is implemented.
+\begin{equation}
+    \label{eq:tae-loss}
+    L_{\text{TAE}} = \frac{1}{B} \sum_{i=1}^{B} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,t} - \hat{x}_{i,t} \right)^2}{\sigma^2} + \log \sigma^2 \right) \right]
+\end{equation}
+
+\subsubsection{Time Series Clustering class}
+\label{subsubsec:TSC-class}
+The \ac{TSC} class 
+
+\subsection{\ac{DTC} training and testing}
+The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only th \ac{TAE} is used and then the \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. The complexive loss function includes both $L_\text{TAE}$ and $L_\text{TSC}$; the relative weight of the two contributions can be tuned with a specific parameter $\gamma$ in order to have the total loss as described in Eq. \ref{eq:total_dtc_loss}.
+\begin{equation}
+    \label{eq:total_dtc_loss}
+    L_\text{DTC} = L_\text{TAE} + \gamma \cdot L_\text{TSC}
+\end{equation}
+
+\subsubsection{Pretrain}
+
+\subsubsection{Clusters initialisation}
+
+\subsubsection{Training}
+
 
 
 \newpage
