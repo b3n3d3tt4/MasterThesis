@@ -1,6 +1,8 @@
 \chapter{Machine Learning \ac{PSD}}
 \label{chapter:ML-PSD}
-Two algorithms will be investigated: first a \ac{VAE} and secondly a \ac{SOM}.
+This chapter will outline the main work of this thesis: different machine learning algorithms will be discussed in order to understand the effective power of such implementations for \ac{PSD} tasks in the context of LEGEND-200 signal discrimination from the background.
+
+Firstly a \ac{VAE} model is considered: this is used with two purposes that are a classifiaction task and a denoising algorithm. Secondly a specific depp learning architecture called \ac{DTC} \cite{DTC} is investigated in order to obtain fully unsupervised clustering of waveforms and thirdly another fully-unsupervised tecnique based on humans cerebral cortex. i.e. a \ac{SOM} is used. 
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
@@ -39,67 +41,68 @@ The first data processing step that has been applied to raw waveforms is an ener
     \label{tab:quality_cuts}
 \end{table}
 
-\begin{wrapfigure}{r}{0.6\textwidth}
-    \includegraphics[width=\linewidth]{plots/wfCleaning/raw_wf.pdf}
-    \caption{Raw charge waveforms.}
-    \label{fig:raw-wf}
-\end{wrapfigure}
-As soon as the energy cut and the event cut are performed, raw waveforms, as the ones in Fig. \ref{fig:raw-wf} need to pass through a series of processes in order to obtain suitable inputs algorithms to be implemented. 
-Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms are obtained from charge ones via time derivation using $dt = 16$ns that arises from the sampling rate of 62.5 MHz. Current waveforms are then filtered using a butterworth filter designed to remove high frequency parts of the signal mainly affecting the baseline part, then tehy are aligned with respect to the first peak of the current signal and trimmed around the alignement point with 100 samples before it and 100 after it. Laslty current waveforms are normalised to their maximum: this is done because what we really want to achieve is a waveform separation purely based on their pulse shape in time; therefore every piece of information that can trace back amplitude differences or energy details needs to be removed from the algorithm input.
-Once all of these steps are completed, what we obtain is a suitable input for the \ac{VAE} model that is to be implemented as will be described in Sec. \ref{sec:VAE}. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue). %; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
+% \begin{wrapfigure}{r}{0.6\textwidth}
+%     \includegraphics[width=\linewidth]{plots/wfCleaning/raw_wf.pdf}
+%     \caption{Raw charge waveforms.}
+%     \label{fig:raw-wf}
+% \end{wrapfigure}
+As soon as the energy cut and the event cut are performed, raw waveforms, as the ones in Fig. \ref{fig:a-raw} need to pass through a series of processes in order to obtain suitable inputs algorithms to be implemented. 
+Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms are obtained from charge ones via time derivation using $dt = 16$~ns that arises from the sampling rate of 62.5 MHz. Current waveforms are then filtered using a Butterworth filter designed to remove high frequency parts of the signal mainly affecting the baseline part, then they are aligned with respect to the first peak of the current signal and trimmed around the alignement point with 100 samples before it and 100 after it. 
+% Laslty current waveforms are normalised to their maximum: this is done because what we really want to achieve is a waveform separation purely based on their pulse shape in time; therefore every piece of information that can trace back amplitude differences or energy details needs to be removed from the algorithm input.
+Once all of these steps are completed, what we obtain is a suitable input for the deep learning mdoels that are to be implemented as will be described in the nextsections. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue). %; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
 
 \begin{figure}[H]
     \centering
-    % --- Prima figura (a) --- [ex b]
+    % --- Prima figura (a) --- [ex wrapfigure]
+    \begin{subfigure}[H]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/wfCleaning/raw_wf.pdf}
+        \caption{Raw charge waveforms.}
+        \label{fig:a-raw}
+    \end{subfigure}
+    \hfill
+    % --- Seconda figura (b) --- [ex a]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/wfCleaning/baseline_subtracted_wf.pdf}
         \caption{Charge waveforms after baseline subtraction.}
-        \label{fig:a-baseline}
-    \end{subfigure}
-    \hfill
-    % --- Seconda figura (b) --- [ex c]
-    \begin{subfigure}[H]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/normalised_wf.pdf}
-        \caption{Charge waveforms after normalisation.}
-        \label{fig:b-normalised}
+        \label{fig:b-baseline}
     \end{subfigure}
     
     \vspace{0.5cm} % Spazio verticale tra la prima e la seconda riga
     
-    % --- Terza figura (c) --- [ex d]
+    % --- Terza figura (c) --- [ex b]
+    \begin{subfigure}[H]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/wfCleaning/normalised_wf.pdf}
+        \caption{Charge waveforms after normalisation.}
+        \label{fig:c-normalised}
+    \end{subfigure}
+    \hfill
+    % --- Quarta figura (d) --- [ex c]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/wfCleaning/current_wf.pdf}
         \caption{Current waveforms obtained with time derivative.}
-        \label{fig:c-current}
-    \end{subfigure}
-    \hfill
-    % --- Quarta figura (d) --- [ex e]
-    \begin{subfigure}[H]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/current_filtered_wf.pdf}
-        \caption{Current waveforms after Butterworth filtering.}
-        \label{fig:d-filtered}
+        \label{fig:d-current}
     \end{subfigure}
 
     \vspace{0.5cm} % Spazio verticale tra la seconda e la terza riga
 
-    % --- Quinta figura (e) --- [ex f]
+    % --- Quinta figura (e) --- [ex d]
+    \begin{subfigure}[H]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/wfCleaning/current_filtered_wf.pdf}
+        \caption{Current waveforms after Butterworth filtering.}
+        \label{fig:e-filtered}
+    \end{subfigure}
+    \hfill
+    % --- Sesta figura (f) --- [ex e]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/wfCleaning/current_aligned_filtered_wf.pdf}
         \caption{Peak-aligned and trimmed current waveforms.}
-        \label{fig:e-aligned-trimmed}
-    \end{subfigure}
-    \hfill
-    % --- Sesta figura (f) --- [Nuova ultima figura]
-    \begin{subfigure}[H]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/current_aligned_filtered_normalised_wf.pdf}
-        \caption{Peak-aligned, trimmed, normalised current waveforms.}
-        \label{fig:f-normalised-current}
+        \label{fig:f-aligned-trimmed}
     \end{subfigure}
     
     % --- Didascalia principale ---
@@ -110,17 +113,18 @@ Once all of these steps are completed, what we obtain is a suitable input for th
 \section{Data selection}
 \label{sec:data-selection}
 
-\ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a gasussian fit is performed onto the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi via the function of Eq. \ref{eq:fitted-gaussian}
+\ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a gasussian fit, displayed in Fig. \ref{fig:dep_fep_fits}, is performed onto the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi via the function of Eq. \ref{eq:fitted-gaussian}
 \begin{equation}
     \label{eq:fitted-gaussian}
     f(x) = A \cdot \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) + B
 \end{equation}
 where $A$ is the total number of events under the peak, i.e. the peak area obtained by integrating the background-subtracted Gaussian componente, $\mu$ is the mean value, $\sigma$ is the standard deviation and $B$ is the background. The results of the fit are reported in Tab. \ref{tab:gaussianfit_parameters}. 
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/sse_mse_selection_3sigma.pdf}
+    \includegraphics[width=0.8\textwidth]{plots/dep_fep_fits.pdf}
     \caption{Events selection for \ac{SSE} and \ac{MSE}. A detailed description of the procedure is given in the text.}
-    \label{fig:sse_mse_cut}
+    \label{fig:dep_fep_fits}
 \end{figure} 
 
 \begin{table}[H]
@@ -136,8 +140,8 @@ where $A$ is the total number of events under the peak, i.e. the peak area obtai
   \caption{Gaussian fit parameters for the ${}^{208}\text{Tl}$ \ac{DEP} and ${}^{212}\text{Bi}$ \ac{FEP}.}
   \label{tab:gaussianfit_parameters}
 \end{table}
-Secondly, the selcetion needs to consider only a part of the events under the peaks. A standard 3$\sigma$ cut around the mean value of each peak is shown in Fig. \ref{fig:sse_mse_cut} in light red and light blue for ${}^{208}$Tl and ${}^{212}$Bi respectively. Nevertheless it is clear thet those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. In order to get an idea of such fractions we can consider, for different $\sigma$ cuts, the ratio between the total number of events under the peak and background part of them; these are parametrised respectively by the $A$ and $B$ paramters of Eq. \ref{eq:fitted-gaussian}.
-Table~\ref{tab:purity} shows that the \ac{DEP} sample exhibits a systematically lower purity than the \ac{FEP} sample across the considered window widths. This is expected, since the \ac{FEP} peak amplitude is substantially bigger than the \ac{DEP} one while the underlying background level is comparable (see Tab.~\ref{tab:gaussianfit_parameters}), resulting in a more favourable peak-to-background ratio for the \ac{FEP} selection. This consideration is particularly relevant when we need to consider the performance of the deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases both the training process and the resulting final performance.
+Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. In order to get an idea of such fractions we can consider, for different $\sigma$ cuts, the ratio between the total number of events under the peak and background part of them; these are parametrised respectively by the $A$ and $B$ paramters of Eq. \ref{eq:fitted-gaussian}.
+Table~\ref{tab:purity} shows that the \ac{DEP} sample exhibits a systematically lower purity than the \ac{FEP} sample across the considered window widths. This is expected, since the \ac{FEP} peak amplitude is substantially bigger than the \ac{DEP} one while the underlying background level is comparable (see Tab.~\ref{tab:gaussianfit_parameters}), resulting in a more favourable peak-to-background ratio for the \ac{FEP} selection. This consideration is particularly relevant when we need to consider the performance of the deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
 
 \begin{table}[H]
 \centering
@@ -219,7 +223,7 @@ QUI DEVO DIRE
 \end{comment}
 The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, a 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
 \begin{itemize}
-    \item \textbf{input waveforms}\\
+    \item \textbf{original waveforms}\\
     The input of the encoder are charge and current waveforms already processed as described in Sec. \ref{sec:data-cleaning}. Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
     \item \textbf{encoder}\\
     The encoder is defined within a sequential conatiner (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
@@ -261,7 +265,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
         \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
         \item the final 1D convolutional layer returns a original-waveform like output (\texttt{channels} $\times~200$)
     \end{enumerate}  
-    \item \textbf{output waveforms}: the output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current, charge or both waveforms reconstructed using information extracted from the latent space. 
+    \item \textbf{reconstructed waveforms}: the output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current, charge or both waveforms reconstructed using information extracted from the latent space. 
 \end{itemize}  
 \begin{figure}[H]
     \centering
@@ -312,10 +316,27 @@ An additional tunable parameter $\beta$ balances the two contributions in the lo
 The training and testing of the algorithm is done splitting the dataset in order to have the 90\% of the total available data for the training and validation sets and the 10\% of them for the test set.
 Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm. The number of dimensions in the latent space is $k = 8$.
 
+The two following sections (\ref{subsec:VAE-features_extraction} and \ref{subsec:VAE-denoising}) will discuss two possible outcomes of the \ac{VAE} model, a feature extractor for a classification task and a denoising algorithm for current waveforms. However an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. Fig. \ref{fig:esempio-ricostruzione} and \ref{fig:esempio-losses} displays the reconstruction flow throught 100 epochs using $\beta=1$ and considering events within $3\sigma$ of the \ac{DEP} and \ac{FEP} as depicted in Fig. \ref{fig:sse_mse_cut}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAEresults/beta1_sigma3_current_raw/validation_perEpoch_sigma3_current_raw_beta1.pdf}
+    \caption{Decoder reconstrucion of validation set waveforms at epoch 1, 50 and 100}
+    \label{fig:esempio-ricostruzione}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAEresults/beta1_sigma3_current_raw/train_valid_losses_sigma3_current_raw_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs. From the left to the right: total loss, reconstruction (\ac{NLL}) loss and \ac{KL} loss}
+    \label{fig:esempio-losses}
+\end{figure}
 
 
 
 \subsection{\ac{VAE} as a feature extractor}
+\label{subsec:VAE-features_extraction}
 using beta1 and sigma3 
 
 --- SSE SF with classifier = 59.95\% ---
@@ -328,6 +349,7 @@ using beta1 and sigma3
 
 insomma uno schifo
 \subsection{\ac{VAE} as a denoising algorithm}
+\label{subsec:VAE-denoising}
 
 
 
@@ -336,7 +358,7 @@ insomma uno schifo
 \label{sec:DTC}
 Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called \ac{DTC}, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means alorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned in order to resemble a typical waveform of such cluster. 
 \subsection{Architecure} 
-The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}.
+The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code of the authors is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}.
 
 \subsubsection{Temporal Autoencoder class}
 The \ac{TAE} is an Autoencoder for which the latent space is given by a compacted time series which ideally represents the input and from which the latter can be reconstructed with the decoder.
@@ -347,10 +369,10 @@ The workflow of the \ac{TAE} follows this scheme:
     \item \textbf{temporal encoder}\\
     The temporal encoder is constructed as a sequential module \cite{torchSequential}
     \begin{enumerate}
-        \item a 1D convolutional (\texttt{Conv1d}) layer with kernel size = 10, stride = 1 and padding = kernel size -1 = 10 - 1 = 9, mapping the ($1~\times~200$) input into a tensor with dimensions ($50~\times~200$);
+        \item a 1D convolutional (\texttt{Conv1d}) layer with kernel size = 10, stride = 1 and padding = kernel size - 1 = 10 - 1 = 9\footnote{This is the default configuration of padding when stride = 1. This padding value will be the same in all convolutional layers of this class.}, mapping the ($1~\times~200$) input into a tensor with dimensions ($50~\times~200$);
         \item a LeakyReLU activation function, already detailed in Eq. \ref{eq:leakyReLU}, with $\alpha = 0.1$;
         \item a 1D max pooling layer (\texttt{MaxPool1d}) with kernel size = 10 returnin a ($50~\times~20$) object and thus significantly reducing the time dimensions;
-        \item a bidirectional \ac{LSTM} (\texttt{LSTM}) receiving the 50 input features that uses 50 hidden units to return another ($506\times~20$) object. Since the standard PyTorch library does not natively implement the summation of the forward and backward outputs, a dedicated custom class was designed to perform this operation manually;
+        \item a bidirectional \ac{LSTM} (\texttt{LSTM}) receiving the 50 input features that uses 50 hidden units to return another ($50\times~20$) object. Since the standard PyTorch library does not natively implement the summation of the forward and backward outputs, a dedicated custom class was designed to perform this operation manually;
         \item a LeakyReLU activation function with $\alpha = 0.1$;
         \item another bidirectional \ac{LSTM} with only one hidden unit to compact features in a single tensor of dimensions ($1~\times~20$);
         \item a LeakyReLU activation function with $\alpha = 0.1$.
@@ -360,10 +382,10 @@ The workflow of the \ac{TAE} follows this scheme:
     \item \textbf{temporal decoder}\\
     The decoder part tries to reconstruct the original waveform, starting from the latent-space small time series:
     \begin{enumerate}
-        \item the ($1~\times~20$) latent representation is upsampled in linear mode, with a scaling factor that returns a ($1~\times200$) object;
-        \item a 1D convolutional layer with 50 kernels of kernel size = 10, stride = 1 and padding = kernel size -1 = 10 -1 = 9 expands the object up to a ($50~\times~200$) () dimensionality object;
-        \item a LeakyReLU activation is performed on the output of the previous layer with $\alpha=0.1$;
-        \item a 1D convolutional layer with kernel size = 10, stride = 1 and padding = kernel size -1 = 10 -1 = 9 maps the 50 features to the original number of channels, that is exaclty 1.
+        \item a 1D convolutional layer: 50 kernels of kernel size = 10, stride = 1 and padding = kernel size $-1$ = 10 $-1$ = 9 expands the ($1 \times 20$) object up to a ($50 \times 20$) dimensionality object, without changing the temporal resolution;
+        \item a LeakyReLU activation is performed on the output of the previous layer with $\alpha = 0.1$;
+        \item the ($50 \times 20$) object is upsampled in linear mode, with a scaling factor that returns a ($50 \times 200$) object;
+        \item a 1D convolutional layer with kernel size = 10, stride = 1 and padding = kernel size $-1$ = 10 $-1$ = 9 maps the 50 features back to the original number of channels, that is exactly 1, giving the final ($1 \times 200$) reconstructed waveform.
     \end{enumerate}
     \item \textbf{output waveforms}\\
     Just as in the \ac{VAE} implementation, output waveforms are the latent-based reconstruction of input ones.
@@ -377,10 +399,39 @@ Although the original loss function used in \cite{DTC} was a Mean Square Error l
 
 \subsubsection{Time Series Clustering class}
 \label{subsubsec:TSC-class}
-The \ac{TSC} class 
+The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter ha dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The numerical values of the cluster centroids tensor are initialised using the Xavier \cite{Xavier} uniform initialisation. This method avoids the standard zero-initialisation, which would hinder the backpropagation phase by causing exploding or vanishing gradients. Instead, Xavier initialisation extracts weights from a balanced uniform distribution whose bounds are scaled according to the tensor dimensions, successfully keeping the variance of the activations stable from the very first epochs. The workflow of this class includes different steps:
+\begin{enumerate}
+    \item \textbf{input acquisition}\\
+    The clustering module receives the latent-space time sequences produced by the temporal encoder. Since standard 1D convolutional layers output tensors with dimensions ordered as (\texttt{number of features}, \texttt{time steps}) = ($1~\times~20$), the latent tensor is first permuted to swap the channel and time axes. This yields a tensor with the expected shape of (\texttt{time steps}, \texttt{number of features}) = ($20~\times~1$) in our setup. Finally, the permuted tensor is expanded along a new axis, preparing it for a broadcasted distance computation against all cluster centroids simultaneously, therefore obtaining ($1~\times~20\times~1$).
+    \item \textbf{distance computation}\\
+    A distance metric is computed between the input and each of the clusters centroids. Implemented metric distances are:
+    \begin{itemize}
+        \item \textbf{euclidean distance}: given a latent sequence $x$ and a cluster centroid $w$, the distance is calculated as:
+        \begin{equation}
+            d_\text{EUC}(x, w) = \sum_{f=1}^{F} \sqrt{\sum_{t=1}^{T} (x_{t,f} - w_{t,f})^2}
+        \end{equation}
+        where $T$ is the number of time-steps and $F$ is the total number of features.
+
+        \item \textbf{Complexity-Invariant Distance (CID)}: this metric extends the Euclidean distance by introducing a penalty factor based on the complexity of the time series, preventing two sequences with very different variability profiles from being considered close. The complexity ($CE$) of a series is estimated via the square root of the sum of squared differences between consecutive points. The final distance is the Euclidean distance weighted by the ratio of the maximum to the minimum complexity:
+        \begin{equation}
+            CE(x) = \sqrt{\sum_{t=1}^{T-1} (x_{t+1} - x_t)^2 + \epsilon}
+        \end{equation}
+        \begin{equation}
+            d_\text{CID}(x, w) = \sum_{f=1}^{F} \left( d_{EUC}(x_f, w_f) \cdot \frac{\max(CE(x_f), CE(w_f))}{\min(CE(x_f), CE(w_f))} \right)
+        \end{equation}
+
+        \item \textbf{Correlation-based Distance (COR)}: this metric evaluates the morphological similarity of the time series independently of their amplitude. Both sequences (input and centroid) are first Z-normalized along the temporal dimension by subtracting the mean $\mu$ and dividing by the standard deviation $\sigma$. The Pearson correlation coefficient ($PCC$) is calculated and then converted into a strictly positive distance metric:
+        \begin{equation}
+            PCC(x_f, w_f) = \frac{1}{T} \sum_{t=1}^{T} \left( \frac{x_{t,f} - \mu_{x_f}}{\sigma_{x_f}} \right) \left( \frac{w_{t,f} - \mu_{w_f}}{\sigma_{w_f}} \right)
+        \end{equation}
+        \begin{equation}
+            d_\text{COR}(x, w) = \sum_{f=1}^{F} \sqrt{2 (1 - PCC(x_f, w_f) + \epsilon)}
+        \end{equation}
+    \end{itemize}
+\end{enumerate}
 
 \subsection{\ac{DTC} training and testing}
-The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only th \ac{TAE} is used and then the \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. The complexive loss function includes both $L_\text{TAE}$ and $L_\text{TSC}$; the relative weight of the two contributions can be tuned with a specific parameter $\gamma$ in order to have the total loss as described in Eq. \ref{eq:total_dtc_loss}.
+The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. The complexive loss function includes both $L_\text{TAE}$ and $L_\text{TSC}$; the relative weight of the two contributions can be tuned with a specific parameter $\gamma$ in order to have the total loss as described in Eq. \ref{eq:total_dtc_loss}. 
 \begin{equation}
     \label{eq:total_dtc_loss}
     L_\text{DTC} = L_\text{TAE} + \gamma \cdot L_\text{TSC}
