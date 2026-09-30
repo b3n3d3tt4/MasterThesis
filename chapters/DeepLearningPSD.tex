@@ -406,7 +406,7 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
     \item \textbf{distance computation}\\
     A distance metric is computed between the input and each of the clusters centroids. Implemented metric distances are:
     \begin{itemize}
-        \item \textbf{euclidean distance}: given a latent sequence $x$ and a cluster centroid $w$, the distance is calculated as:
+        \item \textbf{Euclidean Distance}: given a latent sequence $x$ and a cluster centroid $w$, the distance is calculated as:
         \begin{equation}
             d_\text{EUC}(x, w) = \sum_{f=1}^{F} \sqrt{\sum_{t=1}^{T} (x_{t,f} - w_{t,f})^2}
         \end{equation}
@@ -414,7 +414,7 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
 
         \item \textbf{Complexity-Invariant Distance (CID)}: this metric extends the Euclidean distance by introducing a penalty factor based on the complexity of the time series, preventing two sequences with very different variability profiles from being considered close. The complexity ($CE$) of a series is estimated via the square root of the sum of squared differences between consecutive points. The final distance is the Euclidean distance weighted by the ratio of the maximum to the minimum complexity:
         \begin{equation}
-            CE(x) = \sqrt{\sum_{t=1}^{T-1} (x_{t+1} - x_t)^2 + \epsilon}
+            CE(x) = \sqrt{\sum_{t=1}^{T-1} (x_{t+1} - x_t)^2}
         \end{equation}
         \begin{equation}
             d_\text{CID}(x, w) = \sum_{f=1}^{F} \left( d_{EUC}(x_f, w_f) \cdot \frac{\max(CE(x_f), CE(w_f))}{\min(CE(x_f), CE(w_f))} \right)
@@ -425,7 +425,13 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
             PCC(x_f, w_f) = \frac{1}{T} \sum_{t=1}^{T} \left( \frac{x_{t,f} - \mu_{x_f}}{\sigma_{x_f}} \right) \left( \frac{w_{t,f} - \mu_{w_f}}{\sigma_{w_f}} \right)
         \end{equation}
         \begin{equation}
-            d_\text{COR}(x, w) = \sum_{f=1}^{F} \sqrt{2 (1 - PCC(x_f, w_f) + \epsilon)}
+            d_\text{COR}(x, w) = \sum_{f=1}^{F} \sqrt{2 (1 - PCC(x_f, w_f))}
+        \end{equation}
+
+        \item \textbf{Auto-Correlation based Distance (AC)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and computes the similarity between the latent representation and the centroids performing a weighted euclidean distance between the autocorrelation coefficients of them.
+        \begin{equation}
+            \label{eq:AC-distance}
+            d_{\text{ACF}}(x, y) = \sqrt{(\hat{\rho}_x - \hat{\rho}_y)' \Omega (\hat{\rho}_x - \hat{\rho}_y)}
         \end{equation}
     \end{itemize}
 \end{enumerate}
