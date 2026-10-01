@@ -44,7 +44,7 @@ Although the original loss function used in \cite{DTC} was a Mean Square Error l
 \subsubsection{Time Series Clustering class}
 \label{subsubsec:TSC-class}
 The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter ha dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The numerical values of the cluster centroids tensor are initialised using the Xavier \cite{Xavier} uniform initialisation. This method avoids the standard zero-initialisation, which would hinder the backpropagation phase by causing exploding or vanishing gradients. Instead, Xavier initialisation extracts weights from a balanced uniform distribution whose bounds are scaled according to the tensor dimensions, successfully keeping the variance of the activations stable from the very first epochs. The workflow of this class includes different steps:
-\begin{enumerate}
+\begin{itemize}
     \item \textbf{input acquisition}\\
     The clustering module receives the latent-space time sequences produced by the temporal encoder. Since standard 1D convolutional layers output tensors with dimensions ordered as (\texttt{number of features}, \texttt{time steps}) = ($1~\times~20$), the latent tensor is first permuted to swap the channel and time axes. This yields a tensor with the expected shape of (\texttt{time steps}, \texttt{number of features}) = ($20~\times~1$) in our setup. Finally, the permuted tensor is expanded along a new axis, preparing it for a broadcasted distance computation against all cluster centroids simultaneously, therefore obtaining ($1~\times~20\times~1$).
     \item \textbf{distance computation}\\
@@ -64,7 +64,7 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
         \end{equation}
         \begin{equation}
             \label{eq:CID-distance}
-            d_\text{CID}(x, w) = d_{EUC}(x, w) \cdot \frac{\max[CE(x), CE(w)]}{\min[CE(x), CE(w)]}
+            d_\text{CID}(x, w) = d_\text{EUC}(x, w) \cdot \frac{\max[CE(x), CE(w)]}{\min[CE(x), CE(w)]}
         \end{equation}
 
         % \item \textbf{Correlation-based Distance (COR)}: this metric evaluates the morphological similarity of the time series independently of their amplitude. Both sequences (input and centroid) are first Z-normalized along the temporal dimension by subtracting the mean $\mu$ and dividing by the standard deviation $\sigma$. The Pearson correlation coefficient ($PCC$) is calculated and then converted into a strictly positive distance metric:
@@ -95,10 +95,26 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
         \end{equation}
     \end{itemize}
     \item \textbf{probability calculation}:\\
+    The probability of belonging to a given cluster $j$ is based on a t-Student distribution kernel. Specifically, the similarity between the latent representation of a sample $x_i$ and a cluster centroid $w_j$ is evaluated using a Student's t-distribution with $\alpha$ degrees of freedom as a kernel. While the theoretical probability density function of the t-distribution includes a normalization constant defined by the Gamma function $\Gamma(\cdot)$, this term cancels out during the cluster assignment phase. In fact, to obtain valid soft assignments (i.e., probabilities that sum to 1), the score of cluster $j$ is normalized by the sum of the scores over all $k$ clusters \cite{DTC}. Since the degrees of freedom parameter $\alpha$ is a global constant across all clusters, the $\Gamma$ term simplifies algebraically, yielding the final probability $q_{ij}$ defined in Eq. \ref{eq:q-prob}:
+    \begin{equation}
+        \label{eq:q-prob}
+        q_{ij} = \frac{\left( 1 + \frac{d(x_i, w_j)^2}{\alpha} \right)^{-\frac{\alpha+1}{2}}}{\sum_{k=1}^{K} \left( 1 + \frac{d(x_i, w_k)^2}{\alpha} \right)^{-\frac{\alpha+1}{2}}}
+    \end{equation}
+    where $d(x_i, w_j)$ is the distance metric chosen among the ones previously described, and $\alpha$ controls the heaviness of the distribution tails. From an architectural perspective, the heavy tails of the t-Student distribution are preferred over a standard Gaussian kernel because they prevent vanishing gradients for samples located far from the centroids, resulting in a more robust training process.
     \item \textbf{target distribution definition}:\\
-\end{enumerate}
+    Being the \ac{DTC} a fully unsupervised method, a self-training mechanism is employed: seeing that the model doesn't have any target label, a target distribution built from $q_{ij}$ probabilities themselves is constructed, following the one in \cite{DTC}.
+    Eq. \ref{eq:target-distribution-p} mathematically explains how said distribution is defined: squaring the distribution $p_{ij}$ amplifies the model predictions while $f_j$ (Eq. \ref{eq:frequency-j}) represents how many samples are assigned to the cluster $j$, effectively penalizing very big clusters. The ratio $p_{ij}/f_j$ is normalised to their sum over all $k$ clusters. 
+    \begin{equation}
+        \label{eq:target-distribution-p}
+        p_{ij} = \frac{q^{2}_{ij} / f_j} {\sum_{j}^{k} q^{2}_{ij} / f_j}
+    \end{equation}
+    \begin{equation}
+        \label{eq:frequency-j}
+        f_j = \sum_i q_{ij}
+    \end{equation}
+\end{itemize}
 
-Finally the loiss function is computed ad a \ac{KL}
+Finally the loss function is computed as a \ac{KL} divergence 
 
 \subsection{Training and testing}
 The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. The complexive loss function includes both $L_\text{TAE}$ and $L_\text{TSC}$; the relative weight of the two contributions can be tuned with a specific parameter $\gamma$ in order to have the total loss as described in Eq. \ref{eq:total_dtc_loss}. 
