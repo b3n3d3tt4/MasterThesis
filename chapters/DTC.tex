@@ -1,0 +1,114 @@
+\section{Deep Temporal Clustering}
+\label{sec:DTC}
+Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called \ac{DTC}, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means alorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned in order to resemble a typical waveform of such cluster. 
+\subsection{Architecure} 
+The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code of the authors is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}.
+
+\subsubsection{Temporal Autoencoder class}
+The \ac{TAE} is an Autoencoder for which the latent space is given by a compacted time series which ideally represents the input and from which the latter can be reconstructed with the decoder.
+The workflow of the \ac{TAE} follows this scheme:
+\begin{itemize}
+    \item \textbf{input waveforms}\\
+    Input waveforms are current signals processed as explained above in Sec. \ref{sec:data-cleaning} with dimension ($1~\times~200$). The only difference with respect to the \ac{VAE} input is that in this case no \ac{SSE}/\ac{MSE} cut has been performed and the whole energy spectrum between $1550$ keV and $1650$ keV has been considered. 
+    \item \textbf{temporal encoder}\\
+    The temporal encoder is constructed as a sequential module \cite{torchSequential}
+    \begin{enumerate}
+        \item a 1D convolutional (\texttt{Conv1d}) layer with kernel size = 10, stride = 1 and padding = kernel size - 1 = 10 - 1 = 9\footnote{This is the default configuration of padding when stride = 1. This padding value will be the same in all convolutional layers of this class.}, mapping the ($1~\times~200$) input into a tensor with dimensions ($50~\times~200$);
+        \item a LeakyReLU activation function, already detailed in Eq. \ref{eq:leakyReLU}, with $\alpha = 0.1$;
+        \item a 1D max pooling layer (\texttt{MaxPool1d}) with kernel size = 10 returnin a ($50~\times~20$) object and thus significantly reducing the time dimensions;
+        \item a bidirectional \ac{LSTM} (\texttt{LSTM}) receiving the 50 input features that uses 50 hidden units to return another ($50\times~20$) object. Since the standard PyTorch library does not natively implement the summation of the forward and backward outputs, a dedicated custom class was designed to perform this operation manually;
+        \item a LeakyReLU activation function with $\alpha = 0.1$;
+        \item another bidirectional \ac{LSTM} with only one hidden unit to compact features in a single tensor of dimensions ($1~\times~20$);
+        \item a LeakyReLU activation function with $\alpha = 0.1$.
+    \end{enumerate}
+    \item \textbf{latent space}\\
+    Differently respect to the \ac{VAE} case, the latent space is a compact time series with dimensions ($1~\times~20$), i.e. the output of the last layer of the encoder module. This representation maintains the sequential nature of input data but extract significant features that are indeed the output of both the decoder module and the clustering layer that will be discussed further in this Section.
+    \item \textbf{temporal decoder}\\
+    The decoder part tries to reconstruct the original waveform, starting from the latent-space small time series:
+    \begin{enumerate}
+        \item a 1D convolutional layer: 50 kernels of kernel size = 10, stride = 1 and padding = kernel size $-1$ = 10 $-1$ = 9 expands the ($1 \times 20$) object up to a ($50 \times 20$) dimensionality object, without changing the temporal resolution;
+        \item a LeakyReLU activation is performed on the output of the previous layer with $\alpha = 0.1$;
+        \item the ($50 \times 20$) object is upsampled in linear mode, with a scaling factor that returns a ($50 \times 200$) object;
+        \item a 1D convolutional layer with kernel size = 10, stride = 1 and padding = kernel size $-1$ = 10 $-1$ = 9 maps the 50 features back to the original number of channels, that is exactly 1, giving the final ($1 \times 200$) reconstructed waveform.
+    \end{enumerate}
+    \item \textbf{output waveforms}\\
+    Just as in the \ac{VAE} implementation, output waveforms are the latent-based reconstruction of input ones.
+\end{itemize}
+
+Although the original loss function used in \cite{DTC} was a Mean Square Error loss, this function is not suitable for our signals, as already discussed in \ref{subsec:VAE-training} thus loss function that parametrises and corrects all of the just-mentioned steps of the \ac{TAE} part of \ac{DTC} is a \ac{NLL} as the one outlined in Eq. \ref{eq:rec-loss} without the channel average. Therefore the \ac{TAE} loss function results in Eq. \ref{eq:tae-loss}, where $\sigma_c$ is a trainable parameter of the model here as well as in the \ac{VAE} implementation. Specifically, this parameter is tuned in the initial part of the training, called \textit{pretrain}, where only the \ac{TAE} is used, and then fixed for the second part of the training where also the \ac{TSC} part is implemented.
+\begin{equation}
+    \label{eq:tae-loss}
+    L_{\text{TAE}} = \frac{1}{B} \sum_{i=1}^{B} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,t} - \hat{x}_{i,t} \right)^2}{\sigma^2} + \log \sigma^2 \right) \right]
+\end{equation}
+
+\subsubsection{Time Series Clustering class}
+\label{subsubsec:TSC-class}
+The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter ha dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The numerical values of the cluster centroids tensor are initialised using the Xavier \cite{Xavier} uniform initialisation. This method avoids the standard zero-initialisation, which would hinder the backpropagation phase by causing exploding or vanishing gradients. Instead, Xavier initialisation extracts weights from a balanced uniform distribution whose bounds are scaled according to the tensor dimensions, successfully keeping the variance of the activations stable from the very first epochs. The workflow of this class includes different steps:
+\begin{enumerate}
+    \item \textbf{input acquisition}\\
+    The clustering module receives the latent-space time sequences produced by the temporal encoder. Since standard 1D convolutional layers output tensors with dimensions ordered as (\texttt{number of features}, \texttt{time steps}) = ($1~\times~20$), the latent tensor is first permuted to swap the channel and time axes. This yields a tensor with the expected shape of (\texttt{time steps}, \texttt{number of features}) = ($20~\times~1$) in our setup. Finally, the permuted tensor is expanded along a new axis, preparing it for a broadcasted distance computation against all cluster centroids simultaneously, therefore obtaining ($1~\times~20\times~1$).
+    \item \textbf{distance computation}\\
+    A distance metric is computed between the input and each of the clusters centroids. Implemented metric distances are:
+    \begin{itemize}
+        \item \textbf{Euclidean Distance (EUC)}: given a latent sequence $x$ and a cluster centroid $w$, the distance is calculated as the usual geometrical distance of Eq. \ref{eq:EUC-distance}. Despite being the most simple and intuitive metric, it is a very strict function very sensitive to time jitterings\footnote{In principle the peak alignemant described in Sec. \ref{sec:data-cleaning} should prevent this types of jittering but some of them may still be present even after the cleaning process.}.
+        \begin{equation}
+            \label{eq:EUC-distance}
+            d_\text{EUC}(x, w) = \sqrt{\sum_{t=1}^{T} (x_{t} - w_{t})^2}
+        \end{equation}
+        where $T$ is the number of time-steps.
+
+        \item \textbf{Complexity-Invariant Distance (CID)}: this metric extends the Euclidean distance by introducing a penalty factor based on the complexity of the time series, preventing two sequences with very different variability profiles from being considered close. The complexity factor $CE$ (Eq. \ref{eq:CE-factor}) of a series is estimated via the square root of the sum of squared differences between consecutive points, i.e. discrete derivative. The final distance is the Euclidean distance weighted by the ratio of the maximum to the minimum complexity as expressed in Eq. \ref{eq:CID-distance}:
+        \begin{equation}
+            \label{eq:CE-factor}
+            CE(x) = \sqrt{\sum_{t=1}^{T-1} (x_{t+1} - x_t)^2}
+        \end{equation}
+        \begin{equation}
+            \label{eq:CID-distance}
+            d_\text{CID}(x, w) = d_{EUC}(x, w) \cdot \frac{\max[CE(x), CE(w)]}{\min[CE(x), CE(w)]}
+        \end{equation}
+
+        % \item \textbf{Correlation-based Distance (COR)}: this metric evaluates the morphological similarity of the time series independently of their amplitude. Both sequences (input and centroid) are first Z-normalized along the temporal dimension by subtracting the mean $\mu$ and dividing by the standard deviation $\sigma$. The Pearson correlation coefficient ($PCC$) is calculated and then converted into a strictly positive distance metric:
+        % \begin{equation}
+        %     PCC(x_f, w_f) = \frac{1}{T} \sum_{t=1}^{T} \left( \frac{x_{t} - \mu_{x_}}{\sigma_{x_f}} \right) \left( \frac{w_{t,f} - \mu_{w_f}}{\sigma_{w_f}} \right)
+        % \end{equation}
+        % \begin{equation}
+        %     d_\text{COR}(x, w) = \sqrt{2 (1 - PCC(x_f, w_f))}
+        % \end{equation}
+
+        \item \textbf{Auto-Correlation based Distance (AC)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and computes the similarity between the latent representation and the centroids performing a weighted euclidean distance between the autocorrelation coefficients of them. Firstly, the two time series, i.e. the latent space one and the centroid one, are converted into their autocorrelation coefficients, $\varrho_x$ and $\varrho_w$, computed up to a maximum lag: from a physical perspective, this transformation maps raw signals in a domain invariant with respect to the absolute amplitude that only renders the morphological structure and the periodicity in time of the signal; this is useful in order to identify secondary peaks independently from the total energy of the event. Secondly, a decaying diagonal matrix $\boldsymbol{\Omega}$ (Eq. \ref{eq:Omega-matrix}) is constructed to assign higher importance to lower-order lags (recent steps): this mathematical configuration ensures that the metric primarly focuses on short-term dynamics and mitigates the influence of stochastic fluctuations and electronic noise mostly present in signal tails. 
+        \begin{equation}
+            \label{eq:Omega-matrix}
+            \begin{aligned}
+                \boldsymbol{\Omega} &= \begin{bmatrix} 
+                \omega_0 & 0 & \cdots & 0 \\ 
+                0 & \omega_1 & \cdots & 0 \\ 
+                \vdots & \vdots & \ddots & \vdots \\ 
+                0 & 0 & \cdots & \omega_{m-1} 
+                \end{bmatrix} \\[1ex]
+                \omega_k &= 1 - \frac{k}{m-1} \quad \text{for } k = 0, 1, \dots, m-1
+            \end{aligned}
+        \end{equation}
+        Lastly, topological differences between the latent signal and the centroid one are quantified as written in Eq. \ref{eq:AC-distance}.
+        \begin{equation}
+            \label{eq:AC-distance}
+            d_{\text{ACF}}(x, w) = \sqrt{(\varrho_x - \varrho_w)^{\text{T}} \boldsymbol{\Omega} (\varrho_x - \varrho_w)}
+        \end{equation}
+    \end{itemize}
+    \item \textbf{probability calculation}:\\
+    \item \textbf{target distribution definition}:\\
+\end{enumerate}
+
+Finally the loiss function is computed ad a \ac{KL}
+
+\subsection{Training and testing}
+The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. The complexive loss function includes both $L_\text{TAE}$ and $L_\text{TSC}$; the relative weight of the two contributions can be tuned with a specific parameter $\gamma$ in order to have the total loss as described in Eq. \ref{eq:total_dtc_loss}. 
+\begin{equation}
+    \label{eq:total_dtc_loss}
+    L_\text{DTC} = L_\text{TAE} + \gamma \cdot L_\text{TSC}
+\end{equation}
+
+\subsubsection{Pretrain}
+
+\subsubsection{Clusters initialisation}
+
+\subsubsection{Training}
