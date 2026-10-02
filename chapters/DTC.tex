@@ -35,7 +35,7 @@ The workflow of the \ac{TAE} follows this scheme:
     Just as in the \ac{VAE} implementation, output waveforms are the latent-based reconstruction of input ones.
 \end{itemize}
 
-Although the original loss function used in \cite{DTC} was a Mean Square Error loss, this function is not suitable for our signals, as already discussed in \ref{subsec:VAE-training} thus loss function that parametrises and corrects all of the just-mentioned steps of the \ac{TAE} part of \ac{DTC} is a \ac{NLL} as the one outlined in Eq. \ref{eq:rec-loss} without the channel average. Therefore the \ac{TAE} loss function results in Eq. \ref{eq:tae-loss}, where $\sigma_c$ is a trainable parameter of the model here as well as in the \ac{VAE} implementation. Specifically, this parameter is tuned in the initial part of the training, called \textit{pretrain}, where only the \ac{TAE} is used, and then fixed for the second part of the training where also the \ac{TSC} part is implemented.
+Although the original loss function used in \cite{DTC} was a Mean Square Error loss, this function is not suitable for our signals, as already discussed in \ref{subsec:VAE-training}. Thus loss function that parametrises and corrects all of the just-mentioned steps of the \ac{TAE} part of \ac{DTC} is a \ac{NLL} as the one outlined in Eq. \ref{eq:rec-loss} without the channel average. Therefore the \ac{TAE} loss function results in Eq. \ref{eq:tae-loss}, where $\sigma$ is a trainable parameter of the model here as well as in the \ac{VAE} implementation. Specifically, this parameter is tuned in the initial part of the training, called \textit{pretrain}, where only the \ac{TAE} is used, and then fixed for the second part of the training where also the \ac{TSC} part is implemented.
 \begin{equation}
     \label{eq:tae-loss}
     L_{\text{TAE}} = \frac{1}{B} \sum_{i=1}^{B} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,t} - \hat{x}_{i,t} \right)^2}{\sigma^2} + \log \sigma^2 \right) \right]
@@ -50,7 +50,7 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
     \item \textbf{distance computation}\\
     A distance metric is computed between the input and each of the clusters centroids. Implemented metric distances are:
     \begin{itemize}
-        \item \textbf{Euclidean Distance (EUC)}: given a latent sequence $x$ and a cluster centroid $w$, the distance is calculated as the usual geometrical distance of Eq. \ref{eq:EUC-distance}. Despite being the most simple and intuitive metric, it is a very strict function very sensitive to time jitterings\footnote{In principle the peak alignemant described in Sec. \ref{sec:data-cleaning} should prevent this types of jittering but some of them may still be present even after the cleaning process.}.
+        \item \textbf{Euclidean Distance (EUC)}: given a latent sequence $x$ and a cluster centroid $w$, the distance is calculated as the usual geometrical distance of Eq. \ref{eq:EUC-distance}. Despite being the most simple and intuitive metric, it is sensitive to amplitude offsets, gain variations, and high-frequency noise, all of which can obscure the underlying pulse shape differences between SSE and MSE events\footnote{In principle the data cleaning described in Sec. \ref{sec:data-cleaning} should prevent such problems, but some significant discrepancies may still be present even after the cleaning process.}.
         \begin{equation}
             \label{eq:EUC-distance}
             d_\text{EUC}(x, w) = \sqrt{\sum_{t=1}^{T} (x_{t} - w_{t})^2}
@@ -114,17 +114,50 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
     \end{equation}
 \end{itemize}
 
-Finally the loss function is computed as a \ac{KL} divergence 
+Finally the loss is computed as a \ac{KL} divergence, similar to the one used in Sec. \ref{sec:vae-architeture}: minimising this function the model actively forces the predicted probabilities $q_{ij}$ to match the target distribution $p_{ij}$ which implies $\log \frac{p_{ij}}{q_{ij}} \rightarrow 0$ in Eq. \ref{eq:KL-loss-TSC}, where $B$ is the toal number of samples (in a batch) and $k$ is the number of clusters.
+
+\begin{equation}
+    \label{eq:KL-loss-TSC}
+    L = \sum_{i=1}^B \sum_{j=1}^k p_{ij} \log \frac{p_{ij}}{q_{ij}}
+\end{equation}
 
 \subsection{Training and testing}
-The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. The complexive loss function includes both $L_\text{TAE}$ and $L_\text{TSC}$; the relative weight of the two contributions can be tuned with a specific parameter $\gamma$ in order to have the total loss as described in Eq. \ref{eq:total_dtc_loss}. 
+The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. 
+
+\textbf{\textit{Pretrain}}: this phase is used in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts. The model is trained for a number of epochs $\text{N}_\text{PRE} = 50$. Results are shown in Fig. \ref{fig:pretrain-validation} and \ref{fig:pretrain-loss}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
+    \caption{\colorbox{yellow}{PLACEHOLDER}}
+    \label{fig:pretrain-validation}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
+    \caption{\colorbox{yellow}{PLACEHOLDER}}
+    \label{fig:pretrain-loss}
+\end{figure}
+
+Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a KMeans algorithm on the latent representation of the training set. It is from said centroids that the \ac{TSC} part of the mdoel starts to cluster waveforms.
+
+\textbf{\textit{Train}}: in the second phase of the \ac{DTC} training, the proper \textit{training} phase, both the \ac{TAE} and the \ac{TSC} are used. As a consequence, the complexive loss function includes $L_\text{TAE}$ and $L_\text{TSC}$, weighted by a specific tunable parameter $\gamma$ in order to have the total loss of Eq. \ref{eq:total_dtc_loss}. Therefore the backpropagation acts both on the reconstruction of input waveforms and on the clustering of them simultaneously.
 \begin{equation}
     \label{eq:total_dtc_loss}
     L_\text{DTC} = L_\text{TAE} + \gamma \cdot L_\text{TSC}
 \end{equation}
 
-\subsubsection{Pretrain}
+The results of the complexive training part with $\text{N}_\text{TRAIN} = 50$ epochs and $\gamma = 1000$ are shown in Fig. \ref{fig:training-reconstruction-DTC}and \ref{fig:training-clustering-DTC} for the reconstruction and clustering part respectively and for all of the abovementioned distance metrics.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
+    \caption{\colorbox{yellow}{PLACEHOLDER}}
+    \label{fig:training-reconstruction-DTC}
+\end{figure}
 
-\subsubsection{Clusters initialisation}
-
-\subsubsection{Training}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
+    \caption{\colorbox{yellow}{PLACEHOLDER}}
+    \label{fig:training-clustering-DTC}
+\end{figure}
