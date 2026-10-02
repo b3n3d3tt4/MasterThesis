@@ -110,8 +110,8 @@ where \(A\) is the total number of events under the peak, i.e. the peak area obt
     \label{tab:gaussianfit_parameters}
 \end{table}
 
-Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. In order to get an idea of such fractions we can consider, for different $\sigma$ cuts, the ratio between the total number of events under the peak and background part of them; these are parametrised respectively by the $A$ and $B$ paramters of Eq. \ref{eq:fitted-gaussian}.
-Table~\ref{tab:purity} shows that the \ac{DEP} sample exhibits a systematically lower purity than the \ac{FEP} sample across the considered window widths. This is expected, since the \ac{FEP} peak amplitude is substantially bigger than the \ac{DEP} one while the underlying background level is comparable (see Tab.~\ref{tab:gaussianfit_parameters}), resulting in a more favourable peak-to-background ratio for the \ac{FEP} selection. This consideration is particularly relevant when we need to consider the performance of the deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
+Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. In order to get an idea of such fractions we can consider, for different $\sigma$ cuts, the ratio between the total number of events under the peak and the ones in the background; these are parametrised respectively by the $A$ and $B$ paramters of Eq. \ref{eq:fitted-gaussian}.
+Tab~\ref{tab:purity} shows that the \ac{DEP} sample exhibits a systematically lower purity than the \ac{FEP} sample across the considered window widths. This is expected, since the \ac{FEP} peak amplitude is substantially bigger than the \ac{DEP} one while the underlying background level is comparable (see Tab.~\ref{tab:gaussianfit_parameters}), resulting in a more favourable peak-to-background ratio for the \ac{FEP} selection. 
 
 \begin{table}[H]
 \centering
@@ -153,6 +153,7 @@ $\sigma$ & peak counts & background counts & purity \\
 \caption{Peak counts, background counts and purity for a different number of sigmas considered in the cut window for the \ac{DEP} and \ac{FEP} samples.}
 \label{tab:purity}
 \end{table}
+This considerations are particularly relevant when we need to investigate the performances of a deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
 
 \subsection{Training and testing}
 \label{subsec:VAE-training}
@@ -194,7 +195,8 @@ An additional tunable parameter $\beta$ balances the two contributions in the lo
 The training and testing of the algorithm is done splitting the dataset in order to have the 90\% of the total available data for the training and validation sets and the 10\% of them for the test set.
 Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm. The number of dimensions in the latent space is $k = 8$.
 
-The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. Fig. \ref{fig:esempio-ricostruzione} and \ref{fig:esempio-losses} display the reconstruction flow through 100 epochs using \(\beta=1\) and considering events within \(3\sigma\) of the \ac{DEP} and \ac{FEP} as depicted in Fig. \ref{fig:sse_mse_cut}. The next two sections will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}) and how this model can turn into a denoising algorithm (Sec. \ref{subsec:VAE-denoising}).
+The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. Fig. \ref{fig:esempio-ricostruzione} and \ref{fig:esempio-losses} display the reconstruction flow through 100 epochs using \(\beta=1\) and considering events within \(3\sigma\) of the \ac{DEP} and \ac{FEP} as depicted in Fig. \ref{fig:sse_mse_cut}. The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}).
+%  and how this model can turn into a denoising algorithm (Sec. \ref{subsec:VAE-denoising}).
 
 \begin{figure}[H]
     \centering
@@ -213,7 +215,32 @@ The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PS
 
 \subsection{\ac{VAE} as a feature extractor}
 \label{subsec:VAE-features_extraction}
-Using the \ac{VAE} as a features extractor means building a classification model which exploits the latent space distributions as input features for the classification task. As already mentioned, the latent space has 8 dimensions, each of the codifying a specific feature of the input waveform that the encoder has learnt to extract. The classification model is a simple \ac{MLP} 
+Using the \ac{VAE} as a features extractor means building a classification model which exploits the latent space distributions as input features for the classification task. As already mentioned, the latent space has 8 dimensions, each of the codifying a specific feature of the input waveform that the encoder has learnt to extract, as depicted in Fig. \ref{fig:disegno-encoder-classifier}. 
+The classification model is a simple \ac{MLP} that follows this \texttt{Sequential} structure:
+\begin{itemize}
+    \item \textbf{input layer}:\\
+    The features taken as the input of the \ac{MLP} classifier are the $\mu$ values coming out of the encoder part of the \ac{VAE} used in evaluation mode, i.e. the encoder weights are frozen and the input waveforms are mapped into the latent space without any further training. The $\mu$ values are then concatenated into a single vector of 8 elements that is passed to the \ac{MLP} classifier.
+    \item \textbf{first hidden layer}:\\
+    A linear layer maps the 8 input features into 32 outputs, the a Leaky ReLU activation function (Eq. \ref{eq:leakyReLU})is applied to introduce non-linearity and a 20\% dropout level is added to prevent overfitting. It is important to notice that dropout layers are active only whenm the model is in traing mode, while they are active in evalutation (test) mode.
+    \item \textbf{second hidden layer}:\\
+    Another linear layer reduces the dimension from 32 to 16 and it is followed by a Lekay ReLU activation.
+    \item \textbf{output layer}:\\
+    The final layer maps the 16 features of the previous ones to a single output neuron. This output is a \textit{logit} value, i.e. a real number, that will enter the loss function computation.
+\end{itemize}
+
+The loss function used in the classification task is a \ac{BCE} with Logits loss, which directly combines the logit output of the \ac{MLP} with the sigmoid activated labels as expressed in Eq. \ref{eq:BCE-loss} where $x$ is the true label, activated by a sigmoid (Eq. \ref{eq:sigmoid}) and $y$ is the predicted probability.
+\begin{equation}
+    \label{eq:BCE-loss}
+    \text{BCEWithLogits}(x, y) = - \left[ y \cdot \log(\sigma(x)) + (1 - y) \cdot \log(1 - \sigma(x)) \right]
+\end{equation} 
+
+\begin{equation}
+    \label{eq:sigmoid}
+    \sigma(x) = \frac{1}{1 + e^{-x}}
+\end{equation}
+
+
+
 using beta1 and sigma3 
 
 --- SSE SF with classifier = 59.95\% ---
@@ -225,5 +252,5 @@ using beta1 and sigma3
 --- MSE SF with A/E =  19.16\% ---
 
 insomma uno schifo
-\subsection{\ac{VAE} as a denoising algorithm}
-\label{subsec:VAE-denoising}
+% \subsection{\ac{VAE} as a denoising algorithm}
+% \label{subsec:VAE-denoising}
