@@ -221,7 +221,7 @@ Fig. \ref{fig:esempio-VAE-ricostruzione}, \ref{fig:esempio-VAE-losses} and \ref{
     \label{fig:esempio-VAE-testset}
 \end{figure}
 
-\subsection{\ac{VAE} as a feature extractor}
+\subsection{\texorpdfstring{\acs{VAE}}{VAE} as a feature extractor}
 \label{subsec:VAE-features_extraction}
 Using the \ac{VAE} as a features extractor means building a classification model which exploits the latent space distributions as input features for the classification task. As already mentioned, the latent space has 8 dimensions, each of the codifying a specific feature of the input waveform that the encoder has learnt to extract, as depicted in Fig. \ref{fig:disegno-encoder-classifier}. 
 The classification model is a simple \ac{MLP} that follows this \texttt{Sequential} structure:
