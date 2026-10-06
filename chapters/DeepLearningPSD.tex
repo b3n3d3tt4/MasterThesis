@@ -1,18 +1,24 @@
-\chapter{Machine Learning \ac{PSD}}
+\chapter{Deep Learning \ac{PSD}}
 \label{chapter:ML-PSD}
-This chapter will outline the main work of this thesis: different machine learning algorithms will be discussed in order to understand the effective power of such implementations for \ac{PSD} tasks in the context of LEGEND-200 signal discrimination from the background.
+Over the last decades, particle physics has become one of the fields where machine learning has found its most natural applications. The reason is simple: almost every analysis eventually comes down to deciding whether a recorded event is the one we are looking for or something that only resembles it. The signal is often rare and hidden under background processes that can be orders of magnitude more frequent. The information that separates the two is rarely contained in a single variable. More often it is spread over many correlated quantities, and this is exactly the situation in which multivariate methods outperform a sequence of one-dimensional cuts.
 
-Firstly a \ac{VAE} model is considered: this is used with two purposes that are a classifiaction task and a denoising algorithm. Secondly a specific depp learning architecture called \ac{DTC} \cite{DTC} is investigated in order to obtain fully unsupervised clustering of waveforms and thirdly another fully-unsupervised tecnique based on humans cerebral cortex. i.e. a \ac{SOM} is used. 
+Most of these applications are supervised, meaning that the classifier is trained on samples whose labels are known, usually obtained from Monte Carlo simulations. This is also their main weakness. Simulations never reproduce real data perfectly, and a model trained on simulated events can learn features that are not present in the actual detector, or ignore some that are. Training on calibration data only partially solves the problem, because a truly pure sample of signal or background is hardly ever available. What one has in practice are proxies, that is, populations of events enriched in one class but still contaminated by the other. For this reason a growing number of studies is exploring weakly supervised and unsupervised approaches, where the algorithm looks for structure in the data with few or no labels at all, and the physical meaning of what it finds is assessed only afterwards.
+
+The same issues are found in the context of this work. As discussed in Sec.~\ref{subsubsec:topology}, the time structure of the current signal of a \ac{hpge} detector reflects the topology of the event. This is what allows the \ac{SSE}-like signature expected from $0\nu\beta\beta$ decay to be separated from \ac{MSE} events, which make up a large part of the background. In LEGEND-200, this separation relies on the \ac{AE} parameter introduced in Sec.~\ref{sec:traditionalPSD}, which reduces the whole waveform to a single number. Unlike \ac{AE}, machine learning methods can in principle exploit the full shape of the pulse rather than one feature of it. The labelling problem described above is present here too, as already pointed out in the previous chapter. The \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi lie on top of a continuous Compton background (Fig.~\ref{fig:TlBi-spectrum}), so they are only statistically dominated by \ac{SSE} and \ac{MSE} events, respectively. The \ac{AE} cut itself is tuned on these samples, by fixing the survival fraction in the \ac{DEP}, and any classifier trained on them inherits the same ambiguity.
+
+These considerations motivate the approach followed in this chapter, where different deep learning algorithms are studied to understand how effective they can be for \ac{PSD} in LEGEND-200, with particular attention to methods that require little or no labelling of the waveforms. Strictly speaking, deep learning is a subset of machine learning: the term refers to models based on artificial neural networks with more than one hidden layer, which can build increasingly abstract representations of the input directly from the data. Since most of the models discussed in this chapter belong to this class, the two terms will be used interchangeably in what follows.
+
+Three different approaches are considered. First, a \ac{VAE} is used for two purposes: as a classifier and as a denoising algorithm. Second, a deep learning architecture called \ac{DTC} \cite{DTC} is investigated to obtain a fully unsupervised clustering of the waveforms. Finally, another fully unsupervised technique is tested, namely a \ac{SOM}, whose working principle is inspired by the organisation of the human cerebral cortex.
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
-Raw charge waveforms\footnote{For \textit{raw} we mean waveforms already processed with LEGEND dedicated software, but still not selected in terms of energy, \ac{PSD} parameters or other features, as introduced at the end of Sec. \ref{subsubsec:data-structureL200}.} are not suitable for any machine learningg algorithm implementation as they are very different between one another under multiple aspects. In order to cope with this problem, a series of selection and cleaning procedures have been applied to them obtaining, at the end of said process, current waveforms in the energy range of interest.
+Raw charge waveforms\footnote{For \textit{raw} we mean waveforms already processed with LEGEND dedicated software, but still not selected in terms of energy, \ac{PSD} parameters or other features, as introduced at the end of Sec. \ref{subsubsec:data-structureL200}.} are not suitable for any machine learning algorithm implementation as they are very different between one another under multiple aspects. In order to cope with this issue, a series of selection and cleaning procedures have been applied to them, obtaining, at the end of said process, current waveforms in the energy range of interest.
 
 The first data processing step that has been applied to raw waveforms is an energy-based cut around the region of interest, specifically encircling the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. Hence, only data between 1550 keV and 1650 keV from the whole considered dataset have been saved, discarding all the other. This is a choice based on the work purposes, for which we want to neglect possibile energy-related effects on the signals and rely only on their shape evolution in time. Recalling Fig. \ref{fig:TlBi-spectrum} the energy cut is depicted in Fig. \ref{fig:cut_region} for run \textit{r000} of period \textit{p03}. Moreover data have been filtered with boolean masks provided together with raw data; said filters are needed to discard useless events. Particularly the filters that have been considered are listed in Tab. \ref{tab:quality_cuts}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth, height=6cm, keepaspectratio=false]{plots/energy_spectrum-cut_window.pdf}
+    \includegraphics[width=\textwidth]{plots/energy_spectrum-cut_window.pdf}
     \caption{Example of the energy spectrum recorded in the calibration from \textit{p03/r000}. The energy region of the cut is highlighted.}
     \label{fig:cut_region}
 \end{figure}
@@ -45,17 +51,15 @@ The first data processing step that has been applied to raw waveforms is an ener
 %     \caption{Raw charge waveforms.}
 %     \label{fig:raw-wf}
 % \end{wrapfigure}
-As soon as the energy cut and the event cut are performed, raw waveforms, as the ones in Fig. \ref{fig:a-raw} need to pass through a series of processes in order to obtain suitable inputs algorithms to be implemented. 
-Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms are obtained from charge ones via time derivation using $dt = 16$~ns that arises from the sampling rate of 62.5 MHz. Current waveforms are then filtered using a Butterworth filter designed to remove high frequency parts of the signal mainly affecting the baseline part, then they are aligned with respect to the first peak of the current signal and trimmed around the alignement point with 100 samples before it and 100 after it. 
-% Laslty current waveforms are normalised to their maximum: this is done because what we really want to achieve is a waveform separation purely based on their pulse shape in time; therefore every piece of information that can trace back amplitude differences or energy details needs to be removed from the algorithm input.
-Once all of these steps are completed, what we obtain is a suitable input for the deep learning mdoels that are to be implemented as will be described in the nextsections. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue). %; examples of the other periods and runs can be found in the related Appendix \ref{app:waveforms}.
+As soon as the energy cut and the event cut are performed, raw waveforms, as the ones in Fig. \ref{fig:a-raw} need to pass through a series of processes in order to obtain suitable inputs for the algorithms that are to be implemented. Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms are obtained from charge ones via time derivation using $dt = 16$~ns that arises from the sampling rate of 62.5 MHz. Current waveforms are then filtered using a Butterworth filter designed to remove high frequency parts of the signal mainly affecting the baseline regions, then they are aligned with respect to the first peak of the current signal and trimmed around the alignement point with 75 samples before it and 124 after it, for a total number of samples N = 200. This asymmetric trimming on waveforms is done in order to account for multiple peaks that emerge after the first one.
+Once all of these steps are completed, what we obtain is a suitable input for the deep learning mdoels that are to be implemented as will be described in the nextsections. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue).
 
 \begin{figure}[H]
     \centering
     % --- Prima figura (a) --- [ex wrapfigure]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/raw_wf.pdf}
+        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/raw_wf.pdf}
         \caption{Raw charge waveforms.}
         \label{fig:a-raw}
     \end{subfigure}
@@ -63,7 +67,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Seconda figura (b) --- [ex a]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/baseline_subtracted_wf.pdf}
+        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/baseline_subtracted_wf.pdf}
         \caption{Charge waveforms after baseline subtraction.}
         \label{fig:b-baseline}
     \end{subfigure}
@@ -73,7 +77,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Terza figura (c) --- [ex b]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/normalised_wf.pdf}
+        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/normalised_wf.pdf}
         \caption{Charge waveforms after normalisation.}
         \label{fig:c-normalised}
     \end{subfigure}
@@ -81,7 +85,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Quarta figura (d) --- [ex c]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/current_wf.pdf}
+        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/current_wf.pdf}
         \caption{Current waveforms obtained with time derivative.}
         \label{fig:d-current}
     \end{subfigure}
@@ -91,7 +95,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Quinta figura (e) --- [ex d]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/current_filtered_wf.pdf}
+        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/current_filtered_wf.pdf}
         \caption{Current waveforms after Butterworth filtering.}
         \label{fig:e-filtered}
     \end{subfigure}
@@ -99,7 +103,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Sesta figura (f) --- [ex e]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/wfCleaning/current_aligned_filtered_wf.pdf}
+        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/current_aligned_filtered_wf.pdf}
         \caption{Peak-aligned and trimmed current waveforms.}
         \label{fig:f-aligned-trimmed}
     \end{subfigure}
@@ -109,13 +113,12 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     \label{fig:data-cleaning}
 \end{figure}
 
-
-% \begin{figure}[H]
-%     \centering 
-%     \includegraphics[width=0.7\textwidth]{plots/AoE_sse_vs_sse.pdf}
-%     \caption{Distributions of the Amplitude/Energy quantity for SSE and MSE.}
-%     \label{fig:AoE-sse_vs_mse}
-% \end{figure}
+Depending on the test being performed, one of two further transformations is then applied to the trimmed current waveforms. In the first case, all waveforms are divided by the same constant factor $s$, defined as the median of the maxima of all the current waveforms in the dataset:
+\begin{equation}
+    \label{eq:scaling}
+    \tilde{x}_i(t_k) = \frac{x_i(t_k)}{s}, \qquad s = \operatorname*{median}_{j = 1, \dots, M} \left[ \max_{k} \, x_j(t_k) \right],
+\end{equation}
+where $x_i(t_k)$ is the $k$-th sample of the $i$-th current waveform and $M$ is the total number of waveforms. After this step the typical peak height is of order unity. The median is preferred to the mean because it is less sensitive to waveforms with anomalous amplitudes. This step has no physical meaning and is needed only for computational reasons. Neural networks, and in particular the \ac{VAE} and the autoencoder at the core of the \ac{DTC}, are trained more efficiently when their inputs are of order one, since common weight initialisation schemes and optimiser settings assume inputs of this scale. For the \ac{VAE} there is an additional reason: the reconstruction term of the loss scales with the amplitude of the input, while the Kullback--Leibler term does not, so very small inputs would make the latter dominate and prevent the model from learning a meaningful latent representation. Since $s$ is the same for every waveform, relative amplitudes are preserved. In particular, after the normalisation of the charge signal the integral of each current pulse is approximately equal to one, so its maximum is closely related to the \ac{AE} parameter, and this information is left untouched by the rescaling.
 
 
 \newpage
@@ -126,3 +129,15 @@ Once all of these steps are completed, what we obtain is a suitable input for th
 
 \newpage
 \input{chapters/SOM.tex}
+
+\newpage
+\section{2$\nu\beta\beta$ data analysis}
+\label{sec:2nubb-data}
+The latest step of this analysis involves testing all the deep learning models discusses so far with data that are well-known \ac{SSE}-like events.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/energy_spectrum-2nubb-prl25-LAr_cut.pdf}
+    \caption{Energy spectrum of the $2\nu\beta\beta$ data before (grey) and after (blue) the \ac{lar} cut.}
+    \label{2nu-beforeafterLAR}
+\end{figure}

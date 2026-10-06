@@ -1,6 +1,6 @@
 \section{Variational Autoencoder}
 \label{sec:VAE}
-A \ac{VAE} is an artificial neural network architecture itroduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into a distribution within the latent space, differently from the standard autoencoders where input points are mapped into a single point in the latent space. From said distributions, the decoder part reconsruct the time series. 
+A \ac{VAE} is an artificial neural network architecture itroduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into a one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconsruct the time series. The process is regulated by a loss function that aims to minimising the reconstruction error between the input and the output.
 \subsection{Architecture}
 \label{sec:vae-architeture}
 \begin{comment}
@@ -33,7 +33,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
     \item \textbf{encoder}\\
     The encoder is defined within a sequential conatiner (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
     \begin{enumerate}
-        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channles} $\times 200$) inputs into (16 $\times~100$) objects;
+        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channels} $\times 200$) inputs into (16 $\times~100$) objects;
         \item a Leaky ReLU activation, that is a similar to a Rectified Linear Unit function as detailed in Eq. \ref{eq:leakyReLU} where $\alpha = 0.1$
         \begin{equation}
             \label{eq:leakyReLU}
@@ -50,7 +50,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
     The latent space is constructed from the output of the encoder after the following procedure:
     \begin{enumerate}
         \item firstly, the encoder output is flattened to a sequence with $32~\times~50$ points;
-        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channles} $\times 200$) inputs into (16 $\times~100$) objects;
+        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channels} $\times 200$) inputs into (16 $\times~100$) objects;
         \item secondly, the flattened data are passed through a linear layer (\texttt{Linear} in PyTorch) which further reduce the dimensionality to 64 points;
         \item thirdly, a Leaky ReLU activation with $\alpha=0.1$ is applied;
         \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
@@ -110,7 +110,8 @@ where \(A\) is the total number of events under the peak, i.e. the peak area obt
     \label{tab:gaussianfit_parameters}
 \end{table}
 
-Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. In order to get an idea of such fractions we can consider, for different $\sigma$ cuts, the ratio between the total number of events under the peak and the ones in the background; these are parametrised respectively by the $A$ and $B$ paramters of Eq. \ref{eq:fitted-gaussian}.
+Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. In order to get an idea of such fractions we can consider, for different $\sigma$ cuts, the ratio between the total number of events under the peak and the ones in the background; these are parametrised respectively by the $A$ and $B$ paramters of Eq. \ref{eq:fitted-gaussian}. 
+
 Tab~\ref{tab:purity} shows that the \ac{DEP} sample exhibits a systematically lower purity than the \ac{FEP} sample across the considered window widths. This is expected, since the \ac{FEP} peak amplitude is substantially bigger than the \ac{DEP} one while the underlying background level is comparable (see Tab.~\ref{tab:gaussianfit_parameters}), resulting in a more favourable peak-to-background ratio for the \ac{FEP} selection. 
 
 \begin{table}[H]
@@ -118,6 +119,8 @@ Tab~\ref{tab:purity} shows that the \ac{DEP} sample exhibits a systematically lo
 \begin{minipage}{0.48\textwidth}
 \centering
 \begin{tabular}{cccc}
+\toprule
+\multicolumn{4}{c}{\ac{DEP} sample} \\
 \toprule
 $\sigma$ & peak counts & background counts & purity \\
 \midrule
@@ -129,13 +132,13 @@ $\sigma$ & peak counts & background counts & purity \\
 3.0 & 23746 & 35515 & 40.1\% \\
 \bottomrule
 \end{tabular}
-\caption{\ac{DEP} sample}
-\label{tab:purity_sse}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
 \centering
 \begin{tabular}{cccc}
+\toprule
+\multicolumn{4}{c}{\ac{FEP} sample} \\
 \toprule
 $\sigma$ & peak counts & background counts & purity \\
 \midrule
@@ -147,12 +150,11 @@ $\sigma$ & peak counts & background counts & purity \\
 3.0 & 56968 & 37372 & 60.4\% \\
 \bottomrule
 \end{tabular}
-\caption{\ac{FEP} sample}
-\label{tab:purity_mse}
 \end{minipage}
 \caption{Peak counts, background counts and purity for a different number of sigmas considered in the cut window for the \ac{DEP} and \ac{FEP} samples.}
 \label{tab:purity}
 \end{table}
+
 This considerations are particularly relevant when we need to investigate the performances of a deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
 
 \subsection{Training and testing}
@@ -195,22 +197,28 @@ An additional tunable parameter $\beta$ balances the two contributions in the lo
 The training and testing of the algorithm is done splitting the dataset in order to have the 90\% of the total available data for the training and validation sets and the 10\% of them for the test set.
 Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm. The number of dimensions in the latent space is $k = 8$.
 
-The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. Fig. \ref{fig:esempio-ricostruzione} and \ref{fig:esempio-losses} display the reconstruction flow through 100 epochs using \(\beta=1\) and considering events within \(3\sigma\) of the \ac{DEP} and \ac{FEP} as depicted in Fig. \ref{fig:sse_mse_cut}. The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}).
-%  and how this model can turn into a denoising algorithm (Sec. \ref{subsec:VAE-denoising}).
+The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}).
+Fig. \ref{fig:esempio-VAE-ricostruzione}, \ref{fig:esempio-VAE-losses} and \ref{fig:esempio-VAE-testset} display the reconstruction flow through 100 epochs using $\beta=1$, considering input events within $3\sigma$ of the \ac{DEP} and \ac{FEP} fits already processed and scaled (see Eq.~\ref{eq:scaling}). The training and testing results of other configurations in terms of number of sigmas, scaling, normalisation and number of channels (i.e. current only or both current and charge) can be found in Appendix \ref{app:VAE-results}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
-    \caption{Decoder reconstrucion of validation set waveforms at epoch 1, 50 and 100}
-    \label{fig:esempio-ricostruzione}
+    \includegraphics[width=\textwidth]{plots/VAEresults/validation_perEpoch_sigma3_current_scaled_beta1.pdf}
+    \caption{Example of the decoder reconstrucion for validation set waveforms at epoch 1, 50 and 100.}
+    \label{fig:esempio-VAE-ricostruzione}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAEresults/train_valid_losses_sigma3_current_scaled_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs. From the left to the right: total loss, reconstruction (\ac{NLL}) loss and \ac{KL} loss}
+    \label{fig:esempio-VAE-losses}
+\end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
-    \caption{Loss functions evolution through the training epochs. From the left to the right: total loss, reconstruction (\ac{NLL}) loss and \ac{KL} loss}
-    \label{fig:esempio-losses}
+    \includegraphics[width=0.8\textwidth]{plots/VAEresults/test_sigma3_current_scaled_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveforms in the test set.}
+    \label{fig:esempio-VAE-testset}
 \end{figure}
 
 \subsection{\ac{VAE} as a feature extractor}
