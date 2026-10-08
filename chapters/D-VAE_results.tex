@@ -1,2 +1,183 @@
 \chapter{All \texorpdfstring{\acs{VAE}}{VAE} results}
 \label{app:VAE-results}
+
+This appendix contains the training and testing results for the \ac{VAE} configurations not explicitly shown in the main text. The plots reported here follow the pure reconstruction task using $\beta=1$. The results are categorised by the event selection ($1\sigma$ or $3\sigma$ around the \ac{DEP} and \ac{FEP} fits), the number of input channels (current only or both current and charge), and the applied preprocessing (scaled or normalised). For each configuration, three plots are reported: the decoder reconstruction at epochs 1, 50, and 100, the loss functions evolution and a test set reconstruction example.
+
+% ==========================================
+% SIGMA 1 CONFIGURATIONS
+% ==========================================
+\section{1$\sigma$ Selection}
+
+\subsection{Current Only - Normalised}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current/normalised/validation_perEpoch_sigma1_current_normalised_beta1.pdf}
+    \caption{Decoder reconstruction for validation set waveforms at epoch 1, 50 and 100 ($1\sigma$, current only, normalised).}
+    \label{fig:val-s1-c-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current/normalised/train_valid_losses_sigma1_current_normalised_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs ($1\sigma$, current only, normalised).}
+    \label{fig:loss-s1-c-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current/normalised/test_sigma1_current_normalised_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveform in the test set ($1\sigma$, current only, normalised).}
+    \label{fig:test-s1-c-n}
+\end{figure}
+
+
+\subsection{Current Only - Scaled}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current/scaled/validation_perEpoch_sigma1_current_scaled_beta1.pdf}
+    \caption{Decoder reconstruction for validation set waveforms at epoch 1, 50 and 100 ($1\sigma$, current only, scaled).}
+    \label{fig:val-s1-c-s}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current/scaled/train_valid_losses_sigma1_current_scaled_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs ($1\sigma$, current only, scaled).}
+    \label{fig:loss-s1-c-s}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current/scaled/test_sigma1_current_scaled_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveform in the test set ($1\sigma$, current only, scaled).}
+    \label{fig:test-s1-c-s}
+\end{figure}
+
+
+\subsection{Current \& Charge - Normalised}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current_charge/normalised/validation_perEpoch_sigma1_current_charge_normalised_beta1.pdf}
+    \caption{Decoder reconstruction for validation set waveforms at epoch 1, 50 and 100 ($1\sigma$, current and charge, normalised).}
+    \label{fig:val-s1-cc-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current_charge/normalised/train_valid_losses_sigma1_current_charge_normalised_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs ($1\sigma$, current and charge, normalised).}
+    \label{fig:loss-s1-cc-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current_charge/normalised/test_sigma1_current_charge_normalised_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveform in the test set ($1\sigma$, current and charge, normalised).}
+    \label{fig:test-s1-cc-n}
+\end{figure}
+
+
+\subsection{Current \& Charge - Scaled}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current_charge/scaled/validation_perEpoch_sigma1_current_charge_scaled_beta1.pdf}
+    \caption{Decoder reconstruction for validation set waveforms at epoch 1, 50 and 100 ($1\sigma$, current and charge, scaled).}
+    \label{fig:val-s1-cc-s}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current_charge/scaled/train_valid_losses_sigma1_current_charge_scaled_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs ($1\sigma$, current and charge, scaled).}
+    \label{fig:loss-s1-cc-s}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/VAE_plots_DEF_v2/sigma1/current_charge/scaled/test_sigma1_current_charge_scaled_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveform in the test set ($1\sigma$, current and charge, scaled).}
+    \label{fig:test-s1-cc-s}
+\end{figure}
+
+
+% ==========================================
+% SIGMA 3 CONFIGURATIONS
+% ==========================================
+\section{3$\sigma$ Selection}
+
+\textit{Note: The results for the $3\sigma$ configuration using only current channels with applied scaling are discussed and shown in the main text.}
+
+\subsection{Current Only - Normalised}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current/normalised/validation_perEpoch_sigma3_current_normalised_beta1.pdf}
+    \caption{Decoder reconstruction for validation set waveforms at epoch 1, 50 and 100 ($3\sigma$, current only, normalised).}
+    \label{fig:val-s3-c-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current/normalised/train_valid_losses_sigma3_current_normalised_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs ($3\sigma$, current only, normalised).}
+    \label{fig:loss-s3-c-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current/normalised/test_sigma3_current_normalised_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveform in the test set ($3\sigma$, current only, normalised).}
+    \label{fig:test-s3-c-n}
+\end{figure}
+
+
+\subsection{Current \& Charge - Normalised}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current_charge/normalised/validation_perEpoch_sigma3_current_charge_normalised_beta1.pdf}
+    \caption{Decoder reconstruction for validation set waveforms at epoch 1, 50 and 100 ($3\sigma$, current and charge, normalised).}
+    \label{fig:val-s3-cc-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current_charge/normalised/train_valid_losses_sigma3_current_charge_normalised_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs ($3\sigma$, current and charge, normalised).}
+    \label{fig:loss-s3-cc-n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current_charge/normalised/test_sigma3_current_charge_normalised_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveform in the test set ($3\sigma$, current and charge, normalised).}
+    \label{fig:test-s3-cc-n}
+\end{figure}
+
+
+\subsection{Current \& Charge - Scaled}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current_charge/scaled/validation_perEpoch_sigma3_current_charge_scaled_beta1.pdf}
+    \caption{Decoder reconstruction for validation set waveforms at epoch 1, 50 and 100 ($3\sigma$, current and charge, scaled).}
+    \label{fig:val-s3-cc-s}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current_charge/scaled/train_valid_losses_sigma3_current_charge_scaled_beta1.pdf}
+    \caption{Loss functions evolution through the training epochs ($3\sigma$, current and charge, scaled).}
+    \label{fig:loss-s3-cc-s}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current_charge/scaled/test_sigma3_current_charge_scaled_beta1.pdf}
+    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveform in the test set ($3\sigma$, current and charge, scaled).}
+    \label{fig:test-s3-cc-s}
+\end{figure}

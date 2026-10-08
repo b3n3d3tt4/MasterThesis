@@ -1,6 +1,6 @@
 \section{Deep Temporal Clustering}
 \label{sec:DTC}
-Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called \ac{DTC}, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means alorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned in order to resemble a typical waveform of such cluster. 
+Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called \ac{DTC}, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means alorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. 
 \subsection{Architecure} 
 The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code of the authors is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}.
 
@@ -75,7 +75,7 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
         %     d_\text{COR}(x, w) = \sqrt{2 (1 - PCC(x_f, w_f))}
         % \end{equation}
 
-        \item \textbf{Auto-Correlation based Distance (AC)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and computes the similarity between the latent representation and the centroids performing a weighted euclidean distance between the autocorrelation coefficients of them. Firstly, the two time series, i.e. the latent space one and the centroid one, are converted into their autocorrelation coefficients, $\varrho_x$ and $\varrho_w$, computed up to a maximum lag: from a physical perspective, this transformation maps raw signals in a domain invariant with respect to the absolute amplitude that only renders the morphological structure and the periodicity in time of the signal; this is useful in order to identify secondary peaks independently from the total energy of the event. Secondly, a decaying diagonal matrix $\boldsymbol{\Omega}$ (Eq. \ref{eq:Omega-matrix}) is constructed to assign higher importance to lower-order lags (recent steps): this mathematical configuration ensures that the metric primarly focuses on short-term dynamics and mitigates the influence of stochastic fluctuations and electronic noise mostly present in signal tails. 
+        \item \textbf{Auto-Correlation Function (ACF)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and computes the similarity between the latent representation and the centroids performing a weighted euclidean distance between the autocorrelation coefficients of them. Firstly, the two time series, i.e. the latent space one and the centroid one, are converted into their autocorrelation coefficients, $\varrho_x$ and $\varrho_w$, computed up to a maximum lag: from a physical perspective, this transformation maps raw signals in a domain invariant with respect to the absolute amplitude that only renders the morphological structure and the periodicity in time of the signal; this is useful in order to identify secondary peaks independently from the total energy of the event. Secondly, a decaying diagonal matrix $\boldsymbol{\Omega}$ (Eq. \ref{eq:Omega-matrix}) is constructed to assign higher importance to lower-order lags (recent steps): this mathematical configuration ensures that the metric primarly focuses on short-term dynamics and mitigates the influence of stochastic fluctuations and electronic noise mostly present in signal tails. 
         \begin{equation}
             \label{eq:Omega-matrix}
             \begin{aligned}
@@ -127,15 +127,15 @@ The \ac{DTC} training phase is divided in two different parts: the \textit{pretr
 \textbf{\textit{Pretrain}}: this phase is used in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts. The model is trained for a number of epochs $\text{N}_\text{PRE} = 50$. Results are shown in Fig. \ref{fig:pretrain-validation} and \ref{fig:pretrain-loss}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
-    \caption{\colorbox{yellow}{PLACEHOLDER}}
+    \includegraphics[width=\textwidth]{plots/DTC/pretrain_reconstruction.pdf}
+    \caption{Example of the \ac{TAE} recontruction ability in the \textit{pretrain}.}
     \label{fig:pretrain-validation}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
-    \caption{\colorbox{yellow}{PLACEHOLDER}}
+    \includegraphics[width=0.8\textwidth]{plots/DTC/pretrain_losses.pdf}
+    \caption{\textit{Pretrain} loss through epochs.}
     \label{fig:pretrain-loss}
 \end{figure}
 

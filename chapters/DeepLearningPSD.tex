@@ -8,7 +8,7 @@ The same issues are found in the context of this work. As discussed in Sec.~\ref
 
 These considerations motivate the approach followed in this chapter, where different deep learning algorithms are studied to understand how effective they can be for \ac{PSD} in LEGEND-200, with particular attention to methods that require little or no labelling of the waveforms. Strictly speaking, deep learning is a subset of machine learning: the term refers to models based on artificial neural networks with more than one hidden layer, which can build increasingly abstract representations of the input directly from the data. Since most of the models discussed in this chapter belong to this class, the two terms will be used interchangeably in what follows.
 
-Three different approaches are considered. First, a \ac{VAE} is used for two purposes: as a classifier and as a denoising algorithm. Second, a deep learning architecture called \ac{DTC} \cite{DTC} is investigated to obtain a fully unsupervised clustering of the waveforms. Finally, another fully unsupervised technique is tested, namely a \ac{SOM}, whose working principle is inspired by the organisation of the human cerebral cortex.
+Three different approaches are considered: first, a \ac{VAE} is used as feature extractor for a classification task. Second, a deep learning architecture called \ac{DTC} \cite{DTC} is investigated to obtain a fully unsupervised clustering of the waveforms. Finally, another fully unsupervised technique is tested, namely a \ac{SOM}, whose working principle is inspired by the organisation of the human cerebral cortex. All of these models are trained and tested with an NVIDIA A30 GPU.
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
@@ -51,15 +51,43 @@ The first data processing step that has been applied to raw waveforms is an ener
 %     \caption{Raw charge waveforms.}
 %     \label{fig:raw-wf}
 % \end{wrapfigure}
-As soon as the energy cut and the event cut are performed, raw waveforms, as the ones in Fig. \ref{fig:a-raw} need to pass through a series of processes in order to obtain suitable inputs for the algorithms that are to be implemented. Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms are obtained from charge ones via time derivation using $dt = 16$~ns that arises from the sampling rate of 62.5 MHz. Current waveforms are then filtered using a Butterworth filter designed to remove high frequency parts of the signal mainly affecting the baseline regions, then they are aligned with respect to the first peak of the current signal and trimmed around the alignement point with 75 samples before it and 124 after it, for a total number of samples N = 200. This asymmetric trimming on waveforms is done in order to account for multiple peaks that emerge after the first one.
-Once all of these steps are completed, what we obtain is a suitable input for the deep learning mdoels that are to be implemented as will be described in the nextsections. An example of the process is shown in Fig. \ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue).
+As soon as the energy cut and the event cut are performed, raw waveforms, as the ones in Fig.~\ref{fig:a-raw}, need to pass through a series of processes in order to obtain suitable inputs for the algorithms that are to be implemented. Firstly the mean value of the baseline is computed from the first 300 points of the raw charge waveform expressed in ADC counts and it is subtracted from all of the other points. Subsequently the baseline-subtracted charge waveform is normalised in order to have all of the waveforms with values between 0 and 1. After that, current waveforms $i[n]$ are obtained from charge ones via time derivation using $dt = 16$~ns that arises from the sampling rate of 62.5~MHz.
+
+Current waveforms are then filtered in order to remove the high frequency parts of the signal, which mainly affect the baseline regions. To do this we use a Gaussian filter, i.e.\ each current waveform is convolved with a normalised Gaussian kernel:
+\begin{equation}
+    i_\mathrm{f}[n] = \sum_{k} g[k]\, i[n-k], \qquad
+    g[k] = \frac{1}{\sqrt{2\pi}\,\sigma_\mathrm{g}} \exp\!\left(-\frac{k^2}{2\sigma_\mathrm{g}^2}\right),
+    \label{eq:gauss-kernel}
+\end{equation}
+where the sum runs over the samples and we chose $\sigma_\mathrm{g} = 1.25$ samples, that is $\sigma_t = \sigma_\mathrm{g}\, dt = 20$~ns. The kernel is symmetric, so the filtered signal is not shifted in time. In the frequency domain the filter is again a Gaussian,
+\begin{equation}
+    H(f) = \exp\!\left(-2\pi^2 \sigma_t^2 f^2\right),
+    \label{eq:gauss-response}
+\end{equation}
+and the amplitude of the signal is reduced by half, $H(f_{1/2}) = 1/2$, at the frequency
+\begin{equation}
+    f_{1/2} = \frac{1}{\pi\,\sigma_t}\sqrt{\frac{\ln 2}{2}} \simeq \frac{0.187}{\sigma_t} \simeq 9.4~\mathrm{MHz}.
+    \label{eq:gauss-cutoff}
+\end{equation}
+In a first version of the processing a Butterworth filter was used instead. However, its impulse response has negative lobes, and on the fastest pulses this produced some ringing, visible as a small negative dip just before the current peak. With the Gaussian filter this cannot happen: since $g[k] > 0$ for every $k$, each filtered sample is just a weighted average of the neighbouring ones with positive weights, so a sharp peak can get a bit wider but no negative structures are created around it.
+
+After the filtering, current waveforms are aligned with respect to the first peak of the current signal. As first peak we take the first one that is above the baseline mean by more than three times the standard deviation of the baseline and that has a prominence of at least 15\% of the highest peak of the waveform. The second requirement is needed to avoid aligning the waveform on small fluctuations that come before the actual signal. Waveforms are then trimmed around the alignment point with 75 samples before it and 124 after it, for a total number of samples $N = 200$. This asymmetric trimming on waveforms is done in order to account for multiple peaks that emerge after the first one.
+
+Once all of these steps are completed, what we obtain is a suitable input for the deep learning models that are to be implemented, as will be described in the next sections. An example of the process is shown in Fig.~\ref{fig:data-cleaning}, highlighting the two typical behaviours of \ac{SSE} waveforms (in red) and \ac{MSE} ones (in blue).
+
+Because of computational reasons, one transformation can be applied to the trimmed current waveforms: specifically, all waveforms are divided by the same constant factor $s$, defined as the median of the maxima of all the current waveforms in the dataset:
+\begin{equation}
+    \label{eq:scaling}
+    \tilde{x}_i(t_k) = \frac{x_i(t_k)}{s}, \qquad s = \operatorname*{median}_{j = 1, \dots, M} \left[ \max_{k} \, x_j(t_k) \right],
+\end{equation}
+where $x_i(t_k)$ is the $k$-th sample of the $i$-th current waveform and $M$ is the total number of waveforms. After this step the typical peak height is of order unity. The median is preferred to the mean because it is less sensitive to waveforms with anomalous amplitudes. Neural networks, and in particular the \ac{VAE} and the \ac{TAE} at the core of the \ac{DTC}, are trained more efficiently when their inputs are of order one, since common weight initialisation schemes and optimiser settings assume inputs of this scale. For the \ac{VAE} there is an additional reason: the reconstruction term of the loss scales with the amplitude of the input, while the Kullback-Leibler term does not, so very small inputs would make the latter dominate and prevent the model from learning a meaningful latent representation. Since $s$ is the same for every waveform, relative amplitudes are preserved. In particular, after the normalisation of the charge signal the integral of each current pulse is approximately equal to one, so its maximum is closely related to the \ac{AE} parameter, and this information is left untouched by the rescaling.
 
 \begin{figure}[H]
     \centering
     % --- Prima figura (a) --- [ex wrapfigure]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/raw_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/raw_wf.pdf}
         \caption{Raw charge waveforms.}
         \label{fig:a-raw}
     \end{subfigure}
@@ -67,7 +95,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Seconda figura (b) --- [ex a]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/baseline_subtracted_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/baseline_subtracted_wf.pdf}
         \caption{Charge waveforms after baseline subtraction.}
         \label{fig:b-baseline}
     \end{subfigure}
@@ -77,7 +105,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Terza figura (c) --- [ex b]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/normalised_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/normalised_wf.pdf}
         \caption{Charge waveforms after normalisation.}
         \label{fig:c-normalised}
     \end{subfigure}
@@ -85,7 +113,7 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Quarta figura (d) --- [ex c]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/current_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/current_wf.pdf}
         \caption{Current waveforms obtained with time derivative.}
         \label{fig:d-current}
     \end{subfigure}
@@ -95,15 +123,15 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     % --- Quinta figura (e) --- [ex d]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/current_filtered_wf.pdf}
-        \caption{Current waveforms after Butterworth filtering.}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/current_filtered_wf.pdf}
+        \caption{Current waveforms after Gaussian filtering.}
         \label{fig:e-filtered}
     \end{subfigure}
     \hfill
     % --- Sesta figura (f) --- [ex e]
     \begin{subfigure}[H]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=5cm]{plots/wfCleaning/current_aligned_filtered_wf.pdf}
+        \includegraphics[width=\textwidth]{plots/wfCleaning/current_aligned_filtered_wf.pdf}
         \caption{Peak-aligned and trimmed current waveforms.}
         \label{fig:f-aligned-trimmed}
     \end{subfigure}
@@ -112,13 +140,6 @@ Once all of these steps are completed, what we obtain is a suitable input for th
     \caption{Illustration of the workflow of the data processing for two types of waveforms from the dataset: the blue one is a typical \ac{MSE} waveform with a non-trivial structure while the red one is a ordinary \ac{SSE} waveform. A detailed description of the process is given in the text.}
     \label{fig:data-cleaning}
 \end{figure}
-
-Depending on the test being performed, one of two further transformations is then applied to the trimmed current waveforms. In the first case, all waveforms are divided by the same constant factor $s$, defined as the median of the maxima of all the current waveforms in the dataset:
-\begin{equation}
-    \label{eq:scaling}
-    \tilde{x}_i(t_k) = \frac{x_i(t_k)}{s}, \qquad s = \operatorname*{median}_{j = 1, \dots, M} \left[ \max_{k} \, x_j(t_k) \right],
-\end{equation}
-where $x_i(t_k)$ is the $k$-th sample of the $i$-th current waveform and $M$ is the total number of waveforms. After this step the typical peak height is of order unity. The median is preferred to the mean because it is less sensitive to waveforms with anomalous amplitudes. This step has no physical meaning and is needed only for computational reasons. Neural networks, and in particular the \ac{VAE} and the autoencoder at the core of the \ac{DTC}, are trained more efficiently when their inputs are of order one, since common weight initialisation schemes and optimiser settings assume inputs of this scale. For the \ac{VAE} there is an additional reason: the reconstruction term of the loss scales with the amplitude of the input, while the Kullback--Leibler term does not, so very small inputs would make the latter dominate and prevent the model from learning a meaningful latent representation. Since $s$ is the same for every waveform, relative amplitudes are preserved. In particular, after the normalisation of the charge signal the integral of each current pulse is approximately equal to one, so its maximum is closely related to the \ac{AE} parameter, and this information is left untouched by the rescaling.
 
 
 \newpage
@@ -130,14 +151,3 @@ where $x_i(t_k)$ is the $k$-th sample of the $i$-th current waveform and $M$ is 
 \newpage
 \input{chapters/SOM.tex}
 
-\newpage
-\section{Analysis of 2$\nu\beta\beta$ data}
-\label{sec:2nubb-data}
-The latest step of this analysis involves testing all the deep learning models discusses so far with data that are well-known \ac{SSE}-like events.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/energy_spectrum-2nubb-prl25-LAr_cut.pdf}
-    \caption{Energy spectrum of the $2\nu\beta\beta$ data before (grey) and after (blue) the \ac{lar} cut.}
-    \label{2nu-beforeafterLAR}
-\end{figure}

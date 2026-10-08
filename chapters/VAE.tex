@@ -1,6 +1,6 @@
 \section{Variational Autoencoder}
 \label{sec:VAE}
-A \ac{VAE} is an artificial neural network architecture itroduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into a one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconsruct the time series. The process is regulated by a loss function that aims to minimising the reconstruction error between the input and the output.
+A \ac{VAE} is an artificial neural network architecture introduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into a one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconsructs the time series. The process is regulated by a loss function that aims to minimise the reconstruction error between the input and the output.
 \subsection{Architecture}
 \label{sec:vae-architeture}
 \begin{comment}
@@ -26,12 +26,14 @@ QUI DEVO DIRE
     - training \\
     - test \\
 \end{comment}
-The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, a 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
+The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, an 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
 \begin{itemize}
     \item \textbf{original waveforms}\\
-    The input of the encoder are charge and current waveforms already processed as described in Sec. \ref{sec:data-cleaning}. Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
+    The input of the encoder are current waveforms already processed as described in Sec. \ref{sec:data-cleaning}, thus the input of the encoder has dimensions ($1~\times~200$)
+    % Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
+    In principle also charge waveforms could be used as inputs together with current ones therefore in this case the input is (\texttt{channels} $\times~200$).
     \item \textbf{encoder}\\
-    The encoder is defined within a sequential conatiner (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
+    The encoder is defined within a sequential container (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
     \begin{enumerate}
         \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channels} $\times 200$) inputs into (16 $\times~100$) objects;
         \item a Leaky ReLU activation, that is a similar to a Rectified Linear Unit function as detailed in Eq. \ref{eq:leakyReLU} where $\alpha = 0.1$
@@ -50,7 +52,6 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
     The latent space is constructed from the output of the encoder after the following procedure:
     \begin{enumerate}
         \item firstly, the encoder output is flattened to a sequence with $32~\times~50$ points;
-        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channels} $\times 200$) inputs into (16 $\times~100$) objects;
         \item secondly, the flattened data are passed through a linear layer (\texttt{Linear} in PyTorch) which further reduce the dimensionality to 64 points;
         \item thirdly, a Leaky ReLU activation with $\alpha=0.1$ is applied;
         \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
@@ -68,9 +69,10 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
         \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear regression) in order to obtain a ($32~\times~100$) object ;
         \item a 1D convolutional layer with kernel size = 5, stride = 1 and padding = 2 is exploited to extract patterns and smooth out the upsampling output returning a ($16~\times~100$) object;
         \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
-        \item the final 1D convolutional layer returns a original-waveform like output (\texttt{channels} $\times~200$)
+        \item the final 1D convolutional layer returns a original-waveform like output ($1~\times~200$)
     \end{enumerate}  
-    \item \textbf{reconstructed waveforms}: the output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current, charge or both waveforms reconstructed using information extracted from the latent space. 
+    \item \textbf{reconstructed waveforms}\\
+    The output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current waveforms reconstructed using information extracted from the latent space. 
 \end{itemize}  
 \begin{figure}[H]
     \centering
@@ -110,9 +112,19 @@ where \(A\) is the total number of events under the peak, i.e. the peak area obt
     \label{tab:gaussianfit_parameters}
 \end{table}
 
-Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. In order to get an idea of such fractions we can consider, for different $\sigma$ cuts, the ratio between the total number of events under the peak and the ones in the background; these are parametrised respectively by the $A$ and $B$ paramters of Eq. \ref{eq:fitted-gaussian}. 
+Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. 
 
-Tab~\ref{tab:purity} shows that the \ac{DEP} sample exhibits a systematically lower purity than the \ac{FEP} sample across the considered window widths. This is expected, since the \ac{FEP} peak amplitude is substantially bigger than the \ac{DEP} one while the underlying background level is comparable (see Tab.~\ref{tab:gaussianfit_parameters}), resulting in a more favourable peak-to-background ratio for the \ac{FEP} selection. 
+In order to get an idea of such fractions we can estimate, for different $k\sigma$ cut windows, how many events in the window belong to the Gaussian peak and how many to the flat background, using the parameters of the fit of Eq.~\ref{eq:fitted-gaussian}. Since the fit is performed on a histogram with 1~keV bins, $A$ is the total number of counts under the Gaussian component (the peak area), while $B$ is the constant background in counts per 1~keV bin. For a window $[\mu-k\sigma,\ \mu+k\sigma]$ the expected number of peak and background events are therefore
+\begin{align}
+N_{\mathrm{peak}}(k) &= A \int_{\mu-k\sigma}^{\mu+k\sigma} \mathcal{N}(x;\mu,\sigma)\,\mathrm{d}x = A\,\big[\Phi(k)-\Phi(-k)\big], \label{eq:npeak}\\
+N_{\mathrm{bkg}}(k) &= B\cdot 2k\sigma, \label{eq:nbkg}
+\end{align}
+where $\Phi$ is the cumulative distribution function of the standard normal distribution, and the background term is simply the constant level times the width of the window in keV. The purity of the selection is then defined as the fraction of events in the window attributed to the peak component:
+\begin{equation}
+\mathcal{P}(k) = \frac{N_{\mathrm{peak}}(k)}{N_{\mathrm{peak}}(k)+N_{\mathrm{bkg}}(k)}.
+\label{eq:purity}
+\end{equation}
+The values of $A$, $\sigma$ and $B$ are those of Tab.~\ref{tab:gaussianfit_parameters}, obtained separately for the \ac{DEP} and \ac{FEP} peaks, and the results are reported in Tab.~\ref{tab:purity}. Note that $N_{\mathrm{peak}}$ saturates to $A$ for large windows, whereas $N_{\mathrm{bkg}}$ grows linearly with $k$, so the purity decreases monotonically as the cut is widened.
 
 \begin{table}[H]
 \centering
@@ -159,19 +171,19 @@ This considerations are particularly relevant when we need to investigate the pe
 
 \subsection{Training and testing}
 \label{subsec:VAE-training}
-The loss function that have been used is an \ac{ELBO}, i.e. the characteristic loss implemented in \ac{VAE} models, with some adjustments created for our specific work. The general formula is written in Eq. \ref{eq:ELBO} where it is visible that two terms enters in the loss computation: a reconstruction term and a regularisation one.
+Once that waveforms are cleaned, processed and selected in terms of energy range around the two relevant peaks, the training and testing of our model can be carried out. 
+The loss function that have been used in said training and testing is an \ac{ELBO}, i.e. the characteristic loss implemented in \ac{VAE} models, with some adjustments created for our specific work. The general formula is written in Eq. \ref{eq:ELBO} where it is visible that two terms enters in the loss computation: a reconstruction term and a regularisation one.
 \begin{equation}
     \label{eq:ELBO}
     L = L_{\text{rec}} + \beta \cdot L_{\text{reg}}
 \end{equation}
 
-In the context of a \ac{VAE}, using a standard Mean Squared Error for the reconstruction loss would force the model to reproduce both the physically significant features of the waveform and the background stochastic noise, such as the random fluctuations preceding and following the main peaks. To overcome this limitation, the reconstruction term in the \ac{ELBO} function is modeled as the (\ac{NLL}) of a Gaussian distribution. Instead of assuming a fixed noise level, the \ac{VAE} dynamically learns a channel-specific variance, denoted as $\sigma_c^2$. This allows the model to weight the reconstruction error with respect to the expected noise level of each specific channel $c$.
-Mathematically speaking, the squared error is divided by the learned variance $\sigma_c^2$, and a logarithmic penalty term ($\log \sigma_c^2$) is added. This second term is crucial to prevent a trivial solution: if the loss only consisted of the first term ($( x_{i,c,t} - \hat{x}_{i,c,t} )^2 / \sigma_c^2$), the optimization algorithm would simply predict an infinitely large noise value to drive the error to zero. The addition of the logarithmic penalty forces the model to find an optimal balance, preventing the overestimation of the underlying noise.
-In this specific work, the two channels of the input tensor represent the charge and the current of the same physical signal. Since current is the time derivative of charge, these two quantities inherently possess fundamentally different scales and noise profiles. By learning a separate $\sigma_c^2$ for each channel, the \ac{NLL} acts as an automatic normalization mechanism, preventing the channel with the larger numerical magnitude or higher intrinsic variance from dominating the loss gradient. 
-Finally, the individual losses of the channels must be summed, as expressed in Eq. \ref{eq:rec-loss}. From a probabilistic poin of view, this is equivalent to assuming independence of the noise between the charge and current measurements. Moreover, this sum is necessary to aggregate the array of channel-specific errors into a single scalar value, which is required by the framework to correctly perform the backpropagation algorithm.
+In the context of a \ac{VAE}, using a standard Mean Squared Error for the reconstruction loss would force the model to reproduce both the physically significant features of the waveform and the background stochastic noise, such as the random fluctuations preceding and following the main peaks. To overcome this limitation, the reconstruction term in the \ac{ELBO} function is modeled as the (\ac{NLL}) of a Gaussian distribution. Instead of assuming a fixed noise level, the \ac{VAE} dynamically learns a variance, denoted as $\sigma^2$. This allows the model to weight the reconstruction error with respect to the expected noise level of current waveforms.
+Mathematically speaking, the squared error is divided by the learned variance $\sigma^2$, and a logarithmic penalty term ($\log \sigma^2$) is added. This second term is crucial to prevent a trivial solution: if the loss only consisted of the first term ($( x_{i,t} - \hat{x}_{i,t} )^2 / \sigma^2$), the optimization algorithm would simply predict an infinitely large noise value to drive the error to zero. The addition of the logarithmic penalty forces the model to find an optimal balance, preventing the overestimation of the underlying noise.
+As already introduced in Sec.~\ref{sec:vae-architeture}, charge waveforms could also be considered as input together with current ones: in this case, two channel-specific variances, $\sigma_c^2$, should be used. Since current is the time derivative of charge, these two quantities inherently possess fundamentally different scales and noise profiles. By learning a separate $\sigma_c^2$ for each channel, the \ac{NLL} acts as an automatic normalization mechanism, preventing the channel with the larger numerical magnitude or higher intrinsic variance from dominating the loss gradient. In this case, the individual losses of the channels must be summed. From a probabilistic point of view, this is equivalent to assuming independence of the noise between the charge and current measurements. Moreover, this sum is necessary to aggregate the array of channel-specific errors into a single scalar value, which is required by the framework to correctly perform the backpropagation algorithm.
 \begin{equation}
     \label{eq:rec-loss}
-    L_{\text{rec}} = \frac{1}{B} \sum_{i=1}^{B} \sum_{c=1}^{C} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,c,t} - \hat{x}_{i,c,t} \right)^2}{\sigma_c^2} + \log \sigma_c^2 \right) \right]
+    L_{\text{rec}} = \frac{1}{B} \sum_{i=1}^{B} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,t} - \hat{x}_{i,t} \right)^2}{\sigma^2} + \log \sigma_c^2 \right) \right]
 \end{equation}
 
 The second part of the loss expressed in Eq. \ref{eq:ELBO} concerns the organisation of the 8-dimension latent space and is based on \ac{KL} divergence. Firstly we define a \textit{prior} distribution, i.e. a standard Gaussian distribution $p(z) = \mathcal{N}(z; \mathbf{0}, \mathbf{I})$ with a zero mean vector and an identity covariance matrix. Secondly, seeing that the encoder network maps the original input waveform $x$ into a set of 8 Gaussian distributions, we can define the so-called \textit{posterior} distribution $q(z|x) = \mathcal{N}(z; \boldsymbol{\mu}_\phi(x), \text{diag}(\boldsymbol{\sigma}_\phi^2(x)))$, parameterized by the learned mean and variance vectors.
@@ -198,38 +210,38 @@ The training and testing of the algorithm is done splitting the dataset in order
 Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm. The number of dimensions in the latent space is $k = 8$.
 
 The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}).
-Fig. \ref{fig:esempio-VAE-ricostruzione}, \ref{fig:esempio-VAE-losses} and \ref{fig:esempio-VAE-testset} display the reconstruction flow through 100 epochs using $\beta=1$, considering input events within $3\sigma$ of the \ac{DEP} and \ac{FEP} fits already processed and scaled (see Eq.~\ref{eq:scaling}). The training and testing results of other configurations in terms of number of sigmas, scaling, normalisation and number of channels (i.e. current only or both current and charge) can be found in Appendix \ref{app:VAE-results}.
+The reconstruction flow through 100 epochs using $\beta=1$ for current waveforms already processed and scaled (see Eq.~\ref{eq:scaling}) are shown in Fig. \ref{fig:VAE-ricostruzione/3sigma}, \ref{fig:VAE-losses-3sigma} and \ref{fig:VAE-testset-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma}, \ref{fig:VAE-losses-1sigma} and \ref{fig:VAE-testset-1sigma} for events in the $1\sigma$ range of the same peaks.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/VAEresults/validation_perEpoch_sigma3_current_scaled_beta1.pdf}
-    \caption{Example of the decoder reconstrucion for validation set waveforms at epoch 1, 50 and 100.}
-    \label{fig:esempio-VAE-ricostruzione}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current/scaled/validation_perEpoch_sigma3_current_scaled_beta1.pdf}
+%     \caption{Example of the decoder reconstrucion for validation set waveforms at epoch 1, 50 and 100.}
+%     \label{fig:VAE-ricostruzione-3sigma}
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/VAEresults/train_valid_losses_sigma3_current_scaled_beta1.pdf}
-    \caption{Loss functions evolution through the training epochs. From the left to the right: total loss, reconstruction (\ac{NLL}) loss and \ac{KL} loss}
-    \label{fig:esempio-VAE-losses}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current/scaled/train_valid_losses_sigma3_current_scaled_beta1.pdf}
+%     \caption{Loss functions evolution through the training epochs. From the left to the right: total loss, reconstruction (\ac{NLL}) loss and \ac{KL} loss}
+%     \label{fig:VAE-losses-3sigma}
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/VAEresults/test_sigma3_current_scaled_beta1.pdf}
-    \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveforms in the test set.}
-    \label{fig:esempio-VAE-testset}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{plots/VAE_plots_DEF_v2/sigma3/current/scaled/test_sigma3_current_scaled_beta1.pdf}
+%     \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveforms in the test set.}
+%     \label{fig:VAE-testset-3sigma}
+% \end{figure}
 
 \subsection{\texorpdfstring{\acs{VAE}}{VAE} as a feature extractor}
 \label{subsec:VAE-features_extraction}
-Using the \ac{VAE} as a features extractor means building a classification model which exploits the latent space distributions as input features for the classification task. As already mentioned, the latent space has 8 dimensions, each of the codifying a specific feature of the input waveform that the encoder has learnt to extract, as depicted in Fig. \ref{fig:disegno-encoder-classifier}. 
+Using the \ac{VAE} as a features extractor means building a classification model which exploits the latent space distributions as input features for the classification task. As already mentioned, the latent space has 8 dimensions, each of them codifying a specific feature of the input waveform that the encoder has learnt to extract, as depicted in Fig. \ref{fig:disegno-encoder-classifier}. 
 The classification model is a simple \ac{MLP} that follows this \texttt{Sequential} structure:
 \begin{itemize}
     \item \textbf{input layer}:\\
     The features taken as the input of the \ac{MLP} classifier are the $\mu$ values coming out of the encoder part of the \ac{VAE} used in evaluation mode, i.e. the encoder weights are frozen and the input waveforms are mapped into the latent space without any further training. The $\mu$ values are then concatenated into a single vector of 8 elements that is passed to the \ac{MLP} classifier.
     \item \textbf{first hidden layer}:\\
-    A linear layer maps the 8 input features into 32 outputs, the a Leaky ReLU activation function (Eq. \ref{eq:leakyReLU})is applied to introduce non-linearity and a 20\% dropout level is added to prevent overfitting. It is important to notice that dropout layers are active only whenm the model is in traing mode, while they are active in evalutation (test) mode.
+    A linear layer maps the 8 input features into 32 outputs, the a Leaky ReLU activation function (Eq. \ref{eq:leakyReLU})is applied to introduce non-linearity and a 20\% dropout level is added to prevent overfitting. It is important to notice that dropout layers are active only when the model is in trainingg mode, while they are deactivated in evalutation (test) mode.
     \item \textbf{second hidden layer}:\\
     Another linear layer reduces the dimension from 32 to 16 and it is followed by a Lekay ReLU activation.
     \item \textbf{output layer}:\\
@@ -260,5 +272,3 @@ using beta1 and sigma3
 --- MSE SF with A/E =  19.16\% ---
 
 insomma uno schifo
-% \subsection{\ac{VAE} as a denoising algorithm}
-% \label{subsec:VAE-denoising}
