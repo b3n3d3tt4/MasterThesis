@@ -1,13 +1,50 @@
 \chapter{Results}
-
 \section{Analysis of the calibration data spectrum}
 \label{sec:calib-data}
+
+\subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{plots/VAE/spectrum_cuts_sigma3_current_scaled_beta1.pdf}
+%     \caption{\dots }
+%     \label{fig:VAE-energyspectrum-3sigma}
+% \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/VAE/spectrum_cuts_sigma1_current_scaled_beta1.pdf}
+%     \caption{\dots }
+%     \label{fig:VAE-energyspectrum-1sigma}
+% \end{figure}
+
+\subsection{\texorpdfstring{\acs{DTC}}{DTC} metrics cut}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/DTC/energy_spectrum_all_metrics_cuts.pdf}
+    \includegraphics[width=0.5\textwidth]{plots/DTC/energy_spectrum_euclidean_vs_AoE.pdf}
     \caption{\dots }
-    \label{fig:DTC-energyspectrum-allmetrics}
+    \label{fig:DTC-energyspectrum-euclidean}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/DTC/energy_spectrum_cid_vs_AoE.pdf}
+        \caption{\dots}
+        \label{fig:DTC-energyspectrum-cid}
+    \end{minipage}
+    ~
+    \hfill
+    ~
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/DTC/energy_spectrum_acf_vs_AoE.pdf}
+        \caption{\dots}
+        \label{fig:DTC-energyspectrum-acf}
+    \end{minipage}
+\end{figure}
+
+
 
 \begin{figure}[H]
     \centering
@@ -23,9 +60,9 @@
     \label{fig:DTC-waveforms-allmetrics-disagree}
 \end{figure}
 
-\section{Analysis of \texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2nu beta beta} data}
+\section{Analysis of~\texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2nu beta beta} data}
 \label{sec:2nubb-data}
-The latest step of this analysis involves testing all the deep learning models discussed so far with data that are well-known \ac{SSE}-like events.
+The latest step of this analysis involves testing all the deep learning models discussed so far with data that are well-known \ac{SSE}-like events. In particular, physics data from period \textit{p03} to period \textit{p09} of \textit{prl25} have been selected in terms of quality cuts, the ones used also for calibration data already listed in Tab.~\ref{tab:quality_cuts}. Moreover, data are categorized by the \texttt{pygama} pipeline according to whether they qualify as $2\nu\beta\beta$ candidates or not in the range between $575$~keV and $2000$~keV. After this just-mentioned selection, data have been cut on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}.
 
 \begin{figure}[H]
     \centering
@@ -33,6 +70,8 @@ The latest step of this analysis involves testing all the deep learning models d
     \caption{Energy spectrum of the $2\nu\beta\beta$ data before (light grey) and after (dark grey) the \ac{lar} cut.}
     \label{fig:2nu-beforeafterLAR}
 \end{figure}
+
+These data should be, in principle, pure \ac{SSE}-like events, since all the background contamination producing \ac{MSE} signals are removed by the \ac{lar} veto. Therefore the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training. The results are shown in Fig.~\ref{fig:VAE-3sigma-2nu} and Fig.~\ref{fig:VAE-1sigma-2nu} for the two data selections of the \ac{VAE} and in Fig.~\ref{fig:DTC-euclidean-2nu}, Fig.~\ref{fig:DTC-cid-2nu} and Fig.~\ref{fig:DTC-acf-2nu} for the three different metrics of the \ac{DTC}.
 
 \begin{figure}[H]
     \centering

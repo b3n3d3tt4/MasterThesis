@@ -50,32 +50,28 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
     \item \textbf{distance computation}\\
     A distance metric is computed between the input and each of the clusters centroids. Implemented metric distances are:
     \begin{itemize}
-        \item \textbf{Euclidean Distance (EUC)}: given a latent sequence $x$ and a cluster centroid $w$, the distance is calculated as the usual geometrical distance of Eq. \ref{eq:EUC-distance}. Despite being the most simple and intuitive metric, it is sensitive to amplitude offsets, gain variations, and high-frequency noise, all of which can obscure the underlying pulse shape differences between SSE and MSE events\footnote{In principle the data cleaning described in Sec. \ref{sec:data-cleaning} should prevent such problems, but some significant discrepancies may still be present even after the cleaning process.}.
+        \item \textbf{Euclidean Distance (EUC)}: given a latent sequence $x$ and a cluster centroid $w$, both made of $T$ time steps ($T = 20$, i.e. the input length divided by the pooling size), the distance is the usual geometrical distance of Eq. \ref{eq:EUC-distance}. Although it is the simplest and most intuitive metric, it compares the two sequences point by point, so it reacts to any difference in level, scale and timing between them. This is partly desirable, since the amplitude of the current carries the A/E information, but it also makes the metric sensitive to residual misalignments and noise, which can obscure the pulse-shape differences between SSE and MSE events\footnote{The alignment on the first current peak and the low-pass filter described in Sec. \ref{sec:data-cleaning} reduce these effects, but cannot remove them completely.}.
         \begin{equation}
             \label{eq:EUC-distance}
             d_\text{EUC}(x, w) = \sqrt{\sum_{t=1}^{T} (x_{t} - w_{t})^2}
         \end{equation}
-        where $T$ is the number of time-steps.
 
-        \item \textbf{Complexity-Invariant Distance (CID)}: this metric extends the Euclidean distance by introducing a penalty factor based on the complexity of the time series, preventing two sequences with very different variability profiles from being considered close. The complexity factor $CE$ (Eq. \ref{eq:CE-factor}) of a series is estimated via the square root of the sum of squared differences between consecutive points, i.e. discrete derivative. The final distance is the Euclidean distance weighted by the ratio of the maximum to the minimum complexity as expressed in Eq. \ref{eq:CID-distance}:
+        \item \textbf{Complexity-Invariant Distance (CID)}: this metric, introduced by Batista et al. \cite{Batista}, extends the Euclidean distance with a correction factor based on the complexity of the time series, which prevents two sequences with very different variability from being considered close. The complexity estimate $\mathrm{CE}$ of a series (Eq. \ref{eq:CE-factor}) is the norm of its discrete derivative, i.e. the square root of the sum of the squared differences between consecutive points. The final distance is the Euclidean distance multiplied by the ratio between the larger and the smaller complexity (Eq. \ref{eq:CID-distance}); this factor is always $\geq 1$ and equals 1 only when the two sequences have the same complexity.
         \begin{equation}
             \label{eq:CE-factor}
-            CE(x) = \sqrt{\sum_{t=1}^{T-1} (x_{t+1} - x_t)^2}
+            \mathrm{CE}(x) = \sqrt{\sum_{t=1}^{T-1} (x_{t+1} - x_t)^2}
         \end{equation}
         \begin{equation}
             \label{eq:CID-distance}
-            d_\text{CID}(x, w) = d_\text{EUC}(x, w) \cdot \frac{\max[CE(x), CE(w)]}{\min[CE(x), CE(w)]}
+            d_\text{CID}(x, w) = d_\text{EUC}(x, w) \cdot \frac{\max[\mathrm{CE}(x), \mathrm{CE}(w)]}{\min[\mathrm{CE}(x), \mathrm{CE}(w)]}
         \end{equation}
 
-        % \item \textbf{Correlation-based Distance (COR)}: this metric evaluates the morphological similarity of the time series independently of their amplitude. Both sequences (input and centroid) are first Z-normalized along the temporal dimension by subtracting the mean $\mu$ and dividing by the standard deviation $\sigma$. The Pearson correlation coefficient ($PCC$) is calculated and then converted into a strictly positive distance metric:
-        % \begin{equation}
-        %     PCC(x_f, w_f) = \frac{1}{T} \sum_{t=1}^{T} \left( \frac{x_{t} - \mu_{x_}}{\sigma_{x_f}} \right) \left( \frac{w_{t,f} - \mu_{w_f}}{\sigma_{w_f}} \right)
-        % \end{equation}
-        % \begin{equation}
-        %     d_\text{COR}(x, w) = \sqrt{2 (1 - PCC(x_f, w_f))}
-        % \end{equation}
-
-        \item \textbf{Auto-Correlation Function (ACF)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and computes the similarity between the latent representation and the centroids performing a weighted euclidean distance between the autocorrelation coefficients of them. Firstly, the two time series, i.e. the latent space one and the centroid one, are converted into their autocorrelation coefficients, $\varrho_x$ and $\varrho_w$, computed up to a maximum lag: from a physical perspective, this transformation maps raw signals in a domain invariant with respect to the absolute amplitude that only renders the morphological structure and the periodicity in time of the signal; this is useful in order to identify secondary peaks independently from the total energy of the event. Secondly, a decaying diagonal matrix $\boldsymbol{\Omega}$ (Eq. \ref{eq:Omega-matrix}) is constructed to assign higher importance to lower-order lags (recent steps): this mathematical configuration ensures that the metric primarly focuses on short-term dynamics and mitigates the influence of stochastic fluctuations and electronic noise mostly present in signal tails. 
+        \item \textbf{Auto-Correlation Function (ACF)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and compares the latent sequence and the centroid through a weighted Euclidean distance between their autocorrelation coefficients. First, both sequences are converted into their sample autocorrelation functions $\varrho_x$ and $\varrho_w$ (Eq. \ref{eq:ACF}), computed for all the lags $k = 0, \dots, T-1$:
+        \begin{equation}
+            \label{eq:ACF}
+            \varrho_x(k) = \frac{\sum_{t=1}^{T-k} (x_t - \bar{x})(x_{t+k} - \bar{x})}{\sum_{t=1}^{T} (x_t - \bar{x})^2}
+        \end{equation}
+        where $\bar{x}$ is the mean of the sequence. Since the mean is subtracted and the result is divided by the variance, $\varrho_x$ is invariant under any rescaling and shift of the latent sequence: it keeps only its temporal correlation structure, i.e. the width of the peaks and the separation between them, which shows up as a secondary bump of $\varrho_x$ at the corresponding lag. Second, a decaying diagonal matrix $\boldsymbol{\Omega}$ (Eq. \ref{eq:Omega-matrix}, with $m = T$) gives more weight to the lower lags: the coefficient at lag $k$ is estimated from only $T-k$ pairs of points, so the coefficients at high lags are the least reliable and are progressively suppressed.
         \begin{equation}
             \label{eq:Omega-matrix}
             \begin{aligned}
@@ -88,10 +84,10 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
                 \omega_k &= 1 - \frac{k}{m-1} \quad \text{for } k = 0, 1, \dots, m-1
             \end{aligned}
         \end{equation}
-        Lastly, topological differences between the latent signal and the centroid one are quantified as written in Eq. \ref{eq:AC-distance}.
+        Finally, the differences between the two autocorrelation functions are quantified as in Eq. \ref{eq:AC-distance}. Note that $\varrho(0) = 1$ for every sequence and $\omega_{m-1} = 0$, so neither the first nor the last lag contributes to the distance.
         \begin{equation}
             \label{eq:AC-distance}
-            d_{\text{ACF}}(x, w) = \sqrt{(\varrho_x - \varrho_w)^{\text{T}} \boldsymbol{\Omega} (\varrho_x - \varrho_w)}
+            d_{\text{ACF}}(x, w) = \sqrt{(\varrho_x - \varrho_w)^{\top} \boldsymbol{\Omega} \, (\varrho_x - \varrho_w)}
         \end{equation}
     \end{itemize}
     \item \textbf{probability calculation}:\\

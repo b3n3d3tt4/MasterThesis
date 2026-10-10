@@ -8,7 +8,9 @@ The same issues are found in the context of this work. As discussed in Sec.~\ref
 
 These considerations motivate the approach followed in this chapter, where different deep learning algorithms are studied to understand how effective they can be for \ac{PSD} in LEGEND-200, with particular attention to methods that require little or no labelling of the waveforms. Strictly speaking, deep learning is a subset of machine learning: the term refers to models based on artificial neural networks with more than one hidden layer, which can build increasingly abstract representations of the input directly from the data. Since most of the models discussed in this chapter belong to this class, the two terms will be used interchangeably in what follows.
 
-Three different approaches are considered: first, a \ac{VAE} is used as feature extractor for a classification task. Second, a deep learning architecture called \ac{DTC} \cite{DTC} is investigated to obtain a fully unsupervised clustering of the waveforms. Finally, another fully unsupervised technique is tested, namely a \ac{SOM}, whose working principle is inspired by the organisation of the human cerebral cortex. All of these models are trained and tested with an NVIDIA A30 GPU.
+Two different approaches were considered in this work: first, a \ac{VAE} is used as feature extractor for a classification task. Second, a deep learning architecture called \ac{DTC} \cite{DTC} is investigated to obtain a fully unsupervised clustering of the waveforms. 
+% Finally, another fully unsupervised technique is tested, namely a \ac{SOM}, whose working principle is inspired by the organisation of the human cerebral cortex. 
+All of these models are trained and tested with an NVIDIA A30 GPU, exploiting the PyTorch library in its 12.2 version through the cuda ????.
 
 \section{Data cleaning}
 \label{sec:data-cleaning}
@@ -152,6 +154,6 @@ where $x_i(t_k)$ is the $k$-th sample of the $i$-th current waveform and $M$ is 
 \newpage
 \input{chapters/DTC.tex}
 
-\newpage
-\input{chapters/SOM.tex}
+% \newpage
+% \input{chapters/SOM.tex}
 
