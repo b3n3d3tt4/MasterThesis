@@ -17,8 +17,9 @@
 %     \label{fig:VAE-energyspectrum-1sigma}
 % \end{figure}
 
-\subsection{\texorpdfstring{\acs{DTC}}{DTC} metrics cut}
+\subsection{\texorpdfstring{\acs{DTC}}{DTC}}
 \begin{wrapfigure}{r}{0.5\textwidth}
+    \centering
     \includegraphics[width=\linewidth]{plots/DTC/energy_spectrum_euclidean_vs_AoE.pdf}
     \caption{Euclidean Distance cut on the $1550-1650$~keV dataset of calibration data.}
     \label{fig:DTC-energyspectrum-euclidean}
@@ -81,9 +82,10 @@ Figures~\ref{fig:DTC-energyspectrum-euclidean},~\ref{fig:DTC-energyspectrum-cid}
 % ----------------------------------------------------------------------------------
 % --------------------------------- 2 NU BETA BETA ---------------------------------
 % ----------------------------------------------------------------------------------
+\newpage
 \section{Analysis of~\texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2nu beta beta} data}
 \label{sec:2nubb-data}
-The latest step of this analysis involves testing all the deep learning models discussed so far with data that are well-known \ac{SSE}-like events. In particular, physics data from period \textit{p03} to period \textit{p09} of \textit{prl25} have been selected in terms of quality cuts, the ones used also for calibration data already listed in Tab.~\ref{tab:quality_cuts}. Moreover, data are categorized by the \texttt{pygama} pipeline according to whether they qualify as $2\nu\beta\beta$ candidates or not in the range between $575$~keV and $2000$~keV. After this just-mentioned selection, data have been cut on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}.
+The latest step of this analysis involves testing all the deep learning models discussed so far with data that are well-known \ac{SSE}-like events. In particular, physics data from period \textit{p03} to period \textit{p09} of \textit{prl25} have been selected in terms of quality cuts, the ones used also for calibration data already listed in Tab.~\ref{tab:quality_cuts}. Moreover, data are categorized by the \texttt{pygama} pipeline according to whether they qualify as $2\nu\beta\beta$ candidates or not in the range between $575$~keV and $2039$~keV. After this just-mentioned selection, data have been cut on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}.
 
 \begin{figure}[H]
     \centering
@@ -92,18 +94,56 @@ The latest step of this analysis involves testing all the deep learning models d
     \label{fig:2nu-beforeafterLAR}
 \end{figure}
 
-These data should be, in principle, pure \ac{SSE}-like events, since all the background contamination producing \ac{MSE} signals are removed by the \ac{lar} veto. Therefore the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training. The results are shown in Fig.~\ref{fig:VAE-3sigma-2nu} and Fig.~\ref{fig:VAE-1sigma-2nu} for the two data selections of the \ac{VAE} and in Fig.~\ref{fig:DTC-euclidean-2nu}, Fig.~\ref{fig:DTC-cid-2nu} and Fig.~\ref{fig:DTC-acf-2nu} for the three different metrics of the \ac{DTC}.
+These data should be, in principle, pure \ac{SSE}-like events, since all the background contamination producing \ac{MSE} signals are removed by the \ac{lar} veto. Therefore the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training. The next two Sections presents the results obtained for said algorithms.
+
+\subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}
+
+\subsection{\texorpdfstring{\acs{DTC}}{DTC}}
+
+
+% \begin{wrapfigure}{r}{0.5\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_AoE_vs_DTC_afterLAr_Euclidean_Distance.pdf}
+%     \caption{Euclidean Distance cut on the $2\nu\beta\beta$ dataset of calibration data.}
+%     \label{fig:DTC-energyspectrum-2nubb-euclidean}
+% \end{wrapfigure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_AoE_vs_DTC_afterLAr_Euclidean_Distance.pdf}
+    \caption{Euclidean Distance cut on the $2\nu\beta\beta$ dataset of calibration data.}
+    \label{fig:DTC-energyspectrum-2nubb-euclidean}
+\end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/2nubb/energy_spectrum_AoE_vs_DTC_afterLAr.pdf}
-    \caption{Energy spectrum of the $2\nu\beta\beta$ data with different \ac{PSD} cuts: standard \ac{AE} cut and different \ac{DTC} metrics cuts.}
-    \label{fig:2nu-AEandDTCcuts}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_AoE_vs_DTC_afterLAr_Complexity_Invariant_Distance.pdf}
+        \caption{Complexity Invariant Distance cut on the $2\nu\beta\beta$ dataset of calibration data.}
+        \label{fig:DTC-energyspectrum-2nubb-cid}
+    \end{minipage}
+    ~
+    \hfill
+    ~
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_AoE_vs_DTC_afterLAr_Autocorrelation_Function.pdf}
+        \caption{Autocorrelation Function cut on the $2\nu\beta\beta$ dataset of calibration data.}
+        \label{fig:DTC-energyspectrum-2nubb-acf}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/2nubb/waveforms_AoE_DTC_agree_afterLAr.pdf}
+    \caption{Current waveforms kept (right) and rejected (left) by both the \ac{AE} cut and the \ac{DTC} algorithm. From the top to the bottom Euclidean Distance, Complexity Invariant Distance and Autocorrelation Function.}
+    \label{fig:2nu-kept_rejected_AE_DTC_agree}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/2nubb/waveforms_AoE_DTC_disagree_afterLAr.pdf}
     \caption{Comparison between current waveforms kept and rejectd by different cuts: On th eleft waveforms kept by the \ac{AE} cut but rejected by a specific \ac{DTC} metric cut, viceversa on the right events rejected by the \ac{DTC} metric but kept by \ac{AE} are shown. From the top to the bottom Euclidean Distance, Complexity Invariant Distance and Autocorrelation Function.}
-    \label{fig:2nu-kept_rejected_AE_DTC}
+    \label{fig:2nu-kept_rejected_AE_DTC_disagree}
 \end{figure}
