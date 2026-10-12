@@ -1,8 +1,10 @@
 \section{Deep Temporal Clustering}
 \label{sec:DTC}
-Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called \ac{DTC}, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means alorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. 
+As already mentioned, the main problem that affects the \ac{AE} method in the \ac{SSE}-\ac{MSE} discrimination is related to the fact that a complex waveform with its own evolution in time is treated and calssified on the basis of a single number. This number should in principle be a simple summary of the behaviour of the signal, but actually does not account for the time evolution of it. This problem is still present in a certain way also in the \ac{VAE}-based classifier: even though we use 8 features (and not only one), these are striclty correlated with single physical quantities that could ideally be computed by hand. Therefore what is really needed is a deep learning model that collapses all dimensions but the temporal one. On top of that, a features extraction aimed at a classification task separates the two goals of getting a good recontruction of the waveform, which means having learnt important features of it, from the clustering problem.
+
+Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called Deep Temporal Clustering, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means algorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. The power of this network lays in two specific aspects: first the fact that the time dimension is preserved also in the latent representation and second the fact that exploiting a combined optimisation of the two branches of the complexive model, i.e. the autoencoding and the clustering, spatio-temporal features are extracted in order to optimise the recontruction \textit{and} the clustering simoultaneously. 
 \subsection{Architecure} 
-The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code of the authors is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}.
+The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code of the authors is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
 
 \subsubsection{Temporal Autoencoder class}
 The \ac{TAE} is an Autoencoder for which the latent space is given by a compacted time series which ideally represents the input and from which the latter can be reconstructed with the decoder.
@@ -15,8 +17,8 @@ The workflow of the \ac{TAE} follows this scheme:
     \begin{enumerate}
         \item a 1D convolutional (\texttt{Conv1d}) layer with kernel size = 10, stride = 1 and padding = kernel size - 1 = 10 - 1 = 9\footnote{This is the default configuration of padding when stride = 1. This padding value will be the same in all convolutional layers of this class.}, mapping the ($1~\times~200$) input into a tensor with dimensions ($50~\times~200$);
         \item a LeakyReLU activation function, already detailed in Eq. \ref{eq:leakyReLU}, with $\alpha = 0.1$;
-        \item a 1D max pooling layer (\texttt{MaxPool1d}) with kernel size = 10 returnin a ($50~\times~20$) object and thus significantly reducing the time dimensions;
-        \item a bidirectional \ac{LSTM} (\texttt{LSTM}) receiving the 50 input features that uses 50 hidden units to return another ($50\times~20$) object. Since the standard PyTorch library does not natively implement the summation of the forward and backward outputs, a dedicated custom class was designed to perform this operation manually;
+        \item a 1D max pooling layer (\texttt{MaxPool1d}) with kernel size = 10 returnin a ($50~\times~20$) object and thus significantly reducing the time dimensions; this first two layers, i.e. the convolutional and the pooling layers, are needed in order to obtain a more compact representation of time series: dimensionality reduction is needed for the following steps to avoid very long sequences that may lead to a bad performance.
+        \item a bidirectional \ac{LSTM} (\texttt{LSTM}) receiving the 50 input features that uses 50 hidden units to return another ($50\times~20$) object. Specifically a \ac{LSTM} is used to learn temporal changes in both time directions. Since the standard PyTorch library does not natively implement the summation of the forward and backward outputs, a dedicated custom class was designed to perform this operation manually;
         \item a LeakyReLU activation function with $\alpha = 0.1$;
         \item another bidirectional \ac{LSTM} with only one hidden unit to compact features in a single tensor of dimensions ($1~\times~20$);
         \item a LeakyReLU activation function with $\alpha = 0.1$.
@@ -24,7 +26,7 @@ The workflow of the \ac{TAE} follows this scheme:
     \item \textbf{latent space}\\
     Differently respect to the \ac{VAE} case, the latent space is a compact time series with dimensions ($1~\times~20$), i.e. the output of the last layer of the encoder module. This representation maintains the sequential nature of input data but extract significant features that are indeed the output of both the decoder module and the clustering layer that will be discussed further in this Section.
     \item \textbf{temporal decoder}\\
-    The decoder part tries to reconstruct the original waveform, starting from the latent-space small time series:
+    The decoder part tries to reconstruct the original waveform, starting from the latent-space small time series. In \cite{DTC} the decoder constited of a upsampling layer followed by a deconvolutional one. After preliminary trials where a very bad reconstruction was observed the following architecture has been preferred:
     \begin{enumerate}
         \item a 1D convolutional layer: 50 kernels of kernel size = 10, stride = 1 and padding = kernel size $-1$ = 10 $-1$ = 9 expands the ($1 \times 20$) object up to a ($50 \times 20$) dimensionality object, without changing the temporal resolution;
         \item a LeakyReLU activation is performed on the output of the previous layer with $\alpha = 0.1$;
@@ -35,13 +37,14 @@ The workflow of the \ac{TAE} follows this scheme:
     Just as in the \ac{VAE} implementation, output waveforms are the latent-based reconstruction of input ones.
 \end{itemize}
 
-Although the original loss function used in \cite{DTC} was a Mean Square Error loss, this function is not suitable for our signals, as already discussed in \ref{subsec:VAE-training}. Thus loss function that parametrises and corrects all of the just-mentioned steps of the \ac{TAE} part of \ac{DTC} is a \ac{NLL} as the one outlined in Eq. \ref{eq:rec-loss} without the channel average. Therefore the \ac{TAE} loss function results in Eq. \ref{eq:tae-loss}, where $\sigma$ is a trainable parameter of the model here as well as in the \ac{VAE} implementation. Specifically, this parameter is tuned in the initial part of the training, called \textit{pretrain}, where only the \ac{TAE} is used, and then fixed for the second part of the training where also the \ac{TSC} part is implemented.
+Although the original loss function used in \cite{DTC} was a Mean Square Error loss, this is not suitable for our signals, as already discussed in \ref{subsec:VAE-training}. Thus loss function that parametrises and corrects all of the just-mentioned steps of the \ac{TAE} part of \ac{DTC} is a \ac{NLL} as the one of Eq. \ref{eq:rec-loss}. Therefore the \ac{TAE} loss function results in Eq. \ref{eq:tae-loss}, where $\sigma$ is a trainable parameter of the model here as well as in the \ac{VAE} implementation. Specifically, this parameter is tuned in the initial part of the training, called \textit{pretrain}, where only the \ac{TAE} is used, and then fixed for the second part of the training where also the \ac{TSC} part is implemented. 
+% The architecture can also be visualised in Fig.~\ref{fig:tae-architecure}.
+
 \begin{equation}
     \label{eq:tae-loss}
     L_{\text{TAE}} = \frac{1}{B} \sum_{i=1}^{B} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,t} - \hat{x}_{i,t} \right)^2}{\sigma^2} + \log \sigma^2 \right) \right]
 \end{equation}
 
-The architecture described so far can be visualised in Fig.~\ref{fig:tae-architecure}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/schemi_output/TAE.pdf}
@@ -51,10 +54,11 @@ The architecture described so far can be visualised in Fig.~\ref{fig:tae-archite
 
 \subsubsection{Time Series Clustering class}
 \label{subsubsec:TSC-class}
-The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter ha dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The numerical values of the cluster centroids tensor are initialised using the Xavier \cite{Xavier} uniform initialisation. This method avoids the standard zero-initialisation, which would hinder the backpropagation phase by causing exploding or vanishing gradients. Instead, Xavier initialisation extracts weights from a balanced uniform distribution whose bounds are scaled according to the tensor dimensions, successfully keeping the variance of the activations stable from the very first epochs. The workflow of this class includes different steps:
+The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter has dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The cluster centroids tensor is first filled using the Xavier uniform initialisation \cite{Xavier}, which only acts as a placeholder: any non-constant initialisation breaks the symmetry between the centroids, whereas identical centroids would receive identical assignments ($q_{ij} = 1/k$) and zero gradients, and could never separate. Before the joint training, these values are overwritten by the centroids obtained by running KMeans on the latent representations of the training set, produced by the pre-trained \ac{TAE}\footnote{The original \ac{DTC} work uses hierarchical clustering with complete linkage for this step.}.
+ The workflow of this class includes different steps:
 \begin{itemize}
     \item \textbf{input acquisition}\\
-    The clustering module receives the latent-space time sequences produced by the temporal encoder. Since standard 1D convolutional layers output tensors with dimensions ordered as (\texttt{number of features}, \texttt{time steps}) = ($1~\times~20$), the latent tensor is first permuted to swap the channel and time axes. This yields a tensor with the expected shape of (\texttt{time steps}, \texttt{number of features}) = ($20~\times~1$) in our setup. Finally, the permuted tensor is expanded along a new axis, preparing it for a broadcasted distance computation against all cluster centroids simultaneously, therefore obtaining ($1~\times~20\times~1$).
+    The clustering module receives the latent-space time sequences produced by the temporal encoder. Since standard 1D convolutional layers output tensors with dimensions ordered as (\texttt{features}~$\times$~\texttt{time steps}) = ($1~\times~20$), the latent tensor is first permuted to swap the channel and time axes. This yields a tensor with the expected shape of (\texttt{time steps}~$\times$~\texttt{features}) = ($20~\times~1$) in our setup. Finally, the permuted tensor is expanded along a new axis, preparing it for a broadcasted distance computation against all cluster centroids simultaneously, therefore obtaining ($1~\times~20\times~1$).
     \item \textbf{distance computation}\\
     A distance metric is computed between the input and each of the clusters centroids. Implemented metric distances are:
     \begin{itemize}
@@ -107,29 +111,43 @@ The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} 
     where $d(x_i, w_j)$ is the distance metric chosen among the ones previously described, and $\alpha$ controls the heaviness of the distribution tails. From an architectural perspective, the heavy tails of the t-Student distribution are preferred over a standard Gaussian kernel because they prevent vanishing gradients for samples located far from the centroids, resulting in a more robust training process.
     \item \textbf{target distribution definition}:\\
     Being the \ac{DTC} a fully unsupervised method, a self-training mechanism is employed: seeing that the model doesn't have any target label, a target distribution built from $q_{ij}$ probabilities themselves is constructed, following the one in \cite{DTC}.
-    Eq. \ref{eq:target-distribution-p} mathematically explains how said distribution is defined: squaring the distribution $p_{ij}$ amplifies the model predictions while $f_j$ (Eq. \ref{eq:frequency-j}) represents how many samples are assigned to the cluster $j$, effectively penalizing very big clusters. The ratio $p_{ij}/f_j$ is normalised to their sum over all $k$ clusters. 
+    Eq. \ref{eq:target-distribution-p} mathematically explains how said distribution is defined: Squaring $q_{ij}$ amplifies the most confident predictions, while $f_j$ (Eq.~\ref{eq:frequency-j}) is the soft frequency of cluster $j$, i.e. the sum of the assignment probabilities over the $B$ samples of the batch\footnote{In \cite{DTC} $f_j$ is computed over the whole dataset.}, so that dividing by it penalises very large clusters. The ratio $q^{2}_{ij}/f_j$ is then normalised over all the $K$ clusters.
     \begin{equation}
         \label{eq:target-distribution-p}
-        p_{ij} = \frac{q^{2}_{ij} / f_j} {\sum_{j}^{k} q^{2}_{ij} / f_j}
+        p_{ij} = \frac{q^{2}_{ij} / f_j}{\sum_{k=1}^{K} q^{2}_{ik} / f_k}
     \end{equation}
     \begin{equation}
         \label{eq:frequency-j}
-        f_j = \sum_i q_{ij}
+        f_j = \sum_{i=1}^{B} q_{ij}
     \end{equation}
 \end{itemize}
 
-Finally the loss is computed as a \ac{KL} divergence, similar to the one used in Sec. \ref{sec:vae-architeture}: minimising this function the model actively forces the predicted probabilities $q_{ij}$ to match the target distribution $p_{ij}$ which implies $\log \frac{p_{ij}}{q_{ij}} \rightarrow 0$ in Eq. \ref{eq:KL-loss-TSC}, where $B$ is the toal number of samples (in a batch) and $k$ is the number of clusters.
+
+
+Finally, the loss is computed as a \ac{KL} divergence, similar to the one used in Sec.~\ref{sec:vae-architeture}, averaged over the $B$ samples of a batch:
 
 \begin{equation}
     \label{eq:KL-loss-TSC}
-    L = \sum_{i=1}^B \sum_{j=1}^k p_{ij} \log \frac{p_{ij}}{q_{ij}}
+    L_{KL} = \frac{1}{B} \sum_{i=1}^{B} \sum_{j=1}^{K} p_{ij} \log \frac{p_{ij}}{q_{ij}}
 \end{equation}
+
+The target distribution is computed from the current $q_{ij}$ but it is treated as a constant, so that no gradient flows through it. Minimising Eq.~\ref{eq:KL-loss-TSC} therefore pushes $q_{ij}$ towards a sharper version of itself. Since $p_{ij}$ is recomputed at every update, the two distributions never simply coincide: as the assignments become more confident, so does the target, and the training converges towards high-confidence assignments.
+
+Being \texttt{Parameter} objects, the centroids $w_j$ are optimised together with the weights of the \ac{TAE}, starting from the K-Means initialisation, by gradient descent on the total loss $L = L_\text{TAE} + \gamma \cdot L_{KL}$. However, seeing that $L_\text{TAE}$ does not depend on the centroids, they are moved only by the clustering term. For the Euclidean distance, $d_{ij}^2 = \lVert z_i - w_j \rVert^2$, the gradients are~\cite{KL-backpropagation}:
+
+\begin{align}
+    \frac{\partial L_{KL}}{\partial w_j} &= -\frac{\alpha+1}{\alpha B} \sum_{i=1}^{B} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-centroids} \\
+    \frac{\partial L_{KL}}{\partial z_i} &= \frac{\alpha+1}{\alpha B} \sum_{j=1}^{K} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-latent}
+\end{align}
+
+Eq.~\ref{eq:grad-centroids} has an intuitive interpretation: if the target assigns sample $i$ to cluster $j$ with more confidence than the model ($p_{ij} > q_{ij}$), the gradient step moves the centroid $w_j$ towards $z_i$, while if $p_{ij} < q_{ij}$ it moves it away. The factor $(1 + d_{ij}^2/\alpha)^{-1}$ gives more weight to the samples that are already close to the centroid. At the same time, Eq.~\ref{eq:grad-latent} is back-propagated through the encoder, so that the latent representation $z_i$ of each sample is pulled towards the centroid of the cluster it most likely belongs to: the clustering reshapes the latent space itself, while $L_{NLL}$ keeps it faithful to the input waveforms. For the Complexity-Invarian Distance and the Autocorrelation Function the gradients follow from the same chain rule and are computed by automatic differentiation.
+
 
 The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is shown in Fig.~\ref{fig:tae_and_tsc-architecure}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/schemi_output/TAE_clustering.pdf}
-    \caption{Schematich representation of the \ac{DTC} architecture. The (temporal) endoer maps the input waveforms to a small time series in the latent space and the (temporal) decoder reconstruct waveforms from it. Moreover the time-series latent space is used to separate waveforms in different clusters. The full model is mediated by the \ac{NLL} loss function for the \ac{TAE} and the \ac{KL} divergence for the \ac{TSC}.}
+    \caption{Schematich representation of the \ac{DTC} architecture. The (temporal) encoder maps the input waveforms to a small time series in the latent space and the (temporal) decoder reconstruct waveforms from it. Moreover the time-series latent space is used to separate waveforms in different clusters. The full model is mediated by the \ac{NLL} loss function for the \ac{TAE} and the \ac{KL} divergence for the \ac{TSC}.}
     \label{fig:tae_and_tsc-architecure}
 \end{figure}
 
@@ -151,7 +169,7 @@ The \ac{DTC} training phase is divided in two different parts: the \textit{pretr
     \label{fig:pretrain-loss}
 \end{figure}
 
-Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a KMeans algorithm on the latent representation of the training set. It is from said centroids that the \ac{TSC} part of the mdoel starts to cluster waveforms.
+Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a K-Means algorithm on the latent representation of the training set. It is from said centroids that the \ac{TSC} part of the mdoel starts to cluster waveforms.
 
 \textbf{\textit{Train}}: in the second phase of the \ac{DTC} training, the proper \textit{training} phase, both the \ac{TAE} and the \ac{TSC} are used. As a consequence, the complexive loss function includes $L_\text{TAE}$ and $L_\text{TSC}$, weighted by a specific tunable parameter $\gamma$ in order to have the total loss of Eq. \ref{eq:total_dtc_loss}. Therefore the backpropagation acts both on the reconstruction of input waveforms and on the clustering of them simultaneously.
 \begin{equation}

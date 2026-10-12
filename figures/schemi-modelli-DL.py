@@ -353,17 +353,19 @@ T_LATENT = 20                          # 200 campioni / pool_size 10
 # =============================================================================
 # SERIE TEMPORALI (casuali ma lisce, con seed fisso)
 # =============================================================================
-def smooth_random(seed, n=T_LATENT, width=5):
+def random_series(seed, n=T_LATENT, phi=0.4):
+    """Serie casuale irregolare (processo AR(1)): nessun picco o forma particolare."""
     rng = np.random.default_rng(seed)
-    raw = rng.normal(size=n + width - 1).cumsum()
-    return np.convolve(raw, np.ones(width) / width, mode="valid")
+    x = np.zeros(n)
+    x[0] = rng.normal()
+    for t in range(1, n):
+        x[t] = phi * x[t - 1] + rng.normal()
+    return x
 
 
-Z = smooth_random(22)
-rng = np.random.default_rng(1)
-W1 = np.convolve(Z + rng.normal(0, 0.35, T_LATENT), np.ones(3) / 3, mode="same")  # vicino a z
-W1[0], W1[-1] = Z[0], Z[-1]
-W2 = 0.75 * Z[::-1] + 0.6 * smooth_random(24)                                   # diverso                                                # diverso
+Z = random_series(5)                                                    # latente
+W1 = Z + np.random.default_rng(11).normal(0, 0.45, T_LATENT)             # centroide vicino a z
+W2 = random_series(42) + 3.2                                            # centroide diverso
 
 
 # =============================================================================
@@ -386,10 +388,9 @@ def series_box(ax, x0, y0, x1, y1, series, colors, ec, fc, labels=None, lw=2.5):
         ax.plot(t, y, color=c, lw=2, zorder=5)
         ax.scatter(t, y, s=14, color=c, zorder=6)
     if labels:
-        # ogni etichetta sopra il massimo della propria curva
+        # etichette fuori dal riquadro, a sinistra, all'altezza del primo punto di ogni curva
         for y, c, lab in zip(ys, colors, labels):
-            i = int(np.argmin(y))
-            ax.text(t[i], y[i] - 22, lab, ha="center", va="center", fontsize=17, color=c,
+            ax.text(x0 - 10, y[0], lab, ha="right", va="center", fontsize=17, color=c,
                     zorder=6)
 
 
