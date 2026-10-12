@@ -41,6 +41,14 @@ Although the original loss function used in \cite{DTC} was a Mean Square Error l
     L_{\text{TAE}} = \frac{1}{B} \sum_{i=1}^{B} \left[ \frac{1}{2} \sum_{t=1}^{T} \left( \frac{\left( x_{i,t} - \hat{x}_{i,t} \right)^2}{\sigma^2} + \log \sigma^2 \right) \right]
 \end{equation}
 
+The architecture described so far can be visualised in Fig.~\ref{fig:tae-architecure}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/schemi_output/TAE.pdf}
+    \caption{Schematich representation of the \ac{TAE} architecture. The (temporal) endoer maps the input waveforms to a small time series in the latent space and the (temporal) decoder reconstruct waveforms from it. The model is mediated by a \ac{NLL} loss function.}
+    \label{fig:tae-architecure}
+\end{figure}
+
 \subsubsection{Time Series Clustering class}
 \label{subsubsec:TSC-class}
 The \ac{TSC} class only consists of a tesorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter ha dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The numerical values of the cluster centroids tensor are initialised using the Xavier \cite{Xavier} uniform initialisation. This method avoids the standard zero-initialisation, which would hinder the backpropagation phase by causing exploding or vanishing gradients. Instead, Xavier initialisation extracts weights from a balanced uniform distribution whose bounds are scaled according to the tensor dimensions, successfully keeping the variance of the activations stable from the very first epochs. The workflow of this class includes different steps:
@@ -116,6 +124,14 @@ Finally the loss is computed as a \ac{KL} divergence, similar to the one used in
     \label{eq:KL-loss-TSC}
     L = \sum_{i=1}^B \sum_{j=1}^k p_{ij} \log \frac{p_{ij}}{q_{ij}}
 \end{equation}
+
+The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is shown in Fig.~\ref{fig:tae_and_tsc-architecure}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/schemi_output/TAE_clustering.pdf}
+    \caption{Schematich representation of the \ac{DTC} architecture. The (temporal) endoer maps the input waveforms to a small time series in the latent space and the (temporal) decoder reconstruct waveforms from it. Moreover the time-series latent space is used to separate waveforms in different clusters. The full model is mediated by the \ac{NLL} loss function for the \ac{TAE} and the \ac{KL} divergence for the \ac{TSC}.}
+    \label{fig:tae_and_tsc-architecure}
+\end{figure}
 
 \subsection{Training and testing}
 The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. 
