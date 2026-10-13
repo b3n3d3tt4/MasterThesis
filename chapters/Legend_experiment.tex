@@ -132,13 +132,12 @@ As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEN
 
 \paragraph{Germanium detectors basics}
 \label{par:Ge-detector-basics}
- \begin{wrapfigure}{r}{0.52\textwidth}
-    
-  \centering
-  \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
-  \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
-  \label{fig:band_gaps}
-\end{wrapfigure}
+%  \begin{wrapfigure}{r}{0.52\textwidth}
+%   \centering
+%   \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
+%   \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
+%   \label{fig:band_gaps}
+% \end{wrapfigure}
 \ac{hpge} detectors are semiconductor detectors, therefore it is crucial to analyse some specific features of semiconductor materials.
 Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bonded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}.
 The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insulators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is broken, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
@@ -191,13 +190,12 @@ Therefore Fig \ref{fig:detectors-types} can be developed highlighting the \texti
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/BeGe_section_frontale.png}\hfill
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/Coax_section_frontale.png}\hfill
     \includegraphics[width=0.25\textwidth]{figures/renderingDetectors/IC_section_frontale.png}
-    \caption{Drawing of the different Germanium detectors employed in LEGEND with the \textit{p+} terminal highlighted in blue. From the left to the right: PPC, BEGe, Coax and IC detectors respectively. Rendering scripts are by D. Hervas.}
+    \caption{Drawing of the different Germanium detectors employed in LEGEND. The \textit{p+} terminal IS highlighted in blue. From the left to the right: PPC, BEGe, Coax and IC detectors respectively. Rendering scripts are by D. Hervas.}
     \label{fig:detectors-pINred}
-\end{figure}
-% In the final configuration shown in Fig. \ref{fig:diodes-legend}, 
+\end{figure} 
 When the entire detector volume becomes active and sensitive to ionizing radiation, if an incoming particle or gamma ray deposits energy within this volume, electron-hole pairs are generated in proportion to the deposited energy (in germanium, creating a single \ac{eh} pair requires 2.96 eV). Driven by the electric field, holes drift toward the \textit{p+} contact and electrons toward the \textit{n+} contact, inducing a measurable signal.
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.47\textwidth}
     \centering
     \begin{tikzpicture}
         % 1. Inserisce il PDF originale vettoriale
@@ -238,6 +236,8 @@ where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The t
 % As already sentenced above in Sec. \ref{subsec:Ge-detector-basics}, the work focuses on V08682A IC detector, therefore what follows is the analysis of the weighting field in this specific detector geometry. 
 IC detectors in LEGEND feature a well on the opposite side of the p-contact to increase the electric field in the upper part of the detectors and make it possible to drift the charge. MIRION IC detectors, as the one considered in this work, exhibits a straight/tapered well, visible in Fig. \ref{fig:V08682A}. \cite{lnote_21003}
 
+The structure of an IC detector creates a region surrounding the \textit{p+} electrode with a very high weighting field, as is visible in Fig. \ref{fig:weighting}. This means that, when an \ac{eh} pair is produced, the pulse shape of the signal is almost entirely determined by the holes drifting towards the \textit{p+} contact, rather than the electron-induced one which can be considered negligible. In principle, the shape of the current signal varies depending on where the physical process happen with respect to the readout electrode; however, seeing that far away from the \textit{p+} electrode  the field is very low, which means that the current signal that is proportional to the field (see Eq. \ref{eq:carica-corrente-SR}) is negligible, we can assume that wherever the physical process happens, the real signal only starts when the hole is sufficiently near to the point contact. Nonetheless, if the event happens very close to the \textit{p+} electrode, holes rapidly drift to it. On top of that electrons are generated within the high-weighting-field region and induce a sizeable current while drifting away from it, before entering the region where $\text{E}_\text{w}$ is negligible. \cite{dissertationComellato}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{figures/ramo-shockley/V08682A_weighting_potential.pdf}\hfill
@@ -245,8 +245,6 @@ IC detectors in LEGEND feature a well on the opposite side of the p-contact to i
     \caption{Weighting potential (left) and weighting field (right) in the V08682A IC detector. Own elaboration based on LEGEND Metadata.}
     \label{fig:weighting}
 \end{figure}
-
-The structure of an IC detector creates a region surrounding the \textit{p+} electrode with a very high weighting field, as is visible in Fig. \ref{fig:weighting}. This means that, when an \ac{eh} pair is produced, the pulse shape of the signal is almost entirely determined by the holes drifting towards the \textit{p+} contact, rather than the electron-induced one which can be considered negligible. In principle, the shape of the current signal varies depending on where the physical process happen with respect to the readout electrode; however, seeing that far away from the \textit{p+} electrode  the field is very low, which means that the current signal that is proportional to the field (see Eq. \ref{eq:carica-corrente-SR}) is negligible, we can assume that wherever the physical process happens, the real signal only starts when the hole is sufficiently near to the point contact. Nonetheless, if the event happens very close to the \textit{p+} electrode, holes rapidly drift to it. On top of that electrons are generated within the high-weighting-field region and induce a sizeable current while drifting away from it, before entering the region where $\text{E}_\text{w}$ is negligible. \cite{dissertationComellato}
 
 \subsubsection{Events topology}
 \label{subsubsec:topology}
@@ -259,7 +257,7 @@ On the other hand, background processes with similar energies arise mainly from 
 
 On top of that, another distinction is critical when it comes to events topology. Physical processes can occur both in the bulk of the detector and near the surface of it: these events are moslty $\alpha$ and $\beta$ emissions. The $n^+$ electrode is covered by a lithium-diffused layer (about $1$~mm for the detector considered here) which alpha particles cannot penetrate. On the other hand beta particles entering through it release their energy in a region of reduced electric field and produce characteristically slow pulses~\cite{L1000-design}. The opposite situation occurs at the $p^+$ contact and on the passivated surface of the groove, which separates the two electrodes: being only a fraction of a micrometer thick, they are fully exposed to both alpha and beta particles. To look into it further we need to analyse the physics in the groove region where the electric field\footnote{This is the physical electric field not to be confused with the Shockley-Ramo weighting field.} that drives charge drift runs parallel to the groove. However a perpendicular component arises from the fact that the groove is electrically floating and highly resistive thus can accumualte charge. This means that $\alpha$ and $\beta$ particles may generate a very slow readable signal characterised by the so-called \ac{DCR}. While alfas are totally affected by this process because of their very small range, betas that penetrate considerably more are only partially affected by it. Relevant emitters in this context are the $\beta$ decay of $^{42}$K in the surrounding liquid argon and the $\alpha$ decay of $^{210}$Po from the $^{222}$Rn progeny, both already introduced in Sec.~\ref{sec:background}: neither of these deposits energy exactly at $Q_{\beta\beta}$, but both of them can mimic a signal-like event once the observed energy is degraded. 
 
-Classifying events according to the shape of their signal is the basis of \ac{PSD}, a powerful tool for signal-background discrimination that is the main focus of this thesis and will be detailed and developed in depth in Chapter \ref{chapter:PSD}. In particular, 0$\nu\beta\beta$ events are to be searched as bulk \ac{SSE} events in the correct energy \ac{ROI}.
+Classifying events according to the shape of their signal is the basis of \ac{PSD}, a powerful tool for signal-background discrimination that is the main focus of this thesis and will be detailed and developed in depth in Sec.~\ref{sec:traditionalPSD}. In particular, 0$\nu\beta\beta$ events are to be searched as bulk \ac{SSE} events in the correct energy region of interest.
 
 \subsection{Data acquisition and processing}
 \subsubsection{Readout electronics}
@@ -342,17 +340,19 @@ Energy calibration is performed using Thorium-228 sources with low neutron emiss
     \end{minipage}
 \end{figure}
 
-\ac{DEP}, \ac{SEP} and \ac{FEP} of Thallium-208 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons of the positron escape the active detector volume without further interaction. Consequently, the energy deposition is highly localised, yielding a simple and temporally narrow pulse waveform associated to \ac{SSE}.
-Conversely, a \ac{SEP} event arises when only one of the two annihilation photons escapes, while the second photon re-interacts and deposits its energy elsewhere within the detector volume. This spatial separation introduces a temporal spread, resulting in a more complex waveform structure. Furthermore, events contributing to the \ac{FEP}, both of Thallium-208 and of Bismuth-212, typically involve multiple Compton scattering interactions prior to complete absorption, yielding an even more intricate pulse shape. These last two peaks are typical \ac{MSE}.
-
+\ac{DEP}, \ac{SEP} and \ac{FEP} of Thallium-208 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/DEP-SEP-FEP.jpg} 
+    \includegraphics[width=0.9\textwidth]{figures/DEP-SEP-FEP.jpg} 
     \caption{Different outcomes after a gamma interaction in the detector volume, delimited in black.\\A detailed description of the phenomena illustrated is given in the text.}
     \label{fig:dep-sep}
 \end{figure}
+Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons of the positron escape the active detector volume without further interaction. Consequently, the energy deposition is highly localised, yielding a simple and temporally narrow pulse waveform associated to \ac{SSE}.
+Conversely, a \ac{SEP} event arises when only one of the two annihilation photons escapes, while the second photon re-interacts and deposits its energy elsewhere within the detector volume. This spatial separation introduces a temporal spread, resulting in a more complex waveform structure. Furthermore, events contributing to the \ac{FEP}, both of Thallium-208 and of Bismuth-212, typically involve multiple Compton scattering interactions prior to complete absorption, yielding an even more intricate pulse shape. These last two peaks are typical \ac{MSE}.
 
-From now on, we are interested in considering the two peaks corresponding to the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. They are very close to each other in energy, as stated in Table \ref{tab:emission-peaks}, but are produced in different mechanisms consequently producing different signals in \ac{hpge} detectors, respectively \ac{SSE} and \ac{MSE}. This is significant in the context of our research since what we really want to investigate and discriminate is the shape of the waveform of specific signals; therefore any energy dependence in such shape is to be eliminated. In this perspective, selecting events with comparable energies isolates the waveform from energy-induced variations, allowing us to rely solely on the time evolution of its shape. 
+
+
+From now on, we are interested in considering the two peaks corresponding to the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi: hey are very close to each other in energy, as stated in Table \ref{tab:emission-peaks}, but are produced in different mechanisms consequently producing different signals in \ac{hpge} detectors, respectively \ac{SSE} and \ac{MSE}. This is significant in the context of our research since what we really want to investigate and discriminate is the shape of the waveform of specific signals; therefore any energy dependence in such shape is to be eliminated. In this perspective, selecting events with comparable energies isolates the waveform from energy-induced variations, allowing us to rely solely on the time evolution of its shape. 
 
 Nonetheless it is important to stress that this \ac{SSE} and \ac{MSE} labelling is statistical rather than exact event by event. As it is clear in Fig. \ref{fig:TlBi-spectrum} the two peaks we are considering lie over a continuous background . Therefore when considering the \ac{DEP} peak, a fraction of events with a \ac{MSE} topology arising from multiple Compton scattering are considered as well; viceversa the \ac{FEP} peak may contain a fraction of \ac{SSE}. However since these peaks significantly exceed the level of the background they are statistically dominated by the \ac{SSE} topology and \ac{MSE} respectively. Therefore, whenever we refer to \ac{SSE} and \ac{MSE} what we mean is that statistically they actually are so. 
 % Said considerations are clearly a limitation both for traditional classifiers and machine learning ones relying on pulse shapes.
@@ -365,7 +365,7 @@ Pulse shape discrimination \ac{PSD} is employed in the LEGEND program with sever
 
 The first one is a easure of the \textit{slowness} of the final 20\% of charge carriers for an event. It is determined by calculating the area above the rising edge of the waveform after it reaches the 80\% of its maximum. DSince surface events (both alpha and beta) tipically manifest a slow-charge trend with a incomplete charge collection as a consequence, \ac{LQ} is expected to be a powerful discriminator against these events, which constitute a part of the background (see Sec.~\ref{sec:background}). 
 
-On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection is based. It is computed as the ratio between the amplitude of the first peak of the current signal (obtained from the charge one via time derivative) and the energy of that event. In principle, if we consdier a \ac{SSE} and a \ac{MSE} at the very same energy, the \ac{AE} ratio will be lower for a \ac{MSE} that exhibits many current peaks lower than the one of the \ac{SSE}. 
+On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection relies. It is computed as the ratio between the amplitude of the first peak of the current signal (obtained from the raw charge signal via time derivative) and the energy of that event. In principle, if we consdier a \ac{SSE} and a \ac{MSE} at the very same energy, the \ac{AE} ratio will be smaller for a \ac{MSE} that exhibits many current peaks lower than the one of the \ac{SSE}. 
 Figure \ref{fig:AoE_distribution} makes it evident that different physical processes are correlated with different \ac{AE} distributions, therefore a proper selection of this value enable to distinguish signal-like events from background-like ones.
 
 \begin{figure}[H]
@@ -377,7 +377,7 @@ Figure \ref{fig:AoE_distribution} makes it evident that different physical proce
 
 
 
-Figure~\ref{fig:distribution-AoE_prl25} presents the \ac{AE} cut for the considered dataset in the $1550-1650$ keV energy range.
+Figure~\ref{fig:distribution-AoE_prl25} presents the \ac{AE} cut for the calibration data of \textit{prl25} in the $1550-1650$ keV energy range. Because of physics and computational reasons only said data have been employed for this work, as will be discussed in Sec.~\ref{sec:data-cleaning}. This \ac{PSD} cut will be the benchmark for all the others that have been implemented in this work and will be presented in Chapter \ref{chapter:ML-PSD}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
