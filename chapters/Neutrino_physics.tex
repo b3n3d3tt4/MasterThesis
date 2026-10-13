@@ -3,7 +3,7 @@
 \label{sec:nuIntro}
 Neutrinos are elementary particles, specifically neutral leptons, that, according to the \ac{SM} of Particle Physics, only interact via weak interactions.  
 They were first postulated in 1930 by the Austrian physicist Wolfgang Pauli to describe the continuous energy spectrum of beta decay. 
-Since only two particles were detectable, the process seemed to violate energy and spin conservation; therefore, Pauli introduced a third, 
+Since only the electron and the recoiling nucleus were observed, the process seemed to violate energy and spin conservation; therefore, Pauli introduced a third, 
 unseen spin-1/2 particle to carry away the missing energy and balance the angular momentum.
 
 They were eventually confirmed experimentally in 1956 by Clyde Cowan and Frederick Reines during an experiment conducted at the Savannah River 
@@ -22,11 +22,9 @@ in delayed coincidence provided an unambiguous signature of the antineutrino int
 both neutrinos and antineutrinos \cite{cowan1956nudetection}.
 
 Within the framework of the \ac{SM}, neutrinos are described as neutral fermions that do not participate in strong or 
-electromagnetic interactions. Consequently, they are either singlets under the gauge symmetry of SU$(3)_\text{C} \times \text{U}(1)_\text{EM}$ ore they are grouped with their corresponding charged leptons ($\ell = e, \mu, \tau$) into \ac{LH} weak isospin doublets.
+electromagnetic interactions: they are colour singlets and carry no electric charge. The \ac{LH} neutrino of each family is grouped with the corresponding charged lepton ($\ell = e, \mu, \tau$) into a weak-isospin doublet $L_\ell = (\nu_\ell, \ell)^T_\text{L}$, which transforms as $(\mathbf{1}, \mathbf{2}, -\tfrac{1}{2})$ under the gauge group SU$(3)_\text{C} \times$ SU$(2)_\text{L} \times$ U$(1)_Y$. The electromagnetic group U$(1)_\text{EM}$ is not part of the original gauge group: it is the subgroup that survives electroweak symmetry breaking, with $Q = T_3 + Y$. No \ac{RH} neutrino field is present in the minimal \ac{SM}.
 
-The SU$(2)_\text{L}$ gauge invariance strictly dictates the form of the weak interactions between these active neutrinos and the gauge 
-bosons. Said interactions consist of \ac{CC} processes mediated by $W^\pm$ bosons and \ac{NC} ones mediated by the $Z^0$ boson, 
-described by the following Lagrangians:
+The SU$(2)_\text{L}$ gauge invariance fixes the form of the weak interactions between neutrinos and the gauge bosons; neutrinos taking part in these interactions are called \textit{active}. These interactions consist of \ac{CC} processes mediated by the $W^\pm$ bosons and \ac{NC} processes mediated by the $Z^0$ boson, described by the following Lagrangians:
 \begin{equation}
     \label{eq:SM-neutrino-lagrangian}
     \begin{aligned}
@@ -36,9 +34,7 @@ described by the following Lagrangians:
 \end{equation}
 where $g$ is the SU$(2)_\text{L}$ coupling constant and $\theta_W$ is the Weinberg weak mixing angle. 
 
-Crucially, the \ac{NC} Lagrangian determines the decay width of the $Z^0$ boson into light, left-handed neutrinos. 
-Precision measurements of this invisible decay width at colliders have experimentally constrained the number of active neutrino 
-families to three ($N_\nu = 2.9840 \pm 0.0082$ \cite{LEPnumberOFnu}), perfectly matching the three known generations of charged leptons.
+Precision measurements of this invisible width at LEP constrain the number of light active neutrino families to $N_\nu = 2.9963 \pm 0.0074$~\cite{JanotJadach2020}, consistent with the three known generations of charged leptons. This value includes the 2020 correction of a bias in the Bhabha cross-section used to determine the LEP  uminosity. The measurement only counts active neutrinos lighter than $m_Z/2$; it does not exclude sterile neutrinos.
 
 % --------------------------------------------------------
 % ----------------- FLAVOUR OSCILLATIONS -----------------
@@ -51,7 +47,102 @@ families to three ($N_\nu = 2.9840 \pm 0.0082$ \cite{LEPnumberOFnu}), perfectly 
 \subsection[Experimental evidence: the solar neutrinos problem]{Experimental evidence: the solar neutrino problem\footnotemark}
 \label{subsec:oscillation-experiments}
 \footnotetext{All of what is reported in this section is elaborated from \cite{neutrinosPDG}, unless otherwise specified.}
-Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy, namely \ac{pp} chains and \ac{CNO} cycles.
+% Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy, namely \ac{pp} chains and \ac{CNO} cycles.
+
+% \begin{wrapfigure}{r}{0.6\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{figures/neutrino-fluxes.png}
+%     \caption{Energy spectra of solar neutrino fluxes of different reaction processes. Figure taken from \cite{SunNuFluxes}.}
+%     \label{fig:neutrino-fluxes}
+% \end{wrapfigure}
+% In \ac{pp} chains several neutrino-producing reactions are involved, resulting in the overall fusion of four protons into a ${}^{4}$He nucleus ($4p \to {}^4\text{He} + 2e^+ + 2\nu_e$). The total energy released in this reaction is given by the mass difference $Q = 4m_p - m_{{}^4\text{He}} - 2m_e \approx 26 \text{ MeV}$: most of this energy is radiated away by photons, while only a small fraction is carried away by the neutrinos, with an average energy of $\langle E_{2\nu_e} \rangle = 0.59 \text{ MeV}$.
+
+% On the other hand, in \ac{CNO} cycles, neutrinos are mainly produced via the decays of ${}^{13}\text{N}$, ${}^{15}\text{O}$ and ${}^{17}\text{F}$. Additionally, electron capture on ${}^{13}\text{N}$, ${}^{15}\text{O}$, and ${}^{17}\text{F}$ produces monoenergetic line spectra of neutrinos, generally referred to as \textit{ecCNO} neutrinos. Compared to the $pp$ chain, \ac{CNO} neutrinos carry away a higher fraction of the reaction energy, with average neutrino energies typically ranging between $0.7\text{ MeV}$ and $1.2\text{ MeV}$. However, the flux of \ac{CNO}-cycle neutrinos is roughly two orders of magnitude lower than the \ac{pp} chains one, accounting for less than $1\%$ of the solar energy production. Therefore it can be neglected in the flux calculation.
+
+% Based on the \ac{SSM}, the total expected neutrino flux can be evaluated by considering the total solar luminosity 
+% ($L_{\odot} \approx 3.828 \times 10^{26} \text{ W}$) and dividing it by the net energy released per complete \ac{pp} fusion chain 
+% ($Q \approx 26.73 \text{ MeV}$), while accounting for the spherical propagation of particles across the Earth-Sun distance ($1 \text{ AU}$). 
+% All these thermonuclear reactions in the Sun exclusively generate electron neutrinos ($\nu_e$) and assuming the absence of neutrino oscillations, 
+% state-of-the-art calculations predict a theoretical \ac{pp} solar neutrino flux arriving at Earth of approximately 
+% $\Phi_{\ac{pp}} (\nu_e) \approx 6 \times 10^{10} \text{ cm}^{-2}\text{s}^{-1}$. 
+% Figure \ref{fig:neutrino-fluxes} details the fluxes of neutrinos based on the reaction in which they are produced.
+
+
+% \paragraph{The Homestake mine experiment}
+% The experimental value of the solar neutrino flux $\Phi_{\ac{pp}} (\nu_e)$ has been studied since the last century.
+% In the late 1960s, the first solar neutrino experiment was performed underground in the Homestake gold mine in South Dakota in order to prevent contaminations of cosmic-ray induced reactions. 
+% There liquid tetrachloroethylene (C$_2$Cl$_4$) was employed as the target and the \ac{CC} weak interaction $\nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}$ was exploited.
+% Since this process has an energy threshold of $814$ keV, the fluxes of the ${}^{7}$Be and ${}^{8}$B neutrinos are the most relevant.
+% Auger electrons from the produced ${}^{37}\text{Ar}$ electron capture were counted to determine the neutrino-chlorine reaction rate.
+% From the beginning the experimental results yield a neutrino flux of less than one third of what expected, giving birth to the so-called \textit{solar neutrino problem}. 
+% The final result from the Homestake experiment was $2.56 \pm 0.16 \pm 0.16 \text{ SNU}$~
+% \footnote{SNU (solar neutrino unit) is a unit of event rate defined as $1 \text{ SNU} = 10^{-36}\text{ captures per second per target atom}$.} \cite{HomestakeResults} 
+% and can be directly compared with the theoretical \ac{SSM} prediction of $8.46^{+0.87}_{-0.88} \text{ SNU}$~\cite{SSMReference}.
+
+% \paragraph{Gallium-based experiments}
+% Lower-energy components of the solar neutrino spectrum (Figure \ref{fig:neutrino-fluxes}) can be investigated via \ac{CC} interactions exploiting the ${}^{71}\text{Ga}$ process $\nu_e + {}^{71}\text{Ga} \longrightarrow e^- + {}^{71}\text{Ge}$.
+% Featuring a low energy threshold of $233\text{ keV}$, this reaction is primarily sensitive to \ac{pp} neutrinos, with secondary contributions from ${}^{7}\text{Be}$ sources. 
+% The produced ${}^{71}\text{Ge}$ nuclei decay via electron capture and allow to measure the capture rate, following an approach analogous to Homestake.
+% In order to probe this lower-energy regime, two radiochemical experiments were launched at the turn of the 1990s: the SAGE collaboration at the Baksan Neutrino Observatory and the GALLEX (later followed by Gallium Neutrino Observatory (GNO)) experiment at the Laboratori Nazionali del Gran Sasso (LNGS). 
+% SAGE reported a measured flux of $65.4^{+3.1+2.6}_{-3.0-2.8} \text{ SNU}$, while GALLEX/GNO obtained $69.3 \pm 4.1 \pm 3.6 \text{ SNU}$. 
+% Both measurements heavily contrast with the \ac{SSM} theoretical prediction of $127.9^{+8.1}_{-8.2} \text{ SNU}$ for the same energy range, reinforcing the solar 
+% neutrino deficit puzzle.
+
+% \paragraph{The Kamiokande experiment} 
+% Real-time measurements of the solar neutrino flux were pioneered by the Kamiokande experiment and its successor, Super-Kamiokande, located in the Kamioka mine in Japan. 
+% These water Cherenkov detectors utilized $3000\text{ t}$ of water during the Kamiokande phase in the 1980s, scaling up to $50\text{ kt}$ of ultrapure water for Super-Kamiokande starting in 1996. 
+% The detectors are sensitive to both \ac{CC} and \ac{NC} interactions, 
+% which manifest as elastic scattering processes in the form of Eq. \ref{eq:CC-NCwater}.
+% % , also displayed in Figure \ref{fig:feynman-CCandNCint}.
+% \begin{equation}
+%     \label{eq:CC-NCwater}
+%     \nu_\ell + e^- \longrightarrow \nu_\ell + e^-
+% \end{equation}
+% % \begin{figure}[H]
+% %     \centering
+% %     \resizebox{0.7\textwidth}{!}{
+% %         \input{feynman-diagrams/CCandNCintOFnu.tex}
+% %     }
+% %     \caption{Feynman diagrams of neutrino-electron scatterings. On the left, the \ac{CC} interaction mediated by a $W^+$ boson; on the right, the \ac{NC} 
+% %     interaction mediated by the $Z^0$ boson. The subscript $\ell$ denotes a generic lepton flavour ($\ell = e, \mu, \tau$).}
+% %     \label{fig:feynman-CCandNCint}
+% % \end{figure}
+
+% However, the cross-section for $\nu_e$ —the only flavour capable of interacting via the charged current— is approximately six times larger than that for $\nu_\mu$ or $\nu_\tau$. 
+% Consequently, the elastic scattering signal in standard water is an indistinguishable mixture of \ac{CC} and \ac{NC} events heavily skewed towards $\nu_e$, meaning the detector cannot cleanly measure the total flavour-independent neutrino flux.
+% Due to energy thresholds of $6.5\text{ MeV}$ in Kamiokande and $3.5\text{ MeV}$ in Super-Kamiokande, these experiments are primarily sensitive to ${}^8\text{B}$ solar neutrinos. The latest results from the Super-Kamiokande collaboration report a measured solar neutrino flux of $(2.345 \pm 0.014 \pm 0.036) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$~\cite{latestSUPERK}, exhibiting a strong disagreement with the recent theoretical \ac{SSM} prediction for this energy range, which stands at $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$.
+
+% \paragraph{Solution to the solar neutrino problem: the SNO experiment}
+% The ultimate confirmation of neutrino flavour oscillation arrived with the Sudbury Neutrino Observatory (SNO) experiment that took place in the Creighton Mine near the city of Sudbury (Ontario, Canada) spanning the late 1990s and early 2000s. It exploited $1000\text{ t}$ of heavy water ($\text{D}_2\text{O}$) contained in a spherical acrylic vessel surrounded by a normal water ($\text{H}_2\text{O}$) shield. Unlike Kamiokande, the use of deuterium ($d$) allowed SNO to observe ${}^8\text{B}$ neutrinos not only using the \ac{ES} channel (see Eq. \ref{eq:CC-NCwater}), but also to disentangle the pure \ac{CC} and \ac{NC} interactions detailed in Eq. \ref{eq:deuteron-interactions} and shown in Figure \ref{fig:feynman-deuteron}. 
+% Importantly, the \ac{CC} interaction on deuterium is sensitive to only $\nu_e$, while the \ac{NC} interaction breaks the deuteron apart and is sensitive to all active flavours of neutrinos with equal cross-sections. 
+% \begin{equation}
+%     \label{eq:deuteron-interactions}
+%     \begin{aligned}
+%         \nu_e + d &\longrightarrow e^- + p + p \quad (\text{\ac{CC}})\\
+%         \nu_\ell + d &\longrightarrow \nu_\ell + p + n \quad (\text{\ac{NC}})
+%     \end{aligned}
+% \end{equation}
+% \begin{figure}[H]
+%     \centering
+%     \resizebox{0.7\textwidth}{!}{
+%         \input{feynman-diagrams/CCandNC-deuteron-SNO.tex}
+%     }
+%     \caption{Feynman diagrams of neutrino-deuteron scatterings. On the left, the \ac{CC} interaction mediated by a $W^+$ boson; on the right, the \ac{NC} 
+%     interaction mediated by the $Z^0$ boson. The subscript $\ell$ denotes a generic lepton flavour ($\ell = e, \mu, \tau$).}
+%     \label{fig:feynman-deuteron}
+% \end{figure}
+% The experimental results on solar neutrino fluxes of the ${}^{8}\text{B}$ range are given in Eq. \ref{eq:SNOresults} and taken from \cite{SNO2002-results}:
+% \begin{equation}
+%     \label{eq:SNOresults}
+%     \begin{aligned}
+%         \Phi_\text{SNO}^\text{CC}(\nu_e) &= (1.76 \pm 0.05 \pm 0.09) \times 10^{6}~\text{cm}^{-2}~\text{s}^{-1} \\
+%         \Phi_\text{SNO}^\text{ES}(\nu_\ell) &= (2.39 \pm 0.24 \pm 0.12) \times 10^{6}~\text{cm}^{-2}~\text{s}^{-1} \\
+%         \Phi_\text{SNO}^\text{NC}(\nu_\ell) &= (5.09 \pm 0.44 \pm 0.46) \times 10^{6}~\text{cm}^{-2}~\text{s}^{-1}
+%     \end{aligned}
+% \end{equation} 
+% The total active neutrino flux measured by the \ac{NC} channel, $\Phi_\text{SNO}^\text{NC}(\nu_\ell)$, is remarkably consistent with both the historical \ac{SSM} predictions of that era and the recent updated prediction mentioned above, i.e. $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$. The striking discrepancy between $\Phi_\text{SNO}^\text{NC}(\nu_\ell)$ and the purely electronic $\Phi_\text{SNO}^\text{CC}(\nu_e)$ proved definitively that neutrinos produced in the core of the Sun as purely electron-type are recorded on Earth as a mix of different flavours. 
+
+% The different deficit ratios observed by radiochemical experiments (Homestake, SAGE, GALLEX/GNO) and water Cherenkov detectors (Super-Kamiokande, SNO) arise because they probe different parts of the solar spectrum, where the $\nu_e$ survival probability is different. Historically, two classes of explanations were considered: oscillations in vacuum over the Earth--Sun distance, and flavour conversion inside the Sun driven by matter effects. As discussed in Section~\ref{subsec:nu-in-matter}, the data are explained by  atter-driven conversion at high energies and by vacuum oscillations at low energies.
 
 \begin{wrapfigure}{r}{0.6\textwidth}
     \centering
@@ -59,93 +150,28 @@ Electron neutrinos are produced in the Sun in thermonuclear reactions that gener
     \caption{Energy spectra of solar neutrino fluxes of different reaction processes. Figure taken from \cite{SunNuFluxes}.}
     \label{fig:neutrino-fluxes}
 \end{wrapfigure}
-In \ac{pp} chains several neutrino-producing reactions are involved, resulting in the overall fusion of four protons into a ${}^{4}$He nucleus ($4p \to {}^4\text{He} + 2e^+ + 2\nu_e$). The total energy released in this reaction is given by the mass difference $Q = 4m_p - m_{{}^4\text{He}} - 2m_e \approx 26 \text{ MeV}$: most of this energy is radiated away by photons, while only a small fraction is carried away by the neutrinos, with an average energy of $\langle E_{2\nu_e} \rangle = 0.59 \text{ MeV}$.
-
-On the other hand, in \ac{CNO} cycles, neutrinos are mainly produced via the decays of ${}^{13}\text{N}$, ${}^{15}\text{O}$ and ${}^{17}\text{F}$. Additionally, electron capture on ${}^{13}\text{N}$, ${}^{15}\text{O}$, and ${}^{17}\text{F}$ produces monoenergetic line spectra of neutrinos, generally referred to as \textit{ecCNO} neutrinos. Compared to the $pp$ chain, \ac{CNO} neutrinos carry away a higher fraction of the reaction energy, with average neutrino energies typically ranging between $0.7\text{ MeV}$ and $1.2\text{ MeV}$. However, the flux of \ac{CNO}-cycle neutrinos is roughly two orders of magnitude lower than the \ac{pp} chains one, accounting for less than $1\%$ of the solar energy production. Therefore it can be neglected in the flux calculation.
-
-Based on the \ac{SSM}, the total expected neutrino flux can be evaluated by considering the total solar luminosity 
-($L_{\odot} \approx 3.828 \times 10^{26} \text{ W}$) and dividing it by the net energy released per complete \ac{pp} fusion chain 
-($Q \approx 26.73 \text{ MeV}$), while accounting for the spherical propagation of particles across the Earth-Sun distance ($1 \text{ AU}$). 
-All these thermonuclear reactions in the Sun exclusively generate electron neutrinos ($\nu_e$) and assuming the absence of neutrino oscillations, 
-state-of-the-art calculations predict a theoretical \ac{pp} solar neutrino flux arriving at Earth of approximately 
-$\Phi_{\ac{pp}} (\nu_e) \approx 6 \times 10^{10} \text{ cm}^{-2}\text{s}^{-1}$. Figure \ref{fig:neutrino-fluxes} details the fluxes of neutrinos based on the reaction in which they are produced.
-
-
-\paragraph{The Homestake mine experiment}
-The experimental value of the solar neutrino flux $\Phi_{\ac{pp}} (\nu_e)$ has been studied since the last century.
-In the late 1960s, the first solar neutrino experiment was performed underground in the Homestake gold mine in South Dakota in order to prevent contaminations of cosmic-ray induced reactions. 
-There liquid tetrachloroethylene (C$_2$Cl$_4$) was employed as the target and the \ac{CC} weak interaction $\nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}$ was exploited.
-Since this process has an energy threshold of $814$ keV, the fluxes of the ${}^{7}$Be and ${}^{8}$B neutrinos are the most relevant.
-Auger electrons from the produced ${}^{37}\text{Ar}$ electron capture were counted to determine the neutrino-chlorine reaction rate.
-From the beginning the experimental results yield a neutrino flux of less than one third of what expected, giving birth to the so-called \textit{solar neutrino problem}. 
-The final result from the Homestake experiment was $2.56 \pm 0.16 \pm 0.16 \text{ SNU}$~
-\footnote{SNU (solar neutrino unit) is a unit of event rate defined as $1 \text{ SNU} = 10^{-36}\text{ captures per second per target atom}$.} \cite{HomestakeResults} 
-and can be directly compared with the theoretical \ac{SSM} prediction of $8.46^{+0.87}_{-0.88} \text{ SNU}$~\cite{SSMReference}.
-
-\paragraph{Gallium-based experiments}
-Lower-energy components of the solar neutrino spectrum (Figure \ref{fig:neutrino-fluxes}) can be investigated via \ac{CC} interactions exploiting the ${}^{71}\text{Ga}$ process $\nu_e + {}^{71}\text{Ga} \longrightarrow e^- + {}^{71}\text{Ge}$.
-Featuring a low energy threshold of $233\text{ keV}$, this reaction is primarily sensitive to \ac{pp} neutrinos, with secondary contributions from ${}^{7}\text{Be}$ sources. 
-The produced ${}^{71}\text{Ge}$ nuclei decay via electron capture and allow to measure the capture rate, following an approach analogous to Homestake.
-In order to probe this lower-energy regime, two radiochemical experiments were launched at the turn of the 1990s: the SAGE collaboration at the Baksan Neutrino Observatory and the GALLEX (later followed by Gallium Neutrino Observatory (GNO)) experiment at the Laboratori Nazionali del Gran Sasso (LNGS). 
-SAGE reported a measured flux of $65.4^{+3.1+2.6}_{-3.0-2.8} \text{ SNU}$, while GALLEX/GNO obtained $69.3 \pm 4.1 \pm 3.6 \text{ SNU}$. 
-Both measurements heavily contrast with the \ac{SSM} theoretical prediction of $127.9^{+8.1}_{-8.2} \text{ SNU}$ for the same energy range, reinforcing the solar 
-neutrino deficit puzzle.
-
-\paragraph{The Kamiokande experiment} 
-Real-time measurements of the solar neutrino flux were pioneered by the Kamiokande experiment and its successor, Super-Kamiokande, located in the Kamioka mine in Japan. 
-These water Cherenkov detectors utilized $3000\text{ t}$ of water during the Kamiokande phase in the 1980s, scaling up to $50\text{ kt}$ of ultrapure water for Super-Kamiokande starting in 1996. 
-The detectors are sensitive to both \ac{CC} and \ac{NC} interactions, 
-which manifest as elastic scattering processes in the form of Eq. \ref{eq:CC-NCwater}.
-% , also displayed in Figure \ref{fig:feynman-CCandNCint}.
+Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy, namely \ac{pp} chains and \ac{CNO} cycles. Based on the \ac{SSM}, the total neutrino flux at Earth can be estimated from the solar luminosity. In the \ac{pp} chains four protons fuse into a ${}^4$He nucleus, $4p \to {}^4\text{He} + 2e^+ + 2\nu_e$, releasing $Q = 4M({}^1\text{H}) - M({}^4\text{He}) \simeq 26.73$~MeV per chain; using atomic masses automatically includes the annihilation of the two positrons with electrons of the plasma. Only a small fraction of this energy, on average $\langle E_{2\nu}\rangle \simeq 0.59$~MeV, is carried away by the two neutrinos, while the rest heats the Sun and is eventually radiated as photons. The \ac{CNO} cycles contribute less than $1\%$ of the solar energy production and are neglected here. Since each chain emits two $\nu_e$, the total flux at the Earth--Sun distance $d = 1$~AU is
 \begin{equation}
-    \label{eq:CC-NCwater}
-    \nu_\ell + e^- \longrightarrow \nu_\ell + e^-
+    \label{eq:solar-flux}
+    \Phi_\nu \simeq \frac{2\,L_\odot}{4\pi d^2 \left(Q - \langle E_{2\nu}\rangle\right)}
+    \simeq 6.5 \times 10^{10}~\text{cm}^{-2}\,\text{s}^{-1},
 \end{equation}
-% \begin{figure}[H]
-%     \centering
-%     \resizebox{0.7\textwidth}{!}{
-%         \input{feynman-diagrams/CCandNCintOFnu.tex}
-%     }
-%     \caption{Feynman diagrams of neutrino-electron scatterings. On the left, the \ac{CC} interaction mediated by a $W^+$ boson; on the right, the \ac{NC} 
-%     interaction mediated by the $Z^0$ boson. The subscript $\ell$ denotes a generic lepton flavour ($\ell = e, \mu, \tau$).}
-%     \label{fig:feynman-CCandNCint}
-% \end{figure}
+with $L_\odot \simeq 3.828 \times 10^{26}$~W. The \ac{pp} component accounts for
+about 91\% of this flux, $\Phi_{pp} \simeq 6.0 \times 10^{10}~\text{cm}^{-2}\,
+\text{s}^{-1}$~\cite{SSMReference}. All these reactions produce only $\nu_e$; the
+expected fluxes of the individual components, in the absence of oscillations, are
+shown in Figure~\ref{fig:neutrino-fluxes}.
 
-However, the cross-section for $\nu_e$ —the only flavour capable of interacting via the charged current— is approximately six times larger than that for $\nu_\mu$ or $\nu_\tau$. 
-Consequently, the elastic scattering signal in standard water is an indistinguishable mixture of \ac{CC} and \ac{NC} events heavily skewed towards $\nu_e$, meaning the detector cannot cleanly measure the total flavour-independent neutrino flux.
-Due to energy thresholds of $6.5\text{ MeV}$ in Kamiokande and $3.5\text{ MeV}$ in Super-Kamiokande, these experiments are primarily sensitive to ${}^8\text{B}$ solar neutrinos. The latest results from the Super-Kamiokande collaboration report a measured solar neutrino flux of $(2.345 \pm 0.014 \pm 0.036) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$~\cite{latestSUPERK}, exhibiting a strong disagreement with the recent theoretical \ac{SSM} prediction for this energy range, which stands at $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$.
+Solar neutrinos have been detected since the late 1960s. The first solar neutrino experiment was performed underground in the Homestake gold mine in South Dakota, in order to prevent contamination from cosmic-ray induced reactions. It employed liquid tetrachloroethylene (C$_2$Cl$_4$) as the target, exploiting the \ac{CC} interaction $\nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}$, whose threshold of $814$ keV makes it mainly sensitive to ${}^{7}$Be and ${}^{8}$B neutrinos. The measured rate was less than one third of the expected one, giving rise to the so-called \textit{solar neutrino problem}: the final result was $2.56 \pm 0.16 \pm 0.16 \text{ SNU}$~\footnote{SNU (solar neutrino unit) is a unit of event rate defined as $1 \text{ SNU} = 10^{-36}\text{ captures per second per target atom}$. The measured quantity is a capture rate, $R = \sum_i \Phi_i \sigma_i$, summed over the solar neutrino components $i$; converting it into a flux requires assuming the shape of the spectrum.}\cite{HomestakeResults}, to be compared with the \ac{SSM} prediction of $8.46^{+0.87}_{-0.88} \text{ SNU}$~\cite{SSMReference}.
 
-\paragraph{Solution to the solar neutrino problem: the SNO experiment}
-The ultimate confirmation of neutrino flavour oscillation arrived with the Sudbury Neutrino Observatory (SNO) experiment that took place in the Creighton Mine near the city of Sudbury (Ontario, Canada) spanning the late 1990s and early 2000s. It exploited $1000\text{ t}$ of heavy water ($\text{D}_2\text{O}$) contained in a spherical acrylic vessel surrounded by a normal water ($\text{H}_2\text{O}$) shield. Unlike Kamiokande, the use of deuterium ($d$) allowed SNO to observe ${}^8\text{B}$ neutrinos not only using the \ac{ES} channel (see Eq. \ref{eq:CC-NCwater}), but also to disentangle the pure \ac{CC} and \ac{NC} interactions detailed in Eq. \ref{eq:deuteron-interactions} and shown in Figure \ref{fig:feynman-deuteron}. 
-Importantly, the \ac{CC} interaction on deuterium is sensitive to only $\nu_e$, while the \ac{NC} interaction breaks the deuteron apart and is sensitive to all active flavours of neutrinos with equal cross-sections. 
-\begin{equation}
-    \label{eq:deuteron-interactions}
-    \begin{aligned}
-        \nu_e + d &\longrightarrow e^- + p + p \quad (\text{\ac{CC}})\\
-        \nu_\ell + d &\longrightarrow \nu_\ell + p + n \quad (\text{\ac{NC}})
-    \end{aligned}
-\end{equation}
-\begin{figure}[H]
-    \centering
-    \resizebox{0.7\textwidth}{!}{
-        \input{feynman-diagrams/CCandNC-deuteron-SNO.tex}
-    }
-    \caption{Feynman diagrams of neutrino-deuteron scatterings. On the left, the \ac{CC} interaction mediated by a $W^+$ boson; on the right, the \ac{NC} 
-    interaction mediated by the $Z^0$ boson. The subscript $\ell$ denotes a generic lepton flavour ($\ell = e, \mu, \tau$).}
-    \label{fig:feynman-deuteron}
-\end{figure}
-The experimental results on solar neutrino fluxes of the ${}^{8}\text{B}$ range are given in Eq. \ref{eq:SNOresults} and taken from \cite{SNO2002-results}:
-\begin{equation}
-    \label{eq:SNOresults}
-    \begin{aligned}
-        \Phi_\text{SNO}^\text{CC}(\nu_e) &= (1.76 \pm 0.05 \pm 0.09) \times 10^{6}~\text{cm}^{-2}~\text{s}^{-1} \\
-        \Phi_\text{SNO}^\text{ES}(\nu_\ell) &= (2.39 \pm 0.24 \pm 0.12) \times 10^{6}~\text{cm}^{-2}~\text{s}^{-1} \\
-        \Phi_\text{SNO}^\text{NC}(\nu_\ell) &= (5.09 \pm 0.44 \pm 0.46) \times 10^{6}~\text{cm}^{-2}~\text{s}^{-1}
-    \end{aligned}
-\end{equation} 
-The total active neutrino flux measured by the \ac{NC} channel, $\Phi_\text{SNO}^\text{NC}(\nu_\ell)$, is remarkably consistent with both the historical \ac{SSM} predictions of that era and the recent updated prediction mentioned above, i.e. $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$. The striking discrepancy between $\Phi_\text{SNO}^\text{NC}(\nu_\ell)$ and the purely electronic $\Phi_\text{SNO}^\text{CC}(\nu_e)$ proved definitively that neutrinos produced in the core of the Sun as purely electron-type are recorded on Earth as a mix of different flavours. 
+Two radiochemical experiments, SAGE at the Baksan Neutrino Observatory and GALLEX (later followed by the Gallium Neutrino Observatory, GNO) at the Laboratori Nazionali del Gran Sasso (LNGS), exploited the gallium \ac{CC} interaction $\nu_e + {}^{71}\text{Ga} \longrightarrow e^- + {}^{71}\text{Ge}$, whose low threshold of $233$~keV makes it sensitive mainly to \ac{pp} neutrinos. SAGE reported $65.4^{+3.1+2.6}_{-3.0-2.8}$ SNU and GALLEX/GNO $69.3 \pm 4.1 \pm 3.6$ SNU, both in sharp contrast with the \ac{SSM} prediction of $127.9^{+8.1}_{-8.2}$ SNU for the same energy range, reinforcing the solar neutrino deficit puzzle.
 
-Finally, this framework also perfectly explains why radiochemical experiments (like Homestake, GALLEX, and SAGE) and water Cherenkov detectors (like Kamiokande and SNO) recorded different deficit ratios: the probability of a neutrino changing flavour is heavily energy-dependent \footnote{See Appendix \ref{app:ThreeFlavoursOscillation}.}. Since these experiments featured different energy thresholds, they probed different ranges of the solar neutrino energy spectrum, naturally observing different survival probabilities.
+The Kamiokande and Super-Kamiokande water Cherenkov detectors pioneered real-time measurements of solar neutrino fluxes via elastic scattering ($\nu_\ell + e^- \longrightarrow \nu_\ell + e^-$). This signal is an indistinguishable mixture of \ac{CC} and \ac{NC} events, dominated by $\nu_e$ thanks to its larger cross-section. Sensitive mainly to ${}^8\text{B}$ neutrinos, Super-Kamiokande measured a flux of $(2.345 \pm 0.014 \pm 0.036) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$~\cite{latestSUPERK}. This reveals a severe deficit compared to the theoretical \ac{SSM} prediction for ${}^8\text{B}$ neutrinos of $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$.
+
+The Sudbury Neutrino Observatory (SNO) provided the model-independent proof that solar $\nu_e$ change flavour, using $1000$~t of heavy water ($\text{D}_2\text{O}$). Deuterium allowed SNO to measure separately the \ac{CC} interaction $\nu_e + d \to e^- + p + p$, sensitive only to $\nu_e$, and the \ac{NC} interaction $\nu_\ell + d \to  nu_\ell + p + n$, sensitive to all active flavours with equal cross-sections. The \ac{NC} channel measured a total active flux $\Phi_\text{SNO}^\text{NC} = (5.09 \pm 0.44  pm 0.46) \times 10^{6}~\text{cm}^{-2}\, \text{s}^{-1}$~\cite{SNO2002-results}, in agreement with the \ac{SSM} prediction, while the \ac{CC} channel gave $\Phi_\text{SNO} \text{CC} = (1.76 \pm 0.05 \pm 0.09) \times 10^{6}~\text{cm}^{-2}\,\text{s}^{-1}$~\cite{SNO2002-results}. The ratio $\Phi^\text{CC}_\text{SNO}/\Phi^\text{NC}_\text{SNO}  simeq 0.35$ shows that about two thirds of the $\nu_e$ produced in the solar core reach the Earth as $\nu_\mu$ or $\nu_\tau$. The first conclusive evidence for neutrino oscillations had been obtained in 1998 by Super-Kamiokande with atmospheric neutrinos, through the up/down asymmetry of the $\nu_\mu$ flux~\cite{SuperK1998}.
+
+The different deficit ratios observed by radiochemical experiments (Homestake, SAGE, GALLEX/GNO) and water Cherenkov detectors (Super-Kamiokande, SNO) arise because they probe different parts of the solar spectrum, where the $\nu_e$ survival probability is different. Historically, two classes of explanations were considered: oscillations in vacuum over the Earth--Sun distance, and flavour conversion inside the Sun driven by matter effects. As discussed in Section~\ref{subsec:nu-in-matter}, the data are explained by  atter-driven conversion at high energies and by vacuum oscillations at low energies.
+
 
 % ----------------------------------------------------------
 % ------------------- VACUUM OCILLATIONS -------------------
@@ -153,10 +179,8 @@ Finally, this framework also perfectly explains why radiochemical experiments (l
 
 \subsection[Vacuum oscillations]{Vacuum oscillations\footnotemark}
 \label{subsec:VacuumOscillations}
-\footnotetext{All of what is reported in this section is elaborated from \cite{Thomson}, unless otherwise specified.}
-The neutrino flavour transformation confirmed experimentally by Kamiokande and SNO can be explained with the phenomenon of flavour oscillations.
-The physical states of particles, i.e. the mass eigenstates, are defined as the stationary states of the free-particle Hamiltonian, 
-satisfying Eq. \ref{eq:free-hamiltonian} and following the time evolution of Eq. \ref{eq:time-evolution}.
+\footnotetext{All of what is reported in this section is elaborated from \cite{Thomson}, unless otherwise specified.} 
+The flavour conversion of solar neutrinos observed by SNO, together with the atmospheric neutrino results of Super-Kamiokande, is explained by the phenomenon of flavour oscillations.The physical states of  articles, i.e. the mass eigenstates, are defined as the stationary states of the free-particle Hamiltonian, satisfying Eq. \ref{eq:free-hamiltonian} and following the time  volution of Eq. \ref{eq:time-evolution}.
 \begin{equation}
     \label{eq:free-hamiltonian}
     \hat{H} \psi = i \frac{\partial \psi}{\partial t} = E \psi
@@ -165,41 +189,37 @@ satisfying Eq. \ref{eq:free-hamiltonian} and following the time evolution of Eq.
     \label{eq:time-evolution}
     \psi(\text{\textbf{x}}, \text{t}) = \varphi (\text{\textbf{x}}) e ^{-i \text{Et}}
 \end{equation}
-The neutrinos mass eigenstates that obey Eq. \ref{eq:free-hamiltonian} and \ref{eq:time-evolution} are labelled $\nu_1$, $\nu_2$ and $\nu_3$ and
-there is no reason to believe that such states correspond to the neutrinos weak eigenstates $\nu_e$, $\nu_\mu$ and $\nu_\tau$ that are identified
-when the corresponding charged lepton is produced. On the other hand the same basis of mass and weak eigenstates is associated to the charged leptons.
+The neutrinos mass eigenstates that obey Eqs. \ref{eq:free-hamiltonian} and \ref{eq:time-evolution} are labelled $\nu_1$, $\nu_2$ and $\nu_3$ and there is no reason to believe that such states correspond to the neutrinos weak eigenstates $\nu_e$, $\nu_\mu$ and $\nu_\tau$ that are identifiedwhen the corresponding charged lepton is produced. On the other hand the same basis of mass and weak eigenstates is associated to the charged leptons.
 
-
-Consider the lepton SU(2)$_\text{L}$ doublet of a given family \textit{i}. This can be written as 
+Consider the lepton SU(2)$_\text{L}$ doublet of a given family $i = 1, 2, 3$. This can be written as
 \begin{equation}
     \label{eq:weak-lepton-doublet}
     L_{\text{L}, i} = \begin{pmatrix}
-                            \nu_{\text{L}} \\
-                            \ell_{\text{L}}
-                            \end{pmatrix}_i
+                            \nu'_{\text{L}} \\
+                            \ell'_{\text{L}}
+                      \end{pmatrix}_i ,
 \end{equation}
-and it is precisely this multiplet that couples to the electroweak gauge bosons in the weak sector of the \ac{SM} Lagrangian written in Eq. \ref{eq:lepton-interaction}.
+where the primes denote fields in the basis in which they enter the gauge interactions (\textit{weak basis}), and it is precisely this multiplet that couples to the  electroweak gauge bosons in the weak sector of the \ac{SM} Lagrangian written in Eq.~\ref{eq:lepton-interaction}, with an implicit sum over $i$.
 \begin{equation}
     \label{eq:lepton-interaction}
     \mathcal{L}_{\text{int}} = - \bar{L}_{\text{L}, i} \gamma^\mu \left( g \frac{\tau^a}{2} W_\mu^a + g' Y B_\mu \right) L_{\text{L}, i}
 \end{equation}
 
-However when the \ac{SSB} happens and particles acquire mass the terms of the weak doublet can be expressed in terms 
-of the new mass eigenstates as written in Eq. \ref{eq:weak-mass-transformation}
-
+However, when the \ac{SSB} happens, the charged leptons acquire mass through their Yukawa couplings to the Higgs field; if neutrinos are massive as well, which requires a  eutrino mass term not present in the minimal \ac{SM} (see Section~\ref{subsec:seesaw}), the fields of the weak doublet can be expressed in terms of the mass eigenstates as  ritten in Eq.~\ref{eq:weak-mass-transformation}
 \begin{equation}
     \label{eq:weak-mass-transformation}
     \begin{cases}
-        \nu_{\text{L}, i} = \text{U}_{\nu \text{L}}~~\nu_{\text{L}, i}^* \\
-        \ell_{\text{L}, i} = \text{U}_{\ell \text{L}}~~\ell_{\text{L}, i}^* 
+        \nu'_{\text{L}, i} = \sum_{j} \left(U_{\nu \text{L}}\right)_{ij}\, \nu_{\text{L}, j} \\[1ex]
+        \ell'_{\text{L}, i} = \sum_{j} \left(U_{\ell \text{L}}\right)_{ij}\, \ell_{\text{L}, j}
     \end{cases}
 \end{equation}
-
-where $\nu_{\text{L}, i}^*$ and $\ell_{\text{L}, i}^*$ are mass eigenstates of a given family \textit{i} for neutrinos and charged leptons respectively.
-Consequently current terms undergo the transformation expressed in Eq. \ref{eq:current-masseigen}
+where $\nu_{\text{L}, j}$ and $\ell_{\text{L}, j}$ are the mass eigenstates of neutrinos and charged leptons respectively, and $U_{\nu\text{L}}$ and $U_{\ell\text{L}}$ are  the unitary matrices that diagonalise the corresponding mass matrices. Consequently, the charged-current terms undergo the transformation expressed in Eq.~\ref{eq:current-masseigen}
 \begin{equation}
     \label{eq:current-masseigen}
-    \bar{\ell}_{\text{L}, i}~\gamma^{\mu}~\nu_{\text{L}, i} \longrightarrow \bar{\ell}_{\text{L}, i}^*~ U_{\ell \text{L}}^\dagger~\gamma^{\mu}~U_{\nu \text{L}}~\nu_{\text{L}, i}^* = \bar{\ell}_{\text{L}, i}^*~\gamma^{\mu}~\underbrace{U_{\ell \text{L}}^\dagger U_{\nu \text{L}}}_{U_{\text{PMNS}}}~\nu_{\text{L}, i}^* 
+    \sum_i \bar{\ell}'_{\text{L}, i}\, \gamma^{\mu}\, \nu'_{\text{L}, i}
+    = \sum_{j,k} \bar{\ell}_{\text{L}, j}\, \gamma^{\mu}
+      \big(\underbrace{U_{\ell \text{L}}^\dagger U_{\nu \text{L}}}_{U_{\text{PMNS}}}\big)_{jk}\,
+      \nu_{\text{L}, k}
 \end{equation}
 where a new matrix can be highlighted: the Pontecorvo-Maki-Nakagawa-Sakata ($U_\text{PMNS}$) mixing matrix
 \footnote{Such rotation matrix is the leptonic equivalent of the Cabibbo-Kobayashi-Maskawa (V$_\text{CKM}$) 
@@ -228,25 +248,13 @@ as detailed in Eq. \ref{eq:Upmns}.
 \end{pmatrix}
 \end{equation}
 
-This matrix is a $3 \times 3$ unitary matrix, that parametrises a rotation (a mixing) through some parameters. 
-A general $3 \times 3$ matrix can be written in terms of 9 complex numbers, i.e., 18 parameters; 
-however, the unitarity property of $U_{\text{PMNS}}$, which means $U U^\dagger = \mathbb{1}$, introduces nine constraints, 
-leaving nine independent parameters to fully describe the mixing. Among these nine parameters, three of them are angles, 
-$\theta_{12}$, $\theta_{13}$, $\theta_{23}$, while the remaining six are complex phases of the form $e^{i \delta}$ 
-since $U_{\text{PMNS}}$ is not a real matrix. Specifically, $\theta_{12}$ is the angle of rotation about the 3-axis, 
-$\theta_{13}$ is the angle of rotation about the new 2-axis and $\theta_{23}$ is a rotation about the remaining 1-axis.
+It should be stressed that $U_\text{PMNS}$ is physical only because $U_{\ell\text{L}}$ and $U_{\nu\text{L}}$ are fixed independently by two different mass matrices. In the minimal \ac{SM} there is no \ac{RH} neutrino, hence no neutrino mass term: nothing in the Lagrangian fixes the neutrino basis, so $U_{\nu\text{L}}$ is arbitrary and can be chosen equal to $U_{\ell\text{L}}$. In that case $U_\text{PMNS} = \mathbb{1}$, the charged current is diagonal and the family lepton numbers $L_e$, $L_\mu$ and $L_\tau$ are separately conserved. Mixing is observable only if the neutrino mass matrix is not aligned with the charged-lepton one and the neutrino masses are not degenerate, since for degenerate masses any rotation within the degenerate subspace could be used to remove it. The observation of flavour oscillations therefore implies that at least two neutrinos are massive, which requires physics beyond the minimal \ac{SM}.
 
-Although we have stated above that six complex phases are needed, not all of them carry physical significance. 
-In the \ac{SM} framework, the fields of the charged leptons and neutrinos can be redefined multiplying them by arbitrary phase factors. 
-Since an overall global phase transformation leaves the physics invariant, exactly five of these six phases can be safely absorbed into 
-the definitions of the fermion fields without any observable consequence. Therefore, the $U_{\text{PMNS}}$ matrix is ultimately parametrised 
-by only four physical quantities: the three aforementioned mixing angles ($\theta_{12}$, $\theta_{13}$, $\theta_{23}$) and a single, 
-irreducible complex phase, $\delta$. This remaining parameter is of fundamental importance, as it is responsible for \ac{CP} violation 
-in the lepton sector.
+This matrix is a $3 \times 3$ unitary matrix, that parametrises a rotation (a mixing) through some parameters. A general $3 \times 3$ matrix can be written in terms of 9 complex numbers, i.e., 18 parameters; however, the unitarity property of $U_{\text{PMNS}}$, which means $U U^\dagger = \mathbb{1}$, introduces nine constraints, leaving nine independent parameters to fully describe the mixing. Among these nine parameters, three of them are angles, $\theta_{12}$, $\theta_{13}$, $\theta_{23}$, while the remaining six are complex phases of the form $e^{i \delta}$ since $U_{\text{PMNS}}$ is not a real matrix. Specifically, $\theta_{12}$ is the angle of rotation about the 3-axis, $\theta_{13}$ is the angle of rotation about the new 2-axis and $\theta_{23}$ is a rotation about the remaining 1-axis.
 
-Mathematically, consider that the weak interactions remain invariant under the rephasing of the charged lepton fields
-$\ell_\alpha$ (with $\alpha = e, \mu, \tau$) and the neutrino mass eigenstate fields $\nu_k$ (with $k = 1, 2, 3$). 
-If we perform the transformations
+Although we have stated above that six complex phases are needed, not all of them carry physical significance. If neutrinos are Dirac particles, the fields of the charged leptons and neutrinos can be redefined multiplying them by arbitrary phase factors. Since an overall global phase transformation leaves the physics invariant, exactly five of these six phases can be safely absorbed into the definitions of the fermion fields without any observable consequence. Therefore, the $U_{\text{PMNS}}$ matrix is ultimately parametrised by only four physical quantities: the three aforementioned mixing angles ($\theta_{12}$, $\theta_{13}$, $\theta_{23}$) and a single, irreducible complex phase, $\delta$. This remaining parameter is of fundamental importance, as it is responsible for \ac{CP} violation in the lepton sector.
+
+Mathematically, consider that the weak interactions remain invariant under the rephasing of the charged lepton fields $\ell_\alpha$ (with $\alpha = e, \mu, \tau$) and the neutrino mass eigenstate fields $\nu_k$ (with $k = 1, 2, 3$). If we perform the transformations 
 \begin{equation}
     \ell_\alpha \longrightarrow \ell_\alpha e^{i\theta_\alpha} \qquad \text{and} \qquad \nu_k \longrightarrow \nu_k e^{i\theta_k},
 \end{equation}
@@ -254,16 +262,11 @@ the elements of the mixing matrix must transform accordingly to leave the Lagran
 \begin{equation}
     U_{\alpha k} \longrightarrow U_{\alpha k} e^{i(\theta_\alpha - \theta_k)}.
 \end{equation}
-At first glance, it appears we have six independent phases (three from $\theta_\alpha$ and three from $\theta_k$) available to cancel 
-the six complex phases of the $3 \times 3$ unitary matrix. However, the transformation depends only on the phase differences. 
-If we extract a common overall phase factor, for instance by defining relative phases such that $\theta_\alpha = \theta_e + \theta'_\alpha$ 
-and $\theta_k = \theta_e + \theta'_k$, the mixing matrix elements become:
+At first glance, it appears we have six independent phases (three from $\theta_\alpha$ and three from $\theta_k$) available to cancel the six complex phases of the $3 \times 3$ unitary matrix. However, the transformation depends only on the phase differences. If we extract a common overall phase factor, for instance by defining relative phases such that $\theta_\alpha = \theta_e + \theta'_\alpha$ and $\theta_k = \theta_e + \theta'_k$, the mixing matrix elements become:
 \begin{equation}
     U_{\alpha k} \longrightarrow U_{\alpha k} e^{i(\theta'_\alpha - \theta'_k)}.
 \end{equation}
-Because the common global phase $\theta_e$ cancels out perfectly, it has no physical effect on the mixing matrix. 
-This leaves exactly five independent relative phases ($6$ total fields minus $1$ common phase) that can be strategically chosen to absorb 
-five of the original complex phases in $U_{\text{PMNS}}$. The single remaining unabsorbed phase is the Dirac \ac{CP}-violating phase $\delta$.
+Because the common global phase $\theta_e$ cancels out perfectly, it has no physical effect on the mixing matrix. This leaves exactly five independent relative phases ($6$ total fields minus $1$ common phase) that can be strategically chosen to absorb five of the original complex phases in $U_{\text{PMNS}}$. The single remaining unabsorbed phase is the Dirac \ac{CP}-violating phase $\delta$.
 
 Finally the full neutrino mixing matrix can be written as reported in Eq. \ref{eq:Upmns-total}
 \begin{equation}
@@ -320,6 +323,7 @@ A detailed analysis of neutrinos oscillation within three flavours is given in A
 %-----------------------------------------------------------
 
 \subsection[Massive neutrinos in matter]{Massive neutrinos in matter\footnotemark}
+\label{subsec:nu-in-matter}
 \footnotetext{All of what is reported in this section is elaborated from \cite{neutrinosPDG}, unless otherwise specified.}
 In Sec.~\ref{subsec:oscillation-experiments} we mentioned that the flavour oscillation of solar neutrinos can have two different explanations: they could oscillate in vacuum or they can oscillate directly within the Sun itself through a matter-mediated process known as the \ac{MSW} effect. 
 %\footnote{The complete quantum mechanical derivation of this effect, starting from the \ac{SM} fermionic currents and phase-space averages, is detailed in Appendix \ref{app:MSW_derivation}.}.
@@ -518,14 +522,14 @@ Two-neutrino double beta decay ($2\nu\beta\beta$) is a second-order weak interac
 \end{equation}
 At the microscopic level, the process occurs through two simultaneous, virtual single-$\beta$ transitions, as illustrated by the two weak vertices in the Feynman diagram in Figure \ref{fig:2nu_feynman}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \input{feynman-diagrams/2nu-doublebeta-feynman.tex}
     \caption{Feynman diagram of $2\nu\beta\beta$. The process proceeds via the exchange of two virtual $W^-$ bosons, resulting in the simultaneous emission of two electrons and two electron antineutrinos.}
     \label{fig:2nu_feynman}
 \end{figure}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.6\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/mass_parabola_A76.pdf}
     \caption{Mass parabola for $A=76$ isobars. A detailed description is given in the text. Custom plot with data taken from \cite{AME2020-masses} and \cite{Ge76-Qvalue}.}
@@ -542,7 +546,7 @@ Unlike the neutrinoless mode, $2\nu\beta\beta$ does not require any new physics 
 \subsection{Neutrinoless double beta decay (\texorpdfstring{$0\nu\beta\beta$}{0vbb})}
 \label{subsec:0nubetabeta}
 
-The most sensitive probe to determine whether neutrinos are Dirac or Majorana particles —as introduced in Section \ref{subsec:seesaw}— is the neutrinoless double $\beta$-decay ($0\nu\beta\beta$), detailed in Eq. \ref{eq:0nu-beta-beta} and Figure \ref{fig:0nubetabeta-diagram}:
+The most sensitive probe to determine whether neutrinos are Dirac or Majorana particles -as introduced in Section \ref{subsec:seesaw}- is the neutrinoless double $\beta$-decay ($0\nu\beta\beta$), detailed in Eq. \ref{eq:0nu-beta-beta} and Figure \ref{fig:0nubetabeta-diagram}:
 \begin{equation}
     \label{eq:0nu-beta-beta}
     (Z, A) \longrightarrow (Z+2, A) + 2e^-
@@ -562,12 +566,12 @@ This hypothetical, lepton-number-violating process can be distinguished from the
 where $M(Z, A)$ and $M(Z+2, A)$ represent the masses of the parent and daughter nuclei, respectively. Conversely, for standard $2\nu\beta\beta$ decay, the combined electron energy spectrum is continuous, with very few events occurring near the endpoint $\frac{1}{2}Q$. 
 % This can be visualised in Fig. \ref{fig:Qvalue-2nu0nu}.
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{figures/0nu_vs_2nu.pdf}
-%     \caption{Schematic representation of the energy distribution for the products in $2\nu\beta\beta$ and $0\nu\beta\beta$ decay modes. The $0\nu\beta\beta$ decay produces a mono-energetic peak at the $Q$-value, while the $2\nu\beta\beta$ decay results in a continuous spectrum.}
-%     \label{fig:Qvalue-2nu0nu}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/0nu_vs_2nu.pdf}
+    \caption{Schematic representation of the energy distribution for the products in $2\nu\beta\beta$ and $0\nu\beta\beta$ decay modes. The $0\nu\beta\beta$ decay produces a mono-energetic peak at the $Q$-value, while the $2\nu\beta\beta$ decay results in a continuous spectrum.}
+    \label{fig:Qvalue-2nu0nu}
+\end{figure}
 
 If neutrinos are indeed Majorana particles, the standard mechanism for $0\nu\beta\beta$ decay is mediated by the exchange of a light Majorana neutrino. The decay rate, usually expressed in terms of the half-life $T_{1/2}^{0\nu}$, is given by:
 \begin{equation}
@@ -587,3 +591,13 @@ nuclear matrix elements, different backgrounds, and further enable investigation
 Current experiments investigating this process rely on a variety of detection techniques, most notably liquid scintillators and solid-state semiconductors. For instance, KamLAND-Zen uses a Xenon-loaded liquid scintillator to search for the decay, whereas SNO+ employs a Tellurium-loaded one. In contrast, experiments like LEGEND utilize Germanium semiconductor detectors to probe $0\nu\beta\beta$ processes in ${}^{76}$Ge.
 
 The experimental verification of such an elusive process would constitute a paradigm-shifting milestone in particle physics, laying the cornerstone for physics beyond the \ac{SM} and proving definitively that neutrinos possess an intrinsic nature entirely distinct from all other elementary particles.
+
+\section{Experiments currently searching for \texorpdfstring{$0\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{0nu beta beta} decay}
+\label{sec:0nubb-experiments}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/experiments_and_sensitivities.png}
+    \caption{Overview of the experiments searching for $0\nu\beta\beta$ decays with related sensitive exposures and backgrounds. Plot taken from \cite{plot-esperiments_and_exposures}.}
+    \label{fig:experiments-and-sensitivities-0nubb}
+\end{figure}

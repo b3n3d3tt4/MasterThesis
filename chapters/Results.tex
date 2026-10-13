@@ -1,5 +1,5 @@
 \chapter{Results}
-\section{Analysis of the calibration data spectrum}
+\section{Analysis of calibration data}
 \label{sec:calib-data}
 
 \subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}
@@ -21,7 +21,7 @@
 \begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{plots/DTC/energy_spectrum_euclidean_vs_AoE.pdf}
-    \caption{Euclidean Distance cut on the $1550-1650$~keV dataset of calibration data.}
+    \caption{Euclidean Distance cut on the calibration dataset.}
     \label{fig:DTC-energyspectrum-euclidean}
 \end{wrapfigure}
 Figures~\ref{fig:DTC-energyspectrum-euclidean},~\ref{fig:DTC-energyspectrum-cid} and~\ref{fig:DTC-energyspectrum-acf} display the three \ac{DTC} metrics cut on the calibration dataset for Euclidean Distance, Complexity Invariant Distance and Autocorrelation Function respectively. Moreover, the \ac{AE} cut is shown in blue to give a graphical comparison from which it is clear that the \ac{AE} cut is far less conservative with respect to the \ac{DTC} ones. Nonetheless, this aspect does not ensure the fact that the \ac{AE} parameter is a better solution to the \ac{SSE}-\ac{MSE} discrimination problem. Figure~\ref{fig:DTC-waveforms-allmetrics-agree} shows that it is evident that the waveforms both methods agree to retain are clearly \ac{SSE}-like events, whereas those they both reject exhibit distinct \ac{MSE}-like features. However Fig.~\ref{fig:DTC-waveforms-allmetrics-disagree} displays that the waveforms kept by the \ac{AE} but rejected by the \ac{DTC} include a lot of waveforms with multiple peaks typical of \ac{MSE} while the ones rejected by \ac{AE} but kept by the \ac{DTC} metrics are almost all \ac{SSE}-like events with only one peak and a simple structure. These comparisons highlight how a single parameter, i.e. \ac{AE}, cannot take into consideration the whole structure of a waveform and therefore may lead to an unproper \ac{SSE}-\ac{MSE} discrimination, while the \ac{DTC} model can perform this distinction better, seeing that it considers the whole time series of a waveform.
@@ -32,7 +32,7 @@ Figures~\ref{fig:DTC-energyspectrum-euclidean},~\ref{fig:DTC-energyspectrum-cid}
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/DTC/energy_spectrum_cid_vs_AoE.pdf}
-        \caption{Complexity Invariant Distance cut on the $1550-1650$~keV dataset of calibration data.}
+        \caption{Complexity Invariant Distance cut on the calibration dataset.}
         \label{fig:DTC-energyspectrum-cid}
     \end{minipage}
     ~
@@ -41,7 +41,7 @@ Figures~\ref{fig:DTC-energyspectrum-euclidean},~\ref{fig:DTC-energyspectrum-cid}
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/DTC/energy_spectrum_acf_vs_AoE.pdf}
-        \caption{Autocorrelation Function cut on the $1550-1650$~keV dataset of calibration data.}
+        \caption{Autocorrelation Function cut on the calibration dataset.}
         \label{fig:DTC-energyspectrum-acf}
     \end{minipage}
 \end{figure}
@@ -71,7 +71,7 @@ Figures~\ref{fig:DTC-energyspectrum-euclidean},~\ref{fig:DTC-energyspectrum-cid}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/all_metrics_calibration_data_disagree_energy.pdf}
-    \caption{Energy spectra of waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree.}
+    \caption{Energy spectra of waveforms of the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree.}
     \label{fig:DTC-waveforms-allmetrics-disagree-energy}
 \end{figure}
 

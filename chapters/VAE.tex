@@ -77,7 +77,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/schemi_output/VAE.pdf}
-    \caption{Schematic representation of the VAE architecture. The encoder network maps the input waveform to a latent space characterized by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the hyperparameter.}
+    \caption{Schematic representation of the VAE architecture. The encoder network maps the input waveform to a latent space characterized by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the $\beta$ hyperparameter.}
     \label{fig:vae-architecture}
 \end{figure}
 
@@ -200,17 +200,23 @@ To prevent this issue, a ``free bits'' (or \ac{KL} thresholding) strategy is imp
 \end{equation}
 By applying this maximum operator, the network is not forced to perfectly match the \textit{prior} distribution. If the divergence $D_{\text{KL},j}$ of a specific dimension drops below the chosen threshold $\lambda_{fb}$, the loss for that dimension remains constant at $\lambda_{fb}$. This means the encoder is allowed to retain a small amount of useful information (the \texttt{free bits}) to describe the waveform without being further penalized by the optimization process, effectively preventing the posterior collapse.
 
-An additional tunable parameter $\beta$ balances the two contributions in the loss function: when $\beta < 1$ the reconstruction error weights more than the \ac{KL} thus the algorithm favours a truthful reconstruction, on the other hand if $\beta > 1$ the \ac{KL} becomes more important than the reconstruction. During the first part of the training a number $N_w$ of \textit{warm-up epochs} use a variable value of $\beta$ that is then settle to 1 as defined in Eq. \ref{eq:beta} where $n$ is the epoch number. This procedure is defined in order to let the algorithm learn appropriate weights for the reconstruction before trying to minimise the \ac{KL} divergence.
+An additional tunable parameter $\beta$ balances the two contributions in the loss function: when $\beta < 1$ the reconstruction error weights more than the \ac{KL} thus the algorithm favours a truthful reconstruction, on the other hand if $\beta > 1$ the \ac{KL} becomes more important than the reconstruction. During the first part of the training a number $N_w$ of \textit{warm-up epochs} use a variable value of $\beta$ as defined in Eq. \ref{eq:beta} where $n$ is the epoch number. This procedure is defined in order to let the algorithm learn appropriate weights for the reconstruction before trying to minimise the \ac{KL} divergence.
 \begin{equation}
     \label{eq:beta}
     \beta(n) = \beta \cdot \min\left(1, \frac{n+1}{N_{\text{w}}}\right)
 \end{equation}
 
-The training and testing of the algorithm is done splitting the dataset in order to have the 90\% of the total available data for the training and validation sets and the 10\% of them for the test set.
-Said 90\% is then splitted again, keeping the 90\% of it for the training set and the 10\% for the validation one. A number $N_w = 10$ of warm-up epochs have been used during the training phase of this algoritm. The number of dimensions in the latent space is $k = 8$.
+The training and testing of the algorithm is done splitting the dataset in order to have the 80\% of the total available data for the training, 10\% for the validation and the 10\% for the test set. The training has been performed using $\beta=1$ and a total number of epochs $N=100$ where the first $N_w = 10$ are warm-up epochs. The number of dimensions in the latent space was settled to $k = 8$.
 
-The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}).
-The reconstruction flow and the training losses through 100 epochs using $\beta=1$ for current waveforms already processed and scaled (see Eq.~\ref{eq:scaling}) are shown in Fig. \ref{fig:VAE-ricostruzione/3sigma} and \ref{fig:VAE-losses-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma} and \ref{fig:VAE-losses-1sigma} for events in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in \ref{fig:VAE-testset-3sigma} and \ref{fig:VAE-testset-1sigma}.
+The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. 
+
+Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the values of the losses for the training, validation and test sets at the beginning of the training, at the end of the same and in the testing part for the $3\sigma$ cut and the $1\sigma$ cut respectively. The validation set has been used here only in order to show how the reconstruction ability of the \ac{VAE} improves through the epochs. 
+
+
+
+
+
+Moreover the reconstruction flow and the training losses through the epochs are shown in Fig. \ref{fig:VAE-ricostruzione-3sigma} and \ref{fig:VAE-losses-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma} and \ref{fig:VAE-losses-1sigma} for events in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in Fig.~\ref{fig:VAE-testset-3sigma} and \ref{fig:VAE-testset-1sigma}.
 
 \begin{figure}[H]
     \centering
@@ -256,7 +262,7 @@ The reconstruction flow and the training losses through 100 epochs using $\beta=
     \end{minipage}
 \end{figure}
 
-
+The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}).
 
 % ----------------------------------------------------------------------
 % --------------------------- VAE CLASSIFIER ---------------------------
@@ -273,19 +279,10 @@ The classification model is a simple \ac{MLP} that follows this \texttt{Sequenti
     \item \textbf{second hidden layer}:\\
     Another linear layer reduces the dimension from 32 to 16 and it is followed by a Lekay ReLU activation.
     \item \textbf{output layer}:\\
-    The final layer maps the 16 features of the previous ones to a single output neuron. This output is a \textit{logit} value, i.e. a real number, that will enter the loss function computation.
+    The final layer maps the 16 features of the previous ones to a single output neuron. This output is a \textit{logit} value, i.e. a real number $p$, that will enter the loss function computation to compare it with the true label $y$.
 \end{itemize}
 
-The loss function used in the classification task is a \ac{BCE} with Logits loss, which directly combines the logit output of the \ac{MLP} with the sigmoid activated labels as expressed in Eq. \ref{eq:BCE-loss} where $x$ is the true label, activated by a sigmoid (Eq. \ref{eq:sigmoid}) and $y$ is the predicted probability.
-\begin{equation}
-    \label{eq:BCE-loss}
-    \text{BCEWithLogits}(x, y) = - \left[ y \cdot \log(\sigma(x)) + (1 - y) \cdot \log(1 - \sigma(x)) \right]
-\end{equation} 
-
-\begin{equation}
-    \label{eq:sigmoid}
-    \sigma(x) = \frac{1}{1 + e^{-x}}
-\end{equation}
+The full pipeline of the \ac{VAE}-based classifier is depicted in Fig.~\ref{fig:vaeclassifier-architecture}. The first part of the mdoel is the same of Fig.~\ref{fig:vae-architecture} and the \ac{MLP} part is connected directly to the mean values in the latent space, while the variance values are neglected. 
 
 \begin{figure}[H]
     \centering
@@ -294,12 +291,26 @@ The loss function used in the classification task is a \ac{BCE} with Logits loss
     \label{fig:vaeclassifier-architecture}
 \end{figure}
 
+The loss function used in the classification task is a \ac{BCE} with Logits, which directly combines the logit output of the \ac{MLP} with the sigmoid activated labels as expressed in Eq. \ref{eq:BCE-loss} where $y$ is the true label, activated by a sigmoid (Eq. \ref{eq:sigmoid}) and $p$ is the predicted probability of being a \ac{MSE} since the true labels $y=1$ have been associated with the \ac{FEP} events while $y=0$ to the \ac{DEP} ones.
 
-A training with $\beta=1$~$100$ epochs has been carried out returning the loss and accuracy results shown in Fig.~\ref{fig:VAEclassifier-training-3sigma} and Fig.~\ref{fig:VAEclassifier-training-1sigma} for the $3\sigma$ and the $1\sigma$ windows respectively.
+\begin{equation}
+    \label{eq:BCE-loss}
+    \text{BCEWithLogits}(y, p) = - \left[ p \cdot \log(\sigma(y)) + (1 - p) \cdot \log(1 - \sigma(y)) \right]
+\end{equation} 
+
+\begin{equation}
+    \label{eq:sigmoid}
+    \sigma(y) = \frac{1}{1 + e^{-y}}
+\end{equation}
+
+
+
+
+A training with $\beta=1$ for the \ac{VAE} and $N=100$ epochs has been carried out returning the loss and accuracy results shown in Fig.~\ref{fig:VAEclassifier-training-3sigma} and Fig.~\ref{fig:VAEclassifier-training-1sigma} for the $3\sigma$ and the $1\sigma$ windows respectively.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/VAE/sigma3/current/scaled/classifierTraining_sigma3_current_scaled_beta1.pdf}
-    \caption{...}
+    \caption{Losses (left) and accuracies (right) for the training and validation sets through the epochs for the $3\sigma$ windows.}
     \label{fig:VAEclassifier-training-3sigma}
 \end{figure}
 
@@ -307,11 +318,11 @@ A training with $\beta=1$~$100$ epochs has been carried out returning the loss a
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/VAE/sigma1/current/scaled/classifierTraining_sigma1_current_scaled_beta1.pdf}
-    \caption{...}
+    \caption{Losses (left) and accuracies (right) for the training and validation sets through the epochs for the $1\sigma$ windows.}
     \label{fig:VAEclassifier-training-1sigma}
 \end{figure}
 
-What is clear analysising the accuracy plots of these two different windowing regions is that the purer the data labelling, the better the accuracy. In particular in the $3\sigma$ run the accuracy does not even reach $73\%$ while for the $1\sigma$ case it almost reaches $80\%$.
+Analysising the accuracy plots of these two different windowing regions, it is clear that the purer the data labelling, the better the accuracy. In particular in the $3\sigma$ run the accuracy does not even reach $73\%$ while for the $1\sigma$ case it almost reaches $80\%$.
 Table~\ref{tab:classifier_results_3sigma_vs_1sigma} summarise all the losses and accuracies results obtained.
 
 \begin{table}[H]
@@ -338,9 +349,26 @@ $3\sigma$ & 82 & 0.57 & 72.46\% & 0.57 & 72.77\%
 \bottomrule 
 \end{tabular}%
 }
-\caption{Classifier performance comparison for the $1\sigma$ and $3\sigma$ configurations. Acc. = Accuracy.}
+\caption{Classifier performance comparison for the $1\sigma$ and $3\sigma$ configurations. Acc. stands for Accuracy.}
 \label{tab:classifier_results_3sigma_vs_1sigma}
 \end{table}
+The distributions of the predicted probabilities for \ac{MSE} classification are presented in Figs.~\ref{fig:VAEclassifier-testset-3sigma} and \ref{fig:VAEclassifier-testset-1sigma} for the test sets across the two distinct energy windows. Furthermore, Figs.~\ref{fig:VAEclassifier-ALLDATA-3sigma} and \ref{fig:VAEclassifier-ALLDATA-1sigma} illustrate the classification results for the entire labeled dataset (incorporating training, validation, and test sets) at the $3\sigma$ and $1\sigma$ levels, respectively. These plots highlight how the two distributions are clearly separated by the classifier: the red distribution, i.e. signals labelled as \ac{SSE}, exhibits a peak on the left (close to zero) higher than the one from the blue distribution, i.e. the one with waveforms labelled as \ac{MSE} which in turn have a very high peak on the right.  
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/classifierTesting_distribution_sigma3_current_scaled_beta1.pdf}
+        \caption{Predicted probability of being a \ac{MSE} for the labelled test set in the $3\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
+        \label{fig:VAEclassifier-testset-3sigma}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/classifierTesting_distribution_sigma1_current_scaled_beta1.pdf}
+        \caption{Predicted probability of being a \ac{MSE} for the labelled test set in the $1\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
+        \label{fig:VAEclassifier-testset-1sigma}
+    \end{minipage}
+\end{figure}
 
 
 \begin{figure}[H]
@@ -348,13 +376,13 @@ $3\sigma$ & 82 & 0.57 & 72.46\% & 0.57 & 72.77\%
     \begin{minipage}{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/classifierTesting_distribution_ALLDATA_sigma3_current_scaled_beta1.pdf}
-        \caption{...}
+        \caption{Predicted probability of being a \ac{MSE} for the whole labelled set (training, validation and test sets) in the $3\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
         \label{fig:VAEclassifier-ALLDATA-3sigma}
     \end{minipage}\hfill
     \begin{minipage}{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/classifierTesting_distribution_ALLDATA_sigma1_current_scaled_beta1.pdf}
-        \caption{...}
+        \caption{Predicted probability of being a \ac{MSE} for the whole labelled set (training, validation and test sets) in the $1\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
         \label{fig:VAEclassifier-ALLDATA-1sigma}
     \end{minipage}
 \end{figure}

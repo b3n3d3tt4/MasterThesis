@@ -5,7 +5,7 @@ The Large Enriched Germanium Experiment for Neutrinoless double beta Decay (LEGE
 
 The experiment is designed to operate in two distinct phases. In its first stage, LEGEND-200, it is currently operating with roughly 200 kg of enriched germanium detectors. Its objective is to achieve a background index of $2 \times 10^{-4}$ cts/(keV$\cdot$kg$\cdot$yr) to reach a discovery sensitivity greater than $10^{27}$ yr with 1 t$\cdot$yr of exposure. The subsequent phase, LEGEND-1000, will scale the target mass up to 1000 kg, aiming for an unprecedented background goal of $1 \times 10^{-5}$ cts/(keV$\cdot$kg$\cdot$yr) to reach a sensitivity greater than $10^{28}$ yr with an exposure of 10 t$\cdot$yr.
 
-To achieve such ambitious goals, LEGEND builds upon the successful technologies and background mitigation strategies developed by its predecessors, the GERDA and \textsc{Majorana Demonstrator} experiments. By utilizing \ac{hpge} detectors enriched in ${}^{76}$Ge, the experiment benefits from the \textit{source-equals-detector} approach. This maximizes the detection efficiency and exploits the outstanding energy resolution of semiconductor detectors to clearly separate the mono-energetic $0\nu\beta\beta$ signal from the $2\nu\beta\beta$ irreducible continuous background (see Fig. \ref{fig:Qvalue-2nu0nu} in Sec \ref{subsec:0nubetabeta}).
+To achieve such ambitious goals, LEGEND builds upon the successful technologies and background mitigation strategies developed by its predecessors, the GERDA and \textsc{Majorana Demonstrator} experiments. By utilizing \ac{hpge} detectors enriched in ${}^{76}$Ge, the experiment benefits from the \textit{source-equals-detector} approach. This maximizes the detection efficiency and exploits the outstanding energy resolution of semiconductor detectors to clearly separate the mono-energetic $0\nu\beta\beta$ signal from the $2\nu\beta\beta$ irreducible continuous background.
 
 Reaching the required ultra-low background regime demands a multi-layered active and passive shielding strategy. This is accomplished by operating the bare germanium array directly in an instrumented Liquid Argon (\ac{lar}) cryostat, surrounded by a \ac{lar}ge water Cherenkov veto, and by employing sophisticated signal processing techniques to reject localized background events. The following sections detail the experimental apparatus and the event selection methods crucial to the experiment success. \cite{LEGEND:GeDet}
 
@@ -78,6 +78,9 @@ The \ac{lar} instrumentation is located within the WLSR and consists of two conc
 A 10~m-diameter and 8~m-height tank with 590~m$^3$ of ultra-pure water shields from neutron and gamma backgrounds. It works also as a muon veto for residual cosmic muons through the detection of Cherenkov light with 63 \ac{PMT} (8” size) of type 9354KB/9350KB by ETL. In order
 to protect the \ac{PMT} from the surrounding water, each PMT is housed in a stainless-steel encapsulation which is further developed from the design of the Borexino capsules. The \ac{PMT} are arranged in seven rings in the water tank. One ring of six \ac{PMT} is pointing inside the separate volume under the cryostat,  two rings of eight \ac{PMT} and 12 \ac{PMT}  respectively are placed on the bottom of the water tank looking upwards and four rings of 10 \ac{PMT} are placed on the wall, pointing horizontally towards the cryostat. \cite{GERDA-muonVeto} 
 
+
+
+\newpage
 \section{Background contaminations}
 \label{sec:background}
 Background is one of the main issues in the LEGEND program. According to \cite{L200-sep25} the background contribution for the LEGEND experiment are the same of its predecessor GERDA, therefore further consideration about it are based on \cite{GERDAphase2}.
@@ -121,6 +124,8 @@ As mentioned above, background signals are a complicated part to deal with in th
 
 All of the materials close to the detectors have been screened to prevent radioactive contamination given by ${}^{238}$U and ${}^{232}$Th decay chains and ${}^{40}$K and ${}^{60}$Co isotopes.
 
+
+\newpage
 \section{LEGEND data}
 \subsection{Detector physics and signal formation}
 As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEND program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of the thesis in Chapter \ref{chapter:ML-PSD}.
@@ -302,9 +307,6 @@ Settled these premises, it is useful to analyse some aspects of said calibration
 
 Energy calibration is performed using Thorium-228 sources with low neutron emission. The sources are inserted in the LAr cryostat through four calibration systems, each moving four ${}^{228}$Th sources of about 5 kBq activity per source, situated at different heights for homogeneous event distribution (\cite{L200:calibration}, \cite{LEGEND:GeDet}). The decay chain of such isotope is shown in Fig. \ref{fig:decayTh228} while the energy spectrum of $\gamma$-rays emitted as a consequence of the decays are visible in Fig. \ref{fig:TlBi-spectrum}. It is evident that we can distinguish several peaks: the ones we are focusing on are listed in Table \ref{tab:emission-peaks}.
 
-\ac{DEP}, \ac{SEP} and \ac{FEP} of Thallium-208 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons of the positron escape the active detector volume without further interaction. Consequently, the energy deposition is highly localised, yielding a simple and temporally narrow pulse waveform associated to \ac{SSE}.
-Conversely, a \ac{SEP} event arises when only one of the two annihilation photons escapes, while the second photon re-interacts and deposits its energy elsewhere within the detector volume. This spatial separation introduces a temporal spread, resulting in a more complex waveform structure. Furthermore, events contributing to the \ac{FEP}, both of Thallium-208 and of Bismuth-212, typically involve multiple Compton scattering interactions prior to complete absorption, yielding an even more intricate pulse shape. These last two peaks are typical \ac{MSE}.
-
 \begin{figure}[H]
     \centering
     \begin{minipage}[t]{0.3\textwidth}
@@ -319,7 +321,7 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
         \vspace{0pt} % Forza l'allineamento al margine superiore
         \centering
 
-        \includegraphics[width=\linewidth, height=6cm]{plots/energy_spectrum-example.pdf}
+        \includegraphics[width=\linewidth]{plots/energy_spectrum-example.pdf}
         \caption{Example of the energy spectrum recorded in a calibration run. Peaks listed in Tab \ref{tab:emission-peaks} are highlighted. Data for this example plot are from run \textit{r000} of period \textit{p03}.}
         \label{fig:TlBi-spectrum}
         
@@ -340,6 +342,8 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
     \end{minipage}
 \end{figure}
 
+\ac{DEP}, \ac{SEP} and \ac{FEP} of Thallium-208 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. Specifically, a \ac{DEP} event occurs when a high-energy $\gamma$ ray undergoes pair production, and both resulting 511 keV annihilation photons of the positron escape the active detector volume without further interaction. Consequently, the energy deposition is highly localised, yielding a simple and temporally narrow pulse waveform associated to \ac{SSE}.
+Conversely, a \ac{SEP} event arises when only one of the two annihilation photons escapes, while the second photon re-interacts and deposits its energy elsewhere within the detector volume. This spatial separation introduces a temporal spread, resulting in a more complex waveform structure. Furthermore, events contributing to the \ac{FEP}, both of Thallium-208 and of Bismuth-212, typically involve multiple Compton scattering interactions prior to complete absorption, yielding an even more intricate pulse shape. These last two peaks are typical \ac{MSE}.
 
 \begin{figure}[H]
     \centering
@@ -348,36 +352,38 @@ Conversely, a \ac{SEP} event arises when only one of the two annihilation photon
     \label{fig:dep-sep}
 \end{figure}
 
-From now on, we are interested in considering the two peaks corresponding to the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. They are very close to each other in energy, as stated in Tab \ref{tab:emission-peaks}, but are produced in different mechanisms consequently producing different signals in \ac{hpge} detectors, respectively \ac{SSE} and \ac{MSE}. This is significant in the context of our research since what we really want to investigate and discriminate is the shape of the waveform of specific signals; therefore any energy dependence in such shape is to be eliminated. In this perspective, selecting events with comparable energies isolates the waveform from energy-induced variations, allowing us to rely solely on the time evolution of its shape. 
+From now on, we are interested in considering the two peaks corresponding to the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. They are very close to each other in energy, as stated in Table \ref{tab:emission-peaks}, but are produced in different mechanisms consequently producing different signals in \ac{hpge} detectors, respectively \ac{SSE} and \ac{MSE}. This is significant in the context of our research since what we really want to investigate and discriminate is the shape of the waveform of specific signals; therefore any energy dependence in such shape is to be eliminated. In this perspective, selecting events with comparable energies isolates the waveform from energy-induced variations, allowing us to rely solely on the time evolution of its shape. 
 
 Nonetheless it is important to stress that this \ac{SSE} and \ac{MSE} labelling is statistical rather than exact event by event. As it is clear in Fig. \ref{fig:TlBi-spectrum} the two peaks we are considering lie over a continuous background . Therefore when considering the \ac{DEP} peak, a fraction of events with a \ac{MSE} topology arising from multiple Compton scattering are considered as well; viceversa the \ac{FEP} peak may contain a fraction of \ac{SSE}. However since these peaks significantly exceed the level of the background they are statistically dominated by the \ac{SSE} topology and \ac{MSE} respectively. Therefore, whenever we refer to \ac{SSE} and \ac{MSE} what we mean is that statistically they actually are so. 
 % Said considerations are clearly a limitation both for traditional classifiers and machine learning ones relying on pulse shapes.
 
 
+\newpage
 \section{Traditional \ac{PSD}}
 \label{sec:traditionalPSD}
+Pulse shape discrimination \ac{PSD} is employed in the LEGEND program with several purposes in order to enhance the signal-like events with respect to the background ones. Two main parameters are employed in this procedure: the \ac{LQ} and the \ac{AE}. 
 
+The first one is a easure of the \textit{slowness} of the final 20\% of charge carriers for an event. It is determined by calculating the area above the rising edge of the waveform after it reaches the 80\% of its maximum. DSince surface events (both alpha and beta) tipically manifest a slow-charge trend with a incomplete charge collection as a consequence, \ac{LQ} is expected to be a powerful discriminator against these events, which constitute a part of the background (see Sec.~\ref{sec:background}). 
 
-\subsection{Amplitude/Energy cut}
+On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection is based. It is computed as the ratio between the amplitude of the first peak of the current signal (obtained from the charge one via time derivative) and the energy of that event. In principle, if we consdier a \ac{SSE} and a \ac{MSE} at the very same energy, the \ac{AE} ratio will be lower for a \ac{MSE} that exhibits many current peaks lower than the one of the \ac{SSE}. 
+Figure \ref{fig:AoE_distribution} makes it evident that different physical processes are correlated with different \ac{AE} distributions, therefore a proper selection of this value enable to distinguish signal-like events from background-like ones.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{plots/energy_spectrum_AoE_combined-prl25.pdf}
-    \caption{Energy spectrum of the selected events in the \textit{prl25} partition.}
-    \label{fig:energy_spectrum-prl25}
+    \includegraphics[width=\textwidth]{plots/energy_spectrum_and_aoe-example.pdf}
+    \caption{\ac{AE} distributions in different ranges of the calibration spectrum. Data are from run \textit{r000} of period \textit{p03}.}
+    \label{fig:AoE_distribution}
 \end{figure}
 
+
+
+Figure~\ref{fig:distribution-AoE_prl25} presents the \ac{AE} cut for the considered dataset in the $1550-1650$ keV energy range.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
     \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut. The cut is tuned in order have a survival fraction in the \ac{DEP} of 90\%.}
-    \label{fig:dAoE_prl25}
+    \label{fig:distribution-AoE_prl25}
 \end{figure}
 
 
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{plots/AoE_distribution-prl25.pdf}
-%     \caption{Distribution of the Amplitude/Energy ratio for the selected events.}
-%     \label{fig:AoE_distribution}
-% \end{figure}
