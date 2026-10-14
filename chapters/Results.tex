@@ -1,5 +1,10 @@
 \chapter{Results}
+This Chapter will outline the main results obtained with the two algorithms developed and tested as described in Chapter \ref{chapter:ML-PSD}. The various possible cuts, nameley the two of the \ac{VAE} and the three of the \ac{DTC}, will be applied to the calibration dataset in the 1550-1650 keV energy range, i.e. the one on which the algorithms are trained and tested, and on another novel dataset on which the networks have never been trained, the $2\nu\beta\beta$ spectrum from physics (\texttt{phy}) data of \textit{prl25}.
+
+The deep learning cuts are compared with one another and with the traditional benchmark given by the \ac{AE} parameter (see Sec.~\ref{sec:traditionalPSD}). The comparison relies on two complementary analyses: the study of the events on which the traditional and the deep learning methods agree or disagree, and the \ac{AUC} of their \ac{ROC} curves, which quantifies the separation power of each method independently of the chosen cut threshold~\cite{ROCanalysis}.
+
 \section{Analysis of calibration data}
+
 \label{sec:calib-data}
 
 \subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}

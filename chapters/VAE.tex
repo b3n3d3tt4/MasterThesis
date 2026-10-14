@@ -210,13 +210,9 @@ The training and testing of the algorithm is done splitting the dataset in order
 
 The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. 
 
-Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the values of the losses for the training, validation and test sets at the beginning of the training, at the end of the same and in the testing part for the $3\sigma$ cut and the $1\sigma$ cut respectively. The validation set has been used here only in order to show how the reconstruction ability of the \ac{VAE} improves through the epochs. 
+Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the values of the losses for the training, validation and test sets at the beginning of the training, at the end of the same and in the testing part for the $3\sigma$ cut and the $1\sigma$ cut respectively. The validation set has been used here only in order to show how the reconstruction ability of the \ac{VAE} improves through the epochs and to have a feedback about a possible overfitting at the end of the training: if both the training and recontruction losses decrease over epochs the model is unlike to overfit, on the contrary if the validation loss does not decrease while the training do, the model is clearly overfitting data.
 
-
-
-
-
-Moreover the reconstruction flow and the training losses through the epochs are shown in Fig. \ref{fig:VAE-ricostruzione-3sigma} and \ref{fig:VAE-losses-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma} and \ref{fig:VAE-losses-1sigma} for events in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in Fig.~\ref{fig:VAE-testset-3sigma} and \ref{fig:VAE-testset-1sigma}.
+The reconstruction flow and the training losses through the epochs are shown in Fig. \ref{fig:VAE-ricostruzione-3sigma} and \ref{fig:VAE-losses-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma} and \ref{fig:VAE-losses-1sigma} for events in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in Fig.~\ref{fig:VAE-testset-3sigma} and \ref{fig:VAE-testset-1sigma}.
 
 \begin{figure}[H]
     \centering

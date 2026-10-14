@@ -1,8 +1,8 @@
 \section{Deep Temporal Clustering}
 \label{sec:DTC}
-As already mentioned, the main problem that affects the \ac{AE} method in the \ac{SSE}-\ac{MSE} discrimination is related to the fact that a complex waveform with its own evolution in time is treated and calssified on the basis of a single number. This number should in principle be a simple summary of the behaviour of the signal, but actually does not account for the time evolution of it. This problem is still present in a certain way also in the \ac{VAE}-based classifier: even though we use 8 features (and not only one), these are striclty correlated with single physical quantities that could ideally be computed by hand. Therefore what is really needed is a deep learning model that collapses all dimensions but the temporal one. On top of that, a features extraction aimed at a classification task separates the two goals of getting a good recontruction of the waveform, which means having learnt important features of it, from the clustering problem.
+As already mentioned, the main problem that affects the \ac{AE} method in the \ac{SSE}-\ac{MSE} discrimination is related to the fact that a complex waveform with its own evolution in time is treated and calssified on the basis of a single number. This number should in principle be a simple summary of the behaviour of the signal, but actually does not account for the time evolution of it. This problem is still present in a certain way also in the \ac{VAE}-based classifier: even though we use 8 features (and not only one), these are striclty correlated with single physical quantities that could ideally be computed by hand. Therefore what is really needed is a deep learning model that collapses all dimensions but the temporal one. On top of that, a features extraction aimed at a classification task separates the two goals of getting a good reconstruction of the waveform, which means having learnt important features of it, from the clustering problem.
 
-Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called Deep Temporal Clustering, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means algorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. The power of this network lays in two specific aspects: first the fact that the time dimension is preserved also in the latent representation and second the fact that exploiting a combined optimisation of the two branches of the complexive model, i.e. the autoencoding and the clustering, spatio-temporal features are extracted in order to optimise the recontruction \textit{and} the clustering simoultaneously. 
+Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called Deep Temporal Clustering, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means algorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. The power of this network lays in two specific aspects: first the fact that the time dimension is preserved also in the latent representation and second the fact that exploiting a combined optimisation of the two branches of the complexive model, i.e. the autoencoding and the clustering, spatio-temporal features are extracted in order to optimise the reconstruction \textit{and} the clustering simoultaneously. 
 \subsection{Architecure} 
 The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code of the authors is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
 
@@ -151,6 +151,25 @@ The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is show
     \label{fig:tae_and_tsc-architecure}
 \end{figure}
 
+
+\subsection{Data selection}
+Being a fully-unsupervised clustering algorithm, the \ac{DTC} model does not require a specific data selection before its training. Therefore all the events in the 1550-1650 keV range of the calibration dataset, ie.e the whole gray spectrum of Fig.~\ref{fig:distribution-AoE_prl25} have been employed as input waveforms of this algorithm, for a total $N_\text{DTC} = 348 999$ waveforms divided in the training, validation and test set as detailed in Table \ref{tab:sets-DTC}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        set & number of waveforms\\
+        \midrule
+        training & 279 199 \\
+        validation & 34 900 \\
+        test & 34 900\\
+        \bottomrule
+    \end{tabular}
+    \caption{Division of events between the training, validation and test sets}
+    \label{tab:sets-DTC}
+\end{table}
+
+
 \subsection{Training and testing}
 The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. 
 
@@ -158,7 +177,7 @@ The \ac{DTC} training phase is divided in two different parts: the \textit{pretr
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/pretrain_reconstruction.pdf}
-    \caption{Example of the \ac{TAE} recontruction ability in the \textit{pretrain} for a validation set waveform at epoch 1, 25, 50.}
+    \caption{Example of the \ac{TAE} reconstruction ability in the \textit{pretrain} for a validation set waveform at epoch 1, 25, 50.}
     \label{fig:pretrain-validation}
 \end{figure}
 
