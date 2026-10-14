@@ -167,6 +167,15 @@ $\sigma$ & peak counts & background counts & purity \\
 \label{tab:purity}
 \end{table}
 
+For the implementation of the already-detailed \ac{VAE} algorithm, only two windows were considered, specifically the ones related to $\sigma = 1, 3$ that are shown in Fig. \ref{fig:sse_mse_selection}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/sse_mse_selection_all_sigmas.pdf}
+    \caption{\ac{SSE} and \ac{MSE} selection via $\sigma$ windows on the \ac{DEP} and \ac{FEP} peaks.}
+    \label{fig:sse_mse_selection}
+\end{figure}
+
 This considerations are particularly relevant when we need to investigate the performances of a deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
 
 \subsection{Training and testing}

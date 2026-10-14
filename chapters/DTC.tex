@@ -153,7 +153,7 @@ The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is show
 
 
 \subsection{Data selection}
-Being a fully-unsupervised clustering algorithm, the \ac{DTC} model does not require a specific data selection before its training. Therefore all the events in the 1550-1650 keV range of the calibration dataset, ie.e the whole gray spectrum of Fig.~\ref{fig:distribution-AoE_prl25} have been employed as input waveforms of this algorithm, for a total $N_\text{DTC} = 348 999$ waveforms divided in the training, validation and test set as detailed in Table \ref{tab:sets-DTC}.
+Being a fully-unsupervised clustering algorithm, the \ac{DTC} model does not require a specific data selection before its training. Therefore all the events in the 1550-1650 keV range of the calibration dataset, i.e. the whole gray spectrum of Fig.~\ref{fig:distribution-AoE_prl25}, have been employed as input waveforms of this algorithm, for a total $N_\text{DTC} = 348 999$ waveforms divided in the training, validation and test set as detailed in Table \ref{tab:sets-DTC}.
 \begin{table}[H]
     \centering
     \begin{tabular}{cc}
@@ -165,9 +165,11 @@ Being a fully-unsupervised clustering algorithm, the \ac{DTC} model does not req
         test & 34 900\\
         \bottomrule
     \end{tabular}
-    \caption{Division of events between the training, validation and test sets}
+    \caption{Division of events between the training, validation and test sets for the \ac{DTC} model.}
     \label{tab:sets-DTC}
 \end{table}
+
+The validation set has been used in this model, as well as in the previous one, to make sure the model does not overfit and to monitor that both the training and validation loss are decreasing through epochs.
 
 
 \subsection{Training and testing}
