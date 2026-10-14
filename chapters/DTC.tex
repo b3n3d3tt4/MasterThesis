@@ -175,18 +175,18 @@ The validation set has been used in this model, as well as in the previous one, 
 \subsection{Training and testing}
 The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. 
 
-\textbf{\textit{Pretrain}}: this phase is used in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts. The model is trained for a number of epochs $\text{N}_\text{PRE} = 50$. Results are shown in Fig. \ref{fig:pretrain-validation} and \ref{fig:pretrain-loss}.
+\textbf{\textit{Pretrain}}: this phase is used in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the \ac{NLL} loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to recontruct waveforms and it is not overfitting training data.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/pretrain_reconstruction.pdf}
-    \caption{Example of the \ac{TAE} reconstruction ability in the \textit{pretrain} for a validation set waveform at epoch 1, 25, 50.}
+    \caption{Example of the \ac{TAE} reconstruction ability in the \textit{pretrain} for a validation set waveform at epoch 1, 20, 40.}
     \label{fig:pretrain-validation}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/DTC/pretrain_losses.pdf}
-    \caption{\textit{Pretrain} loss through epochs.}
+    \includegraphics[width=\textwidth]{plots/DTC/pretrain_losses.pdf}
+    \caption{\textit{Pretrain} loss evolution through epochs. On the right a zoom of the grey part of the left plot is shown.}
     \label{fig:pretrain-loss}
 \end{figure}
 
@@ -198,7 +198,7 @@ Soon after this part is completed, the $\sigma$ parameter is fixed to the learne
     L_\text{DTC} = L_\text{TAE} + \gamma \cdot L_\text{TSC}
 \end{equation}
 
-The results of the complexive training part with $\text{N}_\text{TRAIN} = 50$ epochs and $\gamma = 1000$ are shown in Fig. \ref{fig:training-reconstruction-DTC}and \ref{fig:training-clustering-DTC} for the reconstruction and clustering part respectively and for all of the abovementioned distance metrics.
+The results of the complexive training part with $\text{N}_\text{TRAIN} = 20$ epochs and $\gamma = 1000$ are shown in Fig. \ref{fig:training-reconstruction-DTC}and \ref{fig:training-clustering-DTC} for the reconstruction and clustering part respectively and for all of the abovementioned distance metrics.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
