@@ -1,95 +1,15 @@
 \section{Variational Autoencoder}
 \label{sec:VAE}
 A \ac{VAE} is an artificial neural network architecture introduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into a one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconsructs the time series. The process is regulated by a loss function that aims to minimise the reconstruction error between the input and the output.
-\subsection{Architecture}
-\label{sec:vae-architeture}
-\begin{comment}
-QUI DEVO DIRE
-
--COME CREO I TENSORS --> TENSORCREATION.PY
-
--COME IMPLEMENTO IL VAE
-
-    - encoder\\
-    - decoder\\
-    - latent space specifications\\
-    - costruzione della loss\\
-    - training\\ 
-    - test\\
-    - tutti i test del codice che faccio\\
-        * test su beta
-        * test su dimensioni dello spazio lentamente
-        * eventuale PCA e/o TRAVERSAL
-- COME IMPLEMENTO LA CLASSIFICATION\\
-    - layers etc\\ 
-    - loss\\
-    - training \\
-    - test \\
-\end{comment}
-The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, an 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
-\begin{itemize}
-    \item \textbf{original waveforms}\\
-    The input of the encoder are current waveforms already processed as described in Sec. \ref{sec:data-cleaning}, thus the input of the encoder has dimensions ($1~\times~200$)
-    % Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
-    In principle also charge waveforms could be used as inputs together with current ones therefore in this case the input is (\texttt{channels} $\times~200$).
-    \item \textbf{encoder}\\
-    The encoder is defined within a sequential container (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
-    \begin{enumerate}
-        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channels} $\times 200$) inputs into (16 $\times~100$) objects;
-        \item a Leaky ReLU activation, that is a similar to a Rectified Linear Unit function as detailed in Eq. \ref{eq:leakyReLU} where $\alpha = 0.1$
-        \begin{equation}
-            \label{eq:leakyReLU}
-            f(x) = 
-            \begin{cases} 
-                x & \text{if } x > 0 \\
-                \alpha \cdot x & \text{if } x \le 0 
-            \end{cases}
-        \end{equation}
-        \item another 1D convolutional layer with kernel size = 5, stride = 2 and padding = 2, , mapping (16 $\times 100$) objects from the previous layer into ($32~\times~50$) outputs;
-        \item another Leaky ReLU activation function identical to the previous one.
-    \end{enumerate} 
-    \item \textbf{latent space}\\
-    The latent space is constructed from the output of the encoder after the following procedure:
-    \begin{enumerate}
-        \item firstly, the encoder output is flattened to a sequence with $32~\times~50$ points;
-        \item secondly, the flattened data are passed through a linear layer (\texttt{Linear} in PyTorch) which further reduce the dimensionality to 64 points;
-        \item thirdly, a Leaky ReLU activation with $\alpha=0.1$ is applied;
-        \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
-    \end{enumerate}
-    \item \textbf{reparametrisation and decoder input}\\
-    The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. A trick called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution (mean 0 and variance 1).
-    \begin{equation}
-        \label{eq:reparametrisation-trick}
-        z = \mu + \varepsilon \cdot \sigma
-    \end{equation}
-    The appropriate input for the decoder network is computed from the $z$ values (one for each dimension in the latent space), by applying a linear layer returning 64 points followed by the usual Leaky ReLU activation and then another linear layer returning 1600 points activated again with the Leaky ReLU. The obtained object has dimensionality ($50~\times~32$) just as the output of the encoder and is a suitable input for the decoder.
-    \item \textbf{decoder}\\
-    The decoder perfectly mirrors the encoder: 
-    \begin{enumerate}
-        \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear regression) in order to obtain a ($32~\times~100$) object ;
-        \item a 1D convolutional layer with kernel size = 5, stride = 1 and padding = 2 is exploited to extract patterns and smooth out the upsampling output returning a ($16~\times~100$) object;
-        \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
-        \item the final 1D convolutional layer returns a original-waveform like output ($1~\times~200$)
-    \end{enumerate}  
-    \item \textbf{reconstructed waveforms}\\
-    The output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current waveforms reconstructed using information extracted from the latent space. 
-\end{itemize}  
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/schemi_output/VAE.pdf}
-    \caption{Schematic representation of the VAE architecture. The encoder network maps the input waveform to a latent space characterized by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the $\beta$ hyperparameter.}
-    \label{fig:vae-architecture}
-\end{figure}
 
 \subsection{Data selection}
-\label{subsec:data-selection}
-
-\ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a Gaussian fit, displayed in Fig. \ref{fig:dep_fep_fits}, is performed onto the \ac{DEP} of \({}^{208}\text{Tl}\) and the \ac{FEP} of \({}^{212}\text{Bi}\) via the function of Eq. \ref{eq:fitted-gaussian}
+\label{subsec:data-selection-VAE}
+\ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a Gaussian fit, displayed in Fig. \ref{fig:dep_fep_fits}, is performed onto the \ac{DEP} of ${}^{208}\text{Tl}$ and the \ac{FEP} of ${}^{212}\text{Bi}$ via the function of Eq. \ref{eq:fitted-gaussian}
 \begin{equation}
     \label{eq:fitted-gaussian}
     f(x) = A \cdot \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) + B
 \end{equation}
-where \(A\) is the total number of events under the peak, i.e. the peak area obtained by integrating the background-subtracted Gaussian component, \(\mu\) is the mean value, \(\sigma\) is the standard deviation and \(B\) is the background. The results of the fit are reported in Tab. \ref{tab:gaussianfit_parameters}. 
+where $A$ is the total number of events under the peak, i.e. the peak area obtained by integrating the background-subtracted Gaussian component, $\mu$ is the mean value, $\sigma$ is the standard deviation and $B$ is the background. The results of the fit are reported in Tab. \ref{tab:gaussianfit_parameters}. 
 
 \begin{figure}[H]
     \centering
@@ -102,13 +22,13 @@ where \(A\) is the total number of events under the peak, i.e. the peak area obt
     \centering
     \begin{tabular}{lcccc}
         \toprule
-        Peak & \(A\) [counts] & \(\mu\) [keV] & \(\sigma\) [keV] & \(B\) [counts/keV] \\
+        Peak & $A$ [counts] & $\mu$ [keV] & $\sigma$ [keV] & $B$ [counts/keV] \\
         \midrule
-        \({}^{208}\text{Tl}\) & \((2.4 \pm 0.2) \times 10^{4}\) & \(1592.40 \pm 0.06\) & \(2.1 \pm 0.1\) & \((2.8 \pm 0.2) \times 10^{3}\) \\
-        \({}^{212}\text{Bi}\) & \((5.7 \pm 0.7) \times 10^{4}\) & \(1620.34 \pm 0.08\) & \(2.3 \pm 0.2\) & \((2.7 \pm 0.6) \times 10^{3}\) \\
+        ${}^{208}\text{Tl}$ & $(2.4 \pm 0.2) \times 10^{4}$ & $1592.40 \pm 0.06$ & $2.1 \pm 0.1$ & $(2.8 \pm 0.2) \times 10^{3}$ \\
+        ${}^{212}\text{Bi}$ & $(5.7 \pm 0.7) \times 10^{4}$ & $1620.34 \pm 0.08$ & $2.3 \pm 0.2$ & $(2.7 \pm 0.6) \times 10^{3}$ \\
         \bottomrule
     \end{tabular}
-    \caption{Gaussian fit parameters for the \({}^{208}\text{Tl}\) \ac{DEP} and \({}^{212}\text{Bi}\) \ac{FEP}.}
+    \caption{Gaussian fit parameters for the ${}^{208}\text{Tl}$ \ac{DEP} (in red) and ${}^{212}\text{Bi}$ \ac{FEP} (in blue).}
     \label{tab:gaussianfit_parameters}
 \end{table}
 
@@ -166,17 +86,96 @@ $\sigma$ & peak counts & background counts & purity \\
 \caption{Peak counts, background counts and purity for a different number of sigmas considered in the cut window for the \ac{DEP} and \ac{FEP} samples.}
 \label{tab:purity}
 \end{table}
+These considerations are particularly relevant when we need to investigate the performances of a deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
 
-For the implementation of the already-detailed \ac{VAE} algorithm, only two windows were considered, specifically the ones related to $\sigma = 1, 3$ that are shown in Fig. \ref{fig:sse_mse_selection}.
+For the implementation of the \ac{VAE} algorithm that will soon be detailed, only two windows were considered, specifically the ones related to $\sigma = 1, 3$ that are shown in Fig. \ref{fig:sse_mse_selection}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{plots/sse_mse_selection_all_sigmas.pdf}
-    \caption{\ac{SSE} and \ac{MSE} selection via $\sigma$ windows on the \ac{DEP} and \ac{FEP} peaks.}
+    \caption{\ac{SSE} (red) and \ac{MSE} (blue) selection via $\sigma$ windows on the \ac{DEP} and \ac{FEP} peaks.}
     \label{fig:sse_mse_selection}
 \end{figure}
 
-This considerations are particularly relevant when we need to investigate the performances of a deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
+The labelled events selected in the $1\sigma$ and $3\sigma$ windows are divided into the training, validation and test sets as detailed in Table~\ref{tab:sets-VAE}. The division is performed in two steps: first 10\% of the labelled events is set aside as test set, then 10\% of the remaining ones forms the validation set, so that the three sets contain about 81\%, 9\% and 10\% of the events respectively. Both steps are stratified, i.e. every set keeps the same proportion of \ac{SSE} and \ac{MSE} labels of the whole selection (38.3\% \ac{SSE} for the $3\sigma$ windows and 35.2\% for the $1\sigma$ ones), and both use a fixed random seed: for a given window the three sets therefore always contain the same events, whatever input channels and current normalisation are used. The constant used to scale the current waveforms is computed on the training set only.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccccc}
+        \toprule
+        & \multicolumn{3}{c}{$3\sigma$ windows} & \multicolumn{3}{c}{$1\sigma$ windows} \\
+        \cmidrule(lr){2-4} \cmidrule(l){5-7}
+        set & total & \ac{SSE} & \ac{MSE} & total & \ac{SSE} & \ac{MSE} \\
+        \midrule
+        training   & 125\,240 & 47\,996 & 77\,244 & 64\,935 & 22\,869 & 42\,066 \\
+        validation & 13\,916  & 5\,333  & 8\,583  & 7\,215  & 2\,541  & 4\,674  \\
+        test       & 15\,462  & 5\,925  & 9\,537  & 8\,017  & 2\,824  & 5\,193  \\
+        \midrule
+        total      & 154\,618 & 59\,254 & 95\,364 & 80\,167 & 28\,234 & 51\,933 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Division of the labelled events between the training, validation and test sets for the \ac{VAE} model and the \ac{VAE}-based classifier, for the $3\sigma$ and $1\sigma$ windows.}
+    \label{tab:sets-VAE}
+\end{table}
+
+The way these sets enter the training of the \ac{VAE} and of the classifier is described in Sec.~\ref{subsec:VAE-training} and Sec.~\ref{subsec:VAE-features_extraction}.
+
+\subsection{Architecture}
+\label{sec:vae-architeture}
+The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, an 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
+\begin{itemize}
+    \item \textbf{original waveforms}\\
+    The input of the encoder are current waveforms already processed as described in Sec. \ref{sec:data-cleaning}, thus the input of the encoder has dimensions ($1~\times~200$)
+    % Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
+    In principle also charge waveforms could be used as inputs together with current ones therefore in this case the input is (\texttt{channels} $\times~200$).
+    \item \textbf{encoder}\\
+    The encoder is defined within a sequential container (\texttt{class torch.nn.Sequential} \cite{torchSequential}), therefore modules are added to it in the order they are passed. Specifically the modules are:
+    \begin{enumerate}
+        \item a 1D convolutional layer (\texttt{Conv1d} in PyTorch) with kernel size = 5, stride = 2 and padding = 2, mapping (\texttt{channels} $\times 200$) inputs into (16 $\times~100$) objects;
+        \item a Leaky ReLU activation, that is a similar to a Rectified Linear Unit function as detailed in Eq. \ref{eq:leakyReLU} where $\alpha = 0.1$
+        \begin{equation}
+            \label{eq:leakyReLU}
+            f(x) = 
+            \begin{cases} 
+                x & \text{if } x > 0 \\
+                \alpha \cdot x & \text{if } x \le 0 
+            \end{cases}
+        \end{equation}
+        \item another 1D convolutional layer with kernel size = 5, stride = 2 and padding = 2, , mapping (16 $\times 100$) objects from the previous layer into ($32~\times~50$) outputs;
+        \item another Leaky ReLU activation function identical to the previous one.
+    \end{enumerate} 
+    \item \textbf{latent space}\\
+    The latent space is constructed from the output of the encoder after the following procedure:
+    \begin{enumerate}
+        \item firstly, the encoder output is flattened to a sequence with $32~\times~50$ points;
+        \item secondly, the flattened data are passed through a linear layer (\texttt{Linear} in PyTorch) which further reduce the dimensionality to 64 points;
+        \item thirdly, a Leaky ReLU activation with $\alpha=0.1$ is applied;
+        \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
+    \end{enumerate}
+    \item \textbf{reparametrisation and decoder input}\\
+    The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. A trick called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution (mean 0 and variance 1).
+    \begin{equation}
+        \label{eq:reparametrisation-trick}
+        z = \mu + \varepsilon \cdot \sigma
+    \end{equation}
+    The appropriate input for the decoder network is computed from the $z$ values (one for each dimension in the latent space), by applying a linear layer returning 64 points followed by the usual Leaky ReLU activation and then another linear layer returning 1600 points activated again with the Leaky ReLU. The obtained object has dimensionality ($50~\times~32$) just as the output of the encoder and is a suitable input for the decoder.
+    \item \textbf{decoder}\\
+    The decoder perfectly mirrors the encoder: 
+    \begin{enumerate}
+        \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear regression) in order to obtain a ($32~\times~100$) object ;
+        \item a 1D convolutional layer with kernel size = 5, stride = 1 and padding = 2 is exploited to extract patterns and smooth out the upsampling output returning a ($16~\times~100$) object;
+        \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
+        \item the final 1D convolutional layer returns a original-waveform like output ($1~\times~200$)
+    \end{enumerate}  
+    \item \textbf{reconstructed waveforms}\\
+    The output of the decoder, i.e. the output of the whole \ac{VAE} is the recontruction of the input, therefore what we obtain are current waveforms reconstructed using information extracted from the latent space. 
+\end{itemize}  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/schemi_output/VAE.pdf}
+    \caption{Schematic representation of the VAE architecture. The encoder network maps the input waveform to a latent space characterized by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the $\beta$ hyperparameter.}
+    \label{fig:vae-architecture}
+\end{figure}
+
 
 \subsection{Training and testing}
 \label{subsec:VAE-training}
@@ -215,9 +214,14 @@ An additional tunable parameter $\beta$ balances the two contributions in the lo
     \beta(n) = \beta \cdot \min\left(1, \frac{n+1}{N_{\text{w}}}\right)
 \end{equation}
 
-The training and testing of the algorithm is done splitting the dataset in order to have the 80\% of the total available data for the training, 10\% for the validation and the 10\% for the test set. The training has been performed using $\beta=1$ and a total number of epochs $N=100$ where the first $N_w = 10$ are warm-up epochs. The number of dimensions in the latent space was settled to $k = 8$.
+The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence.
 
-The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence. 
+The pure recontruction training has been performed using $\beta=1$ and a total number of $N=100$ epochs, the first $N_w = 10$ of which are warm-up epochs, with $k = 8$ dimensions in the latent space and a free-bits threshold $\lambda_{fb} = 0.5$~nat.
+
+The training set (Tab.~\ref{tab:sets-VAE}) is processed in mini-batches of $B = 64$ waveforms. At the beginning of every epoch the order of the training waveforms is randomly shuffled and the set is split into $\lfloor 125\,240 / 64 \rfloor = 1956$ batches for the $3\sigma$ windows and $\lfloor 64\,935 / 64 \rfloor = 1014$ batches for the $1\sigma$ ones; the last incomplete batch (56 and 39 waveforms respectively) is discarded, so that all the batches have the same size and every weight update relies on a loss averaged over the same number of waveforms (Eqs.~\ref{eq:rec-loss} and \ref{eq:KL-loss}). Since the shuffling changes at every epoch, a different subset is left out each time and no waveform is systematically excluded from the training. The network weights are updated after every batch with the Adam optimiser, a learning rate of $10^{-3}$ and a weight decay of $10^{-5}$, i.e. 1956 (1014) updates per epoch, an epoch being one full pass over the training set; before every update the norm of the gradient is clipped to 5, to prevent single large steps from destabilising the training.
+
+The validation and test sets are processed in batches of the same size, in a fixed order and without discarding any waveform: 218 and 242 batches for the $3\sigma$ windows (the last ones containing 28 and 38 waveforms) and 113 and 126 batches for the $1\sigma$ ones (the last ones containing 47 and 17 waveforms). These two sets are only used for evaluation and never update the weights. The validation set is evaluated at the end of every epoch, with the same value of $\beta(n)$ (Eq.~\ref{eq:beta}) and the same free-bits threshold used for the training in that epoch, so that the training and validation losses are directly comparable, while the test set is evaluated only once, after the training. The shuffling is controlled by a fixed seed, so that the sequence of batches of every configuration is reproducible.
+
 
 Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the values of the losses for the training, validation and test sets at the beginning of the training, at the end of the same and in the testing part for the $3\sigma$ cut and the $1\sigma$ cut respectively. The validation set has been used here only in order to show how the reconstruction ability of the \ac{VAE} improves through the epochs and to have a feedback about a possible overfitting at the end of the training: if both the training and recontruction losses decrease over epochs the model is unlike to overfit, on the contrary if the validation loss does not decrease while the training do, the model is clearly overfitting data.
 
@@ -309,9 +313,7 @@ The loss function used in the classification task is a \ac{BCE} with Logits, whi
 \end{equation}
 
 
-
-
-A training with $\beta=1$ for the \ac{VAE} and $N=100$ epochs has been carried out returning the loss and accuracy results shown in Fig.~\ref{fig:VAEclassifier-training-3sigma} and Fig.~\ref{fig:VAEclassifier-training-1sigma} for the $3\sigma$ and the $1\sigma$ windows respectively.
+The classifier is trained on the same training set and with the same batch structure as the \ac{VAE} (Sec.~\ref{subsec:VAE-training}): mini-batches of $B = 64$ waveforms, reshuffled at every epoch with the last incomplete batch discarded, and the Adam optimiser with a learning rate of $10^{-3}$, here with a weight decay of $10^{-4}$. During this phase the \ac{VAE} encoder is kept frozen in evaluation mode, so that only the classifier weights are updated. The training lasts $N = 100$ epochs; the validation loss is computed at the end of every epoch and, at the end of the training, the weights of the epoch with the lowest validation loss are restored. The resulting losses and accuracies are shown in Fig.~\ref{fig:VAEclassifier-training-3sigma} and Fig.~\ref{fig:VAEclassifier-training-1sigma} for the $3\sigma$ and the $1\sigma$ windows respectively.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/VAE/sigma3/current/scaled/classifierTraining_sigma3_current_scaled_beta1.pdf}
