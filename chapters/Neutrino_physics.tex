@@ -327,7 +327,7 @@ A detailed analysis of neutrinos oscillation within three flavours is given in A
 \subsection[Massive neutrinos in matter]{Massive neutrinos in matter\footnotemark}
 \label{subsec:nu-in-matter}
 \footnotetext{All of what is reported in this section is elaborated from \cite{neutrinosPDG}, unless otherwise specified.}
-In Sec.~\ref{subsec:oscillation-experiments} we mentioned that the flavour oscillation of solar neutrinos can have two different explanations: they could oscillate in vacuum or they can oscillate directly within the Sun itself through a matter-mediated process known as the \ac{MSW} effect. 
+In Section~\ref{subsec:oscillation-experiments} we mentioned that the flavour conversion of solar neutrinos can have two different explanations: oscillations in vacuum on their way to the Earth, or flavour conversion within the Sun itself through a matter-mediated process known as the \ac{MSW} effect.
 %\footnote{The complete quantum mechanical derivation of this effect, starting from the \ac{SM} fermionic currents and phase-space averages, is detailed in Appendix \ref{app:MSW_derivation}.}.
 
 When neutrinos propagate through a dense medium like the solar interior, they interact with the surrounding particles (electrons, protons, and neutrons) via elastic, coherent forward scatterings\footnote{The cross-section of incoherent scatterings is of the order $\sigma \sim \mathcal{O}(10^{-43}\text{cm}^2)$. Therefore, such processes are negligible.}. These coherent interactions macroscopically act as an effective refractive index, which alters the propagation states of the neutrinos.
@@ -341,7 +341,13 @@ However, ordinary matter is rich in electrons but completely lacks muons and tau
 \end{equation}
 where $G_F$ is the Fermi coupling constant and $n_e$ is the electron number density of the medium. For antineutrinos, this potential flips its sign ($V_C = -\sqrt{2} G_F n_e$).
 
-This effective potential modifies the Hamiltonian of the system. As a result, both the mass eigenstates and the mixing angles in matter become dependent on the local electron density $n_e$. For a medium with a continuously varying density gradient, such as the Sun, a neutrino born as a $\nu_e$ in the extremely dense solar core can undergo an adiabatic, resonant transition to another flavour as it travels outwards. This MSW resonance can lead to a near-total flavour conversion even if the vacuum mixing angle is relatively small, elegantly explaining the severe deficit of solar electron neutrinos observed by early experiments on Earth.
+This effective potential modifies the Hamiltonian of the system. As a result, both the mass eigenstates and the mixing angles in matter become dependent on the local electron density $n_e$. In the Sun, the effect depends on the neutrino energy. In the two-flavour approximation the mixing angle in matter is
+\begin{equation}
+    \label{eq:matter-angle}
+    \tan 2\theta_m = \frac{\sin 2\theta_{12}}{\cos 2\theta_{12} - A/\Delta m^2_{21}},
+    \qquad A = 2\sqrt{2}\, G_F\, n_e\, E,
+\end{equation}
+and in the solar core matter effects dominate above $E_\text{crit} \simeq \Delta m^2_{21}\cos 2\theta_{12}/(2V_C) \simeq 2$~MeV. High-energy ${}^8$B neutrinos are produced almost as $\nu_{2m}$, the heavier eigenstate of the Hamiltonian in matter, which reduces to $\nu_2$ for $n_e \to 0$, and, propagating adiabatically, leave the Sun as the vacuum eigenstate $\nu_2$, so that $P_{ee} \simeq \sin^2\theta_{12} \simeq 0.3$, in agreement with Homestake and SNO. Low-energy \ac{pp} neutrinos are instead unaffected by matter and undergo averaged vacuum oscillations, $P_{ee} \simeq 1 - \tfrac{1}{2}\sin^2 2\theta_{12} \simeq 0.55$, in agreement with the gallium experiments. This is the large mixing angle (LMA) solution, the only one that survived SNO and KamLAND; the latter measured the same parameters with reactor antineutrinos, for which matter effects are negligible.
 
 %-----------------------------------------------------------
 %------------------- NEUTRINO MASSES -----------------------
@@ -390,7 +396,7 @@ However the absolute mass scale of the neutrinos is not defined and two mass hie
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.7\textwidth]{figures/mass-hierarchy.jpg}
-    \caption{Representation of the two possible mass hierarchies: normal ordering on the left and inverted ordering on the right. 
+    \caption{Representation of the two possible mass orderings: normal ordering on the left and inverted ordering on the right. 
     The Figure specifies that $\Delta m^2_{21}$ is obtained via solar neutrinos measurements while $\Delta m^2_{32}$ 
     is given by atmospheric neutrinos experiments. Different colours refer to different neutrino flavours: red for the electron flavour, 
     blue for the muon one and green for the tau, respectively. Figure taken from \cite{fermilab-mass-ordering}.}
