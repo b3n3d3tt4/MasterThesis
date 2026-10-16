@@ -27,16 +27,16 @@ During both training phases the training set is processed in mini-batches of $B 
 
 
 \subsection{Architecure} 
-The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{A significant part of the algorithm was made available by the authors her: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
+The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{A significant part of the algorithm was made available by the authors here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
 
 \subsubsection{Temporal Autoencoder class}
-The \ac{TAE} is an Autoencoder for which the latent space is given by a compacted time series which ideally represents the input and from which the latter can be reconstructed with the decoder.
+The \ac{TAE} is an autoencoder for which the latent space is given by a compacted time series which ideally represents the input and from which the latter can be reconstructed with the decoder.
 The workflow of the \ac{TAE} follows this scheme:
 \begin{itemize}
     \item \textbf{input waveforms}\\
     Input waveforms are current signals processed as explained above in Sec. \ref{sec:data-cleaning} with dimension ($1~\times~200$). The only difference with respect to the \ac{VAE} input is that in this case no \ac{SSE}/\ac{MSE} cut has been performed and the whole energy spectrum between $1550$ keV and $1650$ keV has been considered. 
     \item \textbf{temporal encoder}\\
-    The temporal encoder is constructed as a sequential module \cite{torchSequential}
+    The temporal encoder is constructed as a \texttt{Sequential} module \cite{torchSequential}:
     \begin{enumerate}
         \item a 1D convolutional (\texttt{Conv1d}) layer with kernel size = 10, stride = 1 and padding = kernel size - 1 = 10 - 1 = 9\footnote{This is the default configuration of padding when stride = 1. This padding value will be the same in all convolutional layers of this class.}, mapping the ($1~\times~200$) input into a tensor with dimensions ($50~\times~200$);
         \item a LeakyReLU activation function, already detailed in Eq. \ref{eq:leakyReLU}, with $\alpha = 0.1$;
@@ -47,7 +47,7 @@ The workflow of the \ac{TAE} follows this scheme:
         \item a LeakyReLU activation function with $\alpha = 0.1$.
     \end{enumerate}
     \item \textbf{latent space}\\
-    Differently respect to the \ac{VAE} case, the latent space is a compact time series with dimensions ($1~\times~20$), i.e. the output of the last layer of the encoder module. This representation maintains the sequential nature of input data but extract significant features that are indeed the output of both the decoder module and the clustering layer that will be discussed further in this Section.
+    Differently respect to the \ac{VAE} case, the latent space is a compact time series with dimensions ($1~\times~20$), i.e. the output of the last layer of the encoder module. This representation maintains the sequential nature of input data but extract significant features that are indeed the input of both the decoder module and the clustering layer that will be discussed further in this Section.
     \item \textbf{temporal decoder}\\
     The decoder part tries to reconstruct the original waveform, starting from the latent-space small time series. In \cite{DTC} the decoder constited of a upsampling layer followed by a deconvolutional one. After preliminary trials where a very bad reconstruction was observed the following architecture has been preferred:
     \begin{enumerate}
@@ -77,7 +77,7 @@ Although the original loss function used in \cite{DTC} was a Mean Square Error l
 
 \subsubsection{Time Series Clustering class}
 \label{subsubsec:TSC-class}
-The \ac{TSC} class only consists of a tensorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter has dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The cluster centroids tensor is first filled using the Xavier uniform initialisation \cite{Xavier}, which only acts as a placeholder: any non-constant initialisation breaks the symmetry between the centroids, whereas identical centroids would receive identical assignments ($q_{ij} = 1/k$) and zero gradients, and could never separate. Before the joint training, these values are overwritten by the centroids obtained by running KMeans on the latent representations of the training set, produced by the pre-trained \ac{TAE}\footnote{The original \ac{DTC} work uses hierarchical clustering with complete linkage for this step.}.
+The \ac{TSC} class only consists of a tensorial object in the \texttt{Parameter} PyTorch class which represents the centroids for each class. Therefore this tensor parameter has dimensions (\texttt{clusters} $\times$ \texttt{length} $\times$ \texttt{features}) where the number of clusters is to be defined depending on how many different physical clusters we want to individuate and input length and channels are the ones of the latent representation of our input waveforms in the \ac{TAE}, in our case (\texttt{length} $\times$ \texttt{features}) = ($20~\times~1$). The cluster centroids tensor is first filled using the Xavier uniform initialisation \cite{Xavier}, which only acts as a placeholder: any non-constant initialisation breaks the symmetry between the centroids, whereas identical centroids would receive identical assignments ($q_{ij} = 1/k$) and zero gradients, and could never separate. Before the joint training, these values are overwritten by the centroids obtained by running K-Means on the latent representations of the training set, produced by the pre-trained \ac{TAE}\footnote{The original \ac{DTC} work uses hierarchical clustering with complete linkage for this step.}.
  The workflow of this class includes different steps:
 \begin{itemize}
     \item \textbf{input acquisition}\\
@@ -159,10 +159,21 @@ Finally, the loss is computed as a \ac{KL} divergence, similar to the one used i
 
 Being \texttt{Parameter} objects, the centroids $w_j$ are optimised together with the weights of the \ac{TAE}, starting from the K-Means initialisation, by gradient descent on the total loss $L_\text{DTC}$ that will be shown soon in Eq. \ref{eq:total_dtc_loss}. However, seeing that $L_\text{TAE}$ does not depend on the centroids, they are moved only by the clustering term. For the Euclidean distance (Eq. \ref{eq:EUC-distance}) the gradients are~\cite{KL-backpropagation}:
 
-\begin{align}
-    \frac{\partial L_{KL}}{\partial w_j} &= -\frac{\alpha+1}{\alpha B} \sum_{i=1}^{B} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-centroids} \\
-    \frac{\partial L_{KL}}{\partial z_i} &= \frac{\alpha+1}{\alpha B} \sum_{j=1}^{K} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-latent}
-\end{align}
+% \begin{align}
+%     \frac{\partial L_{KL}}{\partial w_j} &= -\frac{\alpha+1}{\alpha B} \sum_{i=1}^{B} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-centroids} \\
+%     \frac{\partial L_{KL}}{\partial z_i} &= \frac{\alpha+1}{\alpha B} \sum_{j=1}^{K} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-latent}
+% \end{align}
+
+\begin{minipage}{0.5\textwidth}
+  \begin{equation} \label{eq:derivata_w}
+    \frac{\partial L_{KL}}{\partial w_j} = -\frac{\alpha + 1}{\alpha B} \sum_{i=1}^{B} \left( 1 + \frac{d_{ij}^2}{\alpha} \right)^{-1} (p_{ij} - q_{ij})(z_i - w_j)
+  \end{equation}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+  \begin{equation} \label{eq:derivata_z}
+    \frac{\partial L_{KL}}{\partial z_i} = \frac{\alpha + 1}{\alpha B} \sum_{j=1}^{K} \left( 1 + \frac{d_{ij}^2}{\alpha} \right)^{-1} (p_{ij} - q_{ij})(z_i - w_j)
+  \end{equation}
+\end{minipage}
 
 Eq.~\ref{eq:grad-centroids} has an intuitive interpretation: if the target assigns sample $i$ to cluster $j$ with more confidence than the model ($p_{ij} > q_{ij}$), the gradient step moves the centroid $w_j$ towards $z_i$, while if $p_{ij} < q_{ij}$ it moves it away. The factor $(1 + d_{ij}^2/\alpha)^{-1}$ gives more weight to the samples that are already close to the centroid. At the same time, Eq.~\ref{eq:grad-latent} is back-propagated through the encoder, so that the latent representation $z_i$ of each sample is pulled towards the centroid of the cluster it most likely belongs to: the clustering reshapes the latent space itself, while $L_\text{TAE}$ keeps it faithful to the input waveforms. For the Complexity-Invariant Distance and the Autocorrelation Function the gradients follow from the same chain rule and are computed by automatic differentiation.
 
@@ -179,7 +190,7 @@ The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is show
 \label{subsec:train-test-DTC}
 The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. 
 
-\textbf{\textit{Pretrain}}: this phase is used in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts and it is initialised to the noise of the training waveforms, i.e. the median of the standard deviation of their first 20 time points, so that the \ac{NLL} starts from the correct order of magnitude. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the $L_\text{TAE}$ loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to reconstruct waveforms and it is not overfitting training data.
+\textbf{\textit{Pretrain}}: this phase is exploited in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts and it is initialised to the noise of the training waveforms, i.e. the median of the standard deviation of their first 20 time points, so that the \ac{NLL} starts from the correct order of magnitude. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the $L_\text{TAE}$ loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to reconstruct waveforms and it is not overfitting training data.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/pretrain_reconstruction.pdf}
@@ -205,7 +216,7 @@ Soon after this part is completed, the $\sigma$ parameter is fixed to the learne
 The appropriate number of clusters $K$ and the value of $\gamma$ to use in the final training phase that returns the \ac{DTC} models for the three distance metrics need to be determined. For this reason two scans over $\gamma$ and over the number of clusters have been carried out exploiting the simplest metric function, i.e. the Euclidean Distance. These 8 training have been performed with a number of training epochs $N_\text{TRAIN}=20$.
 
 \subsubsection{\texorpdfstring{$\bm{\gamma}$}{gamma} scan}
-In \cite{DTC} the reconstruction and clustering losses are simply summed, while in the reference implementation of \ac{DTC} \cite{DTC-code} they are weighted by a parameter $\gamma$, whose default value is 1. This parameter has been introduced in deep clustering methods by Guo et al. \textit{"Improved Deep Embedded Clustering with Local Structure Preservation"} \cite{IDEC}, in order to give more or less importance to the clustering term with respect to the reconstruction one depending on the choice of $\gamma$: too small values would favour a better reconstruction over a proper clustering while too big values would worsen the reconstruction in order to lower the clustering loss.
+In \cite{DTC} the reconstruction and clustering losses are simply summed, while in the reference implementation of \ac{DTC} they are weighted by a parameter $\gamma$, whose default value is 1. This parameter has been introduced in deep clustering methods by Guo et al. \textit{"Improved Deep Embedded Clustering with Local Structure Preservation"} \cite{IDEC}, in order to give more or less importance to the clustering term with respect to the reconstruction one depending on the choice of $\gamma$: too small values would favour a better reconstruction over a proper clustering while too big values would worsen the reconstruction in order to lower the clustering loss.
 In this work $\gamma$ has to be much larger than 1, because of the different scales of the two terms. The reconstruction loss of Eq.~\ref{eq:tae-loss} is a \ac{NLL} summed over the $T = 200$ samples of each waveform, with the squared residuals divided by $\sigma^2$: its value is of the order of hundreds of nats per waveform, and since $\sigma$ is of the order of the noise of the waveforms, even small changes in the reconstruction produce large changes in $L_\text{TAE}$. The clustering loss of Eq.~\ref{eq:KL-loss-TSC}, instead, is a divergence between two distributions over $K = 2$ clusters and is of the order of $10^{-1}$ per waveform. With $\gamma$ of order 1, the clustering term would therefore have a negligible weight in the total loss, and the training would leave both the latent space and the K-Means assignments essentially unchanged. Moreover, since the \ac{NLL} is defined up to an additive constant (it depends on the units of the current), its absolute value is not meaningful: the relevant comparison is between $\gamma L_\text{TSC}$ and the variations of $L_\text{TAE}$ during the training, which are of the order of tens of nats. The value of $\gamma$ has thus been chosen with the scan described in the following.
 
 Four trains with $\gamma = 10, 100, 1000, 10000$ at a fixed number of clusters $K=2$ have been performed. 
