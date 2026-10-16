@@ -1,8 +1,11 @@
 \chapter{\texorpdfstring{\acs{DTC}}{DTC} scans over $\gamma$ and $K$}
 \label{app:DTC-scans}
+As introduced in Sec. \ref{subsec:train-test-DTC}, this Appendix summarise the reconstruction ability of the \ac{TAE} and the evolution of $L_\text{TAE}$ and $L_\text{TSC}$ through epochs of the training performed to determine the appropriate value of $\gamma$ weighting the two losses and the number of clusters $K$ to be considered in the \textit{train} phase of the \ac{DTC}.
 
 \section{\texorpdfstring{$\bm{\gamma}$}{gamma} scan results}
-As introduced in Sec. \ref{subsec:train-test-DTC}, the Fig. \ref{fig:scan-reconstruction_and_losses-gamma10}, \ref{fig:scan-reconstruction_and_losses-gamma100}, \ref{fig:scan-reconstruction_and_losses-gamma1000} and \ref{fig:scan-reconstruction_and_losses-gamma10000} show the reconstruction ability and the losses trend for $\gamma= 10, 100, 1000$ and $10000$ respectively.
+Figures \ref{fig:scan-reconstruction_and_losses-gamma10}, \ref{fig:scan-reconstruction_and_losses-gamma100}, \ref{fig:scan-reconstruction_and_losses-gamma1000} and \ref{fig:scan-reconstruction_and_losses-gamma10000} show the reconstruction ability and the losses trend for $\gamma= 10, 100, 1000$ and $10000$ respectively. 
+
+On top of the considerations already explained in the main text, $\gamma=1000$ is the only one for which both the reconstruction loss and the clustering one decreases with increasing epoch and at the same time the number of events changing clusters after epoch 3 is less than 5\% of the training set. 
 
 \begin{figure}[H]
     \centering
@@ -43,7 +46,7 @@ As introduced in Sec. \ref{subsec:train-test-DTC}, the Fig. \ref{fig:scan-recons
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_2cl_training_reconstruction.pdf}\\
     \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_2cl_training_history.pdf}
-    `caption{Training reconstruction and training losses for $K=2$ with Euclidean Distance metric.}
+    \caption{Training reconstruction and training losses for $K=2$ with Euclidean Distance metric.}
     \label{fig:scan-reconstruction_and_losses-K2}
 \end{figure}
 
