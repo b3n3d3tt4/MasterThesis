@@ -165,12 +165,12 @@ Being \texttt{Parameter} objects, the centroids $w_j$ are optimised together wit
 % \end{align}
 
 \begin{minipage}{0.5\textwidth}
-  \begin{equation} \label{eq:derivata_w}
+  \begin{equation} \label{eq:grad-centroids}
     \frac{\partial L_{KL}}{\partial w_j} = -\frac{\alpha + 1}{\alpha B} \sum_{i=1}^{B} \left( 1 + \frac{d_{ij}^2}{\alpha} \right)^{-1} (p_{ij} - q_{ij})(z_i - w_j)
   \end{equation}
 \end{minipage}%
 \begin{minipage}{0.5\textwidth}
-  \begin{equation} \label{eq:derivata_z}
+  \begin{equation} \label{eq:grad-latent}
     \frac{\partial L_{KL}}{\partial z_i} = \frac{\alpha + 1}{\alpha B} \sum_{j=1}^{K} \left( 1 + \frac{d_{ij}^2}{\alpha} \right)^{-1} (p_{ij} - q_{ij})(z_i - w_j)
   \end{equation}
 \end{minipage}
