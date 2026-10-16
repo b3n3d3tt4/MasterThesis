@@ -2,7 +2,7 @@
 \label{sec:DTC}
 As already mentioned, the main problem that affects the \ac{AE} method in the \ac{SSE}-\ac{MSE} discrimination is related to the fact that a complex waveform with its own evolution in time is treated and calssified on the basis of a single number. This number should in principle be a simple summary of the behaviour of the signal, but actually does not account for the time evolution of it. This problem is still present in a certain way also in the \ac{VAE}-based classifier: even though we use 8 features (and not only one), these are striclty correlated with single physical quantities that could ideally be computed by hand. Therefore what is really needed is a deep learning model that collapses all dimensions but the temporal one. On top of that, a features extraction aimed at a classification task separates the two goals of getting a good reconstruction of the waveform, which means having learnt important features of it, from the clustering problem.
 
-Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called Deep Temporal Clustering, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means algorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. The power of this network lays in two specific aspects: first the fact that the time dimension is preserved also in the latent representation and second the fact that exploiting a combined optimisation of the two branches of the complexive model, i.e. the autoencoding and the clustering, spatio-temporal features are extracted in order to optimise the reconstruction \textit{and} the clustering simoultaneously. 
+Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called Deep Temporal Clustering, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means algorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. The power of this network lays in two specific aspects: first the fact that the time dimension is preserved also in the latent representation and second the fact that exploiting a combined optimisation of the two branches of the overall model, i.e. the autoencoding and the clustering, spatio-temporal features are extracted in order to optimise the reconstruction \textit{and} the clustering simoultaneously. 
 
 \subsection{Data selection}
 \label{subsec:data-selection-DTC}
@@ -27,7 +27,7 @@ During both training phases the training set is processed in mini-batches of $B 
 
 
 \subsection{Architecure} 
-The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{The full code of the authors is available here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
+The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{A significant part of the algorithm was made available by the authors her: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
 
 \subsubsection{Temporal Autoencoder class}
 The \ac{TAE} is an Autoencoder for which the latent space is given by a compacted time series which ideally represents the input and from which the latter can be reconstructed with the decoder.
@@ -102,12 +102,12 @@ The \ac{TSC} class only consists of a tensorial object in the \texttt{Parameter}
             d_\text{CID}(z_i, w_j) = d_\text{EUC}(z_i, w_j) \cdot \frac{\max[\mathrm{CE}(z_i), \mathrm{CE}(w_j)]}{\min[\mathrm{CE}(z_i), \mathrm{CE}(w_j)]}
         \end{equation}
 
-        \item \textbf{Auto-Correlation Function (ACF)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and compares the latent sequence and the centroid through a weighted Euclidean distance between their autocorrelation coefficients. First, both sequences are converted into their sample autocorrelation functions $\varrho_{z_i}$ and $\varrho_{w_j}$ (Eq. \ref{eq:ACF}, written for $z_i$ and identical for $w_j$), computed for all the lags $k = 0, \dots, T-1$:
+        \item \textbf{Auto-Correlation Function (ACF)}: this metric was introduced by Galeano \& Pe\~{n}a \cite{Galeano} and compares the latent sequence and the centroid through a weighted Euclidean distance between their autocorrelation coefficients. First, both sequences are converted into their sample autocorrelation functions $\varrho_{z_i}$ and $\varrho_{w_j}$ (Eq. \ref{eq:ACF}, written for $z_i$ and identical for $w_j$), computed for all the lags $u = 0, \dots, T-1$:
         \begin{equation}
             \label{eq:ACF}
-            \varrho_{z_i}(k) = \frac{\sum_{t=1}^{T-k} (z_{i,t} - \bar{z}_i)(z_{i,t+k} - \bar{z}_i)}{\sum_{t=1}^{T} (z_{i,t} - \bar{z}_i)^2}
+            \varrho_{z_i}(u) = \frac{\sum_{t=1}^{T-u} (z_{i,t} - \bar{z}_i)(z_{i,t+u} - \bar{z}_i)}{\sum_{t=1}^{T} (z_{i,t} - \bar{z}_i)^2}
         \end{equation}
-        where $\bar{z}_i$ is the mean of the sequence. Since the mean is subtracted and the result is divided by the variance, $\varrho_{z_i}$ is invariant under any rescaling and shift of the latent sequence: it keeps only its temporal correlation structure, i.e. the width of the peaks and the separation between them, which shows up as a secondary bump of $\varrho_{z_i}$ at the corresponding lag. Second, a decaying diagonal matrix $\boldsymbol{\Omega}$ (Eq. \ref{eq:Omega-matrix}, with $m = T$) gives more weight to the lower lags: the coefficient at lag $k$ is estimated from only $T-k$ pairs of points, so the coefficients at high lags are the least reliable and are progressively suppressed.
+        where $\bar{z}_i$ is the mean of the sequence. Since the mean is subtracted and the result is divided by the variance, $\varrho_{z_i}$ is invariant under any rescaling and shift of the latent sequence: it keeps only its temporal correlation structure, i.e. the width of the peaks and the separation between them, which shows up as a secondary bump of $\varrho_{z_i}$ at the corresponding lag. Second, a decaying diagonal matrix $\boldsymbol{\Omega}$ (Eq. \ref{eq:Omega-matrix}, with $m = T$) gives more weight to the lower lags: the coefficient at lag $u$ is estimated from only $T-u$ pairs of points, so the coefficients at high lags are the least reliable and are progressively suppressed.
         \begin{equation}
             \label{eq:Omega-matrix}
             \begin{aligned}
@@ -117,7 +117,7 @@ The \ac{TSC} class only consists of a tensorial object in the \texttt{Parameter}
                 \vdots & \vdots & \ddots & \vdots \\ 
                 0 & 0 & \cdots & \omega_{m-1} 
                 \end{bmatrix} \\[1ex]
-                \omega_k &= 1 - \frac{k}{m-1} \quad \text{for } k = 0, 1, \dots, m-1
+                \omega_u &= 1 - \frac{u}{m-1} \quad \text{for } u = 0, 1, \dots, m-1
             \end{aligned}
         \end{equation}
         Finally, the differences between the two autocorrelation functions are quantified as in Eq. \ref{eq:AC-distance}. Note that $\varrho(0) = 1$ for every sequence and $\omega_{m-1} = 0$, so neither the first nor the last lag contributes to the distance.
@@ -128,46 +128,43 @@ The \ac{TSC} class only consists of a tensorial object in the \texttt{Parameter}
     \end{itemize}
 
     \item \textbf{probability calculation}:\\
-    The probability of belonging to a given cluster $j$ is based on a t-Student distribution kernel. Specifically, the similarity between the latent representation of a sample $x_i$ and a cluster centroid $w_j$ is evaluated using a Student's t-distribution with $\alpha$ degrees of freedom as a kernel. While the theoretical probability density function of the t-distribution includes a normalization constant defined by the Gamma function $\Gamma(\cdot)$, this term cancels out during the cluster assignment phase. In fact, to obtain valid soft assignments (i.e., probabilities that sum to 1), the score of cluster $j$ is normalized by the sum of the scores over all $k$ clusters \cite{DTC}. Since the degrees of freedom parameter $\alpha$ is a global constant across all clusters, the $\Gamma$ term simplifies algebraically, yielding the final probability $q_{ij}$ defined in Eq. \ref{eq:q-prob}:
+    The probability of belonging to a given cluster $j$ is based on a t-Student distribution kernel. Specifically, the similarity between the latent representation $z_i$ of a sample and a cluster centroid $w_j$ is evaluated using a Student's t-distribution with $\alpha$ degrees of freedom as a kernel. While the theoretical probability density function of the t-distribution includes a normalization constant defined by the Gamma function $\Gamma(\cdot)$, this term cancels out during the cluster assignment phase. In fact, to obtain valid soft assignments (i.e., probabilities that sum to 1), the score of cluster $j$ is normalized by the sum of the scores over all $K$ clusters. Since the degrees of freedom parameter $\alpha$ is a global constant across all clusters, the $\Gamma$ term simplifies algebraically, yielding the final probability $q_{ij}$ defined in Eq. \ref{eq:q-prob}:
     \begin{equation}
         \label{eq:q-prob}
         q_{ij} = \frac{\left( 1 + \frac{d(z_i, w_j)^2}{\alpha} \right)^{-\frac{\alpha+1}{2}}}{\sum_{k=1}^{K} \left( 1 + \frac{d(z_i, w_k)^2}{\alpha} \right)^{-\frac{\alpha+1}{2}}}
     \end{equation}
-    where $d(x_i, w_j)$ is the distance metric chosen among the ones previously described, and $\alpha$ controls the heaviness of the distribution tails. From an architectural perspective, the heavy tails of the t-Student distribution are preferred over a standard Gaussian kernel because they prevent vanishing gradients for samples located far from the centroids, resulting in a more robust training process.
+    where $d(z_i, w_j)$ is the distance metric chosen among the ones previously described, and $\alpha$ controls the heaviness of the distribution tails. In this work $\alpha = 1$, as in \cite{DTC}, so that the kernel is a Cauchy distribution, whose tails are much heavier than those of a Gaussian. This prevents vanishing gradients for samples located far from the centroids, resulting in a more robust training process.
 
     \item \textbf{target distribution definition}:\\
-    Being the \ac{DTC} a fully unsupervised method, a self-training mechanism is employed: since the model has no target labels, a target distribution is built from the $q_{ij}$ probabilities themselves, following \cite{DTC}. Its definition is given in Eq.~\ref{eq:target-distribution-p}: squaring $q_{ij}$ amplifies the most confident assignments, while $f_j$ (Eq.~\ref{eq:frequency-j}) is the soft frequency of cluster $j$, i.e. the sum of the assignment probabilities over the $N_\text{train}$ waveforms of the whole training set, so that dividing by it penalises very large clusters. The ratio $q^{2}_{ij}/f_j$ is then normalised over all the $K$ clusters.
+    Being the \ac{DTC} a fully unsupervised method, a self-training mechanism is employed: since the model has no target labels, a target distribution is built from the $q_{ij}$ probabilities themselves. Its definition is given in Eq.~\ref{eq:target-distribution-p}: squaring $q_{ij}$ amplifies the most confident assignments, while $f_j$ (Eq.~\ref{eq:frequency-j}) is the soft frequency of cluster $j$, i.e. the sum of the assignment probabilities over the $B$ waveforms of the current mini-batch, so that dividing by it penalises very large clusters. The ratio $q^{2}_{ij}/f_j$ is then normalised over all the $K$ clusters.
     \begin{equation}
         \label{eq:target-distribution-p}
         p_{ij} = \frac{q^{2}_{ij} / f_j}{\sum_{k=1}^{K} q^{2}_{ik} / f_k}
     \end{equation}
     \begin{equation}
         \label{eq:frequency-j}
-        f_j = \sum_{i=1}^{N_\text{train}} q_{ij}
+        f_j = \sum_{i=1}^{B} q_{ij}
     \end{equation}
-    The target $p_{ij}$ is computed for every waveform of the training set at the beginning of each epoch, with the network weights frozen, and it is kept fixed for the whole epoch, i.e. during all the weight updates of that epoch (Sec.~\ref{subsec:data-selection-DTC})\footnote{In \cite{DTC} the target distribution is recomputed every $T$ iterations, with $T$ chosen depending on the dataset; here it is recomputed once per epoch.}. The $q_{ij}$ appearing in Eqs.~\ref{eq:target-distribution-p} and \ref{eq:frequency-j} are therefore the assignments at the beginning of the epoch, not the ones of the current mini-batch.
+    The target is recomputed at every weight update (Sec.~\ref{subsec:data-selection-DTC}), as prescribed in \cite{DTC}\footnote{In Eq.~5 of \cite{DTC} $f_j$ is written as a sum over the whole dataset, but the target distribution is stated to be updated at every mini-batch update, which is the scheme adopted here.}.
 
 \end{itemize}
 
 
-
-Finally, the loss is computed as a \ac{KL} divergence, similar to the one used in Sec.~\ref{sec:vae-architeture}, averaged over the $B$ samples of a batch:
+Finally, the loss is computed as a \ac{KL} divergence, similar to the one used in Sec.~\ref{sec:vae-architeture}, averaged over the $B$ samples of a batch. The target distribution is treated as a constant, so that no gradient flows through it. Minimising Eq.~\ref{eq:KL-loss-TSC} therefore pushes $q_{ij}$ towards a sharper version of itself. Since both $q^{2}_{ij}$ and $f_j$ are recomputed at every update, the two distributions never simply coincide: as the assignments become more confident, so does the target, and the training converges towards high-confidence assignments, while the penalty on large clusters reacts immediately to the growth of a cluster, which prevents a single cluster from absorbing most of the events.
 
 \begin{equation}
     \label{eq:KL-loss-TSC}
-    L_{KL} = \frac{1}{B} \sum_{i=1}^{B} \sum_{j=1}^{K} p_{ij} \log \frac{p_{ij}}{q_{ij}}
+    L_\text{TSC} = \frac{1}{B} \sum_{i=1}^{B} \sum_{j=1}^{K} p_{ij} \log \frac{p_{ij}}{q_{ij}}
 \end{equation}
 
-The target distribution is treated as a constant, so that no gradient flows through it. Within an epoch, minimising Eq.~\ref{eq:KL-loss-TSC} pushes the current assignments $q_{ij}$ towards the fixed target $p_{ij}$, i.e. towards a sharper and size-balanced version of the assignments at the beginning of the epoch. At the next epoch the target is recomputed from the updated assignments, so that it becomes progressively sharper and the training converges towards high-confidence assignments. Keeping the target fixed between two updates is essential: if $p_{ij}$ were recomputed from the current $q_{ij}$ at every weight update, it would always be sharper than the current assignments and would keep moving away with them, while the cluster-size penalty $f_j$ would no longer act as a stable reference.
-
-Being \texttt{Parameter} objects, the centroids $w_j$ are optimised together with the weights of the \ac{TAE}, starting from the K-Means initialisation, by gradient descent on the total loss $L = L_\text{TAE} + \gamma \cdot L_{KL}$. However, seeing that $L_\text{TAE}$ does not depend on the centroids, they are moved only by the clustering term. For the Euclidean distance, $d_{ij}^2 = \lVert z_i - w_j \rVert^2$, the gradients are~\cite{KL-backpropagation}:
+Being \texttt{Parameter} objects, the centroids $w_j$ are optimised together with the weights of the \ac{TAE}, starting from the K-Means initialisation, by gradient descent on the total loss $L_\text{DTC}$ that will be shown soon in Eq. \ref{eq:total_dtc_loss}. However, seeing that $L_\text{TAE}$ does not depend on the centroids, they are moved only by the clustering term. For the Euclidean distance (Eq. \ref{eq:EUC-distance}) the gradients are~\cite{KL-backpropagation}:
 
 \begin{align}
     \frac{\partial L_{KL}}{\partial w_j} &= -\frac{\alpha+1}{\alpha B} \sum_{i=1}^{B} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-centroids} \\
     \frac{\partial L_{KL}}{\partial z_i} &= \frac{\alpha+1}{\alpha B} \sum_{j=1}^{K} \left(1 + \frac{d_{ij}^2}{\alpha}\right)^{-1} (p_{ij} - q_{ij})\,(z_i - w_j) \label{eq:grad-latent}
 \end{align}
 
-Eq.~\ref{eq:grad-centroids} has an intuitive interpretation: if the target assigns sample $i$ to cluster $j$ with more confidence than the model ($p_{ij} > q_{ij}$), the gradient step moves the centroid $w_j$ towards $z_i$, while if $p_{ij} < q_{ij}$ it moves it away. The factor $(1 + d_{ij}^2/\alpha)^{-1}$ gives more weight to the samples that are already close to the centroid. At the same time, Eq.~\ref{eq:grad-latent} is back-propagated through the encoder, so that the latent representation $z_i$ of each sample is pulled towards the centroid of the cluster it most likely belongs to: the clustering reshapes the latent space itself, while $L_{NLL}$ keeps it faithful to the input waveforms. For the Complexity-Invariant Distance and the Autocorrelation Function the gradients follow from the same chain rule and are computed by automatic differentiation.
+Eq.~\ref{eq:grad-centroids} has an intuitive interpretation: if the target assigns sample $i$ to cluster $j$ with more confidence than the model ($p_{ij} > q_{ij}$), the gradient step moves the centroid $w_j$ towards $z_i$, while if $p_{ij} < q_{ij}$ it moves it away. The factor $(1 + d_{ij}^2/\alpha)^{-1}$ gives more weight to the samples that are already close to the centroid. At the same time, Eq.~\ref{eq:grad-latent} is back-propagated through the encoder, so that the latent representation $z_i$ of each sample is pulled towards the centroid of the cluster it most likely belongs to: the clustering reshapes the latent space itself, while $L_\text{TAE}$ keeps it faithful to the input waveforms. For the Complexity-Invariant Distance and the Autocorrelation Function the gradients follow from the same chain rule and are computed by automatic differentiation.
 
 
 The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is shown in Fig.~\ref{fig:tae_and_tsc-architecure}.
@@ -179,9 +176,10 @@ The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is show
 \end{figure}
 
 \subsection{Training and testing}
+\label{subsec:train-test-DTC}
 The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. 
 
-\textbf{\textit{Pretrain}}: this phase is used in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the \ac{NLL} loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to recontruct waveforms and it is not overfitting training data.
+\textbf{\textit{Pretrain}}: this phase is used in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts and it is initialised to the noise of the training waveforms, i.e. the median of the standard deviation of their first 20 time points, so that the \ac{NLL} starts from the correct order of magnitude. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the $L_\text{TAE}$ loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to reconstruct waveforms and it is not overfitting training data.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/pretrain_reconstruction.pdf}
@@ -196,27 +194,60 @@ The \ac{DTC} training phase is divided in two different parts: the \textit{pretr
     \label{fig:pretrain-loss}
 \end{figure}
 
-Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a K-Means algorithm on the latent representation of the training set. It is from said centroids that the \ac{TSC} part of the mdoel starts to cluster waveforms.
+Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a K-Means algorithm on the latent representation of the training set. It is from said centroids that the \ac{TSC} part of the model starts to cluster waveforms.
 
-\textbf{\textit{Train}}: in the second phase of the \ac{DTC} training, the proper \textit{training} phase, both the \ac{TAE} and the \ac{TSC} are used. As a consequence, the complexive loss function includes $L_\text{TAE}$ and $L_\text{TSC}$, weighted by a specific tunable parameter $\gamma$ in order to have the total loss of Eq. \ref{eq:total_dtc_loss}. Therefore the backpropagation acts both on the reconstruction of input waveforms and on the clustering of them simultaneously.
+\textbf{\textit{Train}}: in the second phase of the \ac{DTC} training, the proper \textit{training} phase, both the \ac{TAE} and the \ac{TSC} are used. As a consequence, the overall loss function includes $L_\text{TAE}$ and $L_\text{TSC}$, weighted by a specific tunable parameter $\gamma$ that weights the two contributions of the loss, in order to have the total loss of Eq. \ref{eq:total_dtc_loss}. Therefore the backpropagation acts both on the reconstruction of input waveforms and on the clustering of them simultaneously.
 \begin{equation}
     \label{eq:total_dtc_loss}
     L_\text{DTC} = L_\text{TAE} + \gamma \cdot L_\text{TSC}
 \end{equation}
 
-The results of the complexive training part with $\text{N}_\text{TRAIN} = 20$ epochs and $\gamma = 1000$ are shown in Fig. \ref{fig:training-reconstruction-DTC}and \ref{fig:training-clustering-DTC} for the reconstruction and clustering part respectively and for all of the abovementioned distance metrics.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
-    \caption{\colorbox{yellow}{PLACEHOLDER}}
-    \label{fig:training-reconstruction-DTC}
-\end{figure}
+The appropriate number of clusters $K$ and the value of $\gamma$ to use in the final training phase that returns the \ac{DTC} models for the three distance metrics need to be determined. For this reason two scans over $\gamma$ and over the number of clusters have been carried out exploiting the simplest metric function, i.e. the Euclidean Distance. These 8 training have been performed with a number of training epochs $N_\text{TRAIN}=20$.
+
+\subsubsection{\texorpdfstring{$\bm{\gamma}$}{gamma} scan}
+In \cite{DTC} the reconstruction and clustering losses are simply summed, while in the reference implementation of \ac{DTC} \cite{DTC-code} they are weighted by a parameter $\gamma$, whose default value is 1. This parameter has been introduced in deep clustering methods by Guo et al. \textit{"Improved Deep Embedded Clustering with Local Structure Preservation"} \cite{IDEC}, in order to give more or less importance to the clustering term with respect to the reconstruction one depending on the choice of $\gamma$: too small values would favour a better reconstruction over a proper clustering while too big values would worsen the reconstruction in order to lower the clustering loss.
+In this work $\gamma$ has to be much larger than 1, because of the different scales of the two terms. The reconstruction loss of Eq.~\ref{eq:tae-loss} is a \ac{NLL} summed over the $T = 200$ samples of each waveform, with the squared residuals divided by $\sigma^2$: its value is of the order of hundreds of nats per waveform, and since $\sigma$ is of the order of the noise of the waveforms, even small changes in the reconstruction produce large changes in $L_\text{TAE}$. The clustering loss of Eq.~\ref{eq:KL-loss-TSC}, instead, is a divergence between two distributions over $K = 2$ clusters and is of the order of $10^{-1}$ per waveform. With $\gamma$ of order 1, the clustering term would therefore have a negligible weight in the total loss, and the training would leave both the latent space and the K-Means assignments essentially unchanged. Moreover, since the \ac{NLL} is defined up to an additive constant (it depends on the units of the current), its absolute value is not meaningful: the relevant comparison is between $\gamma L_\text{TSC}$ and the variations of $L_\text{TAE}$ during the training, which are of the order of tens of nats. The value of $\gamma$ has thus been chosen with the scan described in the following.
+
+Four trains with $\gamma = 10, 100, 1000, 10000$ at a fixed number of clusters $K=2$ have been performed. 
+The results on the whole calibration dataset are shown in Fig.\ref{fig:scan-gamma} while the reconstruction ability of the \ac{TAE} and the losses evolutions can be found in Appendix \ref{app:DTC-scans}.
+
+The results with $\gamma=10$ and $\gamma=100$ are comparable and clearly do not return a proper clustering of events: about 93\% of the waveforms are assigned to the same cluster, while the second one collects a small population concentrated on the low-energy side of the \ac{FEP}, with no enrichment in the \ac{DEP}. The fact that the two results are almost identical points the fact that the clustering term is too weak with respect to the reconstruction one, so that the assignments remain essentially those of the K-Means initialisation. With $\gamma=1000$, instead, the two clusters sho an significantly different behaviour in the two peaks: the fraction of events in cluster 0 rises from about 0.43 in the Compton continuum to about 0.75 in the \ac{DEP} and drops to about 0.22 in the \ac{FEP}, while cluster 1 shows the complementary trend, as expected for a separation between \ac{SSE}- and \ac{MSE}-like waveforms. Increasing $\gamma$ to $10\,000$ moves the boundary between the clusters: the \ac{SSE}-like cluster grows to 67\% of the events and reaches about 0.87 in the \ac{DEP}, but in the \ac{FEP} its fraction remains about 0.53, close to the 0.66 of the continuum, so that the two clusters are almost equally populated in the \ac{FEP}. Relative to the Compton continuum, the \ac{DEP} enrichment decreases from a factor of about 1.7 to 1.3 and the \ac{FEP} suppression from about 0.5 to 0.8. Therefore $\gamma = 1000$ is the value that gives the clearest separation and has been adopted for all the following trainings.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{plots/placeholder.png}
-    \caption{\colorbox{yellow}{PLACEHOLDER}}
-    \label{fig:training-clustering-DTC}
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10_2cl_energy_all.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma100_2cl_energy_all.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma1000_2cl_energy_all.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10000_2cl_energy_all.pdf}
+    \caption{$\gamma$ scan over the whole dataset with Euclidean Distance metric.}
+    \label{fig:scan-gamma}
 \end{figure}
+
+
+\subsubsection{Clusters scan}
+Subsequently, fixing $\gamma=1000$ from the just-mentioned considerations, other four trains with $K=2, 3, 4$ have been carried out in order to highlight any additional clusters beyond the expected ones (\ac{SSE} and \ac{MSE}).
+Said clustering on the whole calibration dataset are shown in Fig. \ref{fig:scan-clusters}  while the reconstruction ability of the \ac{TAE} and the losses evolutions can be found in Appendix \ref{app:DTC-scans}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_2cl_energy_all.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_3cl_energy_all.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_energy_all.pdf}\\
+    \caption{$K$ (number of clusters) scan over the whole dataset with Euclidean Distance metric.}
+    \label{fig:scan-clusters}
+\end{figure}
+
+This analysis clearly reports the fact that our assumption of having two types of events is true: in the run with $K=3$ clusters, all the events have been assigned only to two of them leaving the third one empty, while in the $K=4$ the same happened for all the events but two that were assigned to a third cluster.
+These two events are the ones shown in Fig. \ref{fig:events-third-cluster}: the energy of the two events is clearly different but they are both characterised by an high value of \ac{AE}: this suggests a possible correlation with $\alpha$ events (see Sec. \ref{sec:traditionalPSD}). However seeing that this third cluster involves only 2 over 348 999 events, the possibility of investigating more than $K=2$ clusters is left as a future development of this algorithm since it goes beyond the purposes of this work. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_cluster3_waveforms.pdf}
+    \caption{Events left out by the two main clusters in the $K=4$ scan with Euclidean Distance.}
+    \label{fig:events-third-cluster}
+\end{figure}
+
+Following the $\gamma$ scan and the clusters scan, the main \textit{train} phase has beene performed with the three considered metrics using $\gamma = 1000$ and $K=2$.< and for a number of training epochs $\text{N}_\text{TRAIN} = 20$.
+
+
 
 

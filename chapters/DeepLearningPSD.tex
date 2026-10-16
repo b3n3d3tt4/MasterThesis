@@ -16,7 +16,7 @@ All of these models were trained and tested on an NVIDIA A30 GPU, exploiting the
 \label{sec:data-cleaning}
 Raw charge waveforms\footnote{For \textit{raw} we mean waveforms already processed with LEGEND dedicated software, but still not selected in terms of energy, \ac{PSD} parameters or other features, as introduced at the end of Sec. \ref{subsubsec:data-structureL200}.} are not suitable for any machine learning algorithm implementation as they are very different between one another under multiple aspects. In order to cope with this issue, a series of selection and cleaning procedures have been applied to them, obtaining, at the end of said process, current waveforms in the energy range of interest.
 
-The first data processing step that has been applied to raw waveforms is an energy-based cut around the region of interest, specifically encircling the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. Hence, only data between 1550 keV and 1650 keV from the whole considered dataset have been saved, discarding all the other. This is a choice based on the work purposes, for which we want to neglect possibile energy-related effects on the signals and rely only on their shape evolution in time. Recalling Fig. \ref{fig:TlBi-spectrum} the energy cut is depicted in Fig. \ref{fig:cut_region} for run \textit{r000} of period \textit{p03}. Moreover data have been filtered with boolean masks provided together with raw data; said filters are needed to discard useless events. Particularly the filters that have been considered are listed in Tab. \ref{tab:quality_cuts}.
+The first data processing step that has been applied to raw waveforms is an energy-based cut around the region of interest, specifically encircling the \ac{DEP} of ${}^{208}$Tl and the \ac{FEP} of ${}^{212}$Bi. Hence, only data between 1550 keV and 1650 keV from the whole considered dataset have been saved, discarding all the other. This is a choice based on the work purposes, for which we want to neglect possibile energy-related effects on the signals and rely only on their shape evolution in time. Recalling Fig. \ref{fig:TlBi-spectrum} the energy cut is depicted in Fig. \ref{fig:cut_region} for run \textit{r000} of period \textit{p03}. Moreover data have been filtered with boolean masks provided together with raw data; said filters are needed to discard useless events. Particularly the filters that have been considered are listed in Tab. \ref{tab:quality-cuts-calibration}.
 
 \begin{figure}[H]
     \centering
@@ -44,8 +44,8 @@ The first data processing step that has been applied to raw waveforms is an ener
         valid drift time & events with a very high drift time \\
         \bottomrule
     \end{tabular}
-    \caption{Summary of Quality Cuts and discarded events considered in the data cleaning process.}
-    \label{tab:quality_cuts}
+    \caption{Summary of the quality cuts applied to the calibration data in the data cleaning process.}
+    \label{tab:quality-cuts-calibration}
 \end{table}
 
 % \begin{wrapfigure}{r}{0.6\textwidth}

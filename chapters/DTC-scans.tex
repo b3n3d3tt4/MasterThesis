@@ -1,0 +1,64 @@
+\chapter{\texorpdfstring{\acs{DTC}}{DTC} scans over $\gamma$ and $K$}
+\label{app:DTC-scans}
+
+\section{\texorpdfstring{$\bm{\gamma}$}{gamma} scan results}
+As introduced in Sec. \ref{subsec:train-test-DTC}, the Fig. \ref{fig:scan-reconstruction_and_losses-gamma10}, \ref{fig:scan-reconstruction_and_losses-gamma100}, \ref{fig:scan-reconstruction_and_losses-gamma1000} and \ref{fig:scan-reconstruction_and_losses-gamma10000} show the reconstruction ability and the losses trend for $\gamma= 10, 100, 1000$ and $10000$ respectively.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10_2cl_training_reconstruction.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10_2cl_training_history.pdf}
+    \caption{Training reconstruction and training losses for $\gamma=10$ with Euclidean Distance metric.}
+    \label{fig:scan-reconstruction_and_losses-gamma10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma100_2cl_training_reconstruction.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma100_2cl_training_history.pdf}
+    \caption{Training reconstruction and training losses for $\gamma=100$ with Euclidean Distance metric.}
+    \label{fig:scan-reconstruction_and_losses-gamma100}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma1000_2cl_training_reconstruction.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma1000_2cl_training_history.pdf}
+    \caption{Training reconstruction and training losses for $\gamma=1000$ with Euclidean Distance metric.}
+    \label{fig:scan-reconstruction_and_losses-gamma1000}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10000_2cl_training_reconstruction.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10000_2cl_training_history.pdf}
+    \caption{Training reconstruction and training losses for $\gamma=10000$ with Euclidean Distance metric.}
+    \label{fig:scan-reconstruction_and_losses-gamma10000}
+\end{figure}
+
+\section{Clusters scan results}
+As introduced in Sec. \ref{subsec:train-test-DTC}, the Fig. \ref{fig:scan-reconstruction_and_losses-K2}, \ref{fig:scan-reconstruction_and_losses-K3} and \ref{fig:scan-reconstruction_and_losses-K4} show the reconstruction ability and the losses trend for $K= 2, 3$ and $4$ respectively, where $K$ is the number of clusters.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_2cl_training_reconstruction.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_2cl_training_history.pdf}
+    `caption{Training reconstruction and training losses for $K=2$ with Euclidean Distance metric.}
+    \label{fig:scan-reconstruction_and_losses-K2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_3cl_training_reconstruction.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_3cl_training_history.pdf}
+    \caption{Training reconstruction and training losses for $K=3$ with Euclidean Distance metric.}
+    \label{fig:scan-reconstruction_and_losses-K3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_training_reconstruction.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_training_history.pdf}
+    \caption{Training reconstruction and training losses for $K=4$ with Euclidean Distance metric.}
+    \label{fig:scan-reconstruction_and_losses-K4}
+\end{figure}
