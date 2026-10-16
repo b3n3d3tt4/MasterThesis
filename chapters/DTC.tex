@@ -205,7 +205,7 @@ The \ac{DTC} training phase is divided in two different parts: the \textit{pretr
     \label{fig:pretrain-loss}
 \end{figure}
 
-Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a K-Means algorithm on the latent representation of the training set. It is from said centroids that the \ac{TSC} part of the model starts to cluster waveforms.
+Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a K-Means algorithm on the latent representation of the training set: from said centroids the \ac{TSC} part of the model starts to cluster waveforms.
 
 \textbf{\textit{Train}}: in the second phase of the \ac{DTC} training, the proper \textit{training} phase, both the \ac{TAE} and the \ac{TSC} are used. As a consequence, the overall loss function includes $L_\text{TAE}$ and $L_\text{TSC}$, weighted by a specific tunable parameter $\gamma$ that weights the two contributions of the loss, in order to have the total loss of Eq. \ref{eq:total_dtc_loss}. Therefore the backpropagation acts both on the reconstruction of input waveforms and on the clustering of them simultaneously.
 \begin{equation}
