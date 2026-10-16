@@ -249,7 +249,7 @@ Said clustering on the whole calibration dataset are shown in Fig. \ref{fig:scan
 \end{figure}
 
 This analysis clearly reports the fact that our assumption of having two types of events is true: in the run with $K=3$ clusters, all the events have been assigned only to two of them leaving the third one empty, while in the $K=4$ the same happened for all the events but two that were assigned to a third cluster.
-These two events are the ones shown in Fig. \ref{fig:events-third-cluster}: the energy of the two events is clearly different but they are both characterised by an high value of \ac{AE}: this suggests a possible correlation with $\alpha$ events (see Sec. \ref{sec:traditionalPSD}). However seeing that this third cluster involves only 2 over 348 999 events, the possibility of investigating more than $K=2$ clusters is left as a future development of this algorithm since it goes beyond the purposes of this work. 
+These two events are the ones shown in Fig. \ref{fig:events-third-cluster}: the energy of the two events is clearly different but they are both characterised by an high value of \ac{AE} and this suggests a possible correlation with $\alpha$ events (see Sec. \ref{sec:traditionalPSD}). However, seeing that this third cluster involves only 2 over 348 999 events, the possibility of investigating more than $K=2$ clusters is left as a future development of this algorithm since it goes beyond the purposes of this work. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_cluster3_waveforms.pdf}
@@ -257,7 +257,13 @@ These two events are the ones shown in Fig. \ref{fig:events-third-cluster}: the 
     \label{fig:events-third-cluster}
 \end{figure}
 
-Following the $\gamma$ scan and the clusters scan, the main \textit{train} phase has beene performed with the three considered metrics using $\gamma = 1000$ and $K=2$.< and for a number of training epochs $\text{N}_\text{TRAIN} = 20$.
+Following the $\gamma$ scan and the clusters scan, the main \textit{train} phase has beene performed with the three considered metrics using $\gamma = 1000$ and $K=2$ and for a number of training epochs $\text{N}_\text{TRAIN} = 20$.
+
+\subsubsection{Euclidean Distance}
+
+\subsubsection{Complexity Invariant Distance}
+
+\subsubsection{Autocorrelation Function}
 
 
 
