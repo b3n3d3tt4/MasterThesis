@@ -79,8 +79,6 @@ A 10~m-diameter and 8~m-height tank with 590~m$^3$ of ultra-pure water shields f
 to protect the \ac{PMT} from the surrounding water, each PMT is housed in a stainless-steel encapsulation which is further developed from the design of the Borexino capsules. The \ac{PMT} are arranged in seven rings in the water tank. One ring of six \ac{PMT} is pointing inside the separate volume under the cryostat,  two rings of eight \ac{PMT} and 12 \ac{PMT}  respectively are placed on the bottom of the water tank looking upwards and four rings of 10 \ac{PMT} are placed on the wall, pointing horizontally towards the cryostat. \cite{GERDA-muonVeto} 
 
 
-
-\newpage
 \section{Background contaminations}
 \label{sec:background}
 Background is one of the main issues in the LEGEND program. According to \cite{L200-sep25} the background contribution for the LEGEND experiment are the same of its predecessor GERDA, therefore further consideration about it are based on \cite{GERDAphase2}.
@@ -125,19 +123,12 @@ As mentioned above, background signals are a complicated part to deal with in th
 All of the materials close to the detectors have been screened to prevent radioactive contamination given by ${}^{238}$U and ${}^{232}$Th decay chains and ${}^{40}$K and ${}^{60}$Co isotopes.
 
 
-\newpage
 \section{LEGEND data}
 \subsection{Detector physics and signal formation}
 As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEND program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of the thesis in Chapter \ref{chapter:ML-PSD}.
 
 \paragraph{Germanium detectors basics}
 \label{par:Ge-detector-basics}
-%  \begin{wrapfigure}{r}{0.52\textwidth}
-%   \centering
-%   \includegraphics[width=\linewidth]{figures/insulators-semiconductors-conductors.jpg}
-%   \caption{Energy levels and band gaps. From the left: insulators, semiconductors and conductors. Original drawing.}
-%   \label{fig:band_gaps}
-% \end{wrapfigure}
 \ac{hpge} detectors are semiconductor detectors, therefore it is crucial to analyse some specific features of semiconductor materials.
 Said materials are characterised by the typical crystalline diamond lattice where each Germanium atom is bonded to four nearest neighbours arranged in the corners of a regular tetrahedron. As a consequence of the dense periodic arrangement of the atoms in a solid-state lattice the energy levels of individual atoms are split due to the influence of many neighbouring atoms nearby. Seeing that energy levels of some level groups lie energetically very dense, we talk about \textit{energy levels} divided by \textit{band gaps}.
 The two highest energy levels are called the valence band and the conduction band. Within a band, energy levels are so dense that transitions to unoccupied levels are very easy if the band is not completely filled. Therefore conduction properties depend on the band occupation. In semiconductor materials the bonds between neighbour atoms are weaker than the ones of insulators and this leads to smaller energy gaps. This becomes significant when we consider the energy gap between valence band and conduction band, since the energy gap can be overcome via thermal excitations or external electric fields: when a bond is broken, an \ac{eh} pair is generated. While the hole remains in the valence band, the electron can move freely to the conduction band. If this happens in an electric field, the moving charge generates a current flow. The energy gap between bands depends on the lattice spacing, which means that temperature and pressure influence the gap size $\text{E}_\text{G}$.
@@ -257,21 +248,18 @@ On the other hand, background processes with similar energies arise mainly from 
 
 On top of that, another distinction is critical when it comes to events topology. Physical processes can occur both in the bulk of the detector and near the surface of it: these events are moslty $\alpha$ and $\beta$ emissions. The $n^+$ electrode is covered by a lithium-diffused layer (about $1$~mm for the detector considered here) which alpha particles cannot penetrate. On the other hand beta particles entering through it release their energy in a region of reduced electric field and produce characteristically slow pulses~\cite{L1000-design}. The opposite situation occurs at the $p^+$ contact and on the passivated surface of the groove, which separates the two electrodes: being only a fraction of a micrometer thick, they are fully exposed to both alpha and beta particles. To look into it further we need to analyse the physics in the groove region where the electric field\footnote{This is the physical electric field not to be confused with the Shockley-Ramo weighting field.} that drives charge drift runs parallel to the groove. However a perpendicular component arises from the fact that the groove is electrically floating and highly resistive thus can accumualte charge. This means that $\alpha$ and $\beta$ particles may generate a very slow readable signal characterised by the so-called \ac{DCR}. While alfas are totally affected by this process because of their very small range, betas that penetrate considerably more are only partially affected by it. Relevant emitters in this context are the $\beta$ decay of $^{42}$K in the surrounding liquid argon and the $\alpha$ decay of $^{210}$Po from the $^{222}$Rn progeny, both already introduced in Sec.~\ref{sec:background}: neither of these deposits energy exactly at $Q_{\beta\beta}$, but both of them can mimic a signal-like event once the observed energy is degraded. 
 
-Classifying events according to the shape of their signal is the basis of \ac{PSD}, a powerful tool for signal-background discrimination that is the main focus of this thesis and will be detailed and developed in depth in Sec.~\ref{sec:traditionalPSD}. In particular, 0$\nu\beta\beta$ events are to be searched as bulk \ac{SSE} events in the correct energy region of interest.
+Classifying events according to the shape of their signal is the basis of \ac{PSD}, a powerful tool for signal-background discrimination that is the main focus of this thesis and will be detailed and developed in depth in Sec.~\ref{sec:traditionalPSD}. In particular, 0$\nu\beta\beta$ events are to be searched as bulk \ac{SSE} events in the proper energy region.
 
 \subsection{Data acquisition and processing}
 \subsubsection{Readout electronics}
-The \ac{DAQ} system for LEGEND-200 consists of FlashCam digitisers and an \ac{ORCA} \ac{DAQ} software. The \ac{DAQ} system employs a \ac{FADC} based on the FlashCam readout system, which digitises the detector signals with 16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval. \cite{LEGEND:GeDet} 
-
-\begin{wrapfigure}{l}{0.5\textwidth}
+The \ac{DAQ} system for LEGEND-200 consists of FlashCam digitisers and an \ac{ORCA} \ac{DAQ} software. The \ac{DAQ} system employs a \ac{FADC} based on the FlashCam readout system, which digitises the detector signals with 
+\begin{wrapfigure}{r}{0.53\textwidth}
     \centering
     \includegraphics[width=\linewidth]{plots/wf_vs_windowed_wf.pdf}
-    \caption{Example of a raw waveform from the DAQ. The windowing region is highlighted.}
+    \caption{Example of a raw waveform from the DAQ.}
     \label{fig:wf-windowing}
 \end{wrapfigure}
-In order to optimise data transfer and data processing, raw digitised traces are divided into two traces during the conversion from the \ac{ORCA} software to the \ac{LGDO}\footnote{\ac{LGDO} is a custom Python-based data format built by the LEGEND collaboration.} format.
-For applications that do not require maximum timing resolution, such as energy reconstruction, the traces are down-sampled by summing 8 consecutive samples. This process results in a final compressed waveform of 1024 samples with a time bin width of 128 ns. Conversely, analyses like \ac{PSD} strictly require high timing resolution to resolve the signal leading edge. Therefore, a second trace is generated at the full sampling frequency, but it is restricted to a narrow window of 1400 samples (corresponding to approximately 22 $\mu$s) centered around the signal rise.  \cite{LEGEND:GeDet}\\
-An example of said method is shown in Fig. \ref{fig:wf-windowing}.
+16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval \cite{LEGEND:GeDet}. In order to optimise data transfer and data processing, raw digitised traces are divided into two traces during the conversion from the \ac{ORCA} software to the \ac{LGDO}\footnote{\ac{LGDO} is a custom Python-based data format built by the LEGEND collaboration.} format. For applications that do not require maximum timing resolution, such as energy reconstruction, the traces are down-sampled by summing 8 consecutive samples. This process results in a final compressed waveform of 1024 samples with a time bin width of 128 ns. Conversely, analyses like \ac{PSD} strictly require high timing resolution to resolve the signal leading edge. Therefore, a second trace is generated at the full sampling frequency, but it is restricted to a narrow window of 1400 samples (corresponding to approximately 22 $\mu$s) centered around the signal rise \cite{LEGEND:GeDet}. An example of said method is shown in Fig. \ref{fig:wf-windowing}.
 
 
 \subsubsection{Data structure of the LEGEND-200 phase}
@@ -343,7 +331,7 @@ Energy calibration is performed using Thorium-228 sources with low neutron emiss
 \ac{DEP}, \ac{SEP} and \ac{FEP} of Thallium-208 correspond to distinct interaction mechanisms following a pair production event inside the detector, as illustrated in Fig.~\ref{fig:dep-sep}. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/DEP-SEP-FEP.jpg} 
+    \includegraphics[width=0.8\textwidth]{figures/DEP-SEP-FEP.jpg} 
     \caption{Different outcomes after a gamma interaction in the detector volume, delimited in black.\\A detailed description of the phenomena illustrated is given in the text.}
     \label{fig:dep-sep}
 \end{figure}
@@ -358,13 +346,14 @@ Nonetheless it is important to stress that this \ac{SSE} and \ac{MSE} labelling 
 % Said considerations are clearly a limitation both for traditional classifiers and machine learning ones relying on pulse shapes.
 
 
-\newpage
 \section{Traditional \ac{PSD}}
 \label{sec:traditionalPSD}
-Pulse shape discrimination (\ac{PSD}) is employed in the LEGEND program with several purposes in order to enhance the signal-like events with respect to the background ones. Two main parameters are employed in this procedure: the \ac{LQ} and the \ac{AE}. \\
-The first one is a measure of the \textit{slowness} of the final 20\% of charge carriers for an event. It is determined by calculating the area above the rising edge of the waveform after it reaches the 80\% of its maximum. Since surface events (both alpha and beta) tipically manifest a slow-charge trend with a incomplete charge collection as a consequence, \ac{LQ} is expected to be a powerful discriminator against these events, which constitute a part of the background (see Sec.~\ref{sec:background}). \\
+Pulse shape discrimination (\ac{PSD}) is employed in the LEGEND program with several purposes in order to enhance the signal-like events with respect to the background ones. Two main parameters are employed in this procedure: the \ac{LQ} and the \ac{AE}.
+
+The first one is a measure of the \textit{slowness} of the final 20\% of charge carriers for an event. It is determined by calculating the area above the rising edge of the waveform after it reaches the 80\% of its maximum. Since surface events (both alpha and beta) tipically manifest a slow-charge trend with a incomplete charge collection as a consequence, \ac{LQ} is expected to be a powerful discriminator against these events, which constitute a part of the background (see Sec.~\ref{sec:background}). 
+
 On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection relies: it is computed at the Digital Signal Processing stage as the ratio between the maximum amplitude of the current signal and the uncorrected energy of the event from the restricted $1400$ samples waveform (Fig.~\ref{fig:wf-windowing}). Specifically, for Mirion IC detectors such as the V08682A used in this work, the current pulse is reconstructed from the rising edge of the charge: first, a pole-zero correction is applied; the signal is then differentiated, upsampled from $16\text{~ns}$ to
-\begin{wrapfigure}{l}{0.45\textwidth}
+\begin{wrapfigure}{r}{0.53\textwidth}
     \centering
     \includegraphics[width=\linewidth]{plots/wfCleaning/example_different_AE_same_energy.pdf}
     \caption{Example of two events with the same energy but different \ac{AE} values.}
@@ -379,7 +368,7 @@ $1\text{~ns}$, and smoothed through three consecutive $96\text{~ns}$ moving aver
     \label{fig:AoE-different-events}
 \end{figure}
 
-These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig:AoE_distribution}, from which it is clear that different regions of the energy spectrum given by different physical processes are correlated with distinct \ac{AE} distributions: therefore a proper selection of this value enable to distinguish signal-like events from background-like ones.
+These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig:AoE_distribution}, from which it is clear that different regions of the energy spectrum given by different physical processes are correlated with distinct \ac{AE} distributions. For example events of the \ac{DEP} region (red) show a different distribution with respect to the \ac{FEP} ones (blue), therefore a proper selection of the \ac{AE} value enable to distinguish signal-like events from background-like ones. Specifically, the \ac{AE} selection is realised with two cuts on said distribution: a low cut and an high cut. They are respectively a cut above and below zero since the distribution is normalised. The high cut is set to $3$ regardless of the specific detector, in order to reject events with a very high \ac{AE} value that are typically induced by $\alpha$ particles. On the other hand, the low cut is detector-specific and must be tuned individually: a scan on the \ac{AE} distribution is performed from the left to the right and the low cut value is set to the point for which the survival fraction of the events in the \ac{DEP} of~${}^{208}$Tl reaches the 90\%.
 
 \begin{figure}[H]
     \centering
@@ -388,14 +377,14 @@ These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig
     \label{fig:AoE_distribution}
 \end{figure}
 
-
-\begin{wrapfigure}{r}{0.6\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
-    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut. The cut is tuned in order have a survival fraction in the \ac{DEP} of 90\%.}
-    \label{fig:distribution-AoE_prl25}
-\end{wrapfigure}
-The \ac{AE} selection is realised with two cuts on said distribution: a low cut and an high cut. They are respectively a cut above and below zero since the distribution is normalised. The high cut is set to $3$ regardless of the specific detector, in order to reject events with a very high \ac{AE} value that are typically induced by $\alpha$ particles. On the other hand, the low cut is detector-specific and must be tuned individually: a scan on the \ac{AE} distribution is performed from the left to the right and the low cut value is set to the point for which the survival fraction of the events in the \ac{DEP} of~${}^{208}$Tl reaches the 90\%.
 Figure~\ref{fig:distribution-AoE_prl25} presents the \ac{AE} cut for the calibration data of \textit{prl25} in the $1550-1650$ keV energy range, which is the range that has been employed for this work because of physics and computational reasons, as will be discussed in Sec.~\ref{sec:data-cleaning}. 
 This \ac{PSD} cut, shown in blue, will be the benchmark for all the others that have been implemented in this work and will be presented in Chapter \ref{chapter:ML-PSD}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
+    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut. The cut is tuned in order have a survival fraction in the \ac{DEP} of 90\%.}
+    \label{fig:distribution-AoE_prl25}
+\end{figure}
+
 
