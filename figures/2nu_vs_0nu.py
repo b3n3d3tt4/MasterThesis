@@ -1,41 +1,42 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 
-def gaussian(x, sigma, mu):
-    # Corretta la formula della gaussiana (rimosso il fattore errato e normalizzata l'altezza)
-    g = np.exp(-(x - mu)**2 / (2 * sigma**2))
-    return g
+RED, BLUE = '#fe2f33', '#004284'
 
-def distribution_2nu(x):
-    dist = np.where(x <= 1.0, (x**2) * ((1.0 - x)**5), 0)
-    max_val = np.max(dist)
-    if max_val > 0:
-        dist = dist / max_val * 2.3
-    
-    return dist
+def distribution_2nu(x, a=1, b=2, height=2.3):
+    """Spettro schematico della somma delle energie degli elettroni (x = E/Q).
+    a sposta il picco, b controlla la coda verso Q (b più basso -> coda più alta)."""
+    dist = np.where(x <= 1.0, (x**a) * ((1.0 - x)**b), 0.0)
+    return dist / dist.max() * height
 
-energy_2nu = np.linspace(0, 0.93, 10000)
-energy_0nu = np.linspace(0.93, 1.06, 200)
+# La curva 2nu arriva fino a Q (x = 1)
+energy_2nu = np.linspace(0, 1.0, 10000)
+pdf_2nu = distribution_2nu(energy_2nu, a=1, b=2)
 
-pdf_2nu = distribution_2nu(energy_2nu)
-pdf_0nu = gaussian(energy_0nu, sigma=0.02, mu=1.0)
+fig, ax = plt.subplots(figsize=(9, 6))
 
-plt.figure(figsize=(9, 6))
+ax.plot(energy_2nu, pdf_2nu, color=BLUE, lw=3)
 
-# Aggiunti i colori per rispettare lo schema della tesi
-plt.plot(energy_0nu, pdf_0nu, label=r"$0\nu\beta\beta$", color='#fe2f33', lw=1.5)
-plt.plot(energy_2nu, pdf_2nu, label=r"$2\nu\beta\beta$", color='#004284', lw=1.5)
+# 0nu: delta di Dirac a E = Q, disegnata come riga verticale alta 1 a.u.
+ax.vlines(1.0, 0, 1.0, color=RED, lw=3)
 
-plt.xlabel(r"E$_e$/Q$_{\beta\beta}$")
-plt.ylabel("a.u.")
-plt.title("Energy distribution comparison between double beta decay modes")
-plt.legend(labelspacing=1, fontsize=12, frameon=False)
-plt.grid(alpha=0.3, ls='--')
-plt.tight_layout()
+# Legenda con handle espliciti (vlines non genera una voce adatta da solo)
+handles = [
+    Line2D([0], [0], color=RED, lw=2, label=r"$0\nu\beta\beta$"),
+    Line2D([0], [0], color=BLUE, lw=2, label=r"$2\nu\beta\beta$"),
+]
+ax.legend(handles=handles, labelspacing=1, fontsize=12, frameon=False, loc="upper right")
 
-# Evita errori se la cartella figures non esiste
+ax.set_xlim(0, 1.1)
+ax.set_ylim(0, 2.5)
+ax.set_xlabel(r"$(E_{e, 1} + E_{e, 2})$/$Q_{\beta\beta}$")
+ax.set_ylabel("a.u.")
+ax.set_title("Energy distribution comparison between double beta decay modes")
+ax.grid(alpha=0.3, ls='--')
+fig.tight_layout()
+
 os.makedirs("figures", exist_ok=True)
-
-plt.savefig("figures/0nu_vs_2nu.pdf", dpi=300)
+fig.savefig("figures/0nu_vs_2nu.pdf")
 plt.show()

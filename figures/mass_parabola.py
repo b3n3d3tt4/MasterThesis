@@ -1,211 +1,99 @@
-"""
-Isobaric mass-parabola plot for beta and double-beta decay.
-
-The nuclear mass excess values used here are REAL, measured atomic mass
-excesses (not a semi-empirical estimate), for the classic A = 76 isobaric
-chain (Zn, Ga, Ge, As, Se, Br, Kr, Rb, Sr). This chain is the textbook
-example for double-beta decay: 76Ge is stable against ordinary single-beta
-decay to 76As (Q_beta < 0), and can only decay through the second-order,
-double-beta channel to 76Se.
-
-Data source
------------
-Mass excesses (in MeV) are taken from the AME2020 atomic mass evaluation
-    M. Wang et al., Chinese Phys. C 45, 030003 (2021)
-cross-checked against the KAERI/NNDC nuclide tables and, for the Ge-As-Se
-triplet specifically relevant to double-beta decay, against the precise
-Penning-trap measurements of:
-    - Ge76-As76 Q(beta-):  KAERI nuclide data (Q = -0.9233(9) MeV, forbidden)
-    - Ge76-Se76 Q(2b):     S. Rahaman et al., Phys. Lett. B 662 (2008) 111
-                           (Q_bb = 2039.006(50) keV)
-All derived values (obtained from a measured Q-value plus a directly
-measured neighbour) have been cross-checked for internal consistency
-(each independently-tabulated pair reproduces the corresponding Q-value to
-better than 1 keV).
-
-The script is written so that ANY isobaric chain can be plotted by editing
-the `MASS_EXCESS_A76` dictionary (or building an equivalent one for another
-A) -- the plotting and decay-classification logic is fully generic.
-
-Usage
------
-    python3 mass_parabola.py
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
+from matplotlib.lines import Line2D
 
-# ---------------------------------------------------------------------
-# Real (measured) atomic mass excess, in MeV, for the A = 76 isobars.
-# Key = atomic number Z, value = mass excess (MeV).
-# ---------------------------------------------------------------------
+BLUE, YELLOW, RED = "#004284", "#ffbf00", "#ff0000"
+
 A = 76
+# Dati completi (servono solo per il fit delle parabole guida)
 MASS_EXCESS_A76 = {
-    30: -62.042888,   # Zn-76
-    31: -66.202888,   # Ga-76   (derived from Zn-76 -> Ga-76, Q_beta- = 4.160 MeV)
-    32: -73.212888,   # Ge-76
-    33: -72.289575,   # As-76   (derived from Ge-76 -> As-76, Q_beta- = -0.9233 MeV: forbidden)
-    34: -75.251894,   # Se-76   (derived from Ge-76 -> Se-76, Q_2b = 2.039006 MeV)
-    35: -70.288670,   # Br-76
-    36: -68.978700,   # Kr-76
-    37: -60.480547,   # Rb-76
-    38: -54.380547,   # Sr-76   (derived from Rb-76 -> Sr-76, Q_EC = 6.100 MeV)
+    30: -62.042888, 31: -66.202888, 32: -73.212888, 33: -72.289575,
+    34: -75.251894, 35: -70.288670, 36: -68.978700, 37: -60.480547,
+    38: -54.380547,
 }
-
-# Minimal periodic table, Z -> chemical symbol
-ELEMENTS = [
-    "n", "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne",
-    "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca",
-    "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn",
-    "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr",
-    "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
-    "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd",
-]
+# Isobari effettivamente mostrati
+Z_SHOWN = [31, 32, 33, 34, 35]
+SYMBOL = {30: "Zn", 31: "Ga", 32: "Ge", 33: "As", 34: "Se", 35: "Br",
+          36: "Kr", 37: "Rb", 38: "Sr"}
 
 
-def symbol(Z):
-    """Chemical symbol for proton number Z."""
-    return ELEMENTS[Z]
-
-
-def classify_decays(mass_excess):
-    """
-    Given a dict {Z: mass_excess}, work out which beta transitions are
-    energetically allowed (mass must decrease), and flag even-even nuclei
-    for which the single-beta step is forbidden while the double-beta
-    step is allowed.
-
-    Returns three lists of (Z_from, Z_to) tuples:
-        beta_minus, beta_plus_ec, double_beta
-    """
-    beta_minus, beta_plus_ec, double_beta = [], [], []
-
-    for Z in mass_excess:
-        is_even_even = (Z % 2 == 0)
-
-        # single beta-minus: Z -> Z+1
-        if (Z + 1) in mass_excess and mass_excess[Z + 1] < mass_excess[Z]:
-            beta_minus.append((Z, Z + 1))
-
-        # single beta-plus / electron capture: Z -> Z-1
-        if (Z - 1) in mass_excess and mass_excess[Z - 1] < mass_excess[Z]:
-            beta_plus_ec.append((Z, Z - 1))
-
-        # double-beta candidates: only even-even nuclei
-        if is_even_even:
-            if (Z + 2) in mass_excess and mass_excess[Z + 2] < mass_excess[Z]:
-                single_beta_allowed = (
-                    (Z + 1) in mass_excess and mass_excess[Z + 1] < mass_excess[Z]
-                )
-                if not single_beta_allowed:
-                    double_beta.append((Z, Z + 2))
-            if (Z - 2) in mass_excess and mass_excess[Z - 2] < mass_excess[Z]:
-                single_beta_allowed = (
-                    (Z - 1) in mass_excess and mass_excess[Z - 1] < mass_excess[Z]
-                )
-                if not single_beta_allowed:
-                    double_beta.append((Z, Z - 2))
-
-    return beta_minus, beta_plus_ec, double_beta
-
-
-def plot_mass_parabola(A, mass_excess, out_path, highlight_ee_isotope=None):
-    """
-    A               : mass number (int), used only for labelling
-    mass_excess     : dict {Z: mass excess in MeV}, REAL/measured values
-    out_path        : output .png path (a .pdf is also saved alongside)
-    highlight_ee_isotope : Z of an even-even nucleus whose double-beta
-                           decay should be emphasised in the legend/title
-    """
+def plot_mass_parabola(out_path):
+    shown = {z: MASS_EXCESS_A76[z] for z in Z_SHOWN}
     fig, ax = plt.subplots(figsize=(9, 6))
 
-    Zs = np.array(sorted(mass_excess.keys()))
-    Ms = np.array([mass_excess[z] for z in Zs])
+    # --- parabole guida (fit su tutti i dati, disegnate solo nel range) ---
+    zs_all = np.array(sorted(MASS_EXCESS_A76))
+    ee = np.array([z for z in zs_all if z % 2 == 0])
+    oo = np.array([z for z in zs_all if z % 2 == 1])
+    z_plot = np.linspace(min(Z_SHOWN) - 0.5, max(Z_SHOWN) + 0.5, 300)
+    for zz, ls, lw in [(ee, "-", 1.5), (oo, ":", 2)]:
+        c = np.polyfit(zz, [MASS_EXCESS_A76[z] for z in zz], 2)
+        ax.plot(z_plot, np.polyval(c, z_plot), color=BLUE, ls=ls, lw=lw, zorder=1)
 
-    Zs_ee = np.array([z for z in Zs if z % 2 == 0])
-    Ms_ee = np.array([mass_excess[z] for z in Zs_ee])
-    Zs_oo = np.array([z for z in Zs if z % 2 == 1])
-    Ms_oo = np.array([mass_excess[z] for z in Zs_oo])
+    # --- punti ---
+    for Z, M in shown.items():
+        ax.scatter(Z, M, s=60, color=BLUE, zorder=3, edgecolor="black", linewidth=0.6)
+        even = Z % 2 == 0
+        ax.annotate(rf"$^{{{A}}}${SYMBOL[Z]}", (Z, M), textcoords="offset points",
+                    xytext=(0, -11 if even else 11), ha="center",
+                    va="top" if even else "bottom", fontsize=10)
 
-    # --- smooth guide curves, obtained by fitting a parabola to the
-    #     REAL even-even and odd-odd points separately (data-driven,
-    #     not from an independent mass model) ------------------------
-    z_plot = np.linspace(Zs.min() - 0.6, Zs.max() + 0.6, 400)
-    if len(Zs_ee) >= 3:
-        coeff_ee = np.polyfit(Zs_ee, Ms_ee, 2)
-        ax.plot(z_plot, np.polyval(coeff_ee, z_plot),
-                color="#004284", lw=1.5, zorder=1)
-    if len(Zs_oo) >= 3:
-        coeff_oo = np.polyfit(Zs_oo, Ms_oo, 2)
-        ax.plot(z_plot, np.polyval(coeff_oo, z_plot),
-                color="#004284", ls=':', lw=2, zorder=1)
+    # --- assi e layout: vanno fissati PRIMA di disegnare le frecce ---
+    ax.set_xticks(Z_SHOWN)
+    ax.set_ylim(-77.5, -62.0)
+    ax.set_xlim(min(Z_SHOWN) - 0.5, max(Z_SHOWN) + 0.5)
+    fig.tight_layout()
 
-    # --- actual isobars (integer Z) --------------------------------
-    for Z, M in zip(Zs, Ms):
-        even_even = (Z % 2 == 0)
-        color = "#004284" if even_even else "#004284"
-        ax.scatter(Z, M, s=60, color=color, zorder=3,
-                   edgecolor="black", linewidth=0.6)
-        label = rf"$^{{{A}}}${symbol(Z)}"
-        offset = -11 if even_even else 11
-        ax.annotate(label, (Z, M), textcoords="offset points", xytext=(0, offset),
-                    ha="center", fontsize=10,
-                    va="top" if even_even else "bottom")
+    # --- frecce: fusto (eventualmente tratteggiato) + punta sempre piena ---
+    def arrow(z1, z2, color, dashed=False, lw=2, shrink_pt=8, head_pt=10):
+        """Freccia dritta dall'isobaro z1 all'isobaro z2.
+        shrink_pt : distanza (in punti) lasciata libera attorno ai marker
+        head_pt   : lunghezza della punta (in punti)"""
+        to_px = fig.dpi / 72.0
+        p1 = ax.transData.transform((z1, shown[z1]))
+        p2 = ax.transData.transform((z2, shown[z2]))
+        u = (p2 - p1) / np.linalg.norm(p2 - p1)
+        start = p1 + u * shrink_pt * to_px          # inizio fusto
+        tip = p2 - u * shrink_pt * to_px            # vertice della punta
+        base = tip - u * head_pt * to_px            # base punta = fine fusto
+        inv = ax.transData.inverted()
+        start, base, tip = (inv.transform(p) for p in (start, base, tip))
 
-    # --- decay arrows ------------------------------------------------
-    beta_minus, beta_plus_ec, double_beta = classify_decays(mass_excess)
+        # fusto, senza punta
+        line, = ax.plot([start[0], base[0]], [start[1], base[1]], color=color,
+                        lw=lw, solid_capstyle="butt", dash_capstyle="butt", zorder=2)
+        if dashed:
+            line.set_dashes((4, 2.5))
+        # punta piena
+        ax.add_patch(FancyArrowPatch(
+            tuple(base), tuple(tip),
+            arrowstyle="-|>,head_length=0.5,head_width=0.25",
+            mutation_scale=head_pt * 2, color=color, lw=0,
+            shrinkA=0, shrinkB=0, zorder=2))
 
-    def draw_arrow(z1, z2, color, style="-", lw=1.6, rad=0.0):
-        p1 = (z1, mass_excess[z1])
-        p2 = (z2, mass_excess[z2])
-        arrow = FancyArrowPatch(p1, p2, arrowstyle="-|>", mutation_scale=14,
-                                 color=color, lw=lw, linestyle=style,
-                                 connectionstyle=f"arc3,rad={rad}", zorder=2)
-        ax.add_patch(arrow)
+    arrow(32, 33, YELLOW)                           # Ge -> As   beta singolo
+    arrow(32, 34, RED, dashed=True, lw=2.5)         # Ge -> Se   doppio beta
 
-    for z1, z2 in beta_minus:
-        draw_arrow(z1, z2, color="#ffbf00", lw=2, rad=-0.25)
-    for z1, z2 in beta_plus_ec:
-        draw_arrow(z1, z2, color="#ffbf00", lw=2, rad=0.25)
-    for z1, z2 in double_beta:
-        draw_arrow(z1, z2, color="#ff0000", lw=2.5, style="--")#, rad=-0.35)
-
-    # --- cosmetics ----------------------------------------------------
     ax.set_xlabel("Atomic number $Z$", fontsize=12)
     ax.set_ylabel("Mass excess (MeV)", fontsize=12)
-    title = rf"Isobaric mass parabolas for $A = {A}$"
-    ax.set_title(title, fontsize=13)
-    ax.set_xticks(Zs)
-    ax.grid(alpha=0.3, ls='--')
+    ax.set_title(rf"Isobaric mass parabolas for $A = {A}$", fontsize=13)
+    ax.grid(alpha=0.3, ls="--")
 
     handles = [
-        plt.Line2D([0], [0], color="#004284", lw=1.5 , label="even-even"),
-        plt.Line2D([0], [0], color="#004284", lw=2, ls=':', label="odd-odd"),
-        plt.Line2D([0], [0], color="#ffbf00", lw=2, label=r"single $\beta$ decay"),
-        plt.Line2D([0], [0], color="#ff0000", lw=2.2, ls="--", label=r"double $\beta$ decay"),
+        Line2D([0], [0], color=BLUE, lw=1.5, label="even-even"),
+        Line2D([0], [0], color=BLUE, lw=2, ls=":", label="odd-odd"),
+        Line2D([0], [0], color=YELLOW, lw=2, label=r"single $\beta$ decay"),
+        Line2D([0], [0], color=RED, lw=2.2, ls="--", label=r"double $\beta$ decay"),
     ]
     ax.legend(handles=handles, loc="upper center", ncol=2, frameon=False, fontsize=9)
 
-    fig.tight_layout()
     fig.savefig(out_path, dpi=300)
     fig.savefig(out_path.replace(".png", ".pdf"))
     plt.close(fig)
 
-    return beta_minus, beta_plus_ec, double_beta
-
 
 if __name__ == "__main__":
-    beta_minus, beta_plus_ec, double_beta = plot_mass_parabola(
-        A, MASS_EXCESS_A76,
-        out_path="C:\\Users\\Utente\\Desktop\\uni\\MAGISTRALE\\___TESI_magistrale\\latex\\figures\\mass_parabola_A76.png",
-        highlight_ee_isotope=32,  # 76Ge
+    plot_mass_parabola(
+        "C:\\Users\\Utente\\Desktop\\uni\\MAGISTRALE\\___TESI_magistrale\\latex\\figures\\mass_parabola_A76.png"
     )
-
-    print(f"Isobaric chain A = {A} (real AME2020-based mass excesses)")
-    print("Allowed beta-minus decays   (Z -> Z+1):",
-          [f"{symbol(z1)}-{A} -> {symbol(z2)}-{A}" for z1, z2 in beta_minus])
-    print("Allowed beta-plus/EC decays (Z -> Z-1):",
-          [f"{symbol(z1)}-{A} -> {symbol(z2)}-{A}" for z1, z2 in beta_plus_ec])
-    print("Double-beta candidates      (Z -> Z+-2):",
-          [f"{symbol(z1)}-{A} -> {symbol(z2)}-{A}" for z1, z2 in double_beta])

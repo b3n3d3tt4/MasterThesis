@@ -49,14 +49,13 @@ Precision measurements of the invisible decay width of the $Z^0$ boson at LEP co
 \subsection[Experimental evidence: the solar neutrinos problem]{Experimental evidence: the solar neutrino problem\footnotemark}
 \label{subsec:oscillation-experiments}
 \footnotetext{All of what is reported in this section is elaborated from \cite{neutrinosPDG}, unless otherwise specified.}
-Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy,
-\begin{wrapfigure}{l}{0.55\textwidth}
+\begin{wrapfigure}{l}{0.53\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/neutrino-fluxes.png}
     \caption{Energy spectra of solar neutrino fluxes of different reaction processes. Plot taken from \cite{SunNuFluxes}.}
     \label{fig:neutrino-fluxes}
 \end{wrapfigure}
-namely \ac{pp} chains and \ac{CNO} cycles. Based on the \ac{SSM}, the total neutrino flux at Earth can be estimated from the solar luminosity. In the \ac{pp} chains four protons fuse into a ${}^4$He nucleus, $4p \to {}^4\text{He} + 2e^+ + 2\nu_e$, releasing $Q = 4M({}^1\text{H}) - M({}^4\text{He}) \sim 26.73$~MeV per chain; using atomic masses automatically includes the annihilation of the two positrons with electrons of the plasma. Only a small fraction of this energy, on average $\langle E_{2\nu}\rangle \simeq 0.59$~MeV, is carried away by the two neutrinos, while the rest heats the Sun and is eventually radiated as photons. Both \ac{pp} reactions and \ac{CNO} ones produce only $\nu_e$: the expected fluxes of the individual components, in the absence of oscillations, are shown in Figure~\ref{fig:neutrino-fluxes}.
+Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy, namely \ac{pp} chains and \ac{CNO} cycles. Based on the \ac{SSM}, the total neutrino flux at Earth can be estimated from the solar luminosity. In the \ac{pp} chains four protons fuse into a ${}^4$He nucleus, $4p \to {}^4\text{He} + 2e^+ + 2\nu_e$, releasing $Q = 4M({}^1\text{H}) - M({}^4\text{He}) \sim 26.73$~MeV per chain; using atomic masses automatically includes the annihilation of the two positrons with electrons of the plasma. Only a small fraction of this energy, on average $\langle E_{2\nu}\rangle \simeq 0.59$~MeV, is carried away by the two neutrinos, while the rest heats the Sun and is eventually radiated as photons. Both \ac{pp} reactions and \ac{CNO} ones produce only $\nu_e$: the expected fluxes of the individual components, in the absence of oscillations, are shown in Figure~\ref{fig:neutrino-fluxes}.
 
 Solar neutrinos have been detected since the late 1960s. The first solar neutrino experiment was performed underground in the Homestake gold mine in South Dakota, in order to prevent contamination from cosmic-ray induced reactions. It employed liquid tetrachloroethylene (C$_2$Cl$_4$) as the target, exploiting the \ac{CC} interaction $\nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}$, whose threshold of $814$ keV makes it mainly sensitive to ${}^{7}$Be and ${}^{8}$B neutrinos. The measured rate was less than one third of the expected one, giving rise to the so-called \textit{solar neutrino problem}: the final result was $2.56 \pm 0.16 \pm 0.16 \text{ SNU}$~\footnote{SNU (solar neutrino unit) is a unit of event rate defined as $1 \text{ SNU} = 10^{-36}\text{ captures per second per target atom}$. The measured quantity is a capture rate, $R = \sum_i \Phi_i \sigma_i$, summed over the solar neutrino components $i$; converting it into a flux requires assuming the shape of the spectrum.}\cite{HomestakeResults}, to be compared with the \ac{SSM} prediction of $8.46^{+0.87}_{-0.88} \text{ SNU}$~\cite{SSMReference}.
 
@@ -146,21 +145,15 @@ It should be stressed that $U_\text{PMNS}$ is physical only because $U_{\ell\tex
 
 This matrix is a $3 \times 3$ unitary matrix, that parametrises a rotation (a mixing) through some parameters. A general $3 \times 3$ matrix can be written in terms of 9 complex numbers, i.e., 18 parameters; however, the unitarity property of $U_{\text{PMNS}}$, which means $U U^\dagger = \mathbb{1}$, introduces nine constraints, leaving only nine independent parameters to fully describe the mixing. Among these nine parameters, three of them are angles, $\theta_{12}$, $\theta_{13}$, $\theta_{23}$, while the remaining six are complex phases of the form $e^{i \delta}$ since $U_{\text{PMNS}}$ is not a real matrix. Specifically, $\theta_{12}$ is the angle of rotation about the 3-axis, $\theta_{13}$ is the angle of rotation about the new 2-axis and $\theta_{23}$ is a rotation about the remaining 1-axis.
 
-Although we have stated above that six complex phases are needed, not all of them carry physical significance. If neutrinos are Dirac particles, the fields of the charged leptons and neutrinos can be redefined multiplying them by arbitrary phase factors. Since an overall global phase transformation leaves the physics invariant, exactly five of these six phases can be safely absorbed into the definitions of the fermion fields without any observable consequence. Therefore, the $U_{\text{PMNS}}$ matrix is ultimately parametrised by only four physical quantities: the three aforementioned mixing angles ($\theta_{12}$, $\theta_{13}$, $\theta_{23}$) and a single, irreducible complex phase, $\delta$. This remaining parameter is of fundamental importance, as it is responsible for \ac{CP} violation in the lepton sector.
-
-Mathematically, consider that the weak interactions remain invariant under the rephasing of the charged lepton fields $\ell_\alpha$ (with $\alpha = e, \mu, \tau$) and the neutrino mass eigenstate fields $\nu_k$ (with $k = 1, 2, 3$). If we perform the transformations 
+Not all of the six phases are physical. The weak interactions are invariant under the rephasing of the charged-lepton fields $\ell_\alpha$ ($\alpha = e, \mu, \tau$) and of the neutrino mass-eigenstate fields $\nu_k$ ($k = 1, 2, 3$),
 \begin{equation}
-    \ell_\alpha \longrightarrow \ell_\alpha e^{i\theta_\alpha} \qquad \text{and} \qquad \nu_k \longrightarrow \nu_k e^{i\theta_k},
+    \ell_\alpha \longrightarrow e^{i\theta_\alpha}\,\ell_\alpha \qquad \text{and} \qquad \nu_k \longrightarrow e^{i\theta_k}\,\nu_k ,
 \end{equation}
-the elements of the mixing matrix must transform accordingly to leave the Lagrangian unchanged:
+provided that the mixing matrix transforms as
 \begin{equation}
-    U_{\alpha k} \longrightarrow U_{\alpha k} e^{i(\theta_\alpha - \theta_k)}.
+    U_{\alpha k} \longrightarrow e^{i(\theta_\alpha - \theta_k)}\, U_{\alpha k}.
 \end{equation}
-At first glance, it appears we have six independent phases (three from $\theta_\alpha$ and three from $\theta_k$) available to cancel the six complex phases of the $3 \times 3$ unitary matrix. However, the transformation depends only on the phase differences. If we extract a common overall phase factor, for instance by defining relative phases such that $\theta_\alpha = \theta_e + \theta'_\alpha$ and $\theta_k = \theta_e + \theta'_k$, the mixing matrix elements become:
-\begin{equation}
-    U_{\alpha k} \longrightarrow U_{\alpha k} e^{i(\theta'_\alpha - \theta'_k)}.
-\end{equation}
-Because the common global phase $\theta_e$ cancels out perfectly, it has no physical effect on the mixing matrix. This leaves exactly five independent relative phases ($6$ total fields minus $1$ common phase) that can be strategically chosen to absorb five of the original complex phases in $U_{\text{PMNS}}$. The single remaining unabsorbed phase is the Dirac \ac{CP}-violating phase $\delta$.
+This gives six free phases, three $\theta_\alpha$ and three $\theta_k$, but only their differences enter. In particular, a common shift $\theta_\alpha = \theta_k = \theta$ leaves every $U_{\alpha k}$ unchanged, so only $6 - 1 = 5$ phases can actually be used to remove phases from $U_\text{PMNS}$. Of the six phases of the matrix, five are therefore unphysical. If neutrinos are Dirac particles, $U_\text{PMNS}$ is thus described by four physical parameters: the three mixing angles $\theta_{12}$, $\theta_{13}$, $\theta_{23}$ and a single irreducible phase $\delta$, which is responsible for \ac{CP} violation in the lepton sector.
 
 Finally the full neutrino mixing matrix can be written as reported in Eq. \ref{eq:Upmns-total}
 \begin{equation}
@@ -395,15 +388,11 @@ Beta decay is a nuclear transition in which a nucleus $(Z, A)$ converts into an 
     (Z, A) \longrightarrow (Z+1, A) + e^- + \overline{\nu}_e \qquad \text{or} \qquad 
     (Z, A) \longrightarrow (Z-1, A) + e^+ + \nu_e,
 \end{equation}
-depending on whether a neutron ($\beta^-$) or a proton ($\beta^+$) undergoes the weak transition. 
-Enrico Fermi described this process in 1934 by introducing a point-like, four-fermion contact interaction 
-Hamiltonian
+depending on whether a neutron ($\beta^-$) or a proton ($\beta^+$) undergoes the weak transition. Enrico Fermi described this process in 1934 by introducing a point-like, four-fermion contact interaction Hamiltonian
 \begin{equation}
     H_F = G_F \left( \overline{\psi}_p \gamma^\mu \psi_n \right)\left( \overline{\psi}_e \gamma_\mu \psi_\nu \right) + \text{h.c.}
 \end{equation} 
-with $G_F$ the Fermi coupling constant, later reinterpreted within the \ac{SM} as the low-energy, 
-effective limit of the \ac{CC} interaction (Eq. \ref{eq:SM-neutrino-lagrangian}) where a virtual $W$ boson mediates, at the quark level, the $d \to u$ or $u \to d$ transitions. 
-The process is allowed whenever it is energetically favourable, i.e. whenever the mass difference between the mother and daughter nuclei is large enough to compensate for the $Q$-value of the reaction, and it is precisely this energy balance, together with nuclear pairing effects, that determines which nuclei undergo ordinary $\beta$ decay and which ones are instead only accessible through the second-order process of double-$\beta$ decay, discussed further in this Section.
+with $G_F$ the Fermi coupling constant, later reinterpreted within the \ac{SM} as the low-energy, effective limit of the \ac{CC} interaction (Eq. \ref{eq:SM-neutrino-lagrangian}) where a virtual $W$ boson mediates, at the quark level, the $d \to u$ or $u \to d$ transitions. The process is allowed whenever it is energetically favourable, i.e. whenever the mass difference between the mother and daughter nuclei is large enough to compensate for the $Q$-value of the reaction, and it is precisely this energy balance, together with nuclear pairing effects, that determines which nuclei undergo ordinary $\beta$ decay and which ones are instead only accessible through the second-order process of double-$\beta$ decay, discussed further in this Section.
 
 \subsection{Two-neutrino double beta decay (\texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2vbb})}
 \label{subsec:2nubetabeta}
@@ -422,17 +411,18 @@ At the microscopic level, the process occurs through two simultaneous, virtual s
     \label{fig:2nu_feynman}
 \end{figure}
 
-For a nucleus to undergo such a rare decay, the standard single-$\beta$ decay to the intermediate isobar $(Z+1, A)$ must be energetically forbidden or heavily suppressed. This kinematic condition naturally arises in even-even nuclei due to the nuclear pairing interaction, which binds them more tightly than their odd-odd neighbours. As a consequence, while the direct transition $(Z, A) \to (Z+1, A)$ is blocked, the target state $(Z+2, A)$ still sits at a lower energy level, effectively opening the double-$\beta$ channel. 
-This energy landscape is visualised using mass parabolas, as shown in Figure \ref{fig:doublebeta-parabola} for the case of ${}^{76}\text{Ge}$, where the even-even and odd-odd mass parabolas are shown in dark blue and light blue, respectively. The double-beta transition of ${}^{76}\text{Ge}$ is highlighted in red, while the yellow lines represent ordinary single-$\beta$ decays. The intermediate odd-odd state acts as a virtual state in the quantum mechanical transition and is never physically populated.
-\begin{figure}[H]
+\begin{wrapfigure}{r}{0.52\textwidth}%[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/mass_parabola_A76.pdf}
-    \caption{Mass parabola for $A=76$ isobars. A detailed description is given in the text. Custom plot with data taken from \cite{AME2020-masses} and \cite{Ge76-Qvalue}.}
+    \includegraphics[width=\linewidth]{figures/mass_parabola_A76.pdf}
+    \caption{Mass parabolas for $A=76$ isobars. A detailed description is given in the text. Custom plot with data taken from \cite{AME2020-masses} and \cite{Ge76-Qvalue}.}
     \label{fig:doublebeta-parabola}
-\end{figure}
+\end{wrapfigure}
+For a nucleus to undergo such a rare decay, the standard single-$\beta$ decay to the intermediate isobar $(Z+1, A)$ must be energetically forbidden or heavily suppressed. This kinematic condition naturally arises in even-even nuclei due to the nuclear pairing interaction, which binds them more tightly than their odd-odd neighbours. As a consequence, while the direct transition $(Z, A) \to (Z+1, A)$ is blocked, the target state $(Z+2, A)$ still sits at a lower energy level, effectively opening the double-$\beta$ channel. 
+This energy landscape is visualised using mass parabolas, as shown in Figure \ref{fig:doublebeta-parabola} for the case of ${}^{76}\text{Ge}$, where the even-even and odd-odd mass parabolas are shown with a continuous and dashed line, respectively. The double-beta transition of ${}^{76}\text{Ge}$ is highlighted in red, while the yellow lines represent ordinary single-$\beta$ decays. The intermediate odd-odd state acts as a virtual state in the quantum mechanical transition and is never physically populated.
+
 Because $2\nu\beta\beta$ is a second-order process in the weak coupling, its decay rate is massively suppressed compared to ordinary $\beta$ decay, resulting in extremely long half-lives of the order of $T_{1/2}^{2\nu} \sim 10^{19}$--$10^{24}$~years, depending on the isotope.
 
-Unlike the neutrinoless mode, $2\nu\beta\beta$ does not require any new physics beyond the \ac{SM} and has been experimentally observed -either directly or via geochemical methods- in about a dozen even-even isotopes. Nuclei such as ${}^{48}\text{Ca}$, ${}^{76}\text{Ge}$, ${}^{82}\text{Se}$, ${}^{100}\text{Mo}$, ${}^{130}\text{Te}$, and ${}^{136}\text{Xe}$ are of particular relevance in modern physics, as they also represent the most promising candidates in the search for neutrinoless double beta decay, a process that violates lepton number by two units and is discussed in detail in Section~\ref{subsec:0nubetabeta}.
+Unlike the neutrinoless mode, $2\nu\beta\beta$ does not require any new physics beyond the \ac{SM} and has been experimentally observed in about different even-even isotopes. Nuclei such as ${}^{48}\text{Ca}$, ${}^{76}\text{Ge}$, ${}^{82}\text{Se}$, ${}^{100}\text{Mo}$, ${}^{130}\text{Te}$, and ${}^{136}\text{Xe}$ are of particular relevance in modern physics, as they also represent the most promising candidates in the search for neutrinoless double beta decay, a process that violates lepton number by two units and is discussed in detail in Section~\ref{subsec:0nubetabeta}.
 
 \subsection{Neutrinoless double beta decay (\texorpdfstring{$0\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{0vbb})}
 \label{subsec:0nubetabeta}
@@ -450,19 +440,17 @@ The most sensitive probe to determine whether neutrinos are Dirac or Majorana pa
     \label{fig:0nubetabeta-diagram}
 \end{figure}
 
-This hypothetical, lepton-number-violating process can be distinguished from the more common $2\nu\beta\beta$ decay by analyzing the electron energy spectra. Specifically, in $0\nu\beta\beta$ decay, the electrons are produced with a total energy of
-\begin{equation*}
-    E_{e, 1} + E_{e, 2} + E_{\text{nucleus}} = Q_{\beta\beta} = \frac{1}{2} [M(Z, A) - M(Z+2, A)] 
-\end{equation*}
-where $M(Z, A)$ and $M(Z+2, A)$ represent the masses of the parent and daughter nuclei, respectively. Conversely, for standard $2\nu\beta\beta$ decay, the combined electron energy spectrum is continuous, with very few events occurring near the endpoint $\frac{1}{2}Q$. 
-% This can be visualised in Fig. \ref{fig:Qvalue-2nu0nu}.
-
-\begin{figure}[H]
+\begin{wrapfigure}{r}{0.52\textwidth}%[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/0nu_vs_2nu.pdf}
-    \caption{Schematic representation of the energy distribution for the products in $2\nu\beta\beta$ and $0\nu\beta\beta$ decay modes. The $0\nu\beta\beta$ decay produces a mono-energetic peak at the $Q$-value, while the $2\nu\beta\beta$ decay results in a continuous spectrum.}
+    \includegraphics[width=\linewidth]{figures/0nu_vs_2nu.pdf}
+    \caption{Schematic representation of the energy distribution for the products in $2\nu\beta\beta$ and $0\nu\beta\beta$ decay modes. The description is given in the text.}
     \label{fig:Qvalue-2nu0nu}
-\end{figure}
+\end{wrapfigure}
+From an experimental point of view, a $0\nu\beta\beta$ process can be distinguished from the more common $2\nu\beta\beta$ decay by analyzing the electron energy spectra of the two emitted electrons. Specifically, in $0\nu\beta\beta$ decay, the electrons are produced with energies $E_{e, 1}$ and $E_{e, 2}$ that satisfies
+\begin{equation*}
+    E_{e, 1} + E_{e, 2} + E_{\text{nuc}} = Q_{\beta\beta} = \frac{1}{2} [M(Z, A) - M(Z+2, A)] 
+\end{equation*}
+where $M(Z, A)$ and $M(Z+2, A)$ represent the masses of the parent and daughter nuclei, respectively. Moreover, the energy of the recoiling nucleus being negligible, the sum of the electron energies is equal to the $Q$-value of the transition, i.e. $E_{e, 1} + E_{e, 2} = Q_{\beta\beta}$. Conversely, for standard $2\nu\beta\beta$ decay, the combined electron energy spectrum is continuous, with very few events occurring near the endpoint $\frac{1}{2}Q$. Fig. \ref{fig:Qvalue-2nu0nu} shows said continuous spectrum in red for the $2\nu\beta\beta$ process and the monoenergetic one around the $Q$-value for $0\nu\beta\beta$ in blue.
 
 If neutrinos are indeed Majorana particles, the standard mechanism for $0\nu\beta\beta$ decay is mediated by the exchange of a light Majorana neutrino. The decay rate, usually expressed in terms of the half-life $T_{1/2}^{0\nu}$, is given by:
 \begin{equation}
@@ -470,7 +458,7 @@ If neutrinos are indeed Majorana particles, the standard mechanism for $0\nu\bet
 \end{equation}
 where $G_{0\nu}(Q, Z)$ is the phase space factor (which depends on the Q-value and the atomic number $Z$), $\mathcal{M}_{0\nu}$ is the nuclear matrix element, $m_e$ is the electron mass, and $m_{\beta\beta} = \sum_{i=1}^{3} U_{ei}^2 m_{\nu i}$ denotes the effective Majorana mass, which depends on both the PMNS matrix elements and the neutrino mass eigenvalues. Consequently, the decay rate is directly sensitive to the \ac{NMO}.
 
-From an experimental perspective, observing $0\nu\beta\beta$ decay requires identifying a tiny, mono-energetic signal at $Q_{\beta\beta}$ over the background. For experiments operating in a background-limited regime, the sensitivity to the half-life $S_{1/2}$ scales as:
+Experimentally, observing $0\nu\beta\beta$ decay requires identifying a tiny, mono-energetic signal at $Q_{\beta\beta}$ over the background. For experiments operating in a background-limited regime, the sensitivity to the half-life $S_{1/2}$ scales as:
 \begin{equation}
     S_{1/2} \propto \epsilon \cdot a \cdot \sqrt{\frac{M \cdot t}{B \cdot \Delta E}}
 \end{equation}
