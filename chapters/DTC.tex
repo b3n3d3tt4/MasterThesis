@@ -128,7 +128,7 @@ The \ac{TSC} class only consists of a tensorial object in the \texttt{Parameter}
     \end{itemize}
 
     \item \textbf{probability calculation}:\\
-    The probability of belonging to a given cluster $j$ is based on a t-Student distribution kernel. Specifically, the similarity between the latent representation $z_i$ of a sample and a cluster centroid $w_j$ is evaluated using a Student's t-distribution with $\alpha$ degrees of freedom as a kernel. While the theoretical probability density function of the t-distribution includes a normalization constant defined by the Gamma function $\Gamma(\cdot)$, this term cancels out during the cluster assignment phase. In fact, to obtain valid soft assignments (i.e., probabilities that sum to 1), the score of cluster $j$ is normalized by the sum of the scores over all $K$ clusters. Since the degrees of freedom parameter $\alpha$ is a global constant across all clusters, the $\Gamma$ term simplifies algebraically, yielding the final probability $q_{ij}$ defined in Eq. \ref{eq:q-prob}:
+    The probability of belonging to a given cluster $j$ is based on a t-Student distribution kernel. Specifically, the similarity between the latent representation $z_i$ of a sample and a cluster centroid $w_j$ is evaluated using a Student's t-distribution with $\alpha$ degrees of freedom as a kernel. While the theoretical probability density function of the t-distribution includes a normalization constant defined by the Gamma function $\Gamma(\cdot)$, this term cancels out during the cluster assignment phase. In fact, to obtain valid soft assignments (i.e., probabilities that sum to 1), the score of cluster $j$ is normalised by the sum of the scores over all $K$ clusters. Since the degrees of freedom parameter $\alpha$ is a global constant across all clusters, the $\Gamma$ term simplifies algebraically, yielding the final probability $q_{ij}$ defined in Eq. \ref{eq:q-prob}:
     \begin{equation}
         \label{eq:q-prob}
         q_{ij} = \frac{\left( 1 + \frac{d(z_i, w_j)^2}{\alpha} \right)^{-\frac{\alpha+1}{2}}}{\sum_{k=1}^{K} \left( 1 + \frac{d(z_i, w_k)^2}{\alpha} \right)^{-\frac{\alpha+1}{2}}}
@@ -177,7 +177,6 @@ Being \texttt{Parameter} objects, the centroids $w_j$ are optimised together wit
 
 Eq.~\ref{eq:grad-centroids} has an intuitive interpretation: if the target assigns sample $i$ to cluster $j$ with more confidence than the model ($p_{ij} > q_{ij}$), the gradient step moves the centroid $w_j$ towards $z_i$, while if $p_{ij} < q_{ij}$ it moves it away. The factor $(1 + d_{ij}^2/\alpha)^{-1}$ gives more weight to the samples that are already close to the centroid. At the same time, Eq.~\ref{eq:grad-latent} is back-propagated through the encoder, so that the latent representation $z_i$ of each sample is pulled towards the centroid of the cluster it most likely belongs to: the clustering reshapes the latent space itself, while $L_\text{TAE}$ keeps it faithful to the input waveforms. For the Complexity-Invariant Distance and the Autocorrelation Function the gradients follow from the same chain rule and are computed by automatic differentiation.
 
-
 The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is shown in Fig.~\ref{fig:tae_and_tsc-architecure}.
 \begin{figure}[H]
     \centering
@@ -188,9 +187,9 @@ The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is show
 
 \subsection{Training and testing}
 \label{subsec:train-test-DTC}
-The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. 
+The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. Being a fully-unsupervised agorithm, discrepancies between two trainings in the same configuration may occur. Nevertheless said differences never become significant enough to change the structure of the clusters or the conclusions drawn in this work.
 
-\textbf{\textit{Pretrain}}: this phase is exploited in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts and it is initialised to the noise of the training waveforms, i.e. the median of the standard deviation of their first 20 time points, so that the \ac{NLL} starts from the correct order of magnitude. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the $L_\text{TAE}$ loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to reconstruct waveforms and it is not overfitting training data.
+\textbf{\textit{Pretrain}}: this phase is exploited in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts and it is initialised to the noise of the training waveforms, i.e. the median of the standard deviation of their first 20 time points, so that the \ac{NLL} starts from the correct order of magnitude. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the $L_\text{TAE}$ loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to reconstruct waveforms and it is not overfitting training data. The exact values of the train and validation losses are summarised in Table \ref{tab:pretrain-losses}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/pretrain_reconstruction.pdf}
@@ -204,6 +203,20 @@ The \ac{DTC} training phase is divided in two different parts: the \textit{pretr
     \caption{\textit{Pretrain} loss evolution through epochs. On the right a zoom of the grey part of the left plot is shown.}
     \label{fig:pretrain-loss}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrr}
+        \toprule
+                 & \textbf{Training}   & \textbf{Validation} \\
+        \midrule
+        Epoch 1  & $862.22$   & $-544.96$  \\
+        Epoch 50 & $-811.17$  & $-799.32$  \\
+        \bottomrule
+    \end{tabular}
+        \caption{Reconstruction loss (\ac{NLL}) of the pre-training on the training and validation sets, at the first and at the last epoch.}
+    \label{tab:pretrain-losses}
+\end{table}
 
 Soon after this part is completed, the $\sigma$ parameter is fixed to the learned value and the centroids of the clusters are pre-initialised using a K-Means algorithm on the latent representation of the training set: from said centroids the \ac{TSC} part of the model starts to cluster waveforms.
 
@@ -222,7 +235,7 @@ In this work $\gamma$ has to be much larger than 1, because of the different sca
 Four trains with $\gamma = 10, 100, 1000, 10000$ at a fixed number of clusters $K=2$ have been performed. 
 The results on the whole calibration dataset are shown in Fig.\ref{fig:scan-gamma} while the reconstruction ability of the \ac{TAE} and the losses evolutions can be found in Appendix \ref{app:DTC-scans}.
 
-The results with $\gamma=10$ and $\gamma=100$ are comparable and clearly do not return a proper clustering of events: about 93\% of the waveforms are assigned to the same cluster, while the second one collects a small population concentrated on the low-energy side of the \ac{FEP}, with no enrichment in the \ac{DEP}. The fact that the two results are almost identical points the fact that the clustering term is too weak with respect to the reconstruction one, so that the assignments remain essentially those of the K-Means initialisation. With $\gamma=1000$, instead, the two clusters sho an significantly different behaviour in the two peaks: the fraction of events in cluster 0 rises from about 0.43 in the Compton continuum to about 0.75 in the \ac{DEP} and drops to about 0.22 in the \ac{FEP}, while cluster 1 shows the complementary trend, as expected for a separation between \ac{SSE}- and \ac{MSE}-like waveforms. Increasing $\gamma$ to $10\,000$ moves the boundary between the clusters: the \ac{SSE}-like cluster grows to 67\% of the events and reaches about 0.87 in the \ac{DEP}, but in the \ac{FEP} its fraction remains about 0.53, close to the 0.66 of the continuum, so that the two clusters are almost equally populated in the \ac{FEP}. Relative to the Compton continuum, the \ac{DEP} enrichment decreases from a factor of about 1.7 to 1.3 and the \ac{FEP} suppression from about 0.5 to 0.8. Therefore $\gamma = 1000$ is the value that gives the clearest separation and has been adopted for all the following trainings.
+The results with $\gamma=10$ and $\gamma=100$ are comparable and clearly do not return a proper clustering of events: about 93\% of the waveforms are assigned to the same cluster, while the second one collects a small population concentrated on the low-energy side of the \ac{FEP}, with no enrichment in the \ac{DEP}. The fact that the two results are almost identical points the fact that the clustering term is too weak with respect to the reconstruction one, so that the assignments remain essentially those of the K-Means initialisation. With $\gamma=1000$ and $\gamma = 10\,000$, instead, the two clusters show a significantly different behaviour in the two peaks: the fraction of events of the green cluster reaches its peak around the \ac{DEP} region and its lower point in the \ac{FEP} area, while the opposite happens for the gray cluster. However, $\gamma = 1000$ yields the best overall trade-off and training stability. Although $\gamma = 10000$ achieves a steeper reduction in the clustering loss (\ac{KL}), it comes at the expense of a significantly degraded \ac{NLL} reconstruction loss. This indicates that an excessively large $\gamma$ causes the clustering objective to overpower the reconstruction term, whereas preserving a low reconstruction error is essential to ensure that the latent space encodes physically meaningful and informative representations. In contrast, for $\gamma = 1000$, while the \ac{KL} loss does not show a pronounced decrease, it plateaus rather than diverges. Most notably, this is the only configuration where the validation losses closely mirror the training loss trends, showing only a minor and isolated divergence in the \ac{NLL} validation curve around epoch 16. Therefore $\gamma=1000$ has been adopted for all the following trainings.
 
 \begin{figure}[H]
     \centering
@@ -235,7 +248,7 @@ The results with $\gamma=10$ and $\gamma=100$ are comparable and clearly do not 
 \end{figure}
 
 
-\subsubsection{Clusters scan}
+\subsubsection{\texorpdfstring{$\bm{K}$}{kappa}scan}
 Subsequently, fixing $\gamma=1000$ from the just-mentioned considerations, other four trains with $K=2, 3, 4$ have been carried out in order to highlight any additional clusters beyond the expected ones (\ac{SSE} and \ac{MSE}).
 Said clustering on the whole calibration dataset are shown in Fig. \ref{fig:scan-clusters}  while the reconstruction ability of the \ac{TAE} and the losses evolutions can be found in Appendix \ref{app:DTC-scans}.
 
@@ -248,22 +261,185 @@ Said clustering on the whole calibration dataset are shown in Fig. \ref{fig:scan
     \label{fig:scan-clusters}
 \end{figure}
 
-This analysis clearly reports the fact that our assumption of having two types of events is true: in the run with $K=3$ clusters, all the events have been assigned only to two of them leaving the third one empty, while in the $K=4$ the same happened for all the events but two that were assigned to a third cluster.
-These two events are the ones shown in Fig. \ref{fig:events-third-cluster}: the energy of the two events is clearly different but they are both characterised by an high value of \ac{AE} and this suggests a possible correlation with $\alpha$ events (see Sec. \ref{sec:traditionalPSD}). However, seeing that this third cluster involves only 2 over 348 999 events, the possibility of investigating more than $K=2$ clusters is left as a future development of this algorithm since it goes beyond the purposes of this work. 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_cluster3_waveforms.pdf}
-    \caption{Events left out by the two main clusters in the $K=4$ scan with Euclidean Distance.}
-    \label{fig:events-third-cluster}
-\end{figure}
+This analysis clearly reports the fact that our assumption of having two types of events is true: in the run with $K=3$ clusters, all the events have been assigned only to two of them leaving the third one empty, while in the $K=4$ the same happened for all the events but 29 that were assigned to a third cluster.
+These events are the ones shown in Fig. \ref{fig:events-third-cluster} of Appendix \ref{app:DTC-scans}. However, seeing that this third cluster involves only 29 over 348 999 events, i.e. less than 0.01\% of the dataset, the possibility of investigating more than $K=2$ clusters is left as a future development of this algorithm since it goes beyond the purposes of the work. 
 
-Following the $\gamma$ scan and the clusters scan, the main \textit{train} phase has beene performed with the three considered metrics using $\gamma = 1000$ and $K=2$ and for a number of training epochs $\text{N}_\text{TRAIN} = 20$.
-
-\subsubsection{Euclidean Distance}
-
-\subsubsection{Complexity Invariant Distance}
+Following the $\gamma$ and $K$ scan, the main \textit{train} phase has been performed with the three considered metrics using $\gamma = 1000$ and $K=2$ and for a number of training epochs $\text{N}_\text{TRAIN} = 20$.
 
 \subsubsection{Autocorrelation Function}
+The reconstruction ability through epochs for the Autocorrelation Function metric is shown in Fig. \ref{fig:acf-reconstruction} while the evolution of losses is given in Fig. \ref{fig:acf-losses}. Subsequently the clustering results in terms of energy spectra, \ac{AE} distribution and risetime distribution are shown in Fig. \ref{fig:acf-train}, \ref{fig:acf-valid} and \ref{fig:acf-test} for the training, validation and test sets respectively. Moreover Table \ref{tab:acf-losses} summarises the losses values for the same sets.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrrrrrr}
+        \hline
+         & \multicolumn{2}{c}{Total loss} & \multicolumn{2}{c}{\ac{NLL}} & \multicolumn{2}{c}{\ac{KL}} \\
+        Set & epoch 1 & epoch 20 & epoch 1 & epoch 20 & epoch 1 & epoch 20 \\
+        \hline
+        Training   & $-804.11$ & $-700.60$  & $-807.73$ & $-779.14$  & $0.0036$ & $0.0785$ \\
+        Validation & $-805.89$ & $-684.25$  & $-809.82$ & $-763.03$  & $0.0039$ & $0.0788$ \\
+        Test       & --        & \textbf{?} & --        & \textbf{?} & --       & \textbf{?} \\
+        \hline
+    \end{tabular}
+    \caption{Total, reconstruction (\ac{NLL}) and clustering (\ac{KL}) losses of the final training with the Auto-Correlation Function (ACF) metric ($\gamma = 1000$), at the first and at the last epoch. The test set is evaluated with the final model only.}
+    \label{tab:acf-losses}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_training_reconstruction.pdf}
+    \caption{Original versus reconstructed waveforms at different training epochs utilizing the Autocorrelation Function metric.}
+    \label{fig:acf-reconstruction}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_training_history.pdf}
+    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, utilizing the Autocorrelation Function metric.}
+    \label{fig:acf-losses}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_train.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_train_linear.pdf}
+    \caption{Clustering results evaluated on the training set using the Autocorrelation Function metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:acf-train}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_val.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_val_linear.pdf}
+    \caption{Clustering results evaluated on the validation set using the Autocorrelation Function metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:acf-valid}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_test.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_test_linear.pdf}
+    \caption{Clustering results evaluated on the test set using the Autocorrelation Function metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:acf-test}
+\end{figure}
+
+
+\subsubsection{Euclidean Distance}
+The reconstruction ability through epochs for the Euclidean Distance metric is shown in Fig. \ref{fig:euclidean-reconstruction} while the evolution of losses is given in Fig. \ref{fig:euclidean-losses}. Subsequently the clustering results in terms of energy spectra, \ac{AE} distribution and risetime distribution are shown in Fig. \ref{fig:euclidean-train}, \ref{fig:euclidean-valid} and \ref{fig:euclidean-test} for the training, validation and test sets respectively. Moreover Table \ref{tab:euclidean-losses} summarises the losses values for the same sets.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrrrrrr}
+        \hline
+         & \multicolumn{2}{c}{Total loss} & \multicolumn{2}{c}{\ac{NLL}} & \multicolumn{2}{c}{\ac{KL}} \\
+        Set & epoch 1 & epoch 20 & epoch 1 & epoch 20 & epoch 1 & epoch 20 \\
+        \hline
+        Training   & $-778.92$ & $-712.51$  & $-800.32$ & $-787.81$  & $0.0214$ & $0.0753$ \\
+        Validation & $-741.36$ & $-711.82$  & $-786.44$ & $-787.06$  & $0.0451$ & $0.0752$ \\
+        Test       & --        & \textbf{?} & --        & \textbf{?} & --       & \textbf{?} \\
+        \hline
+    \end{tabular}
+    \caption{Total, reconstruction (\ac{NLL}) and clustering (\ac{KL}) losses of the final training with the Euclidean Distance (EUC) metric ($\gamma = 1000$), at the first and at the last epoch. The test set is evaluated with the final model only.}
+    \label{tab:euclidean-losses}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_training_reconstruction.pdf}
+    \caption{Original versus reconstructed waveforms at different training epochs utilizing the Euclidean Distance metric.}
+    \label{fig:euclidean-reconstruction}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_training_history.pdf}
+    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, utilizing the Euclidean Distance metric.}
+    \label{fig:euclidean-losses}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_train.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_train_linear.pdf}
+    \caption{Clustering results evaluated on the training set using the Euclidean Distance metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:euclidean-train}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_val.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_val_linear.pdf}
+    \caption{Clustering results evaluated on the validation set using the Euclidean Distance metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:euclidean-valid}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_test.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_test_linear.pdf}
+    \caption{Clustering results evaluated on the test set using the Euclidean Distance metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:euclidean-test}
+\end{figure}
+
+
+\subsubsection{Complexity Invariant Distance}
+The reconstruction ability through epochs for the Complexity Invariant Distance metric is shown in Fig. \ref{fig:cid-reconstruction} while the evolution of losses is given in Fig. \ref{fig:cid-losses}. Subsequently the clustering results in terms of energy spectra, \ac{AE} distribution and risetime distribution are shown in Fig. \ref{fig:cid-train}, \ref{fig:cid-valid} and \ref{fig:cid-test} for the training, validation and test sets respectively. Moreover Table \ref{tab:cid-losses} summarises the losses values for the same sets.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrrrrrr}
+        \hline
+         & \multicolumn{2}{c}{Total loss} & \multicolumn{2}{c}{\ac{NLL}} & \multicolumn{2}{c}{\ac{KL}} \\
+        Set & epoch 1 & epoch 20 & epoch 1 & epoch 20 & epoch 1 & epoch 20 \\
+        \hline
+        Training   & $-730.58$ & $-785.26$  & $-771.12$ & $-792.84$  & $0.0405$ & $0.0076$ \\
+        Validation & $-734.81$ & $-784.80$  & $-765.76$ & $-792.23$  & $0.0310$ & $0.0074$ \\
+        Test       & --        & \textbf{?} & --        & \textbf{?} & --       & \textbf{?} \\
+        \hline
+    \end{tabular}
+    \caption{Total, reconstruction (\ac{NLL}) and clustering (\ac{KL}) losses of the final training with the Complexity-Invariant Distance (CID) metric ($\gamma = 1000$), at the first and at the last epoch. The test set is evaluated with the final model only.}
+    \label{tab:cid-losses}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_training_reconstruction.pdf}
+    \caption{Original versus reconstructed waveforms at different training epochs utilizing the Complexity Invariant Distance metric.}
+    \label{fig:cid-reconstruction}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_training_history.pdf}
+    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, utilizing the Complexity Invariant Distance metric.}
+    \label{fig:cid-losses}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_train.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_train_linear.pdf}
+    \caption{Clustering results evaluated on the training set using the Complexity Invariant Distance metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:cid-train}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_val.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_val_linear.pdf}
+    \caption{Clustering results evaluated on the validation set using the Complexity Invariant Distance metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:cid-valid}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_test.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_test_linear.pdf}
+    \caption{Clustering results evaluated on the test set using the Complexity Invariant Distance metric. Top: Energy spectra of the identified clusters. Bottom: \ac{AE} parameter versus risetime distribution for the corresponding clusters.}
+    \label{fig:cid-test}
+\end{figure}
+
+
 
 
 
