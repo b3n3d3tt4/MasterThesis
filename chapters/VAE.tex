@@ -214,6 +214,8 @@ An additional tunable parameter $\beta$ balances the two contributions in the lo
     \beta(n) = \beta \cdot \min\left(1, \frac{n+1}{N_{\text{w}}}\right)
 \end{equation}
 
+All the losses used in this section (the \ac{NLL} and \ac{KL} terms of the \ac{VAE} and the \ac{BCE} of the classifier of Sec.~\ref{subsec:VAE-features_extraction}) are computed with natural logarithms and are therefore expressed in nats, the natural unit of information ($1~\text{nat} = 1/\ln 2 \approx 1.44$~bits). Since they are averaged over the waveforms of a batch, all their values are given per waveform. The \ac{KL} divergence and the \ac{BCE} are absolute quantities, always non-negative. The \ac{NLL}, instead, is defined only up to an additive constant: the term $\frac{1}{2}\ln 2\pi$ per sample is omitted, and the value depends on the units of the waveforms through $\log \sigma^2$. For this reason the \ac{NLL} can be negative, and only its variations, e.g. between epochs or between datasets, are meaningful.
+
 The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PSD} tasks under different perspectives. However, an initial verification of the robustness of its ability in the pure reconstruction task allows us to ensure the fact that if the reconstruction follows the waveform shape, the latent space is representative of the input as a consequence.
 
 The pure recontruction training has been performed using $\beta=1$ and a total number of $N=100$ epochs, the first $N_w = 10$ of which are warm-up epochs, with $k = 8$ dimensions in the latent space and a free-bits threshold $\lambda_{fb} = 0.5$~nat.
