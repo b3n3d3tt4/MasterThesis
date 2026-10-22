@@ -3,9 +3,9 @@
 As introduced in Sec. \ref{subsec:train-test-DTC}, this Appendix summarise the reconstruction ability of the \ac{TAE} and the evolution of $L_\text{TAE}$ and $L_\text{TSC}$ through epochs of the training performed to determine the appropriate value of $\gamma$ weighting the two losses and the number of clusters $K$ to be considered in the \textit{train} phase of the \ac{DTC}.
 
 \section{\texorpdfstring{$\bm{\gamma}$}{gamma} scan results}
-Figures \ref{fig:scan-reconstruction_and_losses-gamma10}, \ref{fig:scan-reconstruction_and_losses-gamma100}, \ref{fig:scan-reconstruction_and_losses-gamma1000} and \ref{fig:scan-reconstruction_and_losses-gamma10000} show the reconstruction ability and the losses trend for $\gamma= 10, 100, 1000$ and $10000$ respectively. 
+Figures \ref{fig:scan-reconstruction_and_losses-gamma10}, \ref{fig:scan-reconstruction_and_losses-gamma100}, \ref{fig:scan-reconstruction_and_losses-gamma1000} and \ref{fig:scan-reconstruction_and_losses-gamma10000} show the reconstruction ability and the losses trend for $\gamma= 10, 100, 1000$ and $10000$ respectively.
 
-On top of the considerations already explained in the main text, $\gamma=1000$ is the only one for which both the reconstruction loss and the clustering one decreases with increasing epoch and at the same time the number of events changing clusters after epoch 3 is less than 5\% of the training set. 
+Beyond the points discussed in the main text, the extremes highlight a clear trade-off: with $\gamma = 10$, the losses flatline and the clustering simply does not kick in, while at $\gamma = 10000$, the clustering loss does go down, but heavily penalizes reconstruction, making it the worst among all tested configurations. That leaves $\gamma = 1000$ as the sweet spot, being the only setting where both losses steadily decrease together across epochs while keeping assignments stable, with fewer than 5\% of events shifting clusters after epoch 3.
 
 \begin{figure}[H]
     \centering
