@@ -223,7 +223,7 @@ The \ac{DAQ} system for LEGEND-200 consists of FlashCam digitisers and an \ac{OR
 16-bit precision at a 62.5 MHz sampling rate. An event is defined by the digitised signal crossing a threshold, set to an energy equivalent to approximately 20 keV. Each resulting trace consists of 8192 samples (131 $\mu$s), including both the pulse and a pretrigger baseline interval \cite{LEGEND:GeDet}. In order to optimise data transfer and data processing, raw digitised traces are divided into two traces during the conversion from the \ac{ORCA} software to the \ac{LGDO}\footnote{\ac{LGDO} is a custom Python-based data format built by the LEGEND collaboration.} format. For applications that do not require maximum timing resolution, such as energy reconstruction, the traces are down-sampled by summing 8 consecutive samples. This process results in a final compressed waveform of 1024 samples with a time bin width of 128 ns. Conversely, analyses like \ac{PSD} strictly require high timing resolution to resolve the signal leading edge. Therefore, a second trace is generated at the full sampling frequency, but it is restricted to a narrow window of 1400 samples (corresponding to approximately 22 $\mu$s) centered around the signal rise \cite{LEGEND:GeDet}. An example of said method is shown in Fig. \ref{fig:wf-windowing}.
 
 
-\subsubsection{Data structure of the LEGEND-200 phase}
+\subsubsection{Data structure of LEGEND-200}
 \label{subsubsec:data-structureL200}
 LEGEND data are acquired in three possible modalities:
 \begin{itemize}

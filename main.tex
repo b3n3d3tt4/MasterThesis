@@ -9,6 +9,14 @@
 \usepackage{afterpage}
 \usepackage{caption}
 \usepackage{subcaption}
+\captionsetup{
+    font=small,          % testo della caption più piccolo
+    labelfont=bf,        % "Figure 1.2" in grassetto
+    textfont=it,         % testo in corsivo
+    % labelsep=period,     % "Figure 1.2." invece di "Figure 1.2:"
+    justification=justified,
+    singlelinecheck=true  % non centra le caption di una sola riga
+}
 \usepackage{lipsum}
 \usepackage{titlesec, blindtext, color}
 \usepackage[table]{xcolor} 
