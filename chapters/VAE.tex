@@ -204,7 +204,7 @@ The \ac{KL} divergence is then computed to measure the statistical distance betw
     D_{\text{KL},j} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \left( \mu_{ij}^2 + \sigma_{ij}^2 - 1 - \log \sigma_{ij}^2 \right)
 \end{equation}
 In standard \ac{VAE} training, forcing strong regularization can lead to \textit{posterior collapse}: this occurs when the optimization algorithm drives the \ac{KL} divergence to zero by collapsing the posterior distribution to identically match the prior, effectively ignoring the input data and preventing the encoder from learning meaningful representations. 
-To prevent this issue, a ``free bits'' (or \ac{KL} thresholding) strategy is implemented. Instead of forcing the divergence of every dimension to reach absolute zero, a minimum threshold $\lambda_{fb}$ is established. The total regularization loss $L_{\text{reg}}$ is computed by clamping the \ac{KL} divergence of each dimension to this lower bound before summing them, as defined in Eq. \ref{eq:KL-total} where $k$ is the number of dimensions in the latent space.
+To prevent this issue, a \texttt{free bits} (or \ac{KL} thresholding) strategy is implemented. Instead of forcing the divergence of every dimension to reach absolute zero, a minimum threshold $\lambda_{fb}$ is established. The total regularization loss $L_{\text{reg}}$ is computed by clamping the \ac{KL} divergence of each dimension to this lower bound before summing them, as defined in Eq. \ref{eq:KL-total} where $k$ is the number of dimensions in the latent space.
 \begin{equation}
     \label{eq:KL-total}
     L_{\text{reg}} = \sum_{j=1}^{k} \max \left( \lambda_{fb}, \, D_{\text{KL},j} \right)
