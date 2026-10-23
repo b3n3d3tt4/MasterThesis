@@ -251,7 +251,7 @@ def schema_vae(out="VAE.pdf"):
     hand(ax, 1530, 165, "pulls each latent Gaussian towards the prior N(0, 1)",
          fs=12, ha="left", color=RED)
 
-    ax.text(2290, 930, r"$\mathcal{L} = \mathcal{L}_{\mathrm{NLL}} + \beta\, \mathcal{L}_{\mathrm{KL}}$",
+    ax.text(2290, 930, r"$\mathcal{L} = \mathcal{L}_{\mathrm{NLL}} + \beta \cdot \mathcal{L}_{\mathrm{KL}}$",
             ha="center", va="center", fontsize=23, color=RED)
 
     save(fig, out)
@@ -540,7 +540,7 @@ def schema_dtc(out="TAE_clustering.pdf"):
 
     # perdita totale, nello spazio libero a sinistra del clustering
     ax.text(265, BY + 50,
-            r"$\mathcal{L} = \mathcal{L}_{\mathrm{NLL}} + \gamma\, \mathcal{L}_{\mathrm{KL}}$",
+            r"$\mathcal{L} = \mathcal{L}_{\mathrm{NLL}} + \gamma \cdot \mathcal{L}_{\mathrm{KL}}$",
             ha="center", va="center", fontsize=23, color=RED)
 
     save(fig, out)
