@@ -396,7 +396,7 @@ Beta decay is a nuclear transition in which a nucleus $(Z, A)$ converts into an 
     (Z, A) \longrightarrow (Z+1, A) + e^- + \overline{\nu}_e \qquad \text{or} \qquad 
     (Z, A) \longrightarrow (Z-1, A) + e^+ + \nu_e,
 \end{equation}
-depending on whether a neutron ($\beta^-$) or a proton ($\beta^+$) undergoes the weak transition. Enrico Fermi described this process in 1934 by introducing a point-like, four-fermion contact interaction Hamiltonian
+depending on whether a neutron ($\beta^-$) or a proton ($\beta^+$) undergoes the weak transition. Enrico Fermi described this process in 1934 \cite{Fermi1934} by introducing a point-like, four-fermion contact interaction Hamiltonian
 \begin{equation}
     H_F = G_F \left( \overline{\psi}_p \gamma^\mu \psi_n \right)\left( \overline{\psi}_e \gamma_\mu \psi_\nu \right) + \text{h.c.}
 \end{equation} 
@@ -410,7 +410,7 @@ Double beta decay is a second-order weak interaction process in which a nucleus 
     \centering
     \begin{tabular}{ll}
         \toprule
-        Mode & $2\nu$ channel \\
+        \textbf{decay mode} & $\boldsymbol{2\nu}$ \textbf{channel} \\
         \midrule
         $\beta^-\beta^-$ & $(Z,A) \to (Z+2,A) + 2e^- + 2\overline{\nu}_e$ \\
         $\beta^+\beta^+$ & $(Z,A) \to (Z-2,A) + 2e^+ + 2\nu_e$ \\
@@ -422,13 +422,10 @@ Double beta decay is a second-order weak interaction process in which a nucleus 
     \label{tab:bb-modes}
 \end{table}
 
-The energy conditions differ from mode to mode. Working with atomic masses, the $\beta^-\beta^-$ decay only requires $M(Z,A) > M(Z+2,A)$. For the modes that decrease the nuclear charge, the mass difference $M(Z,A) - M(Z-2,A)$ must instead exceed $2m_ec^2 \simeq 1022$~keV for $\beta^+$\ac{EC} and $4m_ec^2 \simeq 2044$~keV for $\beta^+\beta^+$, since each emitted positron costs $2m_ec^2$, while the \ac{EC}\ac{EC} mode has no such penalty. In addition, the Coulomb repulsion between the nucleus and the positron further suppresses positron emission. As a result, the modes involving $\beta^+$ and \ac{EC} generally have low effective $Q$-values and rates much smaller than $\beta^-\beta^-$, and are usually neglected. In principle, each of these modes could also occur without the emission of neutrinos, a lepton-number-violating process discussed in Section~\ref{subsec:0nubetabeta}. Throughout this work $\beta\beta$ refers to the $\beta^-\beta^-$ mode, unless stated otherwise.
+The energy conditions differ from mode to mode. Working with atomic masses, the $\beta^-\beta^-$ decay only requires $M(Z,A) > M(Z+2,A)$. For the modes that decrease the nuclear charge, the mass difference $M(Z,A) - M(Z-2,A)$ must instead exceed $2m_ec^2 \simeq 1022$~keV for $\beta^+$\ac{EC} and $4m_ec^2 \simeq 2044$~keV for $\beta^+\beta^+$, since each emitted positron costs $2m_ec^2$, while the \ac{EC}\ac{EC} mode has no such penalty. In addition, the Coulomb repulsion between the nucleus and the positron further suppresses positron emission. As a result, the modes involving $\beta^+$ and \ac{EC} generally have low effective $Q$-values and rates much smaller than $\beta^-\beta^-$, and are usually neglected. In principle, each of these modes could also occur without the emission of neutrinos, a lepton-number-violating process discussed in Section~\ref{subsec:0nubetabeta}. 
 
-Focusing on the $\beta^-\beta^-$ case, the nucleus moves to $(Z+2, A)$ with the emission of two electrons and two electron antineutrinos, as described by the reaction:
-\begin{equation}
-    \label{eq:2nubetabeta}
-    (Z, A) \longrightarrow (Z+2, A) + 2e^- + 2\overline{\nu}_e.
-\end{equation}
+Seeing that this work focuses on ${}^{76}$Ge double-beta decay, in what follows $\beta\beta$ refers to the $\beta^-\beta^-$ mode detailed in the first row of Table \ref{tab:bb-modes}.
+
 At the microscopic level, the process occurs through two simultaneous, virtual single-$\beta$ transitions, as illustrated by the two weak vertices in the Feynman diagram of Figure \ref{fig:2nu_feynman}.
 
 \begin{figure}[H]
@@ -454,7 +451,48 @@ Unlike the neutrinoless mode, $2\nu\beta\beta$ does not require any new physics 
 \subsection{Neutrinoless double beta decay (\texorpdfstring{$0\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{0vbb})}
 \label{subsec:0nubetabeta}
 
-The most sensitive probe to determine whether neutrinos are Dirac or Majorana particles -as introduced in Section \ref{subsec:seesaw}- is the neutrinoless double $\beta$-decay ($0\nu\beta\beta$), detailed in Eq. \ref{eq:0nu-beta-beta} and Figure \ref{fig:0nubetabeta-diagram}:
+In Section~\ref{subsec:2nubetabeta}, $2\nu\beta\beta$ was introduced as a rare second-order weak process, allowed by the \ac{SM} because it conserves lepton number. Neutrinoless double-$\beta$ decay ($0\nu\beta\beta$) differs from it by a single, but crucial, feature: no (anti)neutrino is present in the final state, so that the processes of Table \ref{tab:bb-modes} are to be rewritten as in Table \ref{tab:0nubb-modes}.
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{decay mode} & $\boldsymbol{0\nu}$ \textbf{channel} \\
+        \midrule
+        $\beta^-\beta^-$ & $(Z,A) \to (Z+2,A) + 2e^-$\\
+        $\beta^+\beta^+$ & $(Z,A) \to (Z-2,A) + 2e^+$\\
+        $\beta^+$\ac{EC} & $e^-_\text{b} + (Z,A) \to (Z-2,A) + e^+$ \\
+        \ac{EC}\ac{EC} & $2e^-_\text{b} + (Z,A) \to (Z-2,A)$\\
+        \bottomrule
+    \end{tabular}
+    \caption{Possible modes of $0\nu\beta\beta$ decay. $e^-_\text{b}$ denotes an electron captured from the atomic shell.}
+    \label{tab:0nubb-modes}
+\end{table}
+
+
+This implies a violation of lepton number by two units ($\Delta L=2$), which is forbidden in the \ac{SM}. Its observation would therefore be a clear signal of physics beyond the \ac{SM}, with several implications. Since the decay can be mediated by different mechanisms (e.g.\ the exchange of a light Majorana neutrino, of heavy particles or right-handed currents~\cite{review-0nu-2015}), these implications can be divided into two groups: those that do not depend on the mediating mechanism, and those that hold only under specific assumptions on it.
+
+\begin{enumerate}
+\item \textbf{model-independent consequences}:
+\begin{itemize}
+    \item \textit{matter creation}: it would be the first laboratory observation of a process that produces matter without producing the corresponding antimatter.
+    \item \textit{violation of lepton and baryon-lepton number}: since the baryon number $B$ is not affected by the decay, a $\Delta L = 2$ process also violates $B-L$. This would be the first experimental evidence that such a symmetry, which is only accidental in the \ac{SM} and has no theoretical reason to be exact, is broken in nature.
+    \item \textit{Majorana nature of neutrinos}: whatever the underlying mechanism, an observed $0\nu\beta\beta$ decay implies that neutrinos can convert into antineutrinos, hence that they are Majorana particles.
+\end{itemize}
+
+\item \textbf{model-dependent consequences}: if the decay is dominated by the exchange of a light Majorana neutrino, the measured half-life can be translated into a value of the effective Majorana mass $m_{\beta\beta}$ (see Eq.~\ref{eq:half-life_0nubb} below), which gives access to:
+\begin{itemize}
+    \item \textit{absolute neutrino mass scale}: oscillation experiments are sensitive only to mass-squared differences, while combining $m_{\beta\beta}$ with direct measurements from single $\beta$ decay and with cosmological data allows one to constrain the individual mass eigenvalues;
+    \item \textit{mass ordering}: comparing $m_{\beta\beta}$ with the regions allowed for the normal and inverted ordering, the ordering could be established. In the inverted case $m_{\beta\beta}$ is bounded from below, while in the normal one it can vanish; no conclusion can be drawn if $m_{\beta\beta}$ falls in the quasi-degenerate region, or if external measurements do not exclude it.
+\end{itemize}
+\end{enumerate} 
+
+The mode-independent results are also relevant for cosmology. The Universe appears to contain only matter, and the \ac{SM} cannot account for the observed matter-antimatter asymmetry, even though the violation of $CP$ and of baryon number are among the Sakharov conditions~\cite{sakharov} required to generate it. A new source of violation of global symmetries is therefore needed, and leptogenesis models provide it: a lepton asymmetry is generated through lepton-number-violating processes and then partially converted into a baryon asymmetry. Observing $0\nu\beta\beta$ would support this class of scenarios. \cite{morella}
+
+
+As established earlier, this work centers on ${}^{76}\text{Ge}$. Hereafter, we consider exclusively the light-neutrino exchange channel for its neutrinoless decay, formulated in Eq.~\ref{eq:0nu-beta-beta} and represented in Figure~\ref{fig:0nubetabeta-diagram}.
+
 \begin{equation}
     \label{eq:0nu-beta-beta}
     (Z, A) \longrightarrow (Z+2, A) + 2e^-
@@ -467,13 +505,14 @@ The most sensitive probe to determine whether neutrinos are Dirac or Majorana pa
     \label{fig:0nubetabeta-diagram}
 \end{figure}
 
+
 \begin{wrapfigure}{l}{0.52\textwidth}%[H]
     \centering
     \includegraphics[width=\linewidth]{figures/0nu_vs_2nu.pdf}
     \caption{Schematic representation of the energy distribution for the products in $2\nu\beta\beta$ and $0\nu\beta\beta$ decay modes. The description is given in the text.}
     \label{fig:Qvalue-2nu0nu}
 \end{wrapfigure}
-From an experimental point of view, if one assumes a process mediated by a light-neutrino exchange\footnote{In principle, also other processes could happen, producing more particles other than the two electrons: in this case the emission spectrum would still be continuous even in the $0\nu\beta\beta$ case.}, $0\nu\beta\beta$ can be distinguished from the more common $2\nu\beta\beta$ decay by analyzing the electron energy spectra of the two emitted electrons. Specifically, in $0\nu\beta\beta$ decay, the electrons are produced with energies $E_{e, 1}$ and $E_{e, 2}$ that satisfies
+From an experimental point of view, $0\nu\beta\beta$ can be distinguished from the more common $2\nu\beta\beta$ decay by analyzing the electron energy spectra of the two emitted electrons. Specifically, in $0\nu\beta\beta$ decay, the electrons are produced with energies $E_{e, 1}$ and $E_{e, 2}$ that satisfies
 \begin{equation*}
     E_{e, 1} + E_{e, 2} + E_{\text{nuc}} = Q_{\beta\beta} = \frac{1}{2} [M(Z, A) - M(Z+2, A)] 
 \end{equation*}
@@ -512,12 +551,12 @@ Thus, the commonly studied isotopes are the ones listed in Table \ref{tab:isotop
     \label{tab:isotopes-for-0nu}
 \end{table}
 
-The decay half-life of a $0\nu\beta\beta$ event, if detected, can be evaluated as 
+The decay half-life of a $0\nu\beta\beta$ event, if detected, can be experimentally evaluated as 
 \begin{equation}
-    \label{eq:half-life_0nubb}
+    \label{eq:half-life_0nubb_exp}
     t^{1/2} = \ln(2) \cdot T \cdot \varepsilon \cdot \frac{N_{\beta\beta}}{N_\text{peak}}
 \end{equation}
-where $T$ is the measuring time, $\varepsilon$ is the detection efficiency, $N_{\beta\beta}$ is the number of $\beta\beta$ decaying nuclei under observation and $N_\text{peak}$ is the number of observed decays in the region of interest. If no peak is detected, the sensitivity of a given experiment is expressed in terms of a detector \textit{factor of merit} $S^{0\nu}$, i.e. the process half-life corresponding to the maximum signal that could be hidden by the background fluctuations $n_{B}$. From Eq.~\ref{eq:half-life_0nubb}, the sensitivity can be written as
+where $T$ is the measuring time, $\varepsilon$ is the detection efficiency, $N_{\beta\beta}$ is the number of $\beta\beta$ decaying nuclei under observation and $N_\text{peak}$ is the number of observed decays in the region of interest. If no peak is detected, the sensitivity of a given experiment is expressed in terms of a detector \textit{factor of merit} $S^{0\nu}$, i.e. the process half-life corresponding to the maximum signal that could be hidden by the background fluctuations $n_{B}$. From Eq.~\ref{eq:half-life_0nubb_exp}, the sensitivity can be written as
 \begin{equation}
     \label{eq:sensitivity-0nu}
     \begin{aligned}
@@ -525,11 +564,11 @@ where $T$ is the measuring time, $\varepsilon$ is the detection efficiency, $N_{
                  &= \ln 2 \cdot \varepsilon \cdot \frac{1}{n_\sigma} \cdot \frac{x\,\eta\,N_A}{\mathcal{M}_A} \cdot \sqrt{\frac{M \cdot T}{B \cdot \Delta E}},
     \end{aligned}
 \end{equation}
-where $\varepsilon$ is the detection efficiency, $n_\sigma$ the confidence level in units of standard deviations, and $n_{\beta\beta}$ and $n_B$ the numbers of signal and background events \cite{review-0nu-2015}. The exposure $M \cdot T$\footnote{$\text{Exposure [kg yr]} = \text{Detector mass [kg]} \cdot \text{Livetime [yr]}$} is the product of detector mass and measuring time, $B$ is the background level per unit mass, energy and time, and $\Delta$ is the energy resolution (FWHM) at $Q_{\beta\beta}$. Finally, $x$ is the stoichiometric multiplicity of the candidate element, $\eta$ its isotopic abundance, $N_A$ Avogadro's number and $\mathcal{M}_A$ the molar mass of the compound.
+where $\varepsilon$ is the detection efficiency, $n_\sigma$ the confidence level in units of standard deviations, and $n_{\beta\beta}$ and $n_B$ the numbers of signal and background events \cite{review-0nu-2015}. The exposure $M \cdot T$ is the product of detector mass and measuring time, $B$ is the background level per unit mass, energy and time, and $\Delta$ is the energy resolution (FWHM) at $Q_{\beta\beta}$. Finally, $x$ is the stoichiometric multiplicity of the candidate element, $\eta$ its isotopic abundance, $N_A$ Avogadro's number and $\mathcal{M}_A$ the molar mass of the compound.
 
 This formula dictates the design of modern experiments: to maximize sensitivity, one must increase the exposure while minimizing both the background levels and the energy resolution. Specifically, a poor energy resolution causes the continuous tail of the standard $2\nu\beta\beta$ decay to smear into the $0\nu\beta\beta$ region of interest, creating an irreducible background.
 
-\newpage
+
 \section{Experiments currently searching for \texorpdfstring{$0\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{0nu beta beta} decay}
 \label{sec:0nubb-experiments}
 The experimental approach to $0\nu\beta\beta$ searching is based on the development of a proper detection tecnique able to balance good energy resolution, very low background and large isotope mass. Up to now, experiments in this field rely on two different tecnicques: detectors based on a calorimetric tecnique, for which the source is embedded inside the detector volume itself, and detectors exploiting an external source \cite{review-0nu-2015}. 
