@@ -31,33 +31,33 @@ The deep learning cuts are compared with one another and with the traditional be
 \end{wrapfigure}
 Figure~\ref{fig:DTC-energyspectrum-allmetrics} displays the three \ac{DTC} metrics cut on the calibration dataset for Euclidean Distance (green), Complexity Invariant Distance (orange) and Autocorrelation Function (purple). Moreover, the \ac{AE} cut is shown in blue to give a graphical comparison from which it is clear that the \ac{AE} cut is far less conservative with respect to the \ac{DTC} ones. Nonetheless, this aspect does not ensure the fact that the \ac{AE} parameter is a better solution to the \ac{SSE}-\ac{MSE} discrimination problem. Figure~\ref{fig:DTC-waveforms-allmetrics-agree} shows that it is evident that the waveforms both methods agree to retain are clearly \ac{SSE}-like events, whereas those they both reject exhibit distinct \ac{MSE}-like features. However Fig.~\ref{fig:DTC-waveforms-allmetrics-disagree} displays that the waveforms kept by the \ac{AE} but rejected by the \ac{DTC} include a lot of waveforms with multiple peaks typical of \ac{MSE} while the ones rejected by \ac{AE} but kept by the \ac{DTC} metrics are almost all \ac{SSE}-like events with only one peak and a simple structure. These comparisons highlight how a single parameter, i.e. \ac{AE}, cannot take into consideration the whole structure of a waveform and therefore may lead to an unproper \ac{SSE}-\ac{MSE} discrimination, while the \ac{DTC} model can perform this distinction better, seeing that it considers the whole time series of a waveform.
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/DTC/all_metrics_calibration_data_agree.pdf}
-%     \caption{Waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} agree.}
-%     \label{fig:DTC-waveforms-allmetrics-agree}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_agree.pdf}
+    \caption{Waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} agree.}
+    \label{fig:DTC-waveforms-allmetrics-agree}
+\end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/DTC/all_metrics_calibration_data_disagree.pdf}
-%     \caption{Waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree. }
-%     \label{fig:DTC-waveforms-allmetrics-disagree}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_disagree.pdf}
+    \caption{Waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree. }
+    \label{fig:DTC-waveforms-allmetrics-disagree}
+\end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/DTC/all_metrics_calibration_data_agree_energy.pdf}
-%     \caption{Energy spectra of waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} agree.}
-%     \label{fig:DTC-waveforms-allmetrics-agree-energy}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_agree_energy.pdf}
+    \caption{Energy spectra of waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} agree.}
+    \label{fig:DTC-waveforms-allmetrics-agree-energy}
+\end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/DTC/all_metrics_calibration_data_disagree_energy.pdf}
-%     \caption{Energy spectra of waveforms of the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree.}
-%     \label{fig:DTC-waveforms-allmetrics-disagree-energy}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_disagree_energy.pdf}
+    \caption{Energy spectra of waveforms of the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree.}
+    \label{fig:DTC-waveforms-allmetrics-disagree-energy}
+\end{figure}
 
 
 

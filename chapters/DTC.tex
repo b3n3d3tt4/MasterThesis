@@ -195,16 +195,16 @@ The full \ac{DTC} model that includes both the \ac{TAE} and the \ac{TSC} is show
 The \ac{DTC} training phase is divided in two different parts: the \textit{pretrain}, where only the \ac{TAE} is used and then the proper \textit{train} where both the \ac{TAE} and the \ac{TSC} are implemented. Being a fully-unsupervised agorithm, discrepancies between two trainings in the same configuration may occur. Nevertheless said differences never become significant enough to change the structure of the clusters or the conclusions drawn in this work.
 
 \subsubsection{\textit{Pretrain}}
-This phase is exploited in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts and it is initialised to the noise of the training waveforms, i.e. the median of the standard deviation of their first 20 time points, so that the \ac{NLL} starts from the correct order of magnitude. The model is trained for a number of epochs $\text{N}_\text{PRE} = 40$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the $L_\text{TAE}$ loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to reconstruct waveforms and it is not overfitting training data. The exact values of the train and validation losses are summarised in Table \ref{tab:pretrain-losses}.
+This phase is exploited in order to make the model learning how to reconstruct the input waveforms from the latent representation, without being affected by the clustering algorithm. The loss function used is the one described in Eq. \ref{eq:tae-loss} and as already introduced the parameter $\sigma$ in this phase is a learnable parameter on which the backpropagation acts and it is initialised to the noise of the training waveforms, i.e. the median of the standard deviation of their first 20 time points, so that the \ac{NLL} starts from the correct order of magnitude. The model is trained for a number of epochs $\text{N}_\text{PRE} = 50$. The reconstruction ability of the \ac{TAE} is shown in Fig. \ref{fig:pretrain-validation} for a waveform in the validation set at different epochs. Fig. \ref{fig:pretrain-loss} shows the $L_\text{TAE}$ loss evolution: it is evident that both the training set loss and the validation one decreases over time, ensuring the fact that the model is actually learning how to reconstruct waveforms and it is not overfitting training data. The exact values of the train and validation losses are summarised in Table \ref{tab:pretrain-losses}.
 
 \begin{table}[H]
     \centering
     \begin{tabular}{lrr}
         \toprule
-                 & \textbf{Training}   & \textbf{Validation} \\
+        set      & training & validation \\
         \midrule
-        Epoch 1  & $862.22$   & $-544.96$  \\
-        Epoch 50 & $-811.17$  & $-799.32$  \\
+        Epoch 1  & $860.01$   & $-536.82$  \\
+        Epoch 50 & $-809.99$  & $-810.79$  \\
         \bottomrule
     \end{tabular}
         \caption{Reconstruction loss (\ac{NLL}) of the pre-training on the training and validation sets, at the first and at the last epoch.}
@@ -214,7 +214,7 @@ This phase is exploited in order to make the model learning how to reconstruct t
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/pretrain_reconstruction.pdf}
-    \caption{Example of the \ac{TAE} reconstruction ability in the \textit{pretrain} for a validation set waveform at epoch 1, 20, 40.}
+    \caption{Example of the \ac{TAE} reconstruction ability in the \textit{pretrain} for a validation set waveform at epoch 1, 25, 50.}
     \label{fig:pretrain-validation}
 \end{figure}
 
@@ -267,84 +267,54 @@ Said clustering on the whole calibration dataset are shown in Fig. \ref{fig:scan
     \label{fig:scan-clusters}
 \end{figure}
 
-This analysis clearly reports the fact that our assumption of having two types of events is true: in the run with $K=3$ clusters, all the events have been assigned only to two of them leaving the third one empty, while in the $K=4$ the same happened for all the events but 29 that were assigned to a third cluster.
-These events are the ones shown in Fig. \ref{fig:events-third-cluster} of Appendix \ref{app:DTC-scans}. However, seeing that this third cluster involves only 29 over 348 999 events, i.e. less than 0.01\% of the dataset, the possibility of investigating more than $K=2$ clusters is left as a future development of this algorithm since it goes beyond the purposes of the work. 
+This analysis clearly reports the fact that our assumption of having two types of events is true: in the run with $K=3$ clusters, all the events have been assigned only to two of them leaving the third one empty, while in the $K=4$ the same happened for all the events but 5 that were assigned to a third cluster.
+These events are the ones shown in Fig. \ref{fig:events-third-cluster} of Appendix \ref{app:DTC-scans}. However, seeing that this third cluster involves only 5 over 348 999 events, i.e. the 0.001\% of the dataset, the possibility of investigating more than $K=2$ clusters is left as a future development of this algorithm since it goes beyond the purposes of the work. 
 
-Following the $\gamma$ and $K$ scan, the main \textit{train} phase has been performed with the three considered metrics using $\gamma = 1000$ and $K=2$ and for a number of training epochs $\text{N}_\text{TRAIN} = 20$.
+Following the $\gamma$ and $K$ scan, the main \textit{train} phase has been performed with the three considered metrics using $\gamma = 1000$ and $K=2$ and for a number of training epochs $\text{N}_\text{TRAIN} = 100$.
 
-All three trainings start from the same pre-trained \ac{TAE}, with the same K-Means initialisation seed and the same sequence of mini-batches, so that the differences between them are due only to the distance metric used in the \ac{TSC}. For each metric the same set of results is presented: first, the reconstruction of a fixed validation waveform at different epochs and Subsequently the evolution of the losses during the training. Then the clustering results are shown separately for the training, validation and test sets: the energy spectrum of each cluster together with the fraction of events assigned to each cluster as a function of energy, from which the enrichment of the \ac{SSE}-like cluster in the \ac{DEP} and its depletion in the \ac{FEP} can be read directly, and the \ac{AE} and rise time distributions of the two clusters, which allow a comparison with the classical pulse shape discrimination parameters. In all the figures the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey. Finally, a table summarises the values of the three losses at the first and at the last epoch for the training and validation sets, and for the test set evaluated with the final model.
+All three trainings start from the same pre-trained \ac{TAE} used for the $\gamma$ and $K$ scans, with the same K-Means initialisation seed and the same sequence of mini-batches, so that the differences between them are due only to the distance metric used in the \ac{TSC}. For each metric, the main text reports the clustering results on the training and test sets, namely the energy spectrum of each cluster together with the fraction of events assigned to each cluster as a function of energy, from which the enrichment of the \ac{SSE}-like cluster in the \ac{DEP} and its depletion in the \ac{FEP} can be read directly. A table then summarises the values of the three losses at the first and at the last epoch for the training and validation sets, and for the test set evaluated with the final model. All the remaining plots are collected in Appendix~\ref{app:DTC-plots}: the reconstruction of a fixed validation waveform at different epochs, the evolution of the losses during the training, the clustering results on the validation set and the \ac{AE} and rise time distributions of the two clusters for all three sets, which allow a comparison with the classical pulse shape discrimination parameters. In all the figures the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey.
 
 \subsubsection{Autocorrelation Function}
-The results obtained with the \ac{ACF} metric are shown in Figs.~\ref{fig:acf-reconstruction}--\ref{fig:acf-test} and summarised in Table~\ref{tab:acf-losses}.
+The clustering results obtained with the \ac{ACF} metric on the training and test sets are shown in Fig.~\ref{fig:acf-energy}, while the losses are summarised in Table~\ref{tab:acf-losses}. The reconstruction, the loss evolution, the validation-set results and the \ac{AE} and rise time distributions are reported in Appendix~\ref{app:DTC-plots-acf}.
 
 \begin{table}[H]
     \centering
     \begin{tabular}{lcccccc}
         \hline
          & \multicolumn{2}{c}{\textbf{total loss}} & \multicolumn{2}{c}{\textbf{\ac{NLL}}} & \multicolumn{2}{c}{\textbf{\ac{KL}}} \\
-        set & epoch 1 & epoch 20 & epoch 1 & epoch 20 & epoch 1 & epoch 20 \\
+        set & epoch 1 & epoch 100 & epoch 1 & epoch 100 & epoch 1 & epoch 100 \\
         \hline
-        training   & $-804.11$ & $-700.60$ & $-807.73$ & $-779.14$ & $0.0036$ & $0.0785$ \\
-        validation & $-805.89$ & $-684.25$ & $-809.82$ & $-763.03$ & $0.0039$ & $0.0788$ \\
-        test       &           & $-684.43$ &           & $-763.17$ &          & $0.0787$ \\
+        training   & $-802.46$ & $-726.33$ & $-806.73$ & $-803.10$ & $0.0043$ & $0.0768$ \\
+        validation & $-800.89$ & $-705.34$ & $-806.41$ & $-781.37$ & $0.0055$ & $0.0760$ \\
+        test       &           & $-705.41$ &           & $-781.35$ &          & $0.0759$ \\
         \hline
     \end{tabular}
-    \caption{Total, reconstruction (\ac{NLL}) and clustering (\ac{KL}) losses of the final training with the Auto-Correlation Function metric ($\gamma = 1000$, $K=2$). The test set is evaluated with the final model only.}
+    \caption{Total, reconstruction (\ac{NLL}) and clustering (\ac{KL}) losses of the final training with the \ac{ACF} metric ($\gamma = 1000$, $K=2$). The test set is evaluated with the final model only.}
     \label{tab:acf-losses}
 \end{table}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_training_reconstruction.pdf}
-    \caption{Original and reconstructed waveforms at different training epochs with the \ac{ACF}.}
-    \label{fig:acf-reconstruction}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_training_history.pdf}
-    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, with the \ac{ACF} metric.}
-    \label{fig:acf-losses}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
     \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_train.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_train_linear.pdf}
-    \caption{Clustering results evaluated on the training set using the \ac{ACF} metric.}
-    \label{fig:acf-train}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_val.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_val_linear.pdf}
-    \caption{Clustering results evaluated on the validation set using the \ac{ACF} metric.}
-    \label{fig:acf-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_test.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_test_linear.pdf}
-    \caption{Clustering results evaluated on the test set using the \ac{ACF} metric.}
-    \label{fig:acf-test}
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_test.pdf}
+    \caption{Clustering results with the \ac{ACF} metric on the training (top) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
+    \label{fig:acf-energy}
 \end{figure}
 
 
 \subsubsection{Euclidean Distance}
-The results obtained with the \ac{EUC} metric are shown in Figs.~\ref{fig:euclidean-reconstruction}--\ref{fig:euclidean-test} and summarised in Table~\ref{tab:euclidean-losses}.
+The clustering results obtained with the \ac{EUC} metric on the training and test sets are shown in Fig.~\ref{fig:euclidean-energy}, while the losses are summarised in Table~\ref{tab:euclidean-losses}. The reconstruction, the loss evolution, the validation-set results and the \ac{AE} and rise time distributions are reported in Appendix~\ref{app:DTC-plots-euclidean}.
 
 \begin{table}[H]
     \centering
     \begin{tabular}{lcccccc}
         \hline
          & \multicolumn{2}{c}{\textbf{total loss}} & \multicolumn{2}{c}{\textbf{\ac{NLL}}} & \multicolumn{2}{c}{\textbf{\ac{KL}}} \\
-        set & epoch 1 & epoch 20 & epoch 1 & epoch 20 & epoch 1 & epoch 20 \\
+        set & epoch 1 & epoch 100 & epoch 1 & epoch 100 & epoch 1 & epoch 100 \\
         \hline
-        training   & $-778.92$ & $-712.51$ & $-800.32$ & $-787.81$ & $0.0214$ & $0.0753$ \\
-        validation & $-741.36$ & $-711.82$ & $-786.44$ & $-787.06$ & $0.0451$ & $0.0752$ \\
-        test       &           & $-712.35$ &           & $-787.60$ &          & $0.0753$ \\
+        training   & $-787.69$ & $-729.05$ & $-803.53$ & $-802.39$ & $0.0158$ & $0.0733$ \\
+        validation & $-778.34$ & $-731.02$ & $-802.78$ & $-804.13$ & $0.0244$ & $0.0731$ \\
+        test       &           & $-731.40$ &           & $-804.51$ &          & $0.0731$ \\
         \hline
     \end{tabular}
     \caption{Total, reconstruction (\ac{NLL}) and clustering (\ac{KL}) losses of the final training with the \ac{EUC} metric ($\gamma = 1000$, $K=2$). The test set is evaluated with the final model only.}
@@ -353,56 +323,26 @@ The results obtained with the \ac{EUC} metric are shown in Figs.~\ref{fig:euclid
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_training_reconstruction.pdf}
-    \caption{Original and reconstructed waveforms at different training epochs with the \ac{EUC} metric.}
-    \label{fig:euclidean-reconstruction}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_training_history.pdf}
-    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, with the \ac{EUC} metric.}
-    \label{fig:euclidean-losses}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
     \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_train.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_train_linear.pdf}
-    \caption{Clustering results evaluated on the training set using the \ac{EUC} metric.}
-    \label{fig:euclidean-train}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_val.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_val_linear.pdf}
-    \caption{Clustering results evaluated on the validation set using the \ac{EUC} metric.}
-    \label{fig:euclidean-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_test.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_test_linear.pdf}
-    \caption{Clustering results evaluated on the test set using the \ac{EUC} metric.}
-    \label{fig:euclidean-test}
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_test.pdf}
+    \caption{Clustering results with the \ac{EUC} metric on the training (top) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
+    \label{fig:euclidean-energy}
 \end{figure}
 
 
 \subsubsection{Complexity Invariant Distance}
-The results obtained with the \ac{CID} metric are shown in Figs.~\ref{fig:cid-reconstruction}--\ref{fig:cid-test} and summarised in Table~\ref{tab:cid-losses}.
+The clustering results obtained with the \ac{CID} metric on the training and test sets are shown in Fig.~\ref{fig:cid-energy}, while the losses are summarised in Table~\ref{tab:cid-losses}. The reconstruction, the loss evolution, the validation-set results and the \ac{AE} and rise time distributions are reported in Appendix~\ref{app:DTC-plots-cid}.
 
 \begin{table}[H]
     \centering
     \begin{tabular}{lcccccc}
         \hline
          & \multicolumn{2}{c}{\textbf{total loss}} & \multicolumn{2}{c}{\textbf{\ac{NLL}}} & \multicolumn{2}{c}{\textbf{\ac{KL}}} \\
-        set & epoch 1 & epoch 20 & epoch 1 & epoch 20 & epoch 1 & epoch 20 \\
+        set & epoch 1 & epoch 100 & epoch 1 & epoch 100 & epoch 1 & epoch 100 \\
         \hline
-        training   & $-730.58$ & $-785.26$ & $-771.12$ & $-792.84$ & $0.0405$ & $0.0076$ \\
-        validation & $-734.81$ & $-784.80$ & $-765.76$ & $-792.23$ & $0.0310$ & $0.0074$ \\
-        test       &           & $-785.31$ &           & $-792.71$ &          & $0.0074$ \\
+        training   & $-726.90$ & $-800.20$ & $-766.81$ & $-804.03$ & $0.0399$ & $0.0038$ \\
+        validation & $-737.10$ & $-806.50$ & $-766.99$ & $-810.56$ & $0.0299$ & $0.0041$ \\
+        test       &           & $-807.28$ &           & $-811.32$ &          & $0.0040$ \\
         \hline
     \end{tabular}
     \caption{Total, reconstruction (\ac{NLL}) and clustering (\ac{KL}) losses of the final training with the \ac{CID} metric ($\gamma = 1000$, $K=2$). The test set is evaluated with the final model only.}
@@ -411,43 +351,13 @@ The results obtained with the \ac{CID} metric are shown in Figs.~\ref{fig:cid-re
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_training_reconstruction.pdf}
-    \caption{Original and reconstructed waveforms at different training epochs with the \ac{CID} metric.}
-    \label{fig:cid-reconstruction}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_training_history.pdf}
-    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, with the \ac{CID} metric.}
-    \label{fig:cid-losses}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
     \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_train.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_train_linear.pdf}
-    \caption{Clustering results evaluated on the training set using the \ac{CID} metric.}
-    \label{fig:cid-train}
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_test.pdf}
+    \caption{Clustering results with the \ac{CID} metric on the training (top) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
+    \label{fig:cid-energy}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_val.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_val_linear.pdf}
-    \caption{Clustering results evaluated on the validation set using the \ac{CID} metric.}
-    \label{fig:cid-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_test.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_test_linear.pdf}
-    \caption{Clustering results evaluated on the test set using the \ac{CID} metric.}
-    \label{fig:cid-test}
-\end{figure}
-
-To compare the three metrics, the composition of the clusters has been quantified in two narrow energy intervals of 1~keV: 1592--1593~keV for the \ac{DEP} and 1620.5--1621.5~keV for the \ac{FEP}. In each interval, the fraction of events assigned to the \ac{SSE}-like cluster has been computed, i.e. to the cluster with the largest number of events in the \ac{DEP}, which is cluster 0 for all three metrics and is drawn with the colour of the metric in the figures. The narrow intervals maximise the fraction of peak events, although some events from the underlying Compton continuum are still present. The results are reported in Table~\ref{tab:cluster-fractions}. For all three metrics the \ac{SSE}-like cluster contains between 77\% and 84\% of the events in the \ac{DEP} interval and between 28\% and 39\% of those in the \ac{FEP} interval, confirming that the clustering separates the waveforms according to their \ac{SSE}- or \ac{MSE}-like nature. The \ac{ACF} metric gives the most selective \ac{SSE}-like cluster, with the lowest fraction of \ac{FEP} events (between 27.96\% and 30.73\%) and a \ac{DEP} fraction between 77.30\% and 80.32\%. The \ac{EUC} metric gives the highest \ac{DEP} fractions (between 80.05\% and 83.51\%) but also the highest \ac{FEP} ones (between 36.60\% and 38.06\%), while the \ac{CID} lies in between, with \ac{DEP} fractions between 79.28\% and 83.51\% and \ac{FEP} fractions between 34.87\% and 35.52\%.
+To compare the three metrics, the composition of the clusters has been quantified in two narrow energy intervals of 1~keV: 1592--1593~keV for the \ac{DEP} and 1620.5--1621.5~keV for the \ac{FEP}. In each interval, the fraction of events assigned to the \ac{SSE}-like cluster has been computed, i.e. to the cluster with the largest number of events in the \ac{DEP}. This is cluster 0 for the \ac{ACF} and \ac{CID} metrics and cluster 1 for the \ac{EUC} metric, the cluster label being arbitrary; it is drawn with the colour of the metric in the figures. The narrow intervals maximise the fraction of peak events, although some events from the underlying Compton continuum are still present. The results are reported in Table~\ref{tab:cluster-fractions}. For all three metrics the \ac{SSE}-like cluster contains between 75\% and 86\% of the events in the \ac{DEP} interval and between 22\% and 45\% of those in the \ac{FEP} interval, confirming that the clustering separates the waveforms according to their \ac{SSE}- or \ac{MSE}-like nature. The \ac{ACF} and \ac{EUC} metrics give very similar results: the \ac{DEP} fractions lie between 74.99\% and 78.46\% for the \ac{ACF} and between 75.04\% and 77.53\% for the \ac{EUC}, while the \ac{FEP} fractions lie between 22.37\% and 23.45\% and between 22.45\% and 23.71\%, respectively. The \ac{ACF} is marginally the most selective, with the lowest \ac{FEP} fraction in all three sets. The \ac{CID} metric yields the highest \ac{DEP} fractions (between 82.10\% and 86.44\%), but at the cost of a much higher \ac{FEP} contamination (between 44.00\% and 44.63\%), roughly twice that of the other two metrics. As a result, the difference between the \ac{DEP} and \ac{FEP} fractions, which quantifies the discrimination between \ac{SSE}- and \ac{MSE}-like events, is largest for the \ac{ACF} (51.5--56.1 percentage points) and \ac{EUC} (51.3--55.1 percentage points), and smaller for the \ac{CID} (37.5--42.4 percentage points). The fractions are stable across the training, validation and test sets and consistent with those of the whole dataset.
 
 \begin{table}[H]
     \centering
@@ -455,22 +365,19 @@ To compare the three metrics, the composition of the clusters has been quantifie
         \toprule
         set & peak & \ac{ACF} & \ac{EUC} & \ac{CID} \\
         \midrule
-        \multirow{2}{*}{training}   & \ac{DEP} & 77.30\% & 80.05\% & 79.28\% \\
-                                    & \ac{FEP} & 29.44\% & 37.74\% & 35.52\% \\
+        \multirow{2}{*}{training}      & \ac{DEP} & 74.99\% & 75.04\% & 82.10\% \\
+                                       & \ac{FEP} & 23.45\% & 23.71\% & 44.63\% \\
         \midrule
-        \multirow{2}{*}{validation} & \ac{DEP} & 80.32\% & 83.51\% & 83.51\% \\
-                                    & \ac{FEP} & 27.96\% & 36.60\% & 34.87\% \\
+        \multirow{2}{*}{validation}    & \ac{DEP} & 78.46\% & 77.53\% & 86.44\% \\
+                                       & \ac{FEP} & 22.37\% & 22.45\% & 44.00\% \\
         \midrule
-        \multirow{2}{*}{test}       & \ac{DEP} & 78.45\% & 81.38\% & 80.65\% \\
-                                    & \ac{FEP} & 30.73\% & 38.06\% & 35.37\% \\
+        \multirow{2}{*}{test}          & \ac{DEP} & 75.22\% & 75.51\% & 84.02\% \\
+                                       & \ac{FEP} & 22.82\% & 23.55\% & 44.58\% \\
+        \midrule
+        \multirow{2}{*}{whole dataset} & \ac{DEP} & 75.36\% & 75.33\% & 82.71\% \\
+                                       & \ac{FEP} & 23.28\% & 23.57\% & 44.57\% \\
         \bottomrule
     \end{tabular}
-    \caption{Fraction of events assigned to the \ac{SSE}-like cluster in the \ac{DEP} (1592-1593~keV) and \ac{FEP} (1620.5-1621.5~keV) intervals, for the three metrics and the training, validation and test sets. The fraction assigned to the other cluster is the complement to 100\%.}
+    \caption{Fraction of events assigned to the \ac{SSE}-like cluster in the \ac{DEP} (1592--1593~keV) and \ac{FEP} (1620.5--1621.5~keV) intervals, for the three metrics and the training, validation, test and whole datasets. The \ac{SSE}-like cluster is cluster 0 for the \ac{ACF} and \ac{CID} metrics and cluster 1 for the \ac{EUC} metric. The fraction assigned to the other cluster is the complement to 100\%.}
     \label{tab:cluster-fractions}
 \end{table}
-
-
-
-
-
-
