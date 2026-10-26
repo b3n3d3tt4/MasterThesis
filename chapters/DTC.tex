@@ -272,7 +272,7 @@ These events are the ones shown in Fig. \ref{fig:events-third-cluster} of Append
 
 Following the $\gamma$ and $K$ scan, the main \textit{train} phase has been performed with the three considered metrics using $\gamma = 1000$ and $K=2$ and for a number of training epochs $\text{N}_\text{TRAIN} = 100$.
 
-All three trainings start from the same pre-trained \ac{TAE} used for the $\gamma$ and $K$ scans, with the same K-Means initialisation seed and the same sequence of mini-batches, so that the differences between them are due only to the distance metric used in the \ac{TSC}. For each metric, the main text reports the clustering results on the training and test sets, namely the energy spectrum of each cluster together with the fraction of events assigned to each cluster as a function of energy, from which the enrichment of the \ac{SSE}-like cluster in the \ac{DEP} and its depletion in the \ac{FEP} can be read directly. A table then summarises the values of the three losses at the first and at the last epoch for the training and validation sets, and for the test set evaluated with the final model. All the remaining plots are collected in Appendix~\ref{app:DTC-plots}: the reconstruction of a fixed validation waveform at different epochs, the evolution of the losses during the training, the clustering results on the validation set and the \ac{AE} and rise time distributions of the two clusters for all three sets, which allow a comparison with the classical pulse shape discrimination parameters. In all the figures the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey.
+All three trainings start from the same pre-trained \ac{TAE} used for the $\gamma$ and $K$ scans, with the same K-Means initialisation seed and the same sequence of mini-batches, so that the differences between them are due only to the distance metric used in the \ac{TSC}. For each metric, the main text reports the clustering results on the training, validation and test sets, namely the energy spectrum of each cluster together with the fraction of events assigned to each cluster as a function of energy, from which the enrichment of the \ac{SSE}-like cluster in the \ac{DEP} and its depletion in the \ac{FEP} can be read directly. A table then summarises the values of the three losses at the first and at the last epoch for the training and validation sets, and for the test set evaluated with the final model. All the remaining plots are collected in Appendix~\ref{app:DTC-plots}: the reconstruction of a fixed validation waveform at different epochs, the evolution of the losses during the training and the \ac{AE} and rise time distributions of the two clusters for all three sets, which allow a comparison with the classical pulse shape discrimination parameters. In all the figures the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey.
 
 \subsubsection{Autocorrelation Function}
 The clustering results obtained with the \ac{ACF} metric on the training and test sets are shown in Fig.~\ref{fig:acf-energy}, while the losses are summarised in Table~\ref{tab:acf-losses}. The reconstruction, the loss evolution, the validation-set results and the \ac{AE} and rise time distributions are reported in Appendix~\ref{app:DTC-plots-acf}.
@@ -296,8 +296,9 @@ The clustering results obtained with the \ac{ACF} metric on the training and tes
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_train.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_val.pdf}\\
     \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_test.pdf}
-    \caption{Clustering results with the \ac{ACF} metric on the training (top) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
+    \caption{Clustering results with the \ac{ACF} metric on the training (top), validation (middle) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
     \label{fig:acf-energy}
 \end{figure}
 
@@ -324,8 +325,9 @@ The clustering results obtained with the \ac{EUC} metric on the training and tes
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_train.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_val.pdf}\\
     \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_test.pdf}
-    \caption{Clustering results with the \ac{EUC} metric on the training (top) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
+    \caption{Clustering results with the \ac{EUC} metric on the training (top), validation (middle) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
     \label{fig:euclidean-energy}
 \end{figure}
 
@@ -352,8 +354,9 @@ The clustering results obtained with the \ac{CID} metric on the training and tes
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_train.pdf}\\
+    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_val.pdf}\\
     \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_test.pdf}
-    \caption{Clustering results with the \ac{CID} metric on the training (top) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
+    \caption{Clustering results with the \ac{CID} metric on the training (top), validation (middle) and test (bottom) sets: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
     \label{fig:cid-energy}
 \end{figure}
 

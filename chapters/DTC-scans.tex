@@ -1,70 +1,70 @@
 \chapter{\texorpdfstring{\acs{DTC}}{DTC} scans over $\gamma$ and $K$}
 \label{app:DTC-scans}
+
+% Figura "spezzabile": due immagini impilate, la seconda può andare a pagina nuova.
+% Uso: \splitfig{immagine1}{immagine2}{caption}{label}
+\newcommand{\splitfig}[4]{%
+    \par\Needspace{0.3\textheight}% evita di iniziare il plot con solo una striscia in fondo pagina
+    \begin{center}
+        \includegraphics[width=\textwidth]{#1}\par
+        \nopagebreak[2]\medskip
+        \includegraphics[width=\textwidth]{#2}\par
+        \nopagebreak[4]\smallskip
+        \captionof{figure}{#3}\label{#4}
+    \end{center}
+}
+
 As introduced in Sec. \ref{subsec:train-test-DTC}, this Appendix summarise the reconstruction ability of the \ac{TAE} and the evolution of $L_\text{TAE}$ and $L_\text{TSC}$ through epochs of the training performed to determine the appropriate value of $\gamma$ weighting the two losses and the number of clusters $K$ to be considered in the \textit{train} phase of the \ac{DTC}.
 
 \section{\texorpdfstring{$\bm{\gamma}$}{gamma} scan results}
 Figures \ref{fig:scan-reconstruction_and_losses-gamma10}, \ref{fig:scan-reconstruction_and_losses-gamma100}, \ref{fig:scan-reconstruction_and_losses-gamma1000} and \ref{fig:scan-reconstruction_and_losses-gamma10000} show the reconstruction ability and the losses trend for $\gamma= 10, 100, 1000$ and $10000$ respectively.
 
-Beyond the points discussed in the main text, the extremes highlight a clear trade-off: with $\gamma = 10$, the losses flatline and the clustering simply does not kick in, while at $\gamma = 10000$, the clustering loss does go down, but heavily penalizes reconstruction, making it the worst among all tested configurations. That leaves $\gamma = 1000$ as the sweet spot, being the only setting where both losses steadily decrease together across epochs while keeping assignments stable, with fewer than 5\% of events shifting clusters after epoch 3.
+Beyond the points discussed in the main text, the extremes highlight a clear trade-off: with $\gamma = 10$, the losses flatline and the clustering simply does not kick in, while at $\gamma = 10000$, the clustering loss does go down, but heavily penalizes reconstruction, making it the worst among all tested configurations. That leaves $\gamma = 1000$ as the sweet spot, being the only setting where both losses steadily decrease together across epochs while keeping assignments stable, with fewer than 15\% of events shifting clusters after epoch 3.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10_2cl_training_reconstruction.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10_2cl_training_history.pdf}
-    \caption{Training reconstruction and training losses for $\gamma=10$ with Euclidean Distance metric.}
-    \label{fig:scan-reconstruction_and_losses-gamma10}
-\end{figure}
+\splitfig
+    {plots/DTC/gamma_scan/scan_eucl_gamma10_2cl_training_reconstruction.pdf}
+    {plots/DTC/gamma_scan/scan_eucl_gamma10_2cl_training_history.pdf}
+    {Training reconstruction and training losses for $\gamma=10$ with Euclidean Distance metric.}
+    {fig:scan-reconstruction_and_losses-gamma10}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma100_2cl_training_reconstruction.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma100_2cl_training_history.pdf}
-    \caption{Training reconstruction and training losses for $\gamma=100$ with Euclidean Distance metric.}
-    \label{fig:scan-reconstruction_and_losses-gamma100}
-\end{figure}
+\splitfig
+    {plots/DTC/gamma_scan/scan_eucl_gamma100_2cl_training_reconstruction.pdf}
+    {plots/DTC/gamma_scan/scan_eucl_gamma100_2cl_training_history.pdf}
+    {Training reconstruction and training losses for $\gamma=100$ with Euclidean Distance metric.}
+    {fig:scan-reconstruction_and_losses-gamma100}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma1000_2cl_training_reconstruction.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma1000_2cl_training_history.pdf}
-    \caption{Training reconstruction and training losses for $\gamma=1000$ with Euclidean Distance metric.}
-    \label{fig:scan-reconstruction_and_losses-gamma1000}
-\end{figure}
+\splitfig
+    {plots/DTC/gamma_scan/scan_eucl_gamma1000_2cl_training_reconstruction.pdf}
+    {plots/DTC/gamma_scan/scan_eucl_gamma1000_2cl_training_history.pdf}
+    {Training reconstruction and training losses for $\gamma=1000$ with Euclidean Distance metric.}
+    {fig:scan-reconstruction_and_losses-gamma1000}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10000_2cl_training_reconstruction.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/gamma_scan/scan_eucl_gamma10000_2cl_training_history.pdf}
-    \caption{Training reconstruction and training losses for $\gamma=10000$ with Euclidean Distance metric.}
-    \label{fig:scan-reconstruction_and_losses-gamma10000}
-\end{figure}
+\splitfig
+    {plots/DTC/gamma_scan/scan_eucl_gamma10000_2cl_training_reconstruction.pdf}
+    {plots/DTC/gamma_scan/scan_eucl_gamma10000_2cl_training_history.pdf}
+    {Training reconstruction and training losses for $\gamma=10000$ with Euclidean Distance metric.}
+    {fig:scan-reconstruction_and_losses-gamma10000}
 
 \section{Clusters scan results}
 As introduced in Sec. \ref{subsec:train-test-DTC}, the Fig. \ref{fig:scan-reconstruction_and_losses-K2}, \ref{fig:scan-reconstruction_and_losses-K3} and \ref{fig:scan-reconstruction_and_losses-K4} show the reconstruction ability and the losses trend for $K= 2, 3$ and $4$ respectively, where $K$ is the number of clusters.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_2cl_training_reconstruction.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_2cl_training_history.pdf}
-    \caption{Training reconstruction and training losses for $K=2$ with Euclidean Distance metric.}
-    \label{fig:scan-reconstruction_and_losses-K2}
-\end{figure}
+\splitfig
+    {plots/DTC/clusters_scan/scan_eucl_2cl_training_reconstruction.pdf}
+    {plots/DTC/clusters_scan/scan_eucl_2cl_training_history.pdf}
+    {Training reconstruction and training losses for $K=2$ with Euclidean Distance metric.}
+    {fig:scan-reconstruction_and_losses-K2}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_3cl_training_reconstruction.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_3cl_training_history.pdf}
-    \caption{Training reconstruction and training losses for $K=3$ with Euclidean Distance metric.}
-    \label{fig:scan-reconstruction_and_losses-K3}
-\end{figure}
+\splitfig
+    {plots/DTC/clusters_scan/scan_eucl_3cl_training_reconstruction.pdf}
+    {plots/DTC/clusters_scan/scan_eucl_3cl_training_history.pdf}
+    {Training reconstruction and training losses for $K=3$ with Euclidean Distance metric.}
+    {fig:scan-reconstruction_and_losses-K3}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_training_reconstruction.pdf}\\
-    \includegraphics[width=\textwidth]{plots/DTC/clusters_scan/scan_eucl_4cl_training_history.pdf}
-    \caption{Training reconstruction and training losses for $K=4$ with Euclidean Distance metric.}
-    \label{fig:scan-reconstruction_and_losses-K4}
-\end{figure}
+\splitfig
+    {plots/DTC/clusters_scan/scan_eucl_4cl_training_reconstruction.pdf}
+    {plots/DTC/clusters_scan/scan_eucl_4cl_training_history.pdf}
+    {Training reconstruction and training losses for $K=4$ with Euclidean Distance metric.}
+    {fig:scan-reconstruction_and_losses-K4}
 
 \begin{figure}[H]
     \centering

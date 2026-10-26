@@ -1,138 +1,82 @@
 \chapter{DTC training and testing plots}
 \label{app:DTC-plots}
-This appendix collects the plots of the final \ac{DTC} trainings ($\gamma = 1000$, $K = 2$) that are not shown in Sec.~\ref{subsec:train-test-DTC}. For each distance metric, the following are reported: the reconstruction of a fixed validation waveform at different epochs, the evolution of the training and validation losses, the clustering results on the validation set and the \ac{AE} and rise time distributions of the two clusters for the training, validation and test sets. As in the main text, the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey.
+This appendix collects the plots of the final \ac{DTC} trainings ($\gamma = 1000$, $K = 2$) that are not shown in Sec.~\ref{subsec:train-test-DTC}. For each distance metric, the following are reported: the reconstruction of a fixed validation waveform at different epochs together with the evolution of the training and validation losses, the clustering results on the validation set and the \ac{AE} and rise time distributions of the two clusters for the training, validation and test sets. As in the main text, the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey.
 
+%==================================================
 \section{Autocorrelation Function}
 \label{app:DTC-plots-acf}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_training_reconstruction.pdf}
-    \caption{Original and reconstructed waveforms at different training epochs with the \ac{ACF} metric.}
+    \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_training_reconstruction.pdf}\\[4pt]
+    \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_training_history.pdf}
+    \caption{Original and reconstructed waveforms at different training epochs (top), and training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch (bottom), with the \ac{ACF} metric.}
+    \label{fig:acf-training}
     \label{fig:acf-reconstruction}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_training_history.pdf}
-    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, with the \ac{ACF} metric.}
     \label{fig:acf-losses}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_energy_val.pdf}
-    \caption{Clustering results with the \ac{ACF} metric on the validation set: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
-    \label{fig:acf-valid}
-\end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_train_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{ACF} metric on the training set.}
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_AoE_risetime_train_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_AoE_risetime_test_linear.pdf}
+    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{ACF} metric on the training set (top), validation set (middle) and test set (bottom).}
+    \label{fig:acf-aoe}
     \label{fig:acf-aoe-train}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_val_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{ACF} metric on the validation set.}
     \label{fig:acf-aoe-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/acf/acf_2cl_AoE_risetime_test_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{ACF} metric on the test set.}
     \label{fig:acf-aoe-test}
 \end{figure}
 
+%==================================================
 \section{Euclidean Distance}
 \label{app:DTC-plots-euclidean}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_training_reconstruction.pdf}
-    \caption{Original and reconstructed waveforms at different training epochs with the \ac{EUC} metric.}
+    \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_training_reconstruction.pdf}\\[4pt]
+    \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_training_history.pdf}
+    \caption{Original and reconstructed waveforms at different training epochs (top), and training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch (bottom), with the \ac{EUC} metric.}
+    \label{fig:euclidean-training}
     \label{fig:euclidean-reconstruction}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_training_history.pdf}
-    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, with the \ac{EUC} metric.}
     \label{fig:euclidean-losses}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_energy_val.pdf}
-    \caption{Clustering results with the \ac{EUC} metric on the validation set: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
-    \label{fig:euclidean-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_train_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{EUC} metric on the training set.}
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_train_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_test_linear.pdf}
+    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{EUC} metric on the training set (top), validation set (middle) and test set (bottom).}
+    \label{fig:euclidean-aoe}
     \label{fig:euclidean-aoe-train}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_val_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{EUC} metric on the validation set.}
     \label{fig:euclidean-aoe-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_test_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{EUC} metric on the test set.}
     \label{fig:euclidean-aoe-test}
 \end{figure}
 
+%==================================================
 \section{Complexity Invariant Distance}
 \label{app:DTC-plots-cid}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_training_reconstruction.pdf}
-    \caption{Original and reconstructed waveforms at different training epochs with the \ac{CID} metric.}
+    \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_training_reconstruction.pdf}\\[4pt]
+    \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_training_history.pdf}
+    \caption{Original and reconstructed waveforms at different training epochs (top), and training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch (bottom), with the \ac{CID} metric.}
+    \label{fig:cid-training}
     \label{fig:cid-reconstruction}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_training_history.pdf}
-    \caption{Training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch, with the \ac{CID} metric.}
     \label{fig:cid-losses}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_energy_val.pdf}
-    \caption{Clustering results with the \ac{CID} metric on the validation set: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy.}
-    \label{fig:cid-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_train_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{CID} metric on the training set.}
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_AoE_risetime_train_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_AoE_risetime_test_linear.pdf}
+    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{CID} metric on the training set (top), validation set (middle) and test set (bottom).}
+    \label{fig:cid-aoe}
     \label{fig:cid-aoe-train}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_val_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{CID} metric on the validation set.}
     \label{fig:cid-aoe-valid}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/cid/cid_2cl_AoE_risetime_test_linear.pdf}
-    \caption{\ac{AE} and rise time distributions of the two clusters obtained with the \ac{CID} metric on the test set.}
     \label{fig:cid-aoe-test}
 \end{figure}
