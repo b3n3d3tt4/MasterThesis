@@ -2,6 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
 from matplotlib.lines import Line2D
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 13   # numbers on the axes (uncomment if needed)
+plt.rcParams['ytick.labelsize'] = 13
 
 BLUE, YELLOW, RED = "#004284", "#ffbf00", "#ff0000"
 

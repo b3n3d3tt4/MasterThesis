@@ -3,6 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 13   # numbers on the axes (uncomment if needed)
+plt.rcParams['ytick.labelsize'] = 13
+
 RED, BLUE = '#fe2f33', '#004284'
 
 def distribution_2nu(x, a=1, b=2, height=2.3):

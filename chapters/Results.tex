@@ -1,7 +1,34 @@
 \chapter{Results}
 This Chapter will outline the main results obtained with the two algorithms developed and tested as described in Chapter \ref{chapter:ML-PSD}. The various possible cuts, nameley the two of the \ac{VAE} and the three of the \ac{DTC}, will be applied to the calibration dataset in the 1550-1650 keV energy range, i.e. the one on which the algorithms are trained and tested, and on another novel dataset on which the networks have never been trained, the $2\nu\beta\beta$ spectrum from physics (\texttt{phy}) data of \textit{prl25}.
 
+It is worth stressing that the two deep learning approaches do not compete on equal terms. The \ac{VAE}-based classifier is trained in a supervised way on \ac{DEP} and \ac{FEP} labels whose purity does not exceed 58\% and 76\% respectively (Tab.~\ref{tab:purity}). It therefore learns to separate the two peaks, background included, rather than \ac{SSE} from \ac{MSE}, and its performance is bounded by label noise. The \ac{DTC}, instead, never sees any label and groups waveforms only according to their shape. The same \ac{DEP}/\ac{FEP} labels are used in this Chapter to evaluate all methods, \ac{AE} included, so the resulting figures of merit are lower than those that would be obtained with pure samples. Since this bias affects all methods in approximately the same way, the figures remain meaningful for a relative comparison.
+
 The deep learning cuts are compared with one another and with the traditional benchmark given by the \ac{AE} parameter (see Sec.~\ref{sec:traditionalPSD}). The comparison relies on two complementary analyses: the study of the events on which the traditional and the deep learning methods agree or disagree, and the \ac{AUC} of their \ac{ROC} curves, which quantifies the separation power of each method independently of the chosen cut threshold~\cite{ROCanalysis}.
+
+To build the \ac{ROC} curves, each method must provide a single continuous score $s_i$ for every event $i$, oriented so that higher values correspond to more \ac{MSE}-like waveforms. For the \ac{VAE}-based classifier the score is the predicted probability of being a \ac{MSE}, $s_i = p_i$ (Sec.~\ref{subsec:VAE-features_extraction}). For the \ac{DTC} it is the soft assignment to the \ac{MSE}-like cluster, which for $K = 2$ reads $s_i = 1 - q_{i,\mathrm{SSE}}$, where $q_{i,\mathrm{SSE}}$ is the soft assignment of Eq.~\ref{eq:q-prob} to the \ac{SSE}-like cluster. For the traditional method it is the corrected \ac{AE} value with the opposite sign, $s_i = -(A/E)_i$, since \ac{SSE}-like events have larger \ac{AE} values. Consistently with the training of the classifier, each event is given a reference label: $y_i = 0$ if it lies in the \ac{DEP} of $^{208}$Tl and $y_i = 1$ if it lies in the \ac{FEP} of $^{212}$Bi. $N_0$ and $N_1$ denote the number of events in the two classes.
+
+For a given threshold $t$, an event is classified as \ac{MSE}-like, and therefore rejected, if $s_i > t$. The fraction of \ac{FEP} events correctly rejected defines the true positive rate (TPR), while the fraction of \ac{DEP} events wrongly rejected defines the false positive rate (FPR):
+\begin{equation}
+    \mathrm{TPR}(t) = \frac{\left|\{\, i : y_i = 1,\ s_i > t \,\}\right|}{N_1},
+    \qquad
+    \mathrm{FPR}(t) = \frac{\left|\{\, i : y_i = 0,\ s_i > t \,\}\right|}{N_0},
+    \label{eq:tpr_fpr}
+\end{equation}
+where $|\cdot|$ denotes the number of elements of a set. In terms of the survival fractions commonly used in \ac{PSD}, $1 - \mathrm{FPR}(t)$ is the survival fraction in the \ac{DEP} and $1 - \mathrm{TPR}(t)$ the one in the \ac{FEP}. The \ac{ROC} curve is the parametric curve $\big(\mathrm{FPR}(t), \mathrm{TPR}(t)\big)$ obtained by scanning $t$ over the whole range of the score. It connects the point $(0,0)$, reached for $t \to +\infty$ where no event is rejected, to the point $(1,1)$, reached for $t \to -\infty$ where every event is rejected. A score with no discrimination power gives $\mathrm{TPR}(t) = \mathrm{FPR}(t)$ for every $t$, i.e.\ the diagonal of the plane. An ideal score instead reaches the point $(0,1)$, where all the \ac{FEP} events are rejected and all the \ac{DEP} events are kept.
+
+The \ac{AUC} is the area under this curve,
+\begin{equation}
+    \mathrm{AUC} = \int_0^1 \mathrm{TPR} \; \mathrm{d}(\mathrm{FPR}),
+    \label{eq:auc}
+\end{equation}
+and ranges from $0.5$ for a random classifier to $1$ for a perfect one. Eq.~\ref{eq:auc} has a simple probabilistic meaning. When the threshold is lowered from $t + \mathrm{d}t$ to $t$, the FPR grows by the fraction of \ac{DEP} events with a score in $[t, t + \mathrm{d}t]$, and each of them is weighted by $\mathrm{TPR}(t)$, i.e.\ by the fraction of \ac{FEP} events with a higher score. The \ac{AUC} is therefore the probability that a randomly chosen \ac{FEP} event receives a higher score than a randomly chosen \ac{DEP} event, $\mathrm{AUC} = P\left(s_j > s_i \mid y_j = 1,\ y_i = 0\right)$. On a finite sample it is computed by comparing all the pairs of events of the two classes:
+\begin{equation}
+    \mathrm{AUC} = \frac{1}{N_0 N_1} \sum_{i\,:\,y_i = 0} \; \sum_{j\,:\,y_j = 1} \Theta(s_j - s_i),
+    \label{eq:auc_pairs}
+\end{equation}
+where $\Theta$ is the Heaviside step function, with $\Theta(0) = 1/2$ so that ties count as one half. Since Eq.~\ref{eq:auc_pairs} depends only on the ordering of the scores, the \ac{AUC} is unchanged by any monotonic transformation of $s_i$ and does not require the choice of a threshold. In addition, the \ac{ROC} curve allows the methods to be compared at the same working point. Since the \ac{AE} cut is tuned to a 90\% survival fraction in the \ac{DEP} (Sec.~\ref{sec:traditionalPSD}), the \ac{FEP} survival fraction $1 - \mathrm{TPR}$ at $\mathrm{FPR} = 10\%$ is reported for every method as a further figure of merit. \cite{ROCanalysis}, \cite{AUCHanley}
+
+The \ac{AE} cut applied in the standard \ac{PSD} analysis (Sec.~\ref{sec:traditionalPSD}) is double-sided: an event is kept if $(A/E)_{\mathrm{low}} \leq A/E \leq (A/E)_{\mathrm{high}}$, where $(A/E)_{\mathrm{high}} = 3$ is fixed and $(A/E)_{\mathrm{low}}$ is tuned on the \ac{DEP}. Consistently with this procedure, the \ac{ROC} curve of \ac{AE} is built by keeping the high cut fixed and scanning only the low one. Events with $A/E > (A/E)_{\mathrm{high}}$ are assigned a score larger than that of any other event, so that they are rejected at every threshold, while all the other events keep the score $s_i = -(A/E)_i$. The working point of the actual cut then corresponds to the threshold $t = -(A/E)_{\mathrm{low}}$, so it lies on the \ac{AE} \ac{ROC} curve and is marked with a star in the figures. Its coordinates are given by Eq.~\ref{eq:tpr_fpr}, i.e.\ by the fractions of \ac{FEP} and \ac{DEP} events rejected by the cut.
 
 \section{Analysis of calibration data}
 
@@ -90,13 +117,14 @@ The latest step of this analysis involves testing all the deep learning models d
     \label{tab:quality-cuts-2nu}
 \end{table}
 
-Moreover, data have been cut on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}. In principle, the resulting spectrum should be made up of pure \ac{SSE}-like events, since all the background contamination producing \ac{MSE} signals are removed by the \ac{lar} and muon veto. Therefore, all of the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training, to test wheter they recognised as signal-like events or not.
+Moreover, data have been cut on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{plots/DTC/2nuData/energy_spectrum_before_after_LAr.pdf}
     \caption{Energy spectrum of the $2\nu\beta\beta$ data before (light grey) and after (dark grey) the \ac{lar} cut.}
     \label{fig:2nu-beforeafterLAR}
 \end{figure}
+ After the \ac{lar} and muon vetoes, the spectrum between 560 and 2039 keV is dominated by $2\nu\beta\beta$ decays of ${}^{76}$Ge, whose two electrons deposit their energy within a few millimetres and therefore produce \ac{SSE}-like signals. The resulting sample is, however, enriched in SSE-like events rather than pure. $\gamma$-induced events survive the vetoes whenever no energy is deposited in the \ac{lar}, as for the full-energy peaks of ${}^{40}$K (1460.8 keV) and ${}^{42}$K (1524.6 keV), together with part of the underlying Compton continuum. Moreover, a small fraction of genuine $2\nu\beta\beta$ events is itself multi-site because of bremsstrahlung photons emitted by the electrons. The fraction of events retained by a PSD method is therefore expected to be high but not 100\%. Therefore, all of the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training, to test wheter they recognise $2\nu\beta\beta$ events as signal-like or not.
 
 \subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}
 
