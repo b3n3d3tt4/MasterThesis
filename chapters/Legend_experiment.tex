@@ -191,7 +191,6 @@ Restricting the scope of the work solely to these two detectors is a methodologi
 
 \begin{table}[H]
     \centering
-    \small
     \begin{tabular}{lcc}
         \toprule
         & \textbf{V08682A} & \textbf{V08682B} \\
@@ -239,7 +238,7 @@ where $\mathbf{v}$ is the instantaneous velocity of the charge \textit{q}. The t
 \subsubsection{IC weighting field}
 IC detectors in LEGEND feature a well on the opposite side of the p-contact to increase the electric field in the upper part of the detectors and make it possible to drift the charge. MIRION IC detectors, as the one considered in this work, exhibits a straight/tapered well, visible in Fig. \ref{fig:V08682A}. \cite{lnote_21003}
 
-The structure of an IC detector creates a region surrounding the \textit{p+} electrode with a very high weighting field, as is shown in Fig. \ref{fig:weighting}. 
+The structure of an IC detector creates a region surrounding the \textit{p+} electrode with a very high weighting field, as is shown in Fig. \ref{fig:weighting-field}. 
 This means that, when an \ac{eh} pair is produced, the pulse shape of the signal is almost entirely determined by the holes drifting towards the \textit{p+} contact, rather than the electron-induced one which can be considered negligible. In principle, the shape of the current signal varies depending on where the physical process happen with respect to the readout electrode; however, seeing that far away from the \textit{p+} electrode  the field is very low, which means that the current signal proportional to the field (see Eq. \ref{eq:carica-corrente-SR}) is negligible, we can assume that wherever the physical process happens, the real signal only starts when the hole is sufficiently near to the point contact. Nonetheless, if the event happens very close to the \textit{p+} electrode, holes rapidly drift to it. On top of that electrons are generated within the high-weighting-field region and induce a sizeable current while drifting away from it, before entering the region where $\text{E}_\text{w}$ is negligible. \cite{dissertationComellato}
 
 \begin{figure}[H]
@@ -249,20 +248,16 @@ This means that, when an \ac{eh} pair is produced, the pulse shape of the signal
         \centering
         \includegraphics[width=0.48\textwidth]{figures/ramo-shockley/V08682A_weighting_potential.png}\hfill
         \includegraphics[width=0.48\textwidth]{figures/ramo-shockley/V08682A_weighting_field.png}
-        \caption{V08682A}
-        \label{fig:weighting-V08682A}
     \end{subfigure}
-    \vspace{0.5em}
+    \vspace{0.2em}
     % --- (b) V08682B ---
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.48\textwidth]{figures/ramo-shockley/V08682B_weighting_potential.png}\hfill
         \includegraphics[width=0.48\textwidth]{figures/ramo-shockley/V08682B_weighting_field.png}
-        \caption{V08682B}
-        \label{fig:weighting-V08682B}
     \end{subfigure}
-    \caption{Weighting potential (left) and weighting field (right). Own elaboration based on LEGEND Metadata.}
-    \label{fig:weighting}
+    \caption{Weighting potential (left) and weighting field (right) of V08682A (top) and V08682B (bottom) detectors. Own elaboration based on LEGEND Metadata.}
+    \label{fig:weighting-field}
 \end{figure}
 
 
@@ -384,14 +379,14 @@ Pulse shape discrimination (\ac{PSD}) is employed in the LEGEND program with sev
 
 The first one is a measure of the \textit{slowness} of the final 20\% of charge carriers for an event. It is determined by calculating the area above the rising edge of the waveform after it reaches the 80\% of its maximum. Since surface events (both alpha and beta) tipically manifest a slow-charge trend with a incomplete charge collection as a consequence, \ac{LQ} is expected to be a powerful discriminator against these events, which constitute a part of the background (see Sec.~\ref{sec:background}). 
 
-On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection relies: it is computed at the Digital Signal Processing stage as the ratio between the maximum amplitude of the current signal and the uncorrected energy of the event from the restricted $1400$ samples waveform (Fig.~\ref{fig:wf-windowing}). Specifically, for Mirion IC detectors such as the V08682A used in this work, the current pulse is reconstructed from the rising edge of the charge: first, a pole-zero correction is applied; the signal is then differentiated, upsampled from $16\text{~ns}$ to
+On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection relies: it is computed at the Digital Signal Processing stage as the ratio between the maximum amplitude of the current signal and the uncorrected energy of the event from the restricted $1400$ samples waveform (Fig.~\ref{fig:wf-windowing}). Specifically, for Mirion IC detectors such as the V08682A used in this work, the current pulse is reconstructed from the rising edge of
 \begin{wrapfigure}{r}{0.53\textwidth}
     \centering
     \includegraphics[width=\linewidth]{plots/wfCleaning/example_different_AE_same_energy.pdf}
     \caption{Example of two events with the same energy but different \ac{AE} values.}
     \label{fig:example-differentAEsameE}
 \end{wrapfigure}
-$1\text{~ns}$, and smoothed through three consecutive $96\text{~ns}$ moving average windows to determine the maximum pulse amplitude. The energy instead is typically the raw output of a cusp filter. The discrimination power of \ac{AE} relies on the different topologies of the physical interactions. Since a \ac{MSE} distributes its total energy deposition across distinct spatial locations within the detector volume, the varying drift times of the separate charge clouds produce a waveform characterised by several smaller, overlapping current peaks. Consequently, for a given total energy, the maximum current amplitude is significantly reduced compared to the single, prominent peak generated by a localised \ac{SSE}. This topological difference leads to a systematically lower \ac{AE} ratio for \ac{MSE}s, as is visible in Fig.~\ref{fig:example-differentAEsameE}. In practice, to be effectively used for discrimination, these raw \ac{AE} values are further modified to account for drift time and energy dependencies. Once corrected, centered at zero, and normalised ($\sigma=1$), they provide a robust classification metric. The final impact of these distinct topologies on the corrected parameter is illustrated in Fig.~\ref{fig:AoE-different-events}, which shows how different physical events in a detector induce different signals and consequently clearly distinguishable \ac{AE} values.
+the charge: first, a pole-zero correction is applied; the signal is then differentiated, upsampled from $16\text{~ns}$ to $1\text{~ns}$, and smoothed through three consecutive $96\text{~ns}$ moving average windows to determine the maximum pulse amplitude. The energy instead is typically the raw output of a cusp filter. The discrimination power of \ac{AE} relies on the different topologies of the physical interactions. Since a \ac{MSE} distributes its total energy deposition across distinct spatial locations within the detector volume, the varying drift times of the separate charge clouds produce a waveform characterised by several smaller, overlapping current peaks. Consequently, for a given total energy, the maximum current amplitude is significantly reduced compared to the single, prominent peak generated by a localised \ac{SSE}. This topological difference leads to a systematically lower \ac{AE} ratio for \ac{MSE}s, as is visible in Fig.~\ref{fig:example-differentAEsameE}. In practice, to be effectively used for discrimination, these raw \ac{AE} values are further modified to account for drift time and energy dependencies. Once corrected, centered at zero, and normalised ($\sigma=1$), they provide a robust classification metric. The final impact of these distinct topologies on the corrected parameter is illustrated in Fig.~\ref{fig:AoE-different-events}, which shows how different physical events in a detector induce different signals and consequently clearly distinguishable \ac{AE} values.
 
 \begin{figure}[H]
     \centering
