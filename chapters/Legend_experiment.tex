@@ -122,6 +122,7 @@ All of the materials close to the detectors have been screened to prevent radioa
 
 
 \section{LEGEND data}
+\label{sec:LEGENDdata}
 \subsection{Detector physics and signal formation}
 As already introduced in Sec. \ref{sec:expsetup}, experimental data of the LEGEND program rely on different types of detectors including \ac{hpge} detectors (acting also as the primary source for double-beta decay), scintillating fibers and SiPM for the \ac{lar} scintillation light and PMT tubes for muon-induced Cherenkov light. In this section \ac{hpge} detectors will be analysed in order to understand how signals are originated, collected, readout, processed and analysed in the LEGEND program. This is essential in order to lay the basis for the main focus of the thesis in Chapter \ref{chapter:ML-PSD}.
 
@@ -277,7 +278,7 @@ Classifying events according to the shape of their signal is the basis of \ac{PS
 \subsection{Data acquisition and processing}
 \subsubsection{Readout electronics}
 The \ac{DAQ} system for LEGEND-200 consists of FlashCam digitisers and an \ac{ORCA} \ac{DAQ} software. The \ac{DAQ} system employs a \ac{FADC} based on the FlashCam readout system, which digitises the detector signals with 
-\begin{wrapfigure}{l}{0.53\textwidth}
+\begin{wrapfigure}{r}{0.53\textwidth}
     \centering
     \includegraphics[width=\linewidth]{plots/wf_vs_windowed_wf.pdf}
     \caption{Example of a raw waveform from the DAQ.}
@@ -338,7 +339,7 @@ Energy calibration is performed using Thorium-228 sources with low neutron emiss
         \centering
 
         \includegraphics[width=\linewidth]{plots/energy_spectrum-example.pdf}
-        \caption{Example of the energy spectrum recorded in a calibration run. Peaks listed in Tab \ref{tab:emission-peaks} are highlighted. Data for this example plot are from run \textit{r000} of period \textit{p03}.}
+        \caption{Example of the energy spectrum recorded in a calibration run for V08682A detector. Peaks listed in Tab \ref{tab:emission-peaks} are highlighted. Data for this example plot are from run \textit{r000} of period \textit{p03}.}
         \label{fig:TlBi-spectrum}
         
         \vspace{1.0em}
@@ -380,7 +381,7 @@ Pulse shape discrimination (\ac{PSD}) is employed in the LEGEND program with sev
 The first one is a measure of the \textit{slowness} of the final 20\% of charge carriers for an event. It is determined by calculating the area above the rising edge of the waveform after it reaches the 80\% of its maximum. Since surface events (both alpha and beta) tipically manifest a slow-charge trend with a incomplete charge collection as a consequence, \ac{LQ} is expected to be a powerful discriminator against these events, which constitute a part of the background (see Sec.~\ref{sec:background}). 
 
 On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection relies: it is computed at the Digital Signal Processing stage as the ratio between the maximum amplitude of the current signal and the uncorrected energy of the event from the restricted $1400$ samples waveform (Fig.~\ref{fig:wf-windowing}). Specifically, for Mirion IC detectors such as the V08682A used in this work, the current pulse is reconstructed from the rising edge of
-\begin{wrapfigure}{r}{0.53\textwidth}
+\begin{wrapfigure}{l}{0.53\textwidth}
     \centering
     \includegraphics[width=\linewidth]{plots/wfCleaning/example_different_AE_same_energy.pdf}
     \caption{Example of two events with the same energy but different \ac{AE} values.}
@@ -395,7 +396,7 @@ the charge: first, a pole-zero correction is applied; the signal is then differe
     \label{fig:AoE-different-events}
 \end{figure}
 
-These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig:AoE_distribution}, from which it is clear that different regions of the energy spectrum given by different physical processes are correlated with distinct \ac{AE} distributions. For example events of the \ac{DEP} region (red) show a different distribution with respect to the \ac{FEP} ones (blue), therefore a proper selection of the \ac{AE} value enable to distinguish signal-like events from background-like ones. 
+These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig:AoE_distribution} hwere V08682A detectro has been chosen as an example, from which it is clear that different regions of the energy spectrum given by different physical processes are correlated with distinct \ac{AE} distributions. For example events of the \ac{DEP} region (red) show a different distribution with respect to the \ac{FEP} ones (blue), therefore a proper selection of the \ac{AE} value enable to distinguish signal-like events from background-like ones. 
 
 \begin{figure}[H]
     \centering
@@ -405,14 +406,21 @@ These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig
 \end{figure}
 Specifically, the \ac{AE} selection is realised with two cuts on said distribution: a low cut and an high cut. They are respectively a cut above and below zero since the distribution is normalised. The high cut is set to $3$ regardless of the specific detector, in order to reject events with a very high \ac{AE} value that are typically induced by $\alpha$ particles. On the other hand, the low cut is detector-specific and must be tuned individually: a scan on the \ac{AE} distribution is performed from the left to the right and the low cut value is set to the point for which the survival fraction of the events in the \ac{DEP} of~${}^{208}$Tl reaches the 90\% of the peak maximum.
 
-Figure~\ref{fig:distribution-AoE_prl25} presents the \ac{AE} cut for the calibration data of \textit{prl25} in the $1550-1650$ keV energy range, which is the range that has been employed for this work because of physics and computational reasons, as will be discussed in Sec.~\ref{sec:data-cleaning}. 
+Figures~\ref{fig:distribution-AoE_prl25-V08682A} and \ref{fig:distribution-AoE_prl25-V08682B} presents, for the V08682A and V08682B respectively, the \ac{AE} cut for the calibration data of \textit{prl25} in the $1550-1650$ keV energy range, which is the range that has been employed for this work because of physics and computational reasons, as will be discussed in Sec.~\ref{sec:data-cleaning}. 
 This \ac{PSD} cut, shown in blue, will be the benchmark for all the others that have been implemented in this work and will be presented in Chapter \ref{chapter:ML-PSD}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/energy_specrum-prl25-AoE_cut.pdf}
-    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut. The cut is tuned in order to have a survival fraction in the \ac{DEP} of 90\%.}
-    \label{fig:distribution-AoE_prl25}
+    \includegraphics[width=0.8\textwidth]{plots/energy_specrum-prl25-AoE_cut_V08682A.pdf}
+    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut for the V08682A detector.}
+    \label{fig:distribution-AoE_prl25-V08682A}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/energy_specrum-prl25-AoE_cut_V08682B.pdf}
+    \caption{Windowed energy spectrum before (gray) and after (blue) the A/E cut for the V08682A detector.}
+    \label{fig:distribution-AoE_prl25-V08682B}
 \end{figure}
 
 

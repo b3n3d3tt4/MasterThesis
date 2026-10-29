@@ -230,7 +230,38 @@ The validation and test sets are processed in batches of the same size, in a fix
 
 Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the values of the losses for the training, validation and test sets at the beginning of the training, at the end of the same and in the testing part for the $3\sigma$ cut and the $1\sigma$ cut respectively. The validation set has been used here only in order to show how the reconstruction ability of the \ac{VAE} improves through the epochs and to have a feedback about a possible overfitting at the end of the training: if both the training and recontruction losses decrease over epochs the model is unlike to overfit, on the contrary if the validation loss does not decrease while the training do, the model is clearly overfitting data.
 
-The reconstruction flow and the training losses through the epochs are shown in Fig. \ref{fig:VAE-ricostruzione-3sigma} and \ref{fig:VAE-losses-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma} and \ref{fig:VAE-losses-1sigma} for events in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in Fig.~\ref{fig:VAE-testset-3sigma} and \ref{fig:VAE-testset-1sigma}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        set & events & total loss & reconstruction (NLL) & KL [nat] \\
+        \midrule
+        training   & 125\,240 & $-845.3$ & $-867.4$ & $22.10$ \\
+        validation & 13\,916  & $-838.8$ & $-860.9$ & $22.16$ \\
+        test       & 15\,462  & $-839.6$ & $-861.8$ & $22.25$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Losses of the final \ac{VAE} trained on the $\pm3\sigma$ windows, evaluated on the training, validation and test sets. The total loss is the sum of the reconstruction term and of the KL divergence weighted by $\beta = 1$.}
+    \label{tab:VAE-losses-3sigma}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        set & events & total loss & reconstruction (NLL) & KL [nat] \\
+        \midrule
+        training   & 64\,935 & $-838.4$ & $-860.2$ & $21.76$ \\
+        validation & 7\,215  & $-832.5$ & $-854.2$ & $21.67$ \\
+        test       & 8\,017  & $-832.5$ & $-854.3$ & $21.78$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Losses of the final \ac{VAE} trained on the $\pm1\sigma$ windows, evaluated on the training, validation and test sets. The total loss is the sum of the reconstruction term and of the KL divergence weighted by $\beta = 1$.}
+    \label{tab:VAE-losses-1sigma}
+\end{table}
+
+
+The reconstruction flow and the training losses through the epochs are also shown in Fig. \ref{fig:VAE-ricostruzione-3sigma} and \ref{fig:VAE-losses-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma} and \ref{fig:VAE-losses-1sigma} for events in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in Fig.~\ref{fig:VAE-testset-3sigma} and \ref{fig:VAE-testset-1sigma}.
 
 \begin{figure}[H]
     \centering
@@ -308,16 +339,16 @@ The full pipeline of the \ac{VAE}-based classifier is depicted in Fig.~\ref{fig:
     \label{fig:vaeclassifier-architecture}
 \end{figure}
 
-The loss function used in the classification task is a \ac{BCE} with Logits, which directly combines the logit output of the \ac{MLP} with the sigmoid activated labels as expressed in Eq. \ref{eq:BCE-loss} where $y$ is the true label, activated by a sigmoid (Eq. \ref{eq:sigmoid}) and $p$ is the predicted probability of being a \ac{MSE} since the true labels $y=1$ have been associated with the \ac{FEP} events while $y=0$ to the \ac{DEP} ones.
+The loss function used in the classification task is a \ac{BCE} with Logits, which directly combines the logit output of the \ac{MLP} with the sigmoid activated labels as expressed in Eq. \ref{eq:BCE-loss} where $y$ is the true label and $p$ is the predicted probability of being a \ac{MSE}, since the true labels $y=1$ have been associated with the \ac{FEP} events while $y=0$ to the \ac{DEP} ones, and it arises from the sigmoid activation (see Eq. \ref{eq:sigmoid}) of the logit, i.e. the output of the classifier .
 
 \begin{equation}
     \label{eq:BCE-loss}
-    \text{BCEWithLogits}(y, p) = - \left[ p \cdot \log(\sigma(y)) + (1 - p) \cdot \log(1 - \sigma(y)) \right]
+    \text{BCEWithLogits}(y, p) = - \left[ y \cdot \log(p) + (1 - y) \cdot \log(1 - p) \right]
 \end{equation} 
 
 \begin{equation}
     \label{eq:sigmoid}
-    \sigma(y) = \frac{1}{1 + e^{-y}}
+    p = \sigma(z) = \frac{1}{1 + e^{-z}}
 \end{equation}
 
 
@@ -341,81 +372,77 @@ Analysising the accuracy plots of these two different windowing regions, it is c
 Table~\ref{tab:classifier_results_3sigma_vs_1sigma} summarise all the losses and accuracies results obtained.
 
 \begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.25}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}l ccccc ccccc cc@{}}
-\toprule
-& \multicolumn{5}{c}{\textbf{Best Epoch (Restored)}}
-& \multicolumn{5}{c}{\textbf{Final Epoch}}
-& \multicolumn{2}{c}{\textbf{Test Set}} \\
-\cmidrule(lr){2-6} \cmidrule(lr){7-11} \cmidrule(l){12-13}
-\textbf{Window}
-& Epoch & \shortstack{Train\\Loss} & \shortstack{Train\\Acc.} & \shortstack{Val\\Loss} & \shortstack{Val\\Acc.}
-& Epoch & \shortstack{Train\\Loss} & \shortstack{Train\\Acc.} & \shortstack{Val\\Loss} & \shortstack{Val\\Acc.}
-& Loss & Acc. \\
-\midrule
-$1\sigma$ & 87 & 0.48 & 78.76\% & 0.48 & 78.91\%
-          & 100 & 0.49 & 78.72\% & 0.48 & 78.93\%
-          & 0.47 & 78.18\% \\
-$3\sigma$ & 82 & 0.57 & 72.46\% & 0.57 & 72.77\%
-          & 100 & 0.57 & 72.49\% & 0.57 & 72.65\%
-          & 0.57 & 71.91\% \\
-\bottomrule 
-\end{tabular}%
-}
-\caption{Classifier performance comparison for the $1\sigma$ and $3\sigma$ configurations. Acc. stands for Accuracy.}
-\label{tab:classifier_results_3sigma_vs_1sigma}
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        & \multicolumn{2}{c}{$\pm3\sigma$ windows} & \multicolumn{2}{c}{$\pm1\sigma$ windows} \\
+        \cmidrule(lr){2-3} \cmidrule(l){4-5}
+        set & BCE loss & accuracy & BCE loss & accuracy \\
+        \midrule
+        training   & 0.565 & 72.47\% & 0.478 & 78.95\% \\
+        validation & 0.567 & 72.62\% & 0.478 & 78.66\% \\
+        test       & 0.572 & 71.92\% & 0.486 & 78.40\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Binary cross-entropy loss and accuracy of the final \ac{VAE}-based classifiers trained on the $\pm3\sigma$ and $\pm1\sigma$ windows, evaluated on the training, validation and test sets.}
+    \label{tab:classifier_results_3sigma_vs_1sigma}
 \end{table}
-The distributions of the predicted probabilities for \ac{MSE} classification are presented in Figs.~\ref{fig:VAEclassifier-testset-3sigma} and \ref{fig:VAEclassifier-testset-1sigma} for the test sets across the two distinct energy windows. Furthermore, Figs.~\ref{fig:VAEclassifier-ALLDATA-3sigma} and \ref{fig:VAEclassifier-ALLDATA-1sigma} illustrate the classification results for the entire labeled dataset (incorporating training, validation, and test sets) at the $3\sigma$ and $1\sigma$ levels, respectively. These plots highlight how the two distributions are clearly separated by the classifier: the red distribution, i.e. signals labelled as \ac{SSE}, exhibits a peak on the left (close to zero) higher than the one from the blue distribution, i.e. the one with waveforms labelled as \ac{MSE} which in turn have a very high peak on the right.  
+
+
+The distributions of the predicted probability of being a \ac{MSE} are shown in Figs.~\ref{fig:VAEclassifier-trainingset}, \ref{fig:VAEclassifier-validationset} and \ref{fig:VAEclassifier-testset} for the training, validation and test sets, respectively. Furthermore, Fig.~\ref{fig:VAEclassifier-ALLDATA} illustrates the classification results for the entire labelled dataset (training, validation and test sets combined). In each figure, the left panel refers to the $3\sigma$ energy window and the right panel to the $1\sigma$ energy window, while the two labelled populations are shown in red (\ac{SSE}) and blue (\ac{MSE}). These plots highlight how the two distributions are clearly separated by the classifier: the \ac{SSE} distribution exhibits a peak close to zero that is higher than the corresponding one of the \ac{MSE} distribution, which in turn shows a very pronounced peak close to one.
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.49\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/classifier_output_test_sigma3_current_scaled_beta1.pdf}
-        \caption{Predicted probability of being a \ac{MSE} for the labelled test set in the $3\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
-        \label{fig:VAEclassifier-testset-3sigma}
-    \end{minipage}\hfill
-    \begin{minipage}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_training_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/classifier_output_test_sigma1_current_scaled_beta1.pdf}
-        \caption{Predicted probability of being a \ac{MSE} for the labelled test set in the $1\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
-        \label{fig:VAEclassifier-testset-1sigma}
-    \end{minipage}
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_training_sigma1.pdf}
+    \end{subfigure}
+    \caption{Predicted probability of being a \ac{MSE} for the labelled training set in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
+    \label{fig:VAEclassifier-trainingset}
 \end{figure}
-
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.49\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/classifier_output_whole_sigma3_current_scaled_beta1.pdf}
-        \caption{Predicted probability of being a \ac{MSE} for the whole labelled set (training, validation and test sets) in the $3\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
-        \label{fig:VAEclassifier-ALLDATA-3sigma}
-    \end{minipage}\hfill
-    \begin{minipage}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_validation_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/classifier_output_whole_sigma1_current_scaled_beta1.pdf}
-        \caption{Predicted probability of being a \ac{MSE} for the whole labelled set (training, validation and test sets) in the $1\sigma$ windows. The two labelled populations are marked in red (\ac{SSE}) and blue (\ac{MSE}).}
-        \label{fig:VAEclassifier-ALLDATA-1sigma}
-    \end{minipage}
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_validation_sigma1.pdf}
+    \end{subfigure}
+    \caption{Predicted probability of being a \ac{MSE} for the labelled validation set in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
+    \label{fig:VAEclassifier-validationset}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_test_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_test_sigma1.pdf}
+    \end{subfigure}
+    \caption{Predicted probability of being a \ac{MSE} for the labelled test set in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
+    \label{fig:VAEclassifier-testset}
+\end{figure}
 
-
-
-
-\begin{comment}
-using beta1 and sigma3 
-
---- SSE SF with classifier = 59.95\% ---
-
---- MSE SF with classifier = 20.07\% ---
-
---- SSE SF with A/E = 59.10\% ---
-
---- MSE SF with A/E =  19.16\% ---
-
-insomma uno schifo
-\end{comment}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_whole_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_whole_sigma1.pdf}
+    \end{subfigure}
+    \caption{Predicted probability of being a \ac{MSE} for the whole labelled set (training, validation and test sets) in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
+    \label{fig:VAEclassifier-ALLDATA}
+\end{figure}
