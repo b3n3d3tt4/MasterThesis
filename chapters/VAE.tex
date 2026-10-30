@@ -1,10 +1,10 @@
 \section{Variational Autoencoder}
 \label{sec:VAE}
-A \ac{VAE} is an artificial neural network architecture introduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconsructs the time series. The process is regulated by a loss function that aims to minimise the reconstruction error between the input and the output.
+A \ac{VAE} is an artificial neural network architecture introduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconsructs the time series. The process is regulated by a loss function that aims to minimise the reconstruction error between the input and the output and an error accounting for the tidiness of the latent space.
 
 \subsection{Data selection}
 \label{subsec:data-selection-VAE}
-\ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a Gaussian fit, displayed in Fig. \ref{fig:dep_fep_fits}, is performed onto the \ac{DEP} of ${}^{208}\text{Tl}$ and the \ac{FEP} of ${}^{212}\text{Bi}$ via the function of Eq. \ref{eq:fitted-gaussian}
+This first algorithm is supervised and thus needs a proper dataselection as introduced at the beginning of this Chapter. \ac{SSE} and \ac{MSE} selection is performed through the following procedure. First a Gaussian fit, displayed in Fig. \ref{fig:dep_fep_fits}, is performed onto the \ac{DEP} of ${}^{208}\text{Tl}$ and the \ac{FEP} of ${}^{212}\text{Bi}$ via the function of Eq. \ref{eq:fitted-gaussian}
 \begin{equation}
     \label{eq:fitted-gaussian}
     f(x) = A \cdot \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) + B
@@ -97,7 +97,7 @@ For the implementation of the \ac{VAE} algorithm that will soon be detailed, onl
     \label{fig:sse_mse_selection}
 \end{figure}
 
-The labelled events selected in the $1\sigma$ and $3\sigma$ windows are divided into the training, validation and test sets as detailed in Table~\ref{tab:sets-VAE}. The division is performed in two steps: first 10\% of the labelled events is set aside as test set, then 10\% of the remaining ones forms the validation set, so that the three sets contain about 81\%, 9\% and 10\% of the events respectively. Both steps are stratified, i.e. every set keeps the same proportion of \ac{SSE} and \ac{MSE} labels of the whole selection (38.3\% \ac{SSE} for the $3\sigma$ windows and 35.2\% for the $1\sigma$ ones), and both use a fixed random seed: for a given window the three sets therefore always contain the same events, whatever input channels and current normalisation are used. The constant used to scale the current waveforms is computed on the training set only.
+The labelled events selected in the $1\sigma$ and $3\sigma$ windows are divided into the training, validation and test sets as detailed in Table~\ref{tab:sets-VAE}. The division is performed in two steps: 10\% of the labelled events is set aside as test set, and the remaining events are divided so that the validation set also contains 10\% of the labelled events and the training set the remaining 80\%. Both steps keep the same proportion of \ac{SSE} and \ac{MSE} labels of the whole selection (38.3\% \ac{SSE} for the $3\sigma$ windows and 35.2\% for the $1\sigma$ ones) and use a fixed random seed: for a given window the three sets therefore always contain the same events, whatever input channels and current normalisation are used. The constant used to scale the current waveforms is computed on the events that are not in the test set, i.e.\ on the training and validation sets together, so that no information on the test set enters the preprocessing.
 \begin{table}[H]
     \centering
     \begin{tabular}{lcccccc}
@@ -106,8 +106,8 @@ The labelled events selected in the $1\sigma$ and $3\sigma$ windows are divided 
         \cmidrule(lr){2-4} \cmidrule(l){5-7}
         set & total & \ac{SSE} & \ac{MSE} & total & \ac{SSE} & \ac{MSE} \\
         \midrule
-        training   & 125\,240 & 47\,996 & 77\,244 & 64\,935 & 22\,869 & 42\,066 \\
-        validation & 13\,916  & 5\,333  & 8\,583  & 7\,215  & 2\,541  & 4\,674  \\
+        training   & 123\,694 & 47\,403 & 76\,291 & 64\,133 & 22\,587 & 41\,546 \\
+        validation & 15\,462  & 5\,926  & 9\,536  & 8\,017  & 2\,823  & 5\,194  \\
         test       & 15\,462  & 5\,925  & 9\,537  & 8\,017  & 2\,824  & 5\,193  \\
         \midrule
         total      & 154\,618 & 59\,254 & 95\,364 & 80\,167 & 28\,234 & 51\,933 \\
@@ -124,7 +124,7 @@ The way these sets enter the training of the \ac{VAE} and of the classifier is d
 The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, an 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
 \begin{itemize}
     \item \textbf{original waveforms}\\
-    The input of the encoder are current waveforms already processed as described in Sec. \ref{sec:data-cleaning}, thus the input of the encoder has dimensions ($1~\times~200$)
+    The input of the encoder are current waveforms already processed as described in Sec. \ref{sec:data-cleaning}, thus the input of the encoder has dimensions ($1~\times~200$).
     % Specifically, it can be defined whether to use as input only current or charge waveforms or both of them simoultaneously, tuning a dedicated parameter called \texttt{channels}. Therefore the input of the encoder have overall dimensions (\texttt{channels} $\times~200$)
     In principle also charge waveforms could be used as inputs together with current ones therefore in this case the input is (\texttt{channels} $\times~200$).
     \item \textbf{encoder}\\
@@ -146,13 +146,13 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
     \item \textbf{latent space}\\
     The latent space is constructed from the output of the encoder after the following procedure:
     \begin{enumerate}
-        \item firstly, the encoder output is flattened to a sequence with $32~\times~50$ points;
+        \item firstly, the encoder output is flattened to a sequence with ($32~\times~50$) points;
         \item secondly, the flattened data are passed through a linear layer (\texttt{Linear} in PyTorch) which further reduce the dimensionality to 64 points;
         \item thirdly, a Leaky ReLU activation with $\alpha=0.1$ is applied;
         \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
     \end{enumerate}
     \item \textbf{reparametrisation and decoder input}\\
-    The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. A trick called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution (mean 0 and variance 1).
+    The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. A trick called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution ($\mathcal{N}(0; 1)$).
     \begin{equation}
         \label{eq:reparametrisation-trick}
         z = \mu + \varepsilon \cdot \sigma
@@ -164,10 +164,10 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
         \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear regression) in order to obtain a ($32~\times~100$) object ;
         \item a 1D convolutional layer with kernel size = 5, stride = 1 and padding = 2 is exploited to extract patterns and smooth out the upsampling output returning a ($16~\times~100$) object;
         \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
-        \item the final 1D convolutional layer returns a original-waveform like output ($1~\times~200$)
+        \item the final 1D convolutional layer returns a original-waveform like output ($1~\times~200$) or (\texttt{channels} $\times~200$) if also charge is considered.
     \end{enumerate}  
     \item \textbf{reconstructed waveforms}\\
-    The output of the decoder, i.e. the output of the whole \ac{VAE}, is given by current waveforms reconstructed from latent-space information. 
+    The output of the decoder, i.e. the output of the whole \ac{VAE}, is given by current (or current ancd charge) waveforms reconstructed from latent-space information. 
 \end{itemize}  
 \begin{figure}[H]
     \centering
@@ -186,7 +186,7 @@ The loss function that have been used in said training and testing is an \ac{ELB
     L = L_{\text{rec}} + \beta \cdot L_{\text{reg}}
 \end{equation}
 
-In the context of a \ac{VAE}, using a standard Mean Squared Error for the reconstruction loss would force the model to reproduce both the physically significant features of the waveform and the background stochastic noise, such as the random fluctuations preceding and following the main peaks. To overcome this limitation, the reconstruction term in the \ac{ELBO} function is modeled as the \ac{NLL} of a Gaussian distribution. Instead of assuming a fixed noise level, the \ac{VAE} dynamically learns a variance, denoted as $s^2$. This allows the model to weight the reconstruction error with respect to the expected noise level of current waveforms.
+In the context of a \ac{VAE}, using a standard Mean Squared Error for the reconstruction loss would force the model to reproduce both the physically significant features of the waveform and the stochastic noise, such as the random fluctuations preceding and following the main peaks. To overcome this limitation, the reconstruction term in the \ac{ELBO} function is modeled as the \ac{NLL} of a Gaussian distribution. Instead of assuming a fixed noise level, the \ac{VAE} dynamically learns a variance, denoted as $s^2$. This allows the model to weight the reconstruction error with respect to the expected noise level of current waveforms.
 Mathematically speaking, the squared error is divided by the learned variance $s^2$, and a logarithmic penalty term ($\log s^2$) is added, as shown in Eq. \ref{eq:rec-loss}. This second term is crucial to prevent a trivial solution: if the loss only consisted of the first term ($( x_{i,t} - \hat{x}_{i,t} )^2 / s^2$), the optimization algorithm would simply predict an infinitely large noise value to drive the error to zero. The addition of the logarithmic penalty forces the model to find an optimal balance, preventing the overestimation of the underlying noise. 
 
 \begin{equation}
@@ -198,7 +198,7 @@ Mathematically speaking, the squared error is divided by the learned variance $s
 As already introduced in Sec.~\ref{sec:vae-architeture}, charge waveforms could also be considered as input together with current ones: in this case, two channel-specific variances, $s_c^2$, should be used. Since current is the time derivative of charge, these two quantities inherently possess fundamentally different scales and noise profiles. By learning a separate $s_c^2$ for each channel, the \ac{NLL} acts as an automatic normalization mechanism, preventing the channel with the larger numerical magnitude or higher intrinsic variance from dominating the loss gradient. In this case, the individual losses of the channels must be summed. From a probabilistic point of view, this is equivalent to assuming independence of the noise between the charge and current measurements. Moreover, this sum is necessary to aggregate the array of channel-specific errors into a single scalar value, which is required by the framework to correctly perform the backpropagation algorithm.
 
 The second part of the loss expressed in Eq. \ref{eq:ELBO} concerns the organisation of the 8-dimension latent space and is based on \ac{KL} divergence. Firstly we define a \textit{prior} distribution, i.e. a standard Gaussian distribution $p(z) = \mathcal{N}(z; \mathbf{0}, \mathbf{I})$ with a zero mean vector and an identity covariance matrix. Secondly, seeing that the encoder network maps the original input waveform $x$ into a set of 8 Gaussian distributions, we can define the so-called \textit{posterior} distribution $q(z|x) = \mathcal{N}(z; \boldsymbol{\mu}_\phi(x), \text{diag}(\boldsymbol{\sigma}_\phi^2(x)))$, parameterized by the learned mean and variance vectors.
-The \ac{KL} divergence is then computed to measure the statistical distance between the approximate \textit{posterior} and the \textit{prior}. This penalizes the model if the latent representations deviate significantly from a standard normal distribution. For a single latent dimension $j$, computed over a batch of size $B$, the analytical closed-form of the \ac{KL} divergence is given in Eq. \ref{eq:KL-loss}:
+The \ac{KL} divergence is then computed to measure the statistical distance between the \textit{posterior} and the \textit{prior}. This penalizes the model if the latent representations deviate significantly from a standard normal distribution. For a single latent dimension $j$, computed over a batch of size $B$, the analytical closed-form of the \ac{KL} divergence is given in Eq. \ref{eq:KL-loss}:
 \begin{equation}
     \label{eq:KL-loss}
     D_{\text{KL},j} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \left( \mu_{ij}^2 + \sigma_{ij}^2 - 1 - \log \sigma_{ij}^2 \right)
@@ -223,10 +223,7 @@ The \ac{VAE} described so far is a powerful algorithm that can be used in \ac{PS
 
 The pure recontruction training has been performed using $\beta=1$ and a total number of $N=100$ epochs, the first $N_w = 10$ of which are warm-up epochs, with $k = 8$ dimensions in the latent space and a free-bits threshold $\lambda_{fb} = 0.5$~nat.
 
-The training set (Tab.~\ref{tab:sets-VAE}) is processed in mini-batches of $B = 64$ waveforms. At the beginning of every epoch the order of the training waveforms is randomly shuffled and the set is split into $\lfloor 125\,240 / 64 \rfloor = 1956$ batches for the $3\sigma$ windows and $\lfloor 64\,935 / 64 \rfloor = 1014$ batches for the $1\sigma$ ones; the last incomplete batch (56 and 39 waveforms respectively) is discarded, so that all the batches have the same size and every weight update relies on a loss averaged over the same number of waveforms (Eqs.~\ref{eq:rec-loss} and \ref{eq:KL-loss}). Since the shuffling changes at every epoch, a different subset is left out each time and no waveform is systematically excluded from the training. The network weights are updated after every batch with the Adam optimiser, a learning rate of $10^{-3}$ and a weight decay of $10^{-5}$, i.e. 1956 (1014) updates per epoch, an epoch being one full pass over the training set; before every update the norm of the gradient is clipped to 5, to prevent single large steps from destabilising the training.
-
-The validation and test sets are processed in batches of the same size, in a fixed order and without discarding any waveform: 218 and 242 batches for the $3\sigma$ windows (the last ones containing 28 and 38 waveforms) and 113 and 126 batches for the $1\sigma$ ones (the last ones containing 47 and 17 waveforms). These two sets are only used for evaluation and never update the weights. The validation set is evaluated at the end of every epoch, with the same value of $\beta(n)$ (Eq.~\ref{eq:beta}) and the same free-bits threshold used for the training in that epoch, so that the training and validation losses are directly comparable, while the test set is evaluated only once, after the training. The shuffling is controlled by a fixed seed, so that the sequence of batches of every configuration is reproducible.
-
+The training set (Tab.~\ref{tab:sets-VAE}) is processed in mini-batches of $B = 64$ waveforms. At the beginning of every epoch the order of the training waveforms is randomly shuffled and the set is split into $\lfloor 123\,694 / 64 \rfloor = 1932$ batches for the $3\sigma$ windows and $\lfloor 64\,133 / 64 \rfloor = 1002$ batches for the $1\sigma$ ones; the last incomplete batch (46 and 5 waveforms respectively) is discarded, so that all the batches have the same size and every weight update relies on a loss averaged over the same number of waveforms (Eqs.~\ref{eq:rec-loss} and \ref{eq:KL-loss}). Since the shuffling changes at every epoch, a different subset is left out each time and no waveform is systematically excluded from the training. The network weights are updated after every batch with the Adam optimiser, a learning rate of $10^{-3}$ and a weight decay of $10^{-5}$, i.e. 1932 (1002) updates per epoch, an epoch being one full pass over the training set; before every update the norm of the gradient is clipped to 5, to prevent single large steps from destabilising the training. The validation and test sets are processed in batches of the same size, in a fixed order and without discarding any waveform: 242 batches each for the $3\sigma$ windows (the last one containing 38 waveforms) and 126 batches each for the $1\sigma$ ones (the last one containing 17 waveforms). These two sets are only used for evaluation and never update the weights. The validation set is evaluated at the end of every epoch, with the same value of $\beta(n)$ (Eq.~\ref{eq:beta}) and the same free-bits threshold used for the training in that epoch, so that the training and validation losses are directly comparable, while the test set is evaluated only once, after the training. The shuffling is controlled by a fixed seed, so that the sequence of batches of every configuration is reproducible.
 
 Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the values of the losses for the training, validation and test sets at the beginning of the training, at the end of the same and in the testing part for the $3\sigma$ cut and the $1\sigma$ cut respectively. The validation set has been used here only in order to show how the reconstruction ability of the \ac{VAE} improves through the epochs and to have a feedback about a possible overfitting at the end of the training: if both the training and recontruction losses decrease over epochs the model is unlike to overfit, on the contrary if the validation loss does not decrease while the training do, the model is clearly overfitting data.
 
@@ -236,12 +233,12 @@ Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the valu
         \toprule
         set & events & total loss & reconstruction (NLL) & KL [nat] \\
         \midrule
-        training   & 125\,240 & $-845.3$ & $-867.4$ & $22.10$ \\
-        validation & 13\,916  & $-838.8$ & $-860.9$ & $22.16$ \\
-        test       & 15\,462  & $-839.6$ & $-861.8$ & $22.25$ \\
+        training   & 123\,694 & $-844.1$ & $-866.1$ & $22.05$ \\
+        validation & 15\,462 & $-835.3$ & $-857.5$ & $22.13$ \\
+        test       & 15\,462 & $-837.1$ & $-859.3$ & $22.20$ \\
         \bottomrule
     \end{tabular}
-    \caption{Losses of the final \ac{VAE} trained on the $\pm3\sigma$ windows, evaluated on the training, validation and test sets. The total loss is the sum of the reconstruction term and of the KL divergence weighted by $\beta = 1$.}
+    \caption{Losses of the final \ac{VAE} trained on the $\pm3\sigma$ windows, evaluated on the training, validation and test sets.}
     \label{tab:VAE-losses-3sigma}
 \end{table}
 
@@ -251,63 +248,64 @@ Tables~\ref{tab:VAE-losses-3sigma} and \ref{tab:VAE-losses-1sigma} show the valu
         \toprule
         set & events & total loss & reconstruction (NLL) & KL [nat] \\
         \midrule
-        training   & 64\,935 & $-838.4$ & $-860.2$ & $21.76$ \\
-        validation & 7\,215  & $-832.5$ & $-854.2$ & $21.67$ \\
-        test       & 8\,017  & $-832.5$ & $-854.3$ & $21.78$ \\
+        training   & 64\,133 & $-847.9$ & $-870.0$ & $22.04$ \\
+        validation & 8\,017 & $-841.2$ & $-863.2$ & $21.93$ \\
+        test       & 8\,017 & $-842.4$ & $-864.4$ & $22.06$ \\
         \bottomrule
     \end{tabular}
-    \caption{Losses of the final \ac{VAE} trained on the $\pm1\sigma$ windows, evaluated on the training, validation and test sets. The total loss is the sum of the reconstruction term and of the KL divergence weighted by $\beta = 1$.}
+    \caption{Losses of the final \ac{VAE} trained on the $\pm1\sigma$ windows, evaluated on the training, validation and test sets.}
     \label{tab:VAE-losses-1sigma}
 \end{table}
 
+The reconstruction flow and the training losses through the epochs are also shown in Fig. \ref{fig:VAE-sigma3-overview} and \ref{fig:VAE-sigma1-overview} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in Fig.~\ref{fig:VAE-testset}.
 
-The reconstruction flow and the training losses through the epochs are also shown in Fig. \ref{fig:VAE-ricostruzione-3sigma} and \ref{fig:VAE-losses-3sigma} for events within $3\sigma$ of the \ac{DEP} and \ac{FEP} and Fig. \ref{fig:VAE-ricostruzione-1sigma} and \ref{fig:VAE-losses-1sigma} for events in the $1\sigma$ range of the same peaks. The test set results for the very same energy windows are displayed in Fig.~\ref{fig:VAE-testset-3sigma} and \ref{fig:VAE-testset-1sigma}.
-
+% --- FIGURA 1: Taglio a 3 sigma ---
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/VAE/sigma3/current/scaled/validation_perEpoch_sigma3_current_scaled_beta1.pdf}
-    \caption{Example of the decoder reconstrucion for validation set waveforms at epoch 1, 50 and 100 using a $3\sigma$ cut.}
-    \label{fig:VAE-ricostruzione-3sigma}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/validation_perEpoch_sigma3_current_scaled_beta1.pdf}
+    \end{subfigure}
+    \vspace{0.5em}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/train_valid_losses_sigma3_current_scaled_beta1.pdf}
+    \end{subfigure}
+    \caption{\ac{VAE} performance with $3\sigma$ cut: (a) decoder reconstruction progression and (b) training loss evolution.}
+    \label{fig:VAE-sigma3-overview}
+\end{figure}
+
+% --- FIGURA 2: Taglio a 1 sigma ---
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/validation_perEpoch_sigma1_current_scaled_beta1.pdf}
+    \end{subfigure}
+    \vspace{0.5em}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/train_valid_losses_sigma1_current_scaled_beta1.pdf}
+    \end{subfigure}
+    \caption{\ac{VAE} performance with $1\sigma$ cut: (a) decoder reconstruction progression and (b) training loss evolution.}
+    \label{fig:VAE-sigma1-overview}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/VAE/sigma3/current/scaled/train_valid_losses_sigma3_current_scaled_beta1.pdf}
-    \caption{Loss functions evolution through the training epochs. From the left to the right: total loss, reconstruction (\ac{NLL}) loss and \ac{KL} loss using a $3\sigma$ cut.}
-    \label{fig:VAE-losses-3sigma}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/VAE/sigma1/current/scaled/validation_perEpoch_sigma1_current_scaled_beta1.pdf}
-    \caption{Example of the decoder reconstrucion for validation set waveforms at epoch 1, 50 and 100 using a $1\sigma$ cut}
-    \label{fig:VAE-ricostruzione-1sigma}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/VAE/sigma1/current/scaled/train_valid_losses_sigma1_current_scaled_beta1.pdf}
-    \caption{Loss functions evolution through the training epochs. From the left to the right: total loss, reconstruction (\ac{NLL}) loss and \ac{KL} loss using a $1\sigma$ cut.}
-    \label{fig:VAE-losses-1sigma}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.49\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/test_sigma3_current_scaled_beta1.pdf}
-        \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveforms in the test set using a $3\sigma$ cut.}
-        \label{fig:VAE-testset-3sigma}
-    \end{minipage}\hfill
-    \begin{minipage}{0.49\textwidth}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/test_sigma1_current_scaled_beta1.pdf}
-        \caption{Example of the \ac{VAE} reconstruction for a \ac{MSE} waveforms in the test set using a $1\sigma$ cut.}
-        \label{fig:VAE-testset-1sigma}
-    \end{minipage}
+    \end{subfigure}
+    \caption{\ac{VAE} reconstruction on test set waveforms: $3\sigma$ on the left and $1\sigma$ on the right.}
+    \label{fig:VAE-testset}
 \end{figure}
 
-The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation (Sec. \ref{subsec:VAE-features_extraction}).
+The next section (\ref{subsec:VAE-features_extraction}) will detail how said algorithm can be exploited to extract features and classify events on the basis of their latent representation.
 
 
 
@@ -323,7 +321,7 @@ The classification model is a simple \ac{MLP} that follows this \texttt{Sequenti
     \item \textbf{input layer}:\\
     The features taken as the input of the \ac{MLP} classifier are the $\mu$ values coming out of the encoder part of the \ac{VAE} used in evaluation mode, i.e. the encoder weights are frozen and the input waveforms are mapped into the latent space without any further training. The $\mu$ values are then concatenated into a single vector of 8 elements that is passed to the \ac{MLP} classifier.
     \item \textbf{first hidden layer}:\\
-    A linear layer maps the 8 input features into 32 outputs, the a Leaky ReLU activation function (Eq. \ref{eq:leakyReLU})is applied to introduce non-linearity and a 20\% dropout level is added to prevent overfitting. It is important to notice that dropout layers are active only when the model is in trainingg mode, while they are deactivated in evalutation (test) mode.
+    A linear layer maps the 8 input features into 32 outputs, then a Leaky ReLU activation function (Eq. \ref{eq:leakyReLU}) is applied to introduce non-linearity and a 20\% dropout level is added to prevent overfitting. It is important to notice that dropout layers are active only when the model is in trainingg mode, while they are deactivated in evalutation (test) mode.
     \item \textbf{second hidden layer}:\\
     Another linear layer reduces the dimension from 32 to 16 and it is followed by a Lekay ReLU activation.
     \item \textbf{output layer}:\\
@@ -339,7 +337,7 @@ The full pipeline of the \ac{VAE}-based classifier is depicted in Fig.~\ref{fig:
     \label{fig:vaeclassifier-architecture}
 \end{figure}
 
-The loss function used in the classification task is a \ac{BCE} with Logits, which directly combines the logit output of the \ac{MLP} with the sigmoid activated labels as expressed in Eq. \ref{eq:BCE-loss} where $y$ is the true label and $p$ is the predicted probability of being a \ac{MSE}, since the true labels $y=1$ have been associated with the \ac{FEP} events while $y=0$ to the \ac{DEP} ones, and it arises from the sigmoid activation (see Eq. \ref{eq:sigmoid}) of the logit, i.e. the output of the classifier .
+The loss function used in the classification task is a \ac{BCE} with Logits, which directly combines the logit output of the \ac{MLP} with the sigmoid activated labels as expressed in Eq. \ref{eq:BCE-loss} where $y$ is the true label and $p$ is the predicted probability of being a \ac{MSE}, since the true labels $y=1$ have been associated with the \ac{FEP} events while $y=0$ to the \ac{DEP} ones. Specifically, $p$ arises from the sigmoid activation (see Eq. \ref{eq:sigmoid}) of the logit $z$, that is the output of the classifier .
 
 \begin{equation}
     \label{eq:BCE-loss}
@@ -350,7 +348,6 @@ The loss function used in the classification task is a \ac{BCE} with Logits, whi
     \label{eq:sigmoid}
     p = \sigma(z) = \frac{1}{1 + e^{-z}}
 \end{equation}
-
 
 The classifier is trained on the same training set and with the same batch structure as the \ac{VAE} (Sec.~\ref{subsec:VAE-training}): mini-batches of $B = 64$ waveforms, reshuffled at every epoch with the last incomplete batch discarded, and the Adam optimiser with a learning rate of $10^{-3}$, here with a weight decay of $10^{-4}$. During this phase the \ac{VAE} encoder is kept frozen in evaluation mode, so that only the classifier weights are updated. The training lasts $N = 100$ epochs; the validation loss is computed at the end of every epoch and, at the end of the training, the weights of the epoch with the lowest validation loss are restored. The resulting losses and accuracies are shown in Fig.~\ref{fig:VAEclassifier-training-3sigma} and Fig.~\ref{fig:VAEclassifier-training-1sigma} for the $3\sigma$ and the $1\sigma$ windows respectively.
 \begin{figure}[H]
@@ -379,9 +376,9 @@ Table~\ref{tab:classifier_results_3sigma_vs_1sigma} summarise all the losses and
         \cmidrule(lr){2-3} \cmidrule(l){4-5}
         set & BCE loss & accuracy & BCE loss & accuracy \\
         \midrule
-        training   & 0.565 & 72.47\% & 0.478 & 78.95\% \\
-        validation & 0.567 & 72.62\% & 0.478 & 78.66\% \\
-        test       & 0.572 & 71.92\% & 0.486 & 78.40\% \\
+        training   & 0.565 & 72.58\% & 0.479 & 78.96\% \\
+        validation & 0.568 & 72.37\% & 0.481 & 78.52\% \\
+        test       & 0.571 & 71.80\% & 0.487 & 78.15\% \\
         \bottomrule
     \end{tabular}
     \caption{Binary cross-entropy loss and accuracy of the final \ac{VAE}-based classifiers trained on the $\pm3\sigma$ and $\pm1\sigma$ windows, evaluated on the training, validation and test sets.}
@@ -389,7 +386,7 @@ Table~\ref{tab:classifier_results_3sigma_vs_1sigma} summarise all the losses and
 \end{table}
 
 
-The distributions of the predicted probability of being a \ac{MSE} are shown in Figs.~\ref{fig:VAEclassifier-trainingset}, \ref{fig:VAEclassifier-validationset} and \ref{fig:VAEclassifier-testset} for the training, validation and test sets, respectively. Furthermore, Fig.~\ref{fig:VAEclassifier-ALLDATA} illustrates the classification results for the entire labelled dataset (training, validation and test sets combined). In each figure, the left panel refers to the $3\sigma$ energy window and the right panel to the $1\sigma$ energy window, while the two labelled populations are shown in red (\ac{SSE}) and blue (\ac{MSE}). These plots highlight how the two distributions are clearly separated by the classifier: the \ac{SSE} distribution exhibits a peak close to zero that is higher than the corresponding one of the \ac{MSE} distribution, which in turn shows a very pronounced peak close to one.
+The distributions of the predicted probability of being a \ac{MSE} are shown in Fig.~\ref{fig:VAEclassifier-output}. The left panels refers to the $3\sigma$ energy window and the right panels to the $1\sigma$ energy window, while the two labelled populations are shown in red (\ac{SSE}) and blue (\ac{MSE}). These plots highlight how the two distributions are clearly separated by the classifier: the \ac{SSE} distribution exhibits a peak close to zero that is higher than the corresponding one of the \ac{MSE} distribution, which in turn shows a very pronounced peak close to one.
 
 \begin{figure}[H]
     \centering
@@ -401,12 +398,8 @@ The distributions of the predicted probability of being a \ac{MSE} are shown in 
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_training_sigma1.pdf}
     \end{subfigure}
-    \caption{Predicted probability of being a \ac{MSE} for the labelled training set in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
-    \label{fig:VAEclassifier-trainingset}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
+    \medskip
     \begin{subfigure}[t]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_validation_sigma3.pdf}
@@ -415,12 +408,8 @@ The distributions of the predicted probability of being a \ac{MSE} are shown in 
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_validation_sigma1.pdf}
     \end{subfigure}
-    \caption{Predicted probability of being a \ac{MSE} for the labelled validation set in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
-    \label{fig:VAEclassifier-validationset}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
+    \medskip
     \begin{subfigure}[t]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_test_sigma3.pdf}
@@ -429,12 +418,8 @@ The distributions of the predicted probability of being a \ac{MSE} are shown in 
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_test_sigma1.pdf}
     \end{subfigure}
-    \caption{Predicted probability of being a \ac{MSE} for the labelled test set in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
-    \label{fig:VAEclassifier-testset}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
+    \medskip
     \begin{subfigure}[t]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_whole_sigma3.pdf}
@@ -443,6 +428,6 @@ The distributions of the predicted probability of being a \ac{MSE} are shown in 
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/lean/classifier_output_whole_sigma1.pdf}
     \end{subfigure}
-    \caption{Predicted probability of being a \ac{MSE} for the whole labelled set (training, validation and test sets) in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows.}
-    \label{fig:VAEclassifier-ALLDATA}
+    \caption{Predicted probability of being a \ac{MSE} for the labelled events in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows: from the top, training, validation and test sets, and whole labelled set.}
+    \label{fig:VAEclassifier-output}
 \end{figure}
