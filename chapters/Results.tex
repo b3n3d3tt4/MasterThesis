@@ -22,7 +22,7 @@ The \ac{ROC} curve is the parametric curve
 \end{equation}
 obtained by scanning $t$ over the whole range of the score: the horizontal axis is the fraction of \ac{DEP} peak events wrongly rejected, the vertical one the fraction of \ac{FEP} peak events correctly rejected. The curve connects the point $(0,0)$, reached for $t \to +\infty$ where no event is rejected, to the point $(1,1)$, reached for $t \to -\infty$ where every event is rejected. A score with no discrimination power gives the diagonal of the plane, while an ideal score reaches the point $(0,1)$, where all the \ac{FEP} peak events are rejected and all the \ac{DEP} ones are kept.
 
-The \ac{AUC} is the area under this curve,
+The \ac{AUC} is the area under the \ac{ROC},
 \begin{equation}
     \mathrm{AUC} = \int_0^1 \left(1 - \mathrm{SF}^{\rm FEP}_{\rm net}\right)\, \mathrm{d}\!\left(1 - \mathrm{SF}^{\rm DEP}_{\rm net}\right),
     \label{eq:auc}
