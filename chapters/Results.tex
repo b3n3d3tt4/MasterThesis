@@ -44,20 +44,23 @@ The \ac{AE} cut applied in the standard \ac{PSD} analysis (Sec.~\ref{sec:traditi
 \label{sec:calib-data}
 
 \subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}
-For the \ac{VAE}-based classifier the cut keeps the events with $p < p^*$, and the procedure described above is applied separately to each detector and to each training window; the resulting thresholds $p^*$ are listed in Tab.~\ref{tab:VAE-working-point}. Figure~\ref{fig:fits-at-cuts} shows the energy spectra after these cuts, together with the corresponding fits, and Tab.~\ref{tab:net-scan} reports the net \ac{FEP} survival fractions for net \ac{DEP} survival fractions from 80\% to 99\%.
+For the \ac{VAE}-based classifier the cut keeps the events with $p < p^*$, and the procedure described above is applied separately to each detector and to each training window; the resulting thresholds $p^*$ are listed in Tab.~\ref{tab:VAE-working-point}. Figure~\ref{fig:VAE-spectrum-cuts} shows the energy spectra after the cuts that keep 90\% of the \ac{DEP} peak, together with the fraction of events kept in each 1~keV bin. In both detectors the cuts keep most of the \ac{DEP} peak and strongly suppress the \ac{FEP} one, and the fractions of events kept by \ac{AE} and by the two \ac{VAE}-based classifiers are almost indistinguishable over the whole energy window, with the classifiers keeping slightly more events of the Compton continuum. These fractions include the continuum below the peaks, which is reduced to about 35\% for V08682A and 45\% for V08682B; for this reason, the fraction kept at the \ac{DEP} is lower than the 90\% net survival fraction defining the cut. Table~\ref{tab:net-scan-VAE} reports the net \ac{FEP} survival fractions for net \ac{DEP} survival fractions from 80\% to 99\%.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/VAE/lean/fits_at_the_cuts.pdf}\\[1ex]
-    \includegraphics[width=\textwidth]{plots/V08682B/fits_at_the_cuts.pdf}
-    \caption{Energy spectrum of the calibration data of detectors V08682A (top) and V08682B (bottom) before (grey) and after the cuts that keep 90\% of the \ac{DEP} peak, for the classifiers trained on the $\pm1\sigma$ (left) and $\pm3\sigma$ (right) windows, with the fits of the \ac{DEP} (red) and of the \ac{FEP} (blue).}
-    \label{fig:fits-at-cuts}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/VAE/lean/spectrum_cuts_VAE.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/V08682B/VAE/spectrum_cuts_VAE.pdf}
+    \end{minipage}
+    \caption{Energy spectrum of the calibration data of detectors V08682A (left) and V08682B (right). Top: spectrum before (grey) and after the \ac{AE} cut and the \ac{VAE} cuts that keep 90\% of the \ac{DEP} peak. Bottom: fraction of events kept in each 1~keV bin.}
+    \label{fig:VAE-spectrum-cuts}
 \end{figure}
 
 The \ac{ROC} curves are shown in Fig.~\ref{fig:VAE-roc-net} and their \ac{AUC} is reported in Tab.~\ref{tab:VAE-working-point}. In both detectors the $\pm1\sigma$ classifier has the largest \ac{AUC}, although the gain over \ac{AE} is small. At the working point the three methods are compatible within the statistical uncertainties in both detectors: with 90\% of the \ac{DEP} peak kept, their \ac{FEP} survival fractions differ by at most 0.3 percentage points, against uncertainties of 0.4--0.5 points. All the curves rise almost vertically and then flatten into a plateau, which begins at about 90\% of the \ac{FEP} peak rejected for V08682A and at about 86\% for V08682B: the remaining \ac{FEP} events deposit their energy in a single site and are therefore indistinguishable from the \ac{DEP} for any method based on the pulse shape, which sets a physical limit close to the working point. The level of this limit depends on the detector, while the relative behaviour of the methods at the working point is the same.
-
-Table~\ref{tab:net-scan} extends the comparison to other working points and shows a common pattern. For the tightest cuts \ac{AE} gives the lowest \ac{FEP} survival fraction, but the differences with the $\pm1\sigma$ classifier are within about one standard deviation. For looser cuts the $\pm1\sigma$ classifier keeps fewer \ac{FEP} events than \ac{AE}, with differences larger than the statistical uncertainties. The extent of this advantage differs between the two detectors: for V08682A it is limited to the range between 93\% and 97\% of the \ac{DEP} peak kept, and at 99\% \ac{AE} is again the best method, while for V08682B it starts at 91\% and grows steadily up to 99\%, where \ac{AE} is barely able to reject any \ac{FEP} event.
-
 
 \begin{table}[H]
     \centering
@@ -72,15 +75,15 @@ Table~\ref{tab:net-scan} extends the comparison to other working points and show
         \acs{VAE} $\pm3\sigma$ & 0.475 & 0.949 & 8.9 $\pm$ 0.4 & 0.416 & 0.921 & 13.5 $\pm$ 0.5 \\
         \bottomrule
     \end{tabular}
-    \caption{Results at the working point for the two detectors: threshold $p^*$ of the \ac{VAE}-based classifiers, \ac{AUC} of the net \ac{ROC} curves and net survival fraction of the \ac{FEP} peak for the cuts that keep 90\% of the \ac{DEP} peak (net \ac{DEP} SF of $(90.0 \pm 1.7)\%$ for V08682A and $(90.0 \pm 1.1)\%$ for V08682B). The uncertainties are statistical (Eq.~\ref{eq:sf-error}).}
+    \caption{Results at the working point for the two detectors: threshold $p^*$ of the \ac{VAE}-based classifiers, \ac{AUC} of the net \ac{ROC} curves and net survival fraction of the \ac{FEP} peak for the cuts that keep 90\% of the \ac{DEP} peak (net \ac{DEP} SF of $(90.0 \pm 1.7)\%$ for V08682A and $(90.0 \pm 1.1)\%$ for V08682B).}
     \label{tab:VAE-working-point}
 \end{table}
 
-
-The $\pm3\sigma$ classifier, trained on less pure labels (Tab.~\ref{tab:purity}), is never significantly better than the $\pm1\sigma$ one and is clearly worse for the loosest cuts (98\% and 99\%) in both detectors. Its comparison with \ac{AE} instead depends on the detector: for V08682A it performs worse than \ac{AE} over the whole range, while for V08682B it follows the $\pm1\sigma$ classifier up to 97\% and is therefore better than \ac{AE} from about 90\% onwards.
+Table~\ref{tab:net-scan-VAE} extends the comparison to other working points. In both detectors \ac{AE} is slightly better for the tightest cuts, within about one standard deviation, while for looser cuts the $\pm1\sigma$ classifier keeps fewer \ac{FEP} events. This advantage is limited to 93--97\% of the \ac{DEP} peak kept for V08682A, whereas for V08682B it grows steadily from 91\% up to 99\%, where \ac{AE} rejects almost no \ac{FEP} events. The $\pm3\sigma$ classifier, trained on less pure labels (Tab.~\ref{tab:purity}), is never significantly better than the $\pm1\sigma$ one; it is worse than \ac{AE} over the whole range for V08682A, but better from about 90\% onwards for V08682B.
 
 \begin{table}[H]
     \centering
+    \small
     \setlength{\tabcolsep}{4pt}
     \begin{tabular}{ccccccc}
         \toprule
@@ -110,16 +113,16 @@ The $\pm3\sigma$ classifier, trained on less pure labels (Tab.~\ref{tab:purity})
         99 & \textbf{37.9}\,$\pm$\,0.6 & 41.1\,$\pm$\,0.7 & 46.8\,$\pm$\,0.8 & 94.4\,$\pm$\,1.3 & \textbf{63.9}\,$\pm$\,1.0 & 70.7\,$\pm$\,1.1 \\
         \bottomrule
     \end{tabular}
-    \caption{Net survival fraction of the \ac{FEP} peak, in \%, for the cuts that keep a given net survival fraction of the \ac{DEP} peak, for detectors V08682A and V08682B. The uncertainties are statistical (Eq.~\ref{eq:sf-error}); for each detector, the lowest value of each row, i.e.\ the best rejection of \ac{MSE}, is in bold.}
-    \label{tab:net-scan}
+    \caption{Net survival fraction of the \ac{FEP} peak for the cuts that keep a given net survival fraction of the \ac{DEP} peak, for detectors V08682A and V08682B. For each detector, the lowest value of each row, i.e.\ the best rejection of \ac{MSE}, is in bold.}
+    \label{tab:net-scan-VAE}
 \end{table}
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/VAE/lean/roc_net.pdf}\\[1ex]
-    \includegraphics[width=\textwidth]{plots/V08682B/roc_net.pdf}
-    \caption{\ac{ROC} curves of \ac{AE} and of the \ac{VAE}-based classifiers for detectors V08682A (top) and V08682B (bottom), built with the net survival fractions of the \ac{DEP} and \ac{FEP} peaks. The stars mark the cuts that keep 90\% of the \ac{DEP} peak (vertical line). Right: zoom on the grey box, where the stars are slightly shifted sideways to be visible. The curves are smoothed for display.}
+    \includegraphics[width=\textwidth]{plots/V08682B/VAE/roc_net.pdf}
+    \caption{\ac{ROC} curves of \ac{AE} and of the \ac{VAE}-based classifiers for detectors V08682A (top) and V08682B (bottom). The stars mark the cuts that keep 90\% of the \ac{DEP} peak (vertical line).}
     \label{fig:VAE-roc-net}
 \end{figure}
 
@@ -141,21 +144,7 @@ The $\pm3\sigma$ classifier, trained on less pure labels (Tab.~\ref{tab:purity})
     \label{tab:VAE-agreement}
 \end{table}
 
-The effect of the cuts on the whole calibration spectrum is shown in Fig.~\ref{fig:VAE-spectrum-cuts} and summarised in Tab.~\ref{tab:VAE-agreement}. In both detectors the \ac{VAE}-based classifiers keep slightly more events than \ac{AE}, by 0.6--1.0 percentage points, and the two methods agree on 93.5--95.0\% of the events; in all cases the events rejected only by \ac{AE} outnumber those rejected only by the \ac{VAE}. To see which events the two methods agree or disagree on, the events are split into four classes: rejected by both methods, kept by both, kept by \ac{AE} and rejected by the \ac{VAE}, and rejected by \ac{AE} and kept by the \ac{VAE}. Their waveforms, energy spectra and rise time distributions are shown in Figs.~\ref{fig:VAE-agree-V08682A} and \ref{fig:VAE-disagree-V08682A} for V08682A and in Figs.~\ref{fig:VAE-agree-V08682B} and \ref{fig:VAE-disagree-V08682B} for V08682B, while their \ac{AE} distributions are reported in Sec.~\ref{app:VAE-AoE} of App.~\ref{other-results}.
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/VAE/lean/spectrum_cuts_VAE.pdf}
-    \end{minipage}\hfill
-    \begin{minipage}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/V08682B/spectrum_cuts_VAE.pdf}
-    \end{minipage}
-    \caption{Energy spectrum of the calibration data of detectors V08682A (left) and V08682B (right). Top: spectrum after the \ac{AE} cut and the \ac{VAE} cuts that keep 90\% of the \ac{DEP} peak. Bottom: fraction of events kept in each 1~keV bin.}
-    \label{fig:VAE-spectrum-cuts}
-\end{figure}
+The effect of the cuts on the whole calibration spectrum is summarised in Tab.~\ref{tab:VAE-agreement}. In both detectors the \ac{VAE}-based classifiers keep slightly more events than \ac{AE}, by 0.6-1.0 percentage points, as already suggested by the continuum in Fig.~\ref{fig:VAE-spectrum-cuts}, and the two methods agree on 93.5--95.0\% of the events; in all cases the events rejected only by \ac{AE} outnumber those rejected only by the \ac{VAE}. To see which events the two methods agree or disagree on, the events are split into four classes: rejected by both methods, kept by both, kept by \ac{AE} and rejected by the \ac{VAE}, and rejected by \ac{AE} and kept by the \ac{VAE}. Their waveforms, energy spectra and rise time distributions are shown in Figs.~\ref{fig:VAE-agree-V08682A} and \ref{fig:VAE-disagree-V08682A} for V08682A and in Figs.~\ref{fig:VAE-agree-V08682B} and \ref{fig:VAE-disagree-V08682B} for V08682B, while their \ac{AE} distributions are reported in Sec.~\ref{app:VAE-AoE} of App.~\ref{other-results}.
 
 The events rejected by both methods are evidently multi-site: many waveforms show more than one current peak, their rise time distribution has a long tail extending up to about 2~$\mu$s, and their energy spectrum is dominated by the \ac{FEP} peak, with only a small \ac{DEP} peak. The events kept by both methods have instead the single-peaked shape of \ac{SSE}, a narrow rise time distribution, and a spectrum with a high \ac{DEP} peak and a much lower \ac{FEP} one. The spectra of the events on which the methods disagree contain both the \ac{DEP} and the \ac{FEP} peak in comparable amounts: neither method is systematically right where the other fails. All these features are common to the two detectors.
  
@@ -165,7 +154,7 @@ For V08682B, instead, such slow events are almost absent: the rise time of the e
 
 % ======================================== V08682A ========================================
  
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/VAE/lean/waveforms_agree.pdf}\\[0.5ex]
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/VAE/lean/energy_agree.pdf}\\[0.5ex]
@@ -174,7 +163,7 @@ For V08682B, instead, such slow events are almost absent: the rise time of the e
     \label{fig:VAE-agree-V08682A}
 \end{figure}
  
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/VAE/lean/waveforms_disagree.pdf}\\[0.5ex]
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/VAE/lean/energy_disagree.pdf}\\[0.5ex]
@@ -185,170 +174,48 @@ For V08682B, instead, such slow events are almost absent: the rise time of the e
  
 % ======================================== V08682B ========================================
  
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/waveforms_agree.pdf}\\[0.5ex]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/energy_agree.pdf}\\[0.5ex]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/risetime_agree.pdf}
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/VAE/waveforms_agree.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/VAE/energy_agree.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/VAE/risetime_agree.pdf}
     \caption{Events from the \textit{prl25} calibration dataset of detector V08682B for which \ac{AE} and the \ac{VAE}-based classifiers agree, with the cuts that keep 90\% of the \ac{DEP} peak: current waveforms (top), energy spectra (middle), with the \ac{DEP} (red) and the \ac{FEP} (blue) marked by dashed lines, and rise time distributions (bottom). In each panel, the left column shows the events rejected by both methods and the right column those kept by both; the upper row refers to the classifier trained on the $\pm1\sigma$ windows and the lower row to the one trained on the $\pm3\sigma$ windows.}
     \label{fig:VAE-agree-V08682B}
 \end{figure}
  
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/waveforms_disagree.pdf}\\[0.5ex]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/energy_disagree.pdf}\\[0.5ex]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/risetime_disagree.pdf}
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/VAE/waveforms_disagree.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/VAE/energy_disagree.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/V08682B/VAE/risetime_disagree.pdf}
     \caption{Events from the \textit{prl25} calibration dataset of detector V08682B for which \ac{AE} and the \ac{VAE}-based classifiers disagree, with the cuts that keep 90\% of the \ac{DEP} peak: current waveforms (top), energy spectra (middle), with the \ac{DEP} (red) and the \ac{FEP} (blue) marked by dashed lines, and rise time distributions (bottom). In each panel, the left column shows the events kept by \ac{AE} and rejected by the \ac{VAE} and the right column those rejected by \ac{AE} and kept by the \ac{VAE}; the upper row refers to the classifier trained on the $\pm1\sigma$ windows and the lower row to the one trained on the $\pm3\sigma$ windows.}
     \label{fig:VAE-disagree-V08682B}
 \end{figure}
 
 
-\subsection{\texorpdfstring{\acs{DTC}}{DTC}}
-Figure~\ref{fig:DTC-energyspectrum-allmetrics} displays the three \ac{DTC} metrics cut on the calibration dataset for Euclidean Distance (green), Complexity Invariant Distance (orange) and Autocorrelation Function (purple). Moreover, the \ac{AE} cut is shown in blue to give a graphical comparison from which it is clear that the \ac{AE} cut is far less conservative with respect to the \ac{DTC} ones. Nonetheless, this aspect does not ensure the fact that the \ac{AE} parameter is a better solution to the \ac{SSE}-\ac{MSE} discrimination problem. Figure~\ref{fig:DTC-waveforms-allmetrics-agree} shows that it is evident that the waveforms both methods agree to retain are clearly \ac{SSE}-like events, whereas those they both reject exhibit distinct \ac{MSE}-like features. However Fig.~\ref{fig:DTC-waveforms-allmetrics-disagree} displays that the waveforms kept by the \ac{AE} but rejected by the \ac{DTC} include a lot of waveforms with multiple peaks typical of \ac{MSE} while the ones rejected by \ac{AE} but kept by the \ac{DTC} metrics are almost all \ac{SSE}-like events with only one peak and a simple structure. These comparisons highlight how a single parameter, i.e. \ac{AE}, cannot take into consideration the whole structure of a waveform and therefore may lead to an unproper \ac{SSE}-\ac{MSE} discrimination, while the \ac{DTC} model can perform this distinction better, seeing that it considers the whole time series of a waveform.
-
-\begin{figure}[H]%{r}{0.5\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/energy_spectrum_all_metrics_cuts.pdf}
-    \caption{\ac{DTC} cuts on the whole calibration dataset.}
-    \label{fig:DTC-energyspectrum-allmetrics}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_agree.pdf}
-    \caption{Waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} agree.}
-    \label{fig:DTC-waveforms-allmetrics-agree}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_disagree.pdf}
-    \caption{Waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree. }
-    \label{fig:DTC-waveforms-allmetrics-disagree}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_agree_energy.pdf}
-    \caption{Energy spectra of waveforms from the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} agree.}
-    \label{fig:DTC-waveforms-allmetrics-agree-energy}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_disagree_energy.pdf}
-    \caption{Energy spectra of waveforms of the \textit{prl25} calibration dataset for which the \ac{AE} and the \ac{DTC} disagree.}
-    \label{fig:DTC-waveforms-allmetrics-disagree-energy}
-\end{figure}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{ccccc}
-        \toprule
-        Net \acs{DEP} SF [\%] & \acs{AE} & \acs{ACF} & \acs{EUC} & \acs{CID} \\
-        \midrule
-        80 & \textbf{6.5} $\pm$ 0.3 & 19.8 $\pm$ 0.5 & 14.6 $\pm$ 0.4 & 8.0 $\pm$ 0.3 \\
-        81 & \textbf{6.7} $\pm$ 0.3 & 20.1 $\pm$ 0.5 & 14.9 $\pm$ 0.4 & 8.2 $\pm$ 0.3 \\
-        82 & \textbf{6.8} $\pm$ 0.3 & 20.3 $\pm$ 0.5 & 15.1 $\pm$ 0.4 & 8.5 $\pm$ 0.4 \\
-        83 & \textbf{6.9} $\pm$ 0.3 & 20.5 $\pm$ 0.5 & 15.2 $\pm$ 0.4 & 8.7 $\pm$ 0.4 \\
-        84 & \textbf{7.1} $\pm$ 0.3 & 20.7 $\pm$ 0.5 & 15.4 $\pm$ 0.4 & 8.8 $\pm$ 0.4 \\
-        85 & \textbf{7.4} $\pm$ 0.3 & 20.9 $\pm$ 0.5 & 15.6 $\pm$ 0.4 & 9.1 $\pm$ 0.4 \\
-        86 & \textbf{7.5} $\pm$ 0.3 & 21.0 $\pm$ 0.5 & 15.8 $\pm$ 0.4 & 9.4 $\pm$ 0.4 \\
-        87 & \textbf{7.7} $\pm$ 0.3 & 21.2 $\pm$ 0.5 & 16.0 $\pm$ 0.4 & 9.7 $\pm$ 0.4 \\
-        88 & \textbf{7.9} $\pm$ 0.3 & 21.4 $\pm$ 0.5 & 16.2 $\pm$ 0.4 & 10.0 $\pm$ 0.4 \\
-        89 & \textbf{8.2} $\pm$ 0.3 & 21.6 $\pm$ 0.5 & 16.4 $\pm$ 0.4 & 10.4 $\pm$ 0.4 \\
-        90 & \textbf{8.6} $\pm$ 0.4 & 21.9 $\pm$ 0.5 & 16.6 $\pm$ 0.4 & 10.8 $\pm$ 0.4 \\
-        91 & \textbf{8.9} $\pm$ 0.4 & 22.1 $\pm$ 0.5 & 16.9 $\pm$ 0.4 & 11.2 $\pm$ 0.4 \\
-        92 & \textbf{9.2} $\pm$ 0.4 & 22.3 $\pm$ 0.5 & 17.1 $\pm$ 0.4 & 11.6 $\pm$ 0.4 \\
-        93 & \textbf{10.1} $\pm$ 0.4 & 22.5 $\pm$ 0.5 & 17.4 $\pm$ 0.4 & 12.3 $\pm$ 0.4 \\
-        94 & \textbf{11.7} $\pm$ 0.4 & 22.8 $\pm$ 0.5 & 17.7 $\pm$ 0.4 & 13.3 $\pm$ 0.4 \\
-        95 & \textbf{14.0} $\pm$ 0.4 & 23.3 $\pm$ 0.5 & 18.4 $\pm$ 0.5 & 15.2 $\pm$ 0.4 \\
-        96 & \textbf{18.1} $\pm$ 0.5 & 24.7 $\pm$ 0.5 & 19.8 $\pm$ 0.5 & 19.6 $\pm$ 0.5 \\
-        97 & 21.4 $\pm$ 0.5 & 25.2 $\pm$ 0.5 & \textbf{21.1} $\pm$ 0.5 & 25.5 $\pm$ 0.5 \\
-        98 & \textbf{27.7} $\pm$ 0.6 & 51.1 $\pm$ 0.8 & 40.4 $\pm$ 0.7 & 38.9 $\pm$ 0.7 \\
-        99 & \textbf{37.9} $\pm$ 0.6 & 62.2 $\pm$ 0.9 & 65.9 $\pm$ 0.9 & 58.7 $\pm$ 0.8 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Net survival fraction of the \ac{FEP} peak, in \%, for the \ac{AE} and \ac{DTC} cuts that keep a given net survival fraction of the \ac{DEP} peak. The uncertainties are statistical (Eq.~\ref{eq:sf-error}); the lowest value of each row, i.e.\ the best rejection of \ac{MSE}, is in bold.}
-    \label{tab:net-scan-DTC}
-\end{table}
-
-
-
-
-
-% ----------------------------------------------------------------------------------
-% --------------------------------- 2 NU BETA BETA ---------------------------------
-% ----------------------------------------------------------------------------------
-\newpage
-\section{Analysis of~\texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2nu beta beta} data}
-\label{sec:2nubb-data}
-
-The latest step of this analysis involves testing all the deep learning models discussed so far with data that are well-known \ac{SSE}-like events. In particular, physics data from period \textit{p03} to period \textit{p09} of \textit{prl25} have been selected for the V08682A detector. Data are categorized by the \texttt{pygama} pipeline according to whether they qualify as $2\nu\beta\beta$ candidates or not in the range between $560$~keV and $2039$~keV\footnote{Below 556 keV, the spectrum is dominated by~${}^{39}$Ar events.}. On top of that, quality cuts listed in Tab.~\ref{tab:quality-cuts-2nu} have been applied.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{ll}
-        \toprule
-        \textbf{Cut} & \textbf{Filtered events} \\
-        \midrule
-        detector usability      & events recorded while the detector is not flagged as usable (\texttt{usability} $\neq$ \texttt{on}) \\
-        $\beta\beta$-like       & events not flagged as $\beta\beta$-like by the event-level quality selection \\
-        good channel            & hits from channels not flagged as good \\
-        muon veto               & events in coincidence with a muon \\
-        pulser / forced trigger & pulser events and forced-trigger events \\
-        \bottomrule
-    \end{tabular}
-    \caption{Summary of the quality cuts applied to the physics data in the selection of $2\nu\beta\beta$ events.}
-    \label{tab:quality-cuts-2nu}
-\end{table}
-
-Moreover, data have been cut on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/DTC/2nuData/energy_spectrum_before_after_LAr.pdf}
-    \caption{Energy spectrum of the $2\nu\beta\beta$ data before (light grey) and after (dark grey) the \ac{lar} cut.}
-    \label{fig:2nu-beforeafterLAR}
-\end{figure}
- After the \ac{lar} and muon vetoes, the spectrum between 560 and 2039 keV is dominated by $2\nu\beta\beta$ decays of ${}^{76}$Ge, whose two electrons deposit their energy within a few millimetres and therefore produce \ac{SSE}-like signals. The resulting sample is, however, enriched in SSE-like events rather than pure. $\gamma$-induced events survive the vetoes whenever no energy is deposited in the \ac{lar}, as for the full-energy peaks of ${}^{40}$K (1460.8 keV) and ${}^{42}$K (1524.6 keV), together with part of the underlying Compton continuum. Moreover, a small fraction of genuine $2\nu\beta\beta$ events is itself multi-site because of bremsstrahlung photons emitted by the electrons. The fraction of events retained by a PSD method is therefore expected to be high but not 100\%. Therefore, all of the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training, to test wheter they recognise $2\nu\beta\beta$ events as signal-like or not.
-
-\subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}
 
 \subsection{\texorpdfstring{\acs{DTC}}{DTC}}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/DTC/2nuData/energy_spectrum_SSE_comparison_afterLAr.pdf}
-    \caption{\ac{DTC} cuts on the $2\nu\beta\beta$ spectrum.}
-    \label{fig:2nu-DTCcus-allmetrics}
-\end{figure}
+The \ac{DTC} cuts keep events for which $q < q_\text{SSE}^*$ in order to keep the 90\% of the \ac{DEP} peak. The values $q_\text{SSE}^*$ are listed in Table~\ref{tab:DTCq*} and the cuts, applied separately for the three methods, are shown in Fig.~\ref{fig:DTCcuts-V08682A} and \ref{fig:DTCcuts-V08682B} for V08682A and V08682B respectively.
+
+PLOT CON I 3 CUT APPLICATI A V08682A
+
+PLOT CON I 3 CUT APPLICATI A V08682B
+
+tabella con q*, AUC  e FEP SF al 90\% di DEP SF
+
+scan con altri DEP SF: 80, 85, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99
+
+ROC curves dei due detectors con zoom
+
+tabella confronto agree e disagree con percentuali
+
+plot di agree disagree 
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/2nuData/waveforms_AoE_DTC_agree_afterLAr.pdf}
-    \caption{Waveforms from the $2\nu\beta\beta$ dataset for which the \ac{AE} and the \ac{DTC} agree.}
-    \label{fig:2nu-kept_rejected_AE_DTC_agree}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/2nuData/waveforms_AoE_DTC_disagree_afterLAr.pdf}
-    \caption{Waveforms from the $2\nu\beta\beta$ dataset for which the \ac{AE} and the \ac{DTC} disagree.}
-    \label{fig:2nu-kept_rejected_AE_DTC_disagree}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/2nuData/energy_spectrum_AoE_DTC_agree_afterLAr.pdf}
-    \caption{Energy spectrum of events kept (right) and rejected (left) by both the \ac{AE} cut and the \ac{DTC} algorithm. From the top to the bottom \ac{ACF}, \ac{EUC} and \ac{CID}.}
-    \label{fig:2nu-kept_rejected_AE_DTC_agree_energy}
-\end{figure}
+Table~\ref{tab:net-scan-DTC} 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{plots/DTC/2nuData/energy_spectrum_AoE_DTC_disagree_afterLAr.pdf}
-    \caption{Energy spectrum of events kept and rejectd by different cuts: On th eleft waveforms kept by the \ac{AE} cut but rejected by a specific \ac{DTC} metric cut, viceversa on the right events rejected by the \ac{DTC} metric but kept by \ac{AE} are shown. From the top to the bottom \ac{ACF}, \ac{EUC} and \ac{CID}.}
-    \label{fig:2nu-kept_rejected_AE_DTC_disagree_energy}
-\end{figure}
+
+\input{chapters/2nuAnalysis}
