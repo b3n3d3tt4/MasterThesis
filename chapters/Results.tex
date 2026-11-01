@@ -29,7 +29,7 @@ The \ac{AUC} is the area under the \ac{ROC},
 \end{equation}
 computed numerically with the trapezoidal rule over the scanned thresholds. It ranges from $0.5$ for a random classifier to $1$ for a perfect one. Since $\mathrm{SF}_{\rm net}(t)$ is the cumulative distribution of the score of the peak events, i.e.\ the fraction of them with $s \leq t$, the \ac{AUC} has a simple probabilistic meaning: it is the probability that a randomly chosen \ac{FEP} peak event receives a higher score than a randomly chosen \ac{DEP} peak event. It therefore depends only on the ordering of the scores, is unchanged by any monotonic transformation of $s_i$ and does not require the choice of a threshold~\cite{ROCanalysis, AUCHanley}.
 
-In addition, the \ac{ROC} curve allows the methods to be compared at the same working point. Since the \ac{AE} cut is tuned to a $90\%$ net survival fraction in the \ac{DEP} (Sec.~\ref{sec:traditionalPSD}), the working point of every method is defined as the threshold at which $\mathrm{SF}^{\rm DEP}_{\rm net} = 90\%$: the threshold is moved along the score until $90\%$ of the \ac{DEP} peak events are kept, and at the same threshold $\mathrm{SF}^{\rm FEP}_{\rm net}$, i.e.\ the fraction of genuine \ac{MSE} that are wrongly kept, is used as the figure of merit of the cut. Since the choice of $90\%$ is the one of the standard analysis but not the only possible one, the same procedure is repeated for net \ac{DEP} survival fractions from $80\%$ to $99\%$, and the corresponding net \ac{FEP} survival fractions are reported in Tabs.~\ref{tab:net-scan} and~\ref{tab:net-scan-DTC}. For each row of these tables, i.e.\ at the same fraction of \ac{DEP} peak events kept, a lower value means a better rejection of \ac{MSE}.
+In addition, the \ac{ROC} curve allows the methods to be compared at the same working point. Since the \ac{AE} cut is tuned to a $90\%$ net survival fraction in the \ac{DEP} (Sec.~\ref{sec:traditionalPSD}), the working point of every method is defined as the threshold at which $\mathrm{SF}^{\rm DEP}_{\rm net} = 90\%$: the threshold is moved along the score until $90\%$ of the \ac{DEP} peak events are kept, and at the same threshold $\mathrm{SF}^{\rm FEP}_{\rm net}$, i.e.\ the fraction of genuine \ac{MSE} that are wrongly kept, is used as the figure of merit of the cut. Since the choice of $90\%$ is the one of the standard analysis but not the only possible one, the same procedure is repeated for net \ac{DEP} survival fractions from $80\%$ to $99\%$, and the corresponding net \ac{FEP} survival fractions are reported in Tabs.~\ref{tab:net-scan-VAE} and~\ref{tab:net-scan-DTC}. For each row of these tables, i.e.\ at the same fraction of \ac{DEP} peak events kept, a lower value means a better rejection of \ac{MSE}.
 
 The uncertainty on each value is statistical. The fit of Eq.~\ref{eq:fitted-gaussian} provides the uncertainty on the areas $A_{\rm before}$ and $A_{\rm after}$ through its covariance matrix, and the uncertainty on their ratio is obtained by propagating the two as independent,
 \begin{equation}
@@ -193,29 +193,166 @@ For V08682B, instead, such slow events are almost absent: the rise time of the e
 \end{figure}
 
 
-
 \subsection{\texorpdfstring{\acs{DTC}}{DTC}}
+For the \ac{DTC} the cut keeps the events with $q_\text{SSE} > q^*_\text{SSE}$, where $q_\text{SSE}$ is the soft assignment of the event to the SSE-like cluster, and, as for the \ac{VAE}, the threshold is chosen separately for each detector and each metric so as to keep 90\% of the \ac{DEP} peak. The SSE-like cluster is identified a posteriori as the one with the largest difference between the fractions of \ac{DEP} and \ac{FEP} events assigned to it, and with two clusters $q_\text{MSE} = 1 - q_\text{SSE}$. The resulting values of $q^*_\text{SSE}$ are listed in Tab.~\ref{tab:DTC-working-point}. They are all well above 0.5, the value that reproduces the hard assignment of the events to the two clusters: the SSE-like cluster alone keeps more than 90\% of the \ac{DEP} peak, so the threshold has to be raised to reach the working point. Moving the threshold between the two peaks has therefore almost no effect, and the working point is reached only inside the upper peak, which is why every threshold lies close to the maximum value of $q_\text{SSE}$ of its metric.
 
-The \ac{DTC} cuts keep events for which $q < q_\text{SSE}^*$ in order to keep the 90\% of the \ac{DEP} peak. The values $q_\text{SSE}^*$ are listed in Table~\ref{tab:DTCq*} and the cuts, applied separately for the three methods, are shown in Fig.~\ref{fig:DTCcuts-V08682A} and \ref{fig:DTCcuts-V08682B} for V08682A and V08682B respectively.
+Figure~\ref{fig:DTC-spectrum-cuts} shows the energy spectra after the cuts, together with the fraction of events kept in each 1~keV bin. In both detectors, with the same fraction of the \ac{DEP} peak kept, the \ac{DTC} cuts keep more events than \ac{AE} both in the Compton continuum and in the \ac{FEP} peak, with the \ac{ACF} metric keeping the most and the \ac{CID} one the fewest. The differences between the methods are smaller for V08682B.
 
-PLOT CON I 3 CUT APPLICATI A V08682A
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/energy_spectrum_cuts_DTC_DEP90.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/V08682B/DTC/energy_spectrum_cuts_DTC_DEP90.pdf}
+    \end{minipage}
+    \caption{Energy spectrum of the calibration data of detectors V08682A (left) and V08682B (right). Top: spectrum before (grey) and after the \ac{AE} cut (blue) and the \ac{DTC} cuts with the \ac{ACF} (magenta), Euclidean (green) and \ac{CID} (orange) metrics that keep 90\% of the \ac{DEP} peak. Bottom: fraction of events kept in each 1~keV bin.}
+    \label{fig:DTC-spectrum-cuts}
+\end{figure}
 
-PLOT CON I 3 CUT APPLICATI A V08682B
+The \ac{ROC} curves are shown in Fig.~\ref{fig:DTC-roc-net} and their \ac{AUC} is reported in Tab.~\ref{tab:DTC-working-point}. In both detectors \ac{AE} has the largest \ac{AUC}, followed by the \ac{CID}, Euclidean and \ac{ACF} metrics, and the same ranking holds at the working point. Unlike the \ac{VAE}, no \ac{DTC} metric is compatible with \ac{AE} at the working point: with 90\% of the \ac{DEP} peak kept, the best metric, \ac{CID}, keeps $(10.8 \pm 0.4)\%$ of the \ac{FEP} peak for V08682A and $(17.6 \pm 0.5)\%$ for V08682B, against $(8.6 \pm 0.4)\%$ and $(13.7 \pm 0.5)\%$ for \ac{AE}. The \ac{DTC} curves also flatten into a plateau close to the working point, but at a lower level than \ac{AE}, in particular for the \ac{ACF} metric, which rejects only about 78\% of the \ac{FEP} peak in both detectors.
 
-tabella con q*, AUC  e FEP SF al 90\% di DEP SF
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccccc}
+        \toprule
+        & \multicolumn{3}{c}{V08682A} & \multicolumn{3}{c}{V08682B} \\
+        \cmidrule(lr){2-4} \cmidrule(l){5-7}
+        Method & $q^*_\text{SSE}$ & \acs{AUC} & \acs{FEP} SF [\%] & $q^*_\text{SSE}$ & \acs{AUC} & \acs{FEP} SF [\%] \\
+        \midrule
+        \acs{AE}  & --    & 0.952 & 8.6 $\pm$ 0.4  & --    & 0.913 & 13.7 $\pm$ 0.5 \\
+        \acs{ACF} & 0.847 & 0.847 & 21.9 $\pm$ 0.5 & 0.853 & 0.870 & 21.2 $\pm$ 0.6 \\
+        \acs{EUC} & 0.865 & 0.896 & 16.6 $\pm$ 0.4 & 0.906 & 0.900 & 18.8 $\pm$ 0.5 \\
+        \acs{CID} & 0.974 & 0.940 & 10.8 $\pm$ 0.4 & 0.995 & 0.906 & 17.6 $\pm$ 0.5 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Results at the working point for the two detectors: threshold $q^*_\text{SSE}$ of the \ac{DTC} cuts with the three metrics, \ac{AUC} of the net \ac{ROC} curves and net survival fraction of the \ac{FEP} peak for the cuts that keep 90\% of the \ac{DEP} peak (net \ac{DEP} SF of $(90.0 \pm 1.7)\%$ for V08682A and $(90.0 \pm 1.1)\%$ for V08682B).}
+    \label{tab:DTC-working-point}
+\end{table}
 
-scan con altri DEP SF: 80, 85, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/DTC/calibrationData_wholeSpectrum/roc_net_DTC_DEP90.pdf}\\[1ex]
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/roc_net_DTC_DEP90.pdf}
+    \caption{\ac{ROC} curves of \ac{AE} and of the \ac{DTC} with the three metrics for detectors V08682A (top) and V08682B (bottom). The stars mark the cuts that keep 90\% of the \ac{DEP} peak (vertical line).}
+    \label{fig:DTC-roc-net}
+\end{figure}
 
-ROC curves dei due detectors con zoom
+Table~\ref{tab:net-scan-DTC} extends the comparison to other working points. In both detectors \ac{AE} is the best method for the tightest cuts, while the \ac{FEP} survival fraction of the \ac{DTC} cuts grows slowly with the fraction of the \ac{DEP} peak kept up to 95--97\%, and then increases rapidly. For V08682A \ac{AE} remains the best method over the whole range, while for V08682B, where \ac{AE} degrades quickly above 94\%, as already seen for the \ac{VAE}, the \ac{CID} metric becomes the best method from 95\% onwards, and the other two metrics also keep fewer \ac{FEP} events than \ac{AE} for most of the loosest cuts.
 
-tabella confronto agree e disagree con percentuali
+\begin{table}[H]
+    \centering
+    \small
+    \setlength{\tabcolsep}{3pt}
+    \begin{tabular}{ccccccccc}
+        \toprule
+        & \multicolumn{4}{c}{V08682A} & \multicolumn{4}{c}{V08682B} \\
+        \cmidrule(lr){2-5} \cmidrule(l){6-9}
+        Net \acs{DEP} SF [\%] & \acs{AE} & \acs{ACF} & \acs{EUC} & \acs{CID} & \acs{AE} & \acs{ACF} & \acs{EUC} & \acs{CID} \\
+        \midrule
+        80 & \textbf{6.5}\,$\pm$\,0.3 & 19.8\,$\pm$\,0.5 & 14.6\,$\pm$\,0.4 & 8.0\,$\pm$\,0.3 & \textbf{10.1}\,$\pm$\,0.4 & 17.6\,$\pm$\,0.5 & 13.1\,$\pm$\,0.5 & 13.2\,$\pm$\,0.5 \\
+        % 81 & \textbf{6.7}\,$\pm$\,0.3 & 20.1\,$\pm$\,0.5 & 14.9\,$\pm$\,0.4 & 8.2\,$\pm$\,0.3 & \textbf{10.3}\,$\pm$\,0.4 & 17.8\,$\pm$\,0.5 & 13.3\,$\pm$\,0.5 & 13.5\,$\pm$\,0.5 \\
+        % 82 & \textbf{6.8}\,$\pm$\,0.3 & 20.3\,$\pm$\,0.5 & 15.1\,$\pm$\,0.4 & 8.5\,$\pm$\,0.4 & \textbf{10.6}\,$\pm$\,0.4 & 18.1\,$\pm$\,0.5 & 13.7\,$\pm$\,0.5 & 13.9\,$\pm$\,0.5 \\
+        % 83 & \textbf{6.9}\,$\pm$\,0.3 & 20.5\,$\pm$\,0.5 & 15.2\,$\pm$\,0.4 & 8.7\,$\pm$\,0.4 & \textbf{10.8}\,$\pm$\,0.4 & 18.3\,$\pm$\,0.5 & 14.1\,$\pm$\,0.5 & 14.4\,$\pm$\,0.5 \\
+        % 84 & \textbf{7.1}\,$\pm$\,0.3 & 20.7\,$\pm$\,0.5 & 15.4\,$\pm$\,0.4 & 8.8\,$\pm$\,0.4 & \textbf{11.2}\,$\pm$\,0.4 & 18.6\,$\pm$\,0.5 & 14.6\,$\pm$\,0.5 & 14.8\,$\pm$\,0.5 \\
+        85 & \textbf{7.4}\,$\pm$\,0.3 & 20.9\,$\pm$\,0.5 & 15.6\,$\pm$\,0.4 & 9.1\,$\pm$\,0.4 & \textbf{11.4}\,$\pm$\,0.4 & 18.9\,$\pm$\,0.5 & 15.1\,$\pm$\,0.5 & 15.2\,$\pm$\,0.5 \\
+        % 86 & \textbf{7.5}\,$\pm$\,0.3 & 21.0\,$\pm$\,0.5 & 15.8\,$\pm$\,0.4 & 9.4\,$\pm$\,0.4 & \textbf{12.0}\,$\pm$\,0.4 & 19.4\,$\pm$\,0.5 & 15.6\,$\pm$\,0.5 & 15.6\,$\pm$\,0.5 \\
+        % 87 & \textbf{7.7}\,$\pm$\,0.3 & 21.2\,$\pm$\,0.5 & 16.0\,$\pm$\,0.4 & 9.7\,$\pm$\,0.4 & \textbf{12.3}\,$\pm$\,0.5 & 19.7\,$\pm$\,0.5 & 16.2\,$\pm$\,0.5 & 16.0\,$\pm$\,0.5 \\
+        % 88 & \textbf{7.9}\,$\pm$\,0.3 & 21.4\,$\pm$\,0.5 & 16.2\,$\pm$\,0.4 & 10.0\,$\pm$\,0.4 & \textbf{12.7}\,$\pm$\,0.5 & 20.2\,$\pm$\,0.5 & 16.8\,$\pm$\,0.5 & 16.5\,$\pm$\,0.5 \\
+        % 89 & \textbf{8.2}\,$\pm$\,0.3 & 21.6\,$\pm$\,0.5 & 16.4\,$\pm$\,0.4 & 10.4\,$\pm$\,0.4 & \textbf{13.2}\,$\pm$\,0.5 & 20.7\,$\pm$\,0.5 & 17.7\,$\pm$\,0.5 & 16.9\,$\pm$\,0.5 \\
+        90 & \textbf{8.6}\,$\pm$\,0.4 & 21.9\,$\pm$\,0.5 & 16.6\,$\pm$\,0.4 & 10.8\,$\pm$\,0.4 & \textbf{13.7}\,$\pm$\,0.5 & 21.2\,$\pm$\,0.6 & 18.8\,$\pm$\,0.5 & 17.6\,$\pm$\,0.5 \\
+        91 & \textbf{8.9}\,$\pm$\,0.4 & 22.1\,$\pm$\,0.5 & 16.9\,$\pm$\,0.4 & 11.2\,$\pm$\,0.4 & \textbf{14.5}\,$\pm$\,0.5 & 21.8\,$\pm$\,0.6 & 20.2\,$\pm$\,0.5 & 18.2\,$\pm$\,0.5 \\
+        92 & \textbf{9.2}\,$\pm$\,0.4 & 22.3\,$\pm$\,0.5 & 17.1\,$\pm$\,0.4 & 11.6\,$\pm$\,0.4 & \textbf{15.5}\,$\pm$\,0.5 & 22.7\,$\pm$\,0.6 & 21.6\,$\pm$\,0.6 & 19.0\,$\pm$\,0.5 \\
+        93 & \textbf{10.1}\,$\pm$\,0.4 & 22.5\,$\pm$\,0.5 & 17.4\,$\pm$\,0.4 & 12.3\,$\pm$\,0.4 & \textbf{17.2}\,$\pm$\,0.5 & 23.4\,$\pm$\,0.6 & 22.8\,$\pm$\,0.6 & 20.1\,$\pm$\,0.5 \\
+        94 & \textbf{11.7}\,$\pm$\,0.4 & 22.8\,$\pm$\,0.5 & 17.7\,$\pm$\,0.4 & 13.3\,$\pm$\,0.4 & \textbf{20.6}\,$\pm$\,0.6 & 23.8\,$\pm$\,0.6 & 24.2\,$\pm$\,0.6 & 22.4\,$\pm$\,0.6 \\
+        95 & \textbf{14.0}\,$\pm$\,0.4 & 23.3\,$\pm$\,0.5 & 18.4\,$\pm$\,0.5 & 15.2\,$\pm$\,0.4 & 28.8\,$\pm$\,0.6 & 24.6\,$\pm$\,0.6 & 27.1\,$\pm$\,0.6 & \textbf{23.4}\,$\pm$\,0.6 \\
+        96 & \textbf{18.1}\,$\pm$\,0.5 & 24.7\,$\pm$\,0.5 & 19.8\,$\pm$\,0.5 & 19.6\,$\pm$\,0.5 & 38.2\,$\pm$\,0.7 & 33.2\,$\pm$\,0.7 & 37.7\,$\pm$\,0.7 & \textbf{29.6}\,$\pm$\,0.7 \\
+        97 & 21.4\,$\pm$\,0.5 & 25.2\,$\pm$\,0.5 & \textbf{21.1}\,$\pm$\,0.5 & 25.5\,$\pm$\,0.5 & 50.7\,$\pm$\,0.9 & 51.7\,$\pm$\,0.9 & 51.5\,$\pm$\,0.9 & \textbf{39.3}\,$\pm$\,0.7 \\
+        98 & \textbf{27.7}\,$\pm$\,0.6 & 51.1\,$\pm$\,0.8 & 40.4\,$\pm$\,0.7 & 38.9\,$\pm$\,0.7 & 73.0\,$\pm$\,1.1 & 66.0\,$\pm$\,1.0 & 64.9\,$\pm$\,1.0 & \textbf{56.7}\,$\pm$\,0.9 \\
+        99 & \textbf{37.9}\,$\pm$\,0.6 & 62.2\,$\pm$\,0.9 & 65.9\,$\pm$\,0.9 & 58.7\,$\pm$\,0.8 & 94.4\,$\pm$\,1.3 & 83.7\,$\pm$\,1.2 & 85.1\,$\pm$\,1.2 & \textbf{77.1}\,$\pm$\,1.1 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Net survival fraction of the \ac{FEP} peak, in \%, for the \ac{AE} and \ac{DTC} cuts that keep a given net survival fraction of the \ac{DEP} peak, for detectors V08682A and V08682B. For each detector, the lowest value of each row, i.e.\ the best rejection of \ac{MSE}, is in bold.}
+    \label{tab:net-scan-DTC}
+\end{table}
 
-plot di agree disagree 
+\begin{table}[H]
+    \centering
+    \setlength{\tabcolsep}{5pt}
+    \begin{tabular}{lcccccccc}
+        \toprule
+        & \multicolumn{4}{c}{V08682A} & \multicolumn{4}{c}{V08682B} \\
+        \cmidrule(lr){2-5} \cmidrule(l){6-9}
+        Method & kept & agree & rej.~\acs{AE} & rej.~\acs{DTC} & kept & agree & rej.~\acs{AE} & rej.~\acs{DTC} \\
+        \midrule
+        \acs{AE}  & 32.7 &      &      &     & 46.0 &      &     &     \\
+        \acs{ACF} & 41.9 & 83.9 & 12.7 & 3.4 & 51.3 & 89.1 & 8.1 & 2.8 \\
+        \acs{EUC} & 38.8 & 88.3 &  8.9 & 2.8 & 50.0 & 90.7 & 6.7 & 2.7 \\
+        \acs{CID} & 36.6 & 92.5 &  5.7 & 1.8 & 49.3 & 91.3 & 6.0 & 2.7 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Effect of the cuts that keep 90\% of the \ac{DEP} peak on the whole calibration spectrum (348\,999 events for V08682A, 194\,527 for V08682B), in \%: fraction of events kept (kept), fraction of events on which the \ac{DTC} agrees with \ac{AE} (agree), fraction of events rejected only by \ac{AE} and kept by the \ac{DTC} (rej.~\acs{AE}) and fraction rejected only by the \ac{DTC} and kept by \ac{AE} (rej.~\acs{DTC}).}
+    \label{tab:DTC-agreement}
+\end{table}
 
+The effect of the cuts on the whole calibration spectrum is summarised in Tab.~\ref{tab:DTC-agreement}. In both detectors the \ac{DTC} cuts keep more events than \ac{AE}, specifically 3.9-9.2\% for V08682A and 3.3-5.3\% for V08682B, and the agreement with \ac{AE} grows from the \ac{ACF} to the \ac{CID} metric, from 83.9\% to 92.5\% for V08682A and from 89.1\% to 91.3\% for V08682B; in all cases the events rejected only by \ac{AE} clearly outnumber those rejected only by the \ac{DTC}. The waveforms and energy spectra of the four classes of events are shown in Figs.~\ref{fig:DTC-agree-V08682A} and \ref{fig:DTC-disagree-V08682A} for V08682A and in Figs.~\ref{fig:DTC-agree-V08682B} and \ref{fig:DTC-disagree-V08682B} for V08682B, their rise time distributions in Figs.~\ref{fig:DTC-risetime-V08682A} and \ref{fig:DTC-risetime-V08682B}, while their \ac{AE} distributions are reported in Sec.~\ref{app:DTC-AoE} of App.~\ref{other-results}.
 
+As for the \ac{VAE}, the events that \ac{AE} and the \ac{DTC} agree to reject are clearly \ac{MSE}-like, with multiple current peaks, long rise times and a spectrum dominated by the \ac{FEP}, while those they agree to keep are single-peaked and dominated by the \ac{DEP}; together they make up the large majority of the events in both detectors (Tab.~\ref{tab:DTC-agreement}). Unlike the \ac{VAE}, however, the disagreement between the two methods is not symmetric. The events kept by \ac{AE} and rejected by the \ac{DTC} are mostly single-peaked waveforms, with only a few clearly multi-site ones; their rise time lies at or below the main peak of the distribution and their spectrum is dominated by the \ac{DEP}. The events rejected by \ac{AE} and kept by the \ac{DTC} are more numerous, especially for V08682A, and their number decreases from the \ac{ACF} to the \ac{CID} metric. Their waveforms also show a single peak, but their \ac{AE} lies just below the low cut, their rise time is at or above the main peak, with a tail towards longer values that is more pronounced for V08682A and may correspond to the late-charge events already observed for the \ac{VAE}, and their spectrum shows a \ac{FEP} peak higher than the \ac{DEP} one. This may suggest that a significant part of them are not \ac{SSE}: a possible explanation is that they include multi-site events whose depositions are too close in time to produce separate current peaks, but which broaden the pulse and lower its amplitude, so that they are recognised by \ac{AE} but assigned to the SSE-like cluster by the \ac{DTC}. For the \ac{CID} metric this class also contains, especially for V08682A, very sharp and high current pulses typical of interactions close to the p$^+$ contact, rejected by the high cut of \ac{AE} as already seen for the \ac{VAE}. 
 
+% ======================================== V08682A ========================================
 
-Table~\ref{tab:net-scan-DTC} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_agree_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_agree_energy_DEP90.pdf}
+    \caption{Events from the \textit{prl25} calibration dataset of detector V08682A for which \ac{AE} and the \ac{DTC} agree, with the cuts that keep 90\% of the \ac{DEP} peak: current waveforms (top) and energy spectra (bottom), with the \ac{DEP} (red) and the \ac{FEP} (blue) marked by dashed lines. In each panel, the left column shows the events rejected by both methods and the right column those kept by both; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-agree-V08682A}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_disagree_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_disagree_energy_DEP90.pdf}
+    \caption{Events from the \textit{prl25} calibration dataset of detector V08682A for which \ac{AE} and the \ac{DTC} disagree, with the cuts that keep 90\% of the \ac{DEP} peak: current waveforms (top) and energy spectra (bottom), with the \ac{DEP} (red) and the \ac{FEP} (blue) marked by dashed lines. In each panel, the left column shows the events kept by \ac{AE} and rejected by the \ac{DTC} and the right column those rejected by \ac{AE} and kept by the \ac{DTC}; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-disagree-V08682A}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_agree_risetime_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/DTC/calibrationData_wholeSpectrum/all_metrics_calibration_data_disagree_risetime_DEP90.pdf}
+    \caption{Rise time distributions of the events of Figs.~\ref{fig:DTC-agree-V08682A} and \ref{fig:DTC-disagree-V08682A} (detector V08682A). Top: events on which \ac{AE} and the \ac{DTC} agree, rejected by both (left) and kept by both (right). Bottom: events on which they disagree, kept by \ac{AE} and rejected by the \ac{DTC} (left) and rejected by \ac{AE} and kept by the \ac{DTC} (right). In each panel, the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-risetime-V08682A}
+\end{figure}
+
+% ======================================== V08682B ========================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/V08682B/DTC/all_metrics_calibration_data_agree_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/V08682B/DTC/all_metrics_calibration_data_agree_energy_DEP90.pdf}
+    \caption{Events from the \textit{prl25} calibration dataset of detector V08682B for which \ac{AE} and the \ac{DTC} agree, with the cuts that keep 90\% of the \ac{DEP} peak: current waveforms (top) and energy spectra (bottom), with the \ac{DEP} (red) and the \ac{FEP} (blue) marked by dashed lines. In each panel, the left column shows the events rejected by both methods and the right column those kept by both; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-agree-V08682B}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/V08682B/DTC/all_metrics_calibration_data_disagree_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/V08682B/DTC/all_metrics_calibration_data_disagree_energy_DEP90.pdf}
+    \caption{Events from the \textit{prl25} calibration dataset of detector V08682B for which \ac{AE} and the \ac{DTC} disagree, with the cuts that keep 90\% of the \ac{DEP} peak: current waveforms (top) and energy spectra (bottom), with the \ac{DEP} (red) and the \ac{FEP} (blue) marked by dashed lines. In each panel, the left column shows the events kept by \ac{AE} and rejected by the \ac{DTC} and the right column those rejected by \ac{AE} and kept by the \ac{DTC}; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-disagree-V08682B}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/V08682B/DTC/all_metrics_calibration_data_agree_risetime_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/V08682B/DTC/all_metrics_calibration_data_disagree_risetime_DEP90.pdf}
+    \caption{Rise time distributions of the events of Figs.~\ref{fig:DTC-agree-V08682B} and \ref{fig:DTC-disagree-V08682B} (detector V08682B). Top: events on which \ac{AE} and the \ac{DTC} agree, rejected by both (left) and kept by both (right). Bottom: events on which they disagree, kept by \ac{AE} and rejected by the \ac{DTC} (left) and rejected by \ac{AE} and kept by the \ac{DTC} (right). In each panel, the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-risetime-V08682B}
+\end{figure}
+
 
 
 \input{chapters/2nuAnalysis}

@@ -1,10 +1,10 @@
 \chapter{DTC training and testing plots}
 \label{app:DTC-plots}
-This appendix collects the plots of the final \ac{DTC} trainings ($\gamma = 1000$, $K = 2$) that are not shown in Sec.~\ref{subsec:train-test-DTC}. For each distance metric, the following are reported: the reconstruction of a fixed validation waveform at different epochs together with the evolution of the training and validation losses, the clustering results on the validation set and the \ac{AE} and rise time distributions of the two clusters for the training, validation and test sets. As in the main text, the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey.
+This appendix collects the plots of the final \ac{DTC} trainings ($\gamma = 1000$, $K = 2$) that are not shown in Sec.~\ref{subsec:train-test-DTC}. For each distance metric, Figs.~\ref{fig:acf-training}--\ref{fig:cid-training} show the reconstruction of a fixed validation waveform at different epochs together with the evolution of the training and validation losses, while Figs.~\ref{fig:acf-aoe}--\ref{fig:cid-aoe} show the clustering results and the \ac{AE} and rise time distributions of the two clusters for the validation and test sets. As in the main text, the cluster with the largest number of events in the \ac{DEP} is drawn with the colour of the metric and the other one in grey.
 
 %==================================================
-\section{Autocorrelation Function}
-\label{app:DTC-plots-acf}
+% Reconstruction and losses
+%==================================================
 
 \begin{figure}[H]
     \centering
@@ -15,24 +15,6 @@ This appendix collects the plots of the final \ac{DTC} trainings ($\gamma = 1000
     \label{fig:acf-reconstruction}
     \label{fig:acf-losses}
 \end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_energy_val.pdf}\\[2pt]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_energy_test.pdf}\\[2pt]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_AoE_risetime_test_linear.pdf}
-    \caption{Clustering results with the \ac{ACF} metric: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (top) and \ac{AE} and rise time distributions (bottom) from the validation adn test sets.}
-    \label{fig:acf-aoe}
-    \label{fig:acf-aoe-train}
-    \label{fig:acf-aoe-valid}
-    \label{fig:acf-aoe-test}
-\end{figure}
-
-%==================================================
-\section{Euclidean Distance}
-\label{app:DTC-plots-euclidean}
 
 \begin{figure}[H]
     \centering
@@ -46,23 +28,6 @@ This appendix collects the plots of the final \ac{DTC} trainings ($\gamma = 1000
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_energy_val.pdf}\\[2pt]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_energy_test.pdf}\\[2pt]
-    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_test_linear.pdf}
-    \caption{Clustering results with the \ac{EUC} metric: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (top) and \ac{AE} and rise time distributions (bottom) from the validation adn test sets.}
-    \label{fig:acf-aoe}
-    \label{fig:acf-aoe-train}
-    \label{fig:acf-aoe-valid}
-    \label{fig:acf-aoe-test}
-\end{figure}
-
-%==================================================
-\section{Complexity Invariant Distance}
-\label{app:DTC-plots-cid}
-
-\begin{figure}[H]
-    \centering
     \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_training_reconstruction.pdf}\\[4pt]
     \includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_training_history.pdf}
     \caption{Original and reconstructed waveforms at different training epochs (top), and training and validation loss evolution (reconstruction \ac{NLL} and clustering \ac{KL}) along with the percentage of events changing cluster per epoch (bottom), with the \ac{CID} metric.}
@@ -71,13 +36,43 @@ This appendix collects the plots of the final \ac{DTC} trainings ($\gamma = 1000
     \label{fig:cid-losses}
 \end{figure}
 
+%==================================================
+% Validation and test sets
+%==================================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_energy_val.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_energy_test.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/acf/acf_2cl_AoE_risetime_test_linear.pdf}
+    \caption{Clustering results with the \ac{ACF} metric on the validation set (first and second rows) and on the test set (third and fourth rows): energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (first and third rows), and \ac{AE} and rise time distributions of the two clusters (second and fourth rows).}
+    \label{fig:acf-aoe}
+    \label{fig:acf-aoe-train}
+    \label{fig:acf-aoe-valid}
+    \label{fig:acf-aoe-test}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_energy_val.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_energy_test.pdf}\\[2pt]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/euclidean/eucl_2cl_AoE_risetime_test_linear.pdf}
+    \caption{Clustering results with the \ac{EUC} metric on the validation set (first and second rows) and on the test set (third and fourth rows): energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (first and third rows), and \ac{AE} and rise time distributions of the two clusters (second and fourth rows).}
+    \label{fig:euclidean-aoe}
+    \label{fig:euclidean-aoe-train}
+    \label{fig:euclidean-aoe-valid}
+    \label{fig:euclidean-aoe-test}
+\end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_energy_val.pdf}\\[2pt]
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_AoE_risetime_val_linear.pdf}\\[2pt]
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_energy_test.pdf}\\[2pt]
     \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/DTC/cid/cid_2cl_AoE_risetime_test_linear.pdf}
-    \caption{Clustering results with the \ac{CID} metric: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (top) and \ac{AE} and rise time distributions (bottom) from the validation adn test sets.}
+    \caption{Clustering results with the \ac{CID} metric on the validation set (first and second rows) and on the test set (third and fourth rows): energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (first and third rows), and \ac{AE} and rise time distributions of the two clusters (second and fourth rows).}
     \label{fig:cid-aoe}
     \label{fig:cid-aoe-train}
     \label{fig:cid-aoe-valid}
