@@ -83,7 +83,7 @@ $\sigma$ & peak counts & background counts & purity \\
 \bottomrule
 \end{tabular}
 \end{minipage}
-\caption{Peak counts, background counts and purity for a different number of sigmas considered in the cut window for the \ac{DEP} and \ac{FEP} samples.}
+\caption{Peak counts, background counts and purity for a different number of sigmas considered in the cut window for the \ac{DEP} and \ac{FEP} samples - V08682A.}
 \label{tab:purity}
 \end{table}
 These considerations are particularly relevant when we need to investigate the performances of a deep learning classifier, since it is trained in a supervised mode: mislabelled events (i.e. continuum events wronlgy assigned to the \ac{SSE} or \ac{MSE} class) directly enter the loss function computation, injecting label noise that biases the training process and the resulting final performance.
@@ -172,7 +172,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/schemi_output/VAE.pdf}
-    \caption{Schematic representation of the VAE architecture. The encoder network maps the input waveform to a latent space characterized by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the $\beta$ hyperparameter.}
+    \caption{Schematic representation of the VAE architecture. The encoder network maps the input waveform to a latent space characterised by a mean and variance, from which a latent vector is sampled. The decoder reconstructs the waveform from this latent representation. The loss function combines reconstruction loss and KL divergence, weighted by the $\beta$ hyperparameter.}
     \label{fig:vae-architecture}
 \end{figure}
 
@@ -197,8 +197,8 @@ Mathematically speaking, the squared error is divided by the learned variance $s
 % il paragrafo che segue è per un eventuale caso in cui si consideri anche la carica
 As already introduced in Sec.~\ref{sec:vae-architeture}, charge waveforms could also be considered as input together with current ones: in this case, two channel-specific variances, $s_c^2$, should be used. Since current is the time derivative of charge, these two quantities inherently possess fundamentally different scales and noise profiles. By learning a separate $s_c^2$ for each channel, the \ac{NLL} acts as an automatic normalization mechanism, preventing the channel with the larger numerical magnitude or higher intrinsic variance from dominating the loss gradient. In this case, the individual losses of the channels must be summed. From a probabilistic point of view, this is equivalent to assuming independence of the noise between the charge and current measurements. Moreover, this sum is necessary to aggregate the array of channel-specific errors into a single scalar value, which is required by the framework to correctly perform the backpropagation algorithm.
 
-The second part of the loss expressed in Eq. \ref{eq:ELBO} concerns the organisation of the 8-dimension latent space and is based on \ac{KL} divergence. Firstly we define a \textit{prior} distribution, i.e. a standard Gaussian distribution $p(z) = \mathcal{N}(z; \mathbf{0}, \mathbf{I})$ with a zero mean vector and an identity covariance matrix. Secondly, seeing that the encoder network maps the original input waveform $x$ into a set of 8 Gaussian distributions, we can define the so-called \textit{posterior} distribution $q(z|x) = \mathcal{N}(z; \boldsymbol{\mu}_\phi(x), \text{diag}(\boldsymbol{\sigma}_\phi^2(x)))$, parameterized by the learned mean and variance vectors.
-The \ac{KL} divergence is then computed to measure the statistical distance between the \textit{posterior} and the \textit{prior}. This penalizes the model if the latent representations deviate significantly from a standard normal distribution. For a single latent dimension $j$, computed over a batch of size $B$, the analytical closed-form of the \ac{KL} divergence is given in Eq. \ref{eq:KL-loss}:
+The second part of the loss expressed in Eq. \ref{eq:ELBO} concerns the organisation of the 8-dimension latent space and is based on \ac{KL} divergence. Firstly we define a \textit{prior} distribution, i.e. a standard Gaussian distribution $p(z) = \mathcal{N}(z; \mathbf{0}, \mathbf{I})$ with a zero mean vector and an identity covariance matrix. Secondly, seeing that the encoder network maps the original input waveform $x$ into a set of 8 Gaussian distributions, we can define the so-called \textit{posterior} distribution $q(z|x) = \mathcal{N}(z; \boldsymbol{\mu}_\phi(x), \text{diag}(\boldsymbol{\sigma}_\phi^2(x)))$, parameterised by the learned mean and variance vectors.
+The \ac{KL} divergence is then computed to measure the statistical distance between the \textit{posterior} and the \textit{prior}. This penalises the model if the latent representations deviate significantly from a standard normal distribution. For a single latent dimension $j$, computed over a batch of size $B$, the analytical closed-form of the \ac{KL} divergence is given in Eq. \ref{eq:KL-loss}:
 \begin{equation}
     \label{eq:KL-loss}
     D_{\text{KL},j} = \frac{1}{B} \sum_{i=1}^{B} \frac{1}{2} \left( \mu_{ij}^2 + \sigma_{ij}^2 - 1 - \log \sigma_{ij}^2 \right)
@@ -209,7 +209,7 @@ To prevent this issue, a \texttt{free bits} (or \ac{KL} thresholding) strategy i
     \label{eq:KL-total}
     L_{\text{reg}} = \sum_{j=1}^{k} \max \left( \lambda_{fb}, \, D_{\text{KL},j} \right)
 \end{equation}
-By applying this maximum operator, the network is not forced to perfectly match the \textit{prior} distribution. If the divergence $D_{\text{KL},j}$ of a specific dimension drops below the chosen threshold $\lambda_{fb}$, the loss for that dimension remains constant at $\lambda_{fb}$. This means the encoder is allowed to retain a small amount of useful information (the \texttt{free bits}) to describe the waveform without being further penalized by the optimization process, effectively preventing the posterior collapse.
+By applying this maximum operator, the network is not forced to perfectly match the \textit{prior} distribution. If the divergence $D_{\text{KL},j}$ of a specific dimension drops below the chosen threshold $\lambda_{fb}$, the loss for that dimension remains constant at $\lambda_{fb}$. This means the encoder is allowed to retain a small amount of useful information (the \texttt{free bits}) to describe the waveform without being further penalised by the optimization process, effectively preventing the posterior collapse.
 
 An additional tunable parameter $\beta$ balances the two contributions in the loss function: when $\beta < 1$ the reconstruction error weights more than the \ac{KL} thus the algorithm favours a truthful reconstruction, on the other hand if $\beta > 1$ the \ac{KL} becomes more important than the reconstruction. During the first part of the training a number $N_w$ of \textit{warm-up epochs} use a variable value of $\beta$ as defined in Eq. \ref{eq:beta} where $n$ is the epoch number. This procedure is defined in order to let the algorithm learn appropriate weights for the reconstruction before trying to minimise the \ac{KL} divergence.
 \begin{equation}

@@ -1,8 +1,353 @@
 \section{Detector V08682B}
 \label{sec:V08682B}
+\raggedbottom % lo spazio avanzato va in fondo alla pagina invece di allargare gli spazi tra gli elementi
 
 As already introduced in sec. \ref{sec:LEGENDdata}, another detector of the LEGEND array has been considered in order to extend all the results detailed in the first part of this chapter. Therefore in this Section we will present what we obtained with the very same procedures already described but applied to the V08682B detector. 
 
+\subsection{Data selection}
+
+A similar contamination between the \ac{SSE} and \ac{MSE} proxy samples is observed for detector V08682B, driven by the non-negligible continuous background underneath both the $^{208}\text{Tl}$ \ac{DEP} and $^{212}\text{Bi}$ \ac{FEP} peaks (Figure~\ref{fig:fits-and-cuts-V08682B}). Despite this common systematic feature, the overall sample purity is notably improved compared to detector V08682A, as summarized in Table~\ref{tab:sse_mse_counts}. This enhanced performance is largely attributable to the prominent intensity of the \ac{DEP} peak relative to the continuum. From a physical standpoint, the smaller active volume of V08682B naturally increases the probability that both $511\text{ keV}$ annihilation photons escape without undergoing secondary Compton interactions within the bulk. This higher double-escape efficiency boosts the relative yield of true single-site depositions, yielding a cleaner \ac{SSE} training set across all selected energy intervals.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/V08682B/dep_fep_fits.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/V08682B/sse_mse_selection_all_sigmas.pdf}
+    \end{subfigure}
+    \caption{On the right: fits of the \ac{DEP} peak (red) and \ac{FEP} peak (blue); on the left: $3\sigma$ and $1\sigma$ selection - V08682B.}
+    \label{fig:fits-and-cuts-V08682B}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccc @{\hspace{1.5cm}} cccc}
+        \toprule
+        \multicolumn{4}{c}{SSE sample} & \multicolumn{4}{c}{MSE sample} \\
+        \cmidrule(r{1.5cm}){1-4} \cmidrule(l){5-8}
+        $\sigma$ & peak counts & background counts & purity & $\sigma$ & peak counts & background counts & purity \\
+        \midrule
+        0.5 &  9359 &  2217 & 80.8\% & 0.5 &  8635 &  2245 & 79.4\% \\
+        1.0 & 16686 &  4434 & 79.0\% & 1.0 & 15395 &  4490 & 77.4\% \\
+        1.5 & 21176 &  6651 & 76.1\% & 1.5 & 19537 &  6735 & 74.4\% \\
+        2.0 & 23330 &  8868 & 72.5\% & 2.0 & 21524 &  8980 & 70.6\% \\
+        2.5 & 24138 & 11086 & 68.5\% & 2.5 & 22270 & 11224 & 66.5\% \\
+        3.0 & 24376 & 13303 & 64.7\% & 3.0 & 22489 & 13469 & 62.5\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Peak counts, background counts and purity for a different number of sigmas considered in the cut window for the \ac{DEP} and \ac{FEP} samples - V08682B.}
+    \label{tab:sse_mse_counts}
+\end{table}
+
 \subsection{Variational Autoencoder}
 
+As shown by the reconstructed waveforms and the training dynamics, the \ac{VAE} architecture demonstrates robust reconstruction performance on both the validation and the test sets. The network accurately reproduces the overall pulse shapes, capturing the fast rising edges and peak amplitudes of the current signals without introducing discernible artifacts or smoothing high-frequency features excessively. The generalization capability is corroborated by the loss metrics evaluated across the datasets. As reported in Table~\ref{tab:vae_3sigma_B} and Table~\ref{tab:vae_1sigma_B}, the total loss, the reconstruction loss (\ac{NLL}), and the \ac{KL} divergence converge steadily and remain consistent among the training, validation, and test subsets for both the $\pm 3\sigma$ and $\pm 1\sigma$ selection windows, indicating no noticeable overfitting. Overall, these reconstruction results are in close agreement with those previously observed for detector V08682A, confirming the stability of the \ac{VAE} for different detector geometries.
+
+% ---------------- Table 3.14: VAE ±3σ ----------------
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrccc}
+        \toprule
+        set & events & total loss & reconstruction (NLL) & KL [nat] \\
+        \midrule
+        training   & 59\,128 & $-874.3$ & $-894.0$ & 19.69 \\
+        validation &  7\,391 & $-867.0$ & $-886.7$ & 19.75 \\
+        test       &  7\,392 & $-868.5$ & $-888.2$ & 19.69 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Losses of the final VAE trained on the $\pm3\sigma$ windows on the training, validation and test sets - V08682B.}
+    \label{tab:vae_3sigma_B}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/VAE/validation_perEpoch_sigma3_current_scaled_beta1.pdf}\\[0.5em]
+    \includegraphics[width=\textwidth]{plots/V08682B/VAE/train_valid_losses_sigma3_current_scaled_beta1.pdf}
+    \caption{Reconstruction of a validation waveform at epochs 1, 50 and 100 (top) and evolution through epochs of the total loss, the reconstruction loss (\ac{NLL}) and the \ac{KL} divergence on the training and validation sets (bottom) for the $\pm3\sigma$ windows - V08682B.}
+    \label{}
+\end{figure}
+
+
+% ---------------- Table 3.15: VAE ±1σ ----------------
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrccc}
+        \toprule
+        set & events & total loss & reconstruction (NLL) & KL [nat] \\
+        \midrule
+        training   & 33\,445 & $-873.6$ & $-893.9$ & 20.22 \\
+        validation &  4\,181 & $-851.2$ & $-871.3$ & 20.18 \\
+        test       &  4\,181 & $-867.0$ & $-887.5$ & 20.47 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Losses of the final VAE trained on the $\pm1\sigma$ windows on the training, validation and test sets - V08682B.}
+    \label{tab:vae_1sigma_B}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/VAE/validation_perEpoch_sigma1_current_scaled_beta1.pdf}\\[0.5em]
+    \includegraphics[width=\textwidth]{plots/V08682B/VAE/train_valid_losses_sigma1_current_scaled_beta1.pdf}
+    \caption{Reconstruction of a validation waveform at epochs 1, 50 and 100 (top) and evolution through epochs of the total loss, the reconstruction loss (\ac{NLL}) and the \ac{KL} divergence on the training and validation sets (bottom) for the $\pm1\sigma$ windows - V08682B.}
+    \label{}
+\end{figure}
+
+% [H] aggiunto: prima questa figura fluttuava e finiva prima della precedente
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.49\textwidth]{plots/V08682B/VAE/test_sigma1_current_scaled_beta1.pdf}
+    \includegraphics[width=0.49\textwidth]{plots/V08682B/VAE/test_sigma3_current_scaled_beta1.pdf}
+    \caption{Original and reconstructed waveform of an event of the test set for the $\pm1\sigma$ (left) and $\pm3\sigma$ (right) windows - V08682B.}
+    \label{}
+\end{figure}
+
+As illustrated by the classification learning curves, the overall accuracy achieved for detector V08682B surpasses that of V08682A across both the $\pm 3\sigma$ and $\pm 1\sigma$ selection intervals. This improvement directly correlates with the smaller dimensions of the crystal, which yield higher purity proxy samples for both \ac{SSE} and \ac{MSE} events, as reported in Table~\ref{tab:sse_mse_counts}. These results demonstrate that reducing spectral contamination within the training data leads to a noticeable gain in classification performance, confirming that sample purity is a primary factor in enhancing discrimination capabilities.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        & \multicolumn{2}{c}{$\pm3\sigma$ windows} & \multicolumn{2}{c}{$\pm1\sigma$ windows} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        set & BCE loss & accuracy & BCE loss & accuracy \\
+        \midrule
+        training   & 0.538 & 75.61\% & 0.464 & 81.06\% \\
+        validation & 0.538 & 75.63\% & 0.467 & 81.08\% \\
+        test       & 0.544 & 75.34\% & 0.462 & 81.15\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Binary cross-entropy loss and accuracy of the final VAE-based classifiers trained on the $\pm3\sigma$ and $\pm1\sigma$ windows on the training, validation and test sets - V08682B.}
+    \label{tab:vae_classifier_B}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/VAE/classifierTraining_sigma3_current_scaled_beta1.pdf}
+    \caption{Training of the classifier on the \ac{VAE} latent space for the $\pm3\sigma$ windows: binary cross-entropy loss (left) and accuracy (right) through epochs on the training and validation sets. The dashed line marks the restored epoch - V08682B.}
+    \label{}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/VAE/classifierTraining_sigma1_current_scaled_beta1.pdf}
+    \caption{Training of the classifier on the \ac{VAE} latent space for the $\pm1\sigma$ windows: binary cross-entropy loss (left) and accuracy (right) through epochs on the training and validation sets. The dashed line marks the restored epoch - V08682B.}
+    \label{}
+\end{figure}
+
+% ---- Classifier output: prima riga (training) qui, sotto le learning curves ----
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_training_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_training_sigma1.pdf}
+    \end{subfigure}
+    
+    \medskip
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_validation_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_validation_sigma1.pdf}
+    \end{subfigure}
+
+    \medskip
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_test_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_test_sigma1.pdf}
+    \end{subfigure}
+
+    \medskip
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_whole_sigma3.pdf}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/V08682B/VAE/classifier_output_whole_sigma1.pdf}
+    \end{subfigure}
+    \caption{Predicted probability of being a \ac{MSE} for the labelled events in the $\pm3\sigma$ (left) and $\pm1\sigma$ (right) energy windows: from the top, training, validation and test sets, and whole labelled set.}
+    \label{fig:VAEclassifier-output-VO08682B}
+
+\end{figure}
+
 \subsection{Deep Temporal Clustering}
+
+The strategy followed for the \ac{DTC} study on V08682B is the very same of the V08682A one for all the technical terms (number of epochs, initialisations, ...) that therefore will not be specified. As for the other detector a lot of additional plots complementary to the main one reported here are available in Appendix \ref{app:DTC-scans} for the $\gamma$ and $K$ scans and in Appendix \ref{app:DTC-plots} for all the metrics of the the main training phase.
+
+\subsubsection{\textit{Pretrain}}
+The \textit{pretrain} phase have been carried obtaining good results in terms of losses (see Table~\ref{tab:pretrain_V08682B}) in agreement with the ones of the V08682A detector. The reconstruction works properly on validation waveforms (Fig.~\ref{fig:pretrain-V08682B}). The K-Means initialisation from which all of the \textit{train} runs start is shown in Fig.~\ref{fig:kmeans-init-V08682B}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/pretrain_reconstruction.pdf}\\[0.5em]
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/pretrain_losses.pdf}
+    \caption{Example of the \ac{TAE} reconstruction (top) and losses evolution through epochs (bottom) in the pretrain.}
+    \label{fig:pretrain-V08682B}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        set & training & validation \\
+        \midrule
+        Epoch 1  & $2691.85$ & $-373.06$ \\
+        Epoch 50 & $-804.61$ & $-807.76$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Reconstruction loss (NLL) of the pre-training on the training and validation sets, at the first and at the last epoch (V08682B).}
+    \label{tab:pretrain_V08682B}
+\end{table}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/kmeans_init.pdf}
+    \caption{K-Means initialisation of centroids - V08682B.}
+    \label{fig:kmeans-init-V08682B}
+\end{figure}
+
+
+\subsubsection{$\gamma$ scan}
+Following the same modalities of Sec.~\ref{subsec:train-test-DTC} a scan over the value of $\gamma$ and over the number of clusters ($K$) has been performed investigating $\gamma=10, 100, 1000, 10\,000$ and $K=2, 3, 4$. In particular what we can observ is that with $\gamma=10, 100$ the clustering term of the loss is far too weak to get a proper clustering of events. For $\gamma=1000, 10\,000$, on the contrary, a good clustering is achieved (see Fig. \ref{fig:scan-gamma-V08682B}): nonetheless also in this case the choice fell upon $\gamma=1000$ which is evidently the most stable scenario since for $10\,000$ the scan highlights an unstable clustering loss and a high number of events changing clusters between one epoch and another as is visible from Appendix \ref{app:DTC-scans-B} in Fig.~\ref{fig:scan-reconstruction_and_losses-gamma10000-B}. 
+
+% ---- gamma scan: gamma = 10, 100, 1000 sotto il testo ----
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/scan_eucl_gamma10_2cl_energy_all.pdf}\\[0.5em]
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/scan_eucl_gamma100_2cl_energy_all.pdf}
+    \caption{\texorpdfstring{$\gamma$}{gamma} scan over the whole dataset with \ac{EUC} metric ($\gamma = 10$, $100$) - V08682B.}
+    \label{fig:scan-gamma-V08682B}
+\end{figure}
+
+% ---- gamma scan: gamma = 10000 in cima alla pagina successiva ----
+\begin{figure}[H]
+    \ContinuedFloat
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/scan_eucl_gamma1000_2cl_energy_all.pdf}\\[0.5em]
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/scan_eucl_gamma10000_2cl_energy_all.pdf}
+    \caption[]{\texorpdfstring{$\gamma$}{gamma} scan over the whole dataset with \ac{EUC} metric (continued from previous page $\gamma$ = $1000$, $10\,000$) - V08682B.}
+\end{figure}
+
+\subsubsection{$K$ scan}
+
+The $K$-scan confirmed the observations made for V08682A, indicating that the optimal number of clusters is $2$. Specifically, for $K=3$, no events were assigned to the third cluster—consistent with the V08682A case. Furthermore, while the $K=4$ scan for V08682A populated a third cluster with a few events, in this case only two clusters were filled, leaving the remaining two completely empty at the end of training.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/scan_eucl_3cl_energy_all.pdf}
+    \caption{\texorpdfstring{$K$}{gamma} scan over the whole dataset with \ac{EUC} metric (continued from previous page $K=4$) - V08682B.}
+    \label{fig:scan-K-V08682B}
+\end{figure}
+
+\begin{figure}
+    \ContinuedFloat
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/scan_eucl_4cl_energy_all.pdf}
+    \caption{\texorpdfstring{$K$}{gamma} scan over the whole dataset with \ac{EUC} metric (continued from previous page $K=4$) - V08682B.}
+\end{figure}
+
+\subsubsection{\textit{Train}}
+
+\begin{table}[H]
+    \centering
+    \textbf{ACF}\\[0.5ex]
+    \begin{tabular}{lcccccc}
+        \toprule
+        & \multicolumn{2}{c}{\textbf{total loss}} & \multicolumn{2}{c}{\textbf{NLL}} & \multicolumn{2}{c}{\textbf{KL}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        set & epoch 1 & epoch 50 & epoch 1 & epoch 50 & epoch 1 & epoch 50 \\
+        \midrule
+        training   & $-796.13$ & $-710.94$ & $-798.75$ & $-786.25$ & $0.0026$ & $0.0753$ \\
+        validation & $-805.14$ & $-711.83$ & $-808.26$ & $-787.59$ & $0.0031$ & $0.0758$ \\
+        test       &           & $-712.62$ &           & $-787.99$ &          & $0.0754$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Total, reconstruction (NLL) and clustering (KL) losses of the final training with the \ac{ACF} metric ($\gamma = 1000$, $K = 2$) for V08682B. The test set is evaluated with the final model only.}
+    \label{tab:acf_V08682BB}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \textbf{EUC}\\[0.5ex]
+    \begin{tabular}{lcccccc}
+        \toprule
+        & \multicolumn{2}{c}{\textbf{total loss}} & \multicolumn{2}{c}{\textbf{NLL}} & \multicolumn{2}{c}{\textbf{KL}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        set & epoch 1 & epoch 50 & epoch 1 & epoch 50 & epoch 1 & epoch 50 \\
+        \midrule
+        training   & $-781.38$ & $-755.01$ & $-795.72$ & $-792.47$ & $0.0143$ & $0.0375$ \\
+        validation & $-773.80$ & $-762.32$ & $-798.77$ & $-798.37$ & $0.0250$ & $0.0360$ \\
+        test       &           & $-761.40$  &          & $-797.40$ &          & $0.0360$  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Total, reconstruction (NLL) and clustering (KL) losses of the final training with the \ac{EUC} metric ($\gamma = 1000$, $K = 2$) for V08682B. The test set is evaluated with the final model only.}
+    \label{tab:eucl_V08682BB}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \textbf{CID}\\[0.5ex]
+    \begin{tabular}{lcccccc}
+        \toprule
+        & \multicolumn{2}{c}{\textbf{total loss}} & \multicolumn{2}{c}{\textbf{NLL}} & \multicolumn{2}{c}{\textbf{KL}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        set & epoch 1 & epoch 50 & epoch 1 & epoch 50 & epoch 1 & epoch 50 \\
+        \midrule
+        training   & $-723.85$ & $-792.64$ & $-766.36$ & $-798.14$ & $0.0425$ & $0.0055$ \\
+        validation & $-727.06$ & $-800.02$ & $-764.91$ & $-805.22$ & $0.0378$ & $0.0052$ \\
+        test       &           & $-798.93$ &           & $-804.14$ &          & $0.0052$  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Total, reconstruction (NLL) and clustering (KL) losses of the final training with the \ac{CID} metric ($\gamma = 1000$, $K = 2$) for V08682B. The test set is evaluated with the final model only.}
+    \label{tab:cid_V08682B}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/acf_2cl_energy_train.pdf}\\[0.5em]
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/acf_2cl_AoE_risetime_train_linear.pdf}
+    \caption{Clustering results with the \ac{ACF} metric: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (top) and A/E and rise time distributions (bottom) for the training set - V08682B.}
+    \label{}
+\end{figure}
+
+% ---- EUC ----
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/eucl_2cl_energy_train.pdf}
+    \caption{Clustering results with the \ac{EUC} metric: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy for the training set - V08682B.}
+    \label{DTC-eucl-V08682A}
+\end{figure}
+
+\begin{figure}[H]
+    \ContinuedFloat
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/eucl_2cl_AoE_risetime_train_linear.pdf}
+    \caption[]{Clustering results with the \ac{EUC} metric (continued): A/E and rise time distributions for the training set - V08682B.}
+\end{figure}
+
+% ---- CID ----
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/cid_2cl_energy_train.pdf}\\[0.5em]
+    \includegraphics[width=\textwidth]{plots/V08682B/DTC/cid_2cl_AoE_risetime_train_linear.pdf}
+    \caption{Clustering results with the \ac{CID} metric: energy spectrum of each cluster and fraction of events assigned to each cluster as a function of energy (top) and A/E and rise time distributions (bottom) for the training set - V08682B.}
+    \label{}
+\end{figure}
+
+\flushbottom % ripristina il comportamento normale dopo questa sezione
