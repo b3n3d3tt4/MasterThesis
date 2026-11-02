@@ -1,4 +1,6 @@
 \chapter{Results}
+\label{chapter:results}
+
 This Chapter will outline the main results obtained with the two algorithms developed and tested as described in Chapter \ref{chapter:ML-PSD}. The various possible cuts, nameley the two of the \ac{VAE} and the three of the \ac{DTC}, will be applied to the calibration dataset in the 1550-1650 keV energy range, i.e. the one on which the algorithms are trained and tested, and on another novel dataset on which the networks have never been trained, the $2\nu\beta\beta$ spectrum from physics (\texttt{phy}) data of \textit{prl25}.
 
 It is worth stressing that the two deep learning approaches do not compete on equal terms. The \ac{VAE}-based classifier is trained in a supervised way on \ac{DEP} and \ac{FEP} labels whose purity does not exceed 58\% and 76\% respectively (Table \ref{tab:purity}). It therefore learns to separate the two windows, background included, rather than \ac{SSE} from \ac{MSE}. The \ac{DTC}, instead, never sees any label and groups waveforms only according to their shape. When the same window labels are used to evaluate the methods, the background enters the figures of merit as well, and it does not necessarily affect all the methods in the same way. 
