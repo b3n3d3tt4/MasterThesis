@@ -5,7 +5,7 @@
 \section{Analysis of~\texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2nu beta beta} data}
 \label{sec:2nubb-data}
 
-The latest step of this analysis involves testing all the deep learning models discussed so far with data that are well-known \ac{SSE}-like events. In particular, physics data from period \textit{p03} to period \textit{p09} of \textit{prl25} have been selected for the V08682A detector. Data are categorized by the \texttt{pygama} pipeline according to whether they qualify as $2\nu\beta\beta$ candidates or not in the range between $560$~keV and $2039$~keV\footnote{Below 556 keV, the spectrum is dominated by~${}^{39}$Ar events.}. On top of that, quality cuts listed in Tab.~\ref{tab:quality-cuts-2nu} have been applied.
+The latest step of this analysis involves testing all the deep learning models discussed so far with data that are well-known \ac{SSE}-like events. In particular, physics data from period \textit{p03} to period \textit{p09} of \textit{prl25} have been selected for the V08682A and V08682B detectors. Data are categorized by the \texttt{pygama} pipeline according to whether they qualify as $2\nu\beta\beta$ candidates or not in the range between $560$~keV and $2039$~keV\footnote{Below 556 keV, the spectrum is dominated by~${}^{39}$Ar events and is therefore neglected.}. On top of that, quality cuts listed in Tab.~\ref{tab:quality-cuts-2nu} have been applied.
 
 \begin{table}[H]
     \centering
@@ -20,20 +20,213 @@ The latest step of this analysis involves testing all the deep learning models d
         pulser / forced trigger & pulser events and forced-trigger events \\
         \bottomrule
     \end{tabular}
-    \caption{Summary of the quality cuts applied to the physics data in the selection of $2\nu\beta\beta$ events.}
+    \caption{Summary of the quality cuts applied to the physics data in the selection of~$2\nu\beta\beta$ events.}
     \label{tab:quality-cuts-2nu}
 \end{table}
 
-Moreover, data have been cut on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}.
+Moreover, data have been selected on the basis of the \ac{lar} veto, as shown in Fig.~\ref{fig:2nu-beforeafterLAR}.
+
+% \begin{figure}[H]
+%     \centering
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_before_after_LAr_V08682A.pdf}
+%     \end{subfigure}\hfill
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_before_after_LAr_V08682A.pdf}
+%     \end{subfigure}
+%     \caption{Energy spectra before (ligh grey) and after (dark grey) the \ac{lar} cuts on the V08682A (left) and V08682B (right) detectors.}
+%     \label{fig:2nu-beforeafterLAR}
+% \end{figure}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/2nubb/energy_spectrum_before_after_LAr.pdf}
-    \caption{Energy spectrum of the $2\nu\beta\beta$ data before (light grey) and after (dark grey) the \ac{lar} cut.}
+    \begin{subfigure}[t]{0.8\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_before_after_LAr_V08682A_9-4.pdf}
+        \subcaption{V08682A detector}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.8\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/2nubb/energy_spectrum_before_after_LAr_V08682B_9-4.pdf}
+        \subcaption{V08682B detector}
+    \end{subfigure}
+    \caption{Energy spectra before (light grey) and after (dark grey) the \ac{lar} cut.}
     \label{fig:2nu-beforeafterLAR}
 \end{figure}
- After the \ac{lar} and muon vetoes, the spectrum between 560 and 2039 keV is dominated by $2\nu\beta\beta$ decays of ${}^{76}$Ge, whose two electrons deposit their energy within a few millimetres and therefore produce \ac{SSE}-like signals. The resulting sample is, however, enriched in SSE-like events rather than pure. $\gamma$-induced events survive the vetoes whenever no energy is deposited in the \ac{lar}, as for the full-energy peaks of ${}^{40}$K (1460.8 keV) and ${}^{42}$K (1524.6 keV), together with part of the underlying Compton continuum. Moreover, a small fraction of genuine $2\nu\beta\beta$ events is itself multi-site because of bremsstrahlung photons emitted by the electrons. The fraction of events retained by a PSD method is therefore expected to be high but not 100\%. Therefore, all of the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training, to test wheter they recognise $2\nu\beta\beta$ events as signal-like or not.
+
+
+ After the \ac{lar} and muon vetoes, the spectrum between 560 and 2039 keV is dominated by $2\nu\beta\beta$ decays of ${}^{76}$Ge, whose two electrons deposit their energy within a few millimetres and therefore produce \ac{SSE}-like signals. The resulting sample is, however, enriched in SSE-like events rather than pure. $\gamma$-induced events survive the vetoes whenever no energy is deposited in the \ac{lar}, as for the full-energy peaks of ${}^{40}$K (1460.8 keV) and ${}^{42}$K (1524.6 keV), together with part of the underlying Compton continuum. Moreover, a small fraction of genuine $2\nu\beta\beta$ events is itself multi-site because of bremsstrahlung photons emitted by the electrons. The fraction of events retained by a PSD method is therefore expected to be high but not 100\%. Therefore, all of the models discussed in Chapter~\ref{chapter:ML-PSD} and trained on calibration data have been all applied to this novel dataset, without any further training, to test wheter they recognise $2\nu\beta\beta$ events as signal-like or not. Specifically, the cut trhesholds employed are the ones discussed previously in Sec.~\ref{sec:calib-data} in orer to keep the 90\% of the \ac{DEP} peak (see Tables~\ref{tab:VAE-working-point} for the \ac{VAE} cuts and \ref{tab:DTC-working-point} for the \ac{DTC} ones).
 
 \subsection{\texorpdfstring{\acs{VAE}}{VAE}-based classifier}
 
+The effect of the \ac{VAE} cuts on the energy spectrum is shown in Fig.~\ref{fig:VAE-spectrum-cuts-2nu} for detectors V08682A (left) and V08682B (right). For both detectors, the \ac{VAE}-based classifiers keep fewer events than \ac{AE}, between 70\% and 77\% against about 82\%. As detailed in Table~\ref{tab:VAE-cuts-2nubb}, the two methods agree on the classification of most events, between 84\% and 90\% depending on the detector and the training window. The disagreement is markedly asymmetric. Only about 2.5\% of the events are rejected by \ac{AE} and kept by the \ac{VAE}, whereas the \ac{VAE} rejects 8--13.5\% of the events accepted by \ac{AE}.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/2nubb/VAE/V08682A/spectrum_cuts_VAE_afterLAr_DEP90.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/2nubb/VAE/V08682B/spectrum_cuts_VAE_afterLAr_DEP90.pdf}
+    \end{minipage}
+    \caption{Energy spectrum of the physics data of detectors V08682A (left) and V08682B (right) in the $2\nu\beta\beta$ region, after the LAr veto. Top: spectrum before (grey) and after the \ac{AE} cut and the \ac{VAE} cuts that keep 90\% of the \ac{DEP} peak. Bottom: fraction of events kept in each 10~keV bin.}
+    \label{fig:VAE-spectrum-cuts-2nu}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabular}{lcccccccc}
+        \toprule
+         & \multicolumn{4}{c}{V08682A} & \multicolumn{4}{c}{V08682B} \\
+        \cmidrule(lr){2-5} \cmidrule(lr){6-9}
+        Method & kept & agree & rej.\ A/E & rej.\ VAE & kept & agree & rej.\ A/E & rej.\ VAE \\
+        \midrule
+        A/E              & 81.6 &      &     &      & 82.9 &      &     &     \\
+        VAE $\pm1\sigma$ & 72.9 & 86.4 & 2.4 & 11.2 & 77.3 & 89.5 & 2.5 & 8.0 \\
+        VAE $\pm3\sigma$ & 70.5 & 84.1 & 2.4 & 13.5 & 76.7 & 89.0 & 2.4 & 8.6 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Comparison between \ac{AE} and the \ac{VAE}-based cuts in the $2\nu\beta\beta$ region of the physics data, after the LAr veto, with the cuts that keep 90\% of the \ac{DEP} peak. For each detector, the values are percentages of the events in the region: fraction of events kept, agreement with \ac{AE}, and events rejected only by \ac{AE} or only by the \ac{VAE}.}
+    \label{tab:VAE-cuts-2nubb}
+\end{table}
+
+Figures~\ref{fig:VAE-agree-2nubb-V08682A} and \ref{fig:VAE-agree-2nubb-V08682B} displays the waveforms, energy spectra and risetimes of events for which the \ac{AE} and \ac{VAE} agree on classifying for V08682A and V08682B respectively while Figures~\ref{fig:VAE-disagree-2nubb-V08682A} and \ref{fig:VAE-disagree-2nubb-V08682B} those on which the two methods disagree again for the two consdiered detectors. Waveforms on which they agree are surely \ac{SSE} or \ac{MSE} while those for which the decision is not unanimous are a mixture of both, particularly for V08682A. It is worth highlighting that both methods highly reduce the two peaks of potassium, which arises from the \ac{lar} and is for sure a background source.
+
+% ======================================== 2nubb - V08682A ========================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682A/waveforms_AoE_VAE_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682A/energy_spectrum_AoE_VAE_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682A/risetime_VAE_agree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682A, after the LAr veto, for which \ac{AE} and the \ac{VAE}-based classifiers agree: current waveforms (top), energy spectra (middle) and rise time distributions (bottom). In each panel, the left column shows the events rejected by both methods and the right column those kept by both; the upper row refers to the classifier trained on the $\pm1\sigma$ windows and the lower row to the one trained on the $\pm3\sigma$ windows.}
+    \label{fig:VAE-agree-2nubb-V08682A}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682A/waveforms_AoE_VAE_disagree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682A/energy_spectrum_AoE_VAE_disagree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682A/risetime_VAE_disagree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682A, after the LAr veto, for which \ac{AE} and the \ac{VAE}-based classifiers disagree: current waveforms (top), energy spectra (middle) and rise time distributions (bottom). In each panel, the left column shows the events kept by \ac{AE} and rejected by the \ac{VAE} and the right column those rejected by \ac{AE} and kept by the \ac{VAE}; the upper row refers to the classifier trained on the $\pm1\sigma$ windows and the lower row to the one trained on the $\pm3\sigma$ windows.}
+    \label{fig:VAE-disagree-2nubb-V08682A}
+\end{figure}
+
+% ======================================== 2nubb - V08682B ========================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682B/waveforms_AoE_VAE_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682B/energy_spectrum_AoE_VAE_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682B/risetime_VAE_agree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682B, after the LAr veto, for which \ac{AE} and the \ac{VAE}-based classifiers agree: current waveforms (top), energy spectra (middle) and rise time distributions (bottom). In each panel, the left column shows the events rejected by both methods and the right column those kept by both; the upper row refers to the classifier trained on the $\pm1\sigma$ windows and the lower row to the one trained on the $\pm3\sigma$ windows.}
+    \label{fig:VAE-agree-2nubb-V08682B}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682B/waveforms_AoE_VAE_disagree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682B/energy_spectrum_AoE_VAE_disagree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.27\textheight,keepaspectratio]{plots/2nubb/VAE/V08682B/risetime_VAE_disagree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682B, after the LAr veto, for which \ac{AE} and the \ac{VAE}-based classifiers disagree: current waveforms (top), energy spectra (middle) and rise time distributions (bottom). In each panel, the left column shows the events kept by \ac{AE} and rejected by the \ac{VAE} and the right column those rejected by \ac{AE} and kept by the \ac{VAE}; the upper row refers to the classifier trained on the $\pm1\sigma$ windows and the lower row to the one trained on the $\pm3\sigma$ windows.}
+    \label{fig:VAE-disagree-2nubb-V08682B}
+\end{figure}
+
 \subsection{\texorpdfstring{\acs{DTC}}{DTC}}
 
+The effect of the \ac{DTC} cuts on the $2\nu\beta\beta$ spectrum is shown in Fig.~\ref{fig:DTC-spectrum-cuts-2nu}, and the corresponding percentages are reported in Table~\ref{tab:DTC-cuts-2nubb}. All three metrics keep fewer events than \ac{AE}, but with a strong detector dependence. For V08682A, the \ac{ACF} and Euclidean metrics reject more than half of the events below about 800~keV, keeping only 45.4\% and 54.7\% of the total, while the \ac{CID} closely follows \ac{AE} (81.0\% against 81.6\%). For V08682B, the three metrics behave similarly, keeping 70--75\% of the events against 82.9\% for \ac{AE}. As for the \ac{VAE}, the disagreement is markedly asymmetric. Only 2-5\% of the events are rejected by \ac{AE} and kept by the \ac{DTC}, whereas up to 40\% are kept by \ac{AE} and rejected by the \ac{DTC}.
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/2nubb/DTC/V08682A/spectrum_cuts_DTC_afterLAr_DEP90.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/2nubb/DTC/V08682B/spectrum_cuts_DTC_afterLAr_DEP90.pdf}
+    \end{minipage}
+    \caption{Energy spectrum of the physics data of detectors V08682A (left) and V08682B (right) in the $2\nu\beta\beta$ region, after the LAr veto. Top: spectrum before (grey) and after the \ac{AE} cut and the \ac{DTC} cuts that keep 90\% of the \ac{DEP} peak. Bottom: fraction of events kept in each 10~keV bin.}
+    \label{fig:DTC-spectrum-cuts-2nu}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabular}{lcccccccc}
+        \toprule
+         & \multicolumn{4}{c}{V08682A} & \multicolumn{4}{c}{V08682B} \\
+        \cmidrule(lr){2-5} \cmidrule(lr){6-9}
+        Method & kept & agree & rej.\ A/E & rej.\ DTC & kept & agree & rej.\ A/E & rej.\ DTC \\
+        \midrule
+        A/E & 81.6 &      &     &      & 82.9 &      &     &      \\
+        ACF & 45.4 & 55.8 & 4.0 & 40.3 & 70.5 & 82.9 & 2.3 & 14.8 \\
+        EUC & 54.7 & 66.0 & 3.5 & 30.5 & 74.3 & 87.1 & 2.2 & 10.8 \\
+        CID & 81.0 & 89.4 & 5.0 & 5.6  & 75.1 & 87.6 & 2.3 & 10.1 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Comparison between \ac{AE} and the \ac{DTC} cuts in the $2\nu\beta\beta$ region of the physics data, after the LAr veto, with the cuts that keep 90\% of the \ac{DEP} peak. For each detector, the values are percentages of the events in the region: fraction of events kept, agreement with \ac{AE}, and events rejected only by \ac{AE} or only by the \ac{DTC}.}
+    \label{tab:DTC-cuts-2nubb}
+\end{table}
+
+Figures~\ref{fig:DTC-agree-2nubb-V08682A} and \ref{fig:DTC-agree-2nubb-V08682B} show the waveforms and energy spectra of the events on which \ac{AE} and the \ac{DTC} agree, for V08682A and V08682B respectively, while Figs.~\ref{fig:DTC-disagree-2nubb-V08682A} and \ref{fig:DTC-disagree-2nubb-V08682B} show those on which the two methods disagree. The corresponding rise time distributions are collected in Figs.~\ref{fig:DTC-risetime-2nubb-V08682A} and \ref{fig:DTC-risetime-2nubb-V08682B}. Waveforms on which the two methods agree are clearly \ac{SSE}-like or \ac{MSE}-like, while most of those kept by \ac{AE} and rejected by the \ac{DTC} have an \ac{SSE}-like shape and lie at low energies, suggesting that their rejection is driven by the lower signal-to-noise ratio rather than by the pulse shape. A notable exception is the \ac{CID} metric on V08682A, which keeps a population of fast pulses with rise times of 100--250~ns that \ac{AE} rejects. As for the \ac{VAE}, all the metrics strongly suppress the two potassium peaks. As for the \ac{VAE}, all the metrics strongly suppress the two potassium peaks, where the fraction of kept events drops to about 20\% at 1460.8~keV and below 10\% at 1524.6~keV for both detectors. 
+
+
+% ======================================== 2nubb - V08682A ========================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/waveforms_AoE_DTC_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/energy_spectrum_AoE_DTC_agree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682A, after the LAr veto, for which \ac{AE} and the \ac{DTC} agree: current waveforms (top) and energy spectra (bottom). In each panel, the left column shows the events rejected by both methods and the right column those kept by both; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-agree-2nubb-V08682A}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/waveforms_AoE_DTC_disagree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/energy_spectrum_AoE_DTC_disagree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682A, after the LAr veto, for which \ac{AE} and the \ac{DTC} disagree: current waveforms (top) and energy spectra (bottom). In each panel, the left column shows the events kept by \ac{AE} and rejected by the \ac{DTC} and the right column those rejected by \ac{AE} and kept by the \ac{DTC}; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-disagree-2nubb-V08682A}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/risetime_DTC_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/risetime_DTC_disagree_afterLAr_DEP90.pdf}
+    \caption{Rise time distributions of the events of Figs.~\ref{fig:DTC-agree-2nubb-V08682A} and \ref{fig:DTC-disagree-2nubb-V08682A} (detector V08682A). Top: events on which \ac{AE} and the \ac{DTC} agree, rejected by both (left) and kept by both (right). Bottom: events on which they disagree, kept by \ac{AE} and rejected by the \ac{DTC} (left) and rejected by \ac{AE} and kept by the \ac{DTC} (right). In each panel, the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-risetime-2nubb-V08682A}
+\end{figure}
+
+% ======================================== 2nubb - V08682B ========================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/waveforms_AoE_DTC_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/energy_spectrum_AoE_DTC_agree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682B, after the LAr veto, for which \ac{AE} and the \ac{DTC} agree: current waveforms (top) and energy spectra (bottom). In each panel, the left column shows the events rejected by both methods and the right column those kept by both; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-agree-2nubb-V08682B}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/waveforms_AoE_DTC_disagree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/energy_spectrum_AoE_DTC_disagree_afterLAr_DEP90.pdf}
+    \caption{Events in the $2\nu\beta\beta$ region of the physics data of detector V08682B, after the LAr veto, for which \ac{AE} and the \ac{DTC} disagree: current waveforms (top) and energy spectra (bottom). In each panel, the left column shows the events kept by \ac{AE} and rejected by the \ac{DTC} and the right column those rejected by \ac{AE} and kept by the \ac{DTC}; the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-disagree-2nubb-V08682B}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/risetime_DTC_agree_afterLAr_DEP90.pdf}\\[0.5ex]
+    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/risetime_DTC_disagree_afterLAr_DEP90.pdf}
+    \caption{Rise time distributions of the events of Figs.~\ref{fig:DTC-agree-2nubb-V08682B} and \ref{fig:DTC-disagree-2nubb-V08682B} (detector V08682B). Top: events on which \ac{AE} and the \ac{DTC} agree, rejected by both (left) and kept by both (right). Bottom: events on which they disagree, kept by \ac{AE} and rejected by the \ac{DTC} (left) and rejected by \ac{AE} and kept by the \ac{DTC} (right). In each panel, the three rows refer to the \ac{ACF} (top), Euclidean (middle) and \ac{CID} (bottom) metrics.}
+    \label{fig:DTC-risetime-2nubb-V08682B}
+\end{figure}
