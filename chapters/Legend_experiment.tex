@@ -380,7 +380,7 @@ Pulse shape discrimination (\ac{PSD}) is employed in the LEGEND program with sev
 
 The first one is a measure of the \textit{slowness} of the final 20\% of charge carriers for an event. It is determined by calculating the area above the rising edge of the waveform after it reaches the 80\% of its maximum. Since surface events (both alpha and beta) tipically manifest a slow-charge trend with a incomplete charge collection as a consequence, \ac{LQ} is expected to be a powerful discriminator against these events, which constitute a part of the background (see Sec.~\ref{sec:background}). 
 
-On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection relies: it is computed at the Digital Signal Processing stage as the ratio between the maximum amplitude of the current signal and the uncorrected energy of the event from the restricted $1400$ samples waveform (Fig.~\ref{fig:wf-windowing}). Specifically, for Mirion IC detectors such as the V08682A used in this work, the current pulse is reconstructed from the rising edge of
+On the other hand, \ac{AE} represents the main basis on which \ac{MSE} rejection relies \cite{Budjas:AE}: it is computed at the Digital Signal Processing stage as the ratio between the maximum amplitude of the current signal and the uncorrected energy of the event from the restricted $1400$ samples waveform (Fig.~\ref{fig:wf-windowing}). Specifically, for Mirion IC detectors such as the V08682A used in this work, the current pulse is reconstructed from the rising edge of
 \begin{wrapfigure}{l}{0.53\textwidth}
     \centering
     \includegraphics[width=\linewidth]{plots/wfCleaning/example_different_AE_same_energy.pdf}

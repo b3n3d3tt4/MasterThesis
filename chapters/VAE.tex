@@ -161,7 +161,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
     \item \textbf{decoder}\\
     The decoder perfectly mirrors the encoder: 
     \begin{enumerate}
-        \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear regression) in order to obtain a ($32~\times~100$) object ;
+        \item the ($50~\times~32$) input is upsampled in linear mode (i.e. using a linear interpolation) in order to obtain a ($32~\times~100$) object ;
         \item a 1D convolutional layer with kernel size = 5, stride = 1 and padding = 2 is exploited to extract patterns and smooth out the upsampling output returning a ($16~\times~100$) object;
         \item another linear upsampling modifies the dimensionality to ($16~\times~200$);
         \item the final 1D convolutional layer returns a original-waveform like output ($1~\times~200$) or (\texttt{channels} $\times~200$) if also charge is considered.

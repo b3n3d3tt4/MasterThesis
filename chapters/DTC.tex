@@ -1,6 +1,6 @@
 \section{Deep Temporal Clustering}
 \label{sec:DTC}
-As already mentioned, the main problem that affects the \ac{AE} method in the \ac{SSE}-\ac{MSE} discrimination is related to the fact that a complex waveform with its own evolution in time is treated and calssified on the basis of a single number. This number should in principle be a simple summary of the behaviour of the signal, but actually does not account for the time evolution of it. This problem is still present in a certain way also in the \ac{VAE}-based classifier: even though we use 8 features (and not only one), these are striclty correlated with single physical quantities that could ideally be computed by hand. Therefore what is really needed is a deep learning model that collapses all dimensions but the temporal one. On top of that, a features extraction aimed at a classification task separates the two goals of getting a good reconstruction of the waveform, which means having learnt important features of it, from the clustering problem.
+As already mentioned, the main problem that affects the \ac{AE} method in the \ac{SSE}-\ac{MSE} discrimination is related to the fact that a complex waveform with its own evolution in time is treated and calssified on the basis of a single number. This number should in principle be a simple summary of the behaviour of the signal, but actually does not account for the time evolution of it. This problem is still present in a certain way also in the \ac{VAE}-based classifier: even though we use 8 features (and not only one), these may be correlated with single physical quantities that may ideally be computed by hand. Therefore what is really needed is a deep learning model that collapses all dimensions but the temporal one. On top of that, a features extraction aimed at a classification task separates the two goals of getting a good reconstruction of the waveform, which means having learnt important features of it, from the clustering problem.
 
 Madiraju et al. (2018) in their paper \textit{"Deep Temporal Clustering: fully unsupervised learning of time-domain features"} \cite{DTC} implemented an algorithm, called Deep Temporal Clustering, aimed at unsupervised clustering of time series data. Firstly an autoencoder is used to extract a latent-space representation in time of the input data and secondly a clustering algorithm assigns said latent representation to a time series prototype, i.e. the equivalent of a centroid in K-Means algorithms. A number of prototypes, equals to the number of clusters we need to identify, is predefined and then tuned during the clustering training in order to resemble a typical waveform of a given cluster. The power of this network lays in two specific aspects: first the fact that the time dimension is preserved also in the latent representation and second the fact that exploiting a combined optimisation of the two branches of the overall model, i.e. the autoencoding and the clustering, spatio-temporal features are extracted in order to optimise the reconstruction \textit{and} the clustering simoultaneously. 
 
@@ -318,7 +318,7 @@ Losses evolution and clustering results obtained with the \ac{ACF} metric are sh
 
 
 \subsubsection{Euclidean Distance}
-Losses evolution and clustering results obtained with the \ac{EUC} metric are shown for the training set in Table~\ref{tab:acf-losses} and Fig.~\ref{fig:acf-energy} respectively.
+Losses evolution and clustering results obtained with the \ac{EUC} metric are shown for the training set in Table~\ref{tab:euclidean-losses} and Fig.~\ref{fig:euclidean-energy} respectively.
 
 
 \begin{table}[H]
@@ -349,7 +349,7 @@ Losses evolution and clustering results obtained with the \ac{EUC} metric are sh
 
 
 \subsubsection{Complexity Invariant Distance}
-Losses evolution and clustering results obtained with the \ac{CID} metric are shown for the training set in Table~\ref{tab:acf-losses} and Fig.~\ref{fig:acf-energy} respectively.
+Losses evolution and clustering results obtained with the \ac{CID} metric are shown for the training set in Table~\ref{tab:cid-losses} and Fig.~\ref{fig:cid-energy} respectively.
 
 
 \begin{table}[H]
