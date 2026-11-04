@@ -1,6 +1,6 @@
 \section{Variational Autoencoder}
 \label{sec:VAE}
-A \ac{VAE} is an artificial neural network architecture introduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconsructs the time series. The process is regulated by a loss function that aims to minimise the reconstruction error between the input and the output and an error accounting for the tidiness of the latent space.
+A \ac{VAE} is an artificial neural network architecture introduced by Diederik P. Kingma and Max Welling in 2013 \cite{originalVAEarticle}. These types of models connect an encoder neural network to its decoder counterpart through a probabilistic latent space, for instance Gaussian distributions. This means that the encoder maps each input point, i.e. a time series (waveform) in our case, into one or many distributions within the latent space, differently from the standard autoencoders where input points are mapped into a single point or a certain number of them in the latent space. Afterwards, from said distributions, the decoder part reconstructs the time series. The process is regulated by a loss function that aims to minimise the reconstruction error between the input and the output and an error accounting for the tidiness of the latent space.
 
 \subsection{Data selection}
 \label{subsec:data-selection-VAE}
@@ -32,7 +32,7 @@ where $A$ is the total number of events under the peak, i.e. the peak area obtai
     \label{tab:gaussianfit_parameters}
 \end{table}
 
-Secondly, the selcetion needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. 
+Secondly, the selection needs to consider only a part of the events under the peaks. It is clear that those peaks are not purely \ac{SSE} or \ac{MSE} but rather a mixture of both since the continuum background is present in the whole energy spectrum. A cut window within a different number of sigmas would lead to different results in terms of \ac{SSE} and \ac{MSE} purity. 
 
 In order to get an idea of such fractions we can estimate, for different $k\sigma$ cut windows, how many events in the window belong to the Gaussian peak and how many to the flat background, using the parameters of the fit of Eq.~\ref{eq:fitted-gaussian}. Since the fit is performed on a histogram with 1~keV bins, $A$ is the total number of counts under the Gaussian component (the peak area), while $B$ is the constant background in counts per 1~keV bin. For a window $[\mu-k\sigma,\ \mu+k\sigma]$ the expected number of peak and background events are therefore
 \begin{align}
@@ -152,7 +152,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
         \item lastly, parameters of the latent space are obtained separately with another linear layer (\texttt{nn.Linear}) that maps the 64 activated points to a number of ($\mu$, $\sigma$) couples: said number is defined with the appropriate parameter and is the dimension of the latent space.
     \end{enumerate}
     \item \textbf{reparametrisation and decoder input}\\
-    The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. A trick called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution ($\mathcal{N}(0; 1)$).
+    The latent space consists of $\mu$ and $\sigma$ values defining non-differentiable Gaussians distributions; however, being a gradient-based architecture, the \ac{VAE} requires differentiable functions to update the weights of the neural network via backpropagation and thus it is incompatible with the abovementioned distributions. The so-called \textit{reparametrisation trick} is employed to obtain a differentiable function starting from ($\mu$, $\sigma$) values. Specifically a new variable \textit{z} is defined as reported in Eq. \ref{eq:reparametrisation-trick} where $\varepsilon$ is a parameter casually sampled from a normal distribution ($\mathcal{N}(0; 1)$).
     \begin{equation}
         \label{eq:reparametrisation-trick}
         z = \mu + \varepsilon \cdot \sigma
@@ -167,7 +167,7 @@ The \ac{VAE} algorithm that has been implemented in the work here presented foll
         \item the final 1D convolutional layer returns a original-waveform like output ($1~\times~200$) or (\texttt{channels} $\times~200$) if also charge is considered.
     \end{enumerate}  
     \item \textbf{reconstructed waveforms}\\
-    The output of the decoder, i.e. the output of the whole \ac{VAE}, is given by current (or current ancd charge) waveforms reconstructed from latent-space information. 
+    The output of the decoder, i.e. the output of the whole \ac{VAE}, is given by current (or current and charge) waveforms reconstructed from latent-space information. 
 \end{itemize}  
 \begin{figure}[H]
     \centering
@@ -271,7 +271,7 @@ The reconstruction flow and the training losses through the epochs are also show
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/sigma3/current/scaled/train_valid_losses_sigma3_current_scaled_beta1.pdf}
     \end{subfigure}
-    \caption{\ac{VAE} performance with $3\sigma$ cut: (a) decoder reconstruction progression and (b) training loss evolution.}
+    \caption{\ac{VAE} performance with $3\sigma$ cut: decoder reconstruction progression (top) and training and validation loss evolution (bottom).}
     \label{fig:VAE-sigma3-overview}
 \end{figure}
 
@@ -287,7 +287,7 @@ The reconstruction flow and the training losses through the epochs are also show
         \centering
         \includegraphics[width=\linewidth]{plots/VAE/sigma1/current/scaled/train_valid_losses_sigma1_current_scaled_beta1.pdf}
     \end{subfigure}
-    \caption{\ac{VAE} performance with $1\sigma$ cut: (a) decoder reconstruction progression and (b) training loss evolution.}
+    \caption{\ac{VAE} performance with $1\sigma$ cut: decoder reconstruction progression (top) and training and validation loss evolution (bottom).}
     \label{fig:VAE-sigma1-overview}
 \end{figure}
 

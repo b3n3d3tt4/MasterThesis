@@ -2,11 +2,11 @@
 \label{sec:V08682B}
 \raggedbottom % lo spazio avanzato va in fondo alla pagina invece di allargare gli spazi tra gli elementi
 
-As already introduced in sec. \ref{sec:LEGENDdata}, another detector of the LEGEND array has been considered in order to extend all the results detailed in the first part of this chapter. Therefore in this Section we will present what we obtained with the very same procedures already described but applied to the V08682B detector. 
+As already introduced in Sec. \ref{sec:LEGENDdata}, another detector of the LEGEND array has been considered in order to extend all the results detailed in the first part of this chapter. Therefore in this Section we will present what we obtained with the very same procedures already described but applied to the V08682B detector. 
 
 \subsection{Data selection}
 
-A similar contamination between the \ac{SSE} and \ac{MSE} proxy samples is observed for detector V08682B, driven by the non-negligible continuous background underneath both the $^{208}\text{Tl}$ \ac{DEP} and $^{212}\text{Bi}$ \ac{FEP} peaks (Figure~\ref{fig:fits-and-cuts-V08682B}). Despite this common systematic feature, the overall sample purity is notably improved compared to detector V08682A, as summarized in Table~\ref{tab:sse_mse_counts}. This enhanced performance is largely attributable to the prominent intensity of the \ac{DEP} peak relative to the continuum. From a physical standpoint, the smaller active volume of V08682B naturally increases the probability that both $511\text{ keV}$ annihilation photons escape without undergoing secondary Compton interactions within the bulk. This higher double-escape efficiency boosts the relative yield of true single-site depositions, yielding a cleaner \ac{SSE} training set across all selected energy intervals.
+A similar contamination between the \ac{SSE} and \ac{MSE} proxy samples is observed for detector V08682B, driven by the non-negligible continuous background underneath both the $^{208}\text{Tl}$ \ac{DEP} and $^{212}\text{Bi}$ \ac{FEP} peaks (Figure~\ref{fig:fits-and-cuts-V08682B}). Despite this common systematic feature, the overall sample purity is notably improved compared to detector V08682A, as summarized in Table~\ref{tab:sse_mse_counts-V08682B}. This enhanced performance is largely attributable to the prominent intensity of the \ac{DEP} peak relative to the continuum. From a physical standpoint, the smaller active volume of V08682B naturally increases the probability that both $511\text{ keV}$ annihilation photons escape without undergoing secondary Compton interactions within the bulk. This higher double-escape efficiency boosts the relative yield of true single-site depositions, yielding a cleaner \ac{SSE} training set across all selected energy intervals.
 
 \begin{figure}[H]
     \centering
@@ -40,7 +40,7 @@ A similar contamination between the \ac{SSE} and \ac{MSE} proxy samples is obser
         \bottomrule
     \end{tabular}
     \caption{Peak counts, background counts and purity for a different number of sigmas considered in the cut window for the \ac{DEP} and \ac{FEP} samples - V08682B.}
-    \label{tab:sse_mse_counts}
+    \label{tab:sse_mse_counts-V08682B}
 \end{table}
 
 \subsection{Variational Autoencoder}
@@ -105,7 +105,7 @@ As shown by the reconstructed waveforms and the training dynamics, the \ac{VAE} 
     \label{}
 \end{figure}
 
-As illustrated by the classification learning curves, the overall accuracy achieved for detector V08682B surpasses that of V08682A across both the $\pm 3\sigma$ and $\pm 1\sigma$ selection intervals. This improvement directly correlates with the smaller dimensions of the crystal, which yield higher purity proxy samples for both \ac{SSE} and \ac{MSE} events, as reported in Table~\ref{tab:sse_mse_counts}. These results demonstrate that reducing spectral contamination within the training data leads to a noticeable gain in classification performance, confirming that sample purity is a primary factor in enhancing discrimination capabilities.
+For both selection windows, the classification accuracy reached on V08682B is higher than on V08682A. The two detectors share crystal, enrichment, electronics and operating voltage, so the difference originates from their size. Size, however, acts on several factors at once: the purity of the proxy samples (Table~\ref{tab:sse_mse_counts-V08682B}), the pulse shapes themselves through shorter drift paths, and the number of training events. Moreover, accuracy is measured against contaminated labels and therefore largely reflects their purity, as also shown within each detector by the higher accuracy of the $\pm1\sigma$ windows with respect to the $\pm3\sigma$ ones. As discussed in Chapter 4, a higher accuracy does not imply a better SSE/MSE discrimination, which is in fact weaker for V08682B than for V08682A (Table 4.1).
 
 \begin{table}[H]
     \centering

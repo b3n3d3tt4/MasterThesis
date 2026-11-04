@@ -3,30 +3,29 @@
 \label{sec:nuIntro}
 Neutrinos are elementary particles, specifically neutral leptons, that, according to the \ac{SM} of Particle Physics, only interact via weak interactions.  
 They were first postulated in 1930 by the Austrian physicist Wolfgang Pauli to describe the continuous energy spectrum of beta decay. 
-Since only the electron and the recoiling nucleus were observed, the process seemed to violate energy and spin conservation; therefore, Pauli introduced a third, 
+Since only the electron and the recoiling nucleus were observed, the process seemed to violate energy and angular momentum conservation; therefore, Pauli introduced a third, 
 unseen spin-1/2 particle to carry away the missing energy and balance the angular momentum.
 
 They were eventually confirmed experimentally in 1956 by Clyde Cowan and Frederick Reines during an experiment conducted at the Savannah River 
 nuclear reactor in South Carolina. 
-This experiment exploited inverse beta decay, in which the postulated particle -specifically an electron antineutrino ($\overline{\nu}_e$)- 
-interacts with a proton to produce a neutron and a positron, as described by Eq. \ref{eq:inverse_beta_decay}.
+This experiment exploited inverse beta decay, in which the postulated particle---specifically an electron antineutrino ($\overline{\nu}_e$)---interacts with a proton to produce a neutron and a positron, as described by Eq.~\ref{eq:inverse_beta_decay}.
 \begin{equation}
     \label{eq:inverse_beta_decay}
     \overline{\nu}_e + p \rightarrow n + e^{+}
 \end{equation}
 In the experimental setup, antineutrinos produced by the reactor fission processes interacted with protons in the water of two target tanks, 
 yielding a positron and a neutron. The positron quickly annihilated with an adjacent electron, producing two prompt gamma rays. 
-Meanwhile, the neutron thermalized and subsequently captured by the cadmium nuclei of cadmium chloride (CdCl$_2$) dissolved in the water tanks.
+Meanwhile, the neutron thermalized and was subsequently captured by the cadmium nuclei of cadmium chloride (CdCl$_2$) dissolved in the water tanks.
 As a consequence of this neutron capture, an additional gamma-ray signal was released. The detection of these three gamma-ray signals 
 in delayed coincidence provided an unambiguous signature of the antineutrino interaction, definitively confirming the existence of 
-both neutrinos and antineutrinos \cite{cowan1956nudetection}.
+both neutrinos and antineutrinos~\cite{cowan1956nudetection}.
 
 Within the framework of the \ac{SM}, neutrinos are described as neutral fermions that do not participate in strong or 
 electromagnetic interactions: they are colour singlets and carry no electric charge. The \ac{LH} neutrino of each family is grouped with the corresponding charged lepton ($\ell = e, \mu, \tau$) into a weak-isospin doublet $L_\ell = (\nu_\ell, \ell)^T_\text{L}$.
 % , which transforms as $(\mathbf{1}, \mathbf{2}, -\tfrac{1}{2})$ under the gauge group SU$(3)_\text{C} \times$ SU$(2)_\text{L} \times$ U$(1)_Y$. The electromagnetic group U$(1)_\text{EM}$ is not part of the original gauge group: it is the subgroup that survives electroweak symmetry breaking, with $Q = T_3 + Y$. 
 No \ac{RH} neutrino field is present in the minimal \ac{SM}.
 
-The SU$(2)_\text{L}$ gauge invariance fixes the form of the weak interactions between neutrinos and the gauge bosons; neutrinos taking part in these interactions are called \textit{active} and have no mass. These interactions consist of \ac{CC} processes mediated by the $W^\pm$ bosons and \ac{NC} processes mediated by the $Z^0$ boson, described by the following Lagrangians:
+The SU$(2)_\text{L}$ gauge invariance fixes the form of the weak interactions between neutrinos and the gauge bosons; neutrinos taking part in these interactions are called \textit{active} and, in the minimal \ac{SM}, are massless. These interactions consist of \ac{CC} processes mediated by the $W^\pm$ bosons and \ac{NC} processes mediated by the $Z^0$ boson, described by the following Lagrangians:
 \begin{equation}
     \label{eq:SM-neutrino-lagrangian}
     \begin{aligned}
@@ -46,7 +45,7 @@ Precision measurements of the invisible decay width of the $Z^0$ boson at LEP co
 % --------------------------------------------------------
 % ---------------- EXPERIMENTAL EVIDENCES ----------------
 % --------------------------------------------------------
-\subsection[Experimental evidence: the solar neutrinos problem]{Experimental evidence: the solar neutrino problem\footnotemark}
+\subsection[Experimental evidence: the solar neutrino problem]{Experimental evidence: the solar neutrino problem\footnotemark}
 \label{subsec:oscillation-experiments}
 \footnotetext{All of what is reported in this section is elaborated from \cite{neutrinosPDG}, unless otherwise specified.}
 \begin{wrapfigure}{l}{0.53\textwidth}
@@ -57,13 +56,13 @@ Precision measurements of the invisible decay width of the $Z^0$ boson at LEP co
 \end{wrapfigure}
 Electron neutrinos are produced in the Sun in thermonuclear reactions that generate solar energy, namely \ac{pp} chains and \ac{CNO} cycles. Based on the \ac{SSM}, the total neutrino flux at Earth can be estimated from the solar luminosity. In the \ac{pp} chains four protons fuse into a ${}^4$He nucleus, $4p \to {}^4\text{He} + 2e^+ + 2\nu_e$, releasing $Q = 4M({}^1\text{H}) - M({}^4\text{He}) \sim 26.73$~MeV per chain; using atomic masses automatically includes the annihilation of the two positrons with electrons of the plasma. Only a small fraction of this energy, on average $\langle E_{2\nu}\rangle \simeq 0.59$~MeV, is carried away by the two neutrinos, while the rest heats the Sun and is eventually radiated as photons. Both \ac{pp} reactions and \ac{CNO} ones produce only $\nu_e$: the expected fluxes of the individual components, in the absence of oscillations, are shown in Figure~\ref{fig:neutrino-fluxes}.
 
-Solar neutrinos have been detected since the late 1960s. The first solar neutrino experiment was performed underground in the Homestake gold mine in South Dakota, in order to prevent contamination from cosmic-ray induced reactions. It employed liquid tetrachloroethylene (C$_2$Cl$_4$) as the target, exploiting the \ac{CC} interaction $\nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}$, whose threshold of $814$ keV makes it mainly sensitive to ${}^{7}$Be and ${}^{8}$B neutrinos. The measured rate was less than one third of the expected one, giving rise to the so-called \textit{solar neutrino problem}: the final result was $2.56 \pm 0.16 \pm 0.16 \text{ SNU}$~\footnote{SNU (solar neutrino unit) is a unit of event rate defined as $1 \text{ SNU} = 10^{-36}\text{ captures per second per target atom}$. The measured quantity is a capture rate, $R = \sum_i \Phi_i \sigma_i$, summed over the solar neutrino components $i$; converting it into a flux requires assuming the shape of the spectrum.}\cite{HomestakeResults}, to be compared with the \ac{SSM} prediction of $8.46^{+0.87}_{-0.88} \text{ SNU}$~\cite{SSMReference}.
+Solar neutrinos have been detected since the late 1960s. The first solar neutrino experiment was performed underground in the Homestake gold mine in South Dakota, in order to prevent contamination from cosmic-ray induced reactions. It employed liquid tetrachloroethylene (C$_2$Cl$_4$) as the target, exploiting the \ac{CC} interaction $\nu_e + {}^{37}\text{Cl} \longrightarrow e^- + {}^{37}\text{Ar}$, whose threshold of $814$~keV makes it mainly sensitive to ${}^{7}$Be and ${}^{8}$B neutrinos. The measured rate was less than one third of the expected one, giving rise to the so-called \textit{solar neutrino problem}: the final result was $2.56 \pm 0.16 \pm 0.16 \text{ SNU}$\footnote{SNU (solar neutrino unit) is a unit of event rate defined as $1 \text{ SNU} = 10^{-36}\text{ captures per second per target atom}$. The measured quantity is a capture rate, $R = \sum_i \Phi_i \sigma_i$, summed over the solar neutrino components $i$; converting it into a flux requires assuming the shape of the spectrum.}~\cite{HomestakeResults}, to be compared with the \ac{SSM} prediction of $8.46^{+0.87}_{-0.88} \text{ SNU}$~\cite{SSMReference}.
 
 Later, two radiochemical experiments, SAGE at the Baksan Neutrino Observatory and GALLEX (later followed by the Gallium Neutrino Observatory, GNO) at the Laboratori Nazionali del Gran Sasso (LNGS), exploited the gallium \ac{CC} interaction $\nu_e + {}^{71}\text{Ga} \longrightarrow e^- + {}^{71}\text{Ge}$, whose low threshold of $233$~keV makes it sensitive mainly to \ac{pp} neutrinos. SAGE reported $65.4^{+3.1+2.6}_{-3.0-2.8}$ SNU and GALLEX/GNO $69.3 \pm 4.1 \pm 3.6$ SNU, both in sharp contrast with the \ac{SSM} prediction of $127.9^{+8.1}_{-8.2}$ SNU for the same energy range, reinforcing the solar neutrino deficit puzzle.
 
 From the 1990s, the Kamiokande and Super-Kamiokande water Cherenkov detectors pioneered real-time measurements of solar neutrino fluxes via elastic scattering ($\nu_\ell + e^- \longrightarrow \nu_\ell + e^-$). This signal is an indistinguishable mixture of \ac{CC} and \ac{NC} events, dominated by $\nu_e$ thanks to its larger cross-section. Sensitive mainly to ${}^8\text{B}$ neutrinos, Super-Kamiokande measured a flux of $(2.345 \pm 0.014 \pm 0.036) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$~\cite{latestSUPERK}. This reveals a severe deficit compared to the theoretical \ac{SSM} prediction for ${}^8\text{B}$ neutrinos of $(5.46 \pm 0.66) \times 10^{6} \text{ cm}^{-2}\text{s}^{-1}$.
 
-Finally, the Sudbury Neutrino Observatory (SNO) provided the model-independent proof that solar $\nu_e$ change flavour, using $1000$~t of heavy water ($\text{D}_2\text{O}$). Deuterium allowed SNO to measure separately the \ac{CC} interaction $\nu_e + d \to e^- + p + p$, sensitive only to $\nu_e$, and the \ac{NC} interaction $\nu_\ell + d \to  nu_\ell + p + n$, sensitive to all active flavours with equal cross-sections. The \ac{NC} channel measured a total active flux $\Phi_\text{SNO}^\text{NC} = (5.09 \pm 0.44  pm 0.46) \times 10^{6}~\text{cm}^{-2}\, \text{s}^{-1}$~\cite{SNO2002-results}, in agreement with the \ac{SSM} prediction, while the \ac{CC} channel gave $\Phi_\text{SNO}^\text{CC} = (1.76 \pm 0.05 \pm 0.09) \times 10^{6}~\text{cm}^{-2}\,\text{s}^{-1}$~\cite{SNO2002-results}. The ratio $\Phi^\text{CC}_\text{SNO}/\Phi^\text{NC}_\text{SNO}  \simeq 0.35$ shows that about two thirds of the $\nu_e$ produced in the solar core reach the Earth as $\nu_\mu$ or $\nu_\tau$. The first conclusive evidence for neutrino oscillations had been obtained in 1998 by Super-Kamiokande with atmospheric neutrinos, through the up-down asymmetry of the $\nu_\mu$ flux~\cite{SuperK1998}.
+Finally, the Sudbury Neutrino Observatory (SNO) provided the model-independent proof that solar $\nu_e$ change flavour, using $1000$~t of heavy water ($\text{D}_2\text{O}$). Deuterium allowed SNO to measure separately the \ac{CC} interaction $\nu_e + d \to e^- + p + p$, sensitive only to $\nu_e$, and the \ac{NC} interaction $\nu_\ell + d \to \nu_\ell + p + n$, sensitive to all active flavours with equal cross-sections. The \ac{NC} channel measured a total active flux $\Phi_\text{SNO}^\text{NC} = (5.09 \pm 0.44 \pm 0.46) \times 10^{6}~\text{cm}^{-2}\, \text{s}^{-1}$~\cite{SNO2002-results}, in agreement with the \ac{SSM} prediction, while the \ac{CC} channel gave $\Phi_\text{SNO}^\text{CC} = (1.76 \pm 0.05 \pm 0.09) \times 10^{6}~\text{cm}^{-2}\,\text{s}^{-1}$~\cite{SNO2002-results}. The ratio $\Phi^\text{CC}_\text{SNO}/\Phi^\text{NC}_\text{SNO}  \simeq 0.35$ shows that about two thirds of the $\nu_e$ produced in the solar core reach the Earth as $\nu_\mu$ or $\nu_\tau$. The first conclusive evidence for neutrino oscillations had been obtained in 1998 by Super-Kamiokande with atmospheric neutrinos, through the up-down asymmetry of the $\nu_\mu$ flux~\cite{SuperK1998}.
 
 The different deficit ratios observed by radiochemical experiments (Homestake, SAGE, GALLEX/GNO) and water Cherenkov detectors (Super-Kamiokande, SNO) arise because each experiment probes a different part of the solar neutrino energy spectrum, over which the $\nu_e$ survival probability varies. In the standard picture, this energy dependence results from the transition between vacuum-dominated oscillations at low energies and matter-enhanced conversion inside the Sun at high energies. The following two sections outline these two regimes, starting from the simpler case of oscillations in vacuum, whose formalism is also the basis for including matter effects.
 
@@ -84,7 +83,7 @@ Flavour oscillations arise because the neutrino states produced and detected in 
     \label{eq:time-evolution}
     \psi(\text{\textbf{x}}, \text{t}) = \varphi (\text{\textbf{x}}) e ^{-i \text{Et}}
 \end{equation}
-The neutrinos mass eigenstates that obey Eqs. \ref{eq:free-hamiltonian} and \ref{eq:time-evolution} are labelled $\nu_1$, $\nu_2$ and $\nu_3$ and there is no reason to believe that such states correspond to the neutrinos weak eigenstates $\nu_e$, $\nu_\mu$ and $\nu_\tau$ that are identifiedwhen the corresponding charged lepton is produced. On the other hand the same basis of mass and weak eigenstates is associated to the charged leptons.
+The neutrino mass eigenstates that obey Eqs.~\ref{eq:free-hamiltonian} and~\ref{eq:time-evolution} are labelled $\nu_1$, $\nu_2$ and $\nu_3$, and there is no reason to believe that such states correspond to the neutrino weak eigenstates $\nu_e$, $\nu_\mu$ and $\nu_\tau$, which are identified when the corresponding charged lepton is produced. For charged leptons, instead, flavour and mass eigenstates can be taken to coincide, as discussed at the end of this section.
 
 Consider the lepton SU(2)$_\text{L}$ doublet of a given family $i = 1, 2, 3$. This can be written as
 \begin{equation}
@@ -94,13 +93,13 @@ Consider the lepton SU(2)$_\text{L}$ doublet of a given family $i = 1, 2, 3$. Th
                             \ell'_{\text{L}}
                       \end{pmatrix}_i ,
 \end{equation}
-where the primes denote fields in the basis in which they enter the gauge interactions (\textit{weak basis}), and it is precisely this multiplet that couples to the  electroweak gauge bosons in the weak sector of the \ac{SM} Lagrangian written in Eq.~\ref{eq:lepton-interaction}, with an implicit sum over $i$.
+where the primes denote fields in the basis in which they enter the gauge interactions (\textit{weak basis}), and it is precisely this multiplet that couples to the electroweak gauge bosons in the weak sector of the \ac{SM} Lagrangian written in Eq.~\ref{eq:lepton-interaction}, with an implicit sum over $i$.
 \begin{equation}
     \label{eq:lepton-interaction}
     \mathcal{L}_{\text{int}} = - \bar{L}_{\text{L}, i} \gamma^\mu \left( g \frac{\tau^a}{2} W_\mu^a + g' Y B_\mu \right) L_{\text{L}, i}
 \end{equation}
 
-However, when the \ac{SSB} happens, the charged leptons acquire mass through their Yukawa couplings to the Higgs field; if neutrinos are massive as well, which requires a neutrino mass term not present in the minimal \ac{SM} (see Section~\ref{subsec:seesaw}), the fields of the weak doublet can be expressed in terms of the mass eigenstates as  ritten in Eq.~\ref{eq:weak-mass-transformation}
+However, when the \ac{SSB} happens, the charged leptons acquire mass through their Yukawa couplings to the Higgs field; if neutrinos are massive as well, which requires a neutrino mass term not present in the minimal \ac{SM} (see Section~\ref{subsec:seesaw}), the fields of the weak doublet can be expressed in terms of the mass eigenstates as written in Eq.~\ref{eq:weak-mass-transformation}
 \begin{equation}
     \label{eq:weak-mass-transformation}
     \begin{cases}
@@ -108,7 +107,7 @@ However, when the \ac{SSB} happens, the charged leptons acquire mass through the
         \ell'_{\text{L}, i} = \sum_{j} \left(U_{\ell \text{L}}\right)_{ij}\, \ell_{\text{L}, j}
     \end{cases}
 \end{equation}
-where $\nu_{\text{L}, j}$ and $\ell_{\text{L}, j}$ are the mass eigenstates of neutrinos and charged leptons respectively, and $U_{\nu\text{L}}$ and $U_{\ell\text{L}}$ are  the unitary matrices that diagonalise the corresponding mass matrices. Consequently, the charged-current terms undergo the transformation expressed in Eq.~\ref{eq:current-masseigen}
+where $\nu_{\text{L}, j}$ and $\ell_{\text{L}, j}$ are the mass eigenstates of neutrinos and charged leptons respectively, and $U_{\nu\text{L}}$ and $U_{\ell\text{L}}$ are the unitary matrices that diagonalise the corresponding mass matrices. Consequently, the charged-current terms undergo the transformation expressed in Eq.~\ref{eq:current-masseigen}
 \begin{equation}
     \label{eq:current-masseigen}
     \sum_i \bar{\ell}'_{\text{L}, i}\, \gamma^{\mu}\, \nu'_{\text{L}, i}
@@ -117,10 +116,10 @@ where $\nu_{\text{L}, j}$ and $\ell_{\text{L}, j}$ are the mass eigenstates of n
       \nu_{\text{L}, k}
 \end{equation}
 where a new matrix can be highlighted: the Pontecorvo-Maki-Nakagawa-Sakata ($U_\text{PMNS}$) mixing matrix. 
-Named in honor of the physicists who first formulated its theoretical framework \cite{Pontecorvo1957, Pontecorvo1967, Maki1962} 
+Named in honour of the physicists who first formulated its theoretical framework~\cite{Pontecorvo1957, Pontecorvo1967, Maki1962}, 
 this matrix establishes a link between the weak (flavour) eigenstates, i.e. $\nu_e$, $\nu_\mu$ and $\nu_\tau$, 
 and the stationary (mass) eigenstates, i.e. $\nu_1$, $\nu_2$ and $\nu_3$,
-as detailed in Eq. \ref{eq:Upmns}. 
+as detailed in Eq.~\ref{eq:Upmns}. 
 \begin{equation}
     \label{eq:Upmns}
     \begin{pmatrix}
@@ -143,7 +142,7 @@ as detailed in Eq. \ref{eq:Upmns}.
 
 It should be stressed that $U_\text{PMNS}$ is physical only because $U_{\ell\text{L}}$ and $U_{\nu\text{L}}$ are fixed independently by two different mass matrices. In the minimal \ac{SM} there is no \ac{RH} neutrino, hence no neutrino mass term: nothing in the Lagrangian fixes the neutrino basis, so $U_{\nu\text{L}}$ is arbitrary and can be chosen equal to $U_{\ell\text{L}}$. In that case $U_\text{PMNS} = \mathbb{1}$, the charged current is diagonal and the family lepton numbers $L_e$, $L_\mu$ and $L_\tau$ are separately conserved. Mixing is observable only if the neutrino mass matrix is not aligned with the charged-lepton one and the neutrino masses are not degenerate, since for degenerate masses any rotation within the degenerate subspace could be used to remove it. The observation of flavour oscillations therefore implies that at least two neutrinos are massive, which requires physics beyond the minimal \ac{SM}.
 
-This matrix is a $3 \times 3$ unitary matrix, that parametrises a rotation (a mixing) through some parameters. A general $3 \times 3$ matrix can be written in terms of 9 complex numbers, i.e., 18 parameters; however, the unitarity property of $U_{\text{PMNS}}$, which means $U U^\dagger = \mathbb{1}$, introduces nine constraints, leaving only nine independent parameters to fully describe the mixing. Among these nine parameters, three of them are angles, $\theta_{12}$, $\theta_{13}$, $\theta_{23}$, while the remaining six are complex phases of the form $e^{i \varphi}$ since $U_{\text{PMNS}}$ is not a real matrix. Specifically, $\theta_{12}$ is the angle of rotation about the 3-axis, $\theta_{13}$ is the angle of rotation about the new 2-axis and $\theta_{23}$ is a rotation about the remaining 1-axis.
+This matrix is a $3 \times 3$ unitary matrix that parametrises a rotation (a mixing) through some parameters. A general $3 \times 3$ matrix can be written in terms of 9 complex numbers, i.e., 18 parameters; however, the unitarity property of $U_{\text{PMNS}}$, which means $U U^\dagger = \mathbb{1}$, introduces nine constraints, leaving only nine independent parameters to fully describe the mixing. Among these nine parameters, three of them are angles, $\theta_{12}$, $\theta_{13}$, $\theta_{23}$, while the remaining six are complex phases of the form $e^{i \varphi}$, since $U_{\text{PMNS}}$ is not a real matrix. Specifically, $\theta_{12}$ is the angle of rotation about the 3-axis, $\theta_{13}$ is the angle of rotation about the new 2-axis and $\theta_{23}$ is a rotation about the remaining 1-axis.
 
 Not all of the six phases are physical. The charged-current interaction, together with the Dirac mass terms, is invariant under the rephasing of the charged-lepton fields $\ell_\alpha$ ($\alpha = e, \mu, \tau$) and of the neutrino mass-eigenstate fields $\nu_k$ ($k = 1, 2, 3$),
 \begin{equation}
@@ -159,11 +158,12 @@ The number of physical phases that remain depends on the nature of neutrinos. If
 
 If instead neutrinos are Majorana particles (meaning that they are their own antiparticles, a possibility discussed in Section~\ref{subsec:seesaw}), the Majorana mass term $\nu_k^T C \nu_k$ is not invariant under the rephasing of $\nu_k$. Only the three phases $\theta_\alpha$ can then be used, so two additional physical phases survive, known as Majorana phases $\alpha_{21}$ and $\alpha_{31}$, bringing the total number of physical parameters to six. They enter as a diagonal matrix multiplying $U_\text{PMNS}$ on the right,
 \begin{equation}
-    U_\text{PMNS}^{MAJ} = U_\text{PMNS}\;\text{diag}\left(1,\, e^{i\alpha_{21}/2},\, e^{i\alpha_{31}/2}\right),
+    \label{eq:Upmns-majorana}
+    U_\text{PMNS}^\text{Maj} = U_\text{PMNS}\;\text{diag}\left(1,\, e^{i\alpha_{21}/2},\, e^{i\alpha_{31}/2}\right),
 \end{equation}
 and cancel in the neutrino oscillation probabilities, which therefore cannot distinguish Dirac from Majorana neutrinos. The Majorana phases are accessible only through lepton-number-violating processes such as neutrinoless double $\beta$-decay (Section~\ref{subsec:0nubetabeta}).
 
-Finally the full neutrino mixing matrix can be written as reported in Eq. \ref{eq:Upmns-total}
+Finally, the full neutrino mixing matrix can be written as reported in Eq.~\ref{eq:Upmns-total}
 \begin{equation}
     \label{eq:Upmns-total}
     U_{\text{PMNS}} = 
@@ -180,7 +180,7 @@ Finally the full neutrino mixing matrix can be written as reported in Eq. \ref{e
     \end{pmatrix}
 \end{equation}
 
-or otherwise can be factorised in the product of three different matrices that are detailed in Eq. \ref{eq:Upmns-factorised}
+or, equivalently, factorised in the product of the three matrices detailed in Eq.~\ref{eq:Upmns-factorised}
 \begin{equation}
     \label{eq:Upmns-factorised}
     U_{\text{PMNS}} = 
@@ -203,15 +203,9 @@ or otherwise can be factorised in the product of three different matrices that a
 
 where $s_{ij} = \sin(\theta_{ij})$ and $c_{ij} = \cos(\theta_{ij})$.
 
-The reason why we say that are neutrinos to have different flavour and mass eigenstates is that we never directly detect them,
-but always their associated charged lepton. In principle instead of Eq. \ref{eq:current-masseigen} we could also write Eq. \ref{eq:current-masseigen-charged}
-\begin{equation}
-    \label{eq:current-masseigen-charged}
-    \bar{\ell}_{\text{L}, i}~\gamma^{\mu}~\nu_{\text{L}, i} \longrightarrow \bar{\ell}_{\text{L}, i}^*~\underbrace{U_{\ell \text{L}}^\dagger U_{\nu \text{L}}}_{U_{\text{PMNS}}}~\gamma^{\mu}~\nu_{\text{L}, i}^* 
-\end{equation} 
-and consider charged leptons as the oscillating part of the lepton doublet. However since what we detect are indeed charged leptons, these are fixed as both flavour and mass eigenstates while neutrinos flavour states are to be written as a coherent linear superposition of neutrinos mass states through the already mentioned mixing matrix $U_\text{PMNS}$.
+Since $U_\text{PMNS} = U_{\ell\text{L}}^\dagger U_{\nu\text{L}}$, only the relative rotation between the two bases is physical, and the mixing could in principle be attributed to the charged leptons as well. The convention of assigning it to neutrinos follows from how leptons are observed: charged leptons are identified through their masses, so that their flavour and mass eigenstates coincide by definition, while neutrinos are never detected directly and their flavour is defined by the charged lepton produced in the \ac{CC} interaction. The neutrino flavour states are therefore coherent superpositions of the mass eigenstates, through the mixing matrix $U_\text{PMNS}$.
 
-A detailed analysis of neutrinos three-flavour oscillation is given in Appendix \ref{app:ThreeFlavoursOscillation}.
+A detailed analysis of three-flavour neutrino oscillations is given in Appendix~\ref{app:ThreeFlavoursOscillation}.
 
 %-----------------------------------------------------------
 %------------------- MATTER EFFECT -----------------------
@@ -227,7 +221,7 @@ When neutrinos propagate through a dense medium like the solar interior, they in
 
 The fundamental physical asymmetry that drives the \ac{MSW} effect lies in the standard weak interactions. In ordinary matter, all active neutrino flavours ($\nu_e, \nu_\mu, \nu_\tau$) interact with electrons, protons, and neutrons via \ac{NC} interactions mediated by the $Z^0$ boson. Because these interactions are flavour-blind, they induce a common potential for all neutrino flavours. Since neutrino oscillations depend on the \textit{phase differences} between mass eigenstates, this universal \ac{NC} contribution effectively cancels out and does not alter the flavour transition probabilities.
 
-However, ordinary matter is rich in electrons but completely lacks muons and taus. Consequently, only electron neutrinos ($\nu_e$) can undergo Charged Current (\ac{CC}) interactions with the electrons in the medium, mediated by the $W^\pm$ bosons. This exclusive interaction provides an additional potential energy strictly for the $\nu_e$ state, known as the Wolfenstein potential:
+However, ordinary matter is rich in electrons but completely lacks muons and taus. Consequently, only electron neutrinos ($\nu_e$) can undergo \ac{CC} interactions with the electrons in the medium, mediated by the $W^\pm$ bosons. This exclusive interaction provides an additional potential energy strictly for the $\nu_e$ state, known as the Wolfenstein potential:
 \begin{equation}
     % \label{eq:V_C_potential}
     V_C = \sqrt{2} G_F n_e
@@ -251,7 +245,7 @@ and in the solar core matter effects dominate above $E_\text{crit} \simeq \Delta
 \footnotetext{All of what is reported in this section is elaborated from \cite{Thomson}, unless otherwise specified.}
 \subsection{\ac{NMO}}
 \label{subsec:NMO}
-While the complete quantum mechanical derivation of neutrino flavour oscillations is detailed in Appendix \ref{app:ThreeFlavoursOscillation}, it is highly useful to explicitly recall here the final expressions for the transition probabilities. Both the electron neutrino survival probability, $P(\nu_e \to \nu_e)$, and its oscillation probability into other flavours depend heavily on the phase differences between the mass eigenstates during their macroscopic propagation. Evaluating these phase differences in the ultra-relativistic limit reveals that the probabilities are directly governed by the differences of the squared masses of the neutrino stationary states. 
+While the complete quantum mechanical derivation of neutrino flavour oscillations is detailed in Appendix~\ref{app:ThreeFlavoursOscillation}, it is highly useful to explicitly recall here the final expressions for the transition probabilities. Both the electron neutrino survival probability, $P(\nu_e \to \nu_e)$, and its oscillation probability into other flavours depend heavily on the phase differences between the mass eigenstates during their macroscopic propagation. Evaluating these phase differences in the ultra-relativistic limit reveals that the probabilities are directly governed by the differences of the squared masses of the neutrino stationary states. 
 
 By substituting the kinematic approximations into the expanded probability formula, the electron neutrino survival probability can be explicitly written as:
 \begin{equation}
@@ -272,13 +266,11 @@ where $L$ is the oscillation baseline, $E_\nu$ is the neutrino energy, and we in
     \end{aligned}
 \end{equation}
 
-By inspecting Eq. \ref{eq:mass-differences}, it is clear that only two of these differences are independent from one another, while the third can be written as a sum of the other two. Indeed, we can take $\Delta m^2_{21}$ and $\Delta m^2_{32}$ and define $\Delta m^2_{31} = \Delta m^2_{21} + \Delta m^2_{32}$. It is now clear that experimental measurements of neutrino oscillations do not constrain the overall mass scale.
+By inspecting Eq.~\ref{eq:mass-differences}, it is clear that only two of these differences are independent from one another, while the third can be written as a sum of the other two. Indeed, we can take $\Delta m^2_{21}$ and $\Delta m^2_{32}$ and define $\Delta m^2_{31} = \Delta m^2_{21} + \Delta m^2_{32}$. It is now clear that experimental measurements of neutrino oscillations do not constrain the overall mass scale.
 
-Moreover, to date there are no direct measurements of neutrino masses but only upper limits on them. Specifically we know that
-\begin{equation*}
-    \sum_{i = 1}^3 m_{\nu_i} \lesssim 1 \text{eV}
-\end{equation*}
-The most up-to-date experiments reported by the \ac{PDG} \cite{neutrinosPDG} are:
+Moreover, the absolute neutrino masses have not been measured yet, and only upper limits are available. The most stringent laboratory bound comes from the kinematic measurement of tritium $\beta$ decay by KATRIN, which constrains the effective electron-neutrino mass to $m_\beta < 0.45$~eV (90\% CL)~\cite{katrin2025}, while cosmological observations constrain the sum of the masses to $\Sigma < 0.064$~eV (95\% CL) within the $\Lambda$CDM model~\cite{desi2025}. Both quantities are defined in Section~\ref{subsec:0nubetabeta}.
+
+The most recent values of the mass-squared differences reported by the \ac{PDG}~\cite{neutrinosPDG} are:
 \begin{equation*}
     \begin{aligned}
         \Delta m^2_{21}  &= (7.60 \pm 0.17) \times 10^{-5}~\text{eV}^2 \\
@@ -286,7 +278,7 @@ The most up-to-date experiments reported by the \ac{PDG} \cite{neutrinosPDG} are
         \Delta m^{2}_{32} &= (-2.52 \pm 0.04) \times 10^{-3}~\text{eV}^2\quad \text{\scriptsize (inverted ordering)}
     \end{aligned}
 \end{equation*}
-However the absolute mass scale of the neutrinos is not defined and two mass orderings are possible as depicted in Figure \ref{fig:mass-ordering}.
+Since the sign of $\Delta m^2_{32}$ is not known, two mass orderings are possible, as depicted in Figure~\ref{fig:mass-ordering}.
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.7\textwidth]{figures/mass-hierarchy.jpg}
@@ -301,23 +293,23 @@ However the absolute mass scale of the neutrinos is not defined and two mass ord
 \subsection{The Seesaw mechanism}
 \label{subsec:seesaw}
 Experimental studies confirm that neutrinos do have masses, therefore there must be a corresponding mass term in the Lagrangian. 
-Said term can be introduced using the conjugate Higgs field yielding a Dirac mass term after the \ac{SSB} as expressed in Eq. \ref{eq:neutrinos-dirac-masses}
+Said term can be introduced using the conjugate Higgs field, yielding a Dirac mass term after the \ac{SSB} as expressed in Eq.~\ref{eq:neutrinos-dirac-masses}
 \begin{equation}
     \label{eq:neutrinos-dirac-masses}
-    \mathcal{L}_{D} = - m_D (\overline{\nu}_\text{R}\nu_\text{L} + \overline{\nu}_\text{L}\nu_\text{R}) = -\frac{1}{2}m_D (\overline{\nu_\text{L}}\nu_\text{R} + \overline{\nu_\text{R}^c}\nu_\text{L}^c) + h.c.
+    \mathcal{L}_{D} = - m_D (\overline{\nu}_\text{R}\nu_\text{L} + \overline{\nu}_\text{L}\nu_\text{R}) = -\frac{1}{2}m_D (\overline{\nu_\text{L}}\nu_\text{R} + \overline{\nu_\text{R}^c}\nu_\text{L}^c) + \text{h.c.}
 \end{equation}
-where in the second part we used the equivalence of $\overline{\nu_\text{L}}\nu_\text{R} \longleftrightarrow \overline{\nu_\text{R}^c}\nu_\text{L}^c $.
-It is clear that if this is the origin of neutrino masses, then \ac{RH}\footnote{Unless otherwise specified right and left refers to chiral states.}
-neutrinos -and \ac{LH} antineutrinos as well- must exist. However neutrino masses are much smaller than those of other fermions, either the charged leptons or the quarks for which masses arise in the Higgs mechanism, suggesting that there might be a different phenomenon which generates neutrino masses.
+where in the second part we used the equivalence $\overline{\nu_\text{L}}\nu_\text{R} \longleftrightarrow \overline{\nu_\text{R}^c}\nu_\text{L}^c $.
+It is clear that if this is the origin of neutrino masses, then \ac{RH}\footnote{Unless otherwise specified, right and left refer to chiral states.}
+neutrinos---and \ac{LH} antineutrinos as well---must exist. However, neutrino masses are much smaller than those of other fermions, either the charged leptons or the quarks for which masses arise in the Higgs mechanism, suggesting that there might be a different phenomenon which generates neutrino masses.
 
-Seeing that \ac{RH} neutrinos and \ac{LH} antineutrinos transform as singlets in the \ac{SM} transformations, any additional term formed by these fields can be added in the the \ac{SM} Lagrangian without breaking its gauge invariance.
+Seeing that \ac{RH} neutrinos and \ac{LH} antineutrinos transform as singlets under the \ac{SM} gauge group, any additional term formed by these fields can be added to the \ac{SM} Lagrangian without breaking its gauge invariance.
 
-While \ac{RH} neutrinos appear as such in the new Lagrangian term, \ac{LH} antineutrinos are defined as the \ac{CP} conjugate fields of \ac{RH} neutrinos as written in Eq. \ref{eq:CPconjugation-righHanded}
+While \ac{RH} neutrinos appear as such in the new Lagrangian term, \ac{LH} antineutrinos are defined as the \ac{CP} conjugate fields of \ac{RH} neutrinos as written in Eq.~\ref{eq:CPconjugation-righHanded}
 \begin{equation}
     \label{eq:CPconjugation-righHanded}
     \psi^c = \hat{C}\hat{P}\psi = i\gamma^2\gamma^0\psi^*.
 \end{equation} 
-Therefore in the Majorana mass term of Eq. \ref{eq:neutrinos-majorana-masses}, \ac{LH} antineutrinos are written as $\nu_\text{R}^c$ yielding
+Therefore in the Majorana mass term of Eq.~\ref{eq:neutrinos-majorana-masses}, \ac{LH} antineutrinos are written as $\nu_\text{R}^c$ yielding
 \begin{equation}
     \label{eq:neutrinos-majorana-masses}
     \mathcal{L}_M = -\frac{1}{2} M \left( \overline{\nu_\text{R}^c} \nu_\text{R} + \overline{\nu_\text{R}} \nu_\text{R}^c \right).
@@ -330,13 +322,13 @@ Thus the corresponding Majorana mass term for the electron would allow $e^+ \lef
 This problem does not exist for the neutrinos. Nevertheless, seeing that neutrinos are neutral, it is possible that they are their own 
 antiparticles, in which case they are referred to as \textit{Majorana neutrinos} and not as \textit{Dirac neutrinos}.
 
-Finally, we can get the general \ac{SM} lagrangian term for neutrino masses including both Eq. \ref{eq:neutrinos-dirac-masses} 
-and \ref{eq:neutrinos-majorana-masses} obtaining Eq. \ref{eq:neutrinos-diracANDmajorana-masses}.
+Finally, we can write the general mass Lagrangian for neutrinos including both Eqs.~\ref{eq:neutrinos-dirac-masses} 
+and~\ref{eq:neutrinos-majorana-masses}, obtaining Eq.~\ref{eq:neutrinos-diracANDmajorana-masses}.
 \begin{equation}
     \label{eq:neutrinos-diracANDmajorana-masses}
-    \mathcal{L}_{DM} = -\frac{1}{2} \left[ m_D \overline{\nu_\text{L}}\nu_\text{R} + m_D \overline{\nu_\text{R}^c}\nu_\text{L}^c + M \overline{\nu_\text{R}^c}\nu_\text{R} \right] + h.c.
+    \mathcal{L}_{DM} = -\frac{1}{2} \left[ m_D \overline{\nu_\text{L}}\nu_\text{R} + m_D \overline{\nu_\text{R}^c}\nu_\text{L}^c + M \overline{\nu_\text{R}^c}\nu_\text{R} \right] + \text{h.c.}
 \end{equation}
-The two different couplings can be represented using Feynman diagrams as depicted in Figure \ref{fig:feynman-massCouplings}.
+The two different couplings can be represented using Feynman diagrams as depicted in Figure~\ref{fig:feynman-massCouplings}.
 \begin{figure}[H]
     \centering
     \input{feynman-diagrams/diracANDmajorana-massTerms.tex}
@@ -344,32 +336,32 @@ The two different couplings can be represented using Feynman diagrams as depicte
     \label{fig:feynman-massCouplings}
 \end{figure}
 
-Eq. \ref{eq:neutrinos-diracANDmajorana-masses} can be equivalently rewritten as Eq. \ref{eq:neutrinos-diracANDmajorana-masses-matrix}
+Eq.~\ref{eq:neutrinos-diracANDmajorana-masses} can be equivalently rewritten as Eq.~\ref{eq:neutrinos-diracANDmajorana-masses-matrix}
 \begin{equation}
     \label{eq:neutrinos-diracANDmajorana-masses-matrix}
     \mathcal{L}_{DM} = -\frac{1}{2} \left( \overline{\nu_\text{L}} \quad \overline{\nu_\text{R}^c} \right) \underbrace{\begin{pmatrix} 0 & m_D \\ m_D & M \end{pmatrix}}_{\mathbf{M}} \begin{pmatrix} \nu_\text{L}^c \\ \nu_\text{R} \end{pmatrix} + \text{h.c.}
 \end{equation}
 
-where we identified the mass matrix $\mathbf{M}$, that can be diagonalised in order to define the physical states. 
-Through the characteristic equation$\text{det}(\mathbf{M} - \lambda \mathbb{1})$ that yields $\lambda^2 - M\lambda - m_D^2 = 0$, 
-one get the masses of the physical neutrinos that are 
+where we identified the mass matrix $\mathbf{M}$, which can be diagonalised in order to define the physical states. 
+The characteristic equation $\det(\mathbf{M} - \lambda \mathbb{1}) = 0$ yields $\lambda^2 - M\lambda - m_D^2 = 0$, 
+from which one gets the masses of the physical neutrinos 
 \begin{equation*}
     m_{\pm} = \lambda_{\pm} = \frac{M \pm \sqrt{M^2 + 4m_D^2}}{2} = \frac{M \pm M\sqrt{1 + 4m_D^2/M^2}}{2}.
 \end{equation*}
-Furthermore, taking the Majorana mass $M$ much greater than the Dirac mass $m$, 
-i.e. $M \gg m_D$\footnote{Dirac mass is assumed to be of the same order of the mass of the other fermions ($\mathcal{O}(1~\text{GeV})$) 
-while the Majorana mass term is thought to be very large ($\mathcal{O}(10^{11}~\text{GeV})$) in order to get $m_\nu \sim 0.01$~eV}, 
+Furthermore, taking the Majorana mass $M$ much greater than the Dirac mass $m_D$, 
+i.e. $M \gg m_D$\footnote{The Dirac mass is assumed to be of the same order of the mass of the other fermions ($\mathcal{O}(1~\text{GeV})$), 
+while the Majorana mass term is thought to be very large ($\mathcal{O}(10^{11}~\text{GeV})$) in order to get $m_\nu \sim 0.01$~eV.}, 
 the two possible masses reduce to 
 \begin{equation*}
     m_{\pm} \approx \frac{1}{2}M \pm \frac{1}{2}\left( M + \frac{2m_D^2}{M} \right)
 \end{equation*}
-giving a light neutrino state ($\nu$) and an heavy neutrino state ($N$) with the masses reported in Eq. \ref{eq:final-nu-masses}
+giving a light neutrino state ($\nu$) and a heavy neutrino state ($N$) with the masses reported in Eq.~\ref{eq:final-nu-masses}
 \begin{equation}
     \label{eq:final-nu-masses}
     |m_{\nu}| \approx \frac{m_D^2}{M} \quad \text{and} \quad m_N \approx M.
 \end{equation} 
-Therefore, if we go back to Eq. \ref{eq:neutrinos-diracANDmajorana-masses-matrix} we can rewrite $\nu$ and $N$ as a function of
-$\overline{\nu_\text{L}}$, $\overline{\nu_\text{L}^c}$, $\overline{\nu_\text{R}}$ and $\overline{\nu_\text{R}^c}$ as shown in Eq. \ref{eq:neutrinos-revisited}
+Therefore, if we go back to Eq.~\ref{eq:neutrinos-diracANDmajorana-masses-matrix}, we can rewrite $\nu$ and $N$ as a function of
+$\nu_\text{L}$, $\nu_\text{L}^c$, $\nu_\text{R}$ and $\nu_\text{R}^c$ as shown in Eq.~\ref{eq:neutrinos-revisited}
 \begin{equation}
     \label{eq:neutrinos-revisited}
     \nu = \cos\theta (\nu_\text{L} + \nu_\text{L}^c) - \sin\theta (\nu_\text{R} + \nu_\text{R}^c) \quad \text{and} \quad N = \cos\theta (\nu_\text{R} + \nu_\text{R}^c) + \sin\theta (\nu_\text{L} + \nu_\text{L}^c)
@@ -383,11 +375,11 @@ This consideration yields
     \nu \approx (\nu_\text{L} + \nu_\text{L}^c) - \frac{m_D}{M}(\nu_\text{R} + \nu_\text{R}^c) ~ \text{and} ~ N \approx (\nu_\text{R} + \nu_\text{R}^c) + \frac{m_D}{M}(\nu_\text{L} + \nu_\text{L}^c).
 \end{equation*}
 It is now evident that the light-neutrino state is almost entirely \ac{LH} while the heavy-neutrino one is almost entirely \ac{RH}. 
-Therefore the latter is not participating in the weak \ac{CC} interactions neither in the weak \ac{NC} interactions of the \ac{SM}.
+Therefore, the latter participates neither in the weak \ac{CC} interactions nor in the weak \ac{NC} interactions of the \ac{SM}.
 
-The process described so far, set against the Higgs mechanism for mass, is known as \textit{seesaw mechanism}.\\
-This is just an hypothesis, but it would be more grounded if neutrinos were shown to be Majorana particles.\\
-The latter could be done if we would observe the neutrinoless double $\beta$-decay that will be discussed further in this work in Section \ref{subsec:0nubetabeta}.
+The process described so far, set against the Higgs mechanism for mass, is known as \textit{seesaw mechanism}.
+It is only a hypothesis, but it would be more grounded if neutrinos were shown to be Majorana particles.
+Their Majorana nature could be established by observing neutrinoless double $\beta$-decay, which is discussed in Section~\ref{subsec:0nubetabeta}.
 
 \section{Beta decay and double beta decay}
 Beta decay is a nuclear transition in which a nucleus $(Z, A)$ converts into an isobar $(Z \pm 1, A)$ through the weak interaction, with the emission of an electron or positron and the corresponding (anti)neutrino, as anticipated in Section~\ref{sec:nuIntro}. The single-beta decay process can be written as
@@ -396,15 +388,15 @@ Beta decay is a nuclear transition in which a nucleus $(Z, A)$ converts into an 
     (Z, A) \longrightarrow (Z+1, A) + e^- + \overline{\nu}_e \qquad \text{or} \qquad 
     (Z, A) \longrightarrow (Z-1, A) + e^+ + \nu_e,
 \end{equation}
-depending on whether a neutron ($\beta^-$) or a proton ($\beta^+$) undergoes the weak transition. Enrico Fermi described this process in 1934 \cite{Fermi1934} by introducing a point-like, four-fermion contact interaction Hamiltonian
+depending on whether a neutron ($\beta^-$) or a proton ($\beta^+$) undergoes the weak transition. Enrico Fermi described this process in 1934~\cite{Fermi1934} by introducing a point-like, four-fermion contact interaction Hamiltonian
 \begin{equation}
     H_F = G_F \left( \overline{\psi}_p \gamma^\mu \psi_n \right)\left( \overline{\psi}_e \gamma_\mu \psi_\nu \right) + \text{h.c.}
 \end{equation} 
-with $G_F$ the Fermi coupling constant, later reinterpreted within the \ac{SM} as the low-energy, effective limit of the \ac{CC} interaction (Eq. \ref{eq:SM-neutrino-lagrangian}) where a virtual $W$ boson mediates, at the quark level, the $d \to u$ or $u \to d$ transitions. The process is allowed whenever it is energetically favourable, i.e. whenever the mass difference between the mother and daughter nuclei is large enough to compensate for the $Q$-value of the reaction, and it is precisely this energy balance, together with nuclear pairing effects, that determines which nuclei undergo ordinary $\beta$ decay and which ones are instead only accessible through the second-order process of double-$\beta$ decay, discussed further in this Section.
+with $G_F$ the Fermi coupling constant, later reinterpreted within the \ac{SM} as the low-energy, effective limit of the \ac{CC} interaction (Eq.~\ref{eq:SM-neutrino-lagrangian}) where a virtual $W$ boson mediates, at the quark level, the $d \to u$ or $u \to d$ transitions. The process is allowed whenever it is energetically favourable, i.e. whenever its $Q$-value, given by the mass difference between the parent and daughter atoms, is positive. It is precisely this energy balance, together with nuclear pairing effects, that determines which nuclei undergo ordinary $\beta$ decay and which ones are instead only accessible through the second-order process of double-$\beta$ decay, discussed further in this Section.
 
 \subsection{Two-neutrino double beta decay (\texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2vbb})}
 \label{subsec:2nubetabeta}
-Double beta decay is a second-order weak interaction process in which a nucleus $(Z, A)$ decays directly into one of its isobars $(Z\pm2, A)$, changing its charge by two units while leaving the mass number unchanged. First proposed in 1935 by Maria Goeppert-Mayer \cite{firstDoubleBeta}, it can be seen as the double counterpart of single-$\beta$ decay. Just as the latter comes in the $\beta^-$, $\beta^+$ and \ac{EC} variants, double beta decay with the emission of two neutrinos, $2\nu\beta\beta$, can proceed through four different modes: $\beta^-\beta^-$, $\beta^+\beta^+$, $\beta^+$\ac{EC} and \ac{EC}\ac{EC}, where in the last two the nucleus captures one or two electrons from the atomic shells. All of them perfectly conserve the lepton number and are fully accommodated within the \ac{SM}. They are summarised in Table~\ref{tab:bb-modes}.
+Double beta decay is a second-order weak interaction process in which a nucleus $(Z, A)$ decays directly into one of its isobars $(Z\pm2, A)$, changing its charge by two units while leaving the mass number unchanged. First proposed in 1935 by Maria Goeppert-Mayer~\cite{firstDoubleBeta}, it can be seen as the double counterpart of single-$\beta$ decay. Just as the latter comes in the $\beta^-$, $\beta^+$ and \ac{EC} variants, double beta decay with the emission of two neutrinos, $2\nu\beta\beta$, can proceed through four different modes: $\beta^-\beta^-$, $\beta^+\beta^+$, $\beta^+$\ac{EC} and \ac{EC}\ac{EC}, where in the last two the nucleus captures one or two electrons from the atomic shells. All of them perfectly conserve the lepton number and are fully accommodated within the \ac{SM}. They are summarised in Table~\ref{tab:bb-modes}.
 
 \begin{table}[H]
     \centering
@@ -424,9 +416,9 @@ Double beta decay is a second-order weak interaction process in which a nucleus 
 
 The energy conditions differ from mode to mode. Working with atomic masses, the $\beta^-\beta^-$ decay only requires $M(Z,A) > M(Z+2,A)$. For the modes that decrease the nuclear charge, the mass difference $M(Z,A) - M(Z-2,A)$ must instead exceed $2m_ec^2 \simeq 1022$~keV for $\beta^+$\ac{EC} and $4m_ec^2 \simeq 2044$~keV for $\beta^+\beta^+$, since each emitted positron costs $2m_ec^2$, while the \ac{EC}\ac{EC} mode has no such penalty. In addition, the Coulomb repulsion between the nucleus and the positron further suppresses positron emission. As a result, the modes involving $\beta^+$ and \ac{EC} generally have low effective $Q$-values and rates much smaller than $\beta^-\beta^-$, and are usually neglected. In principle, each of these modes could also occur without the emission of neutrinos, a lepton-number-violating process discussed in Section~\ref{subsec:0nubetabeta}. 
 
-Seeing that this work focuses on ${}^{76}$Ge double-beta decay, in what follows $\beta\beta$ refers to the $\beta^-\beta^-$ mode detailed in the first row of Table \ref{tab:bb-modes}.
+Seeing that this work focuses on ${}^{76}$Ge double-beta decay, in what follows $\beta\beta$ refers to the $\beta^-\beta^-$ mode detailed in the first row of Table~\ref{tab:bb-modes}.
 
-At the microscopic level, the process occurs through two simultaneous, virtual single-$\beta$ transitions, as illustrated by the two weak vertices in the Feynman diagram of Figure \ref{fig:2nu_feynman}.
+At the microscopic level, the process occurs through two simultaneous, virtual single-$\beta$ transitions, as illustrated by the two weak vertices in the Feynman diagram of Figure~\ref{fig:2nu_feynman}.
 
 \begin{figure}[H]
     \centering
@@ -442,7 +434,7 @@ At the microscopic level, the process occurs through two simultaneous, virtual s
     \label{fig:doublebeta-parabola}
 \end{wrapfigure}
 For a nucleus to undergo such a rare decay, the standard single-$\beta$ decay to the intermediate isobar $(Z+1, A)$ must be energetically forbidden or heavily suppressed. This kinematic condition naturally arises in even-even nuclei due to the nuclear pairing interaction, which binds them more tightly than their odd-odd neighbours. As a consequence, while the direct transition $(Z, A) \to (Z+1, A)$ is blocked, the target state $(Z+2, A)$ still sits at a lower energy level, effectively opening the double-$\beta$ channel. 
-This energy landscape is visualised using mass parabolas, as shown in Figure \ref{fig:doublebeta-parabola} for the case of ${}^{76}\text{Ge}$, where the even-even and odd-odd mass parabolas are shown with a continuous and dashed line, respectively. The double-beta transition of ${}^{76}\text{Ge}$ is highlighted in red, while the yellow lines represent ordinary single-$\beta$ decays. The intermediate odd-odd state acts as a virtual state in the quantum mechanical transition and is never physically populated.
+This energy landscape is visualised using mass parabolas, as shown in Figure~\ref{fig:doublebeta-parabola} for the case of ${}^{76}\text{Ge}$, where the even-even and odd-odd mass parabolas are shown with a continuous and dashed line, respectively. The double-beta transition of ${}^{76}\text{Ge}$ is highlighted in red, while the yellow lines represent ordinary single-$\beta$ decays. The intermediate odd-odd state acts as a virtual state in the quantum mechanical transition and is never physically populated.
 
 Because $2\nu\beta\beta$ is a second-order process in the weak coupling, its decay rate is massively suppressed compared to ordinary $\beta$ decay, resulting in extremely long half-lives of the order of $T_{1/2}^{2\nu} \sim 10^{19}$--$10^{24}$~years, depending on the isotope.
 
@@ -451,7 +443,7 @@ Unlike the neutrinoless mode, $2\nu\beta\beta$ does not require any new physics 
 \subsection{Neutrinoless double beta decay (\texorpdfstring{$0\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{0vbb})}
 \label{subsec:0nubetabeta}
 
-In Section~\ref{subsec:2nubetabeta}, $2\nu\beta\beta$ was introduced as a rare second-order weak process, allowed by the \ac{SM} because it conserves lepton number. Neutrinoless double-$\beta$ decay ($0\nu\beta\beta$) differs from it by a single, but crucial, feature: no (anti)neutrino is present in the final state, so that the processes of Table \ref{tab:bb-modes} are to be rewritten as in Table \ref{tab:0nubb-modes}.
+In Section~\ref{subsec:2nubetabeta}, $2\nu\beta\beta$ was introduced as a rare second-order weak process, allowed by the \ac{SM} because it conserves lepton number. Neutrinoless double-$\beta$ decay ($0\nu\beta\beta$) differs from it by a single, but crucial, feature: no (anti)neutrino is present in the final state, so that the processes of Table~\ref{tab:bb-modes} are to be rewritten as in Table~\ref{tab:0nubb-modes}.
 
 
 \begin{table}[H]
@@ -477,21 +469,21 @@ This implies a violation of lepton number by two units ($\Delta L=2$), which is 
 \item \textbf{model-independent consequences}:
 \begin{itemize}
     \item \textit{matter creation}: it would be the first laboratory observation of a process that produces matter without producing the corresponding antimatter.
-    \item \textit{violation of lepton and baryon-lepton number}: since the baryon number $B$ is not affected by the decay, a $\Delta L = 2$ process also violates $B-L$. This would be the first experimental evidence that such a symmetry, which is only accidental in the \ac{SM} and has no theoretical reason to be exact, is broken in nature.
+    \item \textit{violation of lepton number and of $B-L$}: since the baryon number $B$ is not affected by the decay, a $\Delta L = 2$ process also violates $B-L$. This would be the first experimental evidence that such a symmetry, which is only accidental in the \ac{SM} and has no theoretical reason to be exact, is broken in nature.
     \item \textit{Majorana nature of neutrinos}: whatever the underlying mechanism, an observed $0\nu\beta\beta$ decay implies that neutrinos can convert into antineutrinos, hence that they are Majorana particles.
 \end{itemize}
 
 \item \textbf{model-dependent consequences}: if the decay is dominated by the exchange of a light Majorana neutrino, the measured half-life can be translated into a value of the effective Majorana mass $m_{\beta\beta}$ (see Eq.~\ref{eq:half-life_0nubb} below), which gives access to:
 \begin{itemize}
-    \item \textit{absolute neutrino mass scale}: oscillation experiments are sensitive only to mass-squared differences, while combining $m_{\beta\beta}$ with direct measurements from single $\beta$ decay and with cosmological data allows one to constrain the individual mass eigenvalues;
-    \item \textit{mass ordering}: comparing $m_{\beta\beta}$ with the regions allowed for the normal and inverted ordering, the ordering could be established. In the inverted case $m_{\beta\beta}$ is bounded from below, while in the normal one it can vanish; no conclusion can be drawn if $m_{\beta\beta}$ falls in the quasi-degenerate region, or if external measurements do not exclude it.
+    \item \textit{absolute neutrino mass scale}: oscillation experiments are sensitive only to mass-squared differences, while combining $m_{\beta\beta}$ with direct measurements from single $\beta$ decay and with cosmological data allows one to constrain the individual mass eigenvalues (central and right panels of Fig.~\ref{fig:mbb_allowed});
+    \item \textit{mass ordering}: comparing $m_{\beta\beta}$ with the regions allowed for the normal and inverted ordering (Fig.~\ref{fig:mbb_allowed}), the ordering could be established. In the inverted case $m_{\beta\beta}$ is bounded from below, while in the normal one it can vanish. If $m_{\beta\beta}$ falls where the two regions overlap, the ordering can be established only by combining it with an independent measurement of the mass scale, through $m_\beta$ or $\Sigma$.
 \end{itemize}
 \end{enumerate} 
 
-The mode-independent results are also relevant for cosmology. The Universe appears to contain only matter, and the \ac{SM} cannot account for the observed matter-antimatter asymmetry, even though the violation of $CP$ and of baryon number are among the Sakharov conditions~\cite{sakharov} required to generate it. A new source of violation of global symmetries is therefore needed, and leptogenesis models provide it: a lepton asymmetry is generated through lepton-number-violating processes and then partially converted into a baryon asymmetry. Observing $0\nu\beta\beta$ would support this class of scenarios. \cite{morella}
+The model-independent results are also relevant for cosmology. The Universe appears to contain only matter, and the \ac{SM} cannot account for the observed matter-antimatter asymmetry: although it contains sources of $CP$ and baryon-number violation, two of the conditions identified by Sakharov~\cite{sakharov}, they are too weak to generate it. A new source of violation of global symmetries is therefore needed, and leptogenesis models provide it: a lepton asymmetry is generated through lepton-number-violating processes and then partially converted into a baryon asymmetry. Observing $0\nu\beta\beta$ would support this class of scenarios~\cite{morella}.
 
 
-As established earlier, this work centers on ${}^{76}\text{Ge}$. Hereafter, we consider exclusively the light-neutrino exchange channel for its neutrinoless decay, formulated in Eq.~\ref{eq:0nu-beta-beta} and represented in Figure~\ref{fig:0nubetabeta-diagram}.
+As established earlier, this work centres on ${}^{76}\text{Ge}$. Hereafter, we consider exclusively the light-neutrino exchange channel for its neutrinoless decay, formulated in Eq.~\ref{eq:0nu-beta-beta} and represented in Figure~\ref{fig:0nubetabeta-diagram}.
 
 \begin{equation}
     \label{eq:0nu-beta-beta}
@@ -501,7 +493,7 @@ As established earlier, this work centers on ${}^{76}\text{Ge}$. Hereafter, we c
 \begin{figure}[H]
     \centering
     \input{feynman-diagrams/0nu-doubleBeta-diagram.tex}
-    \caption{Feynman diagram for neutrinoless double $\beta$-decay. The Majorana coupling of the neutrino with its own antineutrino (see Figure \ref{fig:feynman-massCouplings}) is shown.}
+    \caption{Feynman diagram for neutrinoless double $\beta$-decay. The Majorana coupling of the neutrino with its own antineutrino (see Figure~\ref{fig:feynman-massCouplings}) is shown.}
     \label{fig:0nubetabeta-diagram}
 \end{figure}
 
@@ -512,22 +504,41 @@ As established earlier, this work centers on ${}^{76}\text{Ge}$. Hereafter, we c
     \caption{Schematic representation of the energy distribution for the products in $2\nu\beta\beta$ and $0\nu\beta\beta$ decay modes. The description is given in the text.}
     \label{fig:Qvalue-2nu0nu}
 \end{wrapfigure}
-From an experimental point of view, $0\nu\beta\beta$ can be distinguished from the more common $2\nu\beta\beta$ decay by analyzing the electron energy spectra of the two emitted electrons. Specifically, in $0\nu\beta\beta$ decay, the electrons are produced with energies $E_{e, 1}$ and $E_{e, 2}$ that satisfies
+From an experimental point of view, $0\nu\beta\beta$ can be distinguished from the more common $2\nu\beta\beta$ decay by analysing the energy spectrum of the two emitted electrons. Specifically, in $0\nu\beta\beta$ decay, the electrons are produced with energies $E_{e, 1}$ and $E_{e, 2}$ that satisfy
 \begin{equation*}
-    E_{e, 1} + E_{e, 2} + E_{\text{nuc}} = Q_{\beta\beta} = \frac{1}{2} [M(Z, A) - M(Z+2, A)] 
+    E_{e, 1} + E_{e, 2} + E_{\text{nuc}} = Q_{\beta\beta} = M(Z, A) - M(Z+2, A)
 \end{equation*}
-where $M(Z, A)$ and $M(Z+2, A)$ represent the masses of the parent and daughter nuclei, respectively. Moreover, the energy of the recoiling nucleus being negligible, the sum of the electron energies is equal to the $Q$-value of the transition, i.e. $E_{e, 1} + E_{e, 2} = Q_{\beta\beta}$. Conversely, for standard $2\nu\beta\beta$ decay, the combined electron energy spectrum is continuous, with very few events occurring near the endpoint $\frac{1}{2}Q$. Fig. \ref{fig:Qvalue-2nu0nu} shows said continuous spectrum in red for the $2\nu\beta\beta$ process and the monoenergetic one around the $Q$-value for $0\nu\beta\beta$ in blue.
+where $M(Z, A)$ and $M(Z+2, A)$ are the atomic masses of the parent and daughter atoms, respectively. Since the energy of the recoiling nucleus is negligible, the sum of the electron energies equals the $Q$-value of the transition, i.e. $E_{e, 1} + E_{e, 2} = Q_{\beta\beta}$. Conversely, in standard $2\nu\beta\beta$ decay part of the energy is carried away by the two antineutrinos, so the summed electron energy has a continuous spectrum that extends up to $Q_{\beta\beta}$, with a maximum around one third of $Q_{\beta\beta}$ and very few events close to the endpoint. Fig.~\ref{fig:Qvalue-2nu0nu} shows this continuous spectrum in blue for the $2\nu\beta\beta$ process and the monoenergetic peak at $Q_{\beta\beta}$ for $0\nu\beta\beta$ in red.
 
 If neutrinos are indeed Majorana particles and the standard mechanism for $0\nu\beta\beta$ decay is mediated by the exchange of a light Majorana neutrino, the decay rate, usually expressed in terms of the half-life $T_{1/2}^{0\nu}$, is given by:
 \begin{equation}
     \label{eq:half-life_0nubb}
-    (T_{1/2}^{0\nu})^{-1} = G_{0\nu}(Q, Z) \left| \mathcal{M}_{0\nu} \right|^2 \left( \frac{m_{\beta\beta}}{m_e} \right)^2
+    (T_{1/2}^{0\nu})^{-1} = G_{0\nu}(Q_{\beta\beta}, Z) \left| \mathcal{M}_{0\nu} \right|^2 \left( \frac{m_{\beta\beta}}{m_e} \right)^2
 \end{equation}
-where $G_{0\nu}(Q, Z)$ is the phase space factor (which depends on the Q-value and the atomic number $Z$), $\mathcal{M}_{0\nu}$ is the nuclear matrix element, $m_e$ is the electron mass, and $m_{\beta\beta} = \sum_{i=1}^{3} U_{ei}^2 m_{\nu i}$ denotes the effective Majorana mass, which depends on both the PMNS matrix elements and the neutrino mass eigenvalues. Consequently, the decay rate is directly sensitive to the \ac{NMO}.
+where $G_{0\nu}(Q_{\beta\beta}, Z)$ is the phase space factor, which depends on the $Q$-value and on the atomic number $Z$, $\mathcal{M}_{0\nu}$ is the nuclear matrix element, $m_e$ is the electron mass, and $m_{\beta\beta} = \big|\sum_{i=1}^{3} U_{ei}^2\, m_i\big|$ denotes the effective Majorana mass. The latter depends on the elements of the first row of $U_\text{PMNS}^\text{Maj}$, including the Majorana phases, and on the neutrino mass eigenvalues; through $m_{\beta\beta}$, the decay rate is therefore also sensitive to the \ac{NMO}.
 
-Experimentally, observing $0\nu\beta\beta$ decay requires identifying a tiny, mono-energetic signal at $Q_{\beta\beta}$, so the choice of the best isotope to search for such rare decay is the first thing to face, since it involves background suppression and energy resolution considerations but also the limited time for which an experiment can be used. These result in a series of criteria to be considered in choosing the suitable isotope, which restrict the choice to elements with high isotopic abundance, a good compatibility with detection techniques and a sufficiently high $Q_{\beta\beta}$. The $Q$-values of the candidate isotopes span from about $2$~MeV up to a few MeV, a range where the dominant background is the environmental radioactivity of the natural ${}^{232}$Th and ${}^{238}$U decay chains, together with cosmic rays. Since the intensity of this background decreases with increasing energy, isotopes with a high enough $Q_{\beta\beta}$ are preferred, so that the region of interest lies where the background is lowest. To give an idea of the energy scale, natural $\gamma$ radioactivity extends up to the $2615$~keV line of ${}^{208}$Tl, the $\beta$ decay of ${}^{214}$Bi, from the ${}^{238}$U chain, reaches $3270$~keV, and $\alpha$ decays are even more energetic, around $5$~MeV (e.g. $5.3$~MeV for ${}^{210}$Po). \cite{review-0nu-2015}
+Using the parametrisation of Eqs.~\ref{eq:Upmns-majorana} and~\ref{eq:Upmns-total}, the effective Majorana mass can be written explicitly as
+\begin{equation}
+  m_{\beta\beta} = \left| c_{12}^2 c_{13}^2\, m_1 + s_{12}^2 c_{13}^2\, m_2\, e^{i\alpha_{21}} + s_{13}^2\, m_3\, e^{i(\alpha_{31}-2\delta)} \right| .
+  \label{eq:mbb_explicit}
+\end{equation}
+Mixing angles and mass-squared differences are measured by oscillation experiments, but $m_{\beta\beta}$ also depends on three quantities they cannot access: the two Majorana phases and the absolute mass scale. For a given mass scale, letting the phases vary between the values that maximise and minimise $m_{\beta\beta}$ defines its allowed range. The mass scale can be expressed through the lightest neutrino mass $m_\text{light}$ ($m_1$ for normal and $m_3$ for inverted ordering), through the effective electron-neutrino mass measured in single $\beta$ decay, $m_\beta = \big(\sum_i |U_{ei}|^2 m_i^2\big)^{1/2}$, or through the sum of the masses constrained by cosmology, $\Sigma = \sum_i m_i$. The resulting regions are shown in Fig.~\ref{fig:mbb_allowed}.
 
-Thus, the commonly studied isotopes are the ones listed in Table \ref{tab:isotopes-for-0nu} together with their isotopic abundance and $Q_{\beta\beta}$ values. ${}^{76}$Ge represents an exception among the others because $Q_{\beta\beta} = 2039$~keV: this is in principle a limitation in terms of background reduction, since natural $\gamma$ radioactivity is highly present in that energy range, but it nevertheless one of the most notable isotopes because of its powerful detection tecniques. 
+At large mass scales the three neutrinos are quasi-degenerate and the two orderings overlap, while at lower values they separate. In the inverted ordering the two dominant terms of Eq.~\ref{eq:mbb_explicit} cannot cancel, since $\cos 2\theta_{12} \neq 0$, so $m_{\beta\beta}$ is bounded from below at about 18~meV~\cite{plot-esperiments_and_exposures}: next-generation experiments such as LEGEND-1000 aim to probe this whole region. In the normal ordering, instead, the three terms can cancel for $m_\text{light}$ of a few meV, and $m_{\beta\beta}$ can be arbitrarily small. Oscillation data also set a minimum value of $\Sigma$, about 59~meV for normal and 100~meV for inverted ordering, which is where the two regions start in the right panel.
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/mbb_NO_IO_Agostini2023.pdf}
+  \caption[Allowed range of $m_{\beta\beta}$ as a function of $m_\text{light}$, $m_\beta$ and $\Sigma$]{%
+  Range of $m_{\beta\beta}$ allowed by light Majorana neutrino exchange as a function of the lightest neutrino mass $m_\text{light}$ (left), of the effective electron-neutrino mass $m_\beta$ (centre) and of the sum of the neutrino masses $\Sigma$ (right), for normal (orange) and inverted (teal) ordering. The oscillation parameters are fixed to their central values, so the width of each region is due only to the unknown Majorana phases. Grey areas are excluded by $0\nu\beta\beta$ searches (KamLAND-Zen, 2016; the two horizontal lines correspond to the largest and smallest nuclear matrix element), by KATRIN (central panel) and by Planck (right panel); the dashed line in the central panel is the KATRIN design sensitivity. Limits are those available in 2023 (see text for updates). Figure taken from~\cite{plot-esperiments_and_exposures}.}
+  \label{fig:mbb_allowed}
+\end{figure}
+
+The limits shown in Fig.~\ref{fig:mbb_allowed} reflect the status in 2023 and have since improved: KamLAND-Zen now sets $T_{1/2}^{0\nu} > 3.8\times10^{26}$~yr (Table~\ref{tab:0nubb-limits}), while the KATRIN and cosmological bounds have become $m_\beta < 0.45$~eV~\cite{katrin2025} and $\Sigma < 0.064$~eV~\cite{desi2025}, as anticipated in Section~\ref{subsec:NMO}. The cosmological bound, obtained by combining DESI DR2 and CMB data within $\Lambda$CDM, is already in tension with the minimum value allowed by oscillations, and relaxes to 0.163~eV if the dark energy equation of state is allowed to evolve~\cite{desi2025}.
+
+Experimentally, observing $0\nu\beta\beta$ decay requires identifying a tiny, mono-energetic signal at $Q_{\beta\beta}$, so the choice of the best isotope to search for such a rare decay is the first issue to face, since it involves background suppression and energy resolution considerations, but also the limited time for which an experiment can be run. These considerations translate into a series of criteria for choosing a suitable isotope, which restrict the choice to elements with high isotopic abundance, a good compatibility with detection techniques and a sufficiently high $Q_{\beta\beta}$. The $Q$-values of the candidate isotopes span from about $2$~MeV up to a few MeV, a range where the dominant background is the environmental radioactivity of the natural ${}^{232}$Th and ${}^{238}$U decay chains, together with cosmic rays. Since the intensity of this background decreases with increasing energy, isotopes with a high enough $Q_{\beta\beta}$ are preferred, so that the region of interest lies where the background is lowest. To give an idea of the energy scale, natural $\gamma$ radioactivity extends up to the $2615$~keV line of ${}^{208}$Tl, the $\beta$ decay of ${}^{214}$Bi, from the ${}^{238}$U chain, reaches $3270$~keV, and $\alpha$ decays are even more energetic, around $5$~MeV (e.g. $5.3$~MeV for ${}^{210}$Po)~\cite{review-0nu-2015}.
+
+Thus, the commonly studied isotopes are the ones listed in Table~\ref{tab:isotopes-for-0nu}, together with their isotopic abundance and $Q_{\beta\beta}$ values. ${}^{76}$Ge is an exception among them, since its $Q_{\beta\beta} = 2039$~keV lies in a region where natural $\gamma$ radioactivity is still present, which is in principle a limitation for background reduction. It is nevertheless one of the most studied isotopes, thanks to the excellent energy resolution and radiopurity of high-purity germanium detectors, in which the source coincides with the detector.
 
 \begin{table}[H]
     \centering
@@ -551,29 +562,29 @@ Thus, the commonly studied isotopes are the ones listed in Table \ref{tab:isotop
     \label{tab:isotopes-for-0nu}
 \end{table}
 
-The decay half-life of a $0\nu\beta\beta$ event, if detected, can be experimentally evaluated as 
+If a $0\nu\beta\beta$ signal is detected, its half-life can be experimentally evaluated as 
 \begin{equation}
     \label{eq:half-life_0nubb_exp}
-    t^{1/2} = \ln(2) \cdot T \cdot \varepsilon \cdot \frac{N_{\beta\beta}}{N_\text{peak}}
+    T_{1/2}^{0\nu} = \ln(2) \cdot T \cdot \varepsilon \cdot \frac{N_{\beta\beta}}{N_\text{peak}}
 \end{equation}
-where $T$ is the measuring time, $\varepsilon$ is the detection efficiency, $N_{\beta\beta}$ is the number of $\beta\beta$ decaying nuclei under observation and $N_\text{peak}$ is the number of observed decays in the region of interest. If no peak is detected, the sensitivity of a given experiment is expressed in terms of a detector \textit{factor of merit} $S^{0\nu}$, i.e. the process half-life corresponding to the maximum signal that could be hidden by the background fluctuations $n_{B}$. From Eq.~\ref{eq:half-life_0nubb_exp}, the sensitivity can be written as
+where $T$ is the measuring time, $\varepsilon$ is the detection efficiency, $N_{\beta\beta}$ is the number of $\beta\beta$-decaying nuclei under observation and $N_\text{peak}$ is the number of observed decays in the region of interest. If no peak is detected, the sensitivity of a given experiment is expressed in terms of a detector \textit{figure of merit} $S^{0\nu}$, i.e. the half-life corresponding to the maximum signal that could be hidden by the background fluctuations $n_{B}$. From Eq.~\ref{eq:half-life_0nubb_exp}, the sensitivity can be written as
 \begin{equation}
     \label{eq:sensitivity-0nu}
     \begin{aligned}
-        S^{0\nu} &= \ln 2 \cdot T \cdot \varepsilon \cdot \frac{n_{\beta\beta}}{n_\sigma \cdot n_B} \\
+        S^{0\nu} &= \ln 2 \cdot T \cdot \varepsilon \cdot \frac{N_{\beta\beta}}{n_\sigma \cdot n_B} \\
                  &= \ln 2 \cdot \varepsilon \cdot \frac{1}{n_\sigma} \cdot \frac{x\,\eta\,N_A}{\mathcal{M}_A} \cdot \sqrt{\frac{M \cdot T}{B \cdot \Delta E}},
     \end{aligned}
 \end{equation}
-where $\varepsilon$ is the detection efficiency, $n_\sigma$ the confidence level in units of standard deviations, and $n_{\beta\beta}$ and $n_B$ the numbers of signal and background events \cite{review-0nu-2015}. The exposure $M \cdot T$ is the product of detector mass and measuring time, $B$ is the background level per unit mass, energy and time, and $\Delta$ is the energy resolution (FWHM) at $Q_{\beta\beta}$. Finally, $x$ is the stoichiometric multiplicity of the candidate element, $\eta$ its isotopic abundance, $N_A$ Avogadro's number and $\mathcal{M}_A$ the molar mass of the compound.
+where $n_\sigma$ is the confidence level in units of standard deviations and $n_B = \sqrt{B \cdot M \cdot T \cdot \Delta E}$ is the fluctuation of the number of background events in the region of interest~\cite{review-0nu-2015}. The exposure $M \cdot T$ is the product of detector mass and measuring time, $B$ is the background index, i.e. the background rate per unit mass, energy and time, and $\Delta E$ is the energy resolution (FWHM) at $Q_{\beta\beta}$. Finally, the second line follows from writing $N_{\beta\beta} = x\,\eta\,N_A\,M/\mathcal{M}_A$, where $x$ is the stoichiometric multiplicity of the candidate element in the compound, $\eta$ its isotopic abundance, $N_A$ Avogadro's number and $\mathcal{M}_A$ the molar mass of the compound.
 
-This formula dictates the design of modern experiments: to maximize sensitivity, one must increase the exposure while minimizing both the background levels and the energy resolution. Specifically, a poor energy resolution causes the continuous tail of the standard $2\nu\beta\beta$ decay to smear into the $0\nu\beta\beta$ region of interest, creating an irreducible background.
+This formula dictates the design of modern experiments: to maximise sensitivity, one must increase the exposure while minimising both the background level and the energy resolution. Specifically, a poor energy resolution causes the continuous tail of the standard $2\nu\beta\beta$ decay to smear into the $0\nu\beta\beta$ region of interest, creating an irreducible background.
 
 
 \section{Experiments currently searching for \texorpdfstring{$0\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{0nu beta beta} decay}
 \label{sec:0nubb-experiments}
-The experimental approach to $0\nu\beta\beta$ searching is based on the development of a proper detection tecnique able to balance good energy resolution, very low background and large isotope mass. Up to now, experiments in this field rely on two different tecnicques: detectors based on a calorimetric tecnique, for which the source is embedded inside the detector volume itself, and detectors exploiting an external source \cite{review-0nu-2015}. 
+The experimental approach to $0\nu\beta\beta$ searches is based on the development of a detection technique able to balance good energy resolution, very low background and large isotope mass. Up to now, experiments in this field rely on two different techniques: calorimetric detectors, in which the source is embedded inside the detector volume itself, and detectors exploiting an external source~\cite{review-0nu-2015}. 
 
-The best limits obtained so far for each candidate isotope are reported in Table~\ref{tab:0nubb-limits} \cite{PDG:2026}, while the experiments currently running or planned, together with their expected sensitivities, are summarised in Fig.~\ref{fig:experiments-and-sensitivities-0nubb}.
+The best limits obtained so far for each candidate isotope are reported in Table~\ref{tab:0nubb-limits}~\cite{PDG:2026}, while the experiments currently running or planned, together with their expected sensitivities, are summarised in Fig.~\ref{fig:experiments-and-sensitivities-0nubb}.
 \begin{table}[H]
     \centering
     \begin{tabular}{llc}
