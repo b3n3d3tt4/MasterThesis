@@ -1,5 +1,23 @@
 \chapter{Conclusions}
 
+This thesis investigated whether deep learning models exploiting the full time evolution of the current pulse can match or improve on \ac{AE} in rejecting multi-site events in LEGEND-200. Two approaches were developed on ${}^{228}$Th calibration data of the inverted-coaxial detectors V08682A and V08682B, using the \ac{DEP} and the \ac{FEP} as \ac{SSE} and \ac{MSE} proxies: a supervised classifier built on the latent space of a \ac{VAE}, trained on peak-window labels contaminated by the Compton continuum, and an unsupervised \ac{DTC} model, which needs no labels.
+ 
+At the working point, where 90\% of the \ac{DEP} peak is kept, the \ac{VAE}-based classifier is statistically equivalent to \ac{AE} (Fig.~\ref{fig:summary-fep-sf}), and it becomes more efficient for looser cuts, especially for V08682B. The \ac{DTC} spontaneously separates \ac{DEP}-enriched and \ac{FEP}-enriched populations without any label, but rejects \ac{MSE} less efficiently than \ac{AE}, the best result being obtained with the \ac{CID} metric. The disagreeing events show that the deep learning methods recognise the structure of the waveform, but cannot distinguish events that produce similar shapes for different physical reasons, such as unresolved multi-site events, surface events and single-site events far from the p$^+$ contact; the performance of all the methods, \ac{AE} included, also depends on the detector geometry. Applied to $2\nu\beta\beta$ physics data, the deep learning cuts retain fewer events than \ac{AE}, with a rejection concentrated at low energy. This suggests that the narrow energy window used for training may be the main limitation of the present models.
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.49\textwidth]{figures/summary_FEP_SF_V08682A.pdf}
+%     \hfill
+%     \includegraphics[width=0.49\textwidth]{figures/summary_FEP_SF_V08682B.pdf}
+%     \caption[Net FEP survival fraction at the working point for all the methods]{Net survival fraction of the \ac{FEP} peak at the working point (90\% of the \ac{DEP} peak kept) for \ac{AE} and all the deep learning cuts, for V08682A (left) and V08682B (right).}
+%     \label{fig:summary-fep-sf}
+% \end{figure}
+
+
+
+Several developments are possible and will be for sure carried out. The training should be extended to a wider energy range, to test this hypothesis, and repeated to estimate its variability. Moreover the study should include more detectors. For the \ac{VAE}, the classifier could be trained on soft labels, given by the probability of each event to belong to the peak rather than to the continuum, could take also the standard deviations of the latent space as inputs, and could be merged with the \ac{VAE} into a single model that minimises the reconstruction and classification losses together~\cite{kingma2014semi}. For the \ac{DTC}, the heatmap network of the original model~\cite{DTC} would show which part of the waveform drives the clustering, and a variational latent space would avoid spending capacity on the noise of the baseline. Finally, other approaches are worth exploring, from Gaussian mixture variational autoencoders~\cite{gmvae}, which unify representation learning and clustering, to simpler self-organising maps~\cite{kohonen1982}.
+
+
 
 % Further improvements will be for sure carried out in the future. Regarding the \ac{VAE} algorithm the main goal will be the modification of the classifier layer, tuning labels with a probability of being such. Moreover, another way of using this model is as a denoising algorithm to clean waveforms: in this case a comparison between parameters computed from the original and the reconstructed waveforms can be performed. + USARE DATI CON COMPTON TELESCOPE 
 
