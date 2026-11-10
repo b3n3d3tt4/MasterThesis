@@ -1,48 +1,44 @@
 \chapter{Additional results}
 \label{other-results}
 
-This appendix collects the plots that complement the results presented in the main chapters.
+This appendix collects the plots that complement the results presented in the main chapters. The first two sections show the \ac{AE} distributions of the four classes of events defined in Sec.~\ref{sec:calib-data}, obtained by comparing \ac{AE} with the \ac{VAE}-based classifiers and with the \ac{DTC} on the calibration dataset and on the $2\nu\beta\beta$ dataset, the latter after the \ac{lar} veto. In all cases the cuts keep 90\% of the \ac{DEP} peak, and for each detector separate figures show the events on which the two methods agree and those on which they disagree. In the agree figures, the left column shows the events rejected by both methods and the right column those kept by both; in the disagree figures, the left column shows the events kept only by \ac{AE} and the right column those kept only by the other classifier. For the \ac{VAE}, the top and bottom rows refer to the classifiers trained on the $\pm1\sigma$ and $\pm3\sigma$ windows, respectively; for the \ac{DTC}, the rows refer to the \ac{ACF}, Euclidean and \ac{CID} metrics, from top to bottom. The last section summarises the performance of all the cuts.
 
 \section{Calibration dataset}
-% =============================================================================================
+% ==================================================================================
 \subsection{\texorpdfstring{\acs{AE}}{A/E} distributions of the events selected by \texorpdfstring{\acs{AE}}{A/E} and by the \texorpdfstring{\acs{VAE}}{VAE}-based classifiers}
 \label{app:VAE-AoE}
-
-This section shows the \ac{AE} distributions of the four classes of events defined in Sec.~\ref{sec:calib-data}, for the cuts that keep 90\% of the \ac{DEP} peak. In the figures where the two methods agree, the left column shows the events rejected by both and the right column those kept by both; where they disagree, the left column shows the events kept only by \ac{AE} and the right column those kept only by the \ac{VAE}. The top and bottom rows refer to the classifiers trained on the $\pm1\sigma$ and $\pm3\sigma$ windows, respectively. Figures~\ref{fig:VAE-AoE-agree-V08682A} and \ref{fig:VAE-AoE-disagree-V08682A} refer to V08682A, Figs.~\ref{fig:VAE-AoE-agree-V08682B} and \ref{fig:VAE-AoE-disagree-V08682B} to V08682B.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/VAE/lean/AoE_agree.pdf}
-    \caption{V08682A, \textit{prl25}: events on which \ac{AE} and the \ac{VAE} agree.}
+    \caption{V08682A, \textit{prl25} calibration data: events on which \ac{AE} and the \ac{VAE} agree.}
     \label{fig:VAE-AoE-agree-V08682A}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/VAE/lean/AoE_disagree.pdf}
-    \caption{V08682A, \textit{prl25}: events on which \ac{AE} and the \ac{VAE} disagree.}
+    \caption{V08682A, \textit{prl25} calibration data: events on which \ac{AE} and the \ac{VAE} disagree.}
     \label{fig:VAE-AoE-disagree-V08682A}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/V08682B/VAE/AoE_agree.pdf}
-    \caption{V08682B, \textit{prl25}: events on which \ac{AE} and the \ac{VAE} agree.}
+    \caption{V08682B, \textit{prl25} calibration data: events on which \ac{AE} and the \ac{VAE} agree.}
     \label{fig:VAE-AoE-agree-V08682B}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/V08682B/VAE/AoE_disagree.pdf}
-    \caption{V08682B, \textit{prl25}: events on which \ac{AE} and the \ac{VAE} disagree.}
+    \caption{V08682B, \textit{prl25} calibration data: events on which \ac{AE} and the \ac{VAE} disagree.}
     \label{fig:VAE-AoE-disagree-V08682B}
 \end{figure}
 
-% =============================================================================================
+% ==================================================================================
 \subsection{\texorpdfstring{\acs{AE}}{A/E} distributions of the events selected by \texorpdfstring{\acs{AE}}{A/E} and by the \texorpdfstring{\acs{DTC}}{DTC}}
 \label{app:DTC-AoE}
-
-This section shows the \ac{AE} distributions of the four classes of events defined in Sec.~\ref{sec:calib-data} for the \ac{DTC}, for the cuts that keep 90\% of the \ac{DEP} peak. In the figures where the two methods agree, the left column shows the events rejected by both and the right column those kept by both; where they disagree, the left column shows the events kept only by \ac{AE} and the right column those kept only by the \ac{DTC}. The rows refer to the \ac{ACF}, Euclidean and \ac{CID} metrics, from top to bottom. Figures~\ref{fig:DTC-AoE-agree-V08682A} and \ref{fig:DTC-AoE-disagree-V08682A} refer to V08682A, Figs.~\ref{fig:DTC-AoE-agree-V08682B} and \ref{fig:DTC-AoE-disagree-V08682B} to V08682B.
 
 \begin{figure}[H]
     \centering
@@ -73,11 +69,9 @@ This section shows the \ac{AE} distributions of the four classes of events defin
 \end{figure}
 
 \section{\texorpdfstring{$2\nu\boldsymbol{\beta}\boldsymbol{\beta}$}{2nu beta beta} dataset}
-% =============================================================================================
+% ==================================================================================
 \subsection{\texorpdfstring{\acs{AE}}{A/E} distributions of the events selected by \texorpdfstring{\acs{AE}}{A/E} and by the \texorpdfstring{\acs{VAE}}{VAE}-based classifiers}
 \label{app:2nubb-VAE-AoE}
-
-This section shows the \ac{AE} distributions of the four classes of events defined in Sec.~\ref{sec:calib-data} for the \ac{VAE}-based classifiers applied to the $2\nu\beta\beta$ dataset after the LAr veto, for the cuts that keep 90\% of the \ac{DEP} peak. The panels are arranged as in App.~\ref{app:VAE-AoE}. Figures~\ref{fig:2nubb-VAE-AoE-agree-V08682A} and \ref{fig:2nubb-VAE-AoE-disagree-V08682A} refer to V08682A, Figs.~\ref{fig:2nubb-VAE-AoE-agree-V08682B} and \ref{fig:2nubb-VAE-AoE-disagree-V08682B} to V08682B.
 
 \begin{figure}[H]
     \centering
@@ -107,43 +101,43 @@ This section shows the \ac{AE} distributions of the four classes of events defin
     \label{fig:2nubb-VAE-AoE-disagree-V08682B}
 \end{figure}
 
-% =============================================================================================
+% ==================================================================================
 \subsection{\texorpdfstring{\acs{AE}}{A/E} distributions of the events selected by \texorpdfstring{\acs{AE}}{A/E} and by the \texorpdfstring{\acs{DTC}}{DTC}}
 \label{app:2nubb-DTC-AoE}
-
-This section shows the \ac{AE} distributions of the four classes of events defined in Sec.~\ref{sec:calib-data} for the \ac{DTC} applied to the $2\nu\beta\beta$ dataset after the LAr veto, for the cuts that keep 90\% of the \ac{DEP} peak. The panels are arranged as in App.~\ref{app:DTC-AoE}. Figures~\ref{fig:2nubb-DTC-AoE-agree-V08682A} and \ref{fig:2nubb-DTC-AoE-disagree-V08682A} refer to V08682A, Figs.~\ref{fig:2nubb-DTC-AoE-agree-V08682B} and \ref{fig:2nubb-DTC-AoE-disagree-V08682B} to V08682B.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/AoE_AoE_DTC_agree_afterLAr_DEP90.pdf}
-    \caption{V08682A, $2\nu\beta\beta$: events on which \ac{AE} and the \ac{DTC} agree.}
+    \caption{V08682A, $2\nu\beta\beta$ data: events on which \ac{AE} and the \ac{DTC} agree.}
     \label{fig:2nubb-DTC-AoE-agree-V08682A}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682A/AoE_AoE_DTC_disagree_afterLAr_DEP90.pdf}
-    \caption{V08682A, $2\nu\beta\beta$: events on which \ac{AE} and the \ac{DTC} disagree.}
+    \caption{V08682A, $2\nu\beta\beta$ data: events on which \ac{AE} and the \ac{DTC} disagree.}
     \label{fig:2nubb-DTC-AoE-disagree-V08682A}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/AoE_AoE_DTC_agree_afterLAr_DEP90.pdf}
-    \caption{V08682B, $2\nu\beta\beta$: events on which \ac{AE} and the \ac{DTC} agree.}
+    \caption{V08682B, $2\nu\beta\beta$ data: events on which \ac{AE} and the \ac{DTC} agree.}
     \label{fig:2nubb-DTC-AoE-agree-V08682B}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{plots/2nubb/DTC/V08682B/AoE_AoE_DTC_disagree_afterLAr_DEP90.pdf}
-    \caption{V08682B, $2\nu\beta\beta$: events on which \ac{AE} and the \ac{DTC} disagree.}
+    \caption{V08682B, $2\nu\beta\beta$ data: events on which \ac{AE} and the \ac{DTC} disagree.}
     \label{fig:2nubb-DTC-AoE-disagree-V08682B}
 \end{figure}
 
+% ============================================================================
+
 \section{Summary of cuts}
 
-Figure~\ref{fig:plot_finale_tutte} summarise the cuts for all the cuts of both the algorithms, including the \ac{DTC} metrics that were excluded in Fig.~\ref{fig:summary-fep-sf}.
+Figure~\ref{fig:plot_finale_tutte} summarises all the cuts of both algorithms, including the \ac{DTC} metrics excluded from Fig.~\ref{fig:summary-fep-sf}.
 
 \begin{figure}[H]
     \centering
