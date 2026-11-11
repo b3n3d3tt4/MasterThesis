@@ -15,16 +15,25 @@ def distribution_2nu(x, a=1, b=2, height=2.3):
     dist = np.where(x <= 1.0, (x**a) * ((1.0 - x)**b), 0.0)
     return dist / dist.max() * height
 
+def distribution_0nu(x, sigma=0.005):
+    val_0nu = (np.exp(-(x-1)**2 / (2*sigma**2))) / (sigma * np.sqrt(2*np.pi))
+    
+    print(val_0nu/val_0nu.max())   
+    return val_0nu/val_0nu.max()
+
 # La curva 2nu arriva fino a Q (x = 1)
-energy_2nu = np.linspace(0, 1.0, 10000)
+energy_2nu = np.linspace(0, 0.98, 10000)
 pdf_2nu = distribution_2nu(energy_2nu, a=1, b=2)
+energy_0nu = np.linspace(0.98, 1.02, 1000)
+pdf_0nu = distribution_0nu(x=energy_0nu)
 
 fig, ax = plt.subplots(figsize=(9, 6))
 
 ax.plot(energy_2nu, pdf_2nu, color=BLUE, lw=3)
+ax.plot(energy_0nu, pdf_0nu, color=RED, lw=3)
 
 # 0nu: delta di Dirac a E = Q, disegnata come riga verticale alta 1 a.u.
-ax.vlines(1.0, 0, 1.0, color=RED, lw=3)
+# ax.vlines(1.0, 0, 1.0, color=RED, lw=3)
 
 # Legenda con handle espliciti (vlines non genera una voce adatta da solo)
 handles = [
