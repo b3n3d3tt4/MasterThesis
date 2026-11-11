@@ -2,34 +2,32 @@
 
 % --- IMPOSTAZIONI DI PAGINA E GRAFICA ---
 \usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
-\usepackage{graphicx} % Rimosso [pdftex], è obsoleto e spesso causa conflitti
+\usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{float}
 \usepackage{eso-pic}
 \usepackage{afterpage}
 \usepackage{caption}
-\usepackage{needspace}
 \usepackage{subcaption}
 \captionsetup{
-    font=small,          % testo della caption più piccolo
-    labelfont=bf,        % "Figure 1.2" in grassetto
-    textfont=it,         % testo in corsivo
-    % labelsep=period,     % "Figure 1.2." invece di "Figure 1.2:"
+    font=small,
+    labelfont=bf,
+    textfont=it,
     justification=justified,
-    singlelinecheck=true  % non centra le caption di una sola riga
+    singlelinecheck=true
 }
 \usepackage{lipsum}
-\usepackage{titlesec, blindtext, color}
+\usepackage{needspace}
 \usepackage[table]{xcolor} 
 \definecolor{greyblue}{RGB}{220,228,238}
-\usepackage{lmodern}
 \definecolor{gray75}{gray}{0.75}
+
+\usepackage{titlesec}
 \newcommand{\hsp}{\hspace{10pt}}
 
-%----------------------------------------------------------------
-% LAYOUT CAPITOLI PERSONALIZZATO
-\newcommand{\chapterNumberSize}{\fontsize{55pt}{40pt}\selectfont}
-\newcommand{\chapterTitleSize}{\fontsize{36pt}{40pt}\selectfont}
+% --- LAYOUT CAPITOLI PERSONALIZZATO ---
+\newcommand{\chapterNumberSize}{\fontsize{55pt}{65pt}\selectfont}
+\newcommand{\chapterTitleSize}{\fontsize{36pt}{44pt}\selectfont}
 
 \titleformat{\chapter}[hang]
   {\normalfont\bfseries}
@@ -39,8 +37,6 @@
   {0pt}
   {\chapterTitleSize}
 \titlespacing*{\chapter}{0pt}{20pt}{40pt}
-% ----------------------------------------------------------------
-
 
 % --- MATEMATICA E SIMBOLI ---
 \usepackage{amssymb,amsmath,amsthm,amsfonts}
@@ -49,17 +45,18 @@
 \usepackage{textcomp}
 \renewcommand{\Re}{\mathfrak{Re}}
 
-% --- LINGUA E TESTO ---
-\usepackage[utf8]{inputenc}   % 1. Codifica caratteri
-\usepackage[english]{babel}   % 2. Lingua
-\usepackage{csquotes}         % 3. Gestione virgolette (dopo babel)
+% --- FONT E LINGUA ---
+\usepackage{fourier}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
 \usepackage{indentfirst}
 \usepackage{parskip}
 \usepackage{setspace}
 \usepackage{xspace}
-\usepackage{fourier} % Font scelto
 
-% --- TABELLE E VARIE ---
+% --- TABELLE E AMBIENTI ---
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -75,10 +72,10 @@
 % --- ACRONIMI ---
 \usepackage{acro}
 \acsetup{make-links = true}
-\input{acronimi} % Assicurati che il file acronimi.tex esista
+\input{acronimi} % Richiede il file acronimi.tex nella root del progetto
 
-% --- BIBLIOGRAFIA ---
-\usepackage[backend=biber, style=numeric]{biblatex}
+% --- BIBLIOGRAFIA (ORDINE DI APPARIZIONE NEL TESTO) ---
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \addbibresource{bibliografia.bib}
 
 % --- INTESTAZIONI E PIÈ DI PAGINA ---
@@ -94,8 +91,7 @@
     \fancyfoot[LE,RO]{\thepage} 
 }
 
-% --- LINK E RIFERIMENTI (DEVE STARE ALLA FINE DEL PREAMBOLO) ---
-\usepackage{xcolor} % Necessario per i colori dei link
+% --- COLLEGAMENTI IPERTESTUALI ---
 \usepackage[colorlinks=true, 
             linkcolor=black, 
             citecolor=darkgray, 
@@ -109,61 +105,50 @@
 
 % --- FRONTESPIZIO ---
 \begin{titlepage}
-\vspace{5mm}
+% \vspace*{2mm}
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.3]{figures/logo_definitivo.png} % Decommenta e verifica il percorso
+  \centering
+  \includegraphics[scale=0.3]{figures/logo_definitivo.png}
 \end{figure}
 \vspace{10mm}
 
 \begin{center}
-{\Huge{\textsc{\textbf{UNIVERSIT\`A DEGLI STUDI DI PADOVA}}}}\\
-\vspace{5mm}
-{\huge{\textbf{Dipartimento di Fisica e Astronomia ``Galileo Galilei''}}} \\
-\vspace{5mm}
-{\huge{\textsc{\textbf{Master's Degree in Physics}}}}\\
-\vspace{10mm}
-{\huge{\textsc{\textbf{Final dissertation}}}}\\
-\vspace{10mm}
-\vspace{10mm}
-{\Huge\bfseries Signal/background discrimination\\[0.3cm]
-for the LEGEND-200 experiment\\[0.3cm]
-using deep learning algorithms on GPUs\par}
-\vspace{20mm}
+  {\Huge\textsc{\textbf{UNIVERSIT\`A DEGLI STUDI DI PADOVA}}}\\[5mm]
+  {\huge\textbf{Dipartimento di Fisica e Astronomia ``Galileo Galilei''}}\\[5mm]
+  {\huge\textsc{\textbf{Master's Degree in Physics}}}\\[10mm]
+  {\huge\textsc{\textbf{Final dissertation}}}\\[15mm]
+  {\Huge\bfseries Signal/background discrimination\\[0.3cm]
+  in the LEGEND-200 experiment\\[0.3cm]
+  using Deep Learning algorithms on GPUs\par}
 \end{center}
 
-\vspace{10mm}
+\vspace{20mm}
 
-% Struttura pulita per Relatore/Candidato
-\begin{spacing}{1.5}
-\begin{minipage}[t]{0.45\textwidth}
-    \begin{flushleft}
-        {\Large Thesis Supervisor}\\[1ex]
-        {\Large \textbf{Prof. Alberto Garfagnini}}\\[3ex]
-        {\Large Thesis Co-Supervisor}\\[1ex]
-        {\Large \textbf{Dr. Michele Morella}}
-    \end{flushleft}
+\begin{spacing}{1.3}
+\begin{minipage}[t]{0.5\textwidth}
+    \raggedright
+    {\Large Thesis Supervisor}\\[1ex]
+    {\Large \textbf{Prof. Alberto Garfagnini}}\\[3ex]
+    {\Large Thesis Co-Supervisor}\\[1ex]
+    {\Large \textbf{Dr. Michele Morella}}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.45\textwidth}
-    \begin{flushright}
-        {\Large Candidate}\\[1ex]
-        {\Large \textbf{Benedetta Rasera}}
-    \end{flushright}
+    \raggedleft
+    {\Large Candidate}\\[1ex]
+    {\Large \textbf{Benedetta Rasera}}
 \end{minipage}
 \end{spacing}
 
-\vspace{10mm}
-
-\vspace{\fill}
+\vfill
 \begin{center}
-{\Large{Academic Year 2025/2026}}
+  {\Large Academic Year 2025/2026}
 \end{center}
 \end{titlepage}
 
-\clearpage{\pagestyle{empty}\cleardoublepage}
+\cleardoublepage
 
-% --- CITAZIONE ---
+% --- CITAZIONE (OPZIONALE) ---
 \begin{comment}
 \thispagestyle{empty}
 \vspace*{0.33\textheight}
@@ -173,18 +158,17 @@ using deep learning algorithms on GPUs\par}
     Telegram to C. Cowan and F. Reines \\
     upon the experimental discovery of the neutrino (1956)
 \end{flushright}
-\clearpage{\pagestyle{empty}\cleardoublepage}
+\cleardoublepage
 \end{comment}
 
 % --- ABSTRACT ---
 \input{chapters/Abstract.tex}
 
-
 \clearpage
 
 % --- INDICE ---
 \tableofcontents
-\clearpage
+\cleardoublepage
 
 % ==========================================
 % CORPO DELLA TESI
@@ -198,11 +182,12 @@ using deep learning algorithms on GPUs\par}
 \input{chapters/Conclusions.tex}
 
 % ==========================================
-% APPENDICI E BIBLIOGRAFIA
+% APPENDICI
 % ==========================================
-\renewcommand{\chapterNumberSize}{\fontsize{55pt}{40pt}\selectfont}
-\renewcommand{\chapterTitleSize}{\fontsize{30pt}{40pt}\selectfont}
 \appendix
+\renewcommand{\chapterNumberSize}{\fontsize{55pt}{65pt}\selectfont}
+\renewcommand{\chapterTitleSize}{\fontsize{30pt}{38pt}\selectfont}
+
 \include{chapters/A-app_three-flavours}
 % \include{chapters/B-app_neutrinosINmatter}
 % \include{chapters/C-raw_waveforms}
@@ -211,41 +196,35 @@ using deep learning algorithms on GPUs\par}
 \include{chapters/DTCtrainingplots}
 \include{chapters/OtherResults}
 
-\renewcommand{\chapterTitleSize}{\fontsize{36pt}{40pt}\selectfont}
-% --- ACRONIMI ---
-\chapter*{List of Acronyms} % Creiamo il titolo fuori dalle colonne
+% ==========================================
+% ACRONIMI E BIBLIOGRAFIA
+% ==========================================
+\renewcommand{\chapterTitleSize}{\fontsize{36pt}{44pt}\selectfont}
+
+\chapter*{List of Acronyms}
 \addcontentsline{toc}{chapter}{List of Acronyms}
 
 \begin{multicols}{2}
-  % heading=none impedisce ad acro di creare un suo titolo interno
   \printacronyms[heading=none] 
 \end{multicols}
 
-% --- FIGURE ---
-% \listoffigures
-% \addcontentsline{toc}{chapter}{List of Figures}
-
-% --- TABELLE ---
-% \listoftables
-% \addcontentsline{toc}{chapter}{List of Tables}
-
-% --- BIBLIOGRAFIA ---
-\printbibliography[heading=bibintoc]
-
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
 
 % \chapter*{Acknowledgments}
 % \addcontentsline{toc}{chapter}{Acknowledgments}
 % I would like to express my deepest gratitude to my supervisor, Professor Alberto Garfagnini, for their invaluable guidance and continuous support throughout the development of this work and many more related activities.
 
-% I am also deeply grateful to my co-supervisor, Doctor Michele Morella, for their insightful advices, patience, dedicated assistance and excellent daily collaboration in these months. 
+% I am deeply grateful to my co-supervisor, Doctor Michele Morella, for their insightful advices, patience, dedicated assistance, precious revisions and excellent daily collaboration in these months. 
 
-% A special note of thanks goes to Professor Riccardo Brugnera, my reference within the LEGEND experiment, for providing me with the unique opportunity to contribute to this project and for all the important suggestions he gave me.
+% A special note of thanks goes to Professor Riccardo Brugnera, my reference within the LEGEND experiment, for giving me with the opportunity to contribute to this project.
 
 % I would also like to extend my sincere appreciation to Professor Michele Rossi from the Department of Information Engineering for sharing their valuable expertise, time and constructive feedbacks.
 
 % Furthermore, I wish to acknowledge and thank Giovanna Saleh from the LEGEND Padova group for their technical support and fruitful discussions.
 
 % \include{chapters/Ringraziamenti}
-
 
 \end{document}
