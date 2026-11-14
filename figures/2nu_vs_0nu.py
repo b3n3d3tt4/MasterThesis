@@ -40,13 +40,13 @@ handles = [
     Line2D([0], [0], color=RED, lw=2, label=r"$0\nu\beta\beta$"),
     Line2D([0], [0], color=BLUE, lw=2, label=r"$2\nu\beta\beta$"),
 ]
-ax.legend(handles=handles, labelspacing=1, fontsize=12, frameon=False, loc="upper right")
+ax.legend(handles=handles, labelspacing=1, fontsize=14, frameon=False, loc="upper right")
 
 ax.set_xlim(0, 1.1)
 ax.set_ylim(0, 2.5)
-ax.set_xlabel(r"$(E_{e, 1} + E_{e, 2})$/$Q_{\beta\beta}$")
-ax.set_ylabel("a.u.")
-ax.set_title("Energy distribution comparison between double beta decay modes")
+ax.set_xlabel(r"$(E_{e, 1} + E_{e, 2})$/$Q_{\beta\beta}$", fontsize=14)
+ax.set_ylabel("a.u.", fontsize=14)
+ax.set_title("Energy distribution comparison between double beta decay modes", fontsize=16)
 ax.grid(alpha=0.3, ls='--')
 fig.tight_layout()
 
