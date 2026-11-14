@@ -121,7 +121,7 @@ The way these sets enter the training of the \ac{VAE} and of the classifier is d
 
 \subsection{Architecture}
 \label{sec:vae-architeture}
-The \ac{VAE} algorithm that has been implemented in the work here presented follows a simple flow which includes an encoder, an 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
+The \ac{VAE} algorithm that has been implemented follows a simple flow which includes an encoder, an 8-dimension latent space, a reparametrisation step and a decoder. The steps, also illustrated in Fig. \ref{fig:vae-architecture}, include: 
 \begin{itemize}
     \item \textbf{original waveforms}\\
     The input of the encoder are current waveforms already processed as described in Sec. \ref{sec:data-cleaning}, thus the input of the encoder has dimensions ($1~\times~200$).
@@ -328,7 +328,7 @@ The classification model is a simple \ac{MLP} that follows this \texttt{Sequenti
     The final layer maps the 16 features of the previous ones to a single output neuron. This output is a \textit{logit} value, i.e. a real number $p$, that will enter the loss function computation to compare it with the true label $y$.
 \end{itemize}
 
-The full pipeline of the \ac{VAE}-based classifier is depicted in Fig.~\ref{fig:vaeclassifier-architecture}. The first part of the mdoel is the same of Fig.~\ref{fig:vae-architecture} and the \ac{MLP} part is connected directly to the mean values in the latent space, while the variance values are neglected. 
+The full pipeline of the \ac{VAE}-based classifier is depicted in Fig.~\ref{fig:vaeclassifier-architecture}. The first part of the model is the same of Fig.~\ref{fig:vae-architecture} and the \ac{MLP} part is connected directly to the mean values in the latent space, while the variance values are neglected. 
 
 \begin{figure}[H]
     \centering

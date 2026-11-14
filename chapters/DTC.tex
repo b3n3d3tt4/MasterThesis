@@ -27,7 +27,7 @@ During both training phases the training set is processed in mini-batches of $B 
 
 
 \subsection{Architecure} 
-The \ac{DTC} algorithm implemented for this work follows the one of the original paper\footnote{A significant part of the algorithm was made available by the authors here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
+The \ac{DTC} algorithm implemented for this work follows the one of the original paper \cite{DTC}\footnote{A significant part of the algorithm was made available by the authors here: \url{https://github.com/FlorentF9/DeepTemporalClustering}.}, but introduces several modifications and improvements, most notably the transition from the original Keras implementation to PyTorch. The overall architecure can be decomposed into two main parts: the autoencoder, specifically called \ac{TAE}, and the clustering referred to as \ac{TSC}. 
 
 \subsubsection{Temporal Autoencoder class}
 The \ac{TAE} is an autoencoder for which the latent space is given by a compacted time series which somehow represents the input and from which the latter can be reconstructed through the decoder.
