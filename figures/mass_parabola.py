@@ -78,9 +78,9 @@ def plot_mass_parabola(out_path):
     arrow(32, 33, YELLOW)                           # Ge -> As   beta singolo
     arrow(32, 34, RED, dashed=True, lw=2.5)         # Ge -> Se   doppio beta
 
-    ax.set_xlabel("Atomic number $Z$", fontsize=14)
-    ax.set_ylabel("Mass excess (MeV)", fontsize=14)
-    ax.set_title(rf"Isobaric mass parabolas for $A = {A}$", fontsize=16)
+    ax.set_xlabel("Atomic number $Z$", fontsize=18)
+    ax.set_ylabel("Mass excess (MeV)", fontsize=18)
+    ax.set_title(rf"Isobaric mass parabolas for $A = {A}$", fontsize=20)
     ax.grid(alpha=0.3, ls="--")
 
     handles = [
@@ -89,10 +89,10 @@ def plot_mass_parabola(out_path):
         Line2D([0], [0], color=YELLOW, lw=2, label=r"single $\beta$ decay"),
         Line2D([0], [0], color=RED, lw=2.2, ls="--", label=r"double $\beta$ decay"),
     ]
-    ax.legend(handles=handles, loc="upper center", ncol=2, frameon=False, fontsize=14)
+    ax.legend(handles=handles, loc="upper center", ncol=2, frameon=False, fontsize=18)
 
-    fig.savefig(out_path, dpi=300)
-    fig.savefig(out_path.replace(".png", ".pdf"))
+    fig.savefig(out_path, dpi=300, bbox_inches="tight")
+    fig.savefig(out_path.replace(".png", ".pdf"), bbox_inches="tight")
     plt.close(fig)
 
 
