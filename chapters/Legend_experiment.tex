@@ -397,12 +397,12 @@ edge of the charge: first, a pole-zero correction is applied; the signal is then
     \label{fig:AoE-different-events}
 \end{figure}
 
-These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig:AoE_distribution}, where the V08682A detector has been chosen as an example, from which it is clear that different regions of the energy spectrum given by different physical processes are correlated with distinct \ac{AE} distributions. For example events of the \ac{DEP} region (red) show a different distribution with respect to the \ac{FEP} ones (blue), therefore a proper selection of the \ac{AE} value enable to distinguish signal-like events from background-like ones. 
+These differences in the \ac{AE} dsitributions are also visible in Fig. \ref{fig:AoE_distribution}, from which it is clear that different regions of the energy spectrum given by different physical processes are correlated with distinct \ac{AE} distributions. Events of the \ac{DEP} region (red) show a different distribution with respect to the \ac{FEP} ones (blue), therefore a proper selection of the \ac{AE} value enable to distinguish signal-like events from background ones. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{plots/energy_spectrum_and_aoe-example.pdf}
-    \caption{\ac{AE} distributions in different ranges of the calibration spectrum. Data are from run \textit{r000} of period \textit{p03}.}
+    \caption{\ac{AE} distributions in different ranges of the calibration spectrum: the \ac{DEP} peak of~${}^{208}$Tl highlights a distinct behaviour peaked around zero. Data are from run \textit{r000} of period \textit{p03} for detector V08682A.}
     \label{fig:AoE_distribution}
 \end{figure}
 Specifically, the \ac{AE} selection is realised with two cuts on said distribution: a low cut and an high cut. They are respectively a cut above and below zero since the distribution is normalised. The high cut is set to $3$ regardless of the specific detector, in order to reject events with a very high \ac{AE} value that are typically induced by $\alpha$ particles. On the other hand, the low cut is detector-specific and must be tuned individually: a scan on the \ac{AE} distribution is performed from the left to the right and the low cut value is set to the point for which the survival fraction of the events in the \ac{DEP} of~${}^{208}$Tl reaches the 90\% of the peak maximum.
